@@ -35,6 +35,10 @@ CFG = {
     # openings, CJs - never to walls / curbs / columns (other plans show
     # those). A wall face may be the anchor only when no grid is within LOC_MAX.
     "WALL_ANCHOR_IF_NO_GRID": True,
+    # a shaft the slab outline wraps around (not a hole in the slab): a slab
+    # edge facing a wall face across open space gets an overall-size dim
+    "SHAFT_MAX": 15.0,      # ft; widest such pocket
+    "SHAFT_MIN_EDGE": 2.0,  # ft; shorter slab edges are jogs, not shaft sides
     "STACK": True,
     "STACK_KINDS": ("opening", "bump", "notch"),   # beams: width + one anchor (Adolfo 2026-10-05)
 }
@@ -552,6 +556,92 @@ class Planner(object):
             self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
                      prefer=(s0 + s1) / 2.0 if pref is None else pref, outward=out)
 
+    def do_shaft_pockets(self):
+        """Shafts the slab outline wraps around (Adolfo 2026-10-05: the shaft at
+        the L3N core's lower right had no size - it isn't a hole in the slab,
+        so no opening feature): a slab edge whose open side faces a parallel
+        wall face across open space (no slab between, <= SHAFT_MAX) gets an
+        overall-size string edge | wall face, role 'check'. The one case a dim
+        goes to a wall: it is the shaft's size."""
+        import mcc_model as M
+        c = self.c
+        m = self.m
+        run_of = {}
+        for f in self.fs.features:
+            if f.kind in ("run", "corner", "step", "bump", "notch"):
+                for e in f.edges:
+                    run_of.setdefault(id(e), f)
+        added = 0
+        pockets = []
+        for sl in m.slabs:
+            for e in sl.edges:
+                if e.length < c["SHAFT_MIN_EDGE"] or id(e) not in run_of or not run_of[id(e)].in_crop:
+                    continue
+                if self.flush(e, m.walls) or self.flush(e, m.columns) or self.flush(e, m.beams):
+                    continue
+                fr = self.frame(e)
+                if fr is None:
+                    continue
+                fi, gi, off, s_lo, s_hi = fr
+                g, g0, u, n = m.grids[gi]
+                mid = (s_lo + s_hi) / 2.0
+                def pt(st, o):
+                    return (g0[0] + u[0] * st + n[0] * o, g0[1] + u[1] * st + n[1] * o)
+                def in_slab(x, y):
+                    for s2 in m.slabs:
+                        if P.point_in_poly(x, y, s2.outer) and not any(
+                                P.point_in_poly(x, y, [q[:2] for q in h]) for h in s2.openings if h):
+                            return True
+                    return False
+                # the open side of the edge (no slab just past it)
+                side = None
+                for sd in (1, -1):
+                    x, y = pt(mid, off + sd * 0.25)
+                    if not in_slab(x, y):
+                        side = sd
+                        break
+                if side is None:
+                    continue
+                best = None
+                for w in m.walls:
+                    for wf in w.sides:
+                        if not P.parallel(wf.d, u):
+                            continue
+                        o = m.offset(wf.mid(), gi)
+                        gap = (o - off) * side
+                        if gap < 0.5 or gap > c["SHAFT_MAX"]:
+                            continue
+                        w0, w1 = sorted([m.station(wf.p0, gi), m.station(wf.p1, gi)])
+                        lo, hi = max(s_lo, w0), min(s_hi, w1)
+                        if hi - lo < 0.5 * (s_hi - s_lo):
+                            continue                  # must face most of the edge
+                        if best is None or gap < best[0]:
+                            best = (gap, o, wf, lo, hi)
+                if best is None:
+                    continue
+                gap, o, wf, lo, hi = best
+                st = (lo + hi) / 2.0
+                if any(in_slab(*pt(st, off + side * gap * k)) for k in (0.25, 0.5, 0.75)):
+                    continue                          # slab between: not a shaft
+                s = self.add(fi, gi, [(off, e.ref, "slab edge", "edge"), (o, wf.ref, "wall face", "wall")],
+                             (lo, hi), "shaft size (edge | wall)", run_of[id(e)], role="check", prefer=st)
+                if s is not None:
+                    added += 1
+                    # the pocket is a no-go zone like an opening (only its own
+                    # size may sit inside): shrink 0.1 ft off the edge and wall
+                    a, b = off + side * 0.1, off + side * (gap - 0.1)
+                    rect = [pt(lo + 0.1, a), pt(hi - 0.1, a), pt(hi - 0.1, b), pt(lo + 0.1, b)]
+                    ob = M.Obst(rect, -1, "opening", raw=rect)
+                    m.obstacles.append(ob)
+                    pockets.append((s, ob))
+        # each size string may sit in its pocket (both directions' rectangles of one shaft)
+        for s, ob in pockets:
+            cx = sum(p[0] for p in ob.raw) / 4.0; cy = sum(p[1] for p in ob.raw) / 4.0
+            s.own_voids = set(id(o2) for _, o2 in pockets
+                              if P.point_in_poly(cx, cy, o2.raw) or
+                              P.point_in_poly(sum(p[0] for p in o2.raw) / 4.0, sum(p[1] for p in o2.raw) / 4.0, ob.raw))
+        self.notes["shaft sizes (slab edge | wall across a shaft)"] = added
+
     # ---------------- consistency + dedupe ----------------
     def make_consistent(self):
         """Neighbouring locate strings along the same family prefer the
@@ -604,6 +694,7 @@ class Planner(object):
             if not f.in_crop or f.kind == "corner":
                 continue
             getattr(self, "do_" + f.kind)(f)
+        self.do_shaft_pockets()
         self.make_consistent()
         n0 = len(self.strings)
         m = self.m

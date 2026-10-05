@@ -424,7 +424,8 @@ class Layout(object):
                 own_shaft = f is not None and f.kind == "opening" and getattr(f, "sub", None) in ("shaft", "core") \
                     and "centroid" in getattr(f, "meta", {}) and P.point_in_poly(f.meta["centroid"][0], f.meta["centroid"][1], poly)
                 size_only = all(r[2] == "opening edge" for r in s.refs)
-                if own_shaft and size_only:
+                own_pocket = id(o) in getattr(s, "own_voids", ())     # a wrapped-around shaft's size
+                if (own_shaft and size_only) or own_pocket:
                     pen += c["W_IN_SHAFT"]
                     continue
                 return None, ("inside an opening" if line_in else "text inside an opening")
@@ -465,11 +466,14 @@ class Layout(object):
                     out.append((c["W_STACK"] + (j - 1) * c["W_LANE"], st0 + away * j * c["LANE_STEP"],
                                 (away, "stack", j)))
         if home == 0:
-            # through the span itself (a shaft width is read across the shaft)
-            for k in range(-n_slide, n_slide + 1):
+            # through the span itself (a shaft width is read across the shaft) -
+            # anywhere along it, not only near the middle: a crowded shaft has
+            # its free spot near one end
+            n_in = max(n_slide, int((s_hi - s_lo) / c["SLIDE_STEP"]) + 1)
+            for k in range(-n_in, n_in + 1):
                 st = prefer + k * c["SLIDE_STEP"]
                 if s_lo + 0.5 <= st <= s_hi - 0.5:
-                    out.append((c["W_INSIDE"] + abs(k) * c["W_SLIDE"], st, (0, 0, k)))
+                    out.append((c["W_INSIDE"] + min(abs(k), n_slide) * c["W_SLIDE"], st, (0, 0, k)))
         for side_i, side in enumerate(sides):
             for lane in range(max_lane + 1):
                 for k in range(-n_slide, n_slide + 1):

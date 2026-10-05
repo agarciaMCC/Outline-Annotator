@@ -130,7 +130,18 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     from the left edge being dimensioned to the core wall, which the soffit-only rule removed (grid 7 is near).
     Open: treat a slab pocket closed by walls as a shaft and give it an overall size.
   - L3N run 36: 182 / 137 / 42 / 0 overlaps, 26 s; L7 run 20: 220 / 174 / 28 / 0, 24 s.
-- Next: Adolfo reviews run 36 / 20, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — shafts the slab wraps around (runs L3N 37–39, L7 21–22).** `Planner.do_shaft_pockets()`: a slab
+  outer edge (≥ `SHAFT_MIN_EDGE` 2 ft, not on a wall / column / beam) whose open side faces a parallel wall face
+  across open space (no slab sampled at ¼, ½, ¾ of the gap; gap ≤ `SHAFT_MAX` 15 ft; the wall face covers ≥ half
+  the edge) gets an overall-size string `edge | wall face`, role `check`, owned by that edge's run/corner feature —
+  the one case a dim goes TO a wall (Adolfo approved). The pocket rectangle is added to `model.obstacles` as an
+  "opening" (`Obst(eid=-1, raw=rect)`), so only the pocket's own size strings (`String.own_voids`) may sit inside;
+  locating dims move out. Layout: home-less strings may now try spots along their whole span, not only ±4 ft of
+  the middle. L3N core shaft (slab 14169070 edges x 229.52 / y 69.61, core walls 14217916 / 14113930): **7'-9½" ×
+  12'-1"**, locating dims (3'-4½" from 7, 7'-7" | 4'-6" from CC) outside it. `core_v2_run39.png`.
+  - L3N run 39: **184 (156 / 28) / 139 placed / 42 review / 0 overlaps, 30 s**; L7 run 22: 220 / 174 / 28 / 0, 24 s
+    (no such pockets on L7).
+- Next: Adolfo reviews run 39 / 22, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).
