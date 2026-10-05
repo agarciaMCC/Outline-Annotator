@@ -186,6 +186,9 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - Left as is: hard-to-reach grids (8–10, "some nuance"), item 42 (enlarged view), outside-crop beams (28, 29).
   - L3N run 47: **181 (153 / 28) / 167 placed / 2 review (both outside crop) / 0 overlaps, 22 s.**
     L7 run 26: **167 (99 / 68) / 141 placed / 3 review / 0 overlaps, 16 s.**
+- **2026-10-05 — run L3N 48: one halfway beam dim.** Adolfo: "every ~35 ft" was a little much — beams over
+  `BEAM_MID_OVER` 40 ft now get ONE intermediate width dim, halfway between the end dims (`BEAM_MID_EVERY` removed).
+  169 planned / 156 placed / 2 review (outside crop) / 0 overlaps, 18 s.
 - Next: a review round on the *placed* dims (close-ups by area), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)

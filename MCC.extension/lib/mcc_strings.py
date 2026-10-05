@@ -39,8 +39,7 @@ CFG = {
     # edge facing a wall face across open space gets an overall-size dim
     "SMALL_OPEN": 4.0,      # ft; a smaller opening gets only its near edge off the grid, plus its size
     "MINOR_EDGE": 3.0,      # ft; an opening edge shorter than this, off the opening's own grid set, is a chamfer/jog
-    "BEAM_MID_OVER": 40.0,  # ft; longer beams also get intermediate width dims (Adolfo 2026-10-05)
-    "BEAM_MID_EVERY": 35.0, # ft; about one intermediate width dim per this length (30-40 ft)
+    "BEAM_MID_OVER": 40.0,  # ft; longer beams also get ONE width dim halfway between the end dims (Adolfo 2026-10-05)
     "SHAFT_MAX": 15.0,      # ft; widest such pocket
     "SHAFT_MIN_EDGE": 2.0,  # ft; shorter slab edges are jogs, not shaft sides
     "STACK": True,
@@ -554,7 +553,9 @@ class Planner(object):
         b_parts = [at_end(-1), at_end(1)] if (s1 - s0) > self.c["TURN_BOTH"] else [at_end(end_dir)]
         L = s1 - s0
         if L > self.c["BEAM_MID_OVER"]:
-            n_mid = max(1, int(round(L / self.c["BEAM_MID_EVERY"])) - 1)
+            # one, halfway between the end dims (Adolfo 2026-10-05: "every
+            # ~35 ft" was a little much)
+            n_mid = 1
             seg = L / float(n_mid + 1)
             for j in range(1, n_mid + 1):
                 pos = s0 + seg * j
