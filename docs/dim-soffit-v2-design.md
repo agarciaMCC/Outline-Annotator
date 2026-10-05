@@ -83,7 +83,20 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     already but `dedupe` folded the two (same witness lines, overlapping span) — the halves keep them apart.
     L3N: 12 CJs, 12 beams, 4 runs now dimensioned at both ends; L7: 7 runs. `ne_v2_run25.png` (CJ 6'-10" both ends).
   - L3N run 25: **182 (156 / 26) / 149 placed / 33 review / 1 overlap, 23 s**; L7 run 12: **220 / 196 / 24 / 0, 21 s.**
-- Next: Adolfo reviews run 25 / 12 (L3N review list grew 18 → 33 with the extra end dims), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — stack order: longest furthest from the element (runs L3N 26–29, L7 13–16).** Adolfo's rule
+  applies to *any* rows standing side by side, not only one stack group (his example: overall `2'-3½"` from a void
+  edge sat inside the beam chain `1'-0" | … | 1'-3½"` at grid 11 / A). Three parts in `mcc_layout`:
+  - `evaluate()`: `W_ORDER` 3.0 penalty when a row would sit nearer the element than a shorter overlapping parallel
+    neighbour (or further than a longer one), within 1.6 lanes; equal lengths → the chain (more refs) inside, the
+    overall outside. `Placed.side` / `Layout.elem_side()` say which way the element lies (0 = line inside its span).
+  - `_order_stacks()` (end of `run()`): groups rows of one family, same element side, overlapping, ≤ 1.5 lanes apart;
+    hands their stations out again shortest-nearest; if that breaks a hard rule (the corner chain's text hit the
+    `1'-3⅜"` text), keeps the shortest row and pushes each longer row out past the previous one (1–2 lanes).
+  - Report line "Stacks reordered shortest-nearest". `corner_v2_run29.png`.
+  - L3N run 29: 182 / 149 placed / 33 review / 1 overlap, 24 s (4 stacks reordered); L7 run 16: 220 / 196 / 24 / 0,
+    22 s (7). Read-only check before the push-out step: 6 of 24 neighbouring pairs out of order on L3N, 4 of 29 on L7
+    — some are unrelated rows (a small chain check beside a long locate dim), not true stacks.
+- Next: Adolfo reviews run 29 / 16 (L3N review list grew 18 → 33 with the extra end dims), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

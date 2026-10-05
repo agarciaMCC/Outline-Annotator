@@ -70,6 +70,7 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 - **30 ft max per dimension** — the field crew's tape. Stacked dims from one grid are the default; chains are checks.
 - **A dimension at each end** of long CJs, slab edges and beams (> 20 ft), for ease of reading. Beam widths at
   beam ends. Line dims up with neighbours where possible.
+- **Stacked rows: shortest nearest the element, longest furthest** — an overall goes outside its chain.
 - "Large Scale" detail items = CJ lines (dimension them); plain detail lines = QC points (ignore).
 - Grids from PDF: called-out dimensions govern spacing; when sheets disagree, the user picks (no default).
 

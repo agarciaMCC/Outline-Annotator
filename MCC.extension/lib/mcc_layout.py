@@ -35,6 +35,7 @@ CFG = {
     "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
     "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
+    "W_ORDER": 3.0,          # a row nearer the element than a shorter neighbour (or further than a longer one)
     "W_COLLINEAR": -0.75,    # bonus for a dim line on the same line as a placed parallel dim (Adolfo: align)
     "COLLINEAR_REACH": 4.0,  # ft from the preferred station a string may move to line up
     "MAX_LANE": 2,          # lanes 0..2 (Adolfo: 2 to 3 rows), 3 = last resort
@@ -69,12 +70,13 @@ PRIORITY = {"run": 0, "corner": 0, "bump": 1, "notch": 1, "step": 1,
 
 
 class Placed(object):
-    __slots__ = ("s", "fi", "st_f", "lo_f", "hi_f", "seg", "boxes", "cost", "cand", "rect", "tplan", "leaders")
+    __slots__ = ("s", "fi", "st_f", "lo_f", "hi_f", "seg", "boxes", "cost", "cand", "rect", "tplan", "leaders", "side")
 
     def __init__(self, s, fi, st_f, lo_f, hi_f, seg, boxes, cost, cand, tplan=None):
         self.s, self.fi, self.st_f, self.lo_f, self.hi_f = s, fi, st_f, lo_f, hi_f
         self.seg, self.boxes, self.cost, self.cand, self.tplan = seg, boxes, cost, cand, tplan
         self.leaders = [it[4] for it in (tplan or []) if it[4]]
+        self.side = None            # set by Layout: +1/-1 element toward higher/lower family stations, 0 inside span
         pts = list(seg) + [pt for b in boxes for pt in b] + [pt for l in self.leaders for pt in l]
         self.rect = (min(p[0] for p in pts), min(p[1] for p in pts),
                      max(p[0] for p in pts), max(p[1] for p in pts))
@@ -166,6 +168,17 @@ class Layout(object):
         g, g0, u, n = self.m.grids[gi]
         g2, g20, u2, n2 = self.m.grids[self.m.families[self.m.fam_of[gi]][0]]
         return 1 if (u[0] * u2[0] + u[1] * u2[1]) > 0 else -1
+
+    def elem_side(self, s, sf):
+        """Where string s's element lies from a dim line at family station sf:
+        +1 toward higher stations, -1 lower, 0 when the line is inside the span."""
+        a = self.to_fam(s.gi, s.span[0], 0.0)[0]
+        b = self.to_fam(s.gi, s.span[1], 0.0)[0]
+        if sf < min(a, b) - 0.05:
+            return 1
+        if sf > max(a, b) + 0.05:
+            return -1
+        return 0
 
     def to_fam(self, gi, st, off):
         p = self.world(gi, st, off)
@@ -278,6 +291,23 @@ class Layout(object):
         a, b = min(a, b), max(a, b)
         xs = [pt[0] for pt in allpts]; ys = [pt[1] for pt in allpts]
         myrect = (min(xs), min(ys), max(xs), max(ys))
+        # stacked rows: shortest nearest the element, longest furthest (Adolfo);
+        # equal lengths: the chain inside, the single overall dim outside
+        my_side = self.elem_side(s, sf)
+        if my_side:
+            my_key = (round((b - a) * 48), -len(s.refs))
+            reach = 1.6 * c["LANE_STEP"]
+            for pl in self.placed:
+                if pl.fi != s.fi or pl.side != my_side or abs(pl.st_f - sf) > reach:
+                    continue
+                if min(b, pl.hi_f) - max(a, pl.lo_f) <= 0.1:
+                    continue
+                pk = (round((pl.hi_f - pl.lo_f) * 48), -len(pl.s.refs))
+                if pk == my_key:
+                    continue
+                nearer = my_side * (sf - pl.st_f) > 0
+                if (my_key > pk) == nearer:
+                    pen += c["W_ORDER"]
         for pl in self.placed:
             if _rects_apart(myrect, pl.rect, c["STATION_GAP"]):
                 continue
@@ -469,6 +499,7 @@ class Layout(object):
         pl = Placed(s, s.fi, sf, min(a, b), max(a, b),
                     (self.world(s.gi, st, lo), self.world(s.gi, st, hi)), boxes, cost, (st, cand),
                     self.text_plan(s, st))
+        pl.side = self.elem_side(s, sf)
         return pl, None
 
     # ---------------- driver ----------------
@@ -514,10 +545,123 @@ class Layout(object):
             left = self._unblock([(pl.s, "poor")], max_total=pl.cost - 1.0)
             if left:
                 self.placed.append(pl)
+        self._order_stacks()
         self.review = still
         for s, why in still:
             self.blocked[why] = self.blocked.get(why, 0) + 1
         return self.placed, self.review
+
+    def _order_stacks(self):
+        """Stacked rows read shortest nearest the element, longest furthest
+        (Adolfo 2026-10-05) - for ANY rows standing side by side, whatever
+        string they came from. Rows of one family whose measured ranges
+        overlap, lying outside their spans on the same side and spaced no more
+        than ~1.5 lanes apart, form a stack; their stations are handed out
+        again by length. A stack whose new order breaks a hard rule keeps
+        its old order."""
+        c = self.c
+        self.notes_order = 0
+        info = []
+        for pl in self.placed:
+            s = pl.s
+            a, b = self.to_fam(s.gi, s.span[0], 0.0)[0], self.to_fam(s.gi, s.span[1], 0.0)[0]
+            lo, hi = min(a, b), max(a, b)
+            if lo - 0.05 <= pl.st_f <= hi + 0.05:
+                continue                        # inside its own span: no "nearest the element"
+            side = 1 if pl.st_f < lo else -1    # +1: element lies toward higher stations
+            info.append((pl, side, abs(pl.hi_f - pl.lo_f)))
+        used = set()
+        gap = 1.5 * c["LANE_STEP"]
+        for pl, side, ln in info:
+            if id(pl) in used:
+                continue
+            grp = [(pl, side, ln)]
+            used.add(id(pl))
+            grew = True
+            while grew:
+                grew = False
+                for q in info:
+                    if id(q[0]) in used or q[0].fi != pl.fi or q[1] != side:
+                        continue
+                    for m in grp:
+                        if abs(q[0].st_f - m[0].st_f) <= gap and \
+                                min(q[0].hi_f, m[0].hi_f) - max(q[0].lo_f, m[0].lo_f) > 0.1:
+                            grp.append(q); used.add(id(q[0])); grew = True
+                            break
+            if len(grp) < 2:
+                continue
+            # stations nearest the element first (element toward +side)
+            stations = sorted([m[0].st_f for m in grp], key=lambda st: -side * st)
+            # shortest first; equal length (a chain and its overall): the
+            # chain inside, the single overall dim outside
+            by_len = sorted(grp, key=lambda m: (round(m[2] * 48), -len(m[0].s.refs)))
+            if [id(m[0]) for m in by_len] == [id(m[0]) for m in sorted(grp, key=lambda m: -side * m[0].st_f)]:
+                continue                        # already shortest-nearest
+            olds = [m[0] for m in grp]
+            for o in olds:
+                self.placed.remove(o)
+            new = []
+            ok = True
+            for (m, st_f) in zip(by_len, stations):
+                s = m[0].s
+                a0, _ = self.to_fam(s.gi, 0.0, 0.0)
+                st = (st_f - a0) * self.fam_sign(s.gi)
+                pen, boxes = self.evaluate(s, st)
+                if pen is None:
+                    ok = False
+                    break
+                offs = [r[0] for r in s.refs]
+                lo_o, hi_o = min(offs), max(offs)
+                sf, aa = self.to_fam(s.gi, st, lo_o)
+                _, bb = self.to_fam(s.gi, st, hi_o)
+                p2 = Placed(s, s.fi, sf, min(aa, bb), max(aa, bb),
+                            (self.world(s.gi, st, lo_o), self.world(s.gi, st, hi_o)), boxes,
+                            m[0].cost, (st, (0, "reordered", 0)), self.text_plan(s, st))
+                p2.side = self.elem_side(s, sf)
+                new.append(p2)
+                self.placed.append(p2)          # later rows are checked against it
+            if not ok:
+                for p2 in new:
+                    self.placed.remove(p2)
+                # second try: keep the shortest row where it is and push each
+                # longer row out past the one before it (one or two lanes)
+                new = []
+                ok = True
+                prev_sf = None
+                for m in by_len:
+                    s = m[0].s
+                    tries = [m[0].st_f] if prev_sf is None else \
+                        ([m[0].st_f] if -side * (m[0].st_f - prev_sf) >= 0.9 * c["LANE_STEP"] else []) + \
+                        [prev_sf - side * k * c["LANE_STEP"] for k in (1, 2)]
+                    got = None
+                    for st_f in tries:
+                        a0, _ = self.to_fam(s.gi, 0.0, 0.0)
+                        st = (st_f - a0) * self.fam_sign(s.gi)
+                        pen, boxes = self.evaluate(s, st)
+                        if pen is not None:
+                            got = (st_f, st, boxes)
+                            break
+                    if got is None:
+                        ok = False
+                        break
+                    st_f, st, boxes = got
+                    offs = [r[0] for r in s.refs]
+                    lo_o, hi_o = min(offs), max(offs)
+                    sf, aa = self.to_fam(s.gi, st, lo_o)
+                    _, bb = self.to_fam(s.gi, st, hi_o)
+                    p2 = Placed(s, s.fi, sf, min(aa, bb), max(aa, bb),
+                                (self.world(s.gi, st, lo_o), self.world(s.gi, st, hi_o)), boxes,
+                                m[0].cost, (st, (0, "pushed out", 0)), self.text_plan(s, st))
+                    p2.side = self.elem_side(s, sf)
+                    new.append(p2)
+                    self.placed.append(p2)
+                    prev_sf = sf
+                if not ok:
+                    for p2 in new:
+                        self.placed.remove(p2)
+                    self.placed.extend(olds)
+                    continue
+            self.notes_order += 1
 
     def _unblock(self, still, max_total=None):
         out = []
