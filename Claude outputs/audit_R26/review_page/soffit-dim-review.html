@@ -1,0 +1,264 @@
+<title>Soffit Dim Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a drafting-room checklist. One sticky title-block strip with progress and filters,
+   then a two-column run of sheet "details" (cards), one column on a phone. */
+:root {
+  --paper: #eef1f3;      /* cool drafting-film grey */
+  --sheet: #ffffff;      /* card / detail ground */
+  --ink: #1b2430;        /* drafting ink */
+  --ink-2: #566170;      /* secondary ink */
+  --rule: #cfd6dd;       /* hairlines */
+  --mark: #7b1fd6;       /* the violet "wanted here" line, same as the pictures */
+  --mark-soft: #efe5fb;
+  --ok: #1f7a4d;  --ok-soft: #e1f2e9;
+  --no: #b3261e;  --no-soft: #f9e3e1;
+  --f-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #12161c; --sheet: #1b2129; --ink: #e6eaef; --ink-2: #9aa5b2; --rule: #2e3742;
+  --mark: #b78bf2; --mark-soft: #2c2140; --ok: #5cc493; --ok-soft: #173126; --no: #f0857d; --no-soft: #3a1d1b;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #12161c; --sheet: #1b2129; --ink: #e6eaef; --ink-2: #9aa5b2; --rule: #2e3742;
+  --mark: #b78bf2; --mark-soft: #2c2140; --ok: #5cc493; --ok-soft: #173126; --no: #f0857d; --no-soft: #3a1d1b;
+  color-scheme: dark }
+
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 0 48px; }
+
+header.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper);
+  border-bottom: 1px solid var(--rule); }
+.bar-in { max-width: 1180px; margin: 0 auto; padding: 12px 16px; display: grid; gap: 10px;
+  grid-template-columns: 1fr auto; align-items: end; }
+.title { min-width: 0; }
+.eyebrow { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: 30px; line-height: 1.05; margin: 2px 0 0; letter-spacing: .01em; text-wrap: balance; }
+.progress { text-align: right; font-family: var(--f-mono); font-size: 13px; color: var(--ink-2); white-space: nowrap; }
+.progress b { font-size: 20px; color: var(--ink); font-weight: 500; }
+.meter { grid-column: 1 / -1; height: 6px; background: var(--rule); border-radius: 3px; overflow: hidden; display: flex; }
+.meter i { display: block; height: 100%; transition: width .25s ease; }
+.meter .m-ok { background: var(--ok); } .meter .m-no { background: var(--no); }
+.filters { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 500 13px var(--f-body); border: 1px solid var(--rule); background: var(--sheet); color: var(--ink);
+  border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--sheet); border-color: var(--ink); }
+.chip:focus-visible, button:focus-visible, textarea:focus-visible { outline: 2px solid var(--mark); outline-offset: 2px; }
+
+.intro { max-width: 68ch; color: var(--ink-2); margin: 18px 0 6px; }
+.intro .legend { color: var(--mark); font-weight: 600; }
+.notice { margin: 10px 0 0; padding: 10px 12px; border: 1px solid var(--rule); background: var(--sheet); border-radius: 6px; }
+.notice[hidden] { display: none; }
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+@media (max-width: 760px) { .grid { grid-template-columns: minmax(0, 1fr); } h1 { font-size: 26px; } }
+
+.card { background: var(--sheet); border: 1px solid var(--rule); border-radius: 8px; overflow: hidden;
+  display: flex; flex-direction: column; min-width: 0; }
+.card.is-ok { border-color: var(--ok); } .card.is-no { border-color: var(--no); }
+.card-head { display: flex; align-items: baseline; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+.num { font-family: var(--f-display); font-weight: 700; font-size: 22px; line-height: 1; font-variant-numeric: tabular-nums; }
+.kind { font-family: var(--f-display); font-weight: 600; font-size: 17px; letter-spacing: .02em; }
+.tag { margin-left: auto; font-family: var(--f-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--ink-2); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }
+.pic { background: #fff; aspect-ratio: 4 / 3; max-width: 100%; display: block; border-bottom: 1px solid var(--rule); }
+.pic img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.nopic { aspect-ratio: 4 / 3; display: grid; place-items: center; color: var(--ink-2); text-align: center;
+  padding: 16px; border-bottom: 1px solid var(--rule); background: var(--paper); }
+.body { padding: 12px 14px 14px; display: grid; gap: 10px; }
+.chain { font-family: var(--f-mono); font-size: 13.5px; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; }
+.chain .val { background: var(--mark-soft); color: var(--mark); border-radius: 3px; padding: 0 5px; font-weight: 500; }
+.chain .sep { color: var(--ink-2); }
+.why { margin: 0; }
+.why strong { font-weight: 600; }
+.verdict { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.vbtn { font: 600 14px var(--f-body); padding: 10px 8px; border-radius: 6px; cursor: pointer; border: 1px solid var(--rule);
+  background: var(--paper); color: var(--ink); }
+.vbtn.ok[aria-pressed="true"] { background: var(--ok); border-color: var(--ok); color: var(--sheet); }
+.vbtn.no[aria-pressed="true"] { background: var(--no); border-color: var(--no); color: var(--sheet); }
+.vbtn:disabled { opacity: .5; cursor: default; }
+.whys { display: flex; flex-wrap: wrap; gap: 6px; }
+.whys[hidden] { display: none; }
+.whys .chip { font-size: 12.5px; }
+.whys .chip[aria-pressed="true"] { background: var(--no); border-color: var(--no); color: var(--sheet); }
+label.note-l { font-size: 12px; color: var(--ink-2); }
+textarea { width: 100%; box-sizing: border-box; min-height: 44px; resize: vertical; font: 14px var(--f-body);
+  color: var(--ink); background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 8px 10px; }
+.saved { font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-2); min-height: 1em; }
+.empty { grid-column: 1 / -1; text-align: center; color: var(--ink-2); padding: 40px 0; }
+@media (prefers-reduced-motion: reduce) { .meter i { transition: none; } }
+</style>
+
+<header class="bar">
+  <div class="bar-in">
+    <div class="title">
+      <div class="eyebrow">1268 Kalae · Dim Soffit v2 · run 45</div>
+      <h1>Level 3 North: dimensions left for review</h1>
+    </div>
+    <div class="progress"><b id="done">0</b> / <span id="total">0</span> checked</div>
+    <div class="meter" aria-hidden="true"><i class="m-ok" id="m-ok" style="width:0"></i><i class="m-no" id="m-no" style="width:0"></i></div>
+    <div class="filters" role="group" aria-label="Show">
+      <button class="chip" id="f-todo" data-f="todo" aria-pressed="true">To check</button>
+      <button class="chip" id="f-all" data-f="all" aria-pressed="false">All</button>
+      <button class="chip" id="f-ok" data-f="ok" aria-pressed="false">Right call</button>
+      <button class="chip" id="f-no" data-f="no" aria-pressed="false">Wrong call</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="intro">Each card is a dimension Dim Soffit wanted but left for you instead of drawing it.
+    The <span class="legend">violet line</span> shows where it wanted to go. Was leaving it out the right call?
+    Tap <b>Wrong call</b> if the tool should have found a spot for it, or if it shouldn't want that dimension at all, and add a word or two.</p>
+  <p class="notice" id="notice" hidden></p>
+  <section class="grid" id="grid" aria-live="polite"></section>
+</main>
+
+<script>
+const ITEMS = [{"id":"L3NORTH-01","kind":"Slab edge","role":"locate","reason":"inside an opening","chain":["slab edge","7'-8 11/16\"","grid CC"],"img":"img/L3NORTH-01.png","intermediate":false,"element":"14220571"},{"id":"L3NORTH-02","kind":"Slab edge","role":"locate","reason":"inside an opening","chain":["slab edge","13'-6\"","grid CC"],"img":"img/L3NORTH-02.png","intermediate":false,"element":"14220571"},{"id":"L3NORTH-03","kind":"Slab edge","role":"locate","reason":"too close to a parallel string","chain":["slab edge","16'-4\"","grid BB"],"img":"img/L3NORTH-03.png","intermediate":false,"element":"14220571"},{"id":"L3NORTH-04","kind":"Slab edge","role":"locate","reason":"inside an opening","chain":["slab edge","16'-4\"","grid BB"],"img":"img/L3NORTH-04.png","intermediate":false,"element":"14220571"},{"id":"L3NORTH-05","kind":"Core opening","role":"locate","reason":"inside an opening","chain":["opening edge","18'-2\"","opening edge","14'-10\"","grid CC"],"img":"img/L3NORTH-05.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-06","kind":"Opening","role":"locate","reason":"text over a note/tag","chain":["opening edge","2'-3\"","opening edge"],"img":"img/L3NORTH-06.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-07","kind":"Opening","role":"locate","reason":"inside an opening","chain":["opening edge","2'-11\"","opening edge"],"img":"img/L3NORTH-07.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-08","kind":"Opening","role":"locate","reason":"over a wall","chain":["grid 6","3'-11\"","opening edge"],"img":"img/L3NORTH-08.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-09","kind":"Opening","role":"locate","reason":"text over a note/tag","chain":["grid 6","11'-4 7/8\"","opening edge"],"img":"img/L3NORTH-09.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-10","kind":"Opening","role":"locate","reason":"over a wall","chain":["grid 6","11'-11\"","opening edge"],"img":"img/L3NORTH-10.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-11","kind":"Opening","role":"locate","reason":"too close to a parallel string","chain":["grid 6","18'-6 5/8\"","opening edge"],"img":"img/L3NORTH-11.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-12","kind":"Core opening","role":"locate","reason":"inside an opening","chain":["grid CC","15'-0\"","opening edge"],"img":"img/L3NORTH-12.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-13","kind":"Core opening","role":"locate","reason":"too close to a parallel string","chain":["grid CC","18'-3\"","opening edge"],"img":"img/L3NORTH-13.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-14","kind":"Core opening","role":"locate","reason":"over a wall","chain":["grid 6","3'-4\"","opening edge"],"img":"img/L3NORTH-14.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-15","kind":"Core opening","role":"locate","reason":"over a wall","chain":["grid 6","4'-9\"","opening edge"],"img":"img/L3NORTH-15.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-16","kind":"Penetration","role":"locate","reason":"too close to a parallel string","chain":["grid 7","11'-2 1/2\"","opening edge"],"img":"img/L3NORTH-16.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-17","kind":"Penetration","role":"locate","reason":"too close to a parallel string","chain":["opening edge","5'-4 1/2\"","grid CC"],"img":"img/L3NORTH-17.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-18","kind":"Penetration","role":"locate","reason":"too close to a parallel string","chain":["opening edge","5'-10 1/2\"","grid CC"],"img":"img/L3NORTH-18.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-19","kind":"Small void","role":"locate","reason":"inside an opening","chain":["opening edge","14'-4 3/4\"","grid CC"],"img":"img/L3NORTH-19.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-20","kind":"Small void","role":"locate","reason":"inside an opening","chain":["opening edge","6'-9\"","grid CC"],"img":"img/L3NORTH-20.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-21","kind":"Small void","role":"locate","reason":"inside an opening","chain":["opening edge","8'-9\"","grid BB"],"img":"img/L3NORTH-21.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-22","kind":"Small void","role":"locate","reason":"over a wall","chain":["opening edge","4'-1 1/2\"","grid 11"],"img":"img/L3NORTH-22.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-23","kind":"Beam","role":"locate","reason":"text overlaps another text","chain":["grid A","1'-3 3/8\"","beam side","1'-8\"","beam side"],"img":"img/L3NORTH-23.png","intermediate":false,"element":"14171002"},{"id":"L3NORTH-24","kind":"Beam","role":"locate","reason":"over a wall","chain":["grid A","1'-3 3/8\"","beam side","1'-8\"","beam side"],"img":"img/L3NORTH-24.png","intermediate":false,"element":"14171002"},{"id":"L3NORTH-25","kind":"Beam","role":"locate","reason":"text overlaps another text","chain":["beam side","4'-0\"","beam side","0'-1 1/2\"","grid 11"],"img":"img/L3NORTH-25.png","intermediate":false,"element":"14181669"},{"id":"L3NORTH-26","kind":"Beam","role":"locate","reason":"over a wall","chain":["beam side","4'-0\"","beam side","0'-1 1/2\"","grid 11"],"img":"img/L3NORTH-26.png","intermediate":false,"element":"14181669"},{"id":"L3NORTH-27","kind":"Beam","role":"locate","reason":"over a wall","chain":["beam side","4'-9\"","grid 5","2'-9\"","beam side"],"img":"img/L3NORTH-27.png","intermediate":false,"element":"14184520"},{"id":"L3NORTH-28","kind":"Beam","role":"locate","reason":"outside crop","chain":["beam side","2'-5 3/4\"","grid 2","1'-6\"","beam side"],"img":null,"intermediate":false,"element":"14184522"},{"id":"L3NORTH-29","kind":"Beam","role":"locate","reason":"outside crop","chain":["beam side","3'-4\"","grid 3","2'-8\"","beam side"],"img":"img/L3NORTH-29.png","intermediate":false,"element":"14184524"},{"id":"L3NORTH-30","kind":"Beam","role":"locate","reason":"text overlaps another text","chain":["beam side","1'-7 1/8\"","grid 7","3'-10 7/8\"","beam side"],"img":"img/L3NORTH-30.png","intermediate":false,"element":"14211982"},{"id":"L3NORTH-31","kind":"Beam","role":"locate","reason":"over a wall","chain":["grid 6","0'-11\"","beam side","2'-0\"","beam side"],"img":"img/L3NORTH-31.png","intermediate":false,"element":"14602325"},{"id":"L3NORTH-32","kind":"Beam","role":"locate","reason":"over a wall","chain":["grid 6","0'-11\"","beam side","2'-0\"","beam side"],"img":"img/L3NORTH-32.png","intermediate":false,"element":"14602458"},{"id":"L3NORTH-33","kind":"Beam","role":"locate","reason":"line through another text","chain":["beam side","1'-9\"","beam side","15'-5\"","grid BB"],"img":"img/L3NORTH-33.png","intermediate":false,"element":"14651533"},{"id":"L3NORTH-34","kind":"Beam","role":"locate","reason":"text over a note/tag","chain":["beam side","2'-3\"","beam side","4'-6\"","grid CC"],"img":"img/L3NORTH-34.png","intermediate":false,"element":"14651535"},{"id":"L3NORTH-35","kind":"Beam","role":"locate","reason":"outside crop","chain":["beam side","4'-0\"","beam side","0'-1 1/2\"","grid 11"],"img":"img/L3NORTH-35.png","intermediate":false,"element":"14895549"},{"id":"L3NORTH-36","kind":"Construction joint","role":"locate","reason":"line through another text","chain":["CJ","6'-6 1/4\"","grid 5","1'-2\"","CJ"],"img":"img/L3NORTH-36.png","intermediate":false,"element":"20572294"},{"id":"L3NORTH-37","kind":"Construction joint","role":"locate","reason":"too close to a parallel string","chain":["CJ","13'-0 1/2\"","grid EE"],"img":"img/L3NORTH-37.png","intermediate":false,"element":"20572300"},{"id":"L3NORTH-38","kind":"Construction joint","role":"locate","reason":"inside an opening","chain":["CJ","10'-1 1/2\"","grid EE"],"img":"img/L3NORTH-38.png","intermediate":false,"element":"20572302"},{"id":"L3NORTH-39","kind":"Slab step","role":"check","reason":"inside an opening","chain":["slab edge","0'-8\"","slab edge"],"img":"img/L3NORTH-39.png","intermediate":false,"element":"14221225"},{"id":"L3NORTH-40","kind":"Core opening","role":"check","reason":"text inside an opening","chain":["opening edge","1'-5\"","opening edge"],"img":"img/L3NORTH-40.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-41","kind":"Penetration","role":"check","reason":"too close to a parallel string","chain":["opening edge","0'-6\"","opening edge"],"img":"img/L3NORTH-41.png","intermediate":false,"element":"14169070"},{"id":"L3NORTH-42","kind":"Penetration","role":"check","reason":"too close to a parallel string","chain":["opening edge","0'-6\"","opening edge"],"img":"img/L3NORTH-42.png","intermediate":false,"element":"14169070"}];
+
+const REASON = {
+  "inside an opening": "Every spot it tried would run through an opening.",
+  "text inside an opening": "Its text would land inside an opening.",
+  "over a wall": "Every spot it tried would cross a wall.",
+  "over a column": "Every spot it tried would cross a column.",
+  "too close to a parallel string": "No room: other dimensions already sit right beside it.",
+  "text overlaps another text": "Its text would collide with another dimension's text.",
+  "line through another text": "Its line would run through another dimension's text.",
+  "text over another line": "Its text would sit on another dimension line.",
+  "text over another leader": "Its text would sit on another dimension's leader.",
+  "leader through another text": "Its leader would cross another dimension's text.",
+  "text over a note/tag": "Its text would land on a note or tag.",
+  "line through a note/tag": "Its line would cross a note or tag.",
+  "outside crop": "The only free spots are outside the view's crop.",
+  "on an edge": "It would sit right on top of an edge.",
+  "on a grid line": "It would sit on a gridline."
+};
+const WHYS = ["Should fit somewhere", "Put it on the other side", "Not needed", "Measure from a different grid"];
+
+const state = {};          // id -> {verdict, whys:[], note, at}
+let filter = "todo";
+let db = null, canWrite = true;
+const $ = s => document.querySelector(s);
+const notice = msg => { const n = $("#notice"); n.textContent = msg; n.hidden = !msg; };
+
+function chainHTML(chain) {
+  return chain.map(p => /^-?\d+'-/.test(p)
+    ? `<span class="val">${p}</span>`
+    : `<span>${p}</span>`).join('<span class="sep">→</span>');
+}
+
+function render() {
+  const g = $("#grid");
+  const show = ITEMS.filter(it => {
+    const v = state[it.id] && state[it.id].verdict;
+    return filter === "all" || (filter === "todo" ? !v : v === filter);
+  });
+  g.innerHTML = "";
+  if (!show.length) {
+    g.innerHTML = `<p class="empty">${filter === "todo" ? "All checked. Tell Claude you're done." : "Nothing here yet."}</p>`;
+  }
+  for (const it of show) g.appendChild(card(it));
+  const done = ITEMS.filter(it => state[it.id] && state[it.id].verdict).length;
+  const ok = ITEMS.filter(it => state[it.id] && state[it.id].verdict === "ok").length;
+  $("#done").textContent = done; $("#total").textContent = ITEMS.length;
+  $("#m-ok").style.width = (100 * ok / ITEMS.length) + "%";
+  $("#m-no").style.width = (100 * (done - ok) / ITEMS.length) + "%";
+}
+
+function card(it) {
+  const s = state[it.id] || {};
+  const n = parseInt(it.id.split("-")[1], 10);
+  const el = document.createElement("article");
+  el.className = "card" + (s.verdict === "ok" ? " is-ok" : s.verdict === "no" ? " is-no" : "");
+  const pic = it.img
+    ? `<div class="pic"><img src="${it.img}" alt="Plan close-up for item ${n}: violet line shows where the ${it.kind.toLowerCase()} dimension wanted to go" loading="lazy"></div>`
+    : `<div class="nopic">Outside the view's crop, so there's no picture.<br>Element ${it.element} in Revit.</div>`;
+  el.innerHTML = `
+    <div class="card-head"><span class="num">${n}</span><span class="kind">${it.kind}</span>
+      <span class="tag">${it.role === "check" ? "size check" : "locating"}</span></div>
+    ${pic}
+    <div class="body">
+      <div class="chain" aria-label="What it measures">${chainHTML(it.chain)}</div>
+      <p class="why"><strong>Left out:</strong> ${REASON[it.reason] || it.reason}</p>
+      <div class="verdict">
+        <button class="vbtn ok" id="ok-${it.id}" aria-pressed="${s.verdict === "ok"}">Right call</button>
+        <button class="vbtn no" id="no-${it.id}" aria-pressed="${s.verdict === "no"}">Wrong call</button>
+      </div>
+      <div class="whys" ${s.verdict === "no" ? "" : "hidden"} role="group" aria-label="What's wrong">
+        ${WHYS.map((w, i) => `<button class="chip" id="w-${it.id}-${i}" aria-pressed="${(s.whys || []).includes(w)}">${w}</button>`).join("")}
+      </div>
+      <div><label class="note-l" for="note-${it.id}">Note (optional)</label>
+        <textarea id="note-${it.id}" rows="2" placeholder="e.g. goes above the opening, beside the 8'-3&quot;">${(s.note || "").replace(/</g, "&lt;")}</textarea></div>
+      <div class="saved" id="sv-${it.id}">${s.at ? "Saved" : ""}</div>
+    </div>`;
+  const disable = !canWrite;
+  el.querySelector(".vbtn.ok").disabled = disable;
+  el.querySelector(".vbtn.no").disabled = disable;
+  el.querySelector(".vbtn.ok").onclick = () => save(it.id, { verdict: s.verdict === "ok" ? null : "ok" });
+  el.querySelector(".vbtn.no").onclick = () => save(it.id, { verdict: s.verdict === "no" ? null : "no" });
+  el.querySelectorAll(".whys .chip").forEach((b, i) => b.onclick = () => {
+    const cur = new Set((state[it.id] && state[it.id].whys) || []);
+    cur.has(WHYS[i]) ? cur.delete(WHYS[i]) : cur.add(WHYS[i]);
+    save(it.id, { whys: [...cur] });
+  });
+  const ta = el.querySelector("textarea");
+  ta.disabled = disable;
+  let t = null;
+  ta.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => save(it.id, { note: ta.value }, true), 900); });
+  ta.addEventListener("blur", () => { clearTimeout(t); if ((state[it.id] || {}).note !== ta.value) save(it.id, { note: ta.value }, true); });
+  return el;
+}
+
+const writing = {};
+async function save(id, patch, quiet) {
+  const next = Object.assign({ verdict: null, whys: [], note: "" }, state[id] || {}, patch, { at: new Date().toISOString() });
+  if (next.verdict !== "no") next.whys = [];
+  state[id] = next;
+  if (!quiet) render();
+  const sv = document.getElementById("sv-" + id);
+  if (!db) { if (sv) sv.textContent = "Not saved: answers can't be stored in this view"; return; }
+  if (sv) sv.textContent = "Saving…";
+  while (writing[id]) await writing[id];
+  const body = { verdict: next.verdict, whys: next.whys, note: next.note, at: next.at };
+  writing[id] = db.doc("verdicts/" + id).set(body).then(() => {
+    const s2 = document.getElementById("sv-" + id); if (s2) s2.textContent = "Saved";
+  }).catch(e => {
+    const s2 = document.getElementById("sv-" + id);
+    if (s2) s2.textContent = e && e.code === "invalid_argument" ? "You can view this page but not save answers." : "Didn't save. Try that card again.";
+    if (e && e.code === "invalid_argument") { canWrite = false; render(); }
+  }).finally(() => { writing[id] = null; });
+  await writing[id];
+}
+
+document.querySelectorAll(".filters .chip").forEach(b => b.onclick = () => {
+  filter = b.dataset.f;
+  document.querySelectorAll(".filters .chip").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  render();
+});
+
+render();
+
+(async () => {
+  try { db = await window.claude?.use?.("db"); } catch (e) { db = null; }
+  if (!db) { notice("Answers can't be saved in this view. Open the page from claude.ai while signed in to record them."); return; }
+  try {
+    const user = await window.claude.use("user");
+    const w = user && user.can ? await user.can("data.write") : null;
+    if (w === false) { canWrite = false; notice("You can look through the cards, but only the people working on this can record answers."); render(); }
+  } catch (e) {}
+  db.collection("verdicts").onSnapshot(snap => {
+    let changed = false;
+    for (const d of snap.docs) {
+      const v = d.data(); if (!v) continue;
+      const cur = state[d.id];
+      if (!cur || (v.at && v.at !== cur.at && !writing[d.id])) { state[d.id] = { verdict: v.verdict || null, whys: v.whys || [], note: v.note || "", at: v.at }; changed = true; }
+    }
+    if (changed && !document.activeElement?.matches?.("textarea")) render();
+  }, e => notice("Live updates stopped. Reload the page to see the latest answers."));
+})();
+</script>
