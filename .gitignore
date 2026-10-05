@@ -20,3 +20,6 @@ _to_delete/
 
 # Separate tool with its own repository
 RevitMCP.extension/
+
+# Other projects' models and PDFs (private)
+Reference Projects/
