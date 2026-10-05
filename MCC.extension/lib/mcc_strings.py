@@ -655,6 +655,14 @@ class Planner(object):
         gi, off = ng
         if abs(off) < self.c["ON_GRID_TOL"]:
             self.located_by[id(cj)] = "on grid"; return
+        # a CJ running along a beam side or a slab edge is located by that
+        # element's dims (Adolfo: CJ 3'-8 15/16" off B sat on the beam side
+        # 1/16" away - a third "3'-9"" nobody needs)
+        slab_faces = [type("_E", (), {"sides": sl.edges, "faces": sl.edges})() for sl in self.m.slabs]
+        if self.flush(cj, self.m.beams) or self.flush(cj, slab_faces):
+            self.located_by[id(cj)] = "on a beam side / slab edge"
+            self.note("CJ on a beam side or slab edge (skipped)")
+            return
         s0, s1 = sorted([self.m.station(cj.p0, gi), self.m.station(cj.p1, gi)])
         cands = [x for x in (self.anchor(fi, gi, off, -1, s0, s1, walls=False),
                              self.anchor(fi, gi, off, +1, s0, s1, walls=False)) if x]

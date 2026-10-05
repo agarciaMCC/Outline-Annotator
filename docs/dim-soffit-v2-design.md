@@ -194,6 +194,10 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   "end" dim went at the joint and 14895567's real-end dim was deduped as its duplicate (same two sides). `do_beam`
   now checks each end for a beam continuing in line with the same side offsets (`continues()`) — no width dim at
   such a joint; the piece's other end gets it. `beamjoint_v2_run49.png`.
+- **2026-10-05 — run L3N 50: CJs on a beam side skipped.** The third "3'-9"" at that band end was CJ 274 to grid B,
+  3'-8 15/16" (shown rounded) — the CJ runs along the beam side 1/16" away, so the beam width already locates it.
+  `do_cj` skips a CJ `flush()` with a beam side or a slab edge (7 on L3N). 164 / 151 placed / 2 review / 0 overlaps.
+  `beamjoint_v2_run50.png`.
 - Next: a review round on the *placed* dims (close-ups by area), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
