@@ -78,7 +78,7 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 | `grid-detection-from-pdf.md` | Grids from PDF engine and decisions |
 | `columns-from-pdf-design.md` | Columns from PDF engine, schedule reader, test library |
 | `revit-mcp-setup.md` | Revit MCP rig, local patches, ground rules |
-| `other-projects-study.md` | (to create) How other McClone projects were detailed vs Kalae |
+| `other-projects-study.md` | How Alia, Eastlake, Bothell soffit plans are dimensioned vs Kalae; open questions |
 | `project-readme.md` | Early (v0.3) button overview — partly outdated |
 
 ## Working style

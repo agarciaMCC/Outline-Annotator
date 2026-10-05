@@ -25,9 +25,9 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - **`W_INSIDE` 1.0 → 3.5**: a core/shaft string goes through its own opening only when the lanes outside are taken (hand sheets on both floors put the shaft lengths beside the shaft, widths above/below it).
   - **Merge through a gridline** (`Planner.merge_through_anchor`): two locate strings off the same grid, one each side, with overlapping spans become `edge | grid | edge` (3'-4½" | 1'-7½" at every sawtooth step, 9 on L7, 6 on L3N).
   - Result **L7 run 4: 102 planned / 85 placed / 17 review (7 over a note/tag) / 0 overlaps, 23 s; Dim Check 106/172 located (61%)** vs hand 25%. **L3N run 16: 117 / 103 / 14 / 0, 17 s; 162/217 located (74%).** Images `L7_core_hand.png`, `L7_core_auto4.png`, `L7_west_hand.png`, `L7_west_auto4.png`, `core_v2_run16.png`.
-  - Not done from the L7 hand sheet: grid-to-grid overall strings; "R.O." suffix on opening dims (ask Adolfo whether that is standard); the running perimeter chain style.
+  - Not done from the L7 hand sheet: grid-to-grid overall strings (→ Dim Grids, decided 2026-10-05); "R.O." suffix (off by default, decided 2026-10-05); the running perimeter chain style.
   - **Open (next):** the 12 "over a wall" strings (allow a wall-anchored width string to sit on its own wall, or pull the lane inward); the 13 plan-NONE edges (stubs, angled beam faces); a 1" void edge next to a wall should count as flush; feature refinements listed under Stage 1.
-- Next: the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- Next: stacked-from-grid locating dims as the default (decision 2026-10-05), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).
@@ -38,6 +38,9 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
 - **Pulled-out text aligned** where several are near each other, for a cleaner look (2026-10-02).
 - **Crowded areas:** avoid dim lines crossing; dimension nearby elements on opposite sides instead (2026-10-02).
 - **Pulled-out text** sits on the far side of the dim line from the element, not between the line and the element (2026-10-02).
+- **Stacked dims from one grid = default locating style** (2026-10-05, after `other-projects-study.md`): each edge point gets its own dim from the grid, stepping outward; chained strings stay as double checks; the user deletes extras on review. Not built yet — v2's planner only makes chains.
+- **"R.O." off by default** (2026-10-05); the user adds it to openings themselves.
+- **Grid-to-grid + overall strings belong to `Dim Grids`**, not Dim Soffit v2 (2026-10-05).
 - **Dim Check must show where** the unlocated edge is in the view, not just link to the element (2026-10-02) — done with the DIM? marks.
 
 ## Why v1 can't get there
