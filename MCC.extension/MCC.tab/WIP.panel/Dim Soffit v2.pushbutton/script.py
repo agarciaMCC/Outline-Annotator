@@ -74,6 +74,9 @@ out.print_md("Stacks reordered shortest-nearest: {} | dims joined end to end: {}
     getattr(lay, "notes_order", 0), getattr(lay, "notes_join", 0), getattr(lay, "notes_optional", 0), getattr(lay, "notes_harder", 0)))
 out.print_md("Model: {} lines from the view's cut plane skipped, {} holes filled by other floors ignored, {} curb/CMU walls ignored".format(
     getattr(model, "cut_edges", 0), getattr(model, "filled_holes", 0), len(getattr(model, "soft_walls", []))))
+if getattr(plan, "enlarged", None):
+    out.print_md("### For an enlarged plan ({}) - small openings/notches too crowded at this scale".format(len(plan.enlarged)))
+    out.print_md(", ".join(plan.enlarged))
 if plan.notes:
     out.print_table(sorted(plan.notes.items()), columns=["plan notes", "count"])
 if review:

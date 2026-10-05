@@ -32,7 +32,8 @@ CFG = {
     # rows 3/16" apart at every scale, first row ~1/4" off the object);
     # Layout converts these to plan feet with the view scale
     "LANE_STEP_IN": 0.1875,  # paper inches between stacked dim lines
-    "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row
+    "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row (3/8" moved dims Adolfo had left alone)
+    "MIN_GAP_IN": 0.25,      # paper inches; an opening's dim line never closer to the opening than this
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
     "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
     "W_ORDER": 3.0,          # a row nearer the element than a shorter neighbour (or further than a longer one)
@@ -137,6 +138,7 @@ class Layout(object):
         self.c.setdefault("FIRST_GAP", self.c["FIRST_GAP_IN"] * k)
         self.c.setdefault("STATION_GAP", self.c["STATION_GAP_IN"] * k)
         self.c.setdefault("EDGE_CLEAR", self.c["EDGE_CLEAR_IN"] * k)
+        self.c.setdefault("MIN_GAP", self.c["MIN_GAP_IN"] * k)
         self.par_edges = self._parallel_edges(model)
         self._ext_cache = {}
         self.tsize = PL.text_size_ft(dim_type) * view.Scale     # ft on the plan
@@ -486,6 +488,12 @@ class Layout(object):
             ext = self._extent(f, s.gi)
             if ext and ext[0] + 0.1 < st < ext[1] - 0.1:
                 pen += c["W_OWN_SPAN"]
+            # never hugging the opening: at least MIN_GAP off it (the tool had
+            # some 1/16" away; Adolfo moved them out to ~3/8")
+            if ext:
+                out_by = max(ext[0] - st, st - ext[1])
+                if 0.0 < out_by < c["MIN_GAP"]:
+                    return None, "too close to its opening"
         return pen, boxes
 
     def _extent(self, f, gi):

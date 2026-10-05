@@ -198,7 +198,22 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   3'-8 15/16" (shown rounded) — the CJ runs along the beam side 1/16" away, so the beam width already locates it.
   `do_cj` skips a CJ `flush()` with a beam side or a slab edge (7 on L3N). 164 / 151 placed / 2 review / 0 overlaps.
   `beamjoint_v2_run50.png`.
-- Next: a review round on the *placed* dims (close-ups by area), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — learning from Adolfo's hand edits of the L3N test view (runs L3N 51–52, L7 27).** `snapshot_dims.py`
+  records every dim in a view (refs, line, segments, text), tagged with the planner string it came from (matched by
+  referenced elements + values); `compare_snapshots.py` classifies each change against the element's extent.
+  Run 50 vs his edit: 55 left as is, 60 edited (21 CJ dims moved ~1/4" past the CJ's END; openings moved out from
+  ~1/16" to ~3/8"; beam end widths pulled in to ~1/4"), 32 deleted, 30 added (`compare_L3N_edits.json`).
+  His explanations: overall beam widths added by mistake; small openings / the notch by the core are too cluttered —
+  enlarged plan; core-wall dims of edges a grid already locates are doubles; jog checks stay; "doubled" run / CJ dims
+  were the two end dims of 20–40 ft edges landing 8–18 ft apart; two beam end dims dropped for bad model geometry.
+  Changes: `TURN_BOTH` 20 → 40 (`BEAM_BOTH` 20 keeps beams); `do_cj` places CJ dims just past an end
+  (`BEAM_END_GAP_IN` 1/4", end with open slab past it; both ends > 40 ft) and CJs no longer merge through a grid;
+  `Planner.cluttered_small()` sets small openings / notches with ≥ 2 others within `CLUTTER_R` 8 ft aside
+  "for an enlarged plan" (report section); `drop_wall_where_grid()`; layout `MIN_GAP_IN` 1/4": an opening's dim
+  never closer to it (hard). Tried first row 3/8" (run 51): moved 21 dims he had left alone — back to 1/4".
+  Agreement with his version (within 3/16" of his spot): left-as-is 55 → 43 of 55, moved 16 → 20 of 60, added 1 → 3
+  of 30. L3N run 52: 148 / 141 placed / 2 review / 0 overlaps; L7 run 27: 160 / 138 / 2 / 0.
+- Next: a second edit round to see what still differs, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

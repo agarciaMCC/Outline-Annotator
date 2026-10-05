@@ -22,8 +22,12 @@ CFG = {
     "FLUSH_TOL": 1.0 / 48,
     "SAME_OFF_TOL": 1.0 / 96,
     "CORNER_IN": 2.0,       # ft; run dims sit this far in from the corner
-    "TURN_BOTH": 20.0,      # ft; runs longer than this located at both ends
-    "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (hand sheets: ~1/4")
+    "TURN_BOTH": 40.0,      # ft; slab edges / CJs longer than this get a dim at each end (Adolfo 2026-10-05:
+                            # at 20 ft the two end dims sat 8-18 ft apart and read as doubles; was 20)
+    "BEAM_BOTH": 20.0,      # ft; beams longer than this get a width dim at each end
+    "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (3/8" moved dims Adolfo had left alone)
+    "BEAM_END_GAP_IN": 0.25, # paper inches past a beam end for its width dim (Adolfo pulled them in to ~1/4")
+    "CLUTTER_R": 8.0,       # ft; a small opening/notch with 2+ other small ones this close -> enlarged plan
     "LANE_STEP_IN": 0.1875, # paper inches between stacked rows (hand sheets: 3/16" at every scale)
     "CONSISTENCY": 1.0,     # switch to the neighbours' grid only if no farther (Adolfo
                             # 2026-10-05: always dimension from the closest gridline; was 1.25)
@@ -99,6 +103,7 @@ class Planner(object):
         # paper inches -> plan feet at this view's scale
         sc = float(getattr(getattr(model, "view", None), "Scale", 96) or 96)
         self.c.setdefault("OPEN_OFFSET", self.c["OPEN_OFFSET_IN"] * sc / 12.0)
+        self.c.setdefault("BEAM_END_GAP", self.c["BEAM_END_GAP_IN"] * sc / 12.0)
         self.c.setdefault("LANE_STEP", self.c["LANE_STEP_IN"] * sc / 12.0)
         self.notes = {}
         self.located_by = {}        # id(edge) -> reason (no string needed)
@@ -565,14 +570,14 @@ class Planner(object):
             end_dir = 1
         elif cont_hi and not cont_lo:
             end_dir = -1
-        gap = self.c["OPEN_OFFSET"]
+        gap = self.c["BEAM_END_GAP"]
         ext = 8.0                                   # ft of open space past an end the dim may use
         def at_end(d):
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
             return (span, e_st + d * gap, d, False)
         ends_ok = [d for d, c in ((-1, cont_lo), (1, cont_hi)) if not c]
-        if (s1 - s0) > self.c["TURN_BOTH"]:
+        if (s1 - s0) > self.c["BEAM_BOTH"]:
             b_parts = [at_end(d) for d in ends_ok]
         else:
             b_parts = [at_end(end_dir)] if ends_ok else []
@@ -667,9 +672,24 @@ class Planner(object):
         cands = [x for x in (self.anchor(fi, gi, off, -1, s0, s1, walls=False),
                              self.anchor(fi, gi, off, +1, s0, s1, walls=False)) if x]
         anc = min(cands, key=lambda x: abs(x[0] - off)) if cands else self.gref(gi) + (self.gname[gi],)
-        for span, pref, out in self.end_parts(s0, s1):        # long CJ: one at each end
+        # CJ dims stand just PAST an end of the CJ line, not across its middle
+        # (Adolfo's edits: 21 of them moved ~1/4" past the end); long CJs at
+        # both ends, otherwise the end with open slab past it
+        gap, ext = self.c["BEAM_END_GAP"], 8.0
+        g_, g0_, u_, n_ = self.m.grids[gi]
+        def open_past(st, d):
+            x = g0_[0] + u_[0] * (st + d * 2.0) + n_[0] * off
+            y = g0_[1] + u_[1] * (st + d * 2.0) + n_[1] * off
+            return self.m.member_at(x, y, cats=("wall", "beam", "column")) is None
+        if s1 - s0 > self.c["TURN_BOTH"]:
+            ends = [-1, 1]
+        else:
+            ends = [1] if (open_past(s1, 1) and not open_past(s0, -1)) else [-1]
+        for d in ends:
+            e_st = s1 if d > 0 else s0
+            span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
             self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
-                     prefer=(s0 + s1) / 2.0 if pref is None else pref, outward=out)
+                     prefer=e_st + d * gap, outward=d)
 
     def do_shaft_pockets(self):
         """Shafts the slab outline wraps around (Adolfo 2026-10-05: the shaft at
@@ -803,12 +823,71 @@ class Planner(object):
                         break
         self.notes["anchor switched for consistency"] = switched
 
+    def drop_wall_where_grid(self):
+        """A locate dim from a wall face to an edge that a grid-anchored dim
+        already locates is a double (Adolfo deleted 26'-3" / 24'-8 7/8" off the
+        core wall: "we had dimensions off of grid already locating the edges")."""
+        tol = 1.0 / 96
+        def fam_off(s, r):
+            g, g0, u, n = self.m.grids[s.gi]
+            return round((r[0] + self.m.offset(g0, self.m.families[self.m.fam_of[s.gi]][0])) / tol)
+        by_grid = set()
+        for s in self.strings:
+            if s.role == "locate" and any(r[2] == "grid" for r in s.refs):
+                for r in s.refs:
+                    if r[2] != "grid":
+                        by_grid.add((s.fi, fam_off(s, r)))
+        keep, dropped = [], 0
+        for s in self.strings:
+            wall_anchor = any(r[2] == "wall face" or nm == "edge@wall" for r, nm in zip(s.refs, s.names))
+            if s.role == "locate" and wall_anchor and not any(r[2] == "grid" for r in s.refs):
+                targets = [r for r, nm in zip(s.refs, s.names) if r[2] != "wall face" and nm != "edge@wall"]
+                if targets and all((s.fi, fam_off(s, r)) in by_grid for r in targets):
+                    dropped += 1
+                    continue
+            keep.append(s)
+        self.strings = keep
+        if dropped:
+            self.notes["wall-anchored dims of edges a grid already locates (dropped)"] = dropped
+
+    def cluttered_small(self):
+        """Small openings and notches (< SMALL_OPEN both ways) with two or more
+        other small ones within CLUTTER_R: too crowded for this scale - they
+        belong in an enlarged plan (Adolfo 2026-10-05: the small openings and
+        notch around the L3N core)."""
+        small = []
+        for f in self.fs.features:
+            if not f.in_crop or f.kind not in ("opening", "notch"):
+                continue
+            if f.kind == "opening" and getattr(f, "sub", None) in ("core", "shaft"):
+                continue
+            xs = [p for e in f.edges for p in (e.p0[0], e.p1[0])]
+            ys = [p for e in f.edges for p in (e.p0[1], e.p1[1])]
+            if not xs or max(xs) - min(xs) >= self.c["SMALL_OPEN"] or max(ys) - min(ys) >= self.c["SMALL_OPEN"]:
+                continue
+            small.append((f, (sum(xs) / len(xs), sum(ys) / len(ys))))
+        r2 = self.c["CLUTTER_R"] ** 2
+        out = set()
+        for f, (x, y) in small:
+            near = sum(1 for g, (x2, y2) in small if g is not f and (x - x2) ** 2 + (y - y2) ** 2 <= r2)
+            if near >= 2:
+                out.add(f)
+        return out
+
     def build(self):
         order = {"run": 0, "bump": 1, "notch": 1, "step": 1, "opening": 2, "beam": 3, "cj": 4}
+        enlarged = self.cluttered_small()
+        self.enlarged = sorted(f.label() for f in enlarged)
         for f in sorted(self.fs.features, key=lambda f: order.get(f.kind, 9)):
             if not f.in_crop or f.kind == "corner":
                 continue
+            if f in enlarged:
+                for e in f.edges:
+                    self.located_by[id(e)] = "for an enlarged plan"
+                continue
             getattr(self, "do_" + f.kind)(f)
+        if enlarged:
+            self.notes["small openings/notches crowded together (left for an enlarged plan)"] = len(enlarged)
         self.do_shaft_pockets()
         self.make_consistent()
         n0 = len(self.strings)
@@ -821,6 +900,7 @@ class Planner(object):
         self.notes["duplicates dropped"] = n0 - len(self.strings)
         self.merge_through_anchor()
         self.stack_from_anchor()
+        self.drop_wall_where_grid()
         return self.strings
 
     def stack_from_anchor(self):
@@ -929,6 +1009,8 @@ class Planner(object):
         for s in self.strings:
             if len(s.refs) != 2 or s.role != "locate":
                 continue
+            if s.feature is not None and s.feature.kind == "cj":
+                continue        # CJ dims stay separate either side of a grid (Adolfo split the chain)
             kinds = [r[2] for r in s.refs]
             if "grid" not in kinds:
                 continue
