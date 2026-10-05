@@ -141,7 +141,30 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   12'-1"**, locating dims (3'-4½" from 7, 7'-7" | 4'-6" from CC) outside it. `core_v2_run39.png`.
   - L3N run 39: **184 (156 / 28) / 139 placed / 42 review / 0 overlaps, 30 s**; L7 run 22: 220 / 174 / 28 / 0, 24 s
     (no such pockets on L7).
-- Next: Adolfo reviews run 39 / 22, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — Adolfo's cleaned-up examples → beams, joins, angled openings (runs L3N 40–45, L7 23–25).**
+  - **Beams** (`do_beam`): width strings sit just *past* an end (`OPEN_OFFSET` beyond it, span extended 8 ft into the
+    open), the free end if one; > `TURN_BOTH` both ends; > `BEAM_MID_OVER` 40 ft also intermediate width strings
+    across the beam about every `BEAM_MID_EVERY` 35 ft, each searching its own stretch (`String.intermediate`) — a
+    reading aid: one with no room (a beam under a wall its whole length) is left out, not reviewed
+    (`Layout.notes_optional`, 13 on L3N). `String.beam_width`. Layout: `W_BEAM` 1 → 4 (stay off beams),
+    `W_OWN_BEAM` 4 when an end width dim crosses its own beam; edge clearance now includes all four sides of a beam.
+  - **Size joins its locating dim** (`candidates`: same-feature end-to-end spot at any distance, `W_JOIN_SAME` −6) and
+    **one side per direction** (`W_SPLIT` 3 when the element already has dims of that family on its other side).
+    An opening's dims prefer standing beyond its sides (`W_OWN_SPAN` 2.5); a dim line continuing an edge's line from
+    its end costs `W_EDGE_LINE` 3 (the 7'-7 1/2" sat on the opening's edge line, so 15'-7" couldn't join).
+    `W_IN_SHAFT` 8 → 20 (8 lost to the join bonus). L3N 17'-9" opening: `7'-7 1/2" | 15'-7"` one chain + 23'-2 1/2"
+    outside — on the left (Adolfo's version had them right). `opening17_v2_run45.png`.
+  - **Grouping:** a string off the same gridline (same family) as a placed one, overlapping it, gets spots one lane
+    beside it (`W_GROUP` −0.5). Beam width 3'-9" | 3'-9" now stacks outside the 6" | 6" past the slab edge.
+    `beams_v2_run45.png`.
+  - **Angled openings** (`do_opening`): own grid set = dominant family + the one square to it; edges in another family
+    shorter than `MINOR_EDGE` 3 ft get no straight-grid dims while an own-set grid is within `LOC_MAX` (Adolfo: those
+    are allowed only when no aligned grid is near). L3N shaft#115: the 12'-8 1/2" / 10'-2 1/2" went; everything stacks
+    outside along the angled grids. `angled_v2_run44.png`.
+  - Not done: "prefer spots where text fits without a leader" — whether a segment's text is pulled depends on the
+    segment length, not on where the string sits, so position can't change it.
+  - L3N run 45: **208 (180 / 28) / 148 placed / 41 review / 0 overlaps, 38 s**; L7 run 25: **220 / 168 / 29 / 0, 31 s.**
+- Next: Adolfo reviews run 45 / 25, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

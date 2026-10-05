@@ -37,6 +37,9 @@ CFG = {
     "WALL_ANCHOR_IF_NO_GRID": True,
     # a shaft the slab outline wraps around (not a hole in the slab): a slab
     # edge facing a wall face across open space gets an overall-size dim
+    "MINOR_EDGE": 3.0,      # ft; an opening edge shorter than this, off the opening's own grid set, is a chamfer/jog
+    "BEAM_MID_OVER": 40.0,  # ft; longer beams also get intermediate width dims (Adolfo 2026-10-05)
+    "BEAM_MID_EVERY": 35.0, # ft; about one intermediate width dim per this length (30-40 ft)
     "SHAFT_MAX": 15.0,      # ft; widest such pocket
     "SHAFT_MIN_EDGE": 2.0,  # ft; shorter slab edges are jogs, not shaft sides
     "STACK": True,
@@ -333,8 +336,37 @@ class Planner(object):
     def do_opening(self, f):
         kind = f.sub
         cx, cy = f.meta["centroid"]
+        # an angled opening is dimensioned off the grid set its edges follow
+        # (Adolfo 2026-10-05); short edges of the other set (chamfers, jogs)
+        # get straight-grid dims only when no aligned grid is within the tape
+        fam_len = {}
+        for e in f.edges:
+            fj = self.m.family_parallel(e.d)
+            if fj is not None:
+                fam_len[fj] = fam_len.get(fj, 0.0) + e.length
+        dom = max(fam_len.items(), key=lambda kv: kv[1])[0] if fam_len else None
+        # its own grid set = the dominant family and the one square to it; a
+        # short edge in another family (a chamfer on an angled opening) gets
+        # no straight-grid dim when one of its own grids is within the tape
+        own = set()
+        if dom is not None:
+            du = self.m.grids[self.m.families[dom][0]][2]
+            for fj in range(len(self.m.families)):
+                v = self.m.grids[self.m.families[fj][0]][2]
+                dot = abs(du[0] * v[0] + du[1] * v[1])
+                if dot > 0.995 or dot < 0.1:
+                    own.add(fj)
+        dom_near = dom is not None and any(
+            self.m.nearest_grid((cx, cy), fj, self.c["LOC_MAX"]) is not None for fj in own)
         for fi in range(len(self.m.families)):
             par = [e for e in f.edges if self.m.family_parallel(e.d) == fi]
+            if fi not in own and dom_near:
+                short = [e for e in par if e.length < self.c["MINOR_EDGE"]]
+                if short:
+                    self.note("opening: short edges off its grid set skipped (aligned grid near)")
+                    for e in short:
+                        self.located_by[id(e)] = "minor edge of an angled opening"
+                par = [e for e in par if e.length >= self.c["MINOR_EDGE"]]
             if not par:
                 continue
             ng = self.m.nearest_grid((cx, cy), fi, self.c["MAX_DIST"])
@@ -477,27 +509,45 @@ class Planner(object):
         if abs(of - on) < self.c["SAME_OFF_TOL"]:
             return
         s0, s1 = sorted([self.m.station(b.p0, gi), self.m.station(b.p1, gi)])
-        # width dims sit at an END of the beam, just inside it (Adolfo
-        # 2026-10-05) - the free end (beam stopping in the slab) if it has one
+        # width dims sit just PAST an end of the beam, off the grey area
+        # (Adolfo 2026-10-05) - the free end (beam stopping in the slab) if it
+        # has one; past a framed end it may cross the other beam to open
+        # margin. Long beams (> TURN_BOTH) at both ends; longer than
+        # BEAM_MID_OVER also intermediate width dims across the beam, so the
+        # reader finds one without hunting for an end.
         end_dir = -1
         free_st = [self.m.station(e.mid(), gi) for e in f.meta["free_ends"]]
         if len(free_st) == 1:
             end_dir = 1 if abs(free_st[0] - s1) < abs(free_st[0] - s0) else -1
-        end_st = s1 if end_dir > 0 else s0
-        b_pref = end_st - end_dir * min(self.c["CORNER_IN"], (s1 - s0) / 3.0)
-        # long beam: a width dim at EACH end (Adolfo: "dimensions at each end")
-        b_parts = self.end_parts(s0, s1)
-        if len(b_parts) == 1:
-            b_parts = [((s0, s1), b_pref, end_dir)]
+        gap = self.c["OPEN_OFFSET"]
+        ext = 8.0                                   # ft of open space past an end the dim may use
+        def at_end(d):
+            e_st = s1 if d > 0 else s0
+            span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
+            return (span, e_st + d * gap, d, False)
+        b_parts = [at_end(-1), at_end(1)] if (s1 - s0) > self.c["TURN_BOTH"] else [at_end(end_dir)]
+        L = s1 - s0
+        if L > self.c["BEAM_MID_OVER"]:
+            n_mid = max(1, int(round(L / self.c["BEAM_MID_EVERY"])) - 1)
+            seg = L / float(n_mid + 1)
+            for j in range(1, n_mid + 1):
+                pos = s0 + seg * j
+                # its own stretch of the beam (kept 2.5 ft clear of the
+                # neighbours' so dedupe doesn't fold them together)
+                half = max(3.0, seg / 2.0 - 2.5)
+                b_parts.append(((pos - half, pos + half), pos, None, True))
         # a side lying on a wall face below used to get the width only (the
         # wall "located" it) - but the wall isn't dimensioned on the soffit
         # plan, so the beam was never tied to a grid (Adolfo 2026-10-05):
         # beams always get width + the closest grid
         if on < -self.c["ON_GRID_TOL"] and of > self.c["ON_GRID_TOL"]:
-            for span, pref, out in b_parts:
-                self.add(fi, gi, [(on, near.ref, "beam side", "side"), self.gref(gi) + (self.gname[gi],),
-                                  (of, far.ref, "beam side", "side")], span,
-                         "beam side|%s|side" % self.gname[gi], f, prefer=pref, outward=out)
+            for span, pref, out, inter in b_parts:
+                s = self.add(fi, gi, [(on, near.ref, "beam side", "side"), self.gref(gi) + (self.gname[gi],),
+                                      (of, far.ref, "beam side", "side")], span,
+                             "beam side|%s|side%s" % (self.gname[gi], " (intermediate)" if inter else ""),
+                             f, prefer=pref, outward=out)
+                if s is not None:
+                    s.beam_width, s.intermediate = True, inter
         else:
             # hand sheets: width + ONE face to the nearest anchor (a second
             # anchor on the far side made 15-18 ft strings across the core)
@@ -514,8 +564,11 @@ class Planner(object):
             refs = [(on, near.ref, "beam side", "side"), (of, far.ref, "beam side", "side")]
             if al: refs.insert(0, al)
             if ah: refs.append(ah)
-            for span, pref, out in b_parts:
-                self.add(fi, gi, list(refs), span, "beam anchor|sides", f, prefer=pref, outward=out)
+            for span, pref, out, inter in b_parts:
+                s = self.add(fi, gi, list(refs), span, "beam anchor|sides%s" % (" (intermediate)" if inter else ""),
+                             f, prefer=pref, outward=out)
+                if s is not None:
+                    s.beam_width, s.intermediate = True, inter
         for end in f.meta["free_ends"]:
             fr = self.frame(end)
             if fr is None:

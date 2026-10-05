@@ -73,6 +73,11 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 - **Stacked rows: shortest nearest the element, longest furthest** — an overall goes outside its chain.
 - **Nothing inside openings** (dim lines, text, leaders). Dims of one element that meet end to end on one line are
   joined into one string. Dim lines never sit on an edge running the same way.
+- **Beams:** width dims just past a beam end (free end first; past a framed end out to open margin is fine); long
+  beams (> 40 ft) also get intermediate width dims across the beam every ~35 ft. Other dims stay off beams.
+- **An element's dims of one direction on one side of it**; its size joins its locating dim end to end; dims off the
+  same gridline stack together. **Angled elements** use their own grid set; straight-grid dims to their corners only
+  when no aligned grid is within 30 ft.
 - **Shafts:** only a shaft's overall size may go inside it, and only if there's no room outside; locating dims
   never. A shaft the slab wraps around (not a hole) still gets its overall size, slab edge to wall face.
 - "Large Scale" detail items = CJ lines (dimension them); plain detail lines = QC points (ignore).

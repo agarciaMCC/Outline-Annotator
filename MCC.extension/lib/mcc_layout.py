@@ -36,9 +36,13 @@ CFG = {
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
     "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
     "W_ORDER": 3.0,          # a row nearer the element than a shorter neighbour (or further than a longer one)
-    "W_IN_SHAFT": 8.0,       # a shaft's own overall-size dim inside the shaft: last resort only
+    "W_IN_SHAFT": 20.0,      # a shaft's own overall-size dim inside the shaft: last resort only
+                             # (8 was beaten by the join bonus - 15'-7" sat inside its shaft)
+    "W_EDGE_LINE": 3.0,      # a dim line continuing an edge's line from its end
+    "W_OWN_SPAN": 2.5,       # an opening's dim standing under/over the opening instead of beyond its sides
     "EDGE_CLEAR_IN": 0.0625, # paper inches; a dim line keeps this clear of an edge running the same way
     "W_JOIN": -1.5,          # bonus for lining up end-to-end with a dim sharing a witness line (joined after)
+    "W_JOIN_SAME": -6.0,     # ...when both measure the same element (an opening's size onto its locating dim)
     "W_COLLINEAR": -0.75,    # bonus for a dim line on the same line as a placed parallel dim (Adolfo: align)
     "COLLINEAR_REACH": 4.0,  # ft from the preferred station a string may move to line up
     "MAX_LANE": 2,          # lanes 0..2 (Adolfo: 2 to 3 rows), 3 = last resort
@@ -50,7 +54,10 @@ CFG = {
     "TEXT_PAD": 0.25,
     "TEXT_LIFT": 0.2,       # x text size: gap between dim line and the text (Revit default, measured)
     "TEXT_FIT_MARGIN": 0.5, # x text size: a segment narrower than text + this gets its text pulled out       # ft around text boxes
-    "W_LANE": 2.0, "W_SIDE": 4.0, "W_SLIDE": 0.5, "W_BEAM": 1.0, "W_CJ": 1.0,
+    "W_LANE": 2.0, "W_SIDE": 4.0, "W_SLIDE": 0.5, "W_BEAM": 4.0, "W_CJ": 1.0,   # W_BEAM 1 -> 4: stay off beams (Adolfo)
+    "W_OWN_BEAM": 4.0,      # a beam width dim across its own beam (only the intermediate ones belong there)
+    "W_SPLIT": 3.0,         # an element's dims of one direction on both sides of it (keep them on one side)
+    "W_GROUP": -0.5,        # one lane beside a placed dim off the same gridline, same direction (stack them)
     "W_CROSS": 2.5,         # per dim line crossed - two crossings cost more than the other side (W_SIDE)
     "W_CROSS_LEADER": 3.0,  # a dim line or leader crossing another string's leader
     "W_ALIGN": 0.5,         # base cost of a candidate that lines pulled text up with a neighbour's
@@ -131,6 +138,7 @@ class Layout(object):
         self.c.setdefault("STATION_GAP", self.c["STATION_GAP_IN"] * k)
         self.c.setdefault("EDGE_CLEAR", self.c["EDGE_CLEAR_IN"] * k)
         self.par_edges = self._parallel_edges(model)
+        self._ext_cache = {}
         self.tsize = PL.text_size_ft(dim_type) * view.Scale     # ft on the plan
         self.notes = self._existing_annotations(view)            # text notes, tags, symbols already in the view
         self.placed = []
@@ -145,8 +153,14 @@ class Layout(object):
             faces += list(sl.edges)
             for loop in sl.open_edges:
                 faces += list(loop)
-        for bm in model.beams:
-            faces += list(getattr(bm, "sides", None) or getattr(bm, "faces", None) or [])
+        segs = []
+        for bm in model.beams:                      # all four sides of a beam, ends included
+            poly = getattr(bm, "poly", None) or []
+            for k in range(len(poly)):
+                a, b = poly[k][:2], poly[(k + 1) % len(poly)][:2]
+                L = math.hypot(b[0] - a[0], b[1] - a[1])
+                if L > 0.1:
+                    segs.append((a, b, ((b[0] - a[0]) / L, (b[1] - a[1]) / L)))
         out = {}
         for fi, fam in enumerate(model.families):
             g, g0, u, n = model.grids[fam[0]]
@@ -156,6 +170,12 @@ class Layout(object):
                     continue
                 st = model.station(f.p0, fam[0])
                 o0, o1 = model.offset(f.p0, fam[0]), model.offset(f.p1, fam[0])
+                rows.append((st, min(o0, o1), max(o0, o1)))
+            for a, b, d in segs:
+                if not P.parallel(d, n):
+                    continue
+                st = model.station(a, fam[0])
+                o0, o1 = model.offset(a, fam[0]), model.offset(b, fam[0])
                 rows.append((st, min(o0, o1), max(o0, o1)))
             out[fi] = rows
         return out
@@ -339,6 +359,13 @@ class Layout(object):
         # stacked rows: shortest nearest the element, longest furthest (Adolfo);
         # equal lengths: the chain inside, the single overall dim outside
         my_side = self.elem_side(s, sf)
+        # one side per direction: an element's dims of one family all on the
+        # same side of it (Adolfo: 15'-7" belonged beside 7'-7 1/2" / 23'-2 1/2")
+        if my_side and s.feature is not None:
+            for pl in self.placed:
+                if pl.fi == s.fi and pl.s.feature is s.feature and pl.side and pl.side != my_side:
+                    pen += c["W_SPLIT"]
+                    break
         if my_side:
             my_key = (round((b - a) * 48), -len(s.refs))
             reach = 1.6 * c["LANE_STEP"]
@@ -402,6 +429,11 @@ class Layout(object):
             # measure that opening (their obstacle carries the slab's id, which
             # used to let the slab's own strings run straight through)
             if o.eid in s.owners and o.kind != "opening":
+                # a beam's END width dim belongs past the end, off the grey area;
+                # only the intermediate ones cross their own beam (Adolfo)
+                if o.kind == "beam" and getattr(s, "beam_width", False) and not getattr(s, "intermediate", False) \
+                        and pi is not None and not _rects_apart(myrect, o.rect, 0.0) and P.seg_hits_poly(pi, qi, o.poly):
+                    pen += c["W_OWN_BEAM"]
                 continue
             if _rects_apart(myrect, o.rect, 0.0):
                 continue
@@ -437,10 +469,32 @@ class Layout(object):
             if text_hit:
                 pen += c["W_TEXT_OBST"]         # text over a member/beam: avoid, don't forbid
         # a dim line must not lie on (or hug) an edge running the same way
+        on_line = False
         for e_st, e_lo, e_hi in self.par_edges.get(s.fi, ()):
-            if abs(e_st - sf) < c["EDGE_CLEAR"] and min(b, e_hi) - max(a, e_lo) > c["END_TRIM"]:
-                return None, "on an edge"
+            if abs(e_st - sf) < c["EDGE_CLEAR"]:
+                ov = min(b, e_hi) - max(a, e_lo)
+                if ov > c["END_TRIM"]:
+                    return None, "on an edge"
+                if ov > -1.0:
+                    on_line = True          # on the edge's line, meeting its end
+        if on_line:
+            pen += c["W_EDGE_LINE"]         # stand off it (Adolfo: 7'-7 1/2" off the opening's edge line)
+        # an opening's dims stand beyond its sides, not under/over it - so its
+        # size can join its locating dim outside it (7'-7 1/2" | 15'-7")
+        f = s.feature
+        if f is not None and f.kind == "opening":
+            ext = self._extent(f, s.gi)
+            if ext and ext[0] + 0.1 < st < ext[1] - 0.1:
+                pen += c["W_OWN_SPAN"]
         return pen, boxes
+
+    def _extent(self, f, gi):
+        """Station range of a feature's edges in grid gi's frame (cached)."""
+        key = (id(f), gi)
+        if key not in self._ext_cache:
+            sts = [self.m.station(p, gi) for e in f.edges for p in (e.p0, e.p1)]
+            self._ext_cache[key] = (min(sts), max(sts)) if sts else None
+        return self._ext_cache[key]
 
     # ---------------- candidates ----------------
     def candidates(self, s, allow_last_resort=False):
@@ -520,10 +574,17 @@ class Layout(object):
             # one string afterwards (9'-3 7/8" | 8'-4 1/8" through the grid)
             joins = (abs(my_lo - pl.hi_f) < 1.0 / 96 or abs(my_hi - pl.lo_f) < 1.0 / 96) \
                 and s.feature is not None and pl.s.feature is s.feature
-            if key in seen_st or abs(st - prefer) > c["COLLINEAR_REACH"] * (2 if joins else 1):
+            if joins:
+                # one element's dims meeting end to end: join them whichever
+                # side that is (the opening's size onto its locating dim)
+                if key not in seen_st:
+                    seen_st.add(key)
+                    out.append((c["W_JOIN_SAME"], st, (0, "join", 0)))
+                continue
+            if key in seen_st or abs(st - prefer) > c["COLLINEAR_REACH"]:
                 continue
             seen_st.add(key)
-            bonus = c["W_JOIN"] if joins else c["W_COLLINEAR"]
+            bonus = c["W_COLLINEAR"]
             outside = max(0.0, s_lo - st, st - s_hi)
             if home:
                 side_pen = c["W_SIDE"] if (st - prefer) * home < -0.5 else 0.0
@@ -532,6 +593,27 @@ class Layout(object):
                 side_pen = c["W_INSIDE"] if outside == 0.0 else 0.0
                 slide = 0.0
             out.append((bonus + side_pen + slide + outside * c["W_OUTSIDE"], st, (0, "collinear", 0)))
+        # off the same gridline in the same direction: stand one lane beside it
+        # (they read as one stack; _order_stacks puts the shortest nearest)
+        my_grids = [self.to_fam(s.gi, 0.0, r[0])[1] for r in s.refs if r[2] == "grid"]
+        if my_grids:
+            for pl in self.placed:
+                if pl.fi != s.fi or not any(r[2] == "grid" for r in pl.s.refs):
+                    continue
+                pg = [self.to_fam(pl.s.gi, 0.0, r[0])[1] for r in pl.s.refs if r[2] == "grid"]
+                if not any(abs(x - y) < 1.0 / 96 for x in my_grids for y in pg):
+                    continue
+                if min(my_hi, pl.hi_f) - max(my_lo, pl.lo_f) <= 0.1:
+                    continue                        # must overlap to stack
+                for sd in (1, -1):
+                    st = (pl.st_f + sd * c["LANE_STEP"] - a0) * sgn
+                    key = round(st * 16)
+                    if key in seen_st or abs(st - prefer) > 2 * c["COLLINEAR_REACH"]:
+                        continue
+                    seen_st.add(key)
+                    outside = max(0.0, s_lo - st, st - s_hi)
+                    side_pen = c["W_SIDE"] if (home and (st - prefer) * home < -0.5) else 0.0
+                    out.append((c["W_GROUP"] + side_pen + outside * c["W_OUTSIDE"], st, (sd, "group", 0)))
         # pulled text lines up with a neighbour's pulled text (same family, nearby)
         probe = self.text_plan(s, prefer)
         if any(it[3] for it in probe):
@@ -637,6 +719,10 @@ class Layout(object):
                 self.placed.append(pl)
         self._join_collinear()
         self._order_stacks()
+        # intermediate beam widths are a reading aid, not required: one with no
+        # room (a beam under a wall along its length) is dropped, not reviewed
+        self.notes_optional = len([1 for s, w in still if getattr(s, "intermediate", False)])
+        still = [(s, w) for s, w in still if not getattr(s, "intermediate", False)]
         self.review = still
         for s, why in still:
             self.blocked[why] = self.blocked.get(why, 0) + 1
