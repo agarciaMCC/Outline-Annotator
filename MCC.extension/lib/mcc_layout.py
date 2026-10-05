@@ -697,6 +697,22 @@ class Layout(object):
                 still.append((s, why2))
             else:
                 self.placed.append(pl)
+        # try harder before giving up (Adolfo's review: "move it to the right of
+        # the 6'-4"", "to the left side of the CJ", "north of the CJ line"): a
+        # much wider slide along the element and two more lanes, both sides
+        if still:
+            saved = (self.c["SLIDE_MAX"], self.c["LAST_RESORT_LANE"])
+            self.c["SLIDE_MAX"], self.c["LAST_RESORT_LANE"] = saved[0] * 3, saved[1] + 2
+            again = []
+            for s, why in still:
+                pl, why2 = self.place_one(s, allow_last_resort=True)
+                if pl is None:
+                    again.append((s, why))
+                else:
+                    self.placed.append(pl)
+            self.c["SLIDE_MAX"], self.c["LAST_RESORT_LANE"] = saved
+            self.notes_harder = len(still) - len(again)
+            still = again
         # improvement passes: re-place the worst-scoring strings
         for _ in range(self.c["IMPROVE_PASSES"]):
             worst = sorted(self.placed, key=lambda pl: -pl.cost)[:max(1, len(self.placed) // 5)]

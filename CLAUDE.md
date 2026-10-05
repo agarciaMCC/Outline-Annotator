@@ -78,6 +78,9 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 - **An element's dims of one direction on one side of it**; its size joins its locating dim end to end; dims off the
   same gridline stack together. **Angled elements** use their own grid set; straight-grid dims to their corners only
   when no aligned grid is within 30 ft.
+- **Not dimensioned here:** lines made by the view's cut plane (ramps), holes filled by other floors, voids in a
+  wall line, beams in a wall line capped by walls (core-wall plans cover those). Curbs and CMU walls are not walls.
+  Small openings (< 4 ft): near edge off the grid + size. Shafts in a core: off the core wall face.
 - **Shafts:** only a shaft's overall size may go inside it, and only if there's no room outside; locating dims
   never. A shaft the slab wraps around (not a hole) still gets its overall size, slab edge to wall face.
 - "Large Scale" detail items = CJ lines (dimension them); plain detail lines = QC points (ignore).

@@ -37,6 +37,7 @@ CFG = {
     "WALL_ANCHOR_IF_NO_GRID": True,
     # a shaft the slab outline wraps around (not a hole in the slab): a slab
     # edge facing a wall face across open space gets an overall-size dim
+    "SMALL_OPEN": 4.0,      # ft; a smaller opening gets only its near edge off the grid, plus its size
     "MINOR_EDGE": 3.0,      # ft; an opening edge shorter than this, off the opening's own grid set, is a chamfer/jog
     "BEAM_MID_OVER": 40.0,  # ft; longer beams also get intermediate width dims (Adolfo 2026-10-05)
     "BEAM_MID_EVERY": 35.0, # ft; about one intermediate width dim per this length (30-40 ft)
@@ -143,7 +144,7 @@ class Planner(object):
                     return mbr
         return None
 
-    def anchor(self, fi, gi, off, side, s_lo, s_hi, cap=None, walls=True):
+    def anchor(self, fi, gi, off, side, s_lo, s_hi, cap=None, walls=True, force_walls=False):
         """Nearest locating reference on one side (+1 higher offsets, -1
         lower) within cap: a grid of family fi or a facing parallel wall
         face overlapping [s_lo, s_hi]. -> (offset, ref, kind, name)."""
@@ -159,7 +160,7 @@ class Planner(object):
                 continue
             if best is None or abs(o - off) < abs(best[0] - off):
                 best = (o, DB.Reference(self.m.grid(gj)[0]), "grid", self.gname[gj])
-        if walls and c["WALL_ANCHOR_IF_NO_GRID"] and grid_near:
+        if walls and c["WALL_ANCHOR_IF_NO_GRID"] and grid_near and not force_walls:
             walls = False
         if walls:
             u = self.m.grid(gi)[2]
@@ -407,6 +408,13 @@ class Planner(object):
             alt_pref = (s_lo - self.c["OPEN_OFFSET"]) if away > 0 else (s_hi + self.c["OPEN_OFFSET"])
             alt = ((alt_pref - 1.0, alt_pref) if away > 0 else (alt_pref, alt_pref + 1.0), alt_pref, -away)
             if kind == "void":
+                # a void in a wall line is covered by the core wall / vertical
+                # plans (Adolfo 2026-10-05) - skip it here
+                if any(P.point_in_poly(cx, cy, P.inflate(w.poly, 1.0)) for w in self.m.walls if w.poly):
+                    for off, e in faces:
+                        self.located_by[id(e)] = "void in a wall"
+                    self.note("void in a wall line (skipped)")
+                    continue
                 # each edge locally from its nearest anchor
                 for off, e in faces:
                     if self.flush(e, self.m.walls):
@@ -429,8 +437,11 @@ class Planner(object):
             # (elevator openings come off the wall face)
             lo_wall = self.flush(faces[0][1], self.m.walls) is not None
             hi_wall = self.flush(faces[-1][1], self.m.walls) is not None
-            al = None if lo_wall else self.anchor(fi, gi, lo, -1, s_lo, s_hi)
-            ah = None if hi_wall else self.anchor(fi, gi, hi, +1, s_lo, s_hi)
+            # a shaft / core opening inside a core reads best off the core
+            # wall's face (Adolfo 2026-10-05), grid near or not
+            fw = kind in ("core", "shaft")
+            al = None if lo_wall else self.anchor(fi, gi, lo, -1, s_lo, s_hi, force_walls=fw)
+            ah = None if hi_wall else self.anchor(fi, gi, hi, +1, s_lo, s_hi, force_walls=fw)
             if lo_wall:
                 al = (lo, faces[0][1].ref, "opening edge", "edge@wall")
             if hi_wall:
@@ -509,6 +520,21 @@ class Planner(object):
         if abs(of - on) < self.c["SAME_OFF_TOL"]:
             return
         s0, s1 = sorted([self.m.station(b.p0, gi), self.m.station(b.p1, gi)])
+        # a beam capped by walls at both ends, its sides in line with them
+        # (a link beam in a core wall line), has an assumed location - the
+        # core wall plans cover it (Adolfo 2026-10-05)
+        def wall_past(st, d):
+            g_, g0_, u_, n_ = self.m.grids[gi]
+            mo = (on + of) / 2.0
+            x = g0_[0] + u_[0] * (st + d * 0.75) + n_[0] * mo
+            y = g0_[1] + u_[1] * (st + d * 0.75) + n_[1] * mo
+            return self.m.member_at(x, y, cats=("wall",)) is not None
+        if wall_past(s0, -1) and wall_past(s1, 1) and \
+                (self.flush(near, self.m.walls) or self.flush(far, self.m.walls)):
+            for e in list(b.sides) + list(f.meta["free_ends"]):
+                self.located_by[id(e)] = "beam in a wall line"
+            self.note("beam in line with walls, capped by walls (skipped)")
+            return
         # width dims sit just PAST an end of the beam, off the grey area
         # (Adolfo 2026-10-05) - the free end (beam stopping in the slab) if it
         # has one; past a framed end it may cross the other beam to open
@@ -807,6 +833,13 @@ class Planner(object):
                 self.note("not stacked: a stacked dim would pass the 30 ft tape")
                 continue
             targets.sort(key=lambda t: abs(t[0][0] - anc[0]))
+            # a small opening needs only its near edge tied to the grid; the
+            # size (the chain check) gives the other (Adolfo 2026-10-05)
+            t_offs = [t[0][0] for t in targets]
+            if s.feature.kind == "opening" and max(t_offs) - min(t_offs) < self.c["SMALL_OPEN"]:
+                near = targets[0]
+                targets = [near]
+                self.note("small opening: near edge only off the grid")
             # a grid in the middle: the targets on each side of it form their own
             # stack - dims on opposite sides are end to end, not stacked (they
             # get joined into edge | grid | edge by the layout)

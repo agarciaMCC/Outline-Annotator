@@ -164,7 +164,29 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - Not done: "prefer spots where text fits without a leader" — whether a segment's text is pulled depends on the
     segment length, not on where the string sits, so position can't change it.
   - L3N run 45: **208 (180 / 28) / 148 placed / 41 review / 0 overlaps, 38 s**; L7 run 25: **220 / 168 / 29 / 0, 31 s.**
-- Next: Adolfo reviews run 45 / 25, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — Adolfo's card review of run 45's 42 review items (28 right calls, 14 wrong) → runs L3N 46–47, L7 26.**
+  Review page: `Claude outputs/audit_R26/review_page/` (`review_items.py` dumps the review list with each string's
+  intended line, `review_export.py` exports the ZZ view with two green calibration crosses inside the model crop,
+  `review_crops.py` maps plan → pixels from them and draws each card's line in violet). Answers live in the
+  artifact's `verdicts` collection. What changed:
+  - `mcc_model`: **lines from the view's cut plane skipped** — a ramp floor (9" MS SLAB 14220571, bottom 111.4 ft)
+    crossing the cut plane (115.67) gives soffit-loop edges whose reference is a Face, not an Edge (items 1–2);
+    **holes filled by other floors dropped** (`_drop_filled_holes`: ≥ 80% of a sample grid covered by a floor shown
+    in the view at the slab's height ±1 ft — the L4 ramp piece counts — or a wall or beam; 17 on L3N incl. the PT
+    slab's 33 × 113 ft hole holding the ramp, items 4 / 38 / 39, and the 14.6 × 2.9 ft "opening" by the core that is
+    a wall + beam cut, items 6–11); **curb / CMU walls ignored** by every wall rule (`model.soft_walls`, type name
+    contains CURB or CMU; 13 on L3N; items 22 / 24 / 26).
+  - `mcc_strings`: **small openings** (< `SMALL_OPEN` 4 ft across the family) get only the near edge off the grid
+    plus the size (items 16–18); **voids in a wall line skipped** (centroid within 1 ft of a wall; items 19–21);
+    **beams capped by walls at both ends with a side in the wall line skipped** — core-wall plans cover them
+    (items 33–34; 4 on L3N); **core / shaft openings anchor to the core wall face** even with a grid near
+    (`anchor(..., force_walls=True)`, item 14).
+  - `mcc_layout`: **wider search before review** — unplaced strings retry with `SLIDE_MAX` ×3 and two more lanes,
+    both sides (items 3, 12, 23, 30, 36, 37, 41; `notes_harder`: 5 on L3N, 10 on L7).
+  - Left as is: hard-to-reach grids (8–10, "some nuance"), item 42 (enlarged view), outside-crop beams (28, 29).
+  - L3N run 47: **181 (153 / 28) / 167 placed / 2 review (both outside crop) / 0 overlaps, 22 s.**
+    L7 run 26: **167 (99 / 68) / 141 placed / 3 review / 0 overlaps, 16 s.**
+- Next: a review round on the *placed* dims (close-ups by area), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

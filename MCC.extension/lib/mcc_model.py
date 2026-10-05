@@ -121,12 +121,18 @@ class PlanModel(object):
         self.slabs = self._read_slabs()
         self.beams = self._read_members(DB.BuiltInCategory.OST_StructuralFraming,
                                         "beam")
-        self.walls = self._read_members(DB.BuiltInCategory.OST_Walls, "wall")
+        # curbs and CMU walls aren't "walls" for any wall rule (Adolfo
+        # 2026-10-05: Kalae curbs are walls "8.5 x 4 CURB"); they neither
+        # block dims nor anchor them
+        walls = self._read_members(DB.BuiltInCategory.OST_Walls, "wall")
+        self.soft_walls = [w for w in walls if any(k in (w.e.Name or "").upper() for k in ("CURB", "CMU"))]
+        self.walls = [w for w in walls if w not in self.soft_walls]
         self.columns = self._read_members(
             DB.BuiltInCategory.OST_StructuralColumns, "column") + \
             self._read_members(DB.BuiltInCategory.OST_Columns, "column")
         self.cjs = self._read_cjs()
         self.join_cuts = self._drop_join_cuts()
+        self.filled_holes = self._drop_filled_holes()
         self.pad = pad
         self.obstacles = self._build_obstacles(pad)
 
@@ -172,17 +178,31 @@ class PlanModel(object):
     # ---------------- slabs ----------------
     def _read_slabs(self):
         slabs = []
+        self.cut_edges = 0
+        def real(fl, r):
+            # an edge made by the view's cut plane slicing a floor (a ramp
+            # dropping below it) references the cut FACE, not a model edge -
+            # it isn't a soffit edge (Adolfo: "a line produced by a cut in
+            # the view range")
+            try:
+                g = fl.GetGeometryObjectFromReference(r)
+            except Exception:
+                return True
+            if isinstance(g, DB.Face):
+                self.cut_edges += 1
+                return False
+            return True
         for fl in self.floors:
             for outer, inners, oe, ie in P.soffit_loops(fl, self.opts):
                 edges = [Face(p0, p1, r, eid_int(fl.Id), "slab edge")
                          for p0, p1, d, r, ln, curved in oe
-                         if not curved and r is not None]
+                         if not curved and r is not None and real(fl, r)]
                 open_edges = []
                 for loop in ie:
                     open_edges.append([Face(p0, p1, r, eid_int(fl.Id),
                                             "opening edge")
                                        for p0, p1, d, r, ln, curved in loop
-                                       if not curved and r is not None])
+                                       if not curved and r is not None and real(fl, r)])
                 slabs.append(Slab(fl, outer, inners, edges, open_edges))
         # a slab whose outline sits inside another's is an island: keep it
         # (its perimeter is still a soffit edge) but mark it via kind
@@ -216,6 +236,60 @@ class PlanModel(object):
                           for m in members)
                 if cut:
                     dropped += 1
+                else:
+                    keep_o.append(poly); keep_e.append(edges)
+            sl.openings, sl.open_edges = keep_o, keep_e
+        return dropped
+
+    def _drop_filled_holes(self):
+        """A hole in one floor that other floors fill (Kalae L3: the PT
+        slab's 33 x 113 ft hole holding the 9" MS ramp slabs) is not an
+        opening: drop it when 80% of a sample grid inside it is covered by
+        another floor shown in the view (any level - the L4 ramp piece counts),
+        a wall or a beam. Returns the count."""
+        dropped = 0
+        covers = []
+        try:
+            col = DB.FilteredElementCollector(self.doc, self.view.Id) \
+                .OfCategory(DB.BuiltInCategory.OST_Floors).WhereElementIsNotElementType()
+            for fl in col:
+                bb = fl.get_BoundingBox(None)
+                pp = P.plan_poly(fl, self.opts, self.view)
+                if pp and bb is not None:
+                    covers.append((eid_int(fl.Id), [q[:2] for q in pp], bb.Min.Z, bb.Max.Z))
+        except Exception:
+            pass
+        covers += [(m.eid, m.poly, None, None) for m in self.walls + getattr(self, "soft_walls", []) + self.beams if m.poly]
+        self.filled_hole_boxes = []
+        for sl in self.slabs:
+            sbb = sl.floor.get_BoundingBox(None)
+            z0, z1 = (sbb.Min.Z - 1.0, sbb.Max.Z + 1.0) if sbb is not None else (-1e9, 1e9)
+            # only floors at this slab's height fill its holes (a floor on the
+            # level above seen through a real opening must not)
+            cov = [(e, cp) for e, cp, a, b in covers
+                   if e != sl.eid and (a is None or (a <= z1 and b >= z0))]
+            keep_o, keep_e = [], []
+            for poly, edges in zip(sl.openings, sl.open_edges):
+                pts = [p[:2] for p in poly] if poly else []
+                if len(pts) < 3:
+                    keep_o.append(poly); keep_e.append(edges)
+                    continue
+                xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+                step = max(2.0, max(max(xs) - min(xs), max(ys) - min(ys)) / 40.0)
+                n_in = n_fill = 0
+                x = min(xs) + step / 2.0
+                while x < max(xs):
+                    y = min(ys) + step / 2.0
+                    while y < max(ys):
+                        if P.point_in_poly(x, y, pts):
+                            n_in += 1
+                            if any(P.point_in_poly(x, y, cp) for eid, cp in cov):
+                                n_fill += 1
+                        y += step
+                    x += step
+                if n_in and n_fill >= 0.8 * n_in:
+                    dropped += 1
+                    self.filled_hole_boxes.append((sl.eid, min(xs), max(xs), min(ys), max(ys), n_fill * 1.0 / n_in))
                 else:
                     keep_o.append(poly); keep_e.append(edges)
             sl.openings, sl.open_edges = keep_o, keep_e
