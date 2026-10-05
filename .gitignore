@@ -23,3 +23,7 @@ RevitMCP.extension/
 
 # Other projects' models and PDFs (private)
 Reference Projects/
+
+# Test inputs and installers (large / project files)
+Test Inputs/
+Setup Files/

@@ -30,10 +30,15 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 - `Test Library/` — PDF regression cases for Columns/Grids from PDF: `python run_library.py`.
 - `MCC-DimText.extension/` — stripped-down Dim Text build shared with coworkers; keep in sync when Dim Text changes.
 - `RevitMCP.extension/` — third-party Revit MCP server, locally patched (see `docs/revit-mcp-setup.md`). Don't edit casually.
-- `Reference Projects/<number - name>/` — other projects' detached models + issued PDFs, for read-only study
-  (see Testing below). Not on GitHub (`*.rvt`/`*.pdf` ignored); never modify.
-- `Revit_temp/`, `_to_delete/`, `*.bak` — old staging copies and retired buttons. Ignore unless asked.
-- `*.rvt`, `*_backup/`, PDFs, the pyRevit installer — **never modify**. Never save over the R23 model.
+- `Reference Projects/<name>/` — models + issued PDFs, not on GitHub. `Kalae/1268 - Kalae (R26 TEST).rvt` is
+  the dev/test model (the one the Revit MCP works on); Alia, Eastlake, Bothell Stem are other projects'
+  detached copies for read-only study (see Testing below). `Revit_temp/` inside Kalae is Revit's own temp folder.
+- `Test Inputs/` — loose PDFs and `Tester.rvt` used while building Grids/Columns from PDF (the curated
+  regression set is `Test Library/`).
+- `Setup Files/` — pyRevit installer, `MCC-Tools.extension.zip` (shared build).
+- `Claude outputs/early runs/` — first screenshots; `Claude outputs/reference_study/` — other-projects study images.
+- Models, `*_backup/` folders, PDFs, the installer — **never modify**. Never save over the R23 model.
+  Backups are git commits — no more `*.bak` copies or staging folders (cleaned out 2026-10-05).
 
 ## Testing in Revit (Revit MCP)
 - The `revit` MCP server talks to Revit 2026. **Edits and test runs: `1268 - Kalae (R26 TEST).rvt` only.**
@@ -84,6 +89,8 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 ## Working style
 - Adolfo is a construction professional, not a software developer: explain changes in plain terms, and
   say what to click/check in Revit when a manual test is needed.
-- Prefer git commits over `*_before_x.py.bak` copies for backups.
+- Use git commits for backups, never `*.bak` copies.
 - Delivery workarounds in older docs (staging through `Revit_temp/`, md5 checks after commit) were for the
   cloud bridge; editing files directly here doesn't need them.
+- Before any `execute_revit_code`, check which document is active (`doc.PathName`) — Revit may have the live
+  Autodesk Docs Kalae model open (happened 2026-10-05). Anything but the TEST model or a Reference Projects copy: stop and ask.
