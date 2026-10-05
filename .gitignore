@@ -27,3 +27,7 @@ Reference Projects/
 # Test inputs and installers (large / project files)
 Test Inputs/
 Setup Files/
+
+# Raw measurements of other projects' models (local only)
+Claude outputs/reference_study/placement_alia.*
+Claude outputs/reference_study/placement_eastlake.*
