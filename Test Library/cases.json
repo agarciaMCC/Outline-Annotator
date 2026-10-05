@@ -1,0 +1,175 @@
+[
+ {
+  "job": "1268",
+  "name": "Kalae",
+  "style": "Baldridge grid schedule (TC marks, T-types), gray columns with leaders - the original test",
+  "source": "Column Schedule.pdf + Grid Test.pdf",
+  "schedule": "1268/schedule.pdf",
+  "plan": "1268/plan_1.pdf",
+  "level": "1",
+  "verified": true
+ },
+ {
+  "job": "1215",
+  "name": "The Landing - Parking",
+  "style": "grid schedule, hyphen marks (C-1), shared header C-5/C-5A, square grid tags",
+  "source": "parking.pdf",
+  "schedule": "1215/schedule_parking.pdf",
+  "schedule_pages_in_set": [
+   16
+  ],
+  "verified": false,
+  "plan": "1215/plan_parking_1.pdf",
+  "plan_page_in_set": 7,
+  "level": "1"
+ },
+ {
+  "job": "1215",
+  "name": "The Landing - Office",
+  "style": "STEEL gravity column schedule (W14 shapes) - read as steel, not placed",
+  "source": "office.pdf",
+  "schedule": "1215/schedule_office.pdf",
+  "schedule_pages_in_set": [
+   28,
+   40
+  ],
+  "verified": false,
+  "plan": "1215/plan_office_1.pdf",
+  "plan_page_in_set": 18,
+  "level": "1"
+ },
+ {
+  "job": "1256",
+  "name": "Alia",
+  "style": "Baldridge grid schedule, L1/L2 labels, level ranges (L34 TO L38), letter types",
+  "source": "struct.pdf",
+  "schedule": "1256/schedule.pdf",
+  "schedule_pages_in_set": [
+   47,
+   48
+  ],
+  "verified": false,
+  "plan": "1256/plan_2.pdf",
+  "plan_page_in_set": 14,
+  "level": "2"
+ },
+ {
+  "job": "1276",
+  "name": "Kent Station Garage",
+  "style": "small 3-mark grid schedule, labels centred in merged cells",
+  "source": "struct.pdf",
+  "schedule": "1276/schedule.pdf",
+  "schedule_pages_in_set": [
+   51
+  ],
+  "verified": false
+ },
+ {
+  "job": "1281",
+  "name": "ICS Delta",
+  "style": "STEEL graphical column schedule keyed by grid location - not supported",
+  "source": "struct.pdf",
+  "schedule": "1281/schedule.pdf",
+  "schedule_pages_in_set": [
+   26
+  ],
+  "verified": false
+ },
+ {
+  "job": "1282",
+  "name": "Mercy Housing",
+  "style": "list schedule, WIDTH/DEPTH columns, marks like C18X24-1",
+  "source": "struct.pdf",
+  "schedule": "1282/schedule.pdf",
+  "schedule_pages_in_set": [
+   39
+  ],
+  "verified": false
+ },
+ {
+  "job": "1305",
+  "name": "Launiu Ward Village",
+  "style": "Baldridge grid schedule, bare level numbers under LEVEL header, darker gray columns",
+  "source": "struct.pdf",
+  "schedule": "1305/schedule.pdf",
+  "schedule_pages_in_set": [
+   51,
+   53
+  ],
+  "verified": false,
+  "plan": "1305/plan_2.pdf",
+  "plan_page_in_set": 11,
+  "level": "2"
+ },
+ {
+  "job": "1313",
+  "name": "Waldorf Astoria",
+  "style": "grid schedule, labels hung under level lines, SHX font (24\"S = 24\"\u00d8)",
+  "source": "struct.pdf",
+  "schedule": "1313/schedule.pdf",
+  "schedule_pages_in_set": [
+   54
+  ],
+  "verified": false,
+  "plan": "1313/plan_1.pdf",
+  "plan_page_in_set": 15,
+  "level": "1"
+ },
+ {
+  "job": "1324",
+  "name": "NVIDIA Starbase",
+  "style": "size in a COLUMN SIZE row under the table; steel SC marks",
+  "source": "struct.pdf",
+  "schedule": "1324/schedule.pdf",
+  "schedule_pages_in_set": [
+   62,
+   63
+  ],
+  "verified": false,
+  "plan": "1324/plan_1.pdf",
+  "plan_page_in_set": 18,
+  "level": "1"
+ },
+ {
+  "job": "1326",
+  "name": "Kinect at Gresham",
+  "style": "DCI graphical schedule, mark row at the bottom, outline-drawn columns, polyline grid bubbles",
+  "source": "struct.pdf",
+  "schedule": "1326/schedule.pdf",
+  "schedule_pages_in_set": [
+   63
+  ],
+  "verified": false,
+  "plan": "1326/plan_2.pdf",
+  "plan_page_in_set": 24,
+  "level": "2"
+ },
+ {
+  "job": "1332",
+  "name": "Horizon House",
+  "style": "MKA grid schedule, B-levels, tower + podium tables, columns in walls",
+  "source": "struct.pdf",
+  "schedule": "1332/schedule.pdf",
+  "schedule_pages_in_set": [
+   80
+  ],
+  "verified": false,
+  "plan": "1332/plan_B7.pdf",
+  "plan_page_in_set": 11,
+  "level": "B7"
+ },
+ {
+  "job": "1332",
+  "name": "Horizon House B2",
+  "style": "plan where most columns carry no mark",
+  "source": "struct.pdf",
+  "schedule": "1332/schedule.pdf",
+  "schedule_pages_in_set": [
+   80
+  ],
+  "verified": false,
+  "plan": "1332/plan_B2.pdf",
+  "plan_page_in_set": 29,
+  "level": "B2"
+ }
+]

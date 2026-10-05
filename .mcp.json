@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "revit": {
+      "command": "C:\\Users\\agarcia\\.local\\bin\\uv.exe",
+      "args": ["run", "--with", "mcp[cli]<2", "--with", "httpx", "mcp", "run",
+               "C:\\Users\\agarcia\\Desktop\\Claude Projects\\Outline Annotator\\RevitMCP.extension\\main.py"]
+    }
+  }
+}

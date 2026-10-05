@@ -1,0 +1,253 @@
+# -*- coding: utf-8 -*-
+"""Trims grids IN THE CHOSEN VIEWS ONLY (view-specific / 2D extents).
+- No crop: parallel grids end on a common line a set distance past the
+  slab (measured along the grid direction, so rotated wings work), so the
+  bubbles line up in rows.
+- Crop on: grids run to just inside the crop edge (plain, rotated or
+  sketched crop). The inset is in paper inches, scaled by the view.
+Bubble visibility is left as it is. Pick several views at once; zone
+(dependent) views are listed under their parent. "Set as default"
+remembers the form."""
+__title__ = "Fit\nGrids"
+__author__ = "MCC ENG"
+
+from pyrevit import revit, DB, forms, script
+from System.Windows import Visibility
+from System.Windows.Controls import CheckBox
+from System.Windows import Thickness
+import mcc_view as V
+import mcc_plan as P
+
+doc = revit.doc
+active = doc.ActiveView
+cfg = script.get_config()
+
+# =====================================================================
+# FACTORY DEFAULTS
+# =====================================================================
+MARGIN_FT = 16.0      # past the slab: edge dims ~4-7 ft, grid dims
+                      # ~10-13 ft, then the bubble
+INSET_IN = 0.5        # paper inches inside the crop edge (bubble room)
+CAP_AT_SLAB = False   # cropped views: also stop at slab + margin
+PLAN_TYPES = (DB.ViewType.FloorPlan, DB.ViewType.CeilingPlan,
+              DB.ViewType.EngineeringPlan, DB.ViewType.AreaPlan)
+# =====================================================================
+
+
+def candidate_views():
+    """[(view, is_dependent)] parents sorted by name, each followed by
+    its dependents."""
+    vs = [v for v in DB.FilteredElementCollector(doc).OfClass(DB.ViewPlan)
+          if not v.IsTemplate and v.ViewType in PLAN_TYPES]
+    ids = set(V.eid_int(v.Id) for v in vs)
+    parents, kids = [], {}
+    for v in vs:
+        pid = v.GetPrimaryViewId()
+        if pid != DB.ElementId.InvalidElementId and V.eid_int(pid) in ids:
+            kids.setdefault(V.eid_int(pid), []).append(v)
+        else:
+            parents.append(v)
+    rows = []
+    for p in sorted(parents, key=lambda x: x.Name):
+        rows.append((p, False))
+        for k in sorted(kids.get(V.eid_int(p.Id), []), key=lambda x: x.Name):
+            rows.append((k, True))
+    return rows
+
+
+class FitGridsWindow(forms.WPFWindow):
+    def __init__(self, rows):
+        forms.WPFWindow.__init__(self, script.get_bundle_file("ui.xaml"))
+        self.result = None
+        self.boxes = []
+        aid = V.eid_int(active.Id)
+        for v, dep in rows:
+            cb = CheckBox()
+            cb.Content = (u"└ " if dep else u"") + v.Name
+            cb.Margin = Thickness(18 if dep else 0, 1, 0, 1)
+            cb.IsChecked = V.eid_int(v.Id) == aid
+            cb.Checked += self.count_changed
+            cb.Unchecked += self.count_changed
+            self.pnl_views.Children.Add(cb)
+            self.boxes.append((cb, v))
+        self.txt_margin.Text = str(cfg.get_option("margin", MARGIN_FT))
+        self.txt_inset.Text = str(cfg.get_option("inset", INSET_IN))
+        self.chk_cap.IsChecked = cfg.get_option("cap", CAP_AT_SLAB)
+        self.count_changed(None, None)
+
+    def picked(self):
+        return [v for cb, v in self.boxes if cb.IsChecked]
+
+    def count_changed(self, sender, args):
+        self.lbl_count.Text = "Views ({} ticked)".format(len(self.picked()))
+
+    def filter_changed(self, sender, args):
+        f = self.txt_filter.Text.strip().lower()
+        for cb, v in self.boxes:
+            cb.Visibility = Visibility.Visible \
+                if (not f or f in v.Name.lower()) else Visibility.Collapsed
+
+    def _set_visible(self, state):
+        for cb, v in self.boxes:
+            if cb.Visibility == Visibility.Visible:
+                cb.IsChecked = state
+
+    def views_all(self, sender, args):
+        self._set_visible(True)
+
+    def views_none(self, sender, args):
+        self._set_visible(False)
+
+    def ok_click(self, sender, args):
+        views = self.picked()
+        if not views:
+            forms.alert("No views ticked.")
+            return
+        try:
+            margin = float(self.txt_margin.Text)
+            inset = float(self.txt_inset.Text)
+        except ValueError:
+            forms.alert("Distance and inset must be numbers.")
+            return
+        cap = bool(self.chk_cap.IsChecked)
+        if self.chk_default.IsChecked:
+            cfg.margin, cfg.inset, cfg.cap = margin, inset, cap
+            script.save_config()
+        self.result = (views, margin, inset, cap)
+        self.Close()
+
+    def cancel_click(self, sender, args):
+        self.Close()
+
+
+# ---------------------------------------------------------------------
+OPTS = DB.Options()
+
+
+def slab_points(view, crop):
+    """Plan hull points of the slab shown, trimmed to the crop."""
+    floors, _ = V.soffit_floors(doc, view)
+    pts = []
+    for f in floors:
+        h = P.plan_poly(f, OPTS, view)
+        if h:
+            pts.extend(h)
+    if pts and crop:
+        pts = V.clip_convex(P.convex_hull(pts), P.convex_hull(crop))
+    return pts
+
+
+def plan_view(view, margin, inset_in, cap):
+    """[(grid, Line)] to apply, plus a problem string or None."""
+    grids = V.straight_grids(doc, view)
+    if not grids:
+        return [], "no straight grids"
+    crop = V.crop_polygon(view)
+    crop_in = None
+    if crop:
+        crop_in = V.offset_polygon(crop, inset_in * view.Scale / 12.0) or crop
+    slab = slab_points(view, crop) if (crop is None or cap) else []
+    if crop is None and not slab:
+        return [], "no slab visible to fit to"
+
+    todo, missed = [], 0
+    for fam in V.grid_families(grids):
+        fu = grids[fam[0]][2]
+        rows = None
+        if slab:
+            s = [x * fu[0] + y * fu[1] for x, y in slab]
+            rows = (min(s) - margin, max(s) + margin)
+        for gi in fam:
+            g, g0, u, n = grids[gi]
+            base = g0[0] * fu[0] + g0[1] * fu[1]
+            lo, hi = rows if rows else (-1e9, 1e9)
+            if crop_in:
+                r = V.line_range_in_poly(g0, fu, crop_in)
+                if r is None:
+                    continue            # grid not inside this crop
+                lo, hi = max(lo, base + r[0]), min(hi, base + r[1])
+            if hi - lo < 0.5:
+                missed += 1
+                continue
+            z = V.view_curve(g, view).GetEndPoint(0).Z
+            a = DB.XYZ(g0[0] + fu[0] * (lo - base),
+                       g0[1] + fu[1] * (lo - base), z)
+            b = DB.XYZ(g0[0] + fu[0] * (hi - base),
+                       g0[1] + fu[1] * (hi - base), z)
+            # keep the grid's own direction so bubbles stay on their ends
+            same = u[0] * fu[0] + u[1] * fu[1] > 0
+            todo.append((g, DB.Line.CreateBound(a, b) if same
+                         else DB.Line.CreateBound(b, a)))
+    prob = "{} grid(s) too short to fit".format(missed) if missed else None
+    return todo, prob
+
+
+def apply_line(g, view, line):
+    for end in (DB.DatumEnds.End0, DB.DatumEnds.End1):
+        try:
+            if g.GetDatumExtentTypeInView(end, view) != \
+                    DB.DatumExtentType.ViewSpecific:
+                g.SetDatumExtentType(end, view,
+                                     DB.DatumExtentType.ViewSpecific)
+        except Exception:
+            pass
+    g.SetCurveInView(DB.DatumExtentType.ViewSpecific, view, line)
+
+
+def matches(g, view, line, tol=0.02):
+    c = V.view_curve(g, view)
+    p, q = c.GetEndPoint(0), c.GetEndPoint(1)
+    a, b = line.GetEndPoint(0), line.GetEndPoint(1)
+    d = lambda m, k: abs(m.X - k.X) + abs(m.Y - k.Y)
+    return (d(p, a) < tol and d(q, b) < tol) or (d(p, b) < tol and
+                                                 d(q, a) < tol)
+
+
+# ---------------------------------------------------------------------
+rows = candidate_views()
+if not rows:
+    forms.alert("No plan views in this model.", exitscript=True)
+win = FitGridsWindow(rows)
+win.ShowDialog()
+if not win.result:
+    script.exit()
+views, margin, inset, cap = win.result
+
+# dependents first, parents last: if Revit shares grid extents between a
+# parent and its zones, the parent's (whole-level) fit is the one kept
+views.sort(key=lambda v: 0 if v.GetPrimaryViewId() !=
+           DB.ElementId.InvalidElementId else 1)
+
+problems, done = [], []
+with revit.Transaction("MCC: Fit grids"):
+    for view in views:
+        try:
+            todo, prob = plan_view(view, margin, inset, cap)
+        except Exception as ex:
+            problems.append(u"{}: {}".format(view.Name, ex))
+            continue
+        if prob:
+            problems.append(u"{}: {}".format(view.Name, prob))
+        fails = 0
+        for g, line in todo:
+            try:
+                apply_line(g, view, line)
+                done.append((g, view, line))
+            except Exception:
+                fails += 1
+        if fails:
+            problems.append(u"{}: {} grid(s) Revit refused".format(
+                view.Name, fails))
+    doc.Regenerate()
+    moved = {}
+    for g, view, line in done:
+        if not matches(g, view, line):
+            moved[view.Name] = moved.get(view.Name, 0) + 1
+    for name, k in sorted(moved.items()):
+        problems.append(u"{}: {} grid(s) were changed again by another "
+                        u"view (parent/zone views share grid ends)"
+                        .format(name, k))
+
+if problems:
+    forms.alert("Fit Grids finished with notes:\n\n" +
+                "\n".join(problems[:25]), title="Fit Grids")

@@ -1,0 +1,1133 @@
+{
+ "source": "g.pdf",
+ "scale": "3/32\"=1'-0\"",
+ "origin": "Grid 1 / AA = (0,0)",
+ "origin_ft": [
+  130.09295068754824,
+  -83.5934765657019
+ ],
+ "grids": [
+  {
+   "label": "1",
+   "start": [
+    0.0,
+    67.0779
+   ],
+   "end": [
+    -0.0,
+    -187.411
+   ],
+   "elbow": false,
+   "nseg": 60,
+   "flags": [],
+   "angle": 90,
+   "moved_in": 0.06
+  },
+  {
+   "label": "10",
+   "start": [
+    207.471,
+    71.5399
+   ],
+   "end": [
+    305.0251,
+    -137.6655
+   ],
+   "elbow": true,
+   "nseg": 50,
+   "flags": [
+    "bubble on elbow leader (placed at grid, not bubble)"
+   ],
+   "angle": 115,
+   "moved_in": 0.01
+  },
+  {
+   "label": "11",
+   "start": [
+    322.3694,
+    -133.8464
+   ],
+   "end": [
+    310.2619,
+    -107.8818
+   ],
+   "elbow": true,
+   "nseg": 2,
+   "flags": [
+    "bubble on elbow leader (placed at grid, not bubble)"
+   ],
+   "angle": 115,
+   "moved_in": -0.0
+  },
+  {
+   "label": "2",
+   "start": [
+    27.4167,
+    67.0779
+   ],
+   "end": [
+    27.4167,
+    -186.7354
+   ],
+   "elbow": false,
+   "nseg": 62,
+   "flags": [],
+   "angle": 90,
+   "moved_in": 0.23
+  },
+  {
+   "label": "3",
+   "start": [
+    41.5833,
+    67.0779
+   ],
+   "end": [
+    41.5833,
+    -186.7354
+   ],
+   "elbow": false,
+   "nseg": 56,
+   "flags": [],
+   "angle": 90,
+   "moved_in": 0.26
+  },
+  {
+   "label": "4",
+   "start": [
+    70.4167,
+    67.0779
+   ],
+   "end": [
+    70.4167,
+    -186.7354
+   ],
+   "elbow": false,
+   "nseg": 56,
+   "flags": [],
+   "angle": 90,
+   "moved_in": 0.5
+  },
+  {
+   "label": "5",
+   "start": [
+    84.5,
+    67.0779
+   ],
+   "end": [
+    84.5,
+    -186.7354
+   ],
+   "elbow": false,
+   "nseg": 56,
+   "flags": [],
+   "angle": 90,
+   "moved_in": 0.46
+  },
+  {
+   "label": "6",
+   "start": [
+    110.25,
+    67.0779
+   ],
+   "end": [
+    110.25,
+    -186.7354
+   ],
+   "elbow": false,
+   "nseg": 67,
+   "flags": [],
+   "angle": 90,
+   "moved_in": 0.58
+  },
+  {
+   "label": "7",
+   "start": [
+    133.1667,
+    67.0779
+   ],
+   "end": [
+    133.1667,
+    -186.7354
+   ],
+   "elbow": false,
+   "nseg": 56,
+   "flags": [],
+   "angle": 90,
+   "moved_in": 0.78
+  },
+  {
+   "label": "8",
+   "start": [
+    170.5,
+    67.0779
+   ],
+   "end": [
+    170.5,
+    -186.7354
+   ],
+   "elbow": false,
+   "nseg": 56,
+   "flags": [],
+   "angle": 90,
+   "moved_in": 0.99
+  },
+  {
+   "label": "9",
+   "start": [
+    176.6963,
+    68.1279
+   ],
+   "end": [
+    250.6484,
+    -90.4629
+   ],
+   "elbow": false,
+   "nseg": 20,
+   "flags": [],
+   "angle": 115,
+   "moved_in": -0.0
+  },
+  {
+   "label": "A",
+   "start": [
+    231.6961,
+    76.0848
+   ],
+   "end": [
+    137.1011,
+    31.9745
+   ],
+   "elbow": true,
+   "nseg": 10,
+   "flags": [
+    "bubble on elbow leader (placed at grid, not bubble)"
+   ],
+   "angle": 25,
+   "moved_in": -0.32
+  },
+  {
+   "label": "A1",
+   "start": [
+    33.5709,
+    -290.5156
+   ],
+   "end": [
+    -6.7666,
+    -220.6489
+   ],
+   "elbow": true,
+   "nseg": 9,
+   "flags": [
+    "bubble on elbow leader (placed at grid, not bubble)",
+    "moved -1.01\" to match dimensions"
+   ],
+   "angle": 120,
+   "moved_in": -1.01
+  },
+  {
+   "label": "A11",
+   "start": [
+    303.0893,
+    -140.8352
+   ],
+   "end": [
+    263.9175,
+    -72.9875
+   ],
+   "elbow": false,
+   "nseg": 9,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.86
+  },
+  {
+   "label": "A14",
+   "start": [
+    296.2763,
+    -148.868
+   ],
+   "end": [
+    277.2534,
+    -115.9194
+   ],
+   "elbow": false,
+   "nseg": 5,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.79
+  },
+  {
+   "label": "A2",
+   "start": [
+    55.445,
+    -287.9025
+   ],
+   "end": [
+    10.7614,
+    -210.5084
+   ],
+   "elbow": false,
+   "nseg": 10,
+   "flags": [],
+   "angle": 120,
+   "moved_in": -0.62
+  },
+  {
+   "label": "A2.2",
+   "start": [
+    63.4296,
+    -284.3989
+   ],
+   "end": [
+    18.6744,
+    -206.8807
+   ],
+   "elbow": false,
+   "nseg": 12,
+   "flags": [],
+   "angle": 120,
+   "moved_in": -0.65
+  },
+  {
+   "label": "A2.8",
+   "start": [
+    79.2656,
+    -274.1611
+   ],
+   "end": [
+    76.5405,
+    -269.441
+   ],
+   "elbow": false,
+   "nseg": 2,
+   "flags": [
+    "angle snapped 120.10->120.01"
+   ],
+   "angle": 120,
+   "moved_in": -0.65
+  },
+  {
+   "label": "A3",
+   "start": [
+    86.6216,
+    -269.902
+   ],
+   "end": [
+    41.9282,
+    -192.4908
+   ],
+   "elbow": false,
+   "nseg": 10,
+   "flags": [],
+   "angle": 120,
+   "moved_in": -0.42
+  },
+  {
+   "label": "A3.8",
+   "start": [
+    110.4445,
+    -256.1645
+   ],
+   "end": [
+    95.0434,
+    -229.489
+   ],
+   "elbow": false,
+   "nseg": 4,
+   "flags": [],
+   "angle": 120,
+   "moved_in": -0.32
+  },
+  {
+   "label": "A4",
+   "start": [
+    117.7976,
+    -251.9004
+   ],
+   "end": [
+    73.0904,
+    -174.4653
+   ],
+   "elbow": false,
+   "nseg": 10,
+   "flags": [],
+   "angle": 120,
+   "moved_in": -0.28
+  },
+  {
+   "label": "A4.8",
+   "start": [
+    141.6189,
+    -238.1601
+   ],
+   "end": [
+    122.8253,
+    -205.6087
+   ],
+   "elbow": false,
+   "nseg": 4,
+   "flags": [],
+   "angle": 120,
+   "moved_in": -0.19
+  },
+  {
+   "label": "A5",
+   "start": [
+    148.972,
+    -233.896
+   ],
+   "end": [
+    104.2571,
+    -156.4476
+   ],
+   "elbow": false,
+   "nseg": 10,
+   "flags": [],
+   "angle": 120,
+   "moved_in": -0.16
+  },
+  {
+   "label": "A5.8",
+   "start": [
+    172.7977,
+    -220.1634
+   ],
+   "end": [
+    157.3967,
+    -193.488
+   ],
+   "elbow": false,
+   "nseg": 3,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.08
+  },
+  {
+   "label": "A6",
+   "start": [
+    180.1591,
+    -215.9137
+   ],
+   "end": [
+    135.4238,
+    -138.43
+   ],
+   "elbow": false,
+   "nseg": 10,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.07
+  },
+  {
+   "label": "A6.8",
+   "start": [
+    203.9721,
+    -202.1591
+   ],
+   "end": [
+    185.1619,
+    -169.5789
+   ],
+   "elbow": false,
+   "nseg": 5,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.19
+  },
+  {
+   "label": "A7",
+   "start": [
+    211.3335,
+    -197.9093
+   ],
+   "end": [
+    166.5982,
+    -120.4256
+   ],
+   "elbow": false,
+   "nseg": 10,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.18
+  },
+  {
+   "label": "A7.8",
+   "start": [
+    235.1509,
+    -184.1624
+   ],
+   "end": [
+    216.3408,
+    -151.5823
+   ],
+   "elbow": false,
+   "nseg": 5,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.48
+  },
+  {
+   "label": "A8",
+   "start": [
+    242.5124,
+    -179.9127
+   ],
+   "end": [
+    190.4374,
+    -89.7163
+   ],
+   "elbow": false,
+   "nseg": 11,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.48
+  },
+  {
+   "label": "A8.8",
+   "start": [
+    264.5491,
+    -163.0815
+   ],
+   "end": [
+    247.2925,
+    -133.1922
+   ],
+   "elbow": false,
+   "nseg": 4,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.58
+  },
+  {
+   "label": "A9",
+   "start": [
+    273.6867,
+    -161.9083
+   ],
+   "end": [
+    208.3945,
+    -48.8189
+   ],
+   "elbow": false,
+   "nseg": 14,
+   "flags": [],
+   "angle": 120,
+   "moved_in": 0.59
+  },
+  {
+   "label": "AA",
+   "start": [
+    -24.9552,
+    0.0
+   ],
+   "end": [
+    179.6315,
+    0.0
+   ],
+   "elbow": false,
+   "nseg": 44,
+   "flags": [],
+   "angle": 0,
+   "moved_in": -0.03
+  },
+  {
+   "label": "B",
+   "start": [
+    243.8972,
+    65.2236
+   ],
+   "end": [
+    174.0948,
+    32.6743
+   ],
+   "elbow": false,
+   "nseg": 10,
+   "flags": [],
+   "angle": 25,
+   "moved_in": -0.44
+  },
+  {
+   "label": "BB",
+   "start": [
+    -24.9552,
+    -32.5
+   ],
+   "end": [
+    179.6315,
+    -32.5
+   ],
+   "elbow": false,
+   "nseg": 44,
+   "flags": [],
+   "angle": 0,
+   "moved_in": 0.16
+  },
+  {
+   "label": "C",
+   "start": [
+    256.4611,
+    37.981
+   ],
+   "end": [
+    225.3453,
+    23.4714
+   ],
+   "elbow": false,
+   "nseg": 6,
+   "flags": [],
+   "angle": 25,
+   "moved_in": -0.3
+  },
+  {
+   "label": "CC",
+   "start": [
+    -24.9552,
+    -68.5
+   ],
+   "end": [
+    179.6315,
+    -68.5
+   ],
+   "elbow": false,
+   "nseg": 50,
+   "flags": [],
+   "angle": 0,
+   "moved_in": 0.37
+  },
+  {
+   "label": "D",
+   "start": [
+    271.6618,
+    5.3476
+   ],
+   "end": [
+    202.5485,
+    -26.8805
+   ],
+   "elbow": false,
+   "nseg": 9,
+   "flags": [],
+   "angle": 25,
+   "moved_in": -0.05
+  },
+  {
+   "label": "E",
+   "start": [
+    286.8741,
+    -27.2805
+   ],
+   "end": [
+    217.9699,
+    -59.411
+   ],
+   "elbow": false,
+   "nseg": 8,
+   "flags": [],
+   "angle": 25,
+   "moved_in": 0.11
+  },
+  {
+   "label": "EE",
+   "start": [
+    -24.9552,
+    -104.5
+   ],
+   "end": [
+    179.6315,
+    -104.5
+   ],
+   "elbow": false,
+   "nseg": 48,
+   "flags": [],
+   "angle": 0,
+   "moved_in": 0.59
+  },
+  {
+   "label": "F",
+   "start": [
+    298.6242,
+    -52.4141
+   ],
+   "end": [
+    -13.4076,
+    -232.5657
+   ],
+   "elbow": false,
+   "nseg": 39,
+   "flags": [],
+   "angle": 30,
+   "moved_in": -0.1
+  },
+  {
+   "label": "F.2",
+   "start": [
+    302.0982,
+    -59.9029
+   ],
+   "end": [
+    233.3767,
+    -91.9483
+   ],
+   "elbow": false,
+   "nseg": 9,
+   "flags": [],
+   "angle": 25,
+   "moved_in": 0.41
+  },
+  {
+   "label": "FF",
+   "start": [
+    -24.9552,
+    -140.6667
+   ],
+   "end": [
+    179.6315,
+    -140.6667
+   ],
+   "elbow": false,
+   "nseg": 74,
+   "flags": [],
+   "angle": 0,
+   "moved_in": 0.72
+  },
+  {
+   "label": "G",
+   "start": [
+    310.4996,
+    -77.8894
+   ],
+   "end": [
+    0.6046,
+    -256.8073
+   ],
+   "elbow": false,
+   "nseg": 38,
+   "flags": [],
+   "angle": 30,
+   "moved_in": -0.1
+  },
+  {
+   "label": "G.7",
+   "start": [
+    317.3177,
+    -92.5275
+   ],
+   "end": [
+    248.5383,
+    -124.5999
+   ],
+   "elbow": false,
+   "nseg": 9,
+   "flags": [],
+   "angle": 25,
+   "moved_in": 0.6
+  },
+  {
+   "label": "GG",
+   "start": [
+    -24.9552,
+    -176.5
+   ],
+   "end": [
+    179.6315,
+    -176.5
+   ],
+   "elbow": false,
+   "nseg": 44,
+   "flags": [
+    "moved +1.01\" to match dimensions"
+   ],
+   "angle": 0,
+   "moved_in": 1.01
+  },
+  {
+   "label": "H",
+   "start": [
+    321.2502,
+    -104.0141
+   ],
+   "end": [
+    14.6112,
+    -281.0522
+   ],
+   "elbow": false,
+   "nseg": 37,
+   "flags": [],
+   "angle": 30,
+   "moved_in": 0.02
+  },
+  {
+   "label": "J",
+   "start": [
+    329.4044,
+    -118.1664
+   ],
+   "end": [
+    22.7913,
+    -295.1896
+   ],
+   "elbow": false,
+   "nseg": 39,
+   "flags": [],
+   "angle": 30,
+   "moved_in": 0.19
+  },
+  {
+   "label": "JJ",
+   "start": [
+    -24.9552,
+    -212.5
+   ],
+   "end": [
+    49.2493,
+    -212.5
+   ],
+   "elbow": false,
+   "nseg": 16,
+   "flags": [
+    "moved +1.23\" to match dimensions"
+   ],
+   "angle": 0,
+   "moved_in": 1.23
+  }
+ ],
+ "governed": true,
+ "spacing": [
+  {
+   "family": 90,
+   "pair": "8\u20137",
+   "measured": "37'-4.213\"",
+   "called_out": "37' - 4\"",
+   "used": "37' - 4\"",
+   "status": "dimension"
+  },
+  {
+   "family": 90,
+   "pair": "7\u20136",
+   "measured": "22'-11.197\"",
+   "called_out": "22' - 11\"",
+   "used": "22' - 11\"",
+   "status": "dimension"
+  },
+  {
+   "family": 90,
+   "pair": "6\u20135",
+   "measured": "25'-9.12\"",
+   "called_out": "25' - 9\"",
+   "used": "25' - 9\"",
+   "status": "dimension"
+  },
+  {
+   "family": 90,
+   "pair": "5\u20134",
+   "measured": "14'-0.962\"",
+   "called_out": "14' - 1\"",
+   "used": "14' - 1\"",
+   "status": "dimension"
+  },
+  {
+   "family": 90,
+   "pair": "4\u20133",
+   "measured": "28'-10.238\"",
+   "called_out": "28' - 10\"",
+   "used": "28' - 10\"",
+   "status": "dimension"
+  },
+  {
+   "family": 90,
+   "pair": "3\u20132",
+   "measured": "14'-2.029\"",
+   "called_out": "14' - 2\"",
+   "used": "14' - 2\"",
+   "status": "dimension"
+  },
+  {
+   "family": 90,
+   "pair": "2\u20131",
+   "measured": "27'-5.173\"",
+   "called_out": "27' - 5\"",
+   "used": "27' - 5\"",
+   "status": "dimension"
+  },
+  {
+   "family": 115,
+   "pair": "11\u201310",
+   "measured": "17'-3.992\"",
+   "called_out": "17' - 4\"",
+   "used": "17' - 4\"",
+   "status": "dimension"
+  },
+  {
+   "family": 115,
+   "pair": "10\u20139",
+   "measured": "29'-4.011\"",
+   "called_out": "29' - 4\"",
+   "used": "29' - 4\"",
+   "status": "dimension"
+  },
+  {
+   "family": 25,
+   "pair": "G.7\u2013F.2",
+   "measured": "36'-0.199\"",
+   "called_out": "36' - 0\"",
+   "used": "36' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 25,
+   "pair": "F.2\u2013E",
+   "measured": "36'-0.296\"",
+   "called_out": "36' - 0\"",
+   "used": "36' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 25,
+   "pair": "E\u2013D",
+   "measured": "36'-0.163\"",
+   "called_out": "36' - 0\"",
+   "used": "36' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 25,
+   "pair": "D\u2013C",
+   "measured": "36'-0.247\"",
+   "called_out": "36' - 0\"",
+   "used": "36' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 25,
+   "pair": "C\u2013B",
+   "measured": "30'-0.143\"",
+   "called_out": "30' - 0\"",
+   "used": "30' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 25,
+   "pair": "B\u2013A",
+   "measured": "14'-11.875\"",
+   "called_out": "15' - 0\"",
+   "used": "15' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A11\u2013A14",
+   "measured": "9'-11.068\"",
+   "called_out": "9' - 11\"",
+   "used": "9' - 11\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A14\u2013A9",
+   "measured": "26'-1.199\"",
+   "called_out": "26' - 1\"",
+   "used": "26' - 1\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A9\u2013A8.8",
+   "measured": "8'-6.007\"",
+   "called_out": "8' - 6\"",
+   "used": "8' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A8.8\u2013A8",
+   "measured": "27'-6.106\"",
+   "called_out": "27' - 6\"",
+   "used": "27' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A8\u2013A7.8",
+   "measured": "8'-5.991\"",
+   "called_out": "8' - 6\"",
+   "used": "8' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A7.8\u2013A7",
+   "measured": "27'-6.301\"",
+   "called_out": "27' - 6\"",
+   "used": "27' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A7\u2013A6.8",
+   "measured": "8'-5.991\"",
+   "called_out": "8' - 6\"",
+   "used": "8' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A6.8\u2013A6",
+   "measured": "27'-6.117\"",
+   "called_out": "27' - 6\"",
+   "used": "27' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A6\u2013A5.8",
+   "measured": "8'-5.99\"",
+   "called_out": "8' - 6\"",
+   "used": "8' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A5.8\u2013A5",
+   "measured": "27'-6.249\"",
+   "called_out": "27' - 6\"",
+   "used": "27' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A5\u2013A4.8",
+   "measured": "8'-6.028\"",
+   "called_out": "8' - 6\"",
+   "used": "8' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A4.8\u2013A4",
+   "measured": "27'-6.083\"",
+   "called_out": "27' - 6\"",
+   "used": "27' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A4\u2013A3.8",
+   "measured": "8'-6.042\"",
+   "called_out": "8' - 6\"",
+   "used": "8' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A3.8\u2013A3",
+   "measured": "27'-6.104\"",
+   "called_out": "27' - 6\"",
+   "used": "27' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A3\u2013A2.8",
+   "measured": "8'-6.234\"",
+   "called_out": "8' - 6\"",
+   "used": "8' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A2.8\u2013A2.2",
+   "measured": "18'-10\"",
+   "called_out": "18' - 10\"",
+   "used": "18' - 10\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A2.2\u2013A2",
+   "measured": "8'-7.967\"",
+   "called_out": "8' - 8\"",
+   "used": "8' - 8\"",
+   "status": "dimension"
+  },
+  {
+   "family": 120,
+   "pair": "A2\u2013A1",
+   "measured": "20'-3.386\"",
+   "called_out": "20' - 3\"",
+   "used": "20' - 3\"",
+   "status": "dimension"
+  },
+  {
+   "family": 0,
+   "pair": "JJ\u2013GG",
+   "measured": "36'-0.214\"",
+   "called_out": "36' - 0\"",
+   "used": "36' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 0,
+   "pair": "GG\u2013FF",
+   "measured": "35'-10.291\"",
+   "called_out": "35' - 10\"",
+   "used": "35' - 10\"",
+   "status": "dimension"
+  },
+  {
+   "family": 0,
+   "pair": "FF\u2013EE",
+   "measured": "36'-2.132\"",
+   "called_out": "36' - 2\"",
+   "used": "36' - 2\"",
+   "status": "dimension"
+  },
+  {
+   "family": 0,
+   "pair": "EE\u2013CC",
+   "measured": "36'-0.214\"",
+   "called_out": "36' - 0\"",
+   "used": "36' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 0,
+   "pair": "CC\u2013BB",
+   "measured": "36'-0.214\"",
+   "called_out": "36' - 0\"",
+   "used": "36' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 0,
+   "pair": "BB\u2013AA",
+   "measured": "32'-6.186\"",
+   "called_out": "32' - 6\"",
+   "used": "32' - 6\"",
+   "status": "dimension"
+  },
+  {
+   "family": 30,
+   "pair": "J\u2013H",
+   "measured": "16'-4.166\"",
+   "called_out": "16' - 4\"",
+   "used": "16' - 4\"",
+   "status": "dimension"
+  },
+  {
+   "family": 30,
+   "pair": "H\u2013G",
+   "measured": "28'-0.119\"",
+   "called_out": "28' - 0\"",
+   "used": "28' - 0\"",
+   "status": "dimension"
+  },
+  {
+   "family": 30,
+   "pair": "G\u2013F",
+   "measured": "28'-0.005\"",
+   "called_out": "28' - 0\"",
+   "used": "28' - 0\"",
+   "status": "dimension"
+  }
+ ]
+}

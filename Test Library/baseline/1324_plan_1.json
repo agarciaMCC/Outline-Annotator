@@ -1,0 +1,305 @@
+{
+ "schedule": {
+  "tables": [
+   "p1 grid table: 5 marks x 2 levels",
+   "p2 grid table: 9 marks x 7 levels"
+  ],
+  "levels": [
+   "P4",
+   "P2",
+   "B1",
+   "1",
+   "2",
+   "3",
+   "3M",
+   "ROOF"
+  ],
+  "marks": {
+   "CC1": {
+    "P4": "24x24",
+    "P2": "24x24",
+    "B1": "24x24",
+    "1": "24x24",
+    "2": "24x24",
+    "3": "24x24",
+    "3M": "24x24",
+    "ROOF": "24x24"
+   },
+   "CC2": {
+    "P4": "48x48",
+    "P2": "48x48",
+    "B1": "48x48",
+    "1": "48x48",
+    "2": "48x48",
+    "3": "48x48",
+    "3M": "48x48",
+    "ROOF": "48x48"
+   },
+   "CC3": {
+    "P4": "46x80",
+    "P2": "46x80",
+    "B1": "46x80",
+    "1": "46x80",
+    "2": "46x80",
+    "3": "46x80",
+    "3M": "46x80",
+    "ROOF": "46x80"
+   },
+   "CC4": {
+    "P4": "48x50",
+    "P2": "48x50",
+    "B1": "48x50",
+    "1": "48x50",
+    "2": "48x50",
+    "3": "48x50",
+    "3M": "48x50",
+    "ROOF": "48x50"
+   },
+   "CC5": {
+    "P4": "48x63",
+    "P2": "48x63",
+    "B1": "48x63",
+    "1": "48x63",
+    "2": "48x63",
+    "3": "48x63",
+    "3M": "48x63",
+    "ROOF": "48x63"
+   },
+   "SC1": {
+    "P4": "W14X233",
+    "P2": "W14X233",
+    "2": "W14X233",
+    "3": "W14X233",
+    "3M": "HSS16X16X3/4",
+    "ROOF": "HSS16X16X3/4"
+   },
+   "SC10": {
+    "3": "W14X53",
+    "3M": "W14X53",
+    "ROOF": "W14X53"
+   },
+   "SC11": {
+    "3": "HSS6X6X1/2",
+    "3M": "HSS6X6X1/2",
+    "ROOF": "HSS6X6X1/2"
+   },
+   "SC2": {
+    "P4": "W14X193",
+    "P2": "W14X193",
+    "2": "W14X193",
+    "3": "W14X193",
+    "3M": "W14X193",
+    "ROOF": "W14X193"
+   },
+   "SC3": {
+    "P4": "W14X159",
+    "P2": "W14X159",
+    "2": "W14X159",
+    "3": "W14X159",
+    "3M": "HSS16X16X3/4",
+    "ROOF": "HSS16X16X3/4"
+   },
+   "SC4": {
+    "P4": "W14X159",
+    "P2": "W14X159",
+    "2": "W14X159",
+    "3": "W14X159",
+    "3M": "W14X159",
+    "ROOF": "W14X159"
+   },
+   "SC7": {
+    "3": "W14X53",
+    "3M": "W14X53",
+    "ROOF": "W14X53"
+   },
+   "SC8": {
+    "P4": "HSS8X6X5/8",
+    "P2": "HSS8X6X5/8",
+    "2": "HSS8X6X5/8",
+    "3": "HSS8X6X5/8",
+    "3M": "HSS8X6X5/8",
+    "ROOF": "HSS8X6X5/8"
+   },
+   "SC9": {
+    "3": "HSS4X4X1/2",
+    "3M": "HSS4X4X1/2",
+    "ROOF": "HSS4X4X1/2"
+   }
+  }
+ },
+ "plan": {
+  "scale": "1/8\" = 1'-0\"",
+  "grids": 19,
+  "columns": 15,
+  "unmarked": 146,
+  "flagged": 15,
+  "warnings": [],
+  "detail": [
+   [
+    "SC1",
+    null,
+    [
+     44.8,
+     -168.5
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC1",
+    null,
+    [
+     168.9,
+     -168.5
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC1",
+    null,
+    [
+     168.9,
+     -96.9
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC1",
+    null,
+    [
+     293.0,
+     -168.5
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC2",
+    null,
+    [
+     44.8,
+     -132.7
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC2",
+    null,
+    [
+     168.9,
+     -132.7
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC2",
+    null,
+    [
+     293.0,
+     -132.7
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC3",
+    null,
+    [
+     44.8,
+     -204.3
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC3",
+    null,
+    [
+     293.0,
+     -204.3
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC8",
+    null,
+    [
+     66.0,
+     -61.1
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC8",
+    null,
+    [
+     85.5,
+     -80.6
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC8",
+    null,
+    [
+     85.5,
+     -69.0
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC8",
+    null,
+    [
+     252.3,
+     -69.2
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC8",
+    null,
+    [
+     252.4,
+     -80.6
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ],
+   [
+    "SC8",
+    null,
+    [
+     271.8,
+     -61.1
+    ],
+    [
+     "mark not found in the schedule at level 1"
+    ]
+   ]
+  ]
+ }
+}

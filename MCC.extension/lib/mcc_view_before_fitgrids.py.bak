@@ -1,0 +1,82 @@
+# -*- coding: utf-8 -*-
+"""Shared view helpers: which floors a soffit view shows, their plan
+extent, and the straight grids in the view."""
+import math
+from pyrevit import DB
+
+
+def soffit_floors(doc, view, level_only=True):
+    """Floors visible in the view. Soffit views look up, so the slab shown
+    is usually hosted a level above the view; take the level most floors
+    sit on. Returns (floors, level or None)."""
+    visible = list(DB.FilteredElementCollector(doc, view.Id)
+                   .OfClass(DB.Floor))
+    if not visible or not level_only:
+        return visible, None
+    by_level = {}
+    for f in visible:
+        by_level.setdefault(f.LevelId.IntegerValue, []).append(f)
+    lid = max(by_level, key=lambda k: len(by_level[k]))
+    return by_level[lid], doc.GetElement(DB.ElementId(lid))
+
+
+def plan_extent(elements, view=None):
+    """(xmin, ymin, xmax, ymax) of the elements' bounding boxes."""
+    xs, ys = [], []
+    for e in elements:
+        bb = e.get_BoundingBox(view)
+        if bb is None:
+            continue
+        xs += [bb.Min.X, bb.Max.X]
+        ys += [bb.Min.Y, bb.Max.Y]
+    if not xs:
+        return None
+    return min(xs), min(ys), max(xs), max(ys)
+
+
+def straight_grids(doc, view):
+    """[(grid, (x0, y0), u, n)] for straight grids visible in the view,
+    using the view-specific curve when there is one."""
+    out = []
+    for g in DB.FilteredElementCollector(doc, view.Id).OfClass(DB.Grid):
+        c = view_curve(g, view)
+        if not isinstance(c, DB.Line):
+            continue
+        d = c.Direction
+        m = math.hypot(d.X, d.Y)
+        if m < 1e-9:
+            continue
+        ux, uy = d.X / m, d.Y / m
+        p0 = c.GetEndPoint(0)
+        out.append((g, (p0.X, p0.Y), (ux, uy), (-uy, ux)))
+    return out
+
+
+def view_curve(grid, view):
+    try:
+        curves = grid.GetCurvesInView(DB.DatumExtentType.ViewSpecific, view)
+        if curves and curves.Count:
+            return curves[0]
+    except Exception:
+        pass
+    return grid.Curve
+
+
+def grid_families(grids, parallel_deg=0.5):
+    """Group grid indexes by direction."""
+    sin_tol = math.sin(math.radians(parallel_deg))
+    fams = []
+    for gi, (g, g0, u, n) in enumerate(grids):
+        for fam in fams:
+            fu = grids[fam[0]][2]
+            if abs(u[0] * fu[1] - u[1] * fu[0]) <= sin_tol:
+                fam.append(gi)
+                break
+        else:
+            fams.append([gi])
+    return fams
+
+
+def type_name(e):
+    p = e.get_Parameter(DB.BuiltInParameter.SYMBOL_NAME_PARAM)
+    return p.AsString() if p else e.Name

@@ -1,0 +1,126 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Columns from PDF" Width="820" Height="780" MinHeight="520"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+        ShowInTaskbar="False" Topmost="True">
+    <Grid Margin="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 1. sources -->
+        <GroupBox Grid.Row="0" Header="PDF sheets" Padding="8,6" Margin="0,0,0,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Plan sheet" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txt_plan" Height="24" Padding="3,2"
+                         VerticalContentAlignment="Center" Margin="0,2"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="Browse..." Width="70" Height="24"
+                        Margin="6,2" Click="browse_plan"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Text="Page" VerticalAlignment="Center" Margin="4,0"/>
+                <TextBox Grid.Row="0" Grid.Column="4" x:Name="txt_page" Text="1" Height="24"
+                         VerticalContentAlignment="Center" Margin="0,2"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Column schedule" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_sched" Height="24" Padding="3,2"
+                         VerticalContentAlignment="Center" Margin="0,2"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="Browse..." Width="70" Height="24"
+                        Margin="6,2" Click="browse_sched"/>
+                <TextBlock Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Text="(all pages)"
+                           VerticalAlignment="Center" Margin="4,0" Foreground="#666666"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Level" VerticalAlignment="Center"/>
+                <DockPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,4,0,0">
+                    <Button DockPanel.Dock="Right" x:Name="btn_read" Content="Read columns"
+                            Width="110" Height="26" FontWeight="SemiBold" Click="read_click"/>
+                    <Button DockPanel.Dock="Right" x:Name="btn_types" Content="Create all types from schedule"
+                            Width="190" Height="26" Margin="0,0,8,0" Click="types_click"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox x:Name="cmb_level" Width="150" Height="24" SelectionChanged="level_changed"/>
+                        <TextBlock Text="  = schedule level" VerticalAlignment="Center"/>
+                        <TextBox x:Name="txt_slevel" Width="70" Height="24" Margin="6,0,0,0"
+                                 VerticalContentAlignment="Center"/>
+                        <TextBlock Text="   scale" VerticalAlignment="Center"/>
+                        <ComboBox x:Name="cmb_scale" Width="150" Height="24" Margin="6,0,0,0"/>
+                    </StackPanel>
+                </DockPanel>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Families" VerticalAlignment="Center"/>
+                <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" Orientation="Horizontal" Margin="0,4,0,0">
+                    <TextBlock Text="Rectangular" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmb_fam_rect" Width="190" Height="24" Margin="4,0,10,0"
+                              SelectionChanged="fam_changed"/>
+                    <TextBlock Text="Circular" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmb_fam_round" Width="160" Height="24" Margin="4,0,10,0"
+                              SelectionChanged="fam_changed"/>
+                    <TextBlock Text="Bullnose" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmb_fam_bull" Width="160" Height="24" Margin="4,0,0,0"
+                              SelectionChanged="fam_changed"/>
+                </StackPanel>
+                <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" x:Name="lbl_status"
+                           TextWrapping="Wrap" Margin="0,6,0,0" Foreground="#444444"
+                           Text="Create the grids first (Grids from PDF) - columns are lined up on the grids already in the model. Pick the level plan sheet and the column schedule, then Read columns."/>
+            </Grid>
+        </GroupBox>
+
+        <!-- 2. marks -->
+        <GroupBox Grid.Row="1" Header="Columns found (by mark)" Padding="8,6" Margin="0,0,0,8">
+            <DockPanel>
+                <DockPanel DockPanel.Dock="Top" Margin="0,0,0,4">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                        <Button Content="All" Width="44" Height="22" Margin="0,0,4,0" Click="all_click"/>
+                        <Button Content="None" Width="44" Height="22" Margin="0,0,4,0" Click="none_click"/>
+                        <Button x:Name="btn_check" Content="Open check PDF" Width="110" Height="22"
+                                IsEnabled="False" Click="check_click"/>
+                    </StackPanel>
+                    <TextBlock x:Name="lbl_count" VerticalAlignment="Center"/>
+                </DockPanel>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Grid x:Name="tbl"/>
+                </ScrollViewer>
+            </DockPanel>
+        </GroupBox>
+
+        <!-- 3. options -->
+        <GroupBox Grid.Row="2" Header="Placement" Padding="8,6" Margin="0,0,0,8">
+            <StackPanel>
+                <CheckBox x:Name="chk_attach" Content="Attach column tops to the slab above (else top at the level above)"
+                          IsChecked="True" Margin="0,2"/>
+                <CheckBox x:Name="chk_skip" Content="Skip marks already placed at the same spot on this level"
+                          IsChecked="True" Margin="0,2"/>
+                <StackPanel Orientation="Horizontal" Margin="0,2">
+                    <CheckBox x:Name="chk_cdims" VerticalAlignment="Center"
+                              Content="Dimension column centers to the nearest grid each way (check against the CDs)"/>
+                    <TextBlock Text="   type" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmb_dimtype" Width="200" Height="22" Margin="6,0,0,0"/>
+                </StackPanel>
+                <TextBlock x:Name="lbl_align" Foreground="#444444" Margin="0,4,0,0" TextWrapping="Wrap"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- 4. buttons -->
+        <DockPanel Grid.Row="3">
+            <CheckBox x:Name="chk_default" Content="Set as default" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btn_ok" Content="Place columns" Width="110" Height="28" Margin="0,0,6,0"
+                        FontWeight="SemiBold" IsEnabled="False" Click="ok_click"/>
+                <Button Content="Cancel" Width="80" Height="28" Click="cancel_click"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

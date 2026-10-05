@@ -1,0 +1,22 @@
+# Revit models and backups
+*.rvt
+*.rfa
+*_backup/
+*.slog
+# Large binaries / installers / archives
+*.exe
+*.zip
+# Reference PDFs and generated output
+*.pdf
+Claude outputs/**/*.png
+# Python caches
+__pycache__/
+*.pyc
+# Scratch / retired
+Revit_temp/
+_to_delete/
+*.log
+*.tmp
+
+# Separate tool with its own repository
+RevitMCP.extension/
