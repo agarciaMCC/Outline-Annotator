@@ -189,6 +189,11 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
 - **2026-10-05 — run L3N 48: one halfway beam dim.** Adolfo: "every ~35 ft" was a little much — beams over
   `BEAM_MID_OVER` 40 ft now get ONE intermediate width dim, halfway between the end dims (`BEAM_MID_EVERY` removed).
   169 planned / 156 placed / 2 review (outside crop) / 0 overlaps, 18 s.
+- **2026-10-05 — run L3N 49: beams continuing in line.** Adolfo: a band's end width dim sat mid-band by the CJ. The band is
+  two beams end to end (14895567, 16 ft, with the 24x30 column, + 14181407); the joint counted as an end, so 14181407's
+  "end" dim went at the joint and 14895567's real-end dim was deduped as its duplicate (same two sides). `do_beam`
+  now checks each end for a beam continuing in line with the same side offsets (`continues()`) — no width dim at
+  such a joint; the piece's other end gets it. `beamjoint_v2_run49.png`.
 - Next: a review round on the *placed* dims (close-ups by area), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)

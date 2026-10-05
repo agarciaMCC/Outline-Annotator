@@ -544,13 +544,40 @@ class Planner(object):
         free_st = [self.m.station(e.mid(), gi) for e in f.meta["free_ends"]]
         if len(free_st) == 1:
             end_dir = 1 if abs(free_st[0] - s1) < abs(free_st[0] - s0) else -1
+        # a beam continuing in line with the same sides past an end (two
+        # pieces of one band) has no END there - a width dim at that joint
+        # sits mid-band, and the other piece's real-end dim gets thrown out as
+        # its duplicate (Adolfo: beam 14895567 + 14181407)
+        def continues(st, d):
+            g_, g0_, u_, n_ = self.m.grids[gi]
+            mo = (on + of) / 2.0
+            x = g0_[0] + u_[0] * (st + d * 1.0) + n_[0] * mo
+            y = g0_[1] + u_[1] * (st + d * 1.0) + n_[1] * mo
+            for o in self.m.beams:
+                if o is b or not o.poly or not o.sides or not P.point_in_poly(x, y, o.poly):
+                    continue
+                oo = sorted(self.m.offset(sd.mid(), gi) for sd in o.sides)
+                if o.d is not None and P.parallel(o.d, b.d) and abs(oo[0] - on) < 0.1 and abs(oo[-1] - of) < 0.1:
+                    return True
+            return False
+        cont_lo, cont_hi = continues(s0, -1), continues(s1, 1)
+        if cont_lo and not cont_hi:
+            end_dir = 1
+        elif cont_hi and not cont_lo:
+            end_dir = -1
         gap = self.c["OPEN_OFFSET"]
         ext = 8.0                                   # ft of open space past an end the dim may use
         def at_end(d):
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
             return (span, e_st + d * gap, d, False)
-        b_parts = [at_end(-1), at_end(1)] if (s1 - s0) > self.c["TURN_BOTH"] else [at_end(end_dir)]
+        ends_ok = [d for d, c in ((-1, cont_lo), (1, cont_hi)) if not c]
+        if (s1 - s0) > self.c["TURN_BOTH"]:
+            b_parts = [at_end(d) for d in ends_ok]
+        else:
+            b_parts = [at_end(end_dir)] if ends_ok else []
+        if cont_lo or cont_hi:
+            self.note("beam continues in line past an end (no width dim at the joint)")
         L = s1 - s0
         if L > self.c["BEAM_MID_OVER"]:
             # one, halfway between the end dims (Adolfo 2026-10-05: "every
