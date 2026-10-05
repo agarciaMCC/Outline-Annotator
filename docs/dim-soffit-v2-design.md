@@ -66,7 +66,13 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     28.7 ft (L3N) / 28.4 ft (L7).
   - L3N run 22: **162 (135 / 27) / 143 placed / 19 review / 1 overlap of 172, 17 s.**
     L7 run 9: **215 (148 / 67) / 191 placed / 24 review / 0 overlaps of 207, 17 s.**
-- Next: Adolfo reviews run 22 / 9, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — slab edges on column faces skipped (runs L3N 23, L7 10).** Dims that looked like column dims
+  were slab edges where a floor (7 1/2" PT SLAB, FILL 9 3/4") is cut around a column — the edge lies on the
+  column face. Treated like wall-flush edges: `do_run` and void edges skip an edge `flush()` with a column;
+  `Planner.on_column()` skips a bump / notch / step with any edge on a column face. L3N: 16 edges + 1 notch
+  skipped, L7: 3. **FILL floors are soffit** (Adolfo: unusual modeling, keep dimensioning them).
+  L3N run 23: **150 (124 / 26) / 132 placed / 18 review / 1 overlap, 18 s**; L7 run 10: **213 / 189 / 24 / 0, 18 s.**
+- Next: Adolfo reviews run 23 / 10, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

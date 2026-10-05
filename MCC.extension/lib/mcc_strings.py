@@ -193,6 +193,10 @@ class Planner(object):
             self.located_by[id(e)] = "on grid"; return
         if self.flush(e, self.m.walls):
             self.located_by[id(e)] = "wall face"; return
+        if self.flush(e, self.m.columns):
+            # slab cut around a column: the edge IS the column face - the
+            # column is dimensioned on other plans (Adolfo 2026-10-05)
+            self.located_by[id(e)] = "column face"; self.note("slab edge on a column face (skipped)"); return
         if self.flush(e, self.m.beams):
             self.located_by[id(e)] = "beam face"; return
         cands = [a for a in (self.anchor(fi, gi, off, -1, s_lo, s_hi),
@@ -236,7 +240,19 @@ class Planner(object):
                     return False
         return True
 
+    def on_column(self, f):
+        """Any edge of the feature lying on a column face -> the bump/notch/step
+        is the slab cut around a column, not a soffit shape: skip it."""
+        hit = [e for e in f.edges if self.flush(e, self.m.columns)]
+        if hit:
+            for e in f.edges:
+                self.located_by[id(e)] = "column face"
+            self.note("%s around a column (skipped)" % f.kind)
+        return bool(hit)
+
     def do_bump(self, f):
+        if self.on_column(f):
+            return
         a, b, cdg = f.edges            # legs a, c ; top b
         # string across the bump (family parallel to the legs): anchor | a | c | anchor
         fr = self.frame(a)
@@ -270,6 +286,8 @@ class Planner(object):
     do_notch = do_bump
 
     def do_step(self, f):
+        if self.on_column(f):
+            return
         s = f.edges[0]
         a, b = f.meta["run_before"], f.meta["run_after"]
         # locate the step face along the runs
@@ -346,6 +364,8 @@ class Planner(object):
                 for off, e in faces:
                     if self.flush(e, self.m.walls):
                         self.located_by[id(e)] = "wall face"; continue
+                    if self.flush(e, self.m.columns):
+                        self.located_by[id(e)] = "column face"; continue
                     t0, t1 = sorted([self.m.station(e.p0, gi), self.m.station(e.p1, gi)])
                     cands = [x for x in (self.anchor(fi, gi, off, -1, t0, t1),
                                          self.anchor(fi, gi, off, +1, t0, t1)) if x]
