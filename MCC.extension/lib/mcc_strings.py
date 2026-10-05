@@ -25,13 +25,14 @@ CFG = {
     "TURN_BOTH": 20.0,      # ft; runs longer than this located at both ends
     "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (hand sheets: ~1/4")
     "LANE_STEP_IN": 0.1875, # paper inches between stacked rows (hand sheets: 3/16" at every scale)
-    "CONSISTENCY": 1.25,    # switch to the neighbours' grid if within this x
+    "CONSISTENCY": 1.0,     # switch to the neighbours' grid only if no farther (Adolfo
+                            # 2026-10-05: always dimension from the closest gridline; was 1.25)
     "FAR_EDGE_MIN": 6.0,    # ft; one-sided openings wider than this also get
                             # anchor -> far edge (smaller: the size dim is enough)
     # stacked dims (Adolfo 2026-10-05): every edge of a chained string also gets
     # its own dim from the chain's anchor; the chain stays as a check
     "STACK": True,
-    "STACK_KINDS": ("opening", "bump", "notch", "beam"),
+    "STACK_KINDS": ("opening", "bump", "notch"),   # beams: width + one anchor (Adolfo 2026-10-05)
 }
 
 
@@ -358,7 +359,23 @@ class Planner(object):
                 al = (lo, faces[0][1].ref, "opening edge", "edge@wall")
             if hi_wall:
                 ah = (hi, faces[-1][1].ref, "opening edge", "edge@wall")
-            if al is None and ah is None:
+            # a gridline running THROUGH the opening, closer to its edges than
+            # any outside anchor, is the one to dimension from (Adolfo
+            # 2026-10-05: always the closest gridline) -> edges | grid | edges
+            mid_grid = None
+            if not (lo_wall or hi_wall):
+                tol = self.c["ON_GRID_TOL"]
+                gaps = ([abs(lo - al[0])] if al else []) + ([abs(ah[0] - hi)] if ah else [])
+                out_gap = min(gaps) if gaps else 1e9
+                for gj in self.m.families[fi]:
+                    o = self.m.offset(self.m.grid(gj)[1], gi)
+                    if lo + tol < o < hi - tol:
+                        d = min(o - lo, hi - o)
+                        if d < out_gap and (mid_grid is None or d < mid_grid[0]):
+                            mid_grid = (d, (o, DB.Reference(self.m.grid(gj)[0]), "grid", self.gname[gj]))
+                if mid_grid is not None:
+                    al = ah = None
+            if mid_grid is None and al is None and ah is None:
                 al = self.anchor(fi, gi, lo, -1, s_lo, s_hi, cap=self.c["MAX_DIST"], walls=False)
                 ah = self.anchor(fi, gi, hi, +1, s_lo, s_hi, cap=self.c["MAX_DIST"], walls=False)
                 if al and ah:
@@ -376,14 +393,20 @@ class Planner(object):
                 refs.append((off, e.ref, "opening edge", "edge"))
             if al: refs.insert(0, al)
             if ah: refs.append(ah)
-            label = "%s opening %s" % (kind, "anchor|edges|anchor" if (al and ah) else "anchor|edges")
+            if mid_grid is not None:
+                refs.append(mid_grid[1])
+                label = "%s opening edges|%s|edges" % (kind, mid_grid[1][3])
+            else:
+                label = "%s opening %s" % (kind, "anchor|edges|anchor" if (al and ah) else "anchor|edges")
             s = self.add(fi, gi, refs, span, label, f, prefer=pref, outward=(away or None), reach=12.0,
-                         role="locate" if (al or ah) else "check")
+                         role="locate" if (al or ah or mid_grid) else "check")
             if s is not None:
                 s.alt = alt
             # one-sided and large: the far edge gets its own anchor dim
+            # (not needed when openings are stacked - the stack has it)
             one_sided = (al is None) != (ah is None)
-            if one_sided and len(faces) >= 2 and (hi - lo) > self.c["FAR_EDGE_MIN"]:
+            stacked = self.c["STACK"] and "opening" in self.c["STACK_KINDS"]
+            if one_sided and not stacked and len(faces) >= 2 and (hi - lo) > self.c["FAR_EDGE_MIN"]:
                 anc = al or ah
                 far = faces[-1] if al else faces[0]
                 if not self.flush(far[1], self.m.walls):
@@ -561,15 +584,21 @@ class Planner(object):
             if s.role == "locate":
                 have.add((s.fi, fam_offs(s, s.refs)))
         added, chains = 0, 0
+        drop = set()
         for s in list(self.strings):
             if s.role != "locate" or len(s.refs) < 3 or s.feature is None \
                     or s.feature.kind not in self.c["STACK_KINDS"]:
                 continue
+            # anchor: a grid anywhere in the string (one may run through an
+            # opening) or a wall face / edge on a wall at an end - whichever
+            # is closest to the object it locates
             ends = []
-            for i in (0, len(s.refs) - 1):
-                if s.refs[i][2] in ("grid", "wall face") or s.names[i] == "edge@wall":
-                    nxt = s.refs[1] if i == 0 else s.refs[-2]
-                    ends.append((abs(nxt[0] - s.refs[i][0]), i))
+            last = len(s.refs) - 1
+            for i, r in enumerate(s.refs):
+                if r[2] == "grid" or (i in (0, last) and (r[2] == "wall face" or s.names[i] == "edge@wall")):
+                    near = [abs(q[0] - r[0]) for k, q in enumerate(s.refs) if k != i and q[2] != "grid"]
+                    if near:
+                        ends.append((min(near), i))
             if not ends:
                 continue
             i = min(ends)[1]
@@ -594,11 +623,24 @@ class Planner(object):
                 t.stack = (key, rank, len(targets))
                 self.strings.append(t)
                 added += 1
-            s.role = "check"
-            s.label += " (chain check)"
-            chains += 1
+            # the chain stays as the check, without the anchor: its first
+            # segment would only repeat the first stacked dim (Adolfo: doubles)
+            keep = [k for k in range(len(s.refs)) if k != i and s.refs[k][2] != "grid"]
+            check_refs = [s.refs[k] for k in keep]
+            sig = (s.fi, fam_offs(s, check_refs))
+            if len(check_refs) < 2 or sig in have:
+                drop.add(id(s))
+            else:
+                have.add(sig)
+                s.refs = check_refs
+                s.names = [s.names[k] for k in keep]
+                s.role = "check"
+                s.label += " (chain check)"
+                chains += 1
+        self.strings = [s for s in self.strings if id(s) not in drop]
         self.notes["stacked dims added (from one anchor)"] = added
-        self.notes["chains kept as checks"] = chains
+        self.notes["chains kept as checks (edges only)"] = chains
+        self.notes["chains dropped (stack says it all)"] = len(drop)
 
     def merge_through_anchor(self):
         """Two 2-line strings off the same grid, one each side of it, with

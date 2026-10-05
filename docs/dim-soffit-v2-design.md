@@ -41,7 +41,17 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - L7 run 5: **224 planned (154 / 70) / 182 placed / 42 review / 0 overlaps of 249, 41 s** (run 4: 102 / 85 / 17;
     hand sheet 93 dims). 122 stacked, 60 chains → checks — dense; Adolfo deletes extras on review (decision).
   - Toggle: `mcc_strings.CFG["STACK"]`, `["STACK_KINDS"]` (beams included — earlier decision was width + one anchor; confirm).
-- Next: review run 17/5 with Adolfo (beam stacking, density on L7), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — Adolfo's review of run 17 → runs L3N 18, L7 6.** (1) **Beams back to width + one anchor**
+  (`STACK_KINDS` = opening, bump, notch). (2) **Always the closest gridline:** `do_opening` now uses a grid running
+  *through* an opening when it is closer to the edges than any outside anchor → `edges | grid | edges` (the
+  L3N shaft was dimensioned 36'-2½" / 53'-11½" off grid 7 with grid 8 1'-1½" inside it); `stack_from_anchor`
+  takes an anchor from anywhere in the string (grid) and picks the one nearest its object; `CONSISTENCY` 1.25 → 1.0
+  (no switching to a farther "neighbours'" grid). (3) **No doubled dims:** the chain kept as a check drops its
+  anchor (its first segment repeated stack 1 — 36'-2½" ×2, 13'-2¾" ×2); a check identical to another string is
+  dropped; the separate "opening far edge" dim is off while openings stack (stack 2 is the same dim).
+  - L3N run 18: **168 planned (141 / 27) / 151 placed / 17 review / 0 overlaps of 178, 17 s.** `core_v2_run18.png`.
+  - L7 run 6: **223 planned (154 / 69) / 196 placed / 27 review / 0 overlaps of 214, 19 s.**
+- Next: Adolfo reviews run 18 / 6, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).
