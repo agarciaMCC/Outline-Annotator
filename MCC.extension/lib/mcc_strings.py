@@ -16,8 +16,8 @@ import mcc_features as F
 from mcc_place import Intent, dedupe
 
 CFG = {
-    "LOC_MAX": 20.0,        # ft; anchors farther than this are a last resort
-    "MAX_DIST": 40.0,       # ft; nothing beyond this
+    "LOC_MAX": 30.0,        # ft; field tape length (Adolfo 2026-10-05, was 20) - anchors farther are a last resort
+    "MAX_DIST": 30.0,       # ft; nothing beyond the tape (was 40)
     "ON_GRID_TOL": 1.0 / 192,
     "FLUSH_TOL": 1.0 / 48,
     "SAME_OFF_TOL": 1.0 / 96,
@@ -31,6 +31,10 @@ CFG = {
                             # anchor -> far edge (smaller: the size dim is enough)
     # stacked dims (Adolfo 2026-10-05): every edge of a chained string also gets
     # its own dim from the chain's anchor; the chain stays as a check
+    # soffit elements only (Adolfo 2026-10-05): dims go TO slab edges, beams,
+    # openings, CJs - never to walls / curbs / columns (other plans show
+    # those). A wall face may be the anchor only when no grid is within LOC_MAX.
+    "WALL_ANCHOR_IF_NO_GRID": True,
     "STACK": True,
     "STACK_KINDS": ("opening", "bump", "notch"),   # beams: width + one anchor (Adolfo 2026-10-05)
 }
@@ -139,12 +143,17 @@ class Planner(object):
         c = self.c
         cap = c["LOC_MAX"] if cap is None else cap
         best = None
+        grid_near = False
         for gj in self.m.families[fi]:
             o = self.m.offset(self.m.grid(gj)[1], gi)
+            if abs(o - off) <= c["LOC_MAX"]:
+                grid_near = True                 # either side
             if (o - off) * side < -c["ON_GRID_TOL"] or abs(o - off) > cap:
                 continue
             if best is None or abs(o - off) < abs(best[0] - off):
                 best = (o, DB.Reference(self.m.grid(gj)[0]), "grid", self.gname[gj])
+        if walls and c["WALL_ANCHOR_IF_NO_GRID"] and grid_near:
+            walls = False
         if walls:
             u = self.m.grid(gi)[2]
             for w in self.m.walls:
@@ -599,8 +608,13 @@ class Planner(object):
             i = min(ends)[1]
             anc, an = s.refs[i], s.names[i]
             targets = [(r, nm) for k, (r, nm) in enumerate(zip(s.refs, s.names))
-                       if k != i and r[2] != "grid"]
+                       if k != i and r[2] not in ("grid", "wall face")]   # never TO a wall
             if len(targets) < 2:
+                continue
+            if max(abs(t[0][0] - anc[0]) for t in targets) > self.c["LOC_MAX"]:
+                # a stacked dim past the tape (30 ft) can't be pulled in the
+                # field; the chain measures segment by segment - keep it
+                self.note("not stacked: a stacked dim would pass the 30 ft tape")
                 continue
             targets.sort(key=lambda t: abs(t[0][0] - anc[0]))
             key = id(s)
@@ -620,7 +634,7 @@ class Planner(object):
                 added += 1
             # the chain stays as the check, without the anchor: its first
             # segment would only repeat the first stacked dim (Adolfo: doubles)
-            keep = [k for k in range(len(s.refs)) if k != i and s.refs[k][2] != "grid"]
+            keep = [k for k in range(len(s.refs)) if k != i and s.refs[k][2] not in ("grid", "wall face")]
             check_refs = [s.refs[k] for k in keep]
             sig = (s.fi, fam_offs(s, check_refs))
             if len(check_refs) < 2 or sig in have:

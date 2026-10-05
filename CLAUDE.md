@@ -64,6 +64,10 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
   edge-to-edge as the only location; edge-to-edge dims are fine as checks. Primary metric is grid-location
   coverage, not match with the hand sheet. Max 2–3 lanes; ≤ 10 dims of cleanup per sheet is the target.
   → `docs/dimensioning-rules.md`, `docs/dim-soffit-v2-design.md`
+- **Soffit plans dimension soffit elements only** — slab edges, beams, openings, CJs. Never dimension to walls,
+  curbs (modeled as walls on Kalae) or columns; other plans cover those. Anchor to the **closest gridline**
+  (even one running through an opening); a wall face only when no grid is within 30 ft.
+- **30 ft max per dimension** — the field crew's tape. Stacked dims from one grid are the default; chains are checks.
 - "Large Scale" detail items = CJ lines (dimension them); plain detail lines = QC points (ignore).
 - Grids from PDF: called-out dimensions govern spacing; when sheets disagree, the user picks (no default).
 

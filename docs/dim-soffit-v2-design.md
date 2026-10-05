@@ -56,7 +56,17 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   the beam was never located (Adolfo: beam 14184522 at grid 2). `do_beam` drops that case: grid through the
   beam → `side | grid | side`, else width + one anchor, **grids only** (`anchor(..., walls=False)`).
   Now `side | 2'-5¾" | 2 | 1'-6" | side`. 169 / 151 placed / 18 review / 0 overlaps, 17 s. `beam_v2_run19.png`.
-- Next: Adolfo reviews run 19 / 6, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — soffit elements only + 30 ft tape (runs L3N 20–22, L7 7–9).**
+  - **Dims go TO slab edges, beams, openings, CJs only — never to walls, curbs, columns** (shown on other plans).
+    Kalae curbs are *walls* ("8.5 x 4 CURB"): L3N had 41 wall-face refs (12 to curbs), L7 35. `anchor()`
+    now allows a wall face only when **no grid of the family is within `LOC_MAX` on either side**
+    (`CFG["WALL_ANCHOR_IF_NO_GRID"]`); stacked dims and chain checks never target a wall face. Now 0 wall refs.
+  - **`LOC_MAX` 20 → 30 ft, `MAX_DIST` 40 → 30 ft** — the field crew's tape. A stack whose longest dim would pass
+    30 ft isn't stacked (the chain is measured piece by piece, every piece < 30 ft). Longest single segment now
+    28.7 ft (L3N) / 28.4 ft (L7).
+  - L3N run 22: **162 (135 / 27) / 143 placed / 19 review / 1 overlap of 172, 17 s.**
+    L7 run 9: **215 (148 / 67) / 191 placed / 24 review / 0 overlaps of 207, 17 s.**
+- Next: Adolfo reviews run 22 / 9, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).
