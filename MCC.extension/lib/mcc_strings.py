@@ -433,24 +433,19 @@ class Planner(object):
         if abs(of - on) < self.c["SAME_OFF_TOL"]:
             return
         s0, s1 = sorted([self.m.station(b.p0, gi), self.m.station(b.p1, gi)])
-        near_wall = self.flush(near, self.m.walls) is not None
-        far_wall = self.flush(far, self.m.walls) is not None
-        if near_wall or far_wall:
-            # a side on a wall face is located by the wall; the width
-            # locates the other side (like an opening edge on a wall)
-            self.located_by[id(near if near_wall else far)] = "wall face"
-            self.add(fi, gi, [(on, near.ref, "beam side", "side@wall" if near_wall else "side"),
-                              (of, far.ref, "beam side", "side@wall" if far_wall else "side")],
-                     (s0, s1), "beam width (side on wall)", f, prefer=(s0 + s1) / 2.0)
-        elif on < -self.c["ON_GRID_TOL"] and of > self.c["ON_GRID_TOL"]:
+        # a side lying on a wall face below used to get the width only (the
+        # wall "located" it) - but the wall isn't dimensioned on the soffit
+        # plan, so the beam was never tied to a grid (Adolfo 2026-10-05):
+        # beams always get width + the closest grid
+        if on < -self.c["ON_GRID_TOL"] and of > self.c["ON_GRID_TOL"]:
             self.add(fi, gi, [(on, near.ref, "beam side", "side"), self.gref(gi) + (self.gname[gi],),
                               (of, far.ref, "beam side", "side")], (s0, s1),
                      "beam side|%s|side" % self.gname[gi], f, prefer=(s0 + s1) / 2.0)
         else:
             # hand sheets: width + ONE face to the nearest anchor (a second
             # anchor on the far side made 15-18 ft strings across the core)
-            al = self.anchor(fi, gi, on, -1, s0, s1)
-            ah = self.anchor(fi, gi, of, +1, s0, s1)
+            al = self.anchor(fi, gi, on, -1, s0, s1, walls=False)    # grids only (Adolfo)
+            ah = self.anchor(fi, gi, of, +1, s0, s1, walls=False)
             if al is None and ah is None:
                 g = self.gref(gi) + (self.gname[gi],)
                 if on > 0: al = g

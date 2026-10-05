@@ -51,7 +51,12 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   dropped; the separate "opening far edge" dim is off while openings stack (stack 2 is the same dim).
   - L3N run 18: **168 planned (141 / 27) / 151 placed / 17 review / 0 overlaps of 178, 17 s.** `core_v2_run18.png`.
   - L7 run 6: **223 planned (154 / 69) / 196 placed / 27 review / 0 overlaps of 214, 19 s.**
-- Next: Adolfo reviews run 18 / 6, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — run L3N 19: beams always tie to a grid.** A beam side lying on a wall face (wall below,
+  dashed) got the width only ("beam width (side on wall)") — the wall isn't dimensioned on the soffit plan, so
+  the beam was never located (Adolfo: beam 14184522 at grid 2). `do_beam` drops that case: grid through the
+  beam → `side | grid | side`, else width + one anchor, **grids only** (`anchor(..., walls=False)`).
+  Now `side | 2'-5¾" | 2 | 1'-6" | side`. 169 / 151 placed / 18 review / 0 overlaps, 17 s. `beam_v2_run19.png`.
+- Next: Adolfo reviews run 19 / 6, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).
