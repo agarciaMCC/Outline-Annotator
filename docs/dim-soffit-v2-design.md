@@ -27,7 +27,21 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - Result **L7 run 4: 102 planned / 85 placed / 17 review (7 over a note/tag) / 0 overlaps, 23 s; Dim Check 106/172 located (61%)** vs hand 25%. **L3N run 16: 117 / 103 / 14 / 0, 17 s; 162/217 located (74%).** Images `L7_core_hand.png`, `L7_core_auto4.png`, `L7_west_hand.png`, `L7_west_auto4.png`, `core_v2_run16.png`.
   - Not done from the L7 hand sheet: grid-to-grid overall strings (→ Dim Grids, decided 2026-10-05); "R.O." suffix (off by default, decided 2026-10-05); the running perimeter chain style.
   - **Open (next):** the 12 "over a wall" strings (allow a wall-anchored width string to sit on its own wall, or pull the lane inward); the 13 plan-NONE edges (stubs, angled beam faces); a 1" void edge next to a wall should count as flush; feature refinements listed under Stage 1.
-- Next: stacked-from-grid locating dims as the default (decision 2026-10-05), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — Paper-unit spacing + stacked dims (runs L3N 17, L7 5).** From the hand-dim measurements
+  (`other-projects-study.md`): `mcc_layout.CFG` now sets spacing on paper — `LANE_STEP_IN` 3/16", `FIRST_GAP_IN`
+  1/4", `STATION_GAP_IN` 0.16" — converted with the view scale in `Layout.__init__`; `mcc_strings` `OPEN_OFFSET_IN`
+  1/4" and `LANE_STEP_IN` likewise (`Planner.__init__`). New `Planner.stack_from_anchor()` (after dedupe/merge):
+  each locate chain of an opening / bump / notch / beam with an anchor end gets one dim per edge from the
+  anchor nearest its object (`String.stack = (group, rank, size)`, rank 0 shortest), the chain becomes role
+  `check`; stacked dims identical to an existing locate string are skipped. Layout places a stack in rank order;
+  `candidates()` offers the next row one/two `LANE_STEP`s further out from the previous row (`W_STACK` −1.0).
+  - L3N run 17: **179 planned (146 locate, 33 check) / 154 placed / 25 review / 0 overlaps of 198, 29 s**
+    (run 16: 117 / 103 / 14). 62 stacked dims, 30 chains → checks. Core: 13'-2 3/4" | 14'-4 3/4" | 15'-0 3/4" |
+    16'-2 3/4" stack beside the core reads like the hand sheet. `core_v2_run17.png` vs `core_v2_run16_same_crop.png`.
+  - L7 run 5: **224 planned (154 / 70) / 182 placed / 42 review / 0 overlaps of 249, 41 s** (run 4: 102 / 85 / 17;
+    hand sheet 93 dims). 122 stacked, 60 chains → checks — dense; Adolfo deletes extras on review (decision).
+  - Toggle: `mcc_strings.CFG["STACK"]`, `["STACK_KINDS"]` (beams included — earlier decision was width + one anchor; confirm).
+- Next: review run 17/5 with Adolfo (beam stacking, density on L7), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

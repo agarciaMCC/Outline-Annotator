@@ -23,10 +23,15 @@ CFG = {
     "SAME_OFF_TOL": 1.0 / 96,
     "CORNER_IN": 2.0,       # ft; run dims sit this far in from the corner
     "TURN_BOTH": 20.0,      # ft; runs longer than this located at both ends
-    "OPEN_OFFSET": 1.5,     # ft; opening strings sit this far outside
+    "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (hand sheets: ~1/4")
+    "LANE_STEP_IN": 0.1875, # paper inches between stacked rows (hand sheets: 3/16" at every scale)
     "CONSISTENCY": 1.25,    # switch to the neighbours' grid if within this x
     "FAR_EDGE_MIN": 6.0,    # ft; one-sided openings wider than this also get
                             # anchor -> far edge (smaller: the size dim is enough)
+    # stacked dims (Adolfo 2026-10-05): every edge of a chained string also gets
+    # its own dim from the chain's anchor; the chain stays as a check
+    "STACK": True,
+    "STACK_KINDS": ("opening", "bump", "notch", "beam"),
 }
 
 
@@ -41,6 +46,7 @@ class String(Intent):
         self.role = role
         self.names = names or [k for _, _, k in refs]   # human labels per ref
         self.alt = None
+        self.stack = None       # (group key, rank, size) for stacked dims, rank 0 = shortest
 
     def values(self):
         offs = [r[0] for r in self.refs]
@@ -78,6 +84,10 @@ class Planner(object):
         self.c = dict(CFG)
         if cfg:
             self.c.update(cfg)
+        # paper inches -> plan feet at this view's scale
+        sc = float(getattr(getattr(model, "view", None), "Scale", 96) or 96)
+        self.c.setdefault("OPEN_OFFSET", self.c["OPEN_OFFSET_IN"] * sc / 12.0)
+        self.c.setdefault("LANE_STEP", self.c["LANE_STEP_IN"] * sc / 12.0)
         self.notes = {}
         self.located_by = {}        # id(edge) -> reason (no string needed)
         self.strings = []
@@ -377,7 +387,7 @@ class Planner(object):
                 anc = al or ah
                 far = faces[-1] if al else faces[0]
                 if not self.flush(far[1], self.m.walls):
-                    pref2 = pref + away * 1.75
+                    pref2 = pref + away * self.c["LANE_STEP"]
                     self.add(fi, gi, [anc, (far[0], far[1].ref, "opening edge", "far edge")],
                              (min(span[0], pref2), max(span[1], pref2)),
                              "opening far edge -> " + anc[3], f, prefer=pref2, outward=away, reach=12.0)
@@ -531,7 +541,64 @@ class Planner(object):
         self.strings = dedupe(self.strings, notes=self.notes, base=base)
         self.notes["duplicates dropped"] = n0 - len(self.strings)
         self.merge_through_anchor()
+        self.stack_from_anchor()
         return self.strings
+
+    def stack_from_anchor(self):
+        """Stacked dims (Adolfo 2026-10-05; 67-75% of hand dims on Kalae and
+        Alia share a baseline): a locate chain anchor | e1 | e2 ... also gets
+        anchor -> e1, anchor -> e2, ... as separate dims, shortest first; the
+        chain becomes a check. Stacked from the anchor nearest its object."""
+        if not self.c["STACK"]:
+            return
+        m = self.m
+        def fam_offs(s, refs):
+            g, g0, u, n = m.grids[s.gi]
+            b = m.offset(g0, m.families[m.fam_of[s.gi]][0])
+            return tuple(round((r[0] + b) * 96) for r in refs)
+        have = set()
+        for s in self.strings:
+            if s.role == "locate":
+                have.add((s.fi, fam_offs(s, s.refs)))
+        added, chains = 0, 0
+        for s in list(self.strings):
+            if s.role != "locate" or len(s.refs) < 3 or s.feature is None \
+                    or s.feature.kind not in self.c["STACK_KINDS"]:
+                continue
+            ends = []
+            for i in (0, len(s.refs) - 1):
+                if s.refs[i][2] in ("grid", "wall face") or s.names[i] == "edge@wall":
+                    nxt = s.refs[1] if i == 0 else s.refs[-2]
+                    ends.append((abs(nxt[0] - s.refs[i][0]), i))
+            if not ends:
+                continue
+            i = min(ends)[1]
+            anc, an = s.refs[i], s.names[i]
+            targets = [(r, nm) for k, (r, nm) in enumerate(zip(s.refs, s.names))
+                       if k != i and r[2] != "grid"]
+            if len(targets) < 2:
+                continue
+            targets.sort(key=lambda t: abs(t[0][0] - anc[0]))
+            key = id(s)
+            for rank, (r, nm) in enumerate(targets):
+                pair = sorted([(anc, an), (r, nm)], key=lambda t: t[0][0])
+                refs = [p[0] for p in pair]
+                sig = (s.fi, fam_offs(s, refs))
+                if sig in have:
+                    self.note("stacked dim already planned (skipped)")
+                    continue
+                have.add(sig)
+                t = String(s.fi, s.gi, refs, s.span, "stack %d -> %s" % (rank + 1, an), s.feature,
+                           names=[p[1] for p in pair], prefer=s.prefer, outward=s.outward, reach=s.reach)
+                t.alt = s.alt
+                t.stack = (key, rank, len(targets))
+                self.strings.append(t)
+                added += 1
+            s.role = "check"
+            s.label += " (chain check)"
+            chains += 1
+        self.notes["stacked dims added (from one anchor)"] = added
+        self.notes["chains kept as checks"] = chains
 
     def merge_through_anchor(self):
         """Two 2-line strings off the same grid, one each side of it, with

@@ -28,13 +28,18 @@ import mcc_place as PL
 from mcc_strings import ftin
 
 CFG = {
-    "LANE_STEP": 1.75,      # ft between stacked dim lines
+    # spacing is set on PAPER (measured on Kalae + Alia hand dims, 2026-10-05:
+    # rows 3/16" apart at every scale, first row ~1/4" off the object);
+    # Layout converts these to plan feet with the view scale
+    "LANE_STEP_IN": 0.1875,  # paper inches between stacked dim lines
+    "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row
+    "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
+    "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
     "MAX_LANE": 2,          # lanes 0..2 (Adolfo: 2 to 3 rows), 3 = last resort
     "LAST_RESORT_LANE": 3,
     "SLIDE_STEP": 1.0,      # ft
     "SLIDE_MAX": 4.0,       # ft either way along the object
     "GRID_CLEAR": 1.5,      # ft; no dim line this close to a parallel grid
-    "STATION_GAP": 1.6,     # ft; same-direction strings closer than this must not overlap
     "CROP_MARGIN": 1.0,
     "TEXT_PAD": 0.25,
     "TEXT_LIFT": 0.2,       # x text size: gap between dim line and the text (Revit default, measured)
@@ -103,6 +108,10 @@ class Layout(object):
         self.c = dict(CFG)
         if cfg:
             self.c.update(cfg)
+        k = float(view.Scale or 96) / 12.0          # paper inches -> plan feet
+        self.c.setdefault("LANE_STEP", self.c["LANE_STEP_IN"] * k)
+        self.c.setdefault("FIRST_GAP", self.c["FIRST_GAP_IN"] * k)
+        self.c.setdefault("STATION_GAP", self.c["STATION_GAP_IN"] * k)
         self.tsize = PL.text_size_ft(dim_type) * view.Scale     # ft on the plan
         self.notes = self._existing_annotations(view)            # text notes, tags, symbols already in the view
         self.placed = []
@@ -334,6 +343,19 @@ class Layout(object):
         max_lane = c["LAST_RESORT_LANE"] if allow_last_resort else c["MAX_LANE"]
         sides = [home, -home] if home else [1, -1]
         n_slide = int(c["SLIDE_MAX"] / c["SLIDE_STEP"])
+        # the next row of a stack goes one lane further out from the row before
+        # it (shortest dim nearest the object, as on the hand sheets)
+        stk = getattr(s, "stack", None)
+        if stk and stk[1] > 0:
+            prev = [pl for pl in self.placed if getattr(pl.s, "stack", None)
+                    and pl.s.stack[0] == stk[0] and pl.s.stack[1] < stk[1]]
+            if prev:
+                last = max(prev, key=lambda pl: pl.s.stack[1])
+                st0 = last.cand[0]
+                away = home or (1 if st0 >= (s_lo + s_hi) / 2.0 else -1)
+                for j in (1, 2):
+                    out.append((c["W_STACK"] + (j - 1) * c["W_LANE"], st0 + away * j * c["LANE_STEP"],
+                                (away, "stack", j)))
         if home == 0:
             # through the span itself (a shaft width is read across the shaft)
             for k in range(-n_slide, n_slide + 1):
@@ -346,7 +368,7 @@ class Layout(object):
                     if home == 0:
                         # no home side: lanes start just outside the span on each side
                         edge = s_hi if side > 0 else s_lo
-                        st = edge + side * (1.5 + lane * c["LANE_STEP"]) + k * c["SLIDE_STEP"]
+                        st = edge + side * (c["FIRST_GAP"] + lane * c["LANE_STEP"]) + k * c["SLIDE_STEP"]
                     else:
                         st = prefer + side * lane * c["LANE_STEP"] + k * c["SLIDE_STEP"]
                     outside = max(0.0, s_lo - st, st - s_hi)
@@ -428,8 +450,12 @@ class Layout(object):
 
     # ---------------- driver ----------------
     def run(self):
-        order = sorted(self.strings, key=lambda s: (0 if s.role == "locate" else 1,
-                                                     PRIORITY.get(s.feature.kind, 9) if s.feature else 9))
+        def _key(s):
+            stk = getattr(s, "stack", None)
+            return (0 if s.role == "locate" else 1,
+                    PRIORITY.get(s.feature.kind, 9) if s.feature else 9,
+                    stk[0] if stk else 0, stk[1] if stk else 0)
+        order = sorted(self.strings, key=_key)
         pending = []
         for s in order:
             pl, why = self.place_one(s)
