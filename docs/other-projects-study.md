@@ -46,6 +46,30 @@ Model files: `Alia/1256 - Alia - R22_detached.rvt`, `Eastlake/2021.05.06 - 1156 
 11. Colour conventions: **blue dims = changed per a submittal return** (note on sheet), **red `?-?`** =
    unknown, needs info (Bothell), orange = arc centres/drip points (Alia tower).
 
+## Placement measurements — Kalae hand dims (2026-10-05)
+`Claude outputs/audit_R26/measure_placement.py` (read-only; `OUT=...; execfile`) → `reference_study/placement_kalae.md/.csv`.
+Run on all 32 Kalae soffit plans, 2,763 hand linear dims (ZZ test views skipped). Paper inches (model ft × 12 / view scale).
+**Caveat:** this run went to the live Kalae model in Revit 2023 (MCP was attached to 2023, not the R26 rig) — read only,
+model reported unmodified. Alia (saved in 2026) and Eastlake (2020) not measured yet: need the 2026 MCP session.
+- **Row spacing between stacked parallel dims: 3/16"** on paper is the clear standard (p10 0.187", biggest bin
+  0.1875–0.25" = 429, then 0.125–0.1875" = 244). Same on 1/8" and 3/32" sheets → detailers space in *paper* units.
+- **First dim line off the object: median 1/4"** (p25 1/8", p75 7/16"). Core-wall views sit further out (5/16"–3/8"),
+  falsework-layout views tighter (~1/8").
+- **Stacked from one grid dominates:** 67% of dims share an end with a parallel dim (1,840 / 2,763); 85% are
+  single-segment, only 15% are chains (median 2 segments). Supports "stacked default, chains as checks".
+- **Text:** pulled off its segment on 30% of dims (819); text sits 1/64" off the line (type setting). Words on dims:
+  R.O. ×21, TYP. ×7, TO COL CL, TO EOS, TO FACE, BM CL, FROM GL xx, SOFFIT STEP, ?'-?" (unknown) — rare overall (~3%).
+- Dim types: 5/64" Arial Narrow (transparent/plain/opaque) carry 89%; witness extension 1/32", dim line extension 0.
+- **vs Dim Soffit v2 now (`mcc_layout.CFG`):** first lane 1.5 ft and `LANE_STEP` 1.75 ft are *model* feet → 3/16" + 7/32"
+  at 1/8" but 9/64" + 5/32" at 3/32". Hand sheets keep 1/4" + 3/16" on paper at any scale → set lanes in paper inches.
+
+## Placement patterns seen on the PDFs (Alia, Eastlake, Bothell)
+- Stacked rows step outward at an even spacing; the shortest dim is nearest the object (Eastlake grid-A stack, Alia lanai).
+- Opening strings sit just outside the opening on the side toward the locating grid; overall stacked one row further out.
+- Grid-to-grid + overall are the outermost rows, outside everything else (all sets).
+- Core interior sizes go inside the shaft; wall-face anchors outside the core (Eastlake, Alia, = Kalae).
+- Skewed objects: dims stay square to the grid, not to the edge (Eastlake rotated openings, Alia L3).
+
 ## Decisions from Adolfo (2026-10-05)
 - **Grid-to-grid + overall strings:** covered by the `WIP/Dim Grids` button, not Dim Soffit v2.
   (Dim Grids does two sides of the plan; the issued sheets often show all four — check with Adolfo if it matters.)
