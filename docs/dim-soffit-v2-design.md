@@ -116,7 +116,21 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - Void-edge strings are placed after the other opening strings (they took the spot beside the opening).
   - L3N run 35: **182 / 137 placed / 42 review / 0 overlaps, 25 s** (review: 17 over a wall, 10 opening, 8 too close);
     L7 run 19: **220 / 174 / 28 / 0, 23 s** (17 text over a note/tag). `opening_v2_run35.png` matches Adolfo's version.
-- Next: Adolfo reviews run 35 / 19, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — shaft sizes inside, same-element order (runs L3N 36, L7 20).**
+  - **Inside a shaft "if absolutely necessary", overall size only** (Adolfo): in `evaluate()`, a string whose refs
+    are all opening edges (a size string) of a shaft/core opening may sit inside *its own* opening at `W_IN_SHAFT` 8.0;
+    every other dim stays out (locating dims never inside).
+  - **2'-0" / 3'-0 1/8" (opening core#127, the small opening in the top core wall) broke the stack rule** because the
+    two rows ended up ~5 ft apart on opposite sides of the core wall; the order check only looked at rows within
+    1.6 lanes. Rows of the **same feature** are now ordered at any distance (`evaluate` W_ORDER) and grouped up to
+    4× the gap in `_order_stacks`. Now 2'-0" (size) is nearest, 3'-0 1/8" outside. `core_v2_run36.png`.
+  - **Missing dims on the shaft at the core's lower right:** it is NOT a slab opening — the slab outline runs around
+    it (left edge = run#7 at x 229.5, core wall on its right, beam#268 below), so it is read as slab edges, each
+    located off a grid (3'-4½" from 7, 7'-7" from CC). No size string exists for it; its width (4'-5") used to come
+    from the left edge being dimensioned to the core wall, which the soffit-only rule removed (grid 7 is near).
+    Open: treat a slab pocket closed by walls as a shaft and give it an overall size.
+  - L3N run 36: 182 / 137 / 42 / 0 overlaps, 26 s; L7 run 20: 220 / 174 / 28 / 0, 24 s.
+- Next: Adolfo reviews run 36 / 20, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

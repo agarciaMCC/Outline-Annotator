@@ -36,6 +36,7 @@ CFG = {
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
     "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
     "W_ORDER": 3.0,          # a row nearer the element than a shorter neighbour (or further than a longer one)
+    "W_IN_SHAFT": 8.0,       # a shaft's own overall-size dim inside the shaft: last resort only
     "EDGE_CLEAR_IN": 0.0625, # paper inches; a dim line keeps this clear of an edge running the same way
     "W_JOIN": -1.5,          # bonus for lining up end-to-end with a dim sharing a witness line (joined after)
     "W_COLLINEAR": -0.75,    # bonus for a dim line on the same line as a placed parallel dim (Adolfo: align)
@@ -342,7 +343,10 @@ class Layout(object):
             my_key = (round((b - a) * 48), -len(s.refs))
             reach = 1.6 * c["LANE_STEP"]
             for pl in self.placed:
-                if pl.fi != s.fi or pl.side != my_side or abs(pl.st_f - sf) > reach:
+                # rows of the SAME element keep the order however far apart
+                # they ended up (the 2'-0" / 3'-0 1/8" pair sat a wall apart)
+                same = s.feature is not None and pl.s.feature is s.feature
+                if pl.fi != s.fi or pl.side != my_side or (abs(pl.st_f - sf) > reach and not same):
                     continue
                 if min(b, pl.hi_f) - max(a, pl.lo_f) <= 0.1:
                     continue
@@ -408,12 +412,22 @@ class Layout(object):
                 # hull covers solid slab beside it)
                 poly = o.raw or o.poly
                 a_, b_ = (pi, qi) if pi is not None else (p, q)
-                if P.seg_hits_poly(a_, b_, poly):
-                    return None, "inside an opening"
-                if any(_box_poly_overlap(bx, poly) for bx in boxes) or \
-                        any(P.seg_hits_poly(ml[0], ml[1], poly) for ml in leaders):
-                    return None, "text inside an opening"
-                continue
+                line_in = P.seg_hits_poly(a_, b_, poly)
+                text_in = any(_box_poly_overlap(bx, poly) for bx in boxes) or \
+                    any(P.seg_hits_poly(ml[0], ml[1], poly) for ml in leaders)
+                if not (line_in or text_in):
+                    continue
+                # Adolfo: a shaft may carry dims inside "if absolutely necessary",
+                # and only its OVERALL SIZE (edge to edge of that shaft) - never a
+                # dim locating an edge off a grid. Allowed at a high cost.
+                f = s.feature
+                own_shaft = f is not None and f.kind == "opening" and getattr(f, "sub", None) in ("shaft", "core") \
+                    and "centroid" in getattr(f, "meta", {}) and P.point_in_poly(f.meta["centroid"][0], f.meta["centroid"][1], poly)
+                size_only = all(r[2] == "opening edge" for r in s.refs)
+                if own_shaft and size_only:
+                    pen += c["W_IN_SHAFT"]
+                    continue
+                return None, ("inside an opening" if line_in else "text inside an opening")
             if line_hit:
                 if o.kind == "beam":
                     pen += c["W_BEAM"]
@@ -715,7 +729,8 @@ class Layout(object):
                     if id(q[0]) in used or q[0].fi != pl.fi or q[1] != side:
                         continue
                     for m in grp:
-                        if abs(q[0].st_f - m[0].st_f) <= gap and \
+                        same = q[0].s.feature is not None and q[0].s.feature is m[0].s.feature
+                        if (abs(q[0].st_f - m[0].st_f) <= gap or (same and abs(q[0].st_f - m[0].st_f) <= 4 * gap)) and \
                                 min(q[0].hi_f, m[0].hi_f) - max(q[0].lo_f, m[0].lo_f) > 0.1:
                             grp.append(q); used.add(id(q[0])); grew = True
                             break
