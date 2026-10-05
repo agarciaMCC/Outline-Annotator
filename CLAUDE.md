@@ -71,6 +71,8 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 - **A dimension at each end** of long CJs, slab edges and beams (> 20 ft), for ease of reading. Beam widths at
   beam ends. Line dims up with neighbours where possible.
 - **Stacked rows: shortest nearest the element, longest furthest** — an overall goes outside its chain.
+- **Nothing inside openings** (dim lines, text, leaders). Dims of one element that meet end to end on one line are
+  joined into one string. Dim lines never sit on an edge running the same way.
 - "Large Scale" detail items = CJ lines (dimension them); plain detail lines = QC points (ignore).
 - Grids from PDF: called-out dimensions govern spacing; when sheets disagree, the user picks (no default).
 

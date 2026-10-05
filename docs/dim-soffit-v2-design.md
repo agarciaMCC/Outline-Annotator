@@ -96,7 +96,27 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - L3N run 29: 182 / 149 placed / 33 review / 1 overlap, 24 s (4 stacks reordered); L7 run 16: 220 / 196 / 24 / 0,
     22 s (7). Read-only check before the push-out step: 6 of 24 neighbouring pairs out of order on L3N, 4 of 29 on L7
     — some are unrelated rows (a small chain check beside a long locate dim), not true stacks.
-- Next: Adolfo reviews run 29 / 16 (L3N review list grew 18 → 33 with the extra end dims), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — Adolfo's cleaned-up opening → no-go openings, joined strings, edge clearance (runs L3N 30–35,
+  L7 17–19).** His fix of the L3N opening by the core (8'-3" | 11'-9" above it, 9'-3⅞" | 8'-4⅛" through the grid
+  on its right, 17'-8" outside, the void's 8'-9" off to its own element) gave these rules:
+  - **Openings are no-go zones** for dim lines, text and leaders — including the opening's own dims. Bug found:
+    opening obstacles carry the slab's element id, so every slab string skipped them (`o.eid in s.owners`); and
+    `mcc_model.Obst` now keeps the opening's true outline (`raw`) — the inflated convex hull of an L-shaped
+    opening (slab 14169070, 7-vertex loop) covered solid slab beside the core wall. `_box_poly_overlap()` for
+    text vs an n-vertex outline (`_polys_overlap` assumes 4 corners). Shaft / core sizes can no longer sit inside
+    the shaft (earlier hand-sheet choice, run 10) — they go outside the core walls or to review.
+  - **Joined strings:** `_join_collinear()` (end of `run()`, before `_order_stacks`) merges two placed dims of the
+    **same feature** on one line, end to end on a shared witness line, into one string; `candidates()` offers that
+    line with `W_JOIN` −1.5 (reach ×2). Same-feature only — joining across features dragged the void's 8'-9" to
+    the opening. `stack_from_anchor` ranks targets per side of a mid-string grid (dims on opposite sides of the
+    grid are end to end, not a stack).
+  - **Edge clearance:** `Layout._parallel_edges()` — a dim line may not lie within `EDGE_CLEAR_IN` 1/16" (paper)
+    of a slab / opening / beam edge running the same way over more than `END_TRIM` (the tool had 8'-3" drawn on
+    the opening's top edge).
+  - Void-edge strings are placed after the other opening strings (they took the spot beside the opening).
+  - L3N run 35: **182 / 137 placed / 42 review / 0 overlaps, 25 s** (review: 17 over a wall, 10 opening, 8 too close);
+    L7 run 19: **220 / 174 / 28 / 0, 23 s** (17 text over a note/tag). `opening_v2_run35.png` matches Adolfo's version.
+- Next: Adolfo reviews run 35 / 19, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

@@ -663,8 +663,17 @@ class Planner(object):
                 self.note("not stacked: a stacked dim would pass the 30 ft tape")
                 continue
             targets.sort(key=lambda t: abs(t[0][0] - anc[0]))
-            key = id(s)
-            for rank, (r, nm) in enumerate(targets):
+            # a grid in the middle: the targets on each side of it form their own
+            # stack - dims on opposite sides are end to end, not stacked (they
+            # get joined into edge | grid | edge by the layout)
+            ranks, keys = [], []
+            seen = {}
+            for r, nm in targets:
+                sd = 1 if r[0] > anc[0] else -1
+                seen[sd] = seen.get(sd, -1) + 1
+                ranks.append(seen[sd])
+                keys.append((id(s), sd))
+            for (r, nm), rank, key in zip(targets, ranks, keys):
                 pair = sorted([(anc, an), (r, nm)], key=lambda t: t[0][0])
                 refs = [p[0] for p in pair]
                 sig = (s.fi, fam_offs(s, refs))

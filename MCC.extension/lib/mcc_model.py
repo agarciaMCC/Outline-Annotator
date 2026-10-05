@@ -86,10 +86,11 @@ class CJLine(object):
 
 
 class Obst(object):
-    __slots__ = ("poly", "rect", "eid", "kind")
+    __slots__ = ("poly", "rect", "eid", "kind", "raw")
 
-    def __init__(self, poly, eid, kind):
+    def __init__(self, poly, eid, kind, raw=None):
         self.poly = poly
+        self.raw = raw              # openings: the true outline (poly is its inflated convex hull)
         xs = [p[0] for p in poly]
         ys = [p[1] for p in poly]
         self.rect = (min(xs), min(ys), max(xs), max(ys))
@@ -378,7 +379,7 @@ class PlanModel(object):
             for o in s.openings:
                 hull = P.convex_hull(o)
                 if len(hull) >= 3:
-                    obs.append(Obst(P.inflate(hull, 0.25), s.eid, "opening"))
+                    obs.append(Obst(P.inflate(hull, 0.25), s.eid, "opening", raw=[p[:2] for p in o]))
         return obs
 
     def member_at(self, x, y, cats=("column", "wall")):

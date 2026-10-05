@@ -70,7 +70,8 @@ out.print_md("Strings planned: **{}** ({} locate, {} check) - placed **{}**, nee
                  len(made) - len(kept), len(failed)))
 n_over, n_text = LY.actual_overlaps(doc, view, kept, lay.tsize)
 out.print_md("Text boxes overlapping after creation: **{}** of {}".format(n_over, n_text))
-out.print_md("Stacks reordered shortest-nearest: {}".format(getattr(lay, "notes_order", 0)))
+out.print_md("Stacks reordered shortest-nearest: {} | dims joined end to end: {}".format(
+    getattr(lay, "notes_order", 0), getattr(lay, "notes_join", 0)))
 if plan.notes:
     out.print_table(sorted(plan.notes.items()), columns=["plan notes", "count"])
 if review:
