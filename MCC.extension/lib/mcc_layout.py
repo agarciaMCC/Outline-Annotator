@@ -35,6 +35,8 @@ CFG = {
     "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
     "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
+    "W_COLLINEAR": -0.75,    # bonus for a dim line on the same line as a placed parallel dim (Adolfo: align)
+    "COLLINEAR_REACH": 4.0,  # ft from the preferred station a string may move to line up
     "MAX_LANE": 2,          # lanes 0..2 (Adolfo: 2 to 3 rows), 3 = last resort
     "LAST_RESORT_LANE": 3,
     "SLIDE_STEP": 1.0,      # ft
@@ -392,6 +394,27 @@ class Layout(object):
                 if 0.5 < dst * home * self.fam_sign(s.gi) < c["MARGIN_MAX"]:
                     st = end + abs(dst) * home
                     out.append((c["W_ALIGN"], st, (home, "margin-align", 0)))
+        # dim lines in a row: the same line as a placed parallel dim of this
+        # family (not overlapping it - evaluate() rejects that), within reach
+        a0, _ = self.to_fam(s.gi, 0.0, 0.0)
+        sgn = self.fam_sign(s.gi)
+        seen_st = set()
+        for pl in self.placed:
+            if pl.fi != s.fi:
+                continue
+            st = (pl.st_f - a0) * sgn
+            key = round(st * 16)
+            if key in seen_st or abs(st - prefer) > c["COLLINEAR_REACH"]:
+                continue
+            seen_st.add(key)
+            outside = max(0.0, s_lo - st, st - s_hi)
+            if home:
+                side_pen = c["W_SIDE"] if (st - prefer) * home < -0.5 else 0.0
+                slide = abs(st - prefer) * c["W_SLIDE"]
+            else:
+                side_pen = c["W_INSIDE"] if outside == 0.0 else 0.0
+                slide = 0.0
+            out.append((c["W_COLLINEAR"] + side_pen + slide + outside * c["W_OUTSIDE"], st, (0, "collinear", 0)))
         # pulled text lines up with a neighbour's pulled text (same family, nearby)
         probe = self.text_plan(s, prefer)
         if any(it[3] for it in probe):

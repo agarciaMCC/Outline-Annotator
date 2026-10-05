@@ -170,6 +170,18 @@ class Planner(object):
                         best = (o, f.ref, "wall face", "wall")
         return best
 
+    def end_parts(self, s_lo, s_hi):
+        """'A dimension at each end for ease of reading' (Adolfo 2026-10-05):
+        longer than TURN_BOTH -> one part per end, each with its own half span
+        (so dedupe doesn't fold the two into one, as it used to for runs).
+        -> [(span, prefer, outward)]; outward points at that end."""
+        ci = self.c["CORNER_IN"]
+        if s_hi - s_lo <= self.c["TURN_BOTH"]:
+            return [((s_lo, s_hi), None, None)]
+        mid = (s_lo + s_hi) / 2.0
+        g = 1.5
+        return [((s_lo, mid - g), s_lo + ci, -1), ((mid + g, s_hi), s_hi - ci, 1)]
+
     def add(self, fi, gi, refs, span, label, feature, role="locate", **kw):
         refs = sorted(refs, key=lambda r: r[0])
         names = [r[3] if len(r) > 3 else r[2] for r in refs]
@@ -212,11 +224,10 @@ class Planner(object):
         anc = min(cands, key=lambda a: abs(a[0] - off))
         refs = [anc, (off, e.ref, "slab edge", "edge")]
         free = (self.free_end(gi, off, s_lo, -1), self.free_end(gi, off, s_hi, +1))
-        ends = [s_lo + self.c["CORNER_IN"]]
-        if s_hi - s_lo > self.c["TURN_BOTH"]:
-            ends.append(s_hi - self.c["CORNER_IN"])
-        for k, pref in enumerate(ends):
-            s = self.add(fi, gi, refs, (s_lo, s_hi), "run -> " + anc[3], f,
+        parts = self.end_parts(s_lo, s_hi)
+        for k, (span, _, _) in enumerate(parts):
+            pref = s_lo + self.c["CORNER_IN"] if k == 0 else s_hi - self.c["CORNER_IN"]
+            s = self.add(fi, gi, refs, span, "run -> " + anc[3], f,
                          prefer=pref, outward=(1 if k == 0 else -1))
             if s is not None:
                 # the dim can sit in the margin past this end of the edge
@@ -462,14 +473,27 @@ class Planner(object):
         if abs(of - on) < self.c["SAME_OFF_TOL"]:
             return
         s0, s1 = sorted([self.m.station(b.p0, gi), self.m.station(b.p1, gi)])
+        # width dims sit at an END of the beam, just inside it (Adolfo
+        # 2026-10-05) - the free end (beam stopping in the slab) if it has one
+        end_dir = -1
+        free_st = [self.m.station(e.mid(), gi) for e in f.meta["free_ends"]]
+        if len(free_st) == 1:
+            end_dir = 1 if abs(free_st[0] - s1) < abs(free_st[0] - s0) else -1
+        end_st = s1 if end_dir > 0 else s0
+        b_pref = end_st - end_dir * min(self.c["CORNER_IN"], (s1 - s0) / 3.0)
+        # long beam: a width dim at EACH end (Adolfo: "dimensions at each end")
+        b_parts = self.end_parts(s0, s1)
+        if len(b_parts) == 1:
+            b_parts = [((s0, s1), b_pref, end_dir)]
         # a side lying on a wall face below used to get the width only (the
         # wall "located" it) - but the wall isn't dimensioned on the soffit
         # plan, so the beam was never tied to a grid (Adolfo 2026-10-05):
         # beams always get width + the closest grid
         if on < -self.c["ON_GRID_TOL"] and of > self.c["ON_GRID_TOL"]:
-            self.add(fi, gi, [(on, near.ref, "beam side", "side"), self.gref(gi) + (self.gname[gi],),
-                              (of, far.ref, "beam side", "side")], (s0, s1),
-                     "beam side|%s|side" % self.gname[gi], f, prefer=(s0 + s1) / 2.0)
+            for span, pref, out in b_parts:
+                self.add(fi, gi, [(on, near.ref, "beam side", "side"), self.gref(gi) + (self.gname[gi],),
+                                  (of, far.ref, "beam side", "side")], span,
+                         "beam side|%s|side" % self.gname[gi], f, prefer=pref, outward=out)
         else:
             # hand sheets: width + ONE face to the nearest anchor (a second
             # anchor on the far side made 15-18 ft strings across the core)
@@ -486,7 +510,8 @@ class Planner(object):
             refs = [(on, near.ref, "beam side", "side"), (of, far.ref, "beam side", "side")]
             if al: refs.insert(0, al)
             if ah: refs.append(ah)
-            self.add(fi, gi, refs, (s0, s1), "beam anchor|sides", f, prefer=(s0 + s1) / 2.0)
+            for span, pref, out in b_parts:
+                self.add(fi, gi, list(refs), span, "beam anchor|sides", f, prefer=pref, outward=out)
         for end in f.meta["free_ends"]:
             fr = self.frame(end)
             if fr is None:
@@ -523,8 +548,9 @@ class Planner(object):
         cands = [x for x in (self.anchor(fi, gi, off, -1, s0, s1, walls=False),
                              self.anchor(fi, gi, off, +1, s0, s1, walls=False)) if x]
         anc = min(cands, key=lambda x: abs(x[0] - off)) if cands else self.gref(gi) + (self.gname[gi],)
-        self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], (s0, s1), "CJ -> " + anc[3], f,
-                 prefer=(s0 + s1) / 2.0)
+        for span, pref, out in self.end_parts(s0, s1):        # long CJ: one at each end
+            self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
+                     prefer=(s0 + s1) / 2.0 if pref is None else pref, outward=out)
 
     # ---------------- consistency + dedupe ----------------
     def make_consistent(self):

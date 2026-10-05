@@ -68,6 +68,8 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
   curbs (modeled as walls on Kalae) or columns; other plans cover those. Anchor to the **closest gridline**
   (even one running through an opening); a wall face only when no grid is within 30 ft.
 - **30 ft max per dimension** — the field crew's tape. Stacked dims from one grid are the default; chains are checks.
+- **A dimension at each end** of long CJs, slab edges and beams (> 20 ft), for ease of reading. Beam widths at
+  beam ends. Line dims up with neighbours where possible.
 - "Large Scale" detail items = CJ lines (dimension them); plain detail lines = QC points (ignore).
 - Grids from PDF: called-out dimensions govern spacing; when sheets disagree, the user picks (no default).
 

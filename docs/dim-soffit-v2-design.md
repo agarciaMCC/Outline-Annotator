@@ -72,7 +72,18 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   `Planner.on_column()` skips a bump / notch / step with any edge on a column face. L3N: 16 edges + 1 notch
   skipped, L7: 3. **FILL floors are soffit** (Adolfo: unusual modeling, keep dimensioning them).
   L3N run 23: **150 (124 / 26) / 132 placed / 18 review / 1 overlap, 18 s**; L7 run 10: **213 / 189 / 24 / 0, 18 s.**
-- Next: Adolfo reviews run 23 / 10, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-05 — beam dims at ends, aligned dims, "a dimension at each end" (runs L3N 24–25, L7 11–12).**
+  - **Beam width strings sit at a beam end** (`do_beam`: `prefer` 2 ft inside the free end, else the low end;
+    `outward` toward that end), not mid-span.
+  - **Aligned dims** (`mcc_layout`): `candidates()` adds a "collinear" spot on the same line as any placed parallel
+    dim of the family within `COLLINEAR_REACH` 4 ft (`W_COLLINEAR` −0.75). Dims sharing a line: L3N 39 / 128,
+    L7 107 / 189 (run 24 / 11).
+  - **A dimension at each end for ease of reading** (Adolfo's rule): `Planner.end_parts()` — CJs, runs and beams
+    longer than `TURN_BOTH` (20 ft) get one string per end, each with its own half span. Runs were *meant* to do this
+    already but `dedupe` folded the two (same witness lines, overlapping span) — the halves keep them apart.
+    L3N: 12 CJs, 12 beams, 4 runs now dimensioned at both ends; L7: 7 runs. `ne_v2_run25.png` (CJ 6'-10" both ends).
+  - L3N run 25: **182 (156 / 26) / 149 placed / 33 review / 1 overlap, 23 s**; L7 run 12: **220 / 196 / 24 / 0, 21 s.**
+- Next: Adolfo reviews run 25 / 12 (L3N review list grew 18 → 33 with the extra end dims), the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).
