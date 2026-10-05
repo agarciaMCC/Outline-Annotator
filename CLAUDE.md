@@ -34,7 +34,12 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 - `*.rvt`, `*_backup/`, PDFs, the pyRevit installer — **never modify**. Never save over the R23 model.
 
 ## Testing in Revit (Revit MCP)
-- The `revit` MCP server talks to Revit 2026 on **`1268 - Kalae (R26 TEST).rvt` only**.
+- The `revit` MCP server talks to Revit 2026. **Edits and test runs: `1268 - Kalae (R26 TEST).rvt` only.**
+- **Other projects' models (2026-10-05, Adolfo):** allowed for **read-only study** of how they were
+  detailed (Audit Dims, reading views/dims). Only ever a **detached copy** (discard worksets) opened from a
+  local scratch folder, **never** the original or the central/shared model; never save, never sync, close
+  without saving (a Revit 2023 model opened in 2026 upgrades the copy — another reason it stays throwaway).
+  Record findings in `docs/` and compare with Kalae.
 - Read-only checks first; edit the model only in test runs Adolfo has agreed to, and only in the
   `ZZ CLAUDE TEST - ...` views (never the real zone views — dependents share the parent's annotations).
   See `docs/auto-dim-scoring.md` → "Test-view setup".
@@ -71,6 +76,7 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 | `grid-detection-from-pdf.md` | Grids from PDF engine and decisions |
 | `columns-from-pdf-design.md` | Columns from PDF engine, schedule reader, test library |
 | `revit-mcp-setup.md` | Revit MCP rig, local patches, ground rules |
+| `other-projects-study.md` | (to create) How other McClone projects were detailed vs Kalae |
 | `project-readme.md` | Early (v0.3) button overview — partly outdated |
 
 ## Working style
