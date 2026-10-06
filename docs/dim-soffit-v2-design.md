@@ -462,7 +462,13 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - Open questions (pictures sent): framed-end beam widths across the beam just inside the end (contradicts 2b); the
     18'-2" opening's top edge on a wall (the `14'-10" | CC` leg he deletes every round); `C | 8'-6⅜" | end` at
     beam#238 (repeat of beam#249's, or too far?); which side of the step the `8"` jog check goes.
-- Next: Adolfo's round-4 answers; L7 re-run; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — Adolfo's round-4 answers: no rule changes.** (1) Framed-end beam widths across the beam: "disregard
+  my edit" — answer 2b stands (past the end, over the band unless open slab within 6 ft). (2) The `14'-10" | CC` leg:
+  "disregard my edit — you'll do better if I don't create contradicting conditions" — the tool's dim stands.
+  (3) `C | 8'-6⅜" | end` at beam#238: "a good dimension, just bad modelling — the beam should be continuous" (same
+  section as the beam it meets; no reason to split it). Keep the dim; the model is the issue. (4) The `8"` jog check's
+  side: visibility / ease of reading — no rule.
+- Next: L7 re-run with today's code; L4.5 review items and void edges; milestone 3 (whole views, cleanup counts) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
