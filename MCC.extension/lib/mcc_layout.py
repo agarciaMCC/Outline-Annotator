@@ -63,6 +63,7 @@ CFG = {
     "TEXT_FIT_MARGIN": 0.5, # x text size: a segment narrower than text + this gets its text pulled out       # ft around text boxes
     "W_LANE": 2.0, "W_SIDE": 4.0, "W_SLIDE": 0.5, "W_BEAM": 4.0, "W_CJ": 1.0,   # W_BEAM 1 -> 4: stay off beams (Adolfo)
     "W_OWN_BEAM": 4.0,      # a beam width dim across its own beam (only the intermediate ones belong there)
+    "W_BEAM_ROW": 3.0,      # extra per lane / per ft of slide for a beam's end width dim: it is the first row past the end
     "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
                             # 3 lost to the far side at the L3N elevator shaft (8 1/2" | 13'-7 1/2" vs 14'-4") - analyst B6
     "W_GROUP": -0.5,        # one lane beside a placed dim off the same gridline, same direction (stack them)
@@ -170,6 +171,14 @@ class Layout(object):
                 L = math.hypot(b[0] - a[0], b[1] - a[1])
                 if L > 0.1:
                     segs.append((a, b, ((b[0] - a[0]) / L, (b[1] - a[1]) / L)))
+        for cj in getattr(model, "cjs", []) or []:  # CJ lines too: a dim line never lies on a CJ (Adolfo, round 2)
+            try:
+                a, b = cj.p0[:2], cj.p1[:2]
+            except Exception:
+                continue
+            L = math.hypot(b[0] - a[0], b[1] - a[1])
+            if L > 0.1:
+                segs.append((a, b, ((b[0] - a[0]) / L, (b[1] - a[1]) / L)))
         out = {}
         for fi, fam in enumerate(model.families):
             g, g0, u, n = model.grids[fam[0]]
@@ -245,9 +254,16 @@ class Layout(object):
 
     def elem_side(self, s, sf):
         """Where string s's element lies from a dim line at family station sf:
-        +1 toward higher stations, -1 lower, 0 when the line is inside the span."""
-        a = self.to_fam(s.gi, s.span[0], 0.0)[0]
-        b = self.to_fam(s.gi, s.span[1], 0.0)[0]
+        +1 toward higher stations, -1 lower, 0 when the line is inside it.
+        The element is the FEATURE's extent, not the string's span - for a
+        string with a home side the span is a 1 ft search window beyond the
+        element, which made every stack row read as side 0, so W_SPLIT /
+        W_ORDER never applied to them (analyst round 2: the 15'-7" check
+        went to the far side of its opening again)."""
+        ext = self._extent(s.feature, s.gi) if s.feature is not None else None
+        lo, hi = ext if ext else (s.span[0], s.span[1])
+        a = self.to_fam(s.gi, lo, 0.0)[0]
+        b = self.to_fam(s.gi, hi, 0.0)[0]
         if sf < min(a, b) - 0.05:
             return 1
         if sf > max(a, b) + 0.05:
@@ -290,9 +306,10 @@ class Layout(object):
         row0_pull = st + pull_side * (self.c["TEXT_LIFT"] * ts + 0.5 * ts)
         plan = []
         rows = {}                                   # end -> number of pulled texts stacked there
+        suf = getattr(s, "suffix", None)
         for a, b in zip(offs, offs[1:]):
             v = b - a
-            w = PL.text_width(ftin(v), ts)
+            w = PL.text_width(ftin(v) + (" " + suf if suf else ""), ts)
             if v >= w + fit:
                 plan.append((v, w, self.world(s.gi, row0, (a + b) / 2.0), False, None))
                 continue
@@ -514,6 +531,12 @@ class Layout(object):
                 return None, ("inside an opening" if line_in else "text inside an opening")
             if line_hit:
                 if o.kind == "beam":
+                    # a beam-END dim (anchor | end) running along another beam
+                    # inside its width: never (CLAUDE.md "other dims stay off
+                    # beams"; Adolfo moved C | 3'-6" | end and BB | 15'-3" | end
+                    # off the beam, round 2). Width dims keep the soft cost.
+                    if "end" in getattr(s, "names", ()):
+                        return None, "over a beam"
                     pen += c["W_BEAM"]
                 else:
                     return None, "over a %s" % o.kind
@@ -655,6 +678,11 @@ class Layout(object):
                     outside = max(0.0, s_lo - st, st - s_hi)
                     base = lane * c["W_LANE"] + (c["W_SIDE"] if (home and side != home) else 0) \
                         + abs(k) * c["W_SLIDE"] + outside * c["W_OUTSIDE"]
+                    if getattr(s, "beam_width", False) and not getattr(s, "intermediate", False):
+                        # a beam's width dim is the FIRST row past its end; other
+                        # strings go outside it (Adolfo round 2: 6 pulled in to
+                        # 1/4") - lanes and slides cost extra for it
+                        base += lane * c["W_BEAM_ROW"] + abs(k) * c["W_BEAM_ROW"]
                     out.append((base, st, (side, lane, k)))
         # a run whose edge ends at open margin: lanes in that margin, past the
         # end, with no "outside the span" cost - and lined up with any string
@@ -1117,6 +1145,11 @@ class Layout(object):
                 failed.append((s, str(ex))); continue
             if d is None:
                 failed.append((s, "null")); continue
+            if getattr(s, "suffix", None):
+                try:
+                    d.Suffix = s.suffix          # one segment: shaft overall size ("R.O.")
+                except Exception:
+                    pass
             made.append((d, pl))
         if pull_text:
             doc.Regenerate()

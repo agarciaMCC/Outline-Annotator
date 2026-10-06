@@ -24,7 +24,8 @@ CFG = {
     "CORNER_IN": 2.0,       # ft; run dims sit this far in from the corner
     "TURN_BOTH": 40.0,      # ft; slab edges / CJs longer than this get a dim at each end (Adolfo 2026-10-05:
                             # at 20 ft the two end dims sat 8-18 ft apart and read as doubles; was 20)
-    "BEAM_BOTH": 20.0,      # ft; beams longer than this get a width dim at each end
+    "BEAM_BOTH": 20.0,      # ft; beams longer than this get a width dim at each end - when both ends are in the
+                            # view's crop (Adolfo 2026-10-06); no halfway dim any more (not seen on any past sheet)
     "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (3/8" moved dims Adolfo had left alone)
     "BEAM_END_GAP_IN": 0.25, # paper inches past a beam end for its width dim (Adolfo pulled them in to ~1/4")
     "CLUTTER_R": 8.0,       # ft; a small opening/notch with 2+ other small ones this close -> enlarged plan
@@ -46,10 +47,13 @@ CFG = {
     "MINOR_EDGE": 3.0,      # ft; an opening edge shorter than this, off the opening's own grid set, is a chamfer/jog
     "CORE_WALL_NEAR": 1.0,  # ft; a core/shaft opening with a core wall face this close is dimensioned off that wall
     "CJ_MID_TOL": 1.5,      # ft; a CJ whose distances to the two grids differ by less is dimensioned from both
-    "BEAM_MID_OVER": 40.0,  # ft; longer beams also get ONE width dim halfway between the end dims (Adolfo 2026-10-05)
+    "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at opposite ends + a spacing dim
     "SHAFT_MAX": 15.0,      # ft; widest such pocket
     "SHAFT_MIN_EDGE": 2.0,  # ft; shorter slab edges are jogs, not shaft sides
     "STACK": True,
+    # "R.O." on the overall size of a shaft / core opening only - never on dims off a grid (Adolfo 2026-10-06;
+    # past sheets: ~310 "(R.O.)" on 2022-26 soffit plans). Off -> no suffix.
+    "RO_SUFFIX": "R.O.",
     "STACK_KINDS": ("opening", "bump", "notch"),   # beams: width + one anchor (Adolfo 2026-10-05)
 }
 
@@ -519,6 +523,13 @@ class Planner(object):
                     else: al = None
                 if al or ah:
                     self.note("opening: anchor beyond LOC_MAX")
+            if al and ah and dom is not None and fi not in own and mid_grid is None:
+                # an angled opening's straight-grid string: the near leg only -
+                # the far leg (12'-8 1/2" at the L3N angled shaft) was deleted
+                # three rounds running (Adolfo 2026-10-06: "correct")
+                if abs(al[0] - lo) <= abs(ah[0] - hi): ah = None
+                else: al = None
+                self.note("angled opening: far leg off a straight grid dropped")
             refs = []
             for off, e in faces:
                 if (off == lo and lo_wall) or (off == hi and hi_wall):
@@ -597,9 +608,9 @@ class Planner(object):
         # width dims sit just PAST an end of the beam, off the grey area
         # (Adolfo 2026-10-05) - the free end (beam stopping in the slab) if it
         # has one; past a framed end it may cross the other beam to open
-        # margin. Long beams (> TURN_BOTH) at both ends; longer than
-        # BEAM_MID_OVER also intermediate width dims across the beam, so the
-        # reader finds one without hunting for an end.
+        # margin. Beams longer than BEAM_BOTH at both ends - only ends inside
+        # the view's crop (Adolfo 2026-10-06; the halfway width dim is gone:
+        # no past McClone sheet has one).
         end_dir = -1
         free_st = [self.m.station(e.mid(), gi) for e in f.meta["free_ends"]]
         if len(free_st) == 1:
@@ -631,25 +642,19 @@ class Planner(object):
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
             return (span, e_st + d * gap, d, False)
-        ends_ok = [d for d, c in ((-1, cont_lo), (1, cont_hi)) if not c]
+        g_, g0_, u_, n_ = self.m.grids[gi]
+        def in_view(st):
+            mo = (on + of) / 2.0
+            return self.fs._inside((g0_[0] + u_[0] * st + n_[0] * mo, g0_[1] + u_[1] * st + n_[1] * mo))
+        ends_ok = [d for d, c in ((-1, cont_lo), (1, cont_hi)) if not c and in_view(s1 if d > 0 else s0)]
+        if end_dir not in ends_ok and ends_ok:
+            end_dir = ends_ok[0]
         if (s1 - s0) > self.c["BEAM_BOTH"]:
             b_parts = [at_end(d) for d in ends_ok]
         else:
             b_parts = [at_end(end_dir)] if ends_ok else []
         if cont_lo or cont_hi:
             self.note("beam continues in line past an end (no width dim at the joint)")
-        L = s1 - s0
-        if L > self.c["BEAM_MID_OVER"]:
-            # one, halfway between the end dims (Adolfo 2026-10-05: "every
-            # ~35 ft" was a little much)
-            n_mid = 1
-            seg = L / float(n_mid + 1)
-            for j in range(1, n_mid + 1):
-                pos = s0 + seg * j
-                # its own stretch of the beam (kept 2.5 ft clear of the
-                # neighbours' so dedupe doesn't fold them together)
-                half = max(3.0, seg / 2.0 - 2.5)
-                b_parts.append(((pos - half, pos + half), pos, None, True))
         # a side lying on a wall face below used to get the width only (the
         # wall "located" it) - but the wall isn't dimensioned on the soffit
         # plan, so the beam was never tied to a grid (Adolfo 2026-10-05):
@@ -739,20 +744,57 @@ class Planner(object):
         # both ends, otherwise the end with open slab past it
         gap, ext = self.c["BEAM_END_GAP"], 8.0
         g_, g0_, u_, n_ = self.m.grids[gi]
-        def open_past(st, d):
-            x = g0_[0] + u_[0] * (st + d * 2.0) + n_[0] * off
-            y = g0_[1] + u_[1] * (st + d * 2.0) + n_[1] * off
+        def open_past(st, d, o=off):
+            x = g0_[0] + u_[0] * (st + d * 2.0) + n_[0] * o
+            y = g0_[1] + u_[1] * (st + d * 2.0) + n_[1] * o
             return self.m.member_at(x, y, cats=("wall", "beam", "column")) is None
+        def natural_end(a0, a1, o):
+            return 1 if (open_past(a1, 1, o) and not open_past(a0, -1, o)) else -1
         if s1 - s0 > self.c["TURN_BOTH"]:
             ends = [-1, 1]
         else:
-            ends = [1] if (open_past(s1, 1) and not open_past(s0, -1)) else [-1]
+            ends = [natural_end(s0, s1, off)]
+        # two parallel CJs within CJ_PAIR (3 ft apart off grid 5 on L3N): one
+        # dim each, at OPPOSITE ends, plus their spacing CJ | 3'-0" | CJ joined
+        # to the lower one's locate dim (Adolfo 2026-10-06, drawn both rounds)
+        pair = None
+        for g in self.fs.features:
+            if g.kind != "cj" or g is f or not g.in_crop:
+                continue
+            o = g.edges[0]
+            if self.m.family_parallel(o.d) != fi:
+                continue
+            off2 = self.m.offset(((o.p0[0] + o.p1[0]) / 2.0, (o.p0[1] + o.p1[1]) / 2.0), gi)
+            if not (self.c["ON_GRID_TOL"] < abs(off2 - off) <= self.c["CJ_PAIR"]):
+                continue
+            t0, t1 = sorted([self.m.station(o.p0, gi), self.m.station(o.p1, gi)])
+            if min(s1, t1) - max(s0, t0) < 2.0:
+                continue                            # must run side by side
+            pair = (o, off2, t0, t1)
+            break
+        spacing = None
+        if pair is not None and s1 - s0 <= self.c["TURN_BOTH"]:
+            # the pair shares ONE end (Adolfo's round 2: 4'-5 1/2" | 3'-0" chain
+            # inside, 7'-5 1/2" outside, both at the bottom end): the end that
+            # is natural for both, else the farther CJ's natural end. The
+            # nearer CJ carries the spacing, joined to its locate dim; the
+            # longer dim stacks outside it (W_ORDER)
+            o, off2, t0, t1 = pair
+            nearer = abs(off) <= abs(off2)
+            n_self, n_other = natural_end(s0, s1, off), natural_end(t0, t1, off2)
+            ends = [n_self] if n_self == n_other else [n_other if nearer else n_self]
+            if nearer:
+                spacing = (off2, o.ref)
+            self.note("parallel CJs: dims at one shared end, spacing joined")
         for d in ends:
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
             for anc in anchors:
                 self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
                          prefer=e_st + d * gap, outward=d)
+            if spacing is not None:
+                self.add(fi, gi, [(off, cj.ref, "cj", "CJ"), (spacing[0], spacing[1], "cj", "CJ")], span,
+                         "CJ | CJ spacing", f, prefer=e_st + d * gap, outward=d, role="check")
 
     def do_shaft_pockets(self):
         """Shafts the slab outline wraps around (Adolfo 2026-10-05: the shaft at
@@ -968,7 +1010,33 @@ class Planner(object):
         self.merge_through_anchor()
         self.stack_from_anchor()
         self.drop_wall_where_grid()
+        self.mark_ro()
         return self.strings
+
+    def mark_ro(self):
+        """'R.O.' on the overall size of a shaft / core opening: a string of exactly
+        two refs, both edges of that opening (or a shaft pocket's slab edge | wall
+        face). Dims off a grid never get it (Adolfo 2026-10-06)."""
+        suf = self.c.get("RO_SUFFIX")
+        n = 0
+        for s in self.strings:
+            f = s.feature
+            if not suf or len(s.refs) != 2:
+                continue
+            shaft_open = f is not None and f.kind == "opening" and f.sub in ("core", "shaft") and \
+                all(r[2] == "opening edge" for r in s.refs)
+            if shaft_open:
+                # the overall only: edge to edge across the whole opening, not a
+                # step inside a stepped hole (the 8" of 1'-2" | 8" | 1'-2")
+                offs = [self.m.offset(p, s.gi) for e in f.edges for p in (e.p0, e.p1)]
+                shaft_open = abs(abs(s.refs[1][0] - s.refs[0][0]) - (max(offs) - min(offs))) < 1.0 / 96
+            # a pocket narrower than a shaft side (the 8" slab edge to core wall gap) is a gap, not an R.O.
+            pocket = s.label.startswith("shaft size") and \
+                abs(s.refs[1][0] - s.refs[0][0]) >= self.c["SHAFT_MIN_EDGE"]
+            if shaft_open or pocket:
+                s.suffix = suf
+                n += 1
+        self.notes["shaft overall sizes marked " + (suf or "-")] = n
 
     def stack_from_anchor(self):
         """Stacked dims (Adolfo 2026-10-05; 67-75% of hand dims on Kalae and
@@ -1032,6 +1100,15 @@ class Planner(object):
                 near = targets[0]
                 targets = [near]
                 self.note("small opening: near edge only off the grid")
+            elif s.feature.kind == "opening" and getattr(s.feature, "sub", None) == "core" and i in (0, last):
+                # inside a core the space is tight: the OUTSIDE anchor's dim to
+                # the near edge plus the opening's size is enough - no far-edge
+                # row (Adolfo round 2: deleted the 14'-4" / 14'-10" rows off CC).
+                # A grid running THROUGH the opening keeps both its rows
+                # (9'-3 7/8" | BB | 8'-4 1/8" he kept); shafts outside a core
+                # keep their far-edge row (the 23'-2 1/2" off EE)
+                targets = [targets[0]]
+                self.note("core opening: near edge only off the outside grid (size covers the rest)")
             # a grid in the middle: the targets on each side of it form their own
             # stack - dims on opposite sides are end to end, not stacked (they
             # get joined into edge | grid | edge by the layout)

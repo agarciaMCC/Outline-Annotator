@@ -345,7 +345,27 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   can't be matched — the baseline was rebuilt by running the current code read-only (`snapshot_L3N_synthetic_current.json`,
   reproduces the 09:35 view 163/163 segments) and compared by segment (`compare_segments.py`). Result: **91 left,
   66 moved (36 of them ≈ 1/4", mostly beam widths), 8 deleted, 4 added.** Analyst report: `analyst_L3N_round2.md`.
-- Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — round-2 rules (runs L3N 70–73; `analyst_L3N_round2.md`).** Built from the analyst's groups and
+  Adolfo's answers (1 "sounds good", 2 "within the core the anchor + opening dim is enough", 3 "correct"):
+  - **`Layout.elem_side` uses the feature's extent**, not the string's span (a home-side string's span is a 1 ft
+    search window beyond the element, so every stack row read as "side 0" and `W_SPLIT` / `W_ORDER` never applied to
+    them — the 15'-7" check went to the far side of its opening again).
+  - **CJ lines are edges for `EDGE_CLEAR`** (`_parallel_edges`): a dim line never lies on a CJ (3 moved).
+  - **Beam end width = first row past the end** (`W_BEAM_ROW` 3 per lane / per ft of slide for `beam_width`
+    strings); **a beam-END dim (`anchor | end`) along another beam inside its width is rejected** (was soft `W_BEAM`).
+  - **Core openings: the outside anchor's dim to the near edge + the size is enough** — no far-edge row
+    (`stack_from_anchor`, sub `core`, outside anchor only; 14'-4" / 14'-10" off CC deleted). First try also dropped the
+    through-grid rows (`9'-3⅞" | BB | 8'-4⅛"`) and shafts outside a core (the 23'-2½" off EE) which he keeps — narrowed.
+  - **Angled opening: far leg off a straight grid dropped** (`do_opening`, `12'-8½"` deleted three rounds running).
+  - **Parallel CJs within `CJ_PAIR` 4 ft: one shared end, spacing `CJ | 3'-0" | CJ` joined to the nearer CJ's locate
+    dim, longer dim outside** (`do_cj`). First try put them at opposite ends (the analyst's reading of round 1); his
+    round-2 drawing has both at one end. Open: he chose the bottom end there, the tool the top (open slab past it).
+  - L3N run 73: **131 (108 / 23) / 121 placed / 0 review / 0 overlaps, 24 s.** Against his round-2 version by
+    segment: **87 on his line / 71 further off / 4 he doesn't have / 3 of his missing** (the view he edited scored
+    91 / 66 / 8 / 4) — the dim *set* now matches his almost exactly; positions unchanged on average (mean 0.66" →
+    0.69"). Still open from the analyst: beam widths `anchor | sides` sit ~0.43" from his (8), pocket rows (B2),
+    beam-end-at-column, slivers, witness lines through walls.
+- Next: a third edit round on run 73 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
