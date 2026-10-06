@@ -303,6 +303,17 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     the tool's joined string count as the same. L3N run 64: **142 (120 / 22) / 132 placed / 2 review / 0 overlaps,
     18 s**; by segment 87 on his line / 79 further off / 12 he doesn't have / 19 of his missing (run 62: 92 / 73 / 11 / 19
     — the joined chains sit a little off his lines; the dim-level score would have hidden that).
+- **2026-10-06 — B7 already done; B2 (pocket rows) tried and reverted (runs L3N 65–67).** B7 (far edge off the grid
+  running through the opening) was delivered by the grids-before-walls change (run 58): `edge | 9'-3⅞" | BB | 8'-4⅛" |
+  edge` plus the EE stack both exist. B2: Adolfo's pocket rows sit 0.10–0.25" off the pocket (`step | 4'-6" | CC |
+  7'-7"` 1 ft from its edge, `12'-1"` next, on the LEFT); the tool's step chain sits at the 1/4" row, so the 12'-1"
+  can't fit left (`STATION_GAP`) and goes right, into the wall band. Tried "tight" first-row candidates (1/8", 1/16"
+  off the element, charged by the `W_GAP` taper): for all elements (run 65) the gap was measured from each string's
+  search window, not the element — 30 dims shuffled, 20 further from his spots; for openings and pocket sizes only
+  (run 66) still 12 further / 6 closer, and the 7'-9½" went to the pocket's far side. Reverted to the run-64 layout.
+  - Open (B2): needs a per-feature "element extent" for step strings (their span is a 4 ft window) before tight rows
+    can be offered safely, and the 12'-1"'s left-side spot is exactly `STATION_GAP` (0.16") from the chain — the
+    gap test (`<`) rejects an exact fit. Low priority: 4 dims, all on one pocket.
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
