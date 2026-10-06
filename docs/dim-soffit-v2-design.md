@@ -365,7 +365,13 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     91 / 66 / 8 / 4) — the dim *set* now matches his almost exactly; positions unchanged on average (mean 0.66" →
     0.69"). Still open from the analyst: beam widths `anchor | sides` sit ~0.43" from his (8), pocket rows (B2),
     beam-end-at-column, slivers, witness lines through walls.
-- Next: a third edit round on run 73 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — R.O. threshold applied (runs L3N 74–75).** `mark_ro`: `RO_MIN` 4 ft both ways (the opening's
+  extent along and across the string; a pocket size string must itself be ≥ 4 ft), and the opening's width inside a
+  chain gets the suffix on that SEGMENT only (`String.suffix_pairs` → `DimensionSegment.Suffix` at creation, matched
+  by the segment's two offsets so joins can't shift it): `edge@wall | 8'-3" R.O. | edge | 11'-9" | 7`. Run 75 marks
+  exactly his 12: the three `8'-3"`, `17'-8"`, `13'-7½"`, `18'-2"`, `14'-10"`, `8'-8"`, `7'-9½"`, `15'-7"`, `17'-9"`,
+  `12'-1"`; the `3'-4"` / `8"` he removed are not marked.
+- Next: a third edit round on run 75 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 

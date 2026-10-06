@@ -54,6 +54,8 @@ CFG = {
     # "R.O." on the overall size of a shaft / core opening only - never on dims off a grid (Adolfo 2026-10-06;
     # past sheets: ~310 "(R.O.)" on 2022-26 soffit plans). Off -> no suffix.
     "RO_SUFFIX": "R.O.",
+    "RO_MIN": 4.0,          # ft; R.O. only on openings at least this big BOTH ways (Adolfo 2026-10-06: stair /
+                            # elevator openings; the 3'-4" / 8" ones he had marked were an oversight)
     "STACK_KINDS": ("opening", "bump", "notch"),   # beams: width + one anchor (Adolfo 2026-10-05)
 }
 
@@ -1021,7 +1023,30 @@ class Planner(object):
         n = 0
         for s in self.strings:
             f = s.feature
-            if not suf or len(s.refs) != 2:
+            if not suf:
+                continue
+            if len(s.refs) > 2:
+                # the opening's width as ONE SEGMENT of a chain (edge@wall |
+                # 8'-3" R.O. | edge | 11'-9" | 7 at the L3N elevator shafts,
+                # Adolfo's round 2): mark that segment only
+                if f is not None and f.kind == "opening" and f.sub in ("core", "shaft"):
+                    offs = [self.m.offset(p, s.gi) for e in f.edges for p in (e.p0, e.p1)]
+                    sts = [self.m.station(p, s.gi) for e in f.edges for p in (e.p0, e.p1)]
+                    if min(max(offs) - min(offs), max(sts) - min(sts)) >= self.c["RO_MIN"]:
+                        nm0 = getattr(s, "names", None) or [r[2] for r in s.refs]
+                        order = sorted(range(len(s.refs)), key=lambda k: s.refs[k][0])
+                        refs = [s.refs[k] for k in order]
+                        names = [nm0[k] for k in order]
+                        for k in range(len(refs) - 1):
+                            a, b = refs[k], refs[k + 1]
+                            if names[k] in ("edge", "edge@wall") and names[k + 1] in ("edge", "edge@wall") \
+                                    and abs((b[0] - a[0]) - (max(offs) - min(offs))) < 1.0 / 96:
+                                # remembered by the segment's two offsets (the layout may
+                                # join this string with another, shifting indexes)
+                                s.suffix_pairs = list(getattr(s, "suffix_pairs", None) or []) + [(a[0], b[0], suf)]
+                                n += 1
+                continue
+            if len(s.refs) != 2:
                 continue
             shaft_open = f is not None and f.kind == "opening" and f.sub in ("core", "shaft") and \
                 all(r[2] == "opening edge" for r in s.refs)
@@ -1030,9 +1055,15 @@ class Planner(object):
                 # step inside a stepped hole (the 8" of 1'-2" | 8" | 1'-2")
                 offs = [self.m.offset(p, s.gi) for e in f.edges for p in (e.p0, e.p1)]
                 shaft_open = abs(abs(s.refs[1][0] - s.refs[0][0]) - (max(offs) - min(offs))) < 1.0 / 96
-            # a pocket narrower than a shaft side (the 8" slab edge to core wall gap) is a gap, not an R.O.
+                # ... and only a LARGE opening: at least RO_MIN both ways
+                # (stair / elevator shafts), measured along and across the string
+                sts = [self.m.station(p, s.gi) for e in f.edges for p in (e.p0, e.p1)]
+                if min(max(offs) - min(offs), max(sts) - min(sts)) < self.c["RO_MIN"]:
+                    shaft_open = False
+            # a pocket narrower than a shaft side (the 8" slab edge to core wall gap) is a gap, not an R.O.;
+            # and it must be RO_MIN wide too
             pocket = s.label.startswith("shaft size") and \
-                abs(s.refs[1][0] - s.refs[0][0]) >= self.c["SHAFT_MIN_EDGE"]
+                abs(s.refs[1][0] - s.refs[0][0]) >= max(self.c["SHAFT_MIN_EDGE"], self.c["RO_MIN"])
             if shaft_open or pocket:
                 s.suffix = suf
                 n += 1

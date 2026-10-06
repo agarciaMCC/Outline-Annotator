@@ -1150,6 +1150,16 @@ class Layout(object):
                     d.Suffix = s.suffix          # one segment: shaft overall size ("R.O.")
                 except Exception:
                     pass
+            if getattr(s, "suffix_pairs", None):
+                try:                             # a chain: the opening's width segment only
+                    segs = list(d.Segments)
+                    offs = [r[0] for r in sorted(s.refs, key=lambda r: r[0])]
+                    for oa, ob, suf in s.suffix_pairs:
+                        for k in range(len(offs) - 1):
+                            if abs(offs[k] - oa) < 1.0 / 96 and abs(offs[k + 1] - ob) < 1.0 / 96 and k < len(segs):
+                                segs[k].Suffix = suf
+                except Exception:
+                    pass
             made.append((d, pl))
         if pull_text:
             doc.Regenerate()
