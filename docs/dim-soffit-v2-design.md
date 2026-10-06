@@ -330,6 +330,19 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
      x 399.5). beam#233 still outside (its spot is further out).
   - L3N run 68: **145 (123 / 22) / 132 placed / 2 review / 0 overlaps, 20 s**; by segment 85 / 85 / 13 / 17 (his
     missing 19 → 17).
+- **2026-10-06 — "R.O." (rough opening) suffix, Adolfo's rule.** A parallel session added an `RO_SUFFIX` on shaft /
+  core overall sizes (uncommitted in `mcc_strings.py` / `mcc_layout.py` at the time of his second edit round; 17 in
+  the view). His review: "I deleted some and added some … stair and elevator openings get a rough-opening dimension.
+  Pretty much any opening that is *large* will carry R.O." — and: unless the user defines the openings a certain way,
+  no clean rule. So: **R.O. on the overall size of large openings (stair / elevator shafts); never on small holes,
+  pockets or dims off a grid.** "Large" needs a threshold — propose ≥ `SMALL_OPEN` (4 ft) both ways, confirm with him
+  on the next round. The snapshots don't record suffix text, so which 17 he kept isn't measurable; next time export
+  `ValueString`/`Suffix` in `snapshot_dims.py`.
+- **2026-10-06 — second edit round (snapshots `_before_edits2` / `_after_edits2`, `compare_L3N_edits2_segments.json`).**
+  The pre-edit snapshot was taken at 09:35; the parallel session re-placed the view twice after it, so element ids
+  can't be matched — the baseline was rebuilt by running the current code read-only (`snapshot_L3N_synthetic_current.json`,
+  reproduces the 09:35 view 163/163 segments) and compared by segment (`compare_segments.py`). Result: **91 left,
+  66 moved (36 of them ≈ 1/4", mostly beam widths), 8 deleted, 4 added.** Analyst report: `analyst_L3N_round2.md`.
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

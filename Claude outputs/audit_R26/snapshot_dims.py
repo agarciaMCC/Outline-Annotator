@@ -38,7 +38,8 @@ for d in DB.FilteredElementCollector(doc, tv.Id).OfClass(DB.Dimension):
     sd = []
     for sg in segs:
         try:
-            sd.append({"value": round(sg.Value or 0, 5), "origin": xyz(sg.Origin), "text": xyz(sg.TextPosition)})
+            sd.append({"value": round(sg.Value or 0, 5), "origin": xyz(sg.Origin), "text": xyz(sg.TextPosition),
+                       "string": sg.ValueString, "suffix": (sg.Suffix or "")})     # suffix: "R.O." retention is reviewable
         except Exception:
             sd.append({"value": None})
     refs = [rep(r) for r in d.References]
