@@ -271,6 +271,18 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - Open: his `8½" | 13'-7½"` chain at the elevator shaft (223, 62) comes out as two dims (13'-7½" placed on the
     far side of the core); "either is fine, chained looks cleaner". The same-orientation crossing rule needs a
     definition (witness line of one dim crossing another dim's line of the same direction?) — ask with an example.
+- **2026-10-06 — witness lines crossing a parallel dim line; no jog checks off beam faces (runs L3N 60–61).**
+  - **"Witness lines crossing another dim line in the same direction — make it a priority where possible"** (Adolfo):
+    `mcc_layout.evaluate` adds `W_WITNESS_CROSS` 4.0 per crossing, both ways (my witness lines across a placed parallel
+    line, a placed string's across mine). Witness lines are modelled from the string's own span (`_fam_extent`, family
+    frame) to its dim line, non-grid refs only; `_witness_passes()` tests whether the other line lies between. Using
+    the whole feature's extent instead (run 60) sent the 2'-3½" void-edge dim onto a beam — a void's edge is a few feet
+    of a 100 ft outline. Effect on L3N: the 7'-3⅛" step dim by the CJ corner moved inside the slab, off the 16'-4"
+    line it used to cross (Adolfo had it at the old spot; his new rule wins).
+  - **"Stop dimensioning the openings off of beam faces"** (his crossed-out `1'-9⅜"` / `6⅛"` at the core's bottom
+    beam): `do_step` skips a jog check when either face lies on a beam side (4 on L3N). Two of the four he had kept
+    (`3'-11¾"` at the angled NW edge, `8"` at the CJ corner, `jog1_v2_run59.png` / `jog2_v2_run59.png`) — asked.
+  - L3N run 61: **138 (121 / 17) / 131 placed / 2 review / 0 overlaps, 18 s.** Score 63 / 48 / 16 / 30.
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

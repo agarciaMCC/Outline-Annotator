@@ -330,12 +330,17 @@ class Planner(object):
                     self.note("step: no anchor")
             else:
                 self.located_by[id(s)] = "on grid"
-        # jog check: run a face | run b face
+        # jog check: run a face | run b face - not when a face lies on a beam
+        # side: "stop dimensioning the openings off of beam faces" (Adolfo
+        # 2026-10-06: the 1'-9 3/8" / 6 1/8" checks at the L3N core's bottom
+        # beam). Faces on a wall keep their check (he kept those two)
         fr = self.frame(a)
         if fr is not None:
             fi, gi, oa, _, _ = fr
             ob = self.m.offset(b.mid(), gi)
-            if abs(oa - ob) > self.c["SAME_OFF_TOL"]:
+            if any(self.flush(e, self.m.beams) for e in (a, b)):
+                self.note("jog check on a beam side (skipped)")
+            elif abs(oa - ob) > self.c["SAME_OFF_TOL"]:
                 sj = self.m.station(s.mid(), gi)
                 self.add(fi, gi, [(oa, a.ref, "slab edge", "edge"), (ob, b.ref, "slab edge", "edge")],
                          (sj - 2.0, sj + 2.0), "jog check", f, role="check", prefer=sj)

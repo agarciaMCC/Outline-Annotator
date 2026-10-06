@@ -40,6 +40,8 @@ CFG = {
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
     "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
     "W_ORDER": 3.0,          # a row nearer the element than a shorter neighbour (or further than a longer one)
+    "W_WITNESS_CROSS": 4.0,  # a witness line crossing another dim line of the same direction (Adolfo 2026-10-06:
+                             # "dims get mistaken" - a priority where possible, not a hard rule)
     "W_IN_SHAFT": 20.0,      # a shaft's own overall-size dim inside the shaft: last resort only
                              # (8 was beaten by the join bonus - 15'-7" sat inside its shaft)
     "W_EDGE_LINE": 3.0,      # a dim line continuing an edge's line from its end
@@ -388,6 +390,22 @@ class Layout(object):
                 nearer = my_side * (sf - pl.st_f) > 0
                 if (my_key > pk) == nearer:
                     pen += c["W_ORDER"]
+        # witness lines crossing another dim line of the same direction
+        # (Adolfo 2026-10-06: the 24'-8 7/8" ran its witness lines across the
+        # 17'-8"): mine across a placed line, or its across mine
+        if s.feature is not None:
+            my_ext = self._fam_extent(s)
+            my_w = [self.to_fam(s.gi, st, r[0])[1] for r in s.refs if r[2] != "grid"]
+            for pl in self.placed:
+                if pl.fi != s.fi or pl.s.feature is None:
+                    continue
+                if my_ext and self._witness_passes(my_ext, sf, pl.st_f) and \
+                        any(pl.lo_f + 0.1 < o < pl.hi_f - 0.1 for o in my_w):
+                    pen += c["W_WITNESS_CROSS"]
+                pe = self._fam_extent(pl.s)
+                if pe and self._witness_passes(pe, pl.st_f, sf) and \
+                        any(a + 0.1 < o < b - 0.1 for o in self._witness_offs(pl)):
+                    pen += c["W_WITNESS_CROSS"]
         for pl in self.placed:
             if _rects_apart(myrect, pl.rect, c["STATION_GAP"]):
                 continue
@@ -501,6 +519,44 @@ class Layout(object):
                 if c["MIN_GAP"] <= out_by < c["FIRST_GAP"]:
                     pen += c["W_GAP"] * (c["FIRST_GAP"] - out_by) / (c["FIRST_GAP"] - c["MIN_GAP"])
         return pen, boxes
+
+    def _fam_extent(self, s):
+        """Station range the string's witness lines start from, in the family
+        frame (cached): the string's own span, not the whole feature - a void's
+        edge is a few feet of a 100 ft outline (the feature extent sent the
+        2'-3 1/2" void-edge dim onto a beam, run 60)."""
+        key = ("fam", id(s), s.gi)
+        if key not in self._ext_cache:
+            a = self.to_fam(s.gi, s.span[0], 0.0)[0]
+            b = self.to_fam(s.gi, s.span[1], 0.0)[0]
+            self._ext_cache[key] = (min(a, b), max(a, b))
+        return self._ext_cache[key]
+
+    def _witness_offs(self, pl):
+        """Family-frame offsets of a placed string's non-grid witness lines (cached)."""
+        key = ("wit", id(pl.s), round(pl.st_f, 3))
+        if key not in self._ext_cache:
+            st = pl.cand[0] if isinstance(pl.cand, tuple) else None
+            offs = []
+            for r in pl.s.refs:
+                if r[2] != "grid":
+                    offs.append(self.to_fam(pl.s.gi, st, r[0])[1] if st is not None else None)
+            if any(o is None for o in offs):
+                # fall back to the line's own ends: offsets along the family
+                # frame are the same whatever the station
+                offs = [o for o in offs if o is not None]
+            self._ext_cache[key] = offs
+        return self._ext_cache[key]
+
+    @staticmethod
+    def _witness_passes(ext, st_from, st_line):
+        """Does a witness line drawn from an element (station range ext) to a
+        dim line at st_from cross a parallel dim line at st_line?"""
+        if st_from > ext[1] + 0.05:
+            return ext[1] + 0.05 < st_line < st_from - 0.05
+        if st_from < ext[0] - 0.05:
+            return st_from + 0.05 < st_line < ext[0] - 0.05
+        return False
 
     def _extent(self, f, gi):
         """Station range of a feature's edges in grid gi's frame (cached)."""
