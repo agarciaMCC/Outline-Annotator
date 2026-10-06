@@ -1,0 +1,2401 @@
+[
+ {
+  "change": "deleted", 
+  "label": "run -> A", 
+  "role": "locate", 
+  "what": "locate run -> A                     across A/B..     A | 0'-1 3/8\" | edge", 
+  "id": 20598403, 
+  "feature": "run#28"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> A", 
+  "role": "locate", 
+  "what": "locate run -> A                     across A/B..     A | 0'-6 3/8\" | edge", 
+  "id": 20598404, 
+  "feature": "run#36"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> A", 
+  "role": "locate", 
+  "what": "locate run -> A                     across A/B..     A | 0'-1 3/8\" | edge", 
+  "id": 20598405, 
+  "feature": "run#38"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> A", 
+  "role": "locate", 
+  "what": "locate run -> A                     across A/B..     A | 0'-1 3/8\" | edge", 
+  "id": 20598406, 
+  "feature": "run#38"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> BB", 
+  "role": "locate", 
+  "what": "locate run -> BB                    across CC/BB..   edge | 16'-4\" | BB", 
+  "id": 20598407, 
+  "feature": "run#176"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> EE", 
+  "role": "locate", 
+  "what": "locate run -> EE                    across CC/BB..   edge | 0'-1 1/2\" | EE", 
+  "id": 20598408, 
+  "feature": "run#193"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> 6", 
+  "role": "locate", 
+  "what": "locate run -> 6                     across 2/3..     6 | 0'-11\" | edge", 
+  "id": 20598409, 
+  "feature": "run#195"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> EE", 
+  "role": "locate", 
+  "what": "locate run -> EE                    across CC/BB..   edge | 8'-3 3/4\" | EE", 
+  "id": 20598410, 
+  "feature": "run#196"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> EE", 
+  "role": "locate", 
+  "what": "locate run -> EE                    across CC/BB..   edge | 10'-1 1/2\" | EE", 
+  "id": 20598411, 
+  "feature": "run#206"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "core opening anchor|edges|anchor", 
+  "role": "locate", 
+  "what": "locate core opening anchor|edges|anchor across CC/BB..   edge@wall | 18'-2\" | edge | 14'-10\" | CC", 
+  "id": 20598412, 
+  "feature": "opening/core#110"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "core opening anchor|edges|anchor", 
+  "role": "locate", 
+  "what": "locate core opening anchor|edges|anchor across 2/3..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+  "id": 20598413, 
+  "feature": "opening/core#110"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges|anchor", 
+  "role": "locate", 
+  "what": "locate shaft opening anchor|edges|anchor across 2/3..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+  "id": 20598414, 
+  "feature": "opening/shaft#112"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges", 
+  "role": "locate", 
+  "what": "locate shaft opening anchor|edges   across CC/BB..   AA | 1'-4 9/16\" | edge", 
+  "id": 20598415, 
+  "feature": "opening/shaft#114"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> EE", 
+  "role": "locate", 
+  "what": "locate stack 1 -> EE                across CC/BB..   EE | 7'-7 1/2\" | edge", 
+  "id": 20598416, 
+  "feature": "opening/shaft#102"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 2 -> EE", 
+  "role": "locate", 
+  "what": "locate stack 2 -> EE                across CC/BB..   EE | 23'-2 1/2\" | edge", 
+  "id": 20598417, 
+  "feature": "opening/shaft#102"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> B", 
+  "role": "locate", 
+  "what": "locate stack 1 -> B                 across A/B..     edge | 7'-1 3/4\" | B", 
+  "id": 20598418, 
+  "feature": "opening/shaft#114"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 2 -> CC", 
+  "role": "locate", 
+  "what": "locate stack 2 -> CC                across CC/BB..   CC | 14'-4\" | edge", 
+  "id": 20598419, 
+  "feature": "opening/core#115"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> FF", 
+  "role": "locate", 
+  "what": "locate stack 1 -> FF                across CC/BB..   edge | 7'-9\" | FF", 
+  "id": 20598420, 
+  "feature": "opening/shaft#118"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> wall", 
+  "role": "locate", 
+  "what": "locate stack 1 -> wall              across CC/BB..   edge | 0'-7\" | wall", 
+  "id": 20598421, 
+  "feature": "opening/core#120"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "void edge -> 10", 
+  "role": "locate", 
+  "what": "locate void edge -> 10              across 9/10..    10 | 3'-9\" | edge", 
+  "id": 20598422, 
+  "feature": "opening/void#98"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "void edge -> 11", 
+  "role": "locate", 
+  "what": "locate void edge -> 11              across 9/10..    edge | 4'-1 1/2\" | 11", 
+  "id": 20598423, 
+  "feature": "opening/void#98"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> 9", 
+  "role": "locate", 
+  "what": "locate beam end -> 9                across 9/10..    end | 28'-8 1/8\" | 9", 
+  "id": 20598424, 
+  "feature": "beam#250"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> C + beam end -> C", 
+  "role": "locate", 
+  "what": "locate beam end -> C + beam end -> C across A/B..     end | 3'-5 15/16\" | C | 8'-6 7/16\" | end", 
+  "id": 20598425, 
+  "feature": "beam#249"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> BB", 
+  "role": "locate", 
+  "what": "locate beam end -> BB               across CC/BB..   end | 6'-4\" | BB", 
+  "id": 20598426, 
+  "feature": "beam#231"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> BB", 
+  "role": "locate", 
+  "what": "locate beam end -> BB               across CC/BB..   BB | 6'-0\" | end", 
+  "id": 20598427, 
+  "feature": "beam#232"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> BB", 
+  "role": "locate", 
+  "what": "locate beam end -> BB               across CC/BB..   BB | 4'-5\" | end", 
+  "id": 20598428, 
+  "feature": "beam#233"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam anchor|sides", 
+  "role": "locate", 
+  "what": "locate beam anchor|sides            across A/B..     A | 1'-3 3/8\" | side | 1'-8\" | side", 
+  "id": 20598429, 
+  "feature": "beam#220"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam anchor|sides", 
+  "role": "locate", 
+  "what": "locate beam anchor|sides            across A/B..     A | 1'-3 3/8\" | side | 1'-8\" | side", 
+  "id": 20598430, 
+  "feature": "beam#221"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam anchor|sides", 
+  "role": "locate", 
+  "what": "locate beam anchor|sides            across 9/10..    side | 1'-0\" | side | 1'-3 1/2\" | 11", 
+  "id": 20598431, 
+  "feature": "beam#222"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|B|side", 
+  "role": "locate", 
+  "what": "locate beam side|B|side             across A/B..     side | 3'-9\" | B | 3'-9\" | side", 
+  "id": 20598432, 
+  "feature": "beam#223"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> 9", 
+  "role": "locate", 
+  "what": "locate beam end -> 9                across 9/10..    end | 13'-0 1/8\" | 9", 
+  "id": 20598433, 
+  "feature": "beam#223"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|9|side", 
+  "role": "locate", 
+  "what": "locate beam side|9|side             across 9/10..    side | 3'-9\" | 9 | 3'-9\" | side", 
+  "id": 20598434, 
+  "feature": "beam#226"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam anchor|sides", 
+  "role": "locate", 
+  "what": "locate beam anchor|sides            across 9/10..    9 | 1'-4 1/2\" | side | 1'-0\" | side", 
+  "id": 20598435, 
+  "feature": "beam#228"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam anchor|sides", 
+  "role": "locate", 
+  "what": "locate beam anchor|sides            across 9/10..    side | 1'-0\" | side | 13'-5 1/2\" | 10", 
+  "id": 20598436, 
+  "feature": "beam#229"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|B|side", 
+  "role": "locate", 
+  "what": "locate beam side|B|side             across A/B..     side | 0'-6\" | B | 0'-6\" | side", 
+  "id": 20598437, 
+  "feature": "beam#230"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|B|side", 
+  "role": "locate", 
+  "what": "locate beam side|B|side             across A/B..     side | 0'-6\" | B | 0'-6\" | side", 
+  "id": 20598438, 
+  "feature": "beam#230"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|5|side", 
+  "role": "locate", 
+  "what": "locate beam side|5|side             across 2/3..     side | 4'-9\" | 5 | 2'-9\" | side", 
+  "id": 20598439, 
+  "feature": "beam#231"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|2|side", 
+  "role": "locate", 
+  "what": "locate beam side|2|side             across 2/3..     side | 2'-5 3/4\" | 2 | 1'-6\" | side", 
+  "id": 20598440, 
+  "feature": "beam#232"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|3|side", 
+  "role": "locate", 
+  "what": "locate beam side|3|side             across 2/3..     side | 3'-4\" | 3 | 2'-8\" | side", 
+  "id": 20598441, 
+  "feature": "beam#233"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|F|side", 
+  "role": "locate", 
+  "what": "locate beam side|F|side             across F/G..     side | 2'-9\" | F | 2'-9\" | side", 
+  "id": 20598443, 
+  "feature": "beam#235"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|F|side", 
+  "role": "locate", 
+  "what": "locate beam side|F|side             across F/G..     side | 2'-9\" | F | 2'-9\" | side", 
+  "id": 20598444, 
+  "feature": "beam#235"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> A6", 
+  "role": "locate", 
+  "what": "locate beam end -> A6               across A9/A14..  end | 0'-10 7/8\" | A6", 
+  "id": 20598445, 
+  "feature": "beam#235"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|7|side", 
+  "role": "locate", 
+  "what": "locate beam side|7|side             across 2/3..     side | 1'-7 1/8\" | 7 | 3'-10 7/8\" | side", 
+  "id": 20598446, 
+  "feature": "beam#242"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|10|side", 
+  "role": "locate", 
+  "what": "locate beam side|10|side            across 9/10..    side | 3'-9\" | 10 | 3'-9\" | side", 
+  "id": 20598447, 
+  "feature": "beam#248"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|9|side", 
+  "role": "locate", 
+  "what": "locate beam side|9|side             across 9/10..    side | 3'-9\" | 9 | 3'-9\" | side", 
+  "id": 20598448, 
+  "feature": "beam#249"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|B|side", 
+  "role": "locate", 
+  "what": "locate beam side|B|side             across A/B..     side | 3'-9\" | B | 3'-9\" | side", 
+  "id": 20598449, 
+  "feature": "beam#250"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 4", 
+  "role": "locate", 
+  "what": "locate CJ -> 4                      across 2/3..     CJ | 4'-6 1/2\" | 4", 
+  "id": 20598450, 
+  "feature": "cj#252"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> CC", 
+  "role": "locate", 
+  "what": "locate CJ -> CC                     across CC/BB..   CC | 14'-2 3/4\" | CJ", 
+  "id": 20598451, 
+  "feature": "cj#253"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> CC", 
+  "role": "locate", 
+  "what": "locate CJ -> CC                     across CC/BB..   CC | 16'-1 1/4\" | CJ", 
+  "id": 20598452, 
+  "feature": "cj#255"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 9", 
+  "role": "locate", 
+  "what": "locate CJ -> 9                      across 9/10..    CJ | 19'-5 1/8\" | 9", 
+  "id": 20598453, 
+  "feature": "cj#256"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 8", 
+  "role": "locate", 
+  "what": "locate CJ -> 8                      across 2/3..     8 | 5'-0\" | CJ", 
+  "id": 20598454, 
+  "feature": "cj#257"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 8", 
+  "role": "locate", 
+  "what": "locate CJ -> 8                      across 2/3..     8 | 5'-0\" | CJ", 
+  "id": 20598455, 
+  "feature": "cj#257"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> EE", 
+  "role": "locate", 
+  "what": "locate CJ -> EE                     across CC/BB..   CJ | 7'-0 1/4\" | EE", 
+  "id": 20598456, 
+  "feature": "cj#258"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> EE", 
+  "role": "locate", 
+  "what": "locate CJ -> EE                     across CC/BB..   CJ | 7'-0 1/4\" | EE", 
+  "id": 20598457, 
+  "feature": "cj#258"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> EE", 
+  "role": "locate", 
+  "what": "locate CJ -> EE                     across CC/BB..   CJ | 13'-0 1/2\" | EE", 
+  "id": 20598458, 
+  "feature": "cj#260"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 5", 
+  "role": "locate", 
+  "what": "locate CJ -> 5                      across 2/3..     5 | 4'-5 1/2\" | CJ", 
+  "id": 20598459, 
+  "feature": "cj#263"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> FF", 
+  "role": "locate", 
+  "what": "locate CJ -> FF                     across CC/BB..   CJ | 13'-2 15/16\" | FF", 
+  "id": 20598460, 
+  "feature": "cj#264"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> FF", 
+  "role": "locate", 
+  "what": "locate CJ -> FF                     across CC/BB..   CJ | 13'-2 15/16\" | FF", 
+  "id": 20598461, 
+  "feature": "cj#264"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> F", 
+  "role": "locate", 
+  "what": "locate CJ -> F                      across F/G..     CJ | 0'-9\" | F", 
+  "id": 20598462, 
+  "feature": "cj#269"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 9", 
+  "role": "locate", 
+  "what": "locate CJ -> 9                      across 9/10..    CJ | 10'-4 1/4\" | 9", 
+  "id": 20598463, 
+  "feature": "cj#271"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 9", 
+  "role": "locate", 
+  "what": "locate CJ -> 9                      across 9/10..    CJ | 10'-4 1/4\" | 9", 
+  "id": 20598464, 
+  "feature": "cj#271"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> D", 
+  "role": "locate", 
+  "what": "locate CJ -> D                      across A/B..     D | 6'-10 1/16\" | CJ", 
+  "id": 20598465, 
+  "feature": "cj#272"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> D", 
+  "role": "locate", 
+  "what": "locate CJ -> D                      across A/B..     D | 6'-10 1/16\" | CJ", 
+  "id": 20598466, 
+  "feature": "cj#272"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 9", 
+  "role": "locate", 
+  "what": "locate CJ -> 9                      across 9/10..    CJ | 18'-6 3/4\" | 9", 
+  "id": 20598467, 
+  "feature": "cj#273"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> F", 
+  "role": "locate", 
+  "what": "locate CJ -> F                      across F/G..     CJ | 4'-9\" | F", 
+  "id": 20598468, 
+  "feature": "cj#281"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 8", 
+  "role": "locate", 
+  "what": "locate CJ -> 8                      across 2/3..     8 | 3'-0\" | CJ", 
+  "id": 20598469, 
+  "feature": "cj#282"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 8", 
+  "role": "locate", 
+  "what": "locate CJ -> 8                      across 2/3..     8 | 7'-0\" | CJ", 
+  "id": 20598470, 
+  "feature": "cj#285"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 5", 
+  "role": "locate", 
+  "what": "locate CJ -> 5                      across 2/3..     5 | 1'-10\" | CJ", 
+  "id": 20598471, 
+  "feature": "cj#300"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 4", 
+  "role": "locate", 
+  "what": "locate CJ -> 4                      across 2/3..     CJ | 4'-6\" | 4", 
+  "id": 20598472, 
+  "feature": "cj#302"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> EE", 
+  "role": "locate", 
+  "what": "locate CJ -> EE                     across CC/BB..   CJ | 4'-6\" | EE", 
+  "id": 20598473, 
+  "feature": "cj#303"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> EE", 
+  "role": "locate", 
+  "what": "locate CJ -> EE                     across CC/BB..   CJ | 4'-6\" | EE", 
+  "id": 20598474, 
+  "feature": "cj#303"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "jog check", 
+  "role": "check", 
+  "what": "check jog check                    across 2/3..     edge | 3'-11 3/4\" | edge", 
+  "id": 20598475, 
+  "feature": "step#17"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "jog check", 
+  "role": "check", 
+  "what": "check jog check                    across 2/3..     edge | 0'-8\" | edge", 
+  "id": 20598476, 
+  "feature": "step#182"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft size (edge | wall)", 
+  "role": "check", 
+  "what": "check shaft size (edge | wall)     across CC/BB..   edge | 0'-8\" | wall", 
+  "id": 20598477, 
+  "feature": "notch#0"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening edges|BB|edges (chain check)", 
+  "role": "check", 
+  "what": "check shaft opening edges|BB|edges (chain check) across CC/BB..   edge | 17'-8\" | edge", 
+  "id": 20598478, 
+  "feature": "opening/shaft#112"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges (chain check)", 
+  "role": "check", 
+  "what": "check shaft opening anchor|edges (chain check) across CC/BB..   edge | 3'-4\" | edge", 
+  "id": 20598479, 
+  "feature": "opening/shaft#118"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stepped opening overall", 
+  "role": "check", 
+  "what": "check stepped opening overall      across CC/BB..   edge | 3'-8\" | edge", 
+  "id": 20598480, 
+  "feature": "opening/shaft#119"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> BB", 
+  "role": "locate", 
+  "what": "locate beam end -> BB               across CC/BB..   end | 15'-3\" | BB", 
+  "id": 20598481, 
+  "feature": "beam#231"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges|anchor", 
+  "role": "locate", 
+  "what": "locate shaft opening anchor|edges|anchor across 2/3..     6 | 12'-8 1/2\" | edge | 10'-2 1/2\" | 7", 
+  "id": 20598482, 
+  "feature": "opening/shaft#114"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stepped opening overall", 
+  "role": "check", 
+  "what": "check stepped opening overall      across A/B..     edge | 14'-9 15/16\" | edge", 
+  "id": 20598483, 
+  "feature": "opening/shaft#114"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "core opening anchor|edges|anchor", 
+  "role": "locate", 
+  "what": "locate core opening anchor|edges|anchor across 2/3..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+  "id": 20598484, 
+  "feature": "opening/core#115"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam anchor|sides", 
+  "role": "locate", 
+  "what": "locate beam anchor|sides            across 9/10..    side | 4'-0\" | side | 0'-1 1/2\" | 11", 
+  "id": 20598485, 
+  "feature": "beam#224"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stepped opening overall", 
+  "role": "check", 
+  "what": "check stepped opening overall      across 9/10..    edge | 8'-8\" | edge", 
+  "id": 20598486, 
+  "feature": "opening/shaft#114"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft size (edge | wall)", 
+  "role": "check", 
+  "what": "check shaft size (edge | wall)     across 2/3..     edge | 7'-9 1/2\" | wall", 
+  "id": 20598487, 
+  "feature": "run#7"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "core opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "what": "check core opening anchor|edges|anchor (chain check) across CC/BB..   edge | 3'-3\" | edge", 
+  "id": 20598488, 
+  "feature": "opening/core#120"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening edges|B|edges (chain check)", 
+  "role": "check", 
+  "what": "check shaft opening edges|B|edges (chain check) across A/B..     edge | 2'-5\" | edge | 12'-4 15/16\" | edge", 
+  "id": 20598489, 
+  "feature": "opening/shaft#114"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 5", 
+  "role": "locate", 
+  "what": "locate CJ -> 5                      across 2/3..     5 | 7'-5 1/2\" | CJ", 
+  "id": 20598490, 
+  "feature": "cj#277"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|7|side", 
+  "role": "locate", 
+  "what": "locate beam side|7|side             across 2/3..     side | 1'-7 1/8\" | 7 | 3'-10 7/8\" | side", 
+  "id": 20598491, 
+  "feature": "beam#242"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges", 
+  "role": "locate", 
+  "what": "locate shaft opening anchor|edges   across 9/10..    edge@wall | 4'-10 1/4\" | edge | 3'-9 3/4\" | edge", 
+  "id": 20598492, 
+  "feature": "opening/shaft#114"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "void edge -> G", 
+  "role": "locate", 
+  "what": "locate void edge -> G               across F/G..     G | 13'-3 5/8\" | edge", 
+  "id": 20598493, 
+  "feature": "opening/void#97"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "run -> 7", 
+  "role": "locate", 
+  "what": "locate run -> 7                     across 2/3..     edge | 3'-4 1/2\" | 7", 
+  "id": 20598494, 
+  "feature": "run#7"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "what": "check shaft opening anchor|edges|anchor (chain check) across 2/3..     edge | 3'-4\" | edge", 
+  "id": 20598495, 
+  "feature": "opening/shaft#118"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> C", 
+  "role": "locate", 
+  "what": "locate beam end -> C                across A/B..     C | 8'-6 7/16\" | end", 
+  "id": 20598496, 
+  "feature": "beam#238"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "void edge -> B", 
+  "role": "locate", 
+  "what": "locate void edge -> B               across A/B..     B | 3'-9\" | edge", 
+  "id": 20598497, 
+  "feature": "opening/void#98"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "what": "check shaft opening anchor|edges|anchor (chain check) across CC/BB..   edge | 15'-7\" | edge", 
+  "id": 20598498, 
+  "feature": "opening/shaft#102"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening edges|8|edges (chain check)", 
+  "role": "check", 
+  "what": "check shaft opening edges|8|edges (chain check) across 2/3..     edge | 17'-9\" | edge", 
+  "id": 20598499, 
+  "feature": "opening/shaft#102"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "void edge -> 10", 
+  "role": "locate", 
+  "what": "locate void edge -> 10              across 9/10..    edge | 3'-9\" | 10", 
+  "id": 20598500, 
+  "feature": "opening/void#97"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft size (edge | wall)", 
+  "role": "check", 
+  "what": "check shaft size (edge | wall)     across CC/BB..   wall | 12'-1\" | edge", 
+  "id": 20598501, 
+  "feature": "run#6"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "step -> BB", 
+  "role": "locate", 
+  "what": "locate step -> BB                   across CC/BB..   step | 7'-3 1/16\" | BB", 
+  "id": 20598502, 
+  "feature": "step#182"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam side|5|side", 
+  "role": "locate", 
+  "what": "locate beam side|5|side             across 2/3..     side | 4'-9\" | 5 | 2'-9\" | side", 
+  "id": 20598503, 
+  "feature": "beam#231"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> 6", 
+  "role": "locate", 
+  "what": "locate stack 1 -> 6                 across 2/3..     edge | 0'-8\" | 6", 
+  "id": 20598504, 
+  "feature": "opening/shaft#118"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> 8 + stack 1 -> 8", 
+  "role": "locate", 
+  "what": "locate stack 1 -> 8 + stack 1 -> 8  across 2/3..     edge | 1'-1 1/2\" | 8 | 16'-7 1/2\" | edge", 
+  "id": 20598505, 
+  "feature": "opening/shaft#102"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> BB + stack 1 -> BB", 
+  "role": "locate", 
+  "what": "locate stack 1 -> BB + stack 1 -> BB across CC/BB..   edge | 8'-4 1/8\" | BB | 9'-3 7/8\" | edge", 
+  "id": 20598506, 
+  "feature": "opening/shaft#112"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 2 -> B + stack 1 -> B", 
+  "role": "locate", 
+  "what": "locate stack 2 -> B + stack 1 -> B  across A/B..     edge | 9'-6 3/4\" | B | 5'-3 3/16\" | edge", 
+  "id": 20598507, 
+  "feature": "opening/shaft#114"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> 6", 
+  "role": "locate", 
+  "what": "locate stack 1 -> 6                 across 2/3..     6 | 2'-5 1/2\" | edge", 
+  "id": 20598508, 
+  "feature": "opening/shaft#123"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "what": "check shaft opening anchor|edges|anchor (chain check) across 2/3..     edge | 1'-5\" | edge", 
+  "id": 20598509, 
+  "feature": "opening/shaft#123"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> 4 + CJ -> 5", 
+  "role": "locate", 
+  "what": "locate CJ -> 4 + CJ -> 5            across 2/3..     4 | 7'-6 3/4\" | CJ | 6'-6 1/4\" | 5", 
+  "id": 20598510, 
+  "feature": "cj#254"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> FF + CJ -> EE", 
+  "role": "locate", 
+  "what": "locate CJ -> FF + CJ -> EE          across CC/BB..   FF | 18'-0 3/8\" | CJ | 18'-1 5/8\" | EE", 
+  "id": 20598511, 
+  "feature": "cj#301"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "CJ -> FF + CJ -> EE", 
+  "role": "locate", 
+  "what": "locate CJ -> FF + CJ -> EE          across CC/BB..   FF | 18'-0 3/8\" | CJ | 18'-1 5/8\" | EE", 
+  "id": 20598512, 
+  "feature": "cj#304"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "what": "check shaft opening anchor|edges|anchor (chain check) across CC/BB..   edge | 3'-0\" | edge | 0'-8\" | edge", 
+  "id": 20598513, 
+  "feature": "opening/shaft#119"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> CC", 
+  "role": "locate", 
+  "what": "locate stack 1 -> CC                across CC/BB..   edge | 8'-0 1/2\" | CC", 
+  "id": 20598514, 
+  "feature": "opening/shaft#119"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "shaft opening anchor|edges|anchor (chain check) + stack 1 -> AA", 
+  "role": "locate", 
+  "what": "locate shaft opening anchor|edges|anchor (chain check) + stack 1 -> AA across CC/BB..   edge | 1'-5\" | edge | 10'-1 3/4\" | AA", 
+  "id": 20598515, 
+  "feature": "opening/shaft#123"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> wall + core opening anchor|edges|anchor (chain check)", 
+  "role": "locate", 
+  "what": "locate stack 1 -> wall + core opening anchor|edges|anchor (chain check) across 2/3..     wall | 0'-5\" | edge | 1'-5\" | edge", 
+  "id": 20598516, 
+  "feature": "opening/core#120"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> CC", 
+  "role": "locate", 
+  "what": "locate stack 1 -> CC                across CC/BB..   CC | 0'-8 1/2\" | edge", 
+  "id": 20598517, 
+  "feature": "opening/core#115"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "core opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "what": "check core opening anchor|edges|anchor (chain check) across CC/BB..   edge | 13'-7 1/2\" | edge", 
+  "id": 20598518, 
+  "feature": "opening/core#115"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "step -> CC", 
+  "role": "locate", 
+  "what": "locate step -> CC                   across CC/BB..   step | 4'-6\" | CC", 
+  "id": 20598519, 
+  "feature": "step#2"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "step -> CC + run -> CC", 
+  "role": "locate", 
+  "what": "locate step -> CC + run -> CC       across CC/BB..   step | 4'-6\" | CC | 7'-7\" | edge", 
+  "id": 20598520, 
+  "feature": "step#1"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "beam end -> 11", 
+  "role": "locate", 
+  "what": "locate beam end -> 11               across 9/10..    end | 1'-0 1/2\" | 11", 
+  "id": 20598521, 
+  "feature": "beam#221"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "void edge -> 11", 
+  "role": "locate", 
+  "what": "locate void edge -> 11              across 9/10..    edge | 2'-3 1/2\" | 11", 
+  "id": 20598522, 
+  "feature": "opening/void#109"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stepped opening overall", 
+  "role": "check", 
+  "what": "check stepped opening overall      across 2/3..     edge | 3'-0\" | edge", 
+  "id": 20598523, 
+  "feature": "opening/shaft#119"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 1 -> 7 + shaft opening anchor|edges|anchor (chain check)", 
+  "role": "locate", 
+  "what": "locate stack 1 -> 7 + shaft opening anchor|edges|anchor (chain check) across 2/3..     7 | 13'-2 3/4\" | edge | 1'-2\" | edge | 0'-8\" | edge | 1'-2\" | edge", 
+  "id": 20598524, 
+  "feature": "opening/shaft#119"
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.115
+  ], 
+  "id": 20598655, 
+  "refs": [
+   "? 13795945", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.53100000000000003
+  ], 
+  "id": 20598656, 
+  "refs": [
+   "? 13795945", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.115
+  ], 
+  "id": 20598657, 
+  "refs": [
+   "? 13795945", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.115
+  ], 
+  "id": 20598658, 
+  "refs": [
+   "? 13795945", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   16.332999999999998
+  ], 
+  "id": 20598659, 
+  "refs": [
+   "? 14220571", 
+   "? 13788104"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.125
+  ], 
+  "id": 20598660, 
+  "refs": [
+   "? 14221633", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.91700000000000004
+  ], 
+  "id": 20598661, 
+  "refs": [
+   "? 13788109", 
+   "? 14221633"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   8.3130000000000006
+  ], 
+  "id": 20598662, 
+  "refs": [
+   "? 14221633", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   10.125
+  ], 
+  "id": 20598663, 
+  "refs": [
+   "? 14221633", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   18.167000000000002
+  ], 
+  "id": 20598664, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   8.25, 
+   11.75
+  ], 
+  "id": 20598665, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070", 
+   "? 13788110"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   8.25, 
+   11.75
+  ], 
+  "id": 20598666, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070", 
+   "? 13788110"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.3819999999999999
+  ], 
+  "id": 20598667, 
+  "refs": [
+   "? 13788105", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.625
+  ], 
+  "id": 20598668, 
+  "refs": [
+   "? 13788114", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   23.207999999999998
+  ], 
+  "id": 20598669, 
+  "refs": [
+   "? 13788114", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.1459999999999999
+  ], 
+  "id": 20598670, 
+  "refs": [
+   "? 14169070", 
+   "? 13796036"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.75
+  ], 
+  "id": 20598672, 
+  "refs": [
+   "? 14169070", 
+   "? 13788115"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.58299999999999996
+  ], 
+  "id": 20598673, 
+  "refs": [
+   "? 14169070", 
+   "? 14113934"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.75
+  ], 
+  "id": 20598674, 
+  "refs": [
+   "? 13794716", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.1260000000000003
+  ], 
+  "id": 20598675, 
+  "refs": [
+   "? 14169070", 
+   "? 13794723"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   28.677000000000000
+  ], 
+  "id": 20598676, 
+  "refs": [
+   "? 14895567", 
+   "? 13793990"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.496, 
+   8.5359999999999996
+  ], 
+  "id": 20598677, 
+  "refs": [
+   "? 14895554", 
+   "? 13796090", 
+   "? 14181679"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   6.3330000000000002
+  ], 
+  "id": 20598678, 
+  "refs": [
+   "? 14184520", 
+   "? 13788104"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   6.0
+  ], 
+  "id": 20598679, 
+  "refs": [
+   "? 13788104", 
+   "? 14184522"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.4169999999999998
+  ], 
+  "id": 20598680, 
+  "refs": [
+   "? 13788104", 
+   "? 14184524"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.2809999999999999, 
+   1.6670000000000000
+  ], 
+  "id": 20598681, 
+  "refs": [
+   "? 13795945", 
+   "? 14171002", 
+   "? 14171002"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.2809999999999999, 
+   1.6670000000000000
+  ], 
+  "id": 20598682, 
+  "refs": [
+   "? 13795945", 
+   "? 14181349", 
+   "? 14181349"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.0, 
+   1.2929999999999999
+  ], 
+  "id": 20598683, 
+  "refs": [
+   "? 14181382", 
+   "? 14181382", 
+   "? 13794723"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.75, 
+   3.75
+  ], 
+  "id": 20598684, 
+  "refs": [
+   "? 14181407", 
+   "? 13796036", 
+   "? 14181407"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   13.010999999999999
+  ], 
+  "id": 20598685, 
+  "refs": [
+   "? 14181407", 
+   "? 13793990"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.75, 
+   3.75
+  ], 
+  "id": 20598686, 
+  "refs": [
+   "? 14181679", 
+   "? 13793990", 
+   "? 14181679"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.375, 
+   1.0
+  ], 
+  "id": 20598687, 
+  "refs": [
+   "? 13793990", 
+   "? 14182607", 
+   "? 14182607"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.0, 
+   13.458000000000000
+  ], 
+  "id": 20598688, 
+  "refs": [
+   "? 14182815", 
+   "? 14182815", 
+   "? 13794716"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.5, 
+   0.5
+  ], 
+  "id": 20598689, 
+  "refs": [
+   "? 14182847", 
+   "? 13796036", 
+   "? 14182847"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.5, 
+   0.5
+  ], 
+  "id": 20598690, 
+  "refs": [
+   "? 14182847", 
+   "? 13796036", 
+   "? 14182847"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.75, 
+   2.75
+  ], 
+  "id": 20598691, 
+  "refs": [
+   "? 14184520", 
+   "? 13788108", 
+   "? 14184520"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   2.4790000000000001, 
+   1.5
+  ], 
+  "id": 20598692, 
+  "refs": [
+   "? 14184522", 
+   "? 13788102", 
+   "? 14184522"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.3330000000000002, 
+   2.6669999999999998
+  ], 
+  "id": 20598693, 
+  "refs": [
+   "? 14184524", 
+   "? 13788103", 
+   "? 14184524"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   2.75, 
+   2.75
+  ], 
+  "id": 20598695, 
+  "refs": [
+   "? 14185803", 
+   "? 13793747", 
+   "? 14185803"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   2.75, 
+   2.75
+  ], 
+  "id": 20598696, 
+  "refs": [
+   "? 14185803", 
+   "? 13793747", 
+   "? 14185803"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.90700000000000003
+  ], 
+  "id": 20598697, 
+  "refs": [
+   "? 14185803", 
+   "? 13797880"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.5940000000000001, 
+   3.9060000000000001
+  ], 
+  "id": 20598698, 
+  "refs": [
+   "? 14211982", 
+   "? 13788110", 
+   "? 14211982"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.75, 
+   3.75
+  ], 
+  "id": 20598699, 
+  "refs": [
+   "? 14895552", 
+   "? 13794716", 
+   "? 14895552"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.75, 
+   3.75
+  ], 
+  "id": 20598700, 
+  "refs": [
+   "? 14895554", 
+   "? 13793990", 
+   "? 14895554"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.75, 
+   3.75
+  ], 
+  "id": 20598701, 
+  "refs": [
+   "? 14895567", 
+   "? 13796036", 
+   "? 14895567"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.5419999999999998
+  ], 
+  "id": 20598702, 
+  "refs": [
+   "? 20572292", 
+   "? 13788107"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   14.228999999999999
+  ], 
+  "id": 20598703, 
+  "refs": [
+   "? 13788100", 
+   "? 20572293"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   16.103999999999999
+  ], 
+  "id": 20598704, 
+  "refs": [
+   "? 13788100", 
+   "? 20572295"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   19.427000000000000
+  ], 
+  "id": 20598705, 
+  "refs": [
+   "? 20572296", 
+   "? 13793990"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   5.0
+  ], 
+  "id": 20598706, 
+  "refs": [
+   "? 13788111", 
+   "? 20572297"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   5.0
+  ], 
+  "id": 20598707, 
+  "refs": [
+   "? 13788111", 
+   "? 20572297"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.0209999999999999
+  ], 
+  "id": 20598708, 
+  "refs": [
+   "? 20572298", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.0209999999999999
+  ], 
+  "id": 20598709, 
+  "refs": [
+   "? 20572298", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   13.042000000000000
+  ], 
+  "id": 20598710, 
+  "refs": [
+   "? 20572300", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.4580000000000002
+  ], 
+  "id": 20598711, 
+  "refs": [
+   "? 13788108", 
+   "? 20572303"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   13.244999999999999
+  ], 
+  "id": 20598712, 
+  "refs": [
+   "? 20572304", 
+   "? 13788115"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   13.244999999999999
+  ], 
+  "id": 20598713, 
+  "refs": [
+   "? 20572304", 
+   "? 13788115"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.75
+  ], 
+  "id": 20598714, 
+  "refs": [
+   "? 20572309", 
+   "? 13793747"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   10.353999999999999
+  ], 
+  "id": 20598715, 
+  "refs": [
+   "? 20572311", 
+   "? 13793990"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   10.353999999999999
+  ], 
+  "id": 20598716, 
+  "refs": [
+   "? 20572311", 
+   "? 13793990"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   6.8380000000000001
+  ], 
+  "id": 20598717, 
+  "refs": [
+   "? 13796144", 
+   "? 20572312"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   6.8380000000000001
+  ], 
+  "id": 20598718, 
+  "refs": [
+   "? 13796144", 
+   "? 20572312"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   18.562999999999999
+  ], 
+  "id": 20598719, 
+  "refs": [
+   "? 20572313", 
+   "? 13793990"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.75
+  ], 
+  "id": 20598720, 
+  "refs": [
+   "? 20572321", 
+   "? 13793747"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.0
+  ], 
+  "id": 20598721, 
+  "refs": [
+   "? 13788111", 
+   "? 20572322"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.0
+  ], 
+  "id": 20598722, 
+  "refs": [
+   "? 13788111", 
+   "? 20572325"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.8330000000000000
+  ], 
+  "id": 20598723, 
+  "refs": [
+   "? 13788108", 
+   "? 20572340"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.5
+  ], 
+  "id": 20598724, 
+  "refs": [
+   "? 20572342", 
+   "? 13788107"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.5
+  ], 
+  "id": 20598725, 
+  "refs": [
+   "? 20572343", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.5
+  ], 
+  "id": 20598726, 
+  "refs": [
+   "? 20572343", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.9790000000000001
+  ], 
+  "id": 20598727, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.66700000000000004
+  ], 
+  "id": 20598728, 
+  "refs": [
+   "? 14221225", 
+   "? 14221225"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.66700000000000004
+  ], 
+  "id": 20598729, 
+  "refs": [
+   "? 14169070", 
+   "? 14113930"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   17.667000000000002
+  ], 
+  "id": 20598730, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.3330000000000002
+  ], 
+  "id": 20598731, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   15.25
+  ], 
+  "id": 20598733, 
+  "refs": [
+   "? 14184520", 
+   "? 13788104"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   10.208000000000000
+  ], 
+  "id": 20598734, 
+  "refs": [
+   "? 14169070", 
+   "? 13788110"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   14.830000000000000
+  ], 
+  "id": 20598735, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   8.25, 
+   11.75
+  ], 
+  "id": 20598736, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070", 
+   "? 13788110"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.0, 
+   0.126
+  ], 
+  "id": 20598737, 
+  "refs": [
+   "? 14181669", 
+   "? 14181669", 
+   "? 13794723"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   8.6669999999999998
+  ], 
+  "id": 20598738, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.7919999999999998
+  ], 
+  "id": 20598739, 
+  "refs": [
+   "? 14169070", 
+   "? 14217916"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.25
+  ], 
+  "id": 20598740, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   2.4169999999999998, 
+   12.414000000000000
+  ], 
+  "id": 20598741, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.5940000000000001, 
+   3.9060000000000001
+  ], 
+  "id": 20598743, 
+  "refs": [
+   "? 14211982", 
+   "? 13788110", 
+   "? 14211982"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.8540000000000001, 
+   3.8130000000000002
+  ], 
+  "id": 20598744, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   13.302000000000000
+  ], 
+  "id": 20598745, 
+  "refs": [
+   "? 13794124", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.375
+  ], 
+  "id": 20598746, 
+  "refs": [
+   "? 14169070", 
+   "? 13788110"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.3330000000000002
+  ], 
+  "id": 20598747, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   8.5359999999999996
+  ], 
+  "id": 20598748, 
+  "refs": [
+   "? 13796090", 
+   "? 14194434"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   15.583000000000000
+  ], 
+  "id": 20598750, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   17.75
+  ], 
+  "id": 20598751, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.75
+  ], 
+  "id": 20598752, 
+  "refs": [
+   "? 14169070", 
+   "? 13794716"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   12.083000000000000
+  ], 
+  "id": 20598753, 
+  "refs": [
+   "? 14113930", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.2560000000000002
+  ], 
+  "id": 20598754, 
+  "refs": [
+   "? 14221225", 
+   "? 13788104"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.75, 
+   2.75
+  ], 
+  "id": 20598755, 
+  "refs": [
+   "? 14184520", 
+   "? 13788108", 
+   "? 14184520"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.66700000000000004
+  ], 
+  "id": 20598756, 
+  "refs": [
+   "? 14169070", 
+   "? 13788109"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.125, 
+   16.625
+  ], 
+  "id": 20598757, 
+  "refs": [
+   "? 14169070", 
+   "? 13788111", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   8.3439999999999994, 
+   9.3230000000000004
+  ], 
+  "id": 20598758, 
+  "refs": [
+   "? 14169070", 
+   "? 13788104", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   9.5630000000000006, 
+   5.2679999999999998
+  ], 
+  "id": 20598759, 
+  "refs": [
+   "? 14169070", 
+   "? 13796036", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   2.4580000000000002
+  ], 
+  "id": 20598760, 
+  "refs": [
+   "? 13788109", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.4170000000000000
+  ], 
+  "id": 20598761, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.5629999999999997, 
+   6.5209999999999999
+  ], 
+  "id": 20598762, 
+  "refs": [
+   "? 13788107", 
+   "? 20572294", 
+   "? 13788108"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   18.030999999999999, 
+   18.135000000000002
+  ], 
+  "id": 20598763, 
+  "refs": [
+   "? 13788115", 
+   "? 20572341", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   18.030999999999999, 
+   18.135000000000002
+  ], 
+  "id": 20598764, 
+  "refs": [
+   "? 13788115", 
+   "? 20572344", 
+   "? 13788114"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.0, 
+   0.66700000000000004
+  ], 
+  "id": 20598765, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   8.0419999999999998
+  ], 
+  "id": 20598766, 
+  "refs": [
+   "? 14169070", 
+   "? 13788100"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.4170000000000000, 
+   10.146000000000001
+  ], 
+  "id": 20598767, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070", 
+   "? 13788105"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.41699999999999998, 
+   1.4170000000000000
+  ], 
+  "id": 20598768, 
+  "refs": [
+   "? 14113938", 
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.70799999999999996
+  ], 
+  "id": 20598769, 
+  "refs": [
+   "? 13788100", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   13.625
+  ], 
+  "id": 20598770, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.5
+  ], 
+  "id": 20598771, 
+  "refs": [
+   "? 14169070", 
+   "? 13788100"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.5830000000000002
+  ], 
+  "id": 20598772, 
+  "refs": [
+   "? 13788100", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   2.2930000000000001
+  ], 
+  "id": 20598774, 
+  "refs": [
+   "? 14169070", 
+   "? 13794723"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.9270000000000000
+  ], 
+  "id": 20598835, 
+  "refs": [
+   "? 14169070", 
+   "? 13796036"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   2.4790000000000001
+  ], 
+  "id": 20598996, 
+  "refs": [
+   "? 14169070", 
+   "? 13788102"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.115
+  ], 
+  "id": 20599042, 
+  "refs": [
+   "? 13795945", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.126
+  ], 
+  "id": 20599104, 
+  "refs": [
+   "? 13794723", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   4.4580000000000002
+  ], 
+  "id": 20599666, 
+  "refs": [
+   "? 13788108", 
+   "? 20572303"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.4580000000000002
+  ], 
+  "id": 20599673, 
+  "refs": [
+   "? 13788108", 
+   "? 20572317"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.0
+  ], 
+  "id": 20599680, 
+  "refs": [
+   "? 20572303", 
+   "? 20572317"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   13.228999999999999, 
+   3.0
+  ], 
+  "id": 20600025, 
+  "refs": [
+   "? 13788110", 
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.1670000000000000, 
+   0.66700000000000004, 
+   1.1670000000000000
+  ], 
+  "id": 20600054, 
+  "refs": [
+   "? 14169070", 
+   "? 14169070", 
+   "? 14169070", 
+   "? 14169070"
+  ]
+ }
+]
