@@ -247,6 +247,16 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     vs our stack + check; his separate 10'-2½" vs our `grid | 9'-11" | edge | 10'-2½" | 7`), and the key-based score
     counts those as misses. One real loss: the 2'-5½" first row off grid 6 moved 0.28" from his spot (gap relaxation).
     One real gain: the 14'-4" stack row by the core now sits on his line (was 1.74" off).
+- **2026-10-06 — "I want the chain as I drew it" (runs L3N 56–57).** An opening located off a wall because no grid of
+  that direction is near (`String.keep_chain`, set in `do_opening`'s no-grid fallback) is not split by
+  `stack_from_anchor`: `edge | 3'-9¾" | edge | 4'-10¼" | wall` stays one string. Tried for *every* wall-anchored chain
+  first (run 56, 9 strings): lost 5 dims of his at the main core openings (7", 3'-3", 5", 17'-8", 8½" | 13'-7½" — he
+  keeps the stacks off the core walls there) and gained 1 (his `18'-2" | 8'-1"` chain at (223, 29)) — narrowed to
+  the no-grid case. L3N run 57: **144 (122 / 22) / 138 placed / 2 review / 0 overlaps, 20 s**; score unchanged from
+  run 55 except 1 fewer dim he doesn't have. Crops: `angled_shaft_v2_run55.png` (stack + check) vs `_run57.png` (chain).
+  Image mapping for crops of the FitToPage export: 20.16 px/ft, image centre = model-crop centre (6000 × 5599 px).
+  - Open: his `18'-2" | 8'-1"` chain off the core wall at (223, 29) vs the stacks he kept at the other core openings —
+    ask what makes that one a chain.
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

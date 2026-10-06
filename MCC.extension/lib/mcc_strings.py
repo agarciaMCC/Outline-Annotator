@@ -378,6 +378,7 @@ class Planner(object):
                 par = [e for e in par if e.length >= self.c["MINOR_EDGE"]]
             if not par:
                 continue
+            keep_chain = False
             ng = self.m.nearest_grid((cx, cy), fi, self.c["MAX_DIST"])
             if ng is None:
                 # no grid of this direction within the tape: an edge lying on
@@ -388,6 +389,7 @@ class Planner(object):
                 if any(self.flush(e, self.m.walls) for e in par):
                     ng = self.m.nearest_grid((cx, cy), fi)
                     self.note("opening: no grid near, located off the wall it touches")
+                    keep_chain = True
             if ng is None:
                 self.note("opening: too far from any grid")
                 continue
@@ -506,6 +508,7 @@ class Planner(object):
                          role="locate" if (al or ah or mid_grid) else "check")
             if s is not None:
                 s.alt = alt
+                s.keep_chain = keep_chain
             # one-sided and large: the far edge gets its own anchor dim
             # (not needed when openings are stacked - the stack has it)
             one_sided = (al is None) != (ah is None)
@@ -956,6 +959,15 @@ class Planner(object):
                 continue
             i = min(ends)[1]
             anc, an = s.refs[i], s.names[i]
+            if getattr(s, "keep_chain", False):
+                # an opening located off a wall because no grid of that
+                # direction is near stays one chain, as Adolfo draws it
+                # (2026-10-06: edge | 3'-9 3/4" | edge | 4'-10 1/4" | wall at
+                # the angled shaft by the L3N core). Tried for every
+                # wall-anchored chain (run 56): at the core openings he keeps
+                # the stacks (7", 3'-3", 5", 17'-8" off the core walls)
+                self.note("no-grid chain off a wall kept as drawn (not stacked)")
+                continue
             targets = [(r, nm) for k, (r, nm) in enumerate(zip(s.refs, s.names))
                        if k != i and r[2] not in ("grid", "wall face")]   # never TO a wall
             if len(targets) < 2:
