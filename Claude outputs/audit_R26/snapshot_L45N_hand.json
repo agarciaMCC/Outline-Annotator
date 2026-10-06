@@ -1,0 +1,7776 @@
+{
+ "meta": {
+  "scale": 128,
+  "count": 207,
+  "view": "LEVEL 4.5 - SOFFIT PLAN (north crop)"
+ },
+ "dims": [
+  {
+   "ref_elems": [
+    13794723,
+    13794716,
+    13793990
+   ],
+   "type": "Gridline Dimensions",
+   "origin": [
+    371.4458,
+    80.7823
+   ],
+   "id": 17031654,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      372.8311,
+      81.6122
+     ],
+     "value": 17.33333,
+     "origin": [
+      372.9015,
+      81.4611
+     ],
+     "string": "17'-4\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      351.6839,
+      71.7511
+     ],
+     "value": 29.33333,
+     "origin": [
+      351.7543,
+      71.6
+     ],
+     "string": "29'-4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27da3:0:SURFACE",
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27d9c:0:SURFACE",
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27ac6:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13794723,
+    13793990
+   ],
+   "type": "Gridline Dimensions",
+   "origin": [
+    372.4744,
+    83.4687
+   ],
+   "id": 17031655,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      358.6933,
+      77.2264
+     ],
+     "value": 46.66667,
+     "origin": [
+      358.7638,
+      77.0753
+     ],
+     "string": "46'-8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27da3:0:SURFACE",
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27ac6:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13793990,
+    14240434
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    308.7115,
+    142.1114
+   ],
+   "id": 17064274,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      305.3761,
+      140.74
+     ],
+     "value": 0.38542,
+     "origin": [
+      303.592,
+      139.7242
+     ],
+     "string": "4 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27ac6:0:SURFACE",
+    "99b80580-00ac-4760-a512-e70850db2497-00d94ab2:0:INSTANCE:fd40fd77-8314-4b3d-a881-e1a2da90985a-011465c3:33:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13795945,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    284.0356,
+    188.0227
+   ],
+   "id": 17066033,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      284.6171,
+      187.17
+     ],
+     "value": 1.04167,
+     "origin": [
+      285.5741,
+      184.7234
+     ],
+     "string": "1'-0 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28269:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:29011:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788102,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow (Opaque)",
+   "origin": [
+    129.212,
+    88.1574
+   ],
+   "id": 17066140,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      128.3085,
+      88.3241
+     ],
+     "value": 2.33333,
+     "origin": [
+      128.3085,
+      88.1574
+     ],
+     "string": "2'-4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c6:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:129:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13795945
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    130.0521,
+    108.7388
+   ],
+   "id": 17066202,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      127.7351,
+      114.102
+     ],
+     "value": 1.04167,
+     "origin": [
+      128.7255,
+      111.5837
+     ],
+     "string": "1'-0 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:21:SURFACE",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28269:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13795945
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    242.9725,
+    157.7987
+   ],
+   "id": 17066327,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      239.2783,
+      166.1154
+     ],
+     "value": 1.04167,
+     "origin": [
+      240.2687,
+      163.5971
+     ],
+     "string": "1'-0 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:29011:SURFACE",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28269:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14213844,
+    13788110
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    230.8043,
+    153.761
+   ],
+   "id": 17076402,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      230.621,
+      153.9276
+     ],
+     "value": 4.54167,
+     "origin": [
+      230.621,
+      153.761
+     ],
+     "string": "4'-6 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2d4:0:INSTANCE:3cafd239-6527-4a36-85d9-9fe6430448ab-01162f95:31:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788109,
+    13887093,
+    14213846
+   ],
+   "type": "5/64\" Arial Narrow (Opaque)",
+   "origin": [
+    217.2011,
+    120.2764
+   ],
+   "id": 17076430,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      207.3512,
+      120.443
+     ],
+     "value": 2.03125,
+     "origin": [
+      210.9908,
+      120.2764
+     ],
+     "string": "2'-0 3/8\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      216.2251,
+      120.443
+     ],
+     "value": 8.4375,
+     "origin": [
+      216.2251,
+      120.2764
+     ],
+     "string": "8'-5 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE",
+    "d41be0ed-30d6-44cf-b489-80c3f33fee5c-00d3e675:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2d6:0:INSTANCE:9a1b2fd7-22c6-459f-ba64-63cad4bdc7c2-012d40eb:31:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13794723,
+    14213828
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    366.0667,
+    129.2494
+   ],
+   "id": 17107947,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      363.8834,
+      128.4152
+     ],
+     "value": 2.8125,
+     "origin": [
+      359.957,
+      126.4004
+     ],
+     "string": "2'-9 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27da3:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2c4:0:INSTANCE:5a5484fd-08ba-425e-8144-6867654d26a8-012d6e3f:33:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13794723,
+    14213826
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    378.1598,
+    96.3426
+   ],
+   "id": 17107948,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      378.3198,
+      96.6011
+     ],
+     "value": 2.8125,
+     "origin": [
+      374.7209,
+      94.739
+     ],
+     "string": "2'-9 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27da3:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2c2:0:INSTANCE:5a5484fd-08ba-425e-8144-6867654d26a8-012d6e3f:33:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14263921,
+    14263921
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    147.0783,
+    -21.7675
+   ],
+   "id": 17240808,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      141.3798,
+      -21.6008
+     ],
+     "value": 7.5,
+     "origin": [
+      140.9751,
+      -21.7675
+     ],
+     "string": "7'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:24:SURFACE",
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14263921,
+    13788103,
+    14263921
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    146.4923,
+    -24.2973
+   ],
+   "id": 17240816,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      139.2668,
+      -24.1306
+     ],
+     "value": 4.08333,
+     "origin": [
+      139.2668,
+      -24.2973
+     ],
+     "string": "4'-1\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      143.0168,
+      -24.1306
+     ],
+     "value": 3.41667,
+     "origin": [
+      143.0168,
+      -24.2973
+     ],
+     "string": "3'-5\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c7:0:SURFACE",
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14218021,
+    13795945
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    195.9602,
+    147.2847
+   ],
+   "id": 17254458,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      196.4517,
+      146.218
+     ],
+     "value": 2.17107,
+     "origin": [
+      197.8646,
+      143.2007
+     ],
+     "string": "2'-2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f325:1:SURFACE",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28269:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14213834,
+    13794716
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    335.0291,
+    151.8877
+   ],
+   "id": 17254473,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      336.7814,
+      152.8887
+     ],
+     "value": 2.03125,
+     "origin": [
+      332.2281,
+      150.5816
+     ],
+     "string": "2'-0 3/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2ca:0:INSTANCE:bfacd6b8-6881-44d0-bcf0-8f286a473f11-01153284:33:SURFACE",
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27d9c:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13794723,
+    14213828
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    366.0667,
+    129.2494
+   ],
+   "id": 17254474,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      363.8834,
+      128.4152
+     ],
+     "value": 2.8125,
+     "origin": [
+      359.957,
+      126.4004
+     ],
+     "string": "2'-9 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27da3:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2c4:0:INSTANCE:5a5484fd-08ba-425e-8144-6867654d26a8-012d6e3f:33:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13794723,
+    14213826
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    378.1598,
+    96.3426
+   ],
+   "id": 17254475,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      378.3198,
+      96.6011
+     ],
+     "value": 2.8125,
+     "origin": [
+      374.7209,
+      94.739
+     ],
+     "string": "2'-9 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27da3:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2c2:0:INSTANCE:5a5484fd-08ba-425e-8144-6867654d26a8-012d6e3f:33:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788115,
+    14213858
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    164.9517,
+    -15.7733
+   ],
+   "id": 17254478,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      164.785,
+      -12.8929
+     ],
+     "value": 5.5,
+     "origin": [
+      164.9517,
+      -12.8929
+     ],
+     "string": "5'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2e2:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131edb0:31:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788115,
+    14213856
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    175.964,
+    -17.1131
+   ],
+   "id": 17254479,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      175.7974,
+      -12.7236
+     ],
+     "value": 5.16146,
+     "origin": [
+      175.964,
+      -12.7236
+     ],
+     "string": "5'-2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2e0:0:INSTANCE:fd40fd77-8314-4b3d-a881-e1a2da90985a-011465a6:31:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788114,
+    14215890
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    277.7403,
+    19.8427
+   ],
+   "id": 17254487,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      277.5736,
+      27.7196
+     ],
+     "value": 0.75,
+     "origin": [
+      277.7403,
+      25.6488
+     ],
+     "string": "9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8ead2:0:INSTANCE:fd40fd77-8314-4b3d-a881-e1a2da90985a-011465b3:31:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14263921,
+    14263921
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    134.217,
+    56.5659
+   ],
+   "id": 17259798,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      141.3525,
+      56.7325
+     ],
+     "value": 7.5,
+     "origin": [
+      140.9751,
+      56.5659
+     ],
+     "string": "7'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:24:SURFACE",
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14263921,
+    13788103,
+    14263921
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    151.2265,
+    54.5659
+   ],
+   "id": 17259872,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      139.2668,
+      54.7325
+     ],
+     "value": 4.08333,
+     "origin": [
+      139.2668,
+      54.5659
+     ],
+     "string": "4'-1\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      143.0168,
+      54.7325
+     ],
+     "value": 3.41667,
+     "origin": [
+      143.0168,
+      54.5659
+     ],
+     "string": "3'-5\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c7:0:SURFACE",
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243432,
+    13788105
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    179.2017,
+    131.2561
+   ],
+   "id": 17277269,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      179.035,
+      131.2634
+     ],
+     "value": 1.47917,
+     "origin": [
+      179.2017,
+      131.2634
+     ],
+     "string": "1'-5 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:11:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243432,
+    13788108,
+    14243432
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    191.6876,
+    113.3014
+   ],
+   "id": 17277290,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      179.5254,
+      115.5047
+     ],
+     "value": 3.58333,
+     "origin": [
+      182.4335,
+      113.3014
+     ],
+     "string": "3'-7\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      188.9986,
+      115.5047
+     ],
+     "value": 2.41667,
+     "origin": [
+      185.4335,
+      113.3014
+     ],
+     "string": "2'-5\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:28:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14254834,
+    14243432
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    193.0857,
+    115.3014
+   ],
+   "id": 17277291,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      183.6418,
+      115.468
+     ],
+     "value": 6.0,
+     "origin": [
+      183.6418,
+      115.3014
+     ],
+     "string": "6'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "f059264b-e846-4984-9225-e42707e22890-00d982f2:17566:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14254834,
+    13788108
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    190.9681,
+    117.968
+   ],
+   "id": 17284804,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      176.0931,
+      117.9599
+     ],
+     "value": 3.58333,
+     "origin": [
+      182.4335,
+      117.968
+     ],
+     "string": "3'-7\"",
+     "suffix": " TO"
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "f059264b-e846-4984-9225-e42707e22890-00d982f2:17566:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14263921,
+    14243436
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    134.217,
+    92.0659
+   ],
+   "id": 17284811,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      141.4146,
+      92.2325
+     ],
+     "value": 7.5,
+     "origin": [
+      140.9751,
+      92.0659
+     ],
+     "string": "7'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:24:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566c:3232:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14263921,
+    13788103,
+    14243436
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    151.2265,
+    90.0659
+   ],
+   "id": 17284812,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      139.2668,
+      90.2325
+     ],
+     "value": 4.08333,
+     "origin": [
+      139.2668,
+      90.0659
+     ],
+     "string": "4'-1\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      143.0168,
+      90.2325
+     ],
+     "value": 3.41667,
+     "origin": [
+      143.0168,
+      90.0659
+     ],
+     "string": "3'-5\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c7:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566c:3232:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243436,
+    13899174,
+    14243436
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    147.4864,
+    109.1113
+   ],
+   "id": 17284869,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      137.839,
+      104.7966
+     ],
+     "value": 3.75,
+     "origin": [
+      137.9094,
+      104.6455
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      141.2377,
+      106.3814
+     ],
+     "value": 3.75,
+     "origin": [
+      141.3081,
+      106.2304
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566c:24:SURFACE",
+    "796e9c1d-db47-4524-95c5-fc2e50dfc290-00d415a6:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566c:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243436,
+    13788104
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    148.3216,
+    99.2259
+   ],
+   "id": 17284886,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      148.1549,
+      100.6815
+     ],
+     "value": 5.31531,
+     "origin": [
+      148.3216,
+      100.6815
+     ],
+     "string": "5'-3 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566c:3248:LINEAR",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788107,
+    14243653
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    179.0921,
+    75.8819
+   ],
+   "id": 17296452,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      171.3474,
+      76.0486
+     ],
+     "value": 3.75,
+     "origin": [
+      172.0168,
+      75.8819
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17574:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14265390,
+    14243653
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    178.2706,
+    77.8819
+   ],
+   "id": 17297468,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      176.387,
+      78.0486
+     ],
+     "value": 0.0,
+     "origin": [
+      173.8918,
+      77.8819
+     ],
+     "string": "0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:28:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17574:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14265390,
+    14243653
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    179.0471,
+    48.4717
+   ],
+   "id": 17297475,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      176.387,
+      48.6383
+     ],
+     "value": 0.0,
+     "origin": [
+      173.8918,
+      48.4717
+     ],
+     "string": "0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:28:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17574:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788114
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    176.8165,
+    34.8892
+   ],
+   "id": 17297482,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      176.6498,
+      33.5342
+     ],
+     "value": 15.02083,
+     "origin": [
+      176.8165,
+      33.5342
+     ],
+     "string": "15'-0 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17578:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    14293926,
+    13788114
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    178.8165,
+    44.4467
+   ],
+   "id": 17297507,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      178.6498,
+      42.608
+     ],
+     "value": 1.0,
+     "origin": [
+      178.8165,
+      40.5446
+     ],
+     "string": "1'-0\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      178.6498,
+      32.4897
+     ],
+     "value": 14.02083,
+     "origin": [
+      178.8165,
+      33.0342
+     ],
+     "string": "14'-0 1/4\" TO EOS ABOVE",
+     "suffix": " TO EOS ABOVE"
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17578:SURFACE",
+    "528cba6b-304a-4cd6-b6ed-6380bbe7f5fb-00da1ba6:6:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788104
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    179.6422,
+    82.2593
+   ],
+   "id": 17298245,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      179.4756,
+      91.9353
+     ],
+     "value": 12.17708,
+     "origin": [
+      179.6422,
+      91.9353
+     ],
+     "string": "12'-2 1/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17570:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788107,
+    14243653
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    171.8059,
+    50.4717
+   ],
+   "id": 17298934,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      171.5346,
+      50.6383
+     ],
+     "value": 3.75,
+     "origin": [
+      172.0168,
+      50.4717
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17574:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788107,
+    17298909,
+    14243653
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    175.4024,
+    71.5334
+   ],
+   "id": 17298947,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      178.0225,
+      74.9835
+     ],
+     "value": 3.5,
+     "origin": [
+      171.8918,
+      71.5334
+     ],
+     "string": "3'-6\" TO",
+     "suffix": " TO"
+    },
+    {
+     "text": [
+      175.8817,
+      71.7001
+     ],
+     "value": 0.25,
+     "origin": [
+      173.7668,
+      71.5334
+     ],
+     "string": "3\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE",
+    "754b167a-26a4-41c2-b97d-50ff1a90f83d-0107f5dd:5:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17574:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788107,
+    17298909,
+    14243653
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    174.7355,
+    46.525
+   ],
+   "id": 17300163,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      169.445,
+      48.8153
+     ],
+     "value": 3.5,
+     "origin": [
+      171.8918,
+      46.525
+     ],
+     "string": "3'-6\" TO",
+     "suffix": " TO"
+    },
+    {
+     "text": [
+      175.8817,
+      46.6916
+     ],
+     "value": 0.25,
+     "origin": [
+      173.7668,
+      46.525
+     ],
+     "string": "3\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE",
+    "754b167a-26a4-41c2-b97d-50ff1a90f83d-0107f5dd:5:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17574:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243432,
+    14215904
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    189.3582,
+    88.7323
+   ],
+   "id": 17300342,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      191.1253,
+      90.2108
+     ],
+     "value": 2.375,
+     "origin": [
+      189.3582,
+      87.0342
+     ],
+     "string": "2'-4 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:16:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8eae0:26:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    289.389,
+    47.6253
+   ],
+   "id": 17304733,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      266.3343,
+      47.792
+     ],
+     "value": 1.91667,
+     "origin": [
+      269.2668,
+      47.6253
+     ],
+     "string": "1'-11\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:26356:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    14268828
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    305.837,
+    47.6253
+   ],
+   "id": 17304786,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      296.2043,
+      47.792
+     ],
+     "value": 51.95833,
+     "origin": [
+      296.2043,
+      47.6253
+     ],
+     "string": "51'-11 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "9b86b412-bec3-4e84-9333-21799621e0cd-00d9b99c:2:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    14399321,
+    13788116
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    205.8294,
+    -36.6437
+   ],
+   "id": 17305357,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      205.6627,
+      -29.7464
+     ],
+     "value": 0.98958,
+     "origin": [
+      205.8294,
+      -31.6377
+     ],
+     "string": "11 7/8\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      205.6627,
+      -39.0543
+     ],
+     "value": 13.84375,
+     "origin": [
+      205.8294,
+      -39.0543
+     ],
+     "string": "13'-10 1/8\" TO L5 EOS",
+     "suffix": " TO L5 EOS"
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17586:SURFACE",
+    "eb97c0fe-26db-473c-9c21-711dbab6866e-00dbb759:6:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243462,
+    13788108,
+    14243462
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    195.3028,
+    -24.9531
+   ],
+   "id": 17315760,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      179.3785,
+      -24.7864
+     ],
+     "value": 3.58333,
+     "origin": [
+      182.4335,
+      -24.9531
+     ],
+     "string": "3'-7\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      188.1291,
+      -24.7864
+     ],
+     "value": 2.41667,
+     "origin": [
+      185.4335,
+      -24.9531
+     ],
+     "string": "2'-5\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243462,
+    14243462
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    179.608,
+    -22.9531
+   ],
+   "id": 17315761,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      183.6418,
+      -22.7864
+     ],
+     "value": 6.0,
+     "origin": [
+      183.6418,
+      -22.9531
+     ],
+     "string": "6'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:24:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788115
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    260.1544,
+    -6.7939
+   ],
+   "id": 17328235,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      259.9877,
+      -8.2254
+     ],
+     "value": 0.66667,
+     "origin": [
+      260.1544,
+      -9.8095
+     ],
+     "string": "8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:28734:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788109,
+    14254834
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    211.9031,
+    -17.1978
+   ],
+   "id": 17328332,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      211.6559,
+      -17.0312
+     ],
+     "value": 0.66667,
+     "origin": [
+      210.3085,
+      -17.1978
+     ],
+     "string": "8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE",
+    "f059264b-e846-4984-9225-e42707e22890-00d982f2:17590:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    17343834,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    271.6765,
+    -11.1857
+   ],
+   "id": 17328400,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      266.6439,
+      -11.019
+     ],
+     "value": 1.0,
+     "origin": [
+      268.8085,
+      -11.1857
+     ],
+     "string": "1'-0\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      275.7542,
+      -11.4119
+     ],
+     "value": 0.91667,
+     "origin": [
+      269.7668,
+      -11.1857
+     ],
+     "string": "11\" TO L5 EOS ABOVE",
+     "suffix": " TO L5 EOS ABOVE"
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:28411:SURFACE",
+    "48c7f5e8-740d-4bdb-943b-4b45128094fd-0108a55a:6:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    272.5758,
+    -12.9659
+   ],
+   "id": 17328412,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      272.1437,
+      -12.7992
+     ],
+     "value": 1.91667,
+     "origin": [
+      269.2668,
+      -12.9659
+     ],
+     "string": "1'-11\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:28411:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353344,
+    14353344,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    272.1668,
+    11.4456
+   ],
+   "id": 17328830,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      268.1418,
+      11.6123
+     ],
+     "value": 3.16667,
+     "origin": [
+      268.1418,
+      11.4456
+     ],
+     "string": "3'-2\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      271.5625,
+      11.6123
+     ],
+     "value": 0.5,
+     "origin": [
+      269.9751,
+      11.4456
+     ],
+     "string": "6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:24:SURFACE",
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:28:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353344,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    263.8121,
+    13.2192
+   ],
+   "id": 17328843,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      268.1744,
+      13.3859
+     ],
+     "value": 3.66667,
+     "origin": [
+      268.3918,
+      13.2192
+     ],
+     "string": "3'-8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243458,
+    13788110,
+    14243458
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    243.6524,
+    11.2192
+   ],
+   "id": 17328871,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      230.2043,
+      11.3859
+     ],
+     "value": 5.375,
+     "origin": [
+      230.2043,
+      11.2192
+     ],
+     "string": "5'-4 1/2\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      236.2043,
+      11.3859
+     ],
+     "value": 6.625,
+     "origin": [
+      236.2043,
+      11.2192
+     ],
+     "string": "6'-7 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    17181793,
+    17181793
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    289.7812,
+    32.9473
+   ],
+   "id": 17339364,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      281.1418,
+      33.114
+     ],
+     "value": 21.83333,
+     "origin": [
+      281.1418,
+      32.9473
+     ],
+     "string": "21'-10\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      311.7075,
+      33.114
+     ],
+     "value": 35.0,
+     "origin": [
+      309.5585,
+      32.9473
+     ],
+     "string": "35'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "d402db13-ae87-4ddc-8f25-d766d3a7e92a-01062a1f:9:SURFACE",
+    "d402db13-ae87-4ddc-8f25-d766d3a7e92a-01062a1f:17:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    17181793,
+    13788114
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    289.7374,
+    29.8402
+   ],
+   "id": 17339365,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      289.5708,
+      29.1384
+     ],
+     "value": 6.22917,
+     "origin": [
+      289.7374,
+      29.1384
+     ],
+     "string": "6'-2 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "d402db13-ae87-4ddc-8f25-d766d3a7e92a-01062a1f:13:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    17181793
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    313.1521,
+    34.9473
+   ],
+   "id": 17339367,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      298.6418,
+      35.114
+     ],
+     "value": 56.83333,
+     "origin": [
+      298.6418,
+      34.9473
+     ],
+     "string": "56'-10\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "d402db13-ae87-4ddc-8f25-d766d3a7e92a-01062a1f:17:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788100,
+    14268828
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    293.3043,
+    57.5771
+   ],
+   "id": 17339466,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      293.1377,
+      56.2217
+     ],
+     "value": 11.60417,
+     "origin": [
+      293.3043,
+      56.2217
+     ],
+     "string": "11'-7 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE",
+    "9b86b412-bec3-4e84-9333-21799621e0cd-00d9b99c:5:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    14268828
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    313.5495,
+    45.6253
+   ],
+   "id": 17339467,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      295.246,
+      45.792
+     ],
+     "value": 53.875,
+     "origin": [
+      295.246,
+      45.6253
+     ],
+     "string": "53'-10 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:26356:SURFACE",
+    "9b86b412-bec3-4e84-9333-21799621e0cd-00d9b99c:2:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14268828,
+    13788105
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    285.1503,
+    145.0232
+   ],
+   "id": 17339469,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      284.9836,
+      142.6176
+     ],
+     "value": 24.1875,
+     "origin": [
+      285.1503,
+      142.6176
+     ],
+     "string": "24'-2 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "9b86b412-bec3-4e84-9333-21799621e0cd-00d9b99c:13:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271227,
+    13788100
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    304.2626,
+    71.0762
+   ],
+   "id": 17339470,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      304.0959,
+      70.573
+     ],
+     "value": 3.77083,
+     "origin": [
+      304.2626,
+      63.9092
+     ],
+     "string": "3'-9 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c2fb:0:INSTANCE:4940823b-a997-458c-8b13-5e766e0f33a3-012d0c19:4:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788110,
+    14367361,
+    13788111
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    249.5239,
+    84.1774
+   ],
+   "id": 17340708,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      251.1001,
+      84.344
+     ],
+     "value": 36.41667,
+     "origin": [
+      251.1001,
+      84.1774
+     ],
+     "string": "36'-5\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      271.5035,
+      84.344
+     ],
+     "value": 0.91667,
+     "origin": [
+      269.7668,
+      84.1774
+     ],
+     "string": "11\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE",
+    "50c0c6a0-678f-42b4-8363-a785ee9d677e-00db3a81:6:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788100,
+    14218046
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    242.7488,
+    60.1971
+   ],
+   "id": 17340716,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      242.5821,
+      64.3661
+     ],
+     "value": 2.80457,
+     "origin": [
+      242.7488,
+      60.6215
+     ],
+     "string": "2'-9 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f33e:513:LINEAR"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788100,
+    14268828
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    273.3049,
+    58.0018
+   ],
+   "id": 17340717,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      273.1383,
+      58.5093
+     ],
+     "value": 7.02904,
+     "origin": [
+      273.3049,
+      58.5093
+     ],
+     "string": "7'-0 3/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE",
+    "9b86b412-bec3-4e84-9333-21799621e0cd-00d9b99c:1162:LINEAR"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243438,
+    13788108,
+    14243438
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    184.7141,
+    -33.7805
+   ],
+   "id": 17344000,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      177.7501,
+      -33.6138
+     ],
+     "value": 3.96893,
+     "origin": [
+      182.2407,
+      -33.7805
+     ],
+     "string": "3'-11 5/8\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      190.9214,
+      -33.6138
+     ],
+     "value": 3.4343,
+     "origin": [
+      185.9423,
+      -33.7805
+     ],
+     "string": "3'-5 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566e:19:LINEAR",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566e:17:LINEAR"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    217.7066,
+    144.7916
+   ],
+   "id": 17344648,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      217.5399,
+      140.9613
+     ],
+     "value": 20.875,
+     "origin": [
+      217.7066,
+      140.9613
+     ],
+     "string": "20'-10 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:42893:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788102,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow (Opaque)",
+   "origin": [
+    129.8694,
+    6.0932
+   ],
+   "id": 17346359,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      126.2894,
+      6.2599
+     ],
+     "value": 2.33333,
+     "origin": [
+      128.3085,
+      6.0932
+     ],
+     "string": "2'-4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c6:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:129:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788110,
+    14213848
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    231.9055,
+    106.8175
+   ],
+   "id": 17416227,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      234.7636,
+      106.9842
+     ],
+     "value": 0.10417,
+     "origin": [
+      232.9439,
+      106.8175
+     ],
+     "string": "1 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2d8:0:INSTANCE:d9069661-5e29-4036-b626-6225666b19a3-011e72e5:33:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243452,
+    13794716,
+    14243452
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    344.5632,
+    132.5628
+   ],
+   "id": 18123933,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      338.6426,
+      129.9859
+     ],
+     "value": 3.75,
+     "origin": [
+      338.713,
+      129.8348
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      342.0413,
+      131.5707
+     ],
+     "value": 3.75,
+     "origin": [
+      342.1117,
+      131.4196
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9567c:24:SURFACE",
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27d9c:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9567c:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243430,
+    14243430,
+    14243430
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    324.3895,
+    78.4129
+   ],
+   "id": 18126179,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      329.1951,
+      80.8376
+     ],
+     "value": 3.75,
+     "origin": [
+      329.2655,
+      80.6866
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      332.5937,
+      82.4224
+     ],
+     "value": 3.75,
+     "origin": [
+      332.6642,
+      82.2714
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:24:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:0:INSTANCE:4940823b-a997-458c-8b13-5e766e0f33a3-012d0c70:4:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243430,
+    14243430
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    335.3046,
+    85.7094
+   ],
+   "id": 18126180,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      330.0492,
+      83.4426
+     ],
+     "value": 7.5,
+     "origin": [
+      330.1196,
+      83.2916
+     ],
+     "string": "7'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:24:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788110,
+    17065191
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    240.5482,
+    -7.9169
+   ],
+   "id": 18426372,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      236.2043,
+      -7.7502
+     ],
+     "value": 6.625,
+     "origin": [
+      236.2043,
+      -7.9169
+     ],
+     "string": "6'-7 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE",
+    "74860500-f3f1-41ab-96c4-8834fee38b0a-010464e7:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271037,
+    14213820
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    302.8581,
+    49.8288
+   ],
+   "id": 18772994,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      302.6915,
+      49.1982
+     ],
+     "value": 1.625,
+     "origin": [
+      302.8581,
+      51.2321
+     ],
+     "string": "1'-7 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    1.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:16:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2bc:26:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14215892,
+    14381978
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    272.1397,
+    56.2607
+   ],
+   "id": 18775993,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      271.7251,
+      56.4274
+     ],
+     "value": 3.0,
+     "origin": [
+      271.7251,
+      56.2607
+     ],
+     "string": "3'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8ead4:0:INSTANCE:fd40fd77-8314-4b3d-a881-e1a2da90985a-011465b4:33:SURFACE",
+    "20543ca4-dfa9-483d-b622-463aaabf3f97-00db739a:0:INSTANCE:20543ca4-dfa9-483d-b622-463aaabf3f97-00db73fc:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788108,
+    14243432
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    186.3147,
+    82.2649
+   ],
+   "id": 19453505,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      185.4335,
+      82.4315
+     ],
+     "value": 2.41667,
+     "origin": [
+      185.4335,
+      82.2649
+     ],
+     "string": "2'-5\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788104,
+    14243432
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    197.0437,
+    87.2191
+   ],
+   "id": 19453512,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      196.8771,
+      91.9353
+     ],
+     "value": 12.17708,
+     "origin": [
+      197.0437,
+      91.9353
+     ],
+     "string": "12'-2 1/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:16:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243432,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    178.6238,
+    131.1202
+   ],
+   "id": 19453519,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      176.9858,
+      134.7793
+     ],
+     "value": 1.47917,
+     "origin": [
+      178.6238,
+      131.2634
+     ],
+     "string": "1'-5 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:11:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14213888,
+    14243436
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    136.8045,
+    116.7195
+   ],
+   "id": 19453563,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      136.4157,
+      116.7221
+     ],
+     "value": 3.75,
+     "origin": [
+      136.4861,
+      116.5711
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "refs": [
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e300:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131edcc:31:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566c:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243436,
+    14213888
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    133.4012,
+    115.1325
+   ],
+   "id": 19453570,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      133.0171,
+      115.1373
+     ],
+     "value": 3.75,
+     "origin": [
+      133.0875,
+      114.9863
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9566c:24:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e300:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131edcc:31:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14265390,
+    14265390
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    168.8431,
+    81.5141
+   ],
+   "id": 19453646,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      168.2668,
+      81.6808
+     ],
+     "value": 3.75,
+     "origin": [
+      168.2668,
+      81.5141
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:24:SURFACE",
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131ee14:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14265390,
+    20030453
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    170.4647,
+    81.5141
+   ],
+   "id": 19453653,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      172.3918,
+      81.6808
+     ],
+     "value": 4.5,
+     "origin": [
+      172.3918,
+      81.5141
+     ],
+     "string": "4'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131ee14:4:SURFACE",
+    "1f315979-3007-4ed0-8102-da3473ad0d24-0131a3f5:5:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788108
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    183.0952,
+    34.677
+   ],
+   "id": 19453745,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      182.9335,
+      34.8436
+     ],
+     "value": 2.58333,
+     "origin": [
+      182.9335,
+      34.677
+     ],
+     "string": "2'-7\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:27835:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    264.986,
+    141.4614
+   ],
+   "id": 19454004,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      267.2876,
+      141.6281
+     ],
+     "value": 5.875,
+     "origin": [
+      267.2876,
+      141.4614
+     ],
+     "string": "5'-10 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17614:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14268828,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    268.6224,
+    144.7816
+   ],
+   "id": 19454011,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      271.8318,
+      144.9482
+     ],
+     "value": 1.91667,
+     "origin": [
+      269.2668,
+      144.7816
+     ],
+     "string": "1'-11\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "9b86b412-bec3-4e84-9333-21799621e0cd-00d9b99c:810:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    261.9859,
+    145.1966
+   ],
+   "id": 19454018,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      261.8192,
+      139.2738
+     ],
+     "value": 17.5,
+     "origin": [
+      261.9859,
+      139.2738
+     ],
+     "string": "17'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17610:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    259.9859,
+    145.8977
+   ],
+   "id": 19454025,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      259.8192,
+      140.9613
+     ],
+     "value": 20.875,
+     "origin": [
+      259.9859,
+      140.9613
+     ],
+     "string": "20'-10 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17547:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14345487,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    277.2726,
+    132.9204
+   ],
+   "id": 19454032,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      279.2938,
+      134.6069
+     ],
+     "value": 3.19567,
+     "origin": [
+      277.2726,
+      132.1216
+     ],
+     "string": "3'-2 3/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788105,
+    14345487
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    277.2726,
+    129.6144
+   ],
+   "id": 19454040,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      279.8318,
+      128.1522
+     ],
+     "value": 0.80433,
+     "origin": [
+      277.2726,
+      130.1216
+     ],
+     "string": "9 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE",
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    14345487
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    273.2621,
+    135.8838
+   ],
+   "id": 19454059,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      271.9335,
+      136.0505
+     ],
+     "value": 3.41667,
+     "origin": [
+      271.9335,
+      135.8838
+     ],
+     "string": "3'-5\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:16:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788100,
+    14218046
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    243.2205,
+    60.121
+   ],
+   "id": 19454125,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      245.7978,
+      63.507
+     ],
+     "value": 2.80457,
+     "origin": [
+      243.2205,
+      60.6215
+     ],
+     "string": "2'-9 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f33e:513:LINEAR"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788110,
+    14305169
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    237.6499,
+    53.5095
+   ],
+   "id": 19454132,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      236.2251,
+      53.6762
+     ],
+     "value": 6.66667,
+     "origin": [
+      236.2251,
+      53.5095
+     ],
+     "string": "6'-8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE",
+    "0dc838f0-e706-4b1b-8996-51b838583093-00da4791:6:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14305169,
+    14218046
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    240.1408,
+    53.5095
+   ],
+   "id": 19454139,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      241.1951,
+      53.6762
+     ],
+     "value": 0.75,
+     "origin": [
+      239.9335,
+      53.5095
+     ],
+     "string": "9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0dc838f0-e706-4b1b-8996-51b838583093-00da4791:6:SURFACE",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f33e:6:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353155,
+    13788104
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    227.5905,
+    100.4334
+   ],
+   "id": 19454167,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      227.4238,
+      100.2217
+     ],
+     "value": 4.39583,
+     "origin": [
+      227.5905,
+      100.2217
+     ],
+     "string": "4'-4 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0303:28:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353155,
+    13788104
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    224.9725,
+    104.7369
+   ],
+   "id": 19454174,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      224.8058,
+      102.2217
+     ],
+     "value": 8.39583,
+     "origin": [
+      224.9725,
+      102.2217
+     ],
+     "string": "8'-4 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0303:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353155,
+    13788110
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    230.3161,
+    108.2157
+   ],
+   "id": 19454181,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      231.4439,
+      108.3823
+     ],
+     "value": 2.89583,
+     "origin": [
+      231.4439,
+      108.2157
+     ],
+     "string": "2'-10 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0303:1324:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    14353155
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    273.1842,
+    108.6432
+   ],
+   "id": 19454188,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      271.7408,
+      108.8099
+     ],
+     "value": 3.03125,
+     "origin": [
+      271.7408,
+      108.6432
+     ],
+     "string": "3'-0 3/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0303:16:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    14353164
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    272.861,
+    83.9931
+   ],
+   "id": 19454195,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      271.7251,
+      84.1597
+     ],
+     "value": 3.0,
+     "origin": [
+      271.7251,
+      83.9931
+     ],
+     "string": "3'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:16:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788104,
+    14353164
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    251.0951,
+    86.5795
+   ],
+   "id": 19454202,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      250.9284,
+      90.003
+     ],
+     "value": 16.04167,
+     "origin": [
+      251.0951,
+      90.003
+     ],
+     "string": "16'-0 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE",
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353164,
+    13788100
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    251.0951,
+    77.6126
+   ],
+   "id": 19454209,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      250.9284,
+      70.003
+     ],
+     "value": 15.95833,
+     "origin": [
+      251.0951,
+      70.003
+     ],
+     "string": "15'-11 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:28:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788100,
+    14353268
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    279.1458,
+    54.3313
+   ],
+   "id": 19454223,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      278.9791,
+      56.1158
+     ],
+     "value": 11.8161,
+     "origin": [
+      279.1458,
+      56.1158
+     ],
+     "string": "11'-9 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE",
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0374:1:5:LINEAR/1"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353214,
+    13788114
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    275.8402,
+    27.2053
+   ],
+   "id": 19454244,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      276.4963,
+      29.5157
+     ],
+     "value": 1.14583,
+     "origin": [
+      275.8402,
+      26.5967
+     ],
+     "string": "1'-1 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db033e:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788114,
+    14353214
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    275.8402,
+    23.7071
+   ],
+   "id": 19454251,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      282.5294,
+      26.9612
+     ],
+     "value": 2.85417,
+     "origin": [
+      275.8402,
+      24.5967
+     ],
+     "string": "2'-10 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE",
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db033e:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    14353214
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    272.9241,
+    29.6498
+   ],
+   "id": 19454264,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      271.7251,
+      29.8165
+     ],
+     "value": 3.0,
+     "origin": [
+      271.7251,
+      29.6498
+     ],
+     "string": "3'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db033e:16:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353344,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    267.5536,
+    9.4456
+   ],
+   "id": 19454271,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      268.3918,
+      9.6123
+     ],
+     "value": 3.66667,
+     "origin": [
+      268.3918,
+      9.4456
+     ],
+     "string": "3'-8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788110,
+    14243458
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    238.4233,
+    30.0203
+   ],
+   "id": 19454278,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      236.2043,
+      30.187
+     ],
+     "value": 6.625,
+     "origin": [
+      236.2043,
+      30.0203
+     ],
+     "string": "6'-7 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243458,
+    13788110
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    228.4427,
+    30.0203
+   ],
+   "id": 19454285,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      230.2043,
+      30.187
+     ],
+     "value": 5.375,
+     "origin": [
+      230.2043,
+      30.0203
+     ],
+     "string": "5'-4 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243458,
+    13788114
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    225.9028,
+    27.1855
+   ],
+   "id": 19454292,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      225.7362,
+      30.3048
+     ],
+     "value": 1.75,
+     "origin": [
+      225.9028,
+      26.8988
+     ],
+     "string": "1'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:16:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353344,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    271.8247,
+    14.706
+   ],
+   "id": 19454316,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      271.611,
+      14.8727
+     ],
+     "value": 0.5,
+     "origin": [
+      269.9751,
+      14.706
+     ],
+     "string": "6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:28:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788110,
+    14345337
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    242.0158,
+    121.3171
+   ],
+   "id": 19454329,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      236.0168,
+      121.4838
+     ],
+     "value": 6.25,
+     "origin": [
+      236.0168,
+      121.3171
+     ],
+     "string": "6'-3\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE",
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14345337,
+    14345337
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    242.5701,
+    150.454
+   ],
+   "id": 19454336,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      240.6418,
+      150.6206
+     ],
+     "value": 3.0,
+     "origin": [
+      240.6418,
+      150.454
+     ],
+     "string": "3'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:24:SURFACE",
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14345337,
+    14218037
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    243.2953,
+    121.3171
+   ],
+   "id": 19454367,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      246.9613,
+      121.4838
+     ],
+     "value": 2.58333,
+     "origin": [
+      243.4335,
+      121.3171
+     ],
+     "string": "2'-7\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:28:SURFACE",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f335:10:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243424,
+    13796036
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    333.676,
+    190.1977
+   ],
+   "id": 19454405,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      332.3023,
+      193.538
+     ],
+     "value": 1.5,
+     "origin": [
+      332.9837,
+      191.6824
+     ],
+     "string": "1'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95660:28:SURFACE",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d282c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243424,
+    13796036
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    335.1511,
+    187.0343
+   ],
+   "id": 19454412,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      334.7196,
+      188.3542
+     ],
+     "value": 6.0,
+     "origin": [
+      334.5685,
+      188.2837
+     ],
+     "string": "6'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95660:24:SURFACE",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d282c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    14271037
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    292.8779,
+    156.0473
+   ],
+   "id": 19454541,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      283.746,
+      156.214
+     ],
+     "value": 27.04167,
+     "origin": [
+      283.746,
+      156.0473
+     ],
+     "string": "27'-0 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271037,
+    14271037
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    298.5439,
+    156.0473
+   ],
+   "id": 19454549,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      299.2668,
+      156.214
+     ],
+     "value": 4.0,
+     "origin": [
+      299.2668,
+      156.0473
+     ],
+     "string": "4'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:28:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271037,
+    14271279
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    317.1216,
+    156.0473
+   ],
+   "id": 19454556,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      309.7251,
+      156.214
+     ],
+     "value": 16.91667,
+     "origin": [
+      309.7251,
+      156.0473
+     ],
+     "string": "16'-11\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:24:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c32f:1732:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271279,
+    14271279
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    320.9813,
+    156.0473
+   ],
+   "id": 19454563,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      320.1835,
+      156.214
+     ],
+     "value": 4.0,
+     "origin": [
+      320.1835,
+      156.0473
+     ],
+     "string": "4'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c32f:1732:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c32f:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271355,
+    14271355
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    294.7049,
+    152.0388
+   ],
+   "id": 19454601,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      294.5382,
+      152.7113
+     ],
+     "value": 4.0,
+     "origin": [
+      294.7049,
+      152.7113
+     ],
+     "string": "4'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c37b:24:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c37b:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271355,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    294.7049,
+    147.2299
+   ],
+   "id": 19454608,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      294.5382,
+      140.6176
+     ],
+     "value": 20.1875,
+     "origin": [
+      294.7049,
+      140.6176
+     ],
+     "string": "20'-2 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c37b:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271227,
+    13788100
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    325.7618,
+    64.4006
+   ],
+   "id": 19454628,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      327.9571,
+      60.4431
+     ],
+     "value": 1.77083,
+     "origin": [
+      325.7618,
+      62.9092
+     ],
+     "string": "1'-9 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c2fb:28:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14271227,
+    14271227
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    325.7715,
+    69.9744
+   ],
+   "id": 19454636,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      325.6048,
+      65.7946
+     ],
+     "value": 4.0,
+     "origin": [
+      325.7715,
+      65.7946
+     ],
+     "string": "4'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c2fb:24:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c2fb:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788100,
+    14271037
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    304.9111,
+    54.8853
+   ],
+   "id": 19454649,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      304.7444,
+      56.2217
+     ],
+     "value": 11.60417,
+     "origin": [
+      304.9111,
+      56.2217
+     ],
+     "string": "11'-7 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:16:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243432,
+    14218019
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    178.1515,
+    123.7326
+   ],
+   "id": 19457942,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      178.1279,
+      124.8865
+     ],
+     "value": 1.83333,
+     "origin": [
+      181.5585,
+      123.7326
+     ],
+     "string": "1'-10\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:28:SURFACE",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f323:6:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14218019,
+    14243432
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    186.0869,
+    123.7326
+   ],
+   "id": 19457949,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      189.4027,
+      125.3034
+     ],
+     "value": 2.66667,
+     "origin": [
+      185.3085,
+      123.7326
+     ],
+     "string": "2'-8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f323:5:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14213856,
+    14243462
+   ],
+   "type": "5/64\" Arial Narrow (Opaque)",
+   "origin": [
+    186.0663,
+    -12.3495
+   ],
+   "id": 19458042,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      185.4335,
+      -12.1829
+     ],
+     "value": 2.41667,
+     "origin": [
+      185.4335,
+      -12.3495
+     ],
+     "string": "2'-5\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2e0:0:INSTANCE:fd40fd77-8314-4b3d-a881-e1a2da90985a-011465a6:33:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243462,
+    14213856
+   ],
+   "type": "5/64\" Arial Narrow (Opaque)",
+   "origin": [
+    183.7319,
+    -12.3495
+   ],
+   "id": 19458049,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      182.4335,
+      -12.1829
+     ],
+     "value": 3.58333,
+     "origin": [
+      182.4335,
+      -12.3495
+     ],
+     "string": "3'-7\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:24:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2e0:0:INSTANCE:fd40fd77-8314-4b3d-a881-e1a2da90985a-011465a6:33:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788108
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    182.6141,
+    -8.7004
+   ],
+   "id": 19458056,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      182.9335,
+      -8.5338
+     ],
+     "value": 2.58333,
+     "origin": [
+      182.9335,
+      -8.7004
+     ],
+     "string": "2'-7\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:27835:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788115,
+    14243462
+   ],
+   "type": "5/64\" Arial Narrow (Opaque)",
+   "origin": [
+    189.2205,
+    -13.3279
+   ],
+   "id": 19458063,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      189.0538,
+      -11.9762
+     ],
+     "value": 3.66667,
+     "origin": [
+      189.2205,
+      -11.9762
+     ],
+     "string": "3'-8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:16:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14345337,
+    14213840
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    237.4682,
+    148.6349
+   ],
+   "id": 19477900,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      237.3015,
+      147.6299
+     ],
+     "value": 0.53125,
+     "origin": [
+      237.4682,
+      148.7998
+     ],
+     "string": "6 3/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    -1.0
+   ],
+   "refs": [
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:16:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2d0:22:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14345337,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    235.2097,
+    137.5574
+   ],
+   "id": 19477907,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      235.043,
+      139.7946
+     ],
+     "value": 18.54167,
+     "origin": [
+      235.2097,
+      139.7946
+     ],
+     "string": "18'-6 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:16:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14345487,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    244.5382,
+    132.0684
+   ],
+   "id": 19477914,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      244.3715,
+      136.2455
+     ],
+     "value": 3.19567,
+     "origin": [
+      244.5382,
+      132.1216
+     ],
+     "string": "3'-2 3/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788105,
+    14345487
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    244.5382,
+    128.5441
+   ],
+   "id": 19477921,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      244.3715,
+      127.924
+     ],
+     "value": 0.80433,
+     "origin": [
+      244.5382,
+      130.1216
+     ],
+     "string": "9 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE",
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243458,
+    13788110
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    230.5757,
+    -7.9169
+   ],
+   "id": 19485855,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      230.2043,
+      -7.7502
+     ],
+     "value": 5.375,
+     "origin": [
+      230.2043,
+      -7.9169
+     ],
+     "string": "5'-4 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:24:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243446,
+    14243446
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    334.888,
+    40.1442
+   ],
+   "id": 19486117,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      335.0917,
+      40.1246
+     ],
+     "value": 2.75,
+     "origin": [
+      334.9474,
+      40.0412
+     ],
+     "string": "2'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.5,
+    0.86603
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:28:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:0:INSTANCE:ed711f3b-d889-4992-8738-8f7b2ac67ff1-011e646b:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243446,
+    14243446
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    333.5316,
+    42.4935
+   ],
+   "id": 19486124,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      333.7167,
+      42.5061
+     ],
+     "value": 2.75,
+     "origin": [
+      333.5724,
+      42.4228
+     ],
+     "string": "2'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:24:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:0:INSTANCE:ed711f3b-d889-4992-8738-8f7b2ac67ff1-011e646b:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243446,
+    14243446
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    337.757,
+    40.8303
+   ],
+   "id": 19486131,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      336.8531,
+      42.7292
+     ],
+     "value": 5.5,
+     "origin": [
+      336.7088,
+      42.6459
+     ],
+     "string": "5'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:24:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243473,
+    14243473
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    300.8042,
+    26.8853
+   ],
+   "id": 19486138,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      300.3791,
+      26.8324
+     ],
+     "value": 3.75,
+     "origin": [
+      300.4625,
+      26.6881
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.86603,
+    -0.5
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95691:24:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95691:0:INSTANCE:514496e2-681c-4be8-8b53-5d2c394019df-012c175f:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243473,
+    14243473
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    298.4377,
+    25.5191
+   ],
+   "id": 19486145,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      297.1315,
+      24.9574
+     ],
+     "value": 3.75,
+     "origin": [
+      297.2149,
+      24.8131
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.86603,
+    0.5
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95691:28:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95691:0:INSTANCE:514496e2-681c-4be8-8b53-5d2c394019df-012c175f:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    14271037
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    296.2933,
+    47.6253
+   ],
+   "id": 19493516,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      285.746,
+      47.792
+     ],
+     "value": 31.04167,
+     "origin": [
+      285.746,
+      47.6253
+     ],
+     "string": "31'-0 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    279.7152,
+    37.3825
+   ],
+   "id": 19515851,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      277.9751,
+      37.5492
+     ],
+     "value": 17.75,
+     "origin": [
+      277.9751,
+      37.3825
+     ],
+     "string": "17'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:32528:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:32536:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    285.1738,
+    43.9396
+   ],
+   "id": 19515858,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      285.0072,
+      41.4405
+     ],
+     "value": 15.58333,
+     "origin": [
+      285.1738,
+      41.4405
+     ],
+     "string": "15'-7\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:32532:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:32523:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788114,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    285.1738,
+    28.3088
+   ],
+   "id": 19515865,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      285.0072,
+      29.8363
+     ],
+     "value": 7.625,
+     "origin": [
+      285.1738,
+      29.8363
+     ],
+     "string": "7'-7 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:32532:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788111
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    271.7283,
+    32.6659
+   ],
+   "id": 19515872,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      272.6963,
+      30.935
+     ],
+     "value": 1.125,
+     "origin": [
+      269.6626,
+      32.6659
+     ],
+     "string": "1'-1 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:32528:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243430,
+    14243430
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    337.91,
+    62.5547
+   ],
+   "id": 19518328,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      341.0826,
+      64.218
+     ],
+     "value": 3.75,
+     "origin": [
+      341.153,
+      64.0669
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:28:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:0:INSTANCE:4940823b-a997-458c-8b13-5e766e0f33a3-012d0c70:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243430,
+    14243430
+   ],
+   "type": "5/64\" Arial Narrow (Transparent)",
+   "origin": [
+    338.6686,
+    62.9085
+   ],
+   "id": 19518335,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      337.6839,
+      62.6332
+     ],
+     "value": 3.75,
+     "origin": [
+      337.7544,
+      62.4821
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:0:INSTANCE:4940823b-a997-458c-8b13-5e766e0f33a3-012d0c70:4:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    19670910,
+    19675280,
+    14243452
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    380.5552,
+    76.6774
+   ],
+   "id": 19689292,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      380.8258,
+      76.9875
+     ],
+     "value": 4.66764,
+     "origin": [
+      380.8962,
+      76.8364
+     ],
+     "string": "4'-8\"",
+     "suffix": ""
+    },
+    {
+     "text": [
+      373.4431,
+      73.5449
+     ],
+     "value": 11.62402,
+     "origin": [
+      373.5136,
+      73.3938
+     ],
+     "string": "11'-7 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c277e:65:SURFACE",
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c3890:0:INSTANCE:5f3479ed-67e2-4c80-a4c0-5b019aa101d3-0139e6d5:29:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9567c:0:INSTANCE:992d1b02-8acc-4c20-be38-53f594286552-0131e8c0:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13796144,
+    19675327
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    355.1212,
+    145.0449
+   ],
+   "id": 19689353,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      357.8614,
+      139.563
+     ],
+     "value": 18.0,
+     "origin": [
+      357.7103,
+      139.4925
+     ],
+     "string": "18'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28330:0:SURFACE",
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c38bf:0:INSTANCE:5f3479ed-67e2-4c80-a4c0-5b019aa101d3-0139e6d6:29:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    19675327,
+    19675327
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    353.2447,
+    149.0691
+   ],
+   "id": 19689367,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      353.4239,
+      149.0792
+     ],
+     "value": 3.0,
+     "origin": [
+      353.2728,
+      149.0088
+     ],
+     "string": "3'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c38bf:0:INSTANCE:5f3479ed-67e2-4c80-a4c0-5b019aa101d3-0139e6d6:29:SURFACE",
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c38bf:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    19670910,
+    19675280
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    344.8271,
+    149.6476
+   ],
+   "id": 19689406,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      346.4953,
+      150.6094
+     ],
+     "value": 4.66764,
+     "origin": [
+      346.5657,
+      150.4584
+     ],
+     "string": "4'-8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c277e:65:SURFACE",
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c3890:0:INSTANCE:5f3479ed-67e2-4c80-a4c0-5b019aa101d3-0139e6d5:29:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13794723,
+    19675327
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    350.6846,
+    152.379
+   ],
+   "id": 19689413,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      352.3565,
+      152.4102
+     ],
+     "value": 1.04167,
+     "origin": [
+      349.1529,
+      151.6648
+     ],
+     "string": "1'-0 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27da3:0:SURFACE",
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c38bf:16:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788114
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    188.7203,
+    33.4279
+   ],
+   "id": 19691950,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      188.5537,
+      33.5342
+     ],
+     "value": 15.02083,
+     "origin": [
+      188.7203,
+      33.5342
+     ],
+     "string": "15'-0 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17578:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    19669409,
+    13788104
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    122.0998,
+    105.2449
+   ],
+   "id": 19697281,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      121.9331,
+      103.7974
+     ],
+     "value": 11.54726,
+     "origin": [
+      122.0998,
+      103.7974
+     ],
+     "string": "11'-6 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c21a1:0:LINEAR/1",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    19669409,
+    13788102
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    124.3178,
+    112.2743
+   ],
+   "id": 19697288,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      126.3918,
+      112.441
+     ],
+     "value": 1.5,
+     "origin": [
+      126.3918,
+      112.2743
+     ],
+     "string": "1'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c21a1:0:LINEAR/1",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c6:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13796036,
+    19387072
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    144.257,
+    110.1835
+   ],
+   "id": 19697295,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      144.2674,
+      110.5557
+     ],
+     "value": 13.95833,
+     "origin": [
+      144.1163,
+      110.4852
+     ],
+     "string": "13'-11 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d282c4:0:SURFACE",
+    "16bc84b2-2405-42be-8ea8-c1379bc48b26-0127d2c0:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788110
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    220.679,
+    157.7051
+   ],
+   "id": 19698015,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      226.2876,
+      157.8718
+     ],
+     "value": 13.20833,
+     "origin": [
+      226.2876,
+      157.7051
+     ],
+     "string": "13'-2 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:37570:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14371612,
+    13788110
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    222.3851,
+    136.2616
+   ],
+   "id": 19698266,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      227.0012,
+      136.4283
+     ],
+     "value": 11.78125,
+     "origin": [
+      227.0012,
+      136.2616
+     ],
+     "string": "11'-9 3/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "cae4666b-c710-481b-91e7-e705ee2c95d7-00db4b1c:26:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14371612,
+    13788105
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    223.7636,
+    134.0101
+   ],
+   "id": 19698273,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      223.5969,
+      131.2009
+     ],
+     "value": 1.35417,
+     "origin": [
+      223.7636,
+      131.2009
+     ],
+     "string": "1'-4 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "cae4666b-c710-481b-91e7-e705ee2c95d7-00db4b1c:19:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    13788109
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    208.8868,
+    -9.4331
+   ],
+   "id": 19699778,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      208.6698,
+      -7.997
+     ],
+     "value": 0.5,
+     "origin": [
+      209.7251,
+      -9.4331
+     ],
+     "string": "6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:17590:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243462,
+    14213856
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    189.2205,
+    -14.3505
+   ],
+   "id": 19699817,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      191.3704,
+      -15.6102
+     ],
+     "value": 0.49479,
+     "origin": [
+      189.2205,
+      -14.0569
+     ],
+     "string": "6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:16:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2e0:22:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14213824,
+    14271037
+   ],
+   "type": "REV Missing Dimensions",
+   "origin": [
+    296.8923,
+    104.2749
+   ],
+   "id": 19729764,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      295.5257,
+      103.6109
+     ],
+     "value": 0.04167,
+     "origin": [
+      297.246,
+      104.2749
+     ],
+     "string": "1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2c0:24:SURFACE",
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:28:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788115,
+    18265262
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    121.9606,
+    -12.7893
+   ],
+   "id": 19733157,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      121.7939,
+      -13.4345
+     ],
+     "value": 6.58333,
+     "origin": [
+      121.9606,
+      -13.4345
+     ],
+     "string": "6'-7\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE",
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4ae:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-01227571:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    18265262,
+    18265260
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    159.5003,
+    -20.4495
+   ],
+   "id": 19733164,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      159.3337,
+      -18.7679
+     ],
+     "value": 4.08333,
+     "origin": [
+      159.5003,
+      -18.7679
+     ],
+     "string": "4'-1\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4ae:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-01227571:4:SURFACE",
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4ac:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-0122746d:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788115,
+    18265260
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    164.3539,
+    -15.3621
+   ],
+   "id": 19733171,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      164.1872,
+      -15.4762
+     ],
+     "value": 10.66667,
+     "origin": [
+      164.3539,
+      -15.4762
+     ],
+     "string": "10'-8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE",
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4ac:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-0122746d:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788103,
+    18265261
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    161.4463,
+    -25.5828
+   ],
+   "id": 19733184,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      151.7668,
+      -25.4161
+     ],
+     "value": 20.91667,
+     "origin": [
+      151.7668,
+      -25.5828
+     ],
+     "string": "20'-11\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c7:0:SURFACE",
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4ad:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-012274d4:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    18265261,
+    14265390
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    162.6357,
+    -25.5828
+   ],
+   "id": 19733191,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      166.1835,
+      -25.4161
+     ],
+     "value": 7.91667,
+     "origin": [
+      166.1835,
+      -25.5828
+     ],
+     "string": "7'-11\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4ad:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-012274d4:4:SURFACE",
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131ee14:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14218019,
+    14243432
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    175.548,
+    126.6339
+   ],
+   "id": 19754543,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      175.3814,
+      126.9821
+     ],
+     "value": 10.04167,
+     "origin": [
+      175.548,
+      126.9821
+     ],
+     "string": "10'-0 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f323:392:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:11:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243458,
+    14218033
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    230.3368,
+    -5.9169
+   ],
+   "id": 19754550,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      233.5168,
+      -5.7502
+     ],
+     "value": 12.0,
+     "origin": [
+      233.5168,
+      -5.9169
+     ],
+     "string": "12'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:24:SURFACE",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f331:10:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353164,
+    14215894
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    266.0093,
+    77.1126
+   ],
+   "id": 19766144,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      264.9695,
+      76.5588
+     ],
+     "value": 0.97917,
+     "origin": [
+      266.0093,
+      78.4717
+     ],
+     "string": "11 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    1.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:28:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8ead6:26:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353164,
+    14215894
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    266.0093,
+    80.9279
+   ],
+   "id": 19766151,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      266.6926,
+      84.125
+     ],
+     "value": 1.52083,
+     "origin": [
+      266.0093,
+      81.2217
+     ],
+     "string": "1'-6 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    -1.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:24:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8ead6:22:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    19766184,
+    14218046
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    243.0399,
+    55.4788
+   ],
+   "id": 19766207,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      242.8732,
+      55.2239
+     ],
+     "value": 0.09984,
+     "origin": [
+      243.0399,
+      55.2239
+     ],
+     "string": "1 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "5fb260fb-0824-44ac-8ebc-6e12d397b911-012d9ba8:0:LINEAR/1",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f33e:289:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14218046,
+    14218046
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    238.6636,
+    58.4602
+   ],
+   "id": 19766214,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      238.497,
+      57.2465
+     ],
+     "value": 3.94543,
+     "origin": [
+      238.6636,
+      57.2465
+     ],
+     "string": "3'-11 3/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f33e:289:SURFACE",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f33e:513:LINEAR"
+   ]
+  },
+  {
+   "ref_elems": [
+    14218046,
+    14353164
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    242.7922,
+    83.4069
+   ],
+   "id": 19766221,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      243.4337,
+      85.1095
+     ],
+     "value": 0.625,
+     "origin": [
+      242.7922,
+      82.2946
+     ],
+     "string": "7 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    -1.0
+   ],
+   "refs": [
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f33e:799:SURFACE",
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    18265271,
+    14213822
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    293.4622,
+    77.2043
+   ],
+   "id": 19768480,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      293.2955,
+      77.2113
+     ],
+     "value": 5.0,
+     "origin": [
+      293.4622,
+      77.2113
+     ],
+     "string": "5'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4b7:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-01227a34:4:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2be:0:INSTANCE:fd40fd77-8314-4b3d-a881-e1a2da90985a-0114659e:31:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243432,
+    13788100
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    197.0437,
+    84.0537
+   ],
+   "id": 20028151,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      196.8771,
+      73.9353
+     ],
+     "value": 23.82292,
+     "origin": [
+      197.0437,
+      73.9353
+     ],
+     "string": "23'-9 7/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:16:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20030453,
+    13788108
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    182.5135,
+    82.2649
+   ],
+   "id": 20032023,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      179.4335,
+      82.4315
+     ],
+     "value": 9.58333,
+     "origin": [
+      179.4335,
+      82.2649
+     ],
+     "string": "9'-7\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "1f315979-3007-4ed0-8102-da3473ad0d24-0131a3f5:5:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788114,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    247.3285,
+    -4.9791
+   ],
+   "id": 20032309,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      247.1618,
+      8.2738
+     ],
+     "value": 35.5,
+     "origin": [
+      247.3285,
+      8.2738
+     ],
+     "string": "35'-6\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:28734:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788104,
+    20046138
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    159.783,
+    89.8804
+   ],
+   "id": 20046231,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      159.6164,
+      90.2366
+     ],
+     "value": 15.57446,
+     "origin": [
+      159.783,
+      90.2366
+     ],
+     "string": "15'-6 7/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE",
+    "992d1b02-8acc-4c20-be38-53f594286552-0131e13a:0:LINEAR/1"
+   ]
+  },
+  {
+   "ref_elems": [
+    20045749,
+    13788104
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    174.1264,
+    106.3013
+   ],
+   "id": 20046293,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      173.9597,
+      106.2511
+     ],
+     "value": 16.45451,
+     "origin": [
+      174.1264,
+      106.2511
+     ],
+     "string": "16'-5 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "992d1b02-8acc-4c20-be38-53f594286552-0131dfb5:1:5:LINEAR/1",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20045749,
+    13788107
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    169.1748,
+    116.2477
+   ],
+   "id": 20046300,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      172.7098,
+      115.612
+     ],
+     "value": 1.02254,
+     "origin": [
+      169.6305,
+      116.2477
+     ],
+     "string": "1'-0 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "992d1b02-8acc-4c20-be38-53f594286552-0131dfb5:1:5:LINEAR/1",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788107,
+    20030453
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    173.6083,
+    88.241
+   ],
+   "id": 20046366,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      174.9566,
+      89.1173
+     ],
+     "value": 3.32046,
+     "origin": [
+      171.802,
+      88.241
+     ],
+     "string": "3'-3 7/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE",
+    "1f315979-3007-4ed0-8102-da3473ad0d24-0131a3f5:28:LINEAR"
+   ]
+  },
+  {
+   "ref_elems": [
+    18265271,
+    13788100
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    279.1458,
+    68.559
+   ],
+   "id": 20046380,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      278.9791,
+      68.3676
+     ],
+     "value": 12.6875,
+     "origin": [
+      279.1458,
+      68.3676
+     ],
+     "string": "12'-8 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4b7:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-01227a34:4:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    18265266,
+    13796195
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    327.8823,
+    69.9226
+   ],
+   "id": 20046387,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      327.1238,
+      71.9434
+     ],
+     "value": 6.58774,
+     "origin": [
+      326.9728,
+      71.873
+     ],
+     "string": "6'-7\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4b2:0:INSTANCE:33e42fc3-5755-4cd0-a954-78750e08bffc-0129684d:4:SURFACE",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28363:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    18265265,
+    13796195
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    328.4955,
+    73.3399
+   ],
+   "id": 20046394,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      327.9666,
+      74.8685
+     ],
+     "value": 1.99805,
+     "origin": [
+      327.8155,
+      74.7981
+     ],
+     "string": "2'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4b1:0:INSTANCE:0a2da5ba-a1f6-4942-81ec-953feeff33ca-012da540:0:SURFACE",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28363:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    18265271,
+    13788100
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    333.3615,
+    72.8456
+   ],
+   "id": 20046401,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      333.1948,
+      68.3676
+     ],
+     "value": 12.6875,
+     "origin": [
+      333.3615,
+      68.3676
+     ],
+     "string": "12'-8 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "ededdfa3-ff05-4abc-8382-6a085d08fedc-0116b4b7:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-01227a34:4:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788105,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    204.7593,
+    129.5108
+   ],
+   "id": 20046414,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      205.383,
+      125.3347
+     ],
+     "value": 2.1875,
+     "origin": [
+      204.7593,
+      129.4301
+     ],
+     "string": "2'-2 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:46036:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20048256,
+    20048256
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    311.4994,
+    198.9966
+   ],
+   "id": 20048320,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      310.6902,
+      198.8032
+     ],
+     "value": 3.75,
+     "origin": [
+      310.7607,
+      198.6521
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "992d1b02-8acc-4c20-be38-53f594286552-0131e980:28:SURFACE",
+    "992d1b02-8acc-4c20-be38-53f594286552-0131e980:0:INSTANCE:992d1b02-8acc-4c20-be38-53f594286552-0131ea1c:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20048256,
+    20048256
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    308.0474,
+    197.3869
+   ],
+   "id": 20048327,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      307.2916,
+      197.2184
+     ],
+     "value": 3.75,
+     "origin": [
+      307.362,
+      197.0673
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "refs": [
+    "992d1b02-8acc-4c20-be38-53f594286552-0131e980:0:INSTANCE:992d1b02-8acc-4c20-be38-53f594286552-0131ea1c:4:SURFACE",
+    "992d1b02-8acc-4c20-be38-53f594286552-0131e980:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20052111,
+    13796036
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    316.5451,
+    164.5261
+   ],
+   "id": 20052149,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      312.7107,
+      173.1433
+     ],
+     "value": 14.96875,
+     "origin": [
+      312.5597,
+      173.0729
+     ],
+     "string": "14'-11 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "refs": [
+    "1999e869-2d4a-447d-9a02-45499c0f3322-0131f88f:1:LINEAR",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d282c4:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    13788111,
+    20052181
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    279.0552,
+    77.9756
+   ],
+   "id": 20052205,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      277.2251,
+      78.1423
+     ],
+     "value": 14.0,
+     "origin": [
+      277.2251,
+      77.9756
+     ],
+     "string": "14'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE",
+    "1999e869-2d4a-447d-9a02-45499c0f3322-0131f8d5:1:LINEAR"
+   ]
+  },
+  {
+   "ref_elems": [
+    20052181,
+    14215892
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    286.9051,
+    76.4145
+   ],
+   "id": 20052245,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      286.7385,
+      60.4613
+     ],
+     "value": 14.0,
+     "origin": [
+      286.9051,
+      60.4613
+     ],
+     "string": "14'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "1999e869-2d4a-447d-9a02-45499c0f3322-0131f8d5:1:LINEAR",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8ead4:22:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20045749,
+    13788104
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    159.783,
+    109.3076
+   ],
+   "id": 20066815,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      159.6164,
+      105.6887
+     ],
+     "value": 15.32973,
+     "origin": [
+      159.783,
+      105.6887
+     ],
+     "string": "15'-4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "992d1b02-8acc-4c20-be38-53f594286552-0131dfb5:664:LINEAR",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20045749,
+    13788107
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    161.4706,
+    118.2477
+   ],
+   "id": 20066822,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      165.923,
+      118.4143
+     ],
+     "value": 8.43771,
+     "origin": [
+      165.923,
+      118.2477
+     ],
+     "string": "8'-5 1/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "992d1b02-8acc-4c20-be38-53f594286552-0131dfb5:664:LINEAR",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353164,
+    20067288
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    247.024,
+    67.9454
+   ],
+   "id": 20067317,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      246.8573,
+      68.6007
+     ],
+     "value": 18.7629,
+     "origin": [
+      247.024,
+      68.6007
+     ],
+     "string": "18'-9 1/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:28:SURFACE",
+    "4c512aca-e44e-4e37-9281-c4a7013b2f58-013233d8:0:LINEAR/1"
+   ]
+  },
+  {
+   "ref_elems": [
+    17181793,
+    13788114
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    289.1186,
+    29.7417
+   ],
+   "id": 20067723,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      288.952,
+      29.1384
+     ],
+     "value": 6.22917,
+     "origin": [
+      289.1186,
+      29.1384
+     ],
+     "string": "6'-2 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "d402db13-ae87-4ddc-8f25-d766d3a7e92a-01062a1f:13:SURFACE",
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14353164,
+    14218052
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    235.8565,
+    78.392
+   ],
+   "id": 20067731,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      235.6899,
+      79.4196
+     ],
+     "value": 2.875,
+     "origin": [
+      235.8565,
+      79.4196
+     ],
+     "string": "2'-10 1/2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:28:SURFACE",
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f344:5:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    19767223,
+    14243446
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    277.6298,
+    3.6594
+   ],
+   "id": 20087087,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      276.9539,
+      5.1634
+     ],
+     "value": 5.16667,
+     "origin": [
+      276.8096,
+      5.0801
+     ],
+     "string": "5'-2\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.5,
+    0.86603
+   ],
+   "refs": [
+    "0a2da5ba-a1f6-4942-81ec-953feeff33ca-012d9fb7:0:INSTANCE:f05e4d77-0039-45f1-a01f-b9b09ab5e585-012fc49c:9:LINEAR",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:0:INSTANCE:ed711f3b-d889-4992-8738-8f7b2ac67ff1-011e646b:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20088292,
+    13797908
+   ],
+   "type": "3/64\" DIMS",
+   "origin": [
+    300.3181,
+    25.5077
+   ],
+   "id": 20088311,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      298.4365,
+      24.6138
+     ],
+     "value": 1.83333,
+     "origin": [
+      298.5198,
+      24.4694
+     ],
+     "string": "1'-10\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.86603,
+    0.5
+   ],
+   "refs": [
+    "df5efbd1-3596-4b55-9198-ba67691e83e3-013285e4:0:INSTANCE:df5efbd1-3596-4b55-9198-ba67691e83e3-01328e09:4:SURFACE",
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28a14:0:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243653,
+    20089414
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    288.2481,
+    34.2356
+   ],
+   "id": 20090459,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      290.795,
+      37.8496
+     ],
+     "value": 1.83333,
+     "origin": [
+      288.2481,
+      34.5655
+     ],
+     "string": "1'-10\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:32532:SURFACE",
+    "df5efbd1-3596-4b55-9198-ba67691e83e3-01328a46:0:INSTANCE:df5efbd1-3596-4b55-9198-ba67691e83e3-01328d14:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20088292,
+    14213806
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    297.0895,
+    28.6303
+   ],
+   "id": 20090484,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      297.4326,
+      30.782
+     ],
+     "value": 1.83333,
+     "origin": [
+      296.3606,
+      28.2094
+     ],
+     "string": "1'-10\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.86603,
+    0.5
+   ],
+   "refs": [
+    "df5efbd1-3596-4b55-9198-ba67691e83e3-013285e4:0:INSTANCE:df5efbd1-3596-4b55-9198-ba67691e83e3-01328e09:4:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2ae:0:INSTANCE:fd40fd77-8314-4b3d-a881-e1a2da90985a-0114659a:31:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14381978,
+    14215892
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    276.3144,
+    51.1791
+   ],
+   "id": 20170894,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      276.1478,
+      50.6034
+     ],
+     "value": 2.71576,
+     "origin": [
+      276.3144,
+      50.6034
+     ],
+     "string": "2'-8 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    1.0
+   ],
+   "refs": [
+    "20543ca4-dfa9-483d-b622-463aaabf3f97-00db739a:0:INSTANCE:20543ca4-dfa9-483d-b622-463aaabf3f97-00db73fc:3:SURFACE",
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8ead4:26:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14265390,
+    14265390
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    168.4959,
+    23.6018
+   ],
+   "id": 20461191,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      168.2668,
+      23.7685
+     ],
+     "value": 3.75,
+     "origin": [
+      168.2668,
+      23.6018
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:24:SURFACE",
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131ee14:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20346786,
+    14243653
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    178.435,
+    3.8406
+   ],
+   "id": 20461198,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      174.0168,
+      4.0073
+     ],
+     "value": 15.25,
+     "origin": [
+      174.0168,
+      3.8406
+     ],
+     "string": "15'-3\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "e3cbb2ef-ccfd-44ce-9157-af3feed8194a-013677a2:0:INSTANCE:b965485a-1cf7-45f3-9ee0-26cf97adcf8c-0134ca44:4:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:27835:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20346787,
+    20346785
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    162.6095,
+    11.5541
+   ],
+   "id": 20461205,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      162.4428,
+      14.7061
+     ],
+     "value": 13.63542,
+     "origin": [
+      162.6095,
+      14.7061
+     ],
+     "string": "13'-7 5/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "e3cbb2ef-ccfd-44ce-9157-af3feed8194a-013677a3:0:INSTANCE:1275b43d-30e1-4b75-b463-8e46f3a10871-01365330:4:SURFACE",
+    "e3cbb2ef-ccfd-44ce-9157-af3feed8194a-013677a1:0:INSTANCE:e3cbb2ef-ccfd-44ce-9157-af3feed8194a-013676c4:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14213868,
+    20346785
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    164.9655,
+    10.765
+   ],
+   "id": 20461212,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      164.7988,
+      10.3884
+     ],
+     "value": 5.0,
+     "origin": [
+      164.9655,
+      10.3884
+     ],
+     "string": "5'-0\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "refs": [
+    "b4e4bc1a-c0c5-472e-b324-814b677c6160-00d8e2ec:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131ee12:31:SURFACE",
+    "e3cbb2ef-ccfd-44ce-9157-af3feed8194a-013677a1:0:INSTANCE:e3cbb2ef-ccfd-44ce-9157-af3feed8194a-013676c4:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20346786,
+    14265390
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    168.6776,
+    5.4894
+   ],
+   "id": 20464508,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      168.2668,
+      5.656
+     ],
+     "value": 3.75,
+     "origin": [
+      168.2668,
+      5.4894
+     ],
+     "string": "3'-9\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "e3cbb2ef-ccfd-44ce-9157-af3feed8194a-013677a2:0:INSTANCE:b965485a-1cf7-45f3-9ee0-26cf97adcf8c-0134ca44:4:SURFACE",
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:0:INSTANCE:1999e869-2d4a-447d-9a02-45499c0f3322-0131ee14:4:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14243432,
+    20072392
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    193.5903,
+    94.1845
+   ],
+   "id": 20519297,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      193.4236,
+      90.9353
+     ],
+     "value": 10.17708,
+     "origin": [
+      193.5903,
+      90.9353
+     ],
+     "string": "10'-2 1/8\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:16:SURFACE",
+    "7bd2ca6a-3d08-462f-a3e1-61b2f7be6537-013247c8:0:INSTANCE:89065274-a07e-41b4-87d8-aa6b29120359-01146600:23:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20072392,
+    14243432
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    189.7423,
+    99.0006
+   ],
+   "id": 20519304,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      185.1106,
+      99.1673
+     ],
+     "value": 3.0625,
+     "origin": [
+      185.1106,
+      99.0006
+     ],
+     "string": "3'-0 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "7bd2ca6a-3d08-462f-a3e1-61b2f7be6537-013247c8:0:INSTANCE:89065274-a07e-41b4-87d8-aa6b29120359-01146600:25:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    20072473,
+    14243432
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    185.6987,
+    128.3026
+   ],
+   "id": 20519311,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      188.9293,
+      129.4108
+     ],
+     "value": 3.0625,
+     "origin": [
+      185.1106,
+      128.3026
+     ],
+     "string": "3'-0 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "refs": [
+    "7bd2ca6a-3d08-462f-a3e1-61b2f7be6537-01324819:0:INSTANCE:89065274-a07e-41b4-87d8-aa6b29120359-011465fe:25:SURFACE",
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:24:SURFACE"
+   ]
+  },
+  {
+   "ref_elems": [
+    14218019,
+    20072473
+   ],
+   "type": "5/64\" Arial Narrow",
+   "origin": [
+    192.3956,
+    127.0056
+   ],
+   "id": 20519318,
+   "leader": true,
+   "segments": [
+    {
+     "text": [
+      192.2289,
+      124.1176
+     ],
+     "value": 4.3125,
+     "origin": [
+      192.3956,
+      124.1176
+     ],
+     "string": "4'-3 3/4\"",
+     "suffix": ""
+    }
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "refs": [
+    "caa6f444-d14d-424e-9c44-fe9a9ef00519-00d8f323:392:SURFACE",
+    "7bd2ca6a-3d08-462f-a3e1-61b2f7be6537-01324819:0:INSTANCE:89065274-a07e-41b4-87d8-aa6b29120359-011465fe:23:SURFACE"
+   ]
+  }
+ ]
+}
