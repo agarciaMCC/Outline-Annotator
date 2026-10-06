@@ -1,0 +1,1702 @@
+[
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 1.90in", 
+  "what": "locate run -> 5 + run -> 5          across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+  "id": 20606069, 
+  "moved_in": 1.6730000000000000, 
+  "text_moved_in": [
+   0.13
+  ], 
+  "move": "closer to the element", 
+  "label": "run -> 5 + run -> 5", 
+  "feature": "run#10", 
+  "after": "above 0.23in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate run -> 6                     across 5/6..     6 | 9'-6\" | edge", 
+  "id": 20606070, 
+  "moved_in": 0.55500000000000005, 
+  "move": "out of the element to beside it", 
+  "label": "run -> 6", 
+  "feature": "run#12", 
+  "after": "below 0.31in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.31in", 
+  "what": "locate run -> AA                    across CC/BB..   AA | 9'-11\" | edge", 
+  "id": 20606071, 
+  "moved_in": 0.0, 
+  "label": "run -> AA", 
+  "feature": "run#13", 
+  "after": "above 0.31in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate run -> AA                    across CC/BB..   AA | 28'-4 3/8\" | edge", 
+  "id": 20606072, 
+  "moved_in": -2.6130000000000000, 
+  "move": "out of the element to beside it", 
+  "label": "run -> AA", 
+  "feature": "run#17", 
+  "after": "above 0.28in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate run -> AA                    across CC/BB..   AA | 28'-4 3/8\" | edge", 
+  "id": 20606073, 
+  "moved_in": 2.6730000000000000, 
+  "move": "out of the element to beside it", 
+  "label": "run -> AA", 
+  "feature": "run#17", 
+  "after": "below 0.22in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate run -> 8                     across 5/6..     edge | 1'-1 1/2\" | 8", 
+  "id": 20606074, 
+  "moved_in": -10.819000000000001, 
+  "move": "out of the element to beside it", 
+  "label": "run -> 8", 
+  "feature": "run#18", 
+  "after": "above 0.37in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate run -> 8                     across 5/6..     edge | 1'-1 1/2\" | 8", 
+  "id": 20606075, 
+  "moved_in": 10.724000000000000, 
+  "text_moved_in": [
+   0.52000000000000002
+  ], 
+  "move": "out of the element to beside it", 
+  "label": "run -> 8", 
+  "feature": "run#18", 
+  "after": "below 0.28in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate run -> FF                    across CC/BB..   edge | 0'-1 1/2\" | FF", 
+  "id": 20606076, 
+  "moved_in": -4.3670000000000000, 
+  "move": "out of the element to beside it", 
+  "label": "run -> FF", 
+  "feature": "run#19", 
+  "after": "above 0.28in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate run -> FF                    across CC/BB..   edge | 16'-4 7/8\" | FF", 
+  "id": 20606077, 
+  "moved_in": -3.1610000000000000, 
+  "move": "out of the element to beside it", 
+  "label": "run -> FF", 
+  "feature": "run#21", 
+  "after": "above 0.44in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.31in", 
+  "what": "locate run -> GG                    across CC/BB..   GG | 6'-0 1/4\" | edge", 
+  "id": 20606078, 
+  "moved_in": 0.0, 
+  "label": "run -> GG", 
+  "feature": "run#23", 
+  "after": "above 0.31in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 18.91in", 
+  "what": "locate run -> 5 + run -> 5          across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+  "id": 20606079, 
+  "moved_in": 3.6040000000000001, 
+  "text_moved_in": [
+   0.11
+  ], 
+  "move": "closer to the element", 
+  "label": "run -> 5 + run -> 5", 
+  "feature": "run#24", 
+  "after": "above 15.31in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 13.89in", 
+  "what": "locate run -> 5 + run -> 5          across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+  "id": 20606080, 
+  "moved_in": 2.1450000000000000, 
+  "text_moved_in": [
+   0.11
+  ], 
+  "move": "closer to the element", 
+  "label": "run -> 5 + run -> 5", 
+  "feature": "run#26", 
+  "after": "above 11.75in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 10.78in", 
+  "what": "locate run -> 5 + run -> 5          across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+  "id": 20606081, 
+  "moved_in": 2.4609999999999999, 
+  "text_moved_in": [
+   0.11
+  ], 
+  "move": "closer to the element", 
+  "label": "run -> 5 + run -> 5", 
+  "feature": "run#28", 
+  "after": "above 8.32in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 7.30in", 
+  "what": "locate run -> 5 + run -> 5          across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+  "id": 20606082, 
+  "moved_in": 2.4550000000000001, 
+  "text_moved_in": [
+   0.11
+  ], 
+  "move": "closer to the element", 
+  "label": "run -> 5 + run -> 5", 
+  "feature": "run#30", 
+  "after": "above 4.85in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.31in", 
+  "what": "locate run -> 5                     across 5/6..     edge | 3'-4 1/2\" | 5", 
+  "id": 20606083, 
+  "moved_in": 0.0, 
+  "label": "run -> 5", 
+  "feature": "run#32", 
+  "after": "above 0.31in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.13in", 
+  "what": "locate step -> FF + step -> FF      across CC/BB..   step | 4'-8 7/8\" | FF | 10'-4 1/8\" | step", 
+  "id": 20606084, 
+  "moved_in": 0.13100000000000001, 
+  "move": "further from the element", 
+  "label": "step -> FF + step -> FF", 
+  "feature": "step#0", 
+  "after": "below 0.26in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.13in", 
+  "what": "locate step -> EE + step -> EE      across CC/BB..   step | 12'-3 1/8\" | EE | 14'-10 7/8\" | step", 
+  "id": 20606085, 
+  "moved_in": 0.13100000000000001, 
+  "move": "further from the element", 
+  "label": "step -> EE + step -> EE", 
+  "feature": "step#2", 
+  "after": "below 0.26in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.13in", 
+  "what": "locate step -> CC + step -> CC      across CC/BB..   step | 9'-1 1/8\" | CC | 6'-8 1/8\" | step", 
+  "id": 20606086, 
+  "moved_in": 0.13100000000000001, 
+  "move": "further from the element", 
+  "label": "step -> CC + step -> CC", 
+  "feature": "step#5", 
+  "after": "below 0.26in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.13in", 
+  "what": "locate step -> BB + step -> BB      across CC/BB..   step | 17'-7 1/8\" | BB | 10'-9 7/8\" | step", 
+  "id": 20606087, 
+  "moved_in": 0.13100000000000001, 
+  "move": "further from the element", 
+  "label": "step -> BB + step -> BB", 
+  "feature": "step#7", 
+  "after": "below 0.26in"
+ }, 
+ {
+  "change": "deleted", 
+  "label": "stack 2 -> EE", 
+  "role": "locate", 
+  "what": "locate stack 2 -> EE                across CC/BB..   EE | 21'-2\" | edge", 
+  "id": 20606088, 
+  "feature": "opening/shaft#46"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> EE                across CC/BB..   edge | 15'-11\" | EE", 
+  "id": 20606089, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> EE", 
+  "feature": "opening/plain#50", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.62in", 
+  "what": "locate stack 2 -> 7                 across 5/6..     edge | 12'-1 3/4\" | 7", 
+  "id": 20606090, 
+  "moved_in": 1.129, 
+  "move": "to the other side", 
+  "label": "stack 2 -> 7", 
+  "feature": "opening/plain#50", 
+  "after": "below 0.32in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.44in", 
+  "what": "locate stack 2 -> AA                across CC/BB..   edge | 7'-9 1/2\" | AA", 
+  "id": 20606091, 
+  "moved_in": 0.0, 
+  "label": "stack 2 -> AA", 
+  "feature": "opening/plain#52", 
+  "after": "below 0.44in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> 7                 across 5/6..     edge | 4'-0 3/8\" | 7", 
+  "id": 20606092, 
+  "moved_in": 0.085999999999999993, 
+  "move": "closer to the element", 
+  "label": "stack 1 -> 7", 
+  "feature": "opening/plain#52", 
+  "after": "above 0.16in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.52in", 
+  "what": "locate stack 1 -> EE                across CC/BB..   EE | 16'-4 3/4\" | edge", 
+  "id": 20606093, 
+  "moved_in": -1.2230000000000001, 
+  "move": "to the other side", 
+  "label": "stack 1 -> EE", 
+  "feature": "opening/plain#53", 
+  "after": "above 0.26in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.25in", 
+  "what": "locate stack 1 -> AA                across CC/BB..   AA | 0'-4 1/2\" | edge", 
+  "id": 20606094, 
+  "moved_in": 0.0, 
+  "text_moved_in": [
+   0.51000000000000001
+  ], 
+  "label": "stack 1 -> AA", 
+  "feature": "opening/plain#54", 
+  "after": "below 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.44in", 
+  "what": "locate stack 2 -> 6                 across 5/6..     edge | 11'-8 1/2\" | 6", 
+  "id": 20606095, 
+  "moved_in": 0.0, 
+  "label": "stack 2 -> 6", 
+  "feature": "opening/plain#56", 
+  "after": "above 0.44in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.37in", 
+  "what": "locate stack 1 -> EE                across CC/BB..   edge | 0'-2 7/8\" | EE", 
+  "id": 20606096, 
+  "moved_in": -0.27100000000000002, 
+  "move": "closer to the element", 
+  "label": "stack 1 -> EE", 
+  "feature": "opening/plain#57", 
+  "after": "below 0.10in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.51in", 
+  "what": "locate stack 1 -> EE                across CC/BB..   edge | 8'-6 3/4\" | EE", 
+  "id": 20606097, 
+  "moved_in": 0.318, 
+  "move": "closer to the element", 
+  "label": "stack 1 -> EE", 
+  "feature": "opening/plain#58", 
+  "after": "above 0.19in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.69in", 
+  "what": "locate stack 2 -> 6                 across 5/6..     6 | 10'-11 1/2\" | edge", 
+  "id": 20606098, 
+  "moved_in": 0.30599999999999999, 
+  "move": "closer to the element", 
+  "label": "stack 2 -> 6", 
+  "feature": "opening/plain#58", 
+  "after": "above 0.38in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> AA                across CC/BB..   edge | 4'-6 3/4\" | AA", 
+  "id": 20606099, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> AA", 
+  "feature": "opening/plain#59", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.50in", 
+  "what": "locate stack 1 -> AA                across CC/BB..   AA | 0'-5 5/8\" | edge", 
+  "id": 20606100, 
+  "moved_in": 0.25, 
+  "text_moved_in": [
+   0.5
+  ], 
+  "move": "closer to the element", 
+  "label": "stack 1 -> AA", 
+  "feature": "opening/plain#59", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.25in", 
+  "what": "locate stack 2 -> 7                 across 5/6..     edge | 10'-2 1/4\" | 7", 
+  "id": 20606101, 
+  "moved_in": -0.222, 
+  "move": "further from the element", 
+  "label": "stack 2 -> 7", 
+  "feature": "opening/plain#60", 
+  "after": "above 0.47in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.25in", 
+  "what": "locate stack 1 -> FF                across CC/BB..   FF | 15'-4 1/8\" | edge", 
+  "id": 20606102, 
+  "moved_in": -0.65600000000000003, 
+  "move": "to the other side", 
+  "label": "stack 1 -> FF", 
+  "feature": "opening/plain#68", 
+  "after": "above 0.24in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.25in", 
+  "what": "locate stack 1 -> 7                 across 5/6..     edge | 0'-4 1/2\" | 7", 
+  "id": 20606103, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> 7", 
+  "feature": "opening/penetration#71", 
+  "after": "below 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.25in", 
+  "what": "locate stack 1 -> EE                across CC/BB..   edge | 13'-9 7/8\" | EE", 
+  "id": 20606104, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> EE", 
+  "feature": "opening/plain#74", 
+  "after": "below 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.51in", 
+  "what": "locate stack 1 -> 7                 across 5/6..     edge | 4'-4 15/16\" | 7", 
+  "id": 20606105, 
+  "moved_in": 0.109, 
+  "move": "closer to the element", 
+  "label": "stack 1 -> 7", 
+  "feature": "opening/penetration#77", 
+  "after": "above 0.40in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 0.25in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606106, 
+  "moved_in": 0.17199999999999999, 
+  "move": "further from the element", 
+  "label": "jog check", 
+  "feature": "step#0", 
+  "after": "below 0.42in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 2.14in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606107, 
+  "moved_in": -0.68300000000000005, 
+  "move": "closer to the element", 
+  "label": "jog check", 
+  "feature": "step#1", 
+  "after": "below 1.45in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 3.83in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606108, 
+  "moved_in": 0.13, 
+  "move": "further from the element", 
+  "label": "jog check", 
+  "feature": "step#2", 
+  "after": "below 3.96in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 5.38in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606109, 
+  "moved_in": -0.91600000000000004, 
+  "move": "closer to the element", 
+  "label": "jog check", 
+  "feature": "step#3", 
+  "after": "below 4.46in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 7.23in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606110, 
+  "moved_in": 0.10299999999999999, 
+  "move": "further from the element", 
+  "label": "jog check", 
+  "feature": "step#4", 
+  "after": "below 7.34in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 8.73in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606111, 
+  "moved_in": -0.67700000000000005, 
+  "move": "closer to the element", 
+  "label": "jog check", 
+  "feature": "step#5", 
+  "after": "below 8.05in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 10.70in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606112, 
+  "moved_in": 0.109, 
+  "move": "further from the element", 
+  "label": "jog check", 
+  "feature": "step#6", 
+  "after": "below 10.81in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 12.16in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606113, 
+  "moved_in": -0.75, 
+  "move": "closer to the element", 
+  "label": "jog check", 
+  "feature": "step#7", 
+  "after": "below 11.41in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "check", 
+  "before": "below 14.38in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606114, 
+  "moved_in": 0.0, 
+  "label": "jog check", 
+  "feature": "step#8", 
+  "after": "below 14.38in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 15.22in", 
+  "what": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606115, 
+  "moved_in": -0.16500000000000001, 
+  "move": "closer to the element", 
+  "label": "jog check", 
+  "feature": "step#9", 
+  "after": "below 15.05in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "above 0.50in", 
+  "what": "check plain opening anchor|edges|anchor (chain check) across 5/6..     edge | 1'-10 1/8\" | edge", 
+  "id": 20606116, 
+  "moved_in": 0.33600000000000002, 
+  "move": "closer to the element", 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#52", 
+  "after": "above 0.16in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 0.31in", 
+  "what": "check plain opening anchor|edges|anchor (chain check) across CC/BB..   edge | 2'-4\" | edge", 
+  "id": 20606117, 
+  "moved_in": -1.0200000000000000, 
+  "move": "to the other side", 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#53", 
+  "after": "above 0.26in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "check", 
+  "before": "below 0.50in", 
+  "what": "check plain opening edges|AA|edges (chain check) across CC/BB..   edge | 2'-2 1/4\" | edge", 
+  "id": 20606118, 
+  "moved_in": 0.0, 
+  "label": "plain opening edges|AA|edges (chain check)", 
+  "feature": "opening/plain#54", 
+  "after": "below 0.50in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "above 0.28in", 
+  "what": "check plain opening anchor|edges|anchor (chain check) across CC/BB..   edge | 0'-10\" | edge", 
+  "id": 20606119, 
+  "moved_in": 0.063, 
+  "move": "closer to the element", 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#58", 
+  "after": "above 0.21in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "check", 
+  "before": "below 0.44in", 
+  "what": "check penetration opening edges|7|edges (chain check) across 5/6..     edge | 1'-8 1/4\" | edge", 
+  "id": 20606120, 
+  "moved_in": 0.0, 
+  "label": "penetration opening edges|7|edges (chain check)", 
+  "feature": "opening/penetration#71", 
+  "after": "below 0.44in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "check", 
+  "before": "above 0.40in", 
+  "what": "check penetration opening anchor|edges|anchor (chain check) across 5/6..     edge | 1'-1\" | edge", 
+  "id": 20606121, 
+  "moved_in": 0.0, 
+  "label": "penetration opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/penetration#77", 
+  "after": "above 0.40in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 2.44in", 
+  "what": "locate stack 1 -> 6                 across 5/6..     6 | 9'-7\" | edge", 
+  "id": 20606122, 
+  "moved_in": 2.8119999999999998, 
+  "move": "to the other side", 
+  "label": "stack 1 -> 6", 
+  "feature": "opening/penetration#76", 
+  "after": "below 0.19in"
+ }, 
+ {
+  "change": "unchanged", 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "moved_in": 1.0589999999999999, 
+  "what": "check plain opening anchor|edges|anchor (chain check) across CC/BB..   edge | 2'-2\" | edge", 
+  "id": 20606123, 
+  "feature": "opening/plain#55"
+ }, 
+ {
+  "change": "edited", 
+  "label": "shaft opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "moved_in": 1.4239999999999999, 
+  "text_moved_in": [
+   0.26000000000000001, 
+   0.45000000000000001, 
+   0.27000000000000002
+  ], 
+  "what": "check shaft opening anchor|edges|anchor (chain check) across 5/6..     edge | 1'-2\" | edge | 0'-8\" | edge | 1'-2\" | edge", 
+  "id": 20606124, 
+  "feature": "opening/shaft#51"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 0.94in", 
+  "what": "check plain opening edges|EE|edges (chain check) across CC/BB..   edge | 2'-6\" | edge", 
+  "id": 20606125, 
+  "moved_in": -0.77300000000000002, 
+  "move": "closer to the element", 
+  "label": "plain opening edges|EE|edges (chain check)", 
+  "feature": "opening/plain#57", 
+  "after": "below 0.16in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 0.25in", 
+  "what": "check stepped opening overall      across 5/6..     edge | 3'-0\" | edge", 
+  "id": 20606126, 
+  "moved_in": -0.92200000000000004, 
+  "move": "to the other side", 
+  "label": "stepped opening overall", 
+  "feature": "opening/shaft#51", 
+  "after": "above 0.21in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.50in", 
+  "what": "locate core opening anchor|edges|anchor across CC/BB..   edge@wall | 12'-1\" | edge | 28'-5\" | BB", 
+  "id": 20606127, 
+  "moved_in": 0.0, 
+  "label": "core opening anchor|edges|anchor", 
+  "feature": "opening/core#49", 
+  "refs_changed": {
+   "after": [
+    12.083000000000000
+   ], 
+   "elems_before": [
+    14604435, 
+    14604435, 
+    13788104
+   ], 
+   "elems_after": [
+    14604435, 
+    14604435
+   ], 
+   "before": [
+    12.083000000000000, 
+    28.417000000000002
+   ]
+  }, 
+  "after": "above 0.50in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "above 0.81in", 
+  "what": "check plain opening edges|AA|edges (chain check) across CC/BB..   edge | 5'-0 3/8\" | edge", 
+  "id": 20606128, 
+  "moved_in": 1.1599999999999999, 
+  "move": "to the other side", 
+  "label": "plain opening edges|AA|edges (chain check)", 
+  "feature": "opening/plain#59", 
+  "after": "below 0.22in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 0.38in", 
+  "what": "check plain opening anchor|edges|anchor (chain check) across CC/BB..   edge | 1'-5 7/8\" | edge", 
+  "id": 20606129, 
+  "moved_in": -1.5, 
+  "text_moved_in": [
+   0.040000000000000001
+  ], 
+  "move": "to the other side", 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#50", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.50in", 
+  "what": "locate step -> EE                   across CC/BB..   step | 0'-10 3/4\" | EE", 
+  "id": 20606130, 
+  "moved_in": 1.1940000000000000, 
+  "text_moved_in": [
+   0.22
+  ], 
+  "move": "to the other side", 
+  "label": "step -> EE", 
+  "feature": "step#3", 
+  "after": "below 0.07in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.50in", 
+  "what": "locate step -> BB                   across CC/BB..   step | 0'-10 5/8\" | BB", 
+  "id": 20606131, 
+  "moved_in": 0.0, 
+  "label": "step -> BB", 
+  "feature": "step#8", 
+  "after": "above 0.50in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "check", 
+  "before": "above 0.25in", 
+  "what": "check plain opening anchor|edges|anchor (chain check) across CC/BB..   edge | 0'-10 1/2\" | edge", 
+  "id": 20606132, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#74", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.25in", 
+  "what": "locate run -> 7                     across 5/6..     7 | 1'-6 1/2\" | edge", 
+  "id": 20606133, 
+  "moved_in": -2.5270000000000001, 
+  "move": "to the other side", 
+  "label": "run -> 7", 
+  "feature": "run#20", 
+  "after": "above 0.24in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "above 0.44in", 
+  "what": "check plain opening anchor|edges|anchor (chain check) across 5/6..     edge | 5'-0\" | edge", 
+  "id": 20606134, 
+  "moved_in": 0.27300000000000002, 
+  "move": "closer to the element", 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#60", 
+  "after": "above 0.16in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate stack 1 -> EE                across CC/BB..   EE | 3'-6\" | edge", 
+  "id": 20606135, 
+  "moved_in": -0.16700000000000001, 
+  "move": "out of the element to beside it", 
+  "label": "stack 1 -> EE", 
+  "feature": "opening/shaft#46", 
+  "after": "above 0.17in"
+ }, 
+ {
+  "change": "unchanged", 
+  "label": "stack 1 -> 7", 
+  "role": "locate", 
+  "moved_in": -0.21299999999999999, 
+  "what": "locate stack 1 -> 7                 across 5/6..     7 | 13'-2 3/4\" | edge", 
+  "id": 20606136, 
+  "feature": "opening/shaft#51"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 1.35in", 
+  "what": "check plain opening anchor|edges|anchor (chain check) across CC/BB..   edge | 2'-6\" | edge", 
+  "id": 20606137, 
+  "moved_in": -0.90600000000000003, 
+  "move": "closer to the element", 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#68", 
+  "after": "below 0.44in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "locate run -> 6                     across 5/6..     6 | 0'-8\" | edge", 
+  "id": 20606138, 
+  "moved_in": -1.6870000000000001, 
+  "move": "out of the element to beside it", 
+  "label": "run -> 6", 
+  "feature": "run#22", 
+  "after": "above 0.26in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 4.36in", 
+  "what": "locate core opening anchor|edges|anchor across 5/6..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+  "id": 20606139, 
+  "moved_in": 0.0, 
+  "label": "core opening anchor|edges|anchor", 
+  "feature": "opening/core#47", 
+  "after": "below 4.36in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "check", 
+  "before": "above 0.17in", 
+  "what": "check shaft opening anchor|edges|anchor (chain check) across CC/BB..   edge | 3'-0\" | edge | 0'-8\" | edge", 
+  "id": 20606140, 
+  "moved_in": 0.0, 
+  "label": "shaft opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/shaft#51", 
+  "after": "above 0.17in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "check", 
+  "before": "above 0.69in", 
+  "what": "check core opening edges|BB|edges (chain check) across CC/BB..   edge | 17'-8\" | edge", 
+  "id": 20606141, 
+  "moved_in": 0.0, 
+  "label": "core opening edges|BB|edges (chain check)", 
+  "feature": "opening/core#47", 
+  "after": "above 0.69in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "check", 
+  "before": "below 0.38in", 
+  "what": "check plain opening edges|6|edges (chain check) across 5/6..     edge | 1'-7\" | edge", 
+  "id": 20606142, 
+  "moved_in": 0.0, 
+  "label": "plain opening edges|6|edges (chain check)", 
+  "feature": "opening/plain#63", 
+  "after": "below 0.38in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 1.69in", 
+  "what": "locate stack 2 -> 6                 across 5/6..     edge | 11'-2 7/8\" | 6", 
+  "id": 20606143, 
+  "moved_in": -2.0529999999999999, 
+  "move": "to the other side", 
+  "label": "stack 2 -> 6", 
+  "feature": "opening/plain#62", 
+  "after": "above 0.24in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 1.12in", 
+  "what": "locate core opening anchor|edges|anchor across 5/6..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+  "id": 20606144, 
+  "moved_in": 0.91700000000000004, 
+  "move": "closer to the element", 
+  "label": "core opening anchor|edges|anchor", 
+  "feature": "opening/core#48", 
+  "after": "above 0.21in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "above 0.37in", 
+  "what": "check penetration opening anchor|edges|anchor (chain check) across CC/BB..   edge | 1'-6\" | edge", 
+  "id": 20606145, 
+  "moved_in": 0.0, 
+  "text_moved_in": [
+   0.22
+  ], 
+  "label": "penetration opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/penetration#76", 
+  "after": "above 0.37in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "inside 0.00in", 
+  "what": "check shaft opening anchor|edges|anchor (chain check) across CC/BB..   edge | 17'-8\" | edge", 
+  "id": 20606146, 
+  "moved_in": -0.29199999999999998, 
+  "move": "out of the element to beside it", 
+  "label": "shaft opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/shaft#46", 
+  "after": "above 0.17in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 1.48in", 
+  "what": "locate shaft opening anchor|edges|anchor across 5/6..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+  "id": 20606147, 
+  "moved_in": 0.27100000000000002, 
+  "move": "closer to the element", 
+  "label": "shaft opening anchor|edges|anchor", 
+  "feature": "opening/shaft#46", 
+  "after": "above 1.21in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.50in", 
+  "what": "locate stack 1 -> 6 + plain opening anchor|edges|anchor (chain check) across 5/6..     6 | 4'-8\" | edge | 6'-3 1/2\" | edge", 
+  "id": 20606148, 
+  "moved_in": 1.0850000000000000, 
+  "move": "to the other side", 
+  "label": "stack 1 -> 6 + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#58", 
+  "after": "below 0.48in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> 7 + plain opening anchor|edges|anchor (chain check) across 5/6..     7 | 15'-4 7/8\" | edge | 1'-0\" | edge", 
+  "id": 20606149, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#59", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> BB + plain opening anchor|edges|anchor (chain check) across CC/BB..   BB | 11'-4 5/8\" | edge | 2'-6\" | edge", 
+  "id": 20606150, 
+  "moved_in": -0.188, 
+  "move": "further from the element", 
+  "label": "stack 1 -> BB + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#64", 
+  "after": "above 0.44in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> 7 + plain opening anchor|edges (chain check) across 5/6..     7 | 5'-4 1/8\" | edge | 1'-9\" | edge", 
+  "id": 20606151, 
+  "moved_in": 0.73299999999999998, 
+  "move": "to the other side", 
+  "label": "stack 1 -> 7 + plain opening anchor|edges (chain check)", 
+  "feature": "opening/plain#64", 
+  "after": "below 0.17in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> AA + plain opening anchor|edges (chain check) across CC/BB..   AA | 15'-4 5/8\" | edge | 1'-7 1/2\" | edge", 
+  "id": 20606152, 
+  "moved_in": 0.057000000000000002, 
+  "text_moved_in": [
+   0.63
+  ], 
+  "move": "closer to the element", 
+  "label": "stack 1 -> AA + plain opening anchor|edges (chain check)", 
+  "feature": "opening/plain#65", 
+  "after": "above 0.19in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.25in", 
+  "what": "locate stack 1 -> 7 + plain opening anchor|edges|anchor (chain check) across 5/6..     7 | 6'-9 1/4\" | edge | 2'-6\" | edge", 
+  "id": 20606153, 
+  "moved_in": -0.72199999999999998, 
+  "move": "to the other side", 
+  "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#65", 
+  "after": "above 0.27in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.25in", 
+  "what": "locate stack 1 -> 6                 across 5/6..     6 | 9'-8 3/4\" | edge", 
+  "id": 20606154, 
+  "moved_in": -0.76000000000000001, 
+  "move": "to the other side", 
+  "label": "stack 1 -> 6", 
+  "feature": "opening/plain#68", 
+  "after": "above 0.20in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "below 0.81in", 
+  "what": "check plain opening anchor|edges|anchor (chain check) across 5/6..     edge | 1'-4\" | edge", 
+  "id": 20606155, 
+  "moved_in": -1.3230000000000000, 
+  "move": "to the other side", 
+  "label": "plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#68", 
+  "after": "above 0.20in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> CC + plain opening anchor|edges|anchor (chain check) across CC/BB..   CC | 17'-1 3/8\" | edge | 1'-2 7/8\" | edge", 
+  "id": 20606156, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> CC + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#69", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.28in", 
+  "what": "locate stack 1 -> FF + penetration opening anchor|edges|anchor (chain check) across CC/BB..   FF | 5'-6 1/4\" | edge | 1'-10\" | edge", 
+  "id": 20606157, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> FF + penetration opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/penetration#71", 
+  "after": "above 0.28in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> 7                 across 5/6..     7 | 5'-0 1/8\" | edge", 
+  "id": 20606158, 
+  "moved_in": 0.032000000000000001, 
+  "move": "closer to the element", 
+  "label": "stack 1 -> 7", 
+  "feature": "opening/penetration#72", 
+  "after": "above 0.22in"
+ }, 
+ {
+  "role": "check", 
+  "change": "edited", 
+  "before": "above 0.50in", 
+  "what": "check penetration opening anchor|edges (chain check) across 5/6..     edge | 1'-9 1/4\" | edge", 
+  "id": 20606159, 
+  "moved_in": 0.28199999999999997, 
+  "text_moved_in": [
+   0.57999999999999996
+  ], 
+  "move": "closer to the element", 
+  "label": "penetration opening anchor|edges (chain check)", 
+  "feature": "opening/penetration#72", 
+  "after": "above 0.22in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> 7 + plain opening anchor|edges|anchor (chain check) across 5/6..     7 | 5'-6 1/8\" | edge | 3'-7 3/8\" | edge", 
+  "id": 20606160, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#73", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.29in", 
+  "what": "locate stack 1 -> 5 + plain opening anchor|edges|anchor (chain check) across 5/6..     5 | 10'-8 1/2\" | edge | 3'-0\" | edge", 
+  "id": 20606161, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> 5 + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#74", 
+  "after": "above 0.29in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.37in", 
+  "what": "locate stack 1 -> BB + penetration opening anchor|edges|anchor (chain check) across CC/BB..   BB | 13'-6 3/8\" | edge | 1'-9 1/4\" | edge", 
+  "id": 20606162, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> BB + penetration opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/penetration#75", 
+  "after": "below 0.37in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.25in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 6'-11 1/2\" | edge | 5'-2 1/4\" | 7", 
+  "id": 20606163, 
+  "moved_in": 0.56699999999999995, 
+  "move": "to the other side", 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+  "feature": "opening/plain#50", 
+  "after": "below 0.13in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.25in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> AA across CC/BB..   edge | 5'-0\" | edge | 2'-9 1/2\" | AA", 
+  "id": 20606164, 
+  "moved_in": -0.13200000000000001, 
+  "text_moved_in": [
+   0.11
+  ], 
+  "move": "closer to the element", 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> AA", 
+  "feature": "opening/plain#52", 
+  "after": "below 0.12in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.25in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 3'-7\" | edge | 0'-2\" | 7", 
+  "id": 20606165, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+  "feature": "opening/plain#53", 
+  "after": "below 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.38in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 3'-1\" | edge | 3'-3\" | 6", 
+  "id": 20606166, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+  "feature": "opening/plain#54", 
+  "after": "above 0.38in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 3'-1\" | edge | 6'-10 5/8\" | 6", 
+  "id": 20606167, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+  "feature": "opening/plain#55", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.75in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> CC across CC/BB..   edge | 1'-1 5/8\" | edge | 14'-4 3/4\" | CC", 
+  "id": 20606168, 
+  "moved_in": -0.53300000000000003, 
+  "move": "closer to the element", 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> CC", 
+  "feature": "opening/plain#56", 
+  "after": "below 0.22in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 5'-5 1/4\" | edge | 6'-3 1/4\" | 6", 
+  "id": 20606169, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+  "feature": "opening/plain#56", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.25in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 2'-4\" | edge | 4'-0 7/8\" | 7", 
+  "id": 20606170, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+  "feature": "opening/plain#57", 
+  "after": "below 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 1'-9 3/8\" | edge | 3'-10 7/8\" | 7", 
+  "id": 20606171, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+  "feature": "opening/plain#66", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.37in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> EE across CC/BB..   edge | 2'-2\" | edge | 5'-0 5/8\" | EE", 
+  "id": 20606172, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE", 
+  "feature": "opening/plain#67", 
+  "after": "below 0.37in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 1'-7\" | edge | 9'-4\" | 6", 
+  "id": 20606173, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+  "feature": "opening/plain#67", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.27in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> EE across CC/BB..   edge | 0'-9 5/8\" | edge | 14'-2 3/8\" | EE", 
+  "id": 20606174, 
+  "moved_in": 0.0, 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE", 
+  "feature": "opening/plain#73", 
+  "after": "above 0.27in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.25in", 
+  "what": "locate penetration opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 1'-3\" | edge | 4'-1 1/4\" | 6", 
+  "id": 20606175, 
+  "moved_in": 0.0, 
+  "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+  "feature": "opening/penetration#75", 
+  "after": "below 0.25in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "below 0.75in", 
+  "what": "locate penetration opening anchor|edges|anchor (chain check) + stack 1 -> AA across CC/BB..   edge | 0'-11\" | edge | 10'-2\" | AA", 
+  "id": 20606176, 
+  "moved_in": 0.0, 
+  "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> AA", 
+  "feature": "opening/penetration#77", 
+  "after": "below 0.75in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 2.12in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> BB across CC/BB..   edge | 2'-10\" | edge | 15'-4 3/4\" | BB", 
+  "id": 20606177, 
+  "moved_in": -1.8500000000000001, 
+  "move": "closer to the element", 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> BB", 
+  "feature": "opening/plain#63", 
+  "after": "below 0.27in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 1.50in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 4'-6 1/8\" | edge | 6'-8 3/4\" | 6", 
+  "id": 20606178, 
+  "moved_in": -1.2350000000000001, 
+  "move": "closer to the element", 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+  "feature": "opening/plain#62", 
+  "after": "below 0.27in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.81in", 
+  "what": "locate stack 1 -> CC + plain opening anchor|edges|anchor (chain check) across CC/BB..   CC | 12'-2 1/2\" | edge | 1'-0\" | edge", 
+  "id": 20606179, 
+  "moved_in": -0.53700000000000003, 
+  "move": "closer to the element", 
+  "label": "stack 1 -> CC + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#62", 
+  "after": "below 0.28in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.63in", 
+  "what": "locate stack 1 -> 7 + plain opening anchor|edges|anchor (chain check) across 5/6..     7 | 10'-9 13/16\" | edge | 2'-8\" | edge", 
+  "id": 20606180, 
+  "moved_in": 0.122, 
+  "move": "further from the element", 
+  "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)", 
+  "feature": "opening/plain#69", 
+  "after": "below 0.75in"
+ }, 
+ {
+  "change": "unchanged", 
+  "label": "core opening anchor|edges|anchor (chain check)", 
+  "role": "check", 
+  "moved_in": 1.4660000000000000, 
+  "what": "check core opening anchor|edges|anchor (chain check) across CC/BB..   edge | 3'-3\" | edge", 
+  "id": 20606181, 
+  "feature": "opening/core#61"
+ }, 
+ {
+  "change": "edited", 
+  "label": "stack 1 -> wall", 
+  "role": "locate", 
+  "moved_in": 0.65400000000000003, 
+  "text_moved_in": [
+   0.080000000000000002
+  ], 
+  "what": "locate stack 1 -> wall              across CC/BB..   edge | 0'-6\" | wall", 
+  "id": 20606182, 
+  "feature": "opening/core#61"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.38in", 
+  "what": "locate stepped opening overall + stack 1 -> CC across CC/BB..   edge | 3'-8\" | edge | 8'-0 1/2\" | CC", 
+  "id": 20606183, 
+  "moved_in": 0.0, 
+  "label": "stepped opening overall + stack 1 -> CC", 
+  "feature": "opening/shaft#51", 
+  "after": "above 0.38in"
+ }, 
+ {
+  "change": "unchanged", 
+  "role": "locate", 
+  "before": "above 0.25in", 
+  "what": "locate stack 1 -> BB + stack 1 -> BB across CC/BB..   edge | 8'-4 1/8\" | BB | 9'-3 7/8\" | edge", 
+  "id": 20606184, 
+  "moved_in": 0.0, 
+  "label": "stack 1 -> BB + stack 1 -> BB", 
+  "feature": "opening/core#47", 
+  "after": "above 0.25in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "above 0.56in", 
+  "what": "locate penetration opening anchor|edges (chain check) + stack 1 -> BB across CC/BB..   edge | 1'-8\" | edge | 1'-6\" | BB", 
+  "id": 20606185, 
+  "moved_in": 0.085000000000000006, 
+  "text_moved_in": [
+   0.050000000000000003, 
+   0.12
+  ], 
+  "move": "closer to the element", 
+  "label": "penetration opening anchor|edges (chain check) + stack 1 -> BB", 
+  "feature": "opening/penetration#72", 
+  "after": "above 0.48in"
+ }, 
+ {
+  "role": "locate", 
+  "change": "edited", 
+  "before": "below 0.27in", 
+  "what": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> BB across CC/BB..   edge | 2'-2\" | edge | 7'-6\" | BB", 
+  "id": 20606186, 
+  "moved_in": -0.71099999999999997, 
+  "move": "to the other side", 
+  "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> BB", 
+  "feature": "opening/plain#66", 
+  "after": "above 0.21in"
+ }, 
+ {
+  "change": "unchanged", 
+  "label": "stack 1 -> wall + core opening anchor|edges|anchor (chain check)", 
+  "role": "locate", 
+  "moved_in": -1.5629999999999999, 
+  "what": "locate stack 1 -> wall + core opening anchor|edges|anchor (chain check) across 5/6..     wall | 0'-5\" | edge | 1'-5\" | edge", 
+  "id": 20606187, 
+  "feature": "opening/core#61"
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.375, 
+   1.625
+  ], 
+  "id": 20606331, 
+  "refs": [
+   "? 14604435", 
+   "? 13788108", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.375, 
+   1.625
+  ], 
+  "id": 20606422, 
+  "refs": [
+   "? 14604435", 
+   "? 13788108", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.375, 
+   1.625
+  ], 
+  "id": 20606491, 
+  "refs": [
+   "? 14604435", 
+   "? 13788108", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.625
+  ], 
+  "id": 20606548, 
+  "refs": [
+   "? 13788108", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.375
+  ], 
+  "id": 20606652, 
+  "refs": [
+   "? 14604435", 
+   "? 13788108"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.625
+  ], 
+  "id": 20606659, 
+  "refs": [
+   "? 13788108", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.375
+  ], 
+  "id": 20606672, 
+  "refs": [
+   "? 14604435", 
+   "? 13788108"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.2709999999999999
+  ], 
+  "id": 20606679, 
+  "refs": [
+   "? 14604435", 
+   "? 13788105"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.2709999999999999
+  ], 
+  "id": 20606693, 
+  "refs": [
+   "? 14604435", 
+   "? 13788105"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   5.0830000000000002
+  ], 
+  "id": 20606700, 
+  "refs": [
+   "? 14604435", 
+   "? 13788110"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   5.0099999999999998, 
+   1.7709999999999999
+  ], 
+  "id": 20607070, 
+  "refs": [
+   "? 13788110", 
+   "? 14604435", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.8330000000000000, 
+   3.8849999999999998
+  ], 
+  "id": 20607137, 
+  "refs": [
+   "? 14604435", 
+   "? 14604435", 
+   "? 13788104"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.375
+  ], 
+  "id": 20607204, 
+  "refs": [
+   "? 14604435", 
+   "? 13788110"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.7919999999999998
+  ], 
+  "id": 20607212, 
+  "refs": [
+   "? 14604435", 
+   "? 18596162"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   7.5830000000000002
+  ], 
+  "id": 20607225, 
+  "refs": [
+   "? 14604435", 
+   "? 13788100"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.042000000000000003
+  ], 
+  "id": 20607300, 
+  "refs": [
+   "? 13788100", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   12.417000000000000
+  ], 
+  "id": 20607307, 
+  "refs": [
+   "? 14604435", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   29.812999999999999
+  ], 
+  "id": 20607538, 
+  "refs": [
+   "? 13788115", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   3.375
+  ], 
+  "id": 20607545, 
+  "refs": [
+   "? 14604435", 
+   "? 13788108"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   0.91700000000000004
+  ], 
+  "id": 20608220, 
+  "refs": [
+   "? 14604435", 
+   "? 13788109"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   36.207999999999998
+  ], 
+  "id": 20608233, 
+  "refs": [
+   "? 13788110", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   1.4170000000000000
+  ], 
+  "id": 20608359, 
+  "refs": [
+   "? 14604435", 
+   "? 14604435"
+  ]
+ }, 
+ {
+  "change": "added", 
+  "values": [
+   23.332999999999998
+  ], 
+  "id": 20608372, 
+  "refs": [
+   "? 14604435", 
+   "? 13788114"
+  ]
+ }
+]
