@@ -468,7 +468,16 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   (3) `C | 8'-6⅜" | end` at beam#238: "a good dimension, just bad modelling — the beam should be continuous" (same
   section as the beam it meets; no reason to split it). Keep the dim; the model is the issue. (4) The `8"` jog check's
   side: visibility / ease of reading — no rule.
-- Next: L7 re-run with today's code; L4.5 review items and void edges; milestone 3 (whole views, cleanup counts) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — L7 re-run with today's code (run 28; hand baseline `snapshot_L7_hand.json`, 93 dims).**
+  **158 planned (91 / 67) / 119 placed / 5 review / 0 overlaps, 27 s** (run 27 of 2026-10-05: 160 / 138 / 2 — today's
+  rules trim the stacks). Review: 4 "text over a note/tag" (the core openings' chains and two stack rows sit where the
+  sheet's notes are) + 1 penetration check inside its opening. Against the hand sheet by segment: 15 on its line / 37
+  off / 117 the sheet lacks / 69 of its missing — expected: the L7 sheet is grid-to-grid overalls (86'-0", 176'-6",
+  the `32'-6" | 36' | 36' | 36' | 35'-10"` spacing chains — Dim Grids' job), one running perimeter chain down the west
+  sawtooth (`14'-2" | 28'-10" | 14'-1" | 25'-9" | 22'-11" | 37'-4"`), and "R.O." labels instead of dims on the 20 plain
+  openings (the tool's 37 `plain opening anchor|edges` strings). The real L7 measure is an edit round by Adolfo on
+  run 28.
+- Next: Adolfo's L7 edit round (view holds run 28); L4.5 review items and void edges; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
