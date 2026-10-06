@@ -407,8 +407,22 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   (offsets 5.27 / −7.15 / −9.56 only) — also needs a model look (which floor edge is ref 25933?).
   - L3N run 79: **130 / 116 placed / 1 review (beam#231 width over the core wall at grid 5) / 0 overlaps, 21 s.**
     Against his round-3 version: 118 / 39 / 0 / 4.
-- Next: a fourth edit round on run 79 (expect mostly beam-width nudges and the pocket), the two model looks above,
-  then L7 and milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — the two model looks → corner references (runs L3N 80–84).** Both of Adolfo's unexplained dims
+  reference the slab's **vertical corner edge** (the 7½" thickness edge at an outline vertex — a point in plan, which
+  Revit accepts as a dimension reference from any direction): `BB | 12'-1⅜" | corner` where the 6 ft vertical run
+  meets the angled perimeter west of beam#232, and `B | 3'-11⅛" | corner` at the angled shaft's jog. New:
+  `PlanModel.corner_refs` / `corner_ref(pt)` (every vertical edge of the soffit floors' solids), and
+  `Planner.do_angled_corners()`: **at a corner where the outline turns at a non-90° angle, the end of the straight
+  edge (≥ `CORNER_MIN_EDGE` 5 ft) is located along that edge from the nearest grid of the family squarest to it,
+  to the corner reference** (`corner -> grid`, `String.late` so it is placed after the element's own rows — run 83
+  had it take the shaft's first lane and split the B stack). Bugs on the way: loop edges run either way (vertex found
+  on either end), and the crossing family must be the *squarest* one (the 30° family came first at |dot| 0.087).
+  - L3N run 84: **134 / 120 placed / 1 review / 0 overlaps, 19 s.** Both his corner dims now produced (0.25" / 0.38"
+    from his lines); by segment 113 / 46 / 2 / 2 (run 79: 118 / 39 / 0 / 4). Two corner dims he didn't draw:
+    `A14 | 1½" | corner` at the NE sliver and `B | 3'-4¾" | corner` by the core wall — ask (clutter?). Visible side
+    effect: the angled shaft's `14'-10" R.O.` now sits inside the shaft (`W_IN_SHAFT`), it was outside in run 79.
+    Still never produced: the `3'-9"` void edge off B (NE) and `3 | 7'-11" | CJ` (CJ 20572305).
+- Next: a fourth edit round on run 84, then L7 and milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 

@@ -119,6 +119,10 @@ class PlanModel(object):
             self.level = None
         self.floors = floors
         self.slabs = self._read_slabs()
+        # the slabs' VERTICAL corner edges: a plan dimension reads one as a
+        # point, which is how Adolfo locates a corner where the perimeter
+        # turns at a non-90 degree angle (2026-10-06, refs 25562 / 25933 on L3N)
+        self.corner_refs = self._read_corner_refs()
         self.beams = self._read_members(DB.BuiltInCategory.OST_StructuralFraming,
                                         "beam")
         # curbs and CMU walls aren't "walls" for any wall rule (Adolfo
@@ -176,6 +180,41 @@ class PlanModel(object):
         return None
 
     # ---------------- slabs ----------------
+    def _read_corner_refs(self):
+        """{(round(x*96), round(y*96)): Reference} of every vertical edge of the
+        soffit floors' solids (the slab's thickness at an outline vertex)."""
+        out = {}
+        for fl in self.floors:
+            try:
+                geo = fl.get_Geometry(self.opts)
+            except Exception:
+                continue
+            for g in geo:
+                if not isinstance(g, DB.Solid):
+                    continue
+                for ed in g.Edges:
+                    try:
+                        r = ed.Reference
+                        if r is None:
+                            continue
+                        c = ed.AsCurve()
+                        a, b = c.GetEndPoint(0), c.GetEndPoint(1)
+                    except Exception:
+                        continue
+                    if abs(a.Z - b.Z) > 0.3 and abs(a.X - b.X) < 1.0 / 96 and abs(a.Y - b.Y) < 1.0 / 96:
+                        out.setdefault((int(round(a.X * 96)), int(round(a.Y * 96))), r)
+        return out
+
+    def corner_ref(self, pt, tol=1):
+        """Reference of the vertical slab edge at a plan point (within tol/96 ft)."""
+        kx, ky = int(round(pt[0] * 96)), int(round(pt[1] * 96))
+        for dx in range(-tol, tol + 1):
+            for dy in range(-tol, tol + 1):
+                r = self.corner_refs.get((kx + dx, ky + dy))
+                if r is not None:
+                    return r
+        return None
+
     def _read_slabs(self):
         slabs = []
         self.cut_edges = 0

@@ -1,0 +1,4406 @@
+{
+ "tool": "snapshot_L3N_run84.json",
+ "hand": "snapshot_L3N_after_edits3.json",
+ "scale": 128,
+ "tol_in": 0.1875,
+ "counts": {
+  "moved": 46,
+  "left": 113,
+  "deleted": 2,
+  "added": 2
+ },
+ "rows": [
+  {
+   "tool_dim": 20602730,
+   "label": "run -> A",
+   "elements": [
+    13795945,
+    14169070
+   ],
+   "value_ft": 0.11458333333333333,
+   "chain": [
+    0.11
+   ],
+   "at": [
+    134.3,
+    114.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600838,
+   "his_chain": [
+    0.11
+   ],
+   "offset_in": 1.1,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602731,
+   "label": "run -> A",
+   "elements": [
+    13795945,
+    14169070
+   ],
+   "value_ft": 0.53125,
+   "chain": [
+    0.53
+   ],
+   "at": [
+    143.7,
+    118.9
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600839,
+   "his_chain": [
+    0.53
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602732,
+   "label": "run -> A",
+   "elements": [
+    13795945,
+    14169070
+   ],
+   "value_ft": 0.11458333333333333,
+   "chain": [
+    0.11
+   ],
+   "at": [
+    240.0,
+    164.0
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600840,
+   "his_chain": [
+    0.11
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602733,
+   "label": "run -> A",
+   "elements": [
+    13795945,
+    14169070
+   ],
+   "value_ft": 0.11458333333333333,
+   "chain": [
+    0.11
+   ],
+   "at": [
+    160.2,
+    126.8
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600841,
+   "his_chain": [
+    0.11
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602734,
+   "label": "run -> BB",
+   "elements": [
+    13788104,
+    14220571
+   ],
+   "value_ft": 16.333333333333332,
+   "chain": [
+    16.33
+   ],
+   "at": [
+    189.4,
+    89.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600842,
+   "his_chain": [
+    16.33
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602735,
+   "label": "run -> EE",
+   "elements": [
+    13788114,
+    14221633
+   ],
+   "value_ft": 0.125,
+   "chain": [
+    0.12
+   ],
+   "at": [
+    187.4,
+    26.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600843,
+   "his_chain": [
+    0.12
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602736,
+   "label": "run -> 6",
+   "elements": [
+    13788109,
+    14221633
+   ],
+   "value_ft": 0.9166666666666666,
+   "chain": [
+    0.92
+   ],
+   "at": [
+    210.4,
+    23.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600844,
+   "his_chain": [
+    0.92
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602737,
+   "label": "run -> EE",
+   "elements": [
+    13788114,
+    14221633
+   ],
+   "value_ft": 8.3125,
+   "chain": [
+    8.31
+   ],
+   "at": [
+    191.1,
+    21.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600845,
+   "his_chain": [
+    8.31
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602738,
+   "label": "run -> EE",
+   "elements": [
+    13788114,
+    14221633
+   ],
+   "value_ft": 10.125,
+   "chain": [
+    10.12
+   ],
+   "at": [
+    193.4,
+    21.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600846,
+   "his_chain": [
+    10.12
+   ],
+   "offset_in": -0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602739,
+   "label": "step -> CC + run -> CC",
+   "elements": [
+    13788100,
+    14169070
+   ],
+   "value_ft": 4.5,
+   "chain": [
+    4.5,
+    7.58
+   ],
+   "at": [
+    227.9,
+    59.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600953,
+   "his_chain": [
+    4.5,
+    7.58
+   ],
+   "offset_in": 0.05,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602739,
+   "label": "step -> CC + run -> CC",
+   "elements": [
+    13788100,
+    14169070
+   ],
+   "value_ft": 7.583333333333333,
+   "chain": [
+    4.5,
+    7.58
+   ],
+   "at": [
+    227.9,
+    65.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600953,
+   "his_chain": [
+    4.5,
+    7.58
+   ],
+   "offset_in": 0.05,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602740,
+   "label": "step -> BB",
+   "elements": [
+    13788104,
+    14221225
+   ],
+   "value_ft": 7.260416666666667,
+   "chain": [
+    7.26
+   ],
+   "at": [
+    182.7,
+    94.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600936,
+   "his_chain": [
+    7.26
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602741,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 18.166666666666668,
+   "chain": [
+    18.17,
+    14.83
+   ],
+   "at": [
+    208.2,
+    38.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600847,
+   "his_chain": [
+    18.17,
+    14.83
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602741,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    13788100,
+    14169070
+   ],
+   "value_ft": 14.833333333333334,
+   "chain": [
+    18.17,
+    14.83
+   ],
+   "at": [
+    208.2,
+    54.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600847,
+   "his_chain": [
+    18.17,
+    14.83
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602742,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 8.25,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    217.0,
+    49.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600848,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602742,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    13788110,
+    14169070
+   ],
+   "value_ft": 11.75,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    227.0,
+    49.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600848,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602743,
+   "label": "shaft opening anchor|edges|anchor",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 8.25,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    217.0,
+    110.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600849,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": 0.19,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602743,
+   "label": "shaft opening anchor|edges|anchor",
+   "elements": [
+    13788110,
+    14169070
+   ],
+   "value_ft": 11.75,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    227.0,
+    110.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600849,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": 0.19,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602744,
+   "label": "shaft opening anchor|edges",
+   "elements": [
+    13788105,
+    14169070
+   ],
+   "value_ft": 1.3854166666666667,
+   "chain": [
+    1.38
+   ],
+   "at": [
+    218.7,
+    131.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600850,
+   "his_chain": [
+    1.38
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602745,
+   "label": "shaft opening anchor|edges",
+   "elements": [
+    13788110,
+    14169070
+   ],
+   "value_ft": 10.208333333333334,
+   "chain": [
+    10.21
+   ],
+   "at": [
+    227.8,
+    133.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600851,
+   "his_chain": [
+    10.21
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602746,
+   "label": "stack 1 -> EE",
+   "elements": [
+    13788114,
+    14169070
+   ],
+   "value_ft": 7.625,
+   "chain": [
+    7.62
+   ],
+   "at": [
+    285.5,
+    29.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600852,
+   "his_chain": [
+    7.62
+   ],
+   "offset_in": 0.37,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602747,
+   "label": "stack 2 -> EE",
+   "elements": [
+    13788114,
+    14169070
+   ],
+   "value_ft": 23.208333333333332,
+   "chain": [
+    23.21
+   ],
+   "at": [
+    289.5,
+    37.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600853,
+   "his_chain": [
+    23.21
+   ],
+   "offset_in": 0.44,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602748,
+   "label": "stack 1 -> 8",
+   "elements": [
+    13788111,
+    14169070
+   ],
+   "value_ft": 1.125,
+   "chain": [
+    1.12
+   ],
+   "at": [
+    269.7,
+    31.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600938,
+   "his_chain": [
+    1.12,
+    16.62
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602749,
+   "label": "stack 1 -> 8",
+   "elements": [
+    13788111,
+    14169070
+   ],
+   "value_ft": 16.625,
+   "chain": [
+    16.62
+   ],
+   "at": [
+    278.5,
+    32.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600938,
+   "his_chain": [
+    1.12,
+    16.62
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602750,
+   "label": "stack 1 -> FF",
+   "elements": [
+    13788115,
+    14169070
+   ],
+   "value_ft": 7.75,
+   "chain": [
+    7.75
+   ],
+   "at": [
+    208.0,
+    -14.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600856,
+   "his_chain": [
+    7.75
+   ],
+   "offset_in": -0.34,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602751,
+   "label": "stack 1 -> 7",
+   "elements": [
+    13788110,
+    14169070
+   ],
+   "value_ft": 13.229166666666666,
+   "chain": [
+    13.23
+   ],
+   "at": [
+    239.5,
+    51.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600957,
+   "his_chain": [
+    13.23,
+    1.17,
+    0.67,
+    1.17
+   ],
+   "offset_in": 0.47,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602752,
+   "label": "stack 1 -> 6",
+   "elements": [
+    13788109,
+    14169070
+   ],
+   "value_ft": 2.4583333333333335,
+   "chain": [
+    2.46
+   ],
+   "at": [
+    211.2,
+    120.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600941,
+   "his_chain": [
+    2.46
+   ],
+   "offset_in": 0.29,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602753,
+   "label": "void edge -> 10",
+   "elements": [
+    13794716,
+    14169070
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    375.2,
+    60.5
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600937,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602754,
+   "label": "void edge -> 11",
+   "elements": [
+    13794723,
+    14169070
+   ],
+   "value_ft": 4.125,
+   "chain": [
+    4.13
+   ],
+   "at": [
+    387.3,
+    66.2
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600858,
+   "his_chain": [
+    4.13
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602755,
+   "label": "void edge -> 11",
+   "elements": [
+    13794723,
+    14169070
+   ],
+   "value_ft": 2.2916666666666665,
+   "chain": [
+    2.29
+   ],
+   "at": [
+    323.6,
+    204.9
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600955,
+   "his_chain": [
+    2.29
+   ],
+   "offset_in": -0.56,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602756,
+   "label": "beam end -> 9",
+   "elements": [
+    13793990,
+    14895567
+   ],
+   "value_ft": 28.677083333333332,
+   "chain": [
+    28.68
+   ],
+   "at": [
+    274.1,
+    169.4
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600859,
+   "his_chain": [
+    28.68
+   ],
+   "offset_in": -0.16,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602757,
+   "label": "beam end -> C + beam end -> C",
+   "elements": [
+    13796090,
+    14895554
+   ],
+   "value_ft": 3.5,
+   "chain": [
+    3.5,
+    8.54
+   ],
+   "at": [
+    296.5,
+    142.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600860,
+   "his_chain": [
+    3.5,
+    8.54
+   ],
+   "offset_in": 0.1,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602757,
+   "label": "beam end -> C + beam end -> C",
+   "elements": [
+    13796090,
+    14181679
+   ],
+   "value_ft": 8.53125,
+   "chain": [
+    3.5,
+    8.54
+   ],
+   "at": [
+    299.0,
+    137.2
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600860,
+   "his_chain": [
+    3.5,
+    8.54
+   ],
+   "offset_in": 0.1,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602758,
+   "label": "beam end -> BB",
+   "elements": [
+    13788104,
+    14184520
+   ],
+   "value_ft": 6.333333333333333,
+   "chain": [
+    6.33
+   ],
+   "at": [
+    187.6,
+    94.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600861,
+   "his_chain": [
+    6.33
+   ],
+   "offset_in": 0.13,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602759,
+   "label": "beam end -> BB",
+   "elements": [
+    13788104,
+    14184522
+   ],
+   "value_ft": 6.0,
+   "chain": [
+    6.0
+   ],
+   "at": [
+    123.0,
+    101.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600862,
+   "his_chain": [
+    6.0
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602760,
+   "label": "beam end -> BB",
+   "elements": [
+    13788104,
+    14184524
+   ],
+   "value_ft": 4.416666666666667,
+   "chain": [
+    4.42
+   ],
+   "at": [
+    145.6,
+    100.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600863,
+   "his_chain": [
+    4.42
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602761,
+   "label": "beam anchor|sides",
+   "elements": [
+    13795945,
+    14171002
+   ],
+   "value_ft": 1.28125,
+   "chain": [
+    1.28,
+    1.67
+   ],
+   "at": [
+    231.7,
+    159.5
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600864,
+   "his_chain": [
+    1.28,
+    1.67
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602761,
+   "label": "beam anchor|sides",
+   "elements": [
+    14171002,
+    14171002
+   ],
+   "value_ft": 1.6666666666666667,
+   "chain": [
+    1.28,
+    1.67
+   ],
+   "at": [
+    232.3,
+    158.1
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600864,
+   "his_chain": [
+    1.28,
+    1.67
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602762,
+   "label": "beam anchor|sides",
+   "elements": [
+    13795945,
+    14181349
+   ],
+   "value_ft": 1.28125,
+   "chain": [
+    1.28,
+    1.67
+   ],
+   "at": [
+    327.1,
+    203.9
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600865,
+   "his_chain": [
+    1.28,
+    1.67
+   ],
+   "offset_in": -0.34,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602762,
+   "label": "beam anchor|sides",
+   "elements": [
+    14181349,
+    14181349
+   ],
+   "value_ft": 1.6666666666666667,
+   "chain": [
+    1.28,
+    1.67
+   ],
+   "at": [
+    327.7,
+    202.6
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600865,
+   "his_chain": [
+    1.28,
+    1.67
+   ],
+   "offset_in": -0.34,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602763,
+   "label": "beam anchor|sides",
+   "elements": [
+    14181382,
+    14181382
+   ],
+   "value_ft": 1.0,
+   "chain": [
+    1.0,
+    1.29
+   ],
+   "at": [
+    321.5,
+    207.9
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600866,
+   "his_chain": [
+    1.0,
+    1.29
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602763,
+   "label": "beam anchor|sides",
+   "elements": [
+    13794723,
+    14181382
+   ],
+   "value_ft": 1.2916666666666667,
+   "chain": [
+    1.0,
+    1.29
+   ],
+   "at": [
+    322.6,
+    208.3
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600866,
+   "his_chain": [
+    1.0,
+    1.29
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602764,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14181407
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    334.7,
+    193.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600867,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602764,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14181407
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    336.3,
+    190.3
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600867,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602765,
+   "label": "beam end -> 9",
+   "elements": [
+    13793990,
+    14181407
+   ],
+   "value_ft": 13.010416666666666,
+   "chain": [
+    13.01
+   ],
+   "at": [
+    285.8,
+    162.9
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600868,
+   "his_chain": [
+    13.01
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602766,
+   "label": "beam side|9|side",
+   "elements": [
+    13793990,
+    14181679
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    348.4,
+    39.6
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600869,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": -0.28,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602766,
+   "label": "beam side|9|side",
+   "elements": [
+    13793990,
+    14181679
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    351.8,
+    41.2
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600869,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": -0.28,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602767,
+   "label": "beam anchor|sides",
+   "elements": [
+    13793990,
+    14182607
+   ],
+   "value_ft": 1.375,
+   "chain": [
+    1.37,
+    1.0
+   ],
+   "at": [
+    300.8,
+    147.9
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600913,
+   "his_chain": [
+    1.37,
+    1.0
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602767,
+   "label": "beam anchor|sides",
+   "elements": [
+    14182607,
+    14182607
+   ],
+   "value_ft": 1.0,
+   "chain": [
+    1.37,
+    1.0
+   ],
+   "at": [
+    301.8,
+    148.4
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600913,
+   "his_chain": [
+    1.37,
+    1.0
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602768,
+   "label": "beam anchor|sides",
+   "elements": [
+    14182815,
+    14182815
+   ],
+   "value_ft": 1.0,
+   "chain": [
+    1.0,
+    13.46
+   ],
+   "at": [
+    296.3,
+    192.2
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600870,
+   "his_chain": [
+    1.0,
+    13.46
+   ],
+   "offset_in": 0.8,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602768,
+   "label": "beam anchor|sides",
+   "elements": [
+    13794716,
+    14182815
+   ],
+   "value_ft": 13.458333333333334,
+   "chain": [
+    1.0,
+    13.46
+   ],
+   "at": [
+    302.9,
+    195.3
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600870,
+   "his_chain": [
+    1.0,
+    13.46
+   ],
+   "offset_in": 0.8,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602769,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14182847
+   ],
+   "value_ft": 0.5,
+   "chain": [
+    0.5,
+    0.5
+   ],
+   "at": [
+    300.2,
+    175.8
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600872,
+   "his_chain": [
+    0.5,
+    0.5
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602769,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14182847
+   ],
+   "value_ft": 0.5,
+   "chain": [
+    0.5,
+    0.5
+   ],
+   "at": [
+    300.4,
+    175.4
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600872,
+   "his_chain": [
+    0.5,
+    0.5
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602770,
+   "label": "beam side|2|side",
+   "elements": [
+    13788102,
+    14184522
+   ],
+   "value_ft": 2.4791666666666665,
+   "chain": [
+    2.48,
+    1.5
+   ],
+   "at": [
+    125.9,
+    106.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600874,
+   "his_chain": [
+    2.48,
+    1.5
+   ],
+   "offset_in": 0.15,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602770,
+   "label": "beam side|2|side",
+   "elements": [
+    13788102,
+    14184522
+   ],
+   "value_ft": 1.5,
+   "chain": [
+    2.48,
+    1.5
+   ],
+   "at": [
+    127.9,
+    106.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600874,
+   "his_chain": [
+    2.48,
+    1.5
+   ],
+   "offset_in": 0.15,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602771,
+   "label": "beam side|3|side",
+   "elements": [
+    13788103,
+    14184524
+   ],
+   "value_ft": 3.3333333333333335,
+   "chain": [
+    3.33,
+    2.67
+   ],
+   "at": [
+    139.6,
+    105.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600875,
+   "his_chain": [
+    3.33,
+    2.67
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602771,
+   "label": "beam side|3|side",
+   "elements": [
+    13788103,
+    14184524
+   ],
+   "value_ft": 2.6666666666666665,
+   "chain": [
+    3.33,
+    2.67
+   ],
+   "at": [
+    142.6,
+    105.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600875,
+   "his_chain": [
+    3.33,
+    2.67
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602772,
+   "label": "beam side|F|side",
+   "elements": [
+    13793747,
+    14185803
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    2.75,
+    2.75
+   ],
+   "at": [
+    334.2,
+    42.8
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "his_dim": 20600876,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602772,
+   "label": "beam side|F|side",
+   "elements": [
+    13793747,
+    14185803
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    2.75,
+    2.75
+   ],
+   "at": [
+    335.6,
+    40.4
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "his_dim": 20600876,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602773,
+   "label": "beam end -> A6",
+   "elements": [
+    13797880,
+    14185803
+   ],
+   "value_ft": 0.90625,
+   "chain": [
+    0.91
+   ],
+   "at": [
+    241.2,
+    -17.6
+   ],
+   "dir": [
+    -0.86603,
+    -0.5
+   ],
+   "his_dim": 20600877,
+   "his_chain": [
+    0.91
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602774,
+   "label": "beam side|7|side",
+   "elements": [
+    13788110,
+    14211982
+   ],
+   "value_ft": 1.59375,
+   "chain": [
+    1.59,
+    3.91
+   ],
+   "at": [
+    232.1,
+    -18.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600878,
+   "his_chain": [
+    1.59,
+    3.91
+   ],
+   "offset_in": -0.96,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602774,
+   "label": "beam side|7|side",
+   "elements": [
+    13788110,
+    14211982
+   ],
+   "value_ft": 3.90625,
+   "chain": [
+    1.59,
+    3.91
+   ],
+   "at": [
+    234.8,
+    -18.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600878,
+   "his_chain": [
+    1.59,
+    3.91
+   ],
+   "offset_in": -0.96,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602775,
+   "label": "beam side|10|side",
+   "elements": [
+    13794716,
+    14895552
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    313.6,
+    183.7
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600879,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602775,
+   "label": "beam side|10|side",
+   "elements": [
+    13794716,
+    14895552
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    317.0,
+    185.2
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600879,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602776,
+   "label": "beam side|9|side",
+   "elements": [
+    13793990,
+    14895554
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    297.4,
+    149.1
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600880,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": -0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602776,
+   "label": "beam side|9|side",
+   "elements": [
+    13793990,
+    14895554
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    300.8,
+    150.6
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600880,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": -0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602777,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14895567
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    260.2,
+    159.0
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600881,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602777,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14895567
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    261.8,
+    155.6
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600881,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602778,
+   "label": "CJ -> 4",
+   "elements": [
+    13788107,
+    20572292
+   ],
+   "value_ft": 4.541666666666667,
+   "chain": [
+    4.54
+   ],
+   "at": [
+    167.9,
+    105.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600882,
+   "his_chain": [
+    4.54
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602779,
+   "label": "CJ -> CC",
+   "elements": [
+    13788100,
+    20572293
+   ],
+   "value_ft": 14.229166666666666,
+   "chain": [
+    14.23
+   ],
+   "at": [
+    163.0,
+    69.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600883,
+   "his_chain": [
+    14.23
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602780,
+   "label": "CJ -> CC",
+   "elements": [
+    13788100,
+    20572295
+   ],
+   "value_ft": 16.104166666666668,
+   "chain": [
+    16.1
+   ],
+   "at": [
+    175.0,
+    70.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600884,
+   "his_chain": [
+    16.1
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602781,
+   "label": "CJ -> 9",
+   "elements": [
+    13793990,
+    20572296
+   ],
+   "value_ft": 19.427083333333332,
+   "chain": [
+    19.43
+   ],
+   "at": [
+    276.7,
+    175.0
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600885,
+   "his_chain": [
+    19.43
+   ],
+   "offset_in": 0.41,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602782,
+   "label": "CJ -> 8",
+   "elements": [
+    13788111,
+    20572297
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    272.7,
+    155.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600886,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602783,
+   "label": "CJ -> 8",
+   "elements": [
+    13788111,
+    20572297
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    272.7,
+    16.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600887,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -1.09,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602784,
+   "label": "CJ -> EE",
+   "elements": [
+    13788114,
+    20572298
+   ],
+   "value_ft": 7.020833333333333,
+   "chain": [
+    7.02
+   ],
+   "at": [
+    227.9,
+    22.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600888,
+   "his_chain": [
+    7.02
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602785,
+   "label": "CJ -> EE",
+   "elements": [
+    13788114,
+    20572298
+   ],
+   "value_ft": 7.020833333333333,
+   "chain": [
+    7.02
+   ],
+   "at": [
+    279.9,
+    22.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600889,
+   "his_chain": [
+    7.02
+   ],
+   "offset_in": 0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602786,
+   "label": "CJ -> EE",
+   "elements": [
+    13788114,
+    20572300
+   ],
+   "value_ft": 13.041666666666666,
+   "chain": [
+    13.04
+   ],
+   "at": [
+    206.2,
+    19.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600890,
+   "his_chain": [
+    13.04
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602787,
+   "label": "CJ -> FF",
+   "elements": [
+    13788115,
+    20572304
+   ],
+   "value_ft": 13.239583333333334,
+   "chain": [
+    13.24
+   ],
+   "at": [
+    146.6,
+    -16.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600891,
+   "his_chain": [
+    13.24
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602788,
+   "label": "CJ -> FF",
+   "elements": [
+    13788115,
+    20572304
+   ],
+   "value_ft": 13.239583333333334,
+   "chain": [
+    13.24
+   ],
+   "at": [
+    194.4,
+    -16.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600892,
+   "his_chain": [
+    13.24
+   ],
+   "offset_in": 0.02,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602789,
+   "label": "CJ -> F",
+   "elements": [
+    13793747,
+    20572309
+   ],
+   "value_ft": 0.75,
+   "chain": [
+    0.75
+   ],
+   "at": [
+    279.7,
+    10.2
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "his_dim": 20600893,
+   "his_chain": [
+    0.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602790,
+   "label": "CJ -> 9",
+   "elements": [
+    13793990,
+    20572311
+   ],
+   "value_ft": 10.354166666666666,
+   "chain": [
+    10.35
+   ],
+   "at": [
+    314.4,
+    104.8
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600894,
+   "his_chain": [
+    10.35
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602791,
+   "label": "CJ -> D",
+   "elements": [
+    13796144,
+    20572312
+   ],
+   "value_ft": 6.833333333333333,
+   "chain": [
+    6.84
+   ],
+   "at": [
+    363.4,
+    128.4
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600895,
+   "his_chain": [
+    6.84
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602792,
+   "label": "CJ -> D",
+   "elements": [
+    13796144,
+    20572312
+   ],
+   "value_ft": 6.833333333333333,
+   "chain": [
+    6.84
+   ],
+   "at": [
+    307.0,
+    102.1
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600896,
+   "his_chain": [
+    6.84
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602793,
+   "label": "CJ -> 9",
+   "elements": [
+    13793990,
+    20572313
+   ],
+   "value_ft": 18.5625,
+   "chain": [
+    18.56
+   ],
+   "at": [
+    273.7,
+    182.2
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600897,
+   "his_chain": [
+    18.56
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602794,
+   "label": "CJ -> 5",
+   "elements": [
+    13788108,
+    20572317
+   ],
+   "value_ft": 7.458333333333333,
+   "chain": [
+    7.46
+   ],
+   "at": [
+    188.0,
+    -26.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600917,
+   "his_chain": [
+    7.46
+   ],
+   "offset_in": 0.2,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602795,
+   "label": "CJ -> F",
+   "elements": [
+    13793747,
+    20572321
+   ],
+   "value_ft": 4.75,
+   "chain": [
+    4.75
+   ],
+   "at": [
+    275.0,
+    9.8
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "his_dim": 20600898,
+   "his_chain": [
+    4.75
+   ],
+   "offset_in": -0.59,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602796,
+   "label": "CJ -> 8",
+   "elements": [
+    13788111,
+    20572322
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    3.0
+   ],
+   "at": [
+    271.7,
+    21.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600899,
+   "his_chain": [
+    3.0
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602797,
+   "label": "CJ -> 8",
+   "elements": [
+    13788111,
+    20572325
+   ],
+   "value_ft": 7.0,
+   "chain": [
+    7.0
+   ],
+   "at": [
+    273.7,
+    23.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600900,
+   "his_chain": [
+    7.0
+   ],
+   "offset_in": 0.16,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602798,
+   "label": "CJ -> 5",
+   "elements": [
+    13788108,
+    20572340
+   ],
+   "value_ft": 1.8333333333333333,
+   "chain": [
+    1.83
+   ],
+   "at": [
+    185.1,
+    5.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600901,
+   "his_chain": [
+    1.83
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602799,
+   "label": "CJ -> 4",
+   "elements": [
+    13788107,
+    20572342
+   ],
+   "value_ft": 4.5,
+   "chain": [
+    4.5
+   ],
+   "at": [
+    167.9,
+    23.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600902,
+   "his_chain": [
+    4.5
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602800,
+   "label": "CJ -> EE",
+   "elements": [
+    13788114,
+    20572343
+   ],
+   "value_ft": 4.5,
+   "chain": [
+    4.5
+   ],
+   "at": [
+    122.0,
+    23.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600903,
+   "his_chain": [
+    4.5
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602801,
+   "label": "CJ -> EE",
+   "elements": [
+    13788114,
+    20572343
+   ],
+   "value_ft": 4.5,
+   "chain": [
+    4.5
+   ],
+   "at": [
+    172.3,
+    23.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600904,
+   "his_chain": [
+    4.5
+   ],
+   "offset_in": -0.69,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602802,
+   "label": "corner -> BB",
+   "elements": [
+    13788104,
+    14169070
+   ],
+   "value_ft": 12.114583333333334,
+   "chain": [
+    12.11
+   ],
+   "at": [
+    120.0,
+    104.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20601659,
+   "his_chain": [
+    12.11
+   ],
+   "offset_in": -0.25,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602803,
+   "label": "corner -> A14",
+   "elements": [
+    13796988,
+    14169070
+   ],
+   "value_ft": 0.125,
+   "chain": [
+    0.12
+   ],
+   "at": [
+    376.2,
+    15.8
+   ],
+   "dir": [
+    -0.86603,
+    -0.5
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20602804,
+   "label": "jog check",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 3.9791666666666665,
+   "chain": [
+    3.98
+   ],
+   "at": [
+    126.7,
+    110.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600905,
+   "his_chain": [
+    3.98
+   ],
+   "offset_in": 0.34,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602805,
+   "label": "jog check",
+   "elements": [
+    14221225,
+    14221225
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    0.67
+   ],
+   "at": [
+    185.7,
+    90.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600906,
+   "his_chain": [
+    0.67
+   ],
+   "offset_in": -0.34,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602806,
+   "label": "shaft size (edge | wall)",
+   "elements": [
+    14113930,
+    14169070
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    0.67
+   ],
+   "at": [
+    235.1,
+    54.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600907,
+   "his_chain": [
+    0.67
+   ],
+   "offset_in": 0.7,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602807,
+   "label": "shaft opening edges|BB|edges (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 17.666666666666668,
+   "chain": [
+    17.67
+   ],
+   "at": [
+    225.8,
+    98.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600908,
+   "his_chain": [
+    17.67
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602808,
+   "label": "shaft opening anchor|edges (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 3.3333333333333335,
+   "chain": [
+    3.33
+   ],
+   "at": [
+    203.3,
+    -19.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600910,
+   "his_chain": [
+    3.33
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602809,
+   "label": "stepped opening overall",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 3.6666666666666665,
+   "chain": [
+    3.67
+   ],
+   "at": [
+    253.8,
+    52.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600911,
+   "his_chain": [
+    3.67
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602810,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 1.1666666666666667,
+   "chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "at": [
+    246.7,
+    47.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600957,
+   "his_chain": [
+    13.23,
+    1.17,
+    0.67,
+    1.17
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602810,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "at": [
+    247.6,
+    47.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600957,
+   "his_chain": [
+    13.23,
+    1.17,
+    0.67,
+    1.17
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602810,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 1.1666666666666667,
+   "chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "at": [
+    248.5,
+    47.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600957,
+   "his_chain": [
+    13.23,
+    1.17,
+    0.67,
+    1.17
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602811,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 1.4166666666666667,
+   "chain": [
+    1.42
+   ],
+   "at": [
+    213.1,
+    116.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600942,
+   "his_chain": [
+    1.42
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602812,
+   "label": "beam anchor|sides",
+   "elements": [
+    14181669,
+    14181669
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    4.0,
+    0.13
+   ],
+   "at": [
+    320.2,
+    209.9
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600916,
+   "his_chain": [
+    4.0,
+    0.13
+   ],
+   "offset_in": 2.63,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602812,
+   "label": "beam anchor|sides",
+   "elements": [
+    13794723,
+    14181669
+   ],
+   "value_ft": 0.125,
+   "chain": [
+    4.0,
+    0.13
+   ],
+   "at": [
+    322.1,
+    210.8
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600916,
+   "his_chain": [
+    4.0,
+    0.13
+   ],
+   "offset_in": 2.63,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602813,
+   "label": "beam end -> C",
+   "elements": [
+    13796090,
+    14194434
+   ],
+   "value_ft": 8.53125,
+   "chain": [
+    8.54
+   ],
+   "at": [
+    347.7,
+    159.9
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600915,
+   "his_chain": [
+    8.54
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602814,
+   "label": "stepped opening overall",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 14.833333333333334,
+   "chain": [
+    14.83
+   ],
+   "at": [
+    213.5,
+    137.5
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600919,
+   "his_chain": [
+    14.83
+   ],
+   "offset_in": 0.84,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602815,
+   "label": "shaft opening edges|B|edges (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 2.4166666666666665,
+   "chain": [
+    2.42,
+    12.41
+   ],
+   "at": [
+    216.3,
+    145.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600925,
+   "his_chain": [
+    2.42,
+    12.41
+   ],
+   "offset_in": 1.22,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602815,
+   "label": "shaft opening edges|B|edges (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 12.416666666666666,
+   "chain": [
+    2.42,
+    12.41
+   ],
+   "at": [
+    219.4,
+    138.9
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600925,
+   "his_chain": [
+    2.42,
+    12.41
+   ],
+   "offset_in": 1.22,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602816,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 8.25,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    217.0,
+    53.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600848,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": 0.39,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602816,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    13788110,
+    14169070
+   ],
+   "value_ft": 11.75,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    227.0,
+    53.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600848,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": 0.39,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602817,
+   "label": "beam side|5|side",
+   "elements": [
+    13788108,
+    14184520
+   ],
+   "value_ft": 4.75,
+   "chain": [
+    4.75,
+    2.75
+   ],
+   "at": [
+    181.9,
+    138.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600921,
+   "his_chain": [
+    4.75,
+    2.75
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602817,
+   "label": "beam side|5|side",
+   "elements": [
+    13788108,
+    14184520
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    4.75,
+    2.75
+   ],
+   "at": [
+    185.6,
+    138.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600921,
+   "his_chain": [
+    4.75,
+    2.75
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602818,
+   "label": "stepped opening overall",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 8.666666666666666,
+   "chain": [
+    8.67
+   ],
+   "at": [
+    209.0,
+    154.2
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600922,
+   "his_chain": [
+    8.67
+   ],
+   "offset_in": 2.14,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602819,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14182847
+   ],
+   "value_ft": 0.5,
+   "chain": [
+    0.5,
+    0.5
+   ],
+   "at": [
+    338.5,
+    193.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600871,
+   "his_chain": [
+    0.5,
+    0.5
+   ],
+   "offset_in": 0.2,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602819,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14182847
+   ],
+   "value_ft": 0.5,
+   "chain": [
+    0.5,
+    0.5
+   ],
+   "at": [
+    338.7,
+    193.3
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600871,
+   "his_chain": [
+    0.5,
+    0.5
+   ],
+   "offset_in": 0.2,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602820,
+   "label": "shaft opening anchor|edges",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 4.854166666666667,
+   "chain": [
+    4.85,
+    3.81
+   ],
+   "at": [
+    208.1,
+    151.6
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600926,
+   "his_chain": [
+    4.85,
+    3.81
+   ],
+   "offset_in": 0.54,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602820,
+   "label": "shaft opening anchor|edges",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 3.8125,
+   "chain": [
+    4.85,
+    3.81
+   ],
+   "at": [
+    212.0,
+    153.5
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600926,
+   "his_chain": [
+    4.85,
+    3.81
+   ],
+   "offset_in": 0.54,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602821,
+   "label": "void edge -> G",
+   "elements": [
+    13794124,
+    14169070
+   ],
+   "value_ft": 13.302083333333334,
+   "chain": [
+    13.3
+   ],
+   "at": [
+    384.3,
+    30.1
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "his_dim": 20600927,
+   "his_chain": [
+    13.3
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602822,
+   "label": "beam side|F|side",
+   "elements": [
+    13793747,
+    14185803
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    2.75,
+    2.75
+   ],
+   "at": [
+    235.6,
+    -14.2
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "his_dim": 20600923,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602822,
+   "label": "beam side|F|side",
+   "elements": [
+    13793747,
+    14185803
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    2.75,
+    2.75
+   ],
+   "at": [
+    236.9,
+    -16.5
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "his_dim": 20600923,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602824,
+   "label": "shaft opening edges|8|edges (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 17.75,
+   "chain": [
+    17.75
+   ],
+   "at": [
+    278.0,
+    50.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600932,
+   "his_chain": [
+    17.75
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602825,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 15.583333333333334,
+   "chain": [
+    15.58
+   ],
+   "at": [
+    266.4,
+    41.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600931,
+   "his_chain": [
+    15.58
+   ],
+   "offset_in": 2.16,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602826,
+   "label": "corner -> B",
+   "elements": [
+    13796036,
+    14169070
+   ],
+   "value_ft": 3.3958333333333335,
+   "chain": [
+    3.4
+   ],
+   "at": [
+    209.7,
+    131.5
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20602827,
+   "label": "CJ -> 9",
+   "elements": [
+    13793990,
+    20572311
+   ],
+   "value_ft": 10.354166666666666,
+   "chain": [
+    10.35
+   ],
+   "at": [
+    346.2,
+    36.5
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600934,
+   "his_chain": [
+    10.35
+   ],
+   "offset_in": -0.19,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602828,
+   "label": "stepped opening overall",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    3.0
+   ],
+   "at": [
+    247.6,
+    44.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600956,
+   "his_chain": [
+    3.0
+   ],
+   "offset_in": -0.39,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602829,
+   "label": "void edge -> 10",
+   "elements": [
+    13794716,
+    14169070
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    359.0,
+    86.3
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 20600933,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602830,
+   "label": "beam end -> BB",
+   "elements": [
+    13788104,
+    14184520
+   ],
+   "value_ft": 15.25,
+   "chain": [
+    15.25
+   ],
+   "at": [
+    177.8,
+    90.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600914,
+   "his_chain": [
+    15.25
+   ],
+   "offset_in": -0.13,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602831,
+   "label": "shaft size (edge | wall)",
+   "elements": [
+    14113930,
+    14169070
+   ],
+   "value_ft": 12.083333333333334,
+   "chain": [
+    12.08
+   ],
+   "at": [
+    241.0,
+    63.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600935,
+   "his_chain": [
+    12.08
+   ],
+   "offset_in": -1.39,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602832,
+   "label": "stack 1 -> BB + stack 1 -> BB",
+   "elements": [
+    13788104,
+    14169070
+   ],
+   "value_ft": 8.34375,
+   "chain": [
+    8.34,
+    9.32
+   ],
+   "at": [
+    223.8,
+    93.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600939,
+   "his_chain": [
+    8.34,
+    9.32
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602832,
+   "label": "stack 1 -> BB + stack 1 -> BB",
+   "elements": [
+    13788104,
+    14169070
+   ],
+   "value_ft": 9.322916666666666,
+   "chain": [
+    8.34,
+    9.32
+   ],
+   "at": [
+    223.8,
+    102.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600939,
+   "his_chain": [
+    8.34,
+    9.32
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602833,
+   "label": "stack 1 -> CC + core opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788100,
+    14169070
+   ],
+   "value_ft": 0.7083333333333334,
+   "chain": [
+    0.71,
+    13.62
+   ],
+   "at": [
+    222.8,
+    62.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600855,
+   "his_chain": [
+    0.71
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602833,
+   "label": "stack 1 -> CC + core opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 13.625,
+   "chain": [
+    0.71,
+    13.62
+   ],
+   "at": [
+    222.8,
+    69.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600909,
+   "his_chain": [
+    13.62
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602834,
+   "label": "CJ -> 4 + CJ -> 5",
+   "elements": [
+    13788107,
+    20572294
+   ],
+   "value_ft": 7.5625,
+   "chain": [
+    7.56,
+    6.52
+   ],
+   "at": [
+    173.9,
+    80.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600943,
+   "his_chain": [
+    7.56,
+    6.52
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602834,
+   "label": "CJ -> 4 + CJ -> 5",
+   "elements": [
+    13788108,
+    20572294
+   ],
+   "value_ft": 6.520833333333333,
+   "chain": [
+    7.56,
+    6.52
+   ],
+   "at": [
+    181.0,
+    80.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600943,
+   "his_chain": [
+    7.56,
+    6.52
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602835,
+   "label": "CJ -> 5 + CJ | CJ spacing",
+   "elements": [
+    13788108,
+    20572303
+   ],
+   "value_ft": 4.458333333333333,
+   "chain": [
+    4.46,
+    3.0
+   ],
+   "at": [
+    186.5,
+    9.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600944,
+   "his_chain": [
+    4.46,
+    3.0
+   ],
+   "offset_in": 3.32,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602835,
+   "label": "CJ -> 5 + CJ | CJ spacing",
+   "elements": [
+    20572303,
+    20572317
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    4.46,
+    3.0
+   ],
+   "at": [
+    190.2,
+    9.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600944,
+   "his_chain": [
+    4.46,
+    3.0
+   ],
+   "offset_in": 3.32,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602836,
+   "label": "CJ -> FF + CJ -> EE",
+   "elements": [
+    13788115,
+    20572341
+   ],
+   "value_ft": 18.03125,
+   "chain": [
+    18.03,
+    18.14
+   ],
+   "at": [
+    163.0,
+    -1.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600945,
+   "his_chain": [
+    18.03,
+    18.14
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602836,
+   "label": "CJ -> FF + CJ -> EE",
+   "elements": [
+    13788114,
+    20572341
+   ],
+   "value_ft": 18.135416666666668,
+   "chain": [
+    18.03,
+    18.14
+   ],
+   "at": [
+    163.0,
+    17.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600945,
+   "his_chain": [
+    18.03,
+    18.14
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602837,
+   "label": "CJ -> FF + CJ -> EE",
+   "elements": [
+    13788115,
+    20572344
+   ],
+   "value_ft": 18.03125,
+   "chain": [
+    18.03,
+    18.14
+   ],
+   "at": [
+    180.4,
+    -1.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600946,
+   "his_chain": [
+    18.03,
+    18.14
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602837,
+   "label": "CJ -> FF + CJ -> EE",
+   "elements": [
+    13788114,
+    20572344
+   ],
+   "value_ft": 18.135416666666668,
+   "chain": [
+    18.03,
+    18.14
+   ],
+   "at": [
+    180.4,
+    17.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600946,
+   "his_chain": [
+    18.03,
+    18.14
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602838,
+   "label": "shaft opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 3.3333333333333335,
+   "chain": [
+    3.33,
+    0.67
+   ],
+   "at": [
+    207.6,
+    -22.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600947,
+   "his_chain": [
+    3.33,
+    0.67
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602838,
+   "label": "shaft opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    13788109,
+    14169070
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    3.33,
+    0.67
+   ],
+   "at": [
+    209.6,
+    -22.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600947,
+   "his_chain": [
+    3.33,
+    0.67
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602839,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    3.0,
+    0.67
+   ],
+   "at": [
+    251.8,
+    51.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600948,
+   "his_chain": [
+    3.0,
+    0.67
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602839,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    3.0,
+    0.67
+   ],
+   "at": [
+    251.8,
+    53.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600948,
+   "his_chain": [
+    3.0,
+    0.67
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602840,
+   "label": "stack 1 -> CC",
+   "elements": [
+    13788100,
+    14169070
+   ],
+   "value_ft": 8.041666666666666,
+   "chain": [
+    8.04
+   ],
+   "at": [
+    250.8,
+    58.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600949,
+   "his_chain": [
+    8.04
+   ],
+   "offset_in": -0.19,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602841,
+   "label": "core opening anchor|edges|anchor (chain check) + stack 1 -> wall",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 3.25,
+   "chain": [
+    3.25,
+    0.58
+   ],
+   "at": [
+    217.4,
+    78.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600912,
+   "his_chain": [
+    3.25
+   ],
+   "offset_in": -0.04,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602841,
+   "label": "core opening anchor|edges|anchor (chain check) + stack 1 -> wall",
+   "elements": [
+    14113934,
+    14169070
+   ],
+   "value_ft": 0.5833333333333334,
+   "chain": [
+    3.25,
+    0.58
+   ],
+   "at": [
+    217.4,
+    80.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600857,
+   "his_chain": [
+    0.58
+   ],
+   "offset_in": -0.04,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602842,
+   "label": "shaft opening anchor|edges|anchor (chain check) + stack 1 -> AA",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 1.4166666666666667,
+   "chain": [
+    1.42,
+    10.15
+   ],
+   "at": [
+    216.5,
+    119.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600950,
+   "his_chain": [
+    1.42,
+    10.15
+   ],
+   "offset_in": -0.11,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602842,
+   "label": "shaft opening anchor|edges|anchor (chain check) + stack 1 -> AA",
+   "elements": [
+    13788105,
+    14169070
+   ],
+   "value_ft": 10.145833333333334,
+   "chain": [
+    1.42,
+    10.15
+   ],
+   "at": [
+    216.5,
+    125.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20600950,
+   "his_chain": [
+    1.42,
+    10.15
+   ],
+   "offset_in": -0.11,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602843,
+   "label": "stack 1 -> wall + core opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14113938,
+    14169070
+   ],
+   "value_ft": 0.4166666666666667,
+   "chain": [
+    0.42,
+    1.42
+   ],
+   "at": [
+    213.1,
+    85.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600951,
+   "his_chain": [
+    0.42,
+    1.42
+   ],
+   "offset_in": 1.07,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602843,
+   "label": "stack 1 -> wall + core opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14169070,
+    14169070
+   ],
+   "value_ft": 1.4166666666666667,
+   "chain": [
+    0.42,
+    1.42
+   ],
+   "at": [
+    214.0,
+    85.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600951,
+   "his_chain": [
+    0.42,
+    1.42
+   ],
+   "offset_in": 1.07,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602844,
+   "label": "stack 1 -> B",
+   "elements": [
+    13796036,
+    14169070
+   ],
+   "value_ft": 7.145833333333333,
+   "chain": [
+    7.15
+   ],
+   "at": [
+    222.8,
+    143.4
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600854,
+   "his_chain": [
+    7.15
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602845,
+   "label": "stack 2 -> B + stack 1 -> B",
+   "elements": [
+    13796036,
+    14169070
+   ],
+   "value_ft": 9.5625,
+   "chain": [
+    9.56,
+    5.27
+   ],
+   "at": [
+    224.1,
+    145.4
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600940,
+   "his_chain": [
+    9.56,
+    5.27
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602845,
+   "label": "stack 2 -> B + stack 1 -> B",
+   "elements": [
+    13796036,
+    14169070
+   ],
+   "value_ft": 5.270833333333333,
+   "chain": [
+    9.56,
+    5.27
+   ],
+   "at": [
+    227.3,
+    138.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600940,
+   "his_chain": [
+    9.56,
+    5.27
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602846,
+   "label": "corner -> B",
+   "elements": [
+    13796036,
+    14169070
+   ],
+   "value_ft": 3.9270833333333335,
+   "chain": [
+    3.93
+   ],
+   "at": [
+    228.8,
+    140.1
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 20600958,
+   "his_chain": [
+    3.93
+   ],
+   "offset_in": 0.38,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602847,
+   "label": "run -> 7",
+   "elements": [
+    13788110,
+    14169070
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38
+   ],
+   "at": [
+    231.2,
+    73.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600928,
+   "his_chain": [
+    3.38
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20602848,
+   "label": "beam side|7|side",
+   "elements": [
+    13788110,
+    14211982
+   ],
+   "value_ft": 1.59375,
+   "chain": [
+    1.59,
+    3.91
+   ],
+   "at": [
+    232.1,
+    78.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600918,
+   "his_chain": [
+    1.59,
+    3.91
+   ],
+   "offset_in": 2.26,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602848,
+   "label": "beam side|7|side",
+   "elements": [
+    13788110,
+    14211982
+   ],
+   "value_ft": 3.90625,
+   "chain": [
+    1.59,
+    3.91
+   ],
+   "at": [
+    234.8,
+    78.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600918,
+   "his_chain": [
+    1.59,
+    3.91
+   ],
+   "offset_in": 2.26,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20602849,
+   "label": "shaft size (edge | wall)",
+   "elements": [
+    14169070,
+    14217916
+   ],
+   "value_ft": 7.791666666666667,
+   "chain": [
+    7.79
+   ],
+   "at": [
+    233.4,
+    80.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20600924,
+   "his_chain": [
+    7.79
+   ],
+   "offset_in": 0.18,
+   "change": "left"
+  },
+  {
+   "his_dim": 20600930,
+   "elements": [
+    13796036,
+    14169070
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    333.9,
+    189.2
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20601175,
+   "elements": [
+    13788103,
+    20572305
+   ],
+   "value_ft": 7.916666666666667,
+   "chain": [
+    7.92
+   ],
+   "at": [
+    145.3,
+    -26.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  }
+ ]
+}

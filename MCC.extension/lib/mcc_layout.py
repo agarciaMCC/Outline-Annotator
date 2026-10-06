@@ -869,6 +869,7 @@ class Layout(object):
             # they don't take the spot beside an opening its own dims need
             void = 1 if s.feature is not None and getattr(s.feature, "sub", None) == "void" else 0
             return (0 if s.role == "locate" else 1,
+                    1 if getattr(s, "late", False) else 0,          # corner call-outs after the element's rows
                     PRIORITY.get(s.feature.kind, 9) if s.feature else 9, void,
                     stk[0] if stk else 0, stk[1] if stk else 0)
         order = sorted(self.strings, key=_key)

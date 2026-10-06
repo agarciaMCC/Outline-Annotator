@@ -50,6 +50,7 @@ CFG = {
     "CJ_MID_TOL": 1.5,      # ft; a CJ whose distances to the two grids differ by less is dimensioned from both
     "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at one shared end + a spacing dim
     "FRAMED_CROSS": 6.0,    # ft; a framed beam end's width crosses the other beam only if open slab is this near
+    "CORNER_MIN_EDGE": 5.0, # ft; a non-90 corner is located along its straight edge only when that edge is this long
     "SHAFT_MAX": 15.0,      # ft; widest such pocket
     "SHAFT_MIN_EDGE": 2.0,  # ft; shorter slab edges are jogs, not shaft sides
     "STACK": True,
@@ -1044,6 +1045,7 @@ class Planner(object):
         if enlarged:
             self.notes["small openings/notches crowded together (left for an enlarged plan)"] = len(enlarged)
         self.do_shaft_pockets()
+        self.do_angled_corners()
         self.make_consistent()
         n0 = len(self.strings)
         m = self.m
@@ -1058,6 +1060,91 @@ class Planner(object):
         self.drop_wall_where_grid()
         self.mark_ro()
         return self.strings
+
+    def do_angled_corners(self):
+        """A corner where the outline turns at a non-90 degree angle: the end of
+        the straight edge is located ALONG that edge, from the nearest grid of
+        the family crossing it, to the slab's vertical corner edge (a point in
+        plan). Adolfo 2026-10-06: BB | 12'-1 3/8" | corner where the 6 ft
+        vertical run meets the angled perimeter west of beam#232; B | 3'-11 1/8" |
+        corner at the angled shaft's jog - "it helps to have this in the field".
+        Right-angle corners are located by the other edge's across-dims."""
+        m = self.m
+        if not getattr(m, "corner_refs", None):
+            return
+        feat_of = {}
+        for f in self.fs.features:
+            for e in f.edges:
+                feat_of.setdefault(id(e), f)
+        units = [m.grids[fam[0]][2] for fam in m.families]
+        def crossing(fi):
+            # the family squarest to fi (the 30-degree family came back first
+            # for the angled shaft's fam-3 edges at |dot| 0.087 - B's is 0.0)
+            u = units[fi]
+            best = None
+            for fj, v in enumerate(units):
+                d = abs(u[0] * v[0] + u[1] * v[1])
+                if fj != fi and d < 0.1 and (best is None or d < best[0]):
+                    best = (d, fj)
+            return best[1] if best else None
+        n = 0
+        seen = set()
+        for sl in m.slabs:
+            loops = [list(sl.edges)] + [list(l) for l in sl.open_edges]
+            for loop in loops:
+                for k in range(len(loop)):
+                    e1, e2 = loop[k], loop[(k + 1) % len(loop)]
+                    # the shared vertex, whichever way the loop's edges run
+                    v = None
+                    for pa in (e1.p0, e1.p1):
+                        for pb in (e2.p0, e2.p1):
+                            if math.hypot(pa[0] - pb[0], pa[1] - pb[1]) <= 1.0 / 48:
+                                v = pa
+                    if v is None:
+                        continue                        # not consecutive
+                    dot = abs(e1.d[0] * e2.d[0] + e1.d[1] * e2.d[1])
+                    if dot < 0.1 or dot > 0.995:
+                        continue                        # square corner / straight
+                    key = (int(round(v[0] * 96)), int(round(v[1] * 96)))
+                    if key in seen:
+                        continue
+                    ref = m.corner_ref(v)
+                    if ref is None:
+                        continue
+                    best = None
+                    for e in (e1, e2):
+                        if e.length < self.c["CORNER_MIN_EDGE"]:
+                            continue                    # "as long as it doesn't clutter" - long edges only
+                        fi = m.family_parallel(e.d)
+                        if fi is None:
+                            continue
+                        fx = crossing(fi)
+                        if fx is None:
+                            continue
+                        ng = m.nearest_grid(v, fx, self.c["LOC_MAX"])
+                        if ng is None:
+                            continue
+                        gi, off = ng
+                        if abs(off) < self.c["ON_GRID_TOL"]:
+                            continue
+                        if best is None or abs(off) < abs(best[2]):
+                            best = (e, fx, off, gi)
+                    if best is None:
+                        continue
+                    e, fx, off, gi = best
+                    seen.add(key)
+                    st = m.station(v, gi)
+                    f = feat_of.get(id(e))
+                    if f is not None and not f.in_crop:
+                        continue
+                    s = self.add(fx, gi, [self.gref(gi) + (self.gname[gi],),
+                                          (m.offset(v, gi), ref, "slab corner", "corner")],
+                                 (st - 2.0, st + 2.0), "corner -> " + self.gname[gi], f, prefer=st)
+                    if s is not None:
+                        s.late = True               # placed after the element's own rows (run 83: it took
+                        n += 1                      # the shaft's first lane and split the B stack)
+        if n:
+            self.notes["non-90 corners located along the edge from a grid"] = n
 
     def mark_ro(self):
         """'R.O.' on the overall size of a shaft / core opening: a string of exactly
