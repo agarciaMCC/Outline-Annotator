@@ -27,6 +27,7 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
   `mcc_features.py` → `mcc_strings.py` (string plan) → `mcc_layout.py` (placement);
   `mcc_coverage.py` / `mcc_score.py` for scoring; `mcc_place.py` (dedupe, text, transactions).
 - `Claude outputs/audit_R26/` — headless runners (`run_v2.py`, `run_button.py`, `run_audit.py`) and run reports/PNGs.
+- `Training Library/` — past jobs' outline sheets pulled from the Z: archive (`inventory.py`, `classify.py`); PDFs not on GitHub.
 - `Test Library/` — PDF regression cases for Columns/Grids from PDF: `python run_library.py`.
 - `MCC-DimText.extension/` — stripped-down Dim Text build shared with coworkers; keep in sync when Dim Text changes.
 - `RevitMCP.extension/` — third-party Revit MCP server, locally patched (see `docs/revit-mcp-setup.md`). Don't edit casually.
@@ -103,6 +104,7 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 | `columns-from-pdf-design.md` | Columns from PDF engine, schedule reader, test library |
 | `revit-mcp-setup.md` | Revit MCP rig, local patches, ground rules |
 | `other-projects-study.md` | How Alia, Eastlake, Bothell soffit plans are dimensioned vs Kalae; open questions |
+| `outline-training-library.md` | Past jobs' outline sets gathered from the Z: archive for training (soffit plans first) |
 | `project-readme.md` | Early (v0.3) button overview — partly outdated |
 
 ## Working style

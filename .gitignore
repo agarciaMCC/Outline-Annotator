@@ -31,3 +31,7 @@ Setup Files/
 # Raw measurements of other projects' models (local only)
 Claude outputs/reference_study/placement_alia.*
 Claude outputs/reference_study/placement_eastlake.*
+
+# Outline training library: full page inventory and run log (large, local only)
+Training Library/inventory.csv
+Training Library/inventory_run.txt
