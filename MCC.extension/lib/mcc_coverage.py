@@ -224,15 +224,24 @@ def annotation_crop_poly(view):
     """Plan polygon of the view's ANNOTATION crop - what decides whether a
     dimension shows (it is usually wider than the model crop, leaving a
     margin beside the slab for dims). Falls back to the model crop."""
+    # Built from the model crop's bounding box + the four annotation offsets
+    # (plan views, right = +X / up = +Y). GetAnnotationCropShape() was used
+    # before; after the offsets of a non-rectangular crop were changed it came
+    # back as a 1,100 ft wide rectangle (2026-10-06, L3N test view) - not trusted.
+    mc = crop_poly(view)
     try:
-        if view.CropBoxActive and view.get_Parameter(DB.BuiltInParameter.VIEWER_ANNOTATION_CROP_ACTIVE).AsInteger():
-            loop = view.GetCropRegionShapeManager().GetAnnotationCropShape()
-            pts = [(c.GetEndPoint(0).X, c.GetEndPoint(0).Y) for c in loop]
-            if len(pts) >= 3:
-                return pts
+        if mc and view.CropBoxActive and view.get_Parameter(DB.BuiltInParameter.VIEWER_ANNOTATION_CROP_ACTIVE).AsInteger():
+            sm = view.GetCropRegionShapeManager()
+            rd, ud = view.RightDirection, view.UpDirection
+            if abs(rd.X - 1) < 1e-6 and abs(ud.Y - 1) < 1e-6:
+                x0 = min(p[0] for p in mc) - sm.LeftAnnotationCropOffset
+                x1 = max(p[0] for p in mc) + sm.RightAnnotationCropOffset
+                y0 = min(p[1] for p in mc) - sm.BottomAnnotationCropOffset
+                y1 = max(p[1] for p in mc) + sm.TopAnnotationCropOffset
+                return [(x0, y0), (x1, y0), (x1, y1), (x0, y1)]
     except Exception:
         pass
-    return crop_poly(view)
+    return mc
 
 
 def crop_poly(view):

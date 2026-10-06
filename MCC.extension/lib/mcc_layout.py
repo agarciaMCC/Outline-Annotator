@@ -33,8 +33,9 @@ CFG = {
     # Layout converts these to plan feet with the view scale
     "LANE_STEP_IN": 0.1875,  # paper inches between stacked dim lines
     "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row (3/8" moved dims Adolfo had left alone)
-    "MIN_GAP_IN": 0.0625,    # paper inches; an opening's dim line never closer to the opening than this (hard) -
-                             # "as close as the text allows, not touching when it's really tight" (Adolfo 2026-10-06)
+    "MIN_GAP_IN": 0.15,      # paper inches; an opening's dim line never closer to the opening than this (hard) -
+                             # "as close as the text allows, not touching when it's really tight" (Adolfo 2026-10-06);
+                             # 1/16" tried: he moved 5 rows hugging at 1/16" out to 3/16-1/4" (round 3)
     "W_GAP": 2.0,            # cost at MIN_GAP, tapering to 0 at FIRST_GAP: closer than 1/4" only when it buys something
                              # (Adolfo's own placements sit 0.10-0.20" off some openings, run 50 edits)
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
@@ -502,6 +503,12 @@ class Layout(object):
                 if o.kind == "beam" and getattr(s, "beam_width", False) and not getattr(s, "intermediate", False) \
                         and pi is not None and not _rects_apart(myrect, o.rect, 0.0) and P.seg_hits_poly(pi, qi, o.poly):
                     pen += c["W_OWN_BEAM"]
+                # a beam-end dim (anchor | end) along its OWN beam, inside its
+                # width: never (round 3: both moved off again - the own beam
+                # was not an obstacle to its own strings)
+                if o.kind == "beam" and "end" in getattr(s, "names", ()) and pi is not None \
+                        and not _rects_apart(myrect, o.rect, 0.0) and P.seg_hits_poly(pi, qi, o.poly):
+                    return None, "along its own beam"
                 continue
             if _rects_apart(myrect, o.rect, 0.0):
                 continue
@@ -750,6 +757,8 @@ class Layout(object):
                     continue
                 if min(my_hi, pl.hi_f) - max(my_lo, pl.lo_f) <= 0.1:
                     continue                        # must overlap to stack
+                if s.feature is None or pl.s.feature is not s.feature:
+                    continue                        # same element only (round 3: the grid-9/8 clusters)
                 for sd in (1, -1):
                     st = (pl.st_f + sd * c["LANE_STEP"] - a0) * sgn
                     key = round(st * 16)
@@ -787,6 +796,24 @@ class Layout(object):
                         seen.add(key)
                         outside = max(0.0, s_lo - st, st - s_hi)
                         out.append((c["W_ALIGN"] + outside * c["W_OUTSIDE"], st, (side, "align", 0)))
+        # a string with a home side never stands INSIDE its own element: the
+        # 4 ft slide (cheaper than a lane) was landing CJ dims inside the CJ,
+        # stack rows inside the opening, beam-end dims on the beam - 9 of
+        # Adolfo's round-3 moves. Clamp, don't price (intermediate beam widths
+        # cross their beam by design)
+        if home and s.feature is not None and s.feature.kind in ("cj", "beam", "opening") \
+                and not getattr(s, "intermediate", False):
+            # (runs / steps / bumps are dimensioned ACROSS their edge, inside its
+            # length by design - not clamped)
+            ext = self._extent(s.feature, s.gi)
+            if ext:
+                lo_e, hi_e = ext[0] + 0.05, ext[1] - 0.05
+                out = [t for t in out if not (lo_e < t[1] < hi_e)]
+        # a beam's end width dim is the first row past its end: the group /
+        # collinear / align spots skipped W_BEAM_ROW (7 of his round-3 moves)
+        if getattr(s, "beam_width", False) and not getattr(s, "intermediate", False):
+            out = [(b + (abs(st - prefer) / c["LANE_STEP"]) * c["W_BEAM_ROW"] if not isinstance(cand[1], int) else b, st, cand)
+                   for b, st, cand in out]
         out.sort(key=lambda t: t[0])
         return out
 
@@ -879,6 +906,7 @@ class Layout(object):
             if left:
                 self.placed.append(pl)
         self._join_collinear()
+        self._dedupe_after_join()
         self._order_stacks()
         # intermediate beam widths are a reading aid, not required: one with no
         # room (a beam under a wall along its length) is dropped, not reviewed
@@ -888,6 +916,26 @@ class Layout(object):
         for s, why in still:
             self.blocked[why] = self.blocked.get(why, 0) + 1
         return self.placed, self.review
+
+    def _dedupe_after_join(self):
+        """A single dim whose two witness lines appear consecutively in a
+        joined string next to it is a duplicate (the plan-level dedupe ran
+        before the join: step | 4'-6" | CC beside step | 4'-6" | CC | 7'-7" |
+        edge, Adolfo's round-3 deletion)."""
+        tol = 1.0 / 96
+        self.notes_dedupe_join = 0
+        for p in list(self.placed):
+            if len(p.s.refs) != 2:
+                continue
+            po = sorted(self.to_fam(p.s.gi, 0.0, r[0])[1] for r in p.s.refs)
+            for q in self.placed:
+                if q is p or q.fi != p.fi or len(q.s.refs) < 3 or abs(q.st_f - p.st_f) > 2.5 * self.c["LANE_STEP"]:
+                    continue
+                qo = sorted(self.to_fam(q.s.gi, 0.0, r[0])[1] for r in q.s.refs)
+                if any(abs(qo[k] - po[0]) < tol and abs(qo[k + 1] - po[1]) < tol for k in range(len(qo) - 1)):
+                    self.placed.remove(p)
+                    self.notes_dedupe_join += 1
+                    break
 
     def _join_collinear(self):
         """Two placed dims on the same line, end to end on a shared witness

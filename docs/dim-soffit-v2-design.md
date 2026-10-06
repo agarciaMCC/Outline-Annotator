@@ -371,7 +371,27 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   by the segment's two offsets so joins can't shift it): `edge@wall | 8'-3" R.O. | edge | 11'-9" | 7`. Run 75 marks
   exactly his 12: the three `8'-3"`, `17'-8"`, `13'-7½"`, `18'-2"`, `14'-10"`, `8'-8"`, `7'-9½"`, `15'-7"`, `17'-9"`,
   `12'-1"`; the `3'-4"` / `8"` he removed are not marked.
-- Next: a third edit round on run 75 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — third edit round (snapshots `_before_edits3` = run 75 / `_after_edits3`; `analyst_L3N_round3.md`).**
+  Clean round (ids matched): **78 unchanged (66%, up from 54%), 39 edited, 2 deleted, 4 added**; by segment 121 left /
+  40 moved. R.O.: all 12 kept, none added or removed — closed. Held: core near-edge-only, angled far leg, beam width
+  first row for plain-lane spots. Did not hold: beam-end dims on their own beam (own beam wasn't an obstacle to its own
+  strings), the 15'-7" far side (its stack row had slid inside the opening, so `W_SPLIT` saw side 0).
+  Clear fixes built (run 76): **(1) a home-side string of a CJ / beam / opening never stands inside its own element**
+  (`candidates()` clamp; the 4 ft slide was cheaper than a lane — 9 moves); **(2) a beam-end dim along its own beam is
+  rejected** (`evaluate`); **(3) `W_BEAM_ROW` also on group / collinear / align spots** (7 moves); **(4) `MIN_GAP_IN`
+  1/16" → 0.15"** (5 rows hugging at 1/16" moved out); **(5) duplicate single dims dropped after `_join_collinear`**
+  (`_dedupe_after_join`, the loose `step | 4'-6" | CC`); **(6) a beam end at a column is framed — no end dim** (the NE
+  corner `1'-0½"`, deleted three rounds); **(7) `MINOR_EDGE` off** (the 1'-4" jog's `3'-11⅛"` off B, added three
+  rounds); **(8) `W_GROUP` same element only.**
+  - L3N run 76: **130 / 115 placed / 2 review / 0 overlaps, 23 s.** Against his round-3 version by segment:
+    **118 on his line / 38 off / 0 he doesn't have / 5 of his missing** (run 75 scored 121 / 40 / 1 / 3). Of his 40
+    moves, 15 now land on his line, 22 are still off. Missing: the CJ pair's `7'-5½"` (text overlap → review),
+    `3'-9"` void edge off B, `3'-11⅛"` (still — the jog edge is skipped by something other than `MINOR_EDGE`), `3 |
+    7'-11" | CJ` (CJ 20572305 never dimensioned), `BB | 12'-1⅜" | edge` (question). Regressions to check with
+    pictures: beam widths `grid | 1'-0" | 13'-5½"` (0.8") and `4'-0" | 1½"` (2.6"), `side | 7 | side` at (232, 78) 2.3".
+  - Open questions to Adolfo (pictures sent): CJ pair end; framed-end width across the beam; the `12'-1⅜"` face
+    (column cut or not); every angled-shaft edge off B however short.
+- Next: Adolfo's answers → run 77; then L7 check and milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 

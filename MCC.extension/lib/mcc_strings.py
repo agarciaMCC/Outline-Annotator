@@ -44,7 +44,8 @@ CFG = {
     # a shaft the slab outline wraps around (not a hole in the slab): a slab
     # edge facing a wall face across open space gets an overall-size dim
     "SMALL_OPEN": 4.0,      # ft; a smaller opening gets only its near edge off the grid, plus its size
-    "MINOR_EDGE": 3.0,      # ft; an opening edge shorter than this, off the opening's own grid set, is a chamfer/jog
+    "MINOR_EDGE": 0.0,      # ft; an opening edge shorter than this, off the opening's own grid set, is a chamfer/jog -
+                            # OFF (0): Adolfo added the 1'-4" jog's 3'-11 1/8" off B three rounds running (2026-10-06)
     "CORE_WALL_NEAR": 1.0,  # ft; a core/shaft opening with a core wall face this close is dimensioned off that wall
     "CJ_MID_TOL": 1.5,      # ft; a CJ whose distances to the two grids differ by less is dimensioned from both
     "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at opposite ends + a spacing dim
@@ -697,6 +698,12 @@ class Planner(object):
             fj, gj, eoff, t0, t1 = fr
             if abs(eoff) < self.c["ON_GRID_TOL"]:
                 self.located_by[id(end)] = "on grid"; continue
+            # an end AT a column is framed into it - no end dim (Adolfo deleted
+            # the 1'-0 1/2" at the NE corner column three rounds running)
+            if self.flush(end, self.m.columns) or \
+                    self.m.member_at(end.mid()[0], end.mid()[1], cats=("column",)) is not None:
+                self.located_by[id(end)] = "at a column"
+                self.note("beam end at a column (framed, skipped)"); continue
             cands = [x for x in (self.anchor(fj, gj, eoff, -1, t0, t1, walls=False),
                                  self.anchor(fj, gj, eoff, +1, t0, t1, walls=False)) if x]
             if not cands:
