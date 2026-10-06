@@ -684,6 +684,8 @@ class Layout(object):
                         # no home side: lanes start just outside the span on each side
                         edge = s_hi if side > 0 else s_lo
                         st = edge + side * (c["FIRST_GAP"] + lane * c["LANE_STEP"]) + k * c["SLIDE_STEP"]
+                        if (st - edge) * side < c["MIN_GAP"]:
+                            continue        # a 1 ft slide is 1/8" at 1:96 - never closer than MIN_GAP (L7 round 1)
                     else:
                         st = prefer + side * lane * c["LANE_STEP"] + k * c["SLIDE_STEP"]
                     outside = max(0.0, s_lo - st, st - s_hi)

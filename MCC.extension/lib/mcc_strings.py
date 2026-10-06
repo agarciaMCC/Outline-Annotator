@@ -249,14 +249,25 @@ class Planner(object):
         refs = [anc, (off, e.ref, "slab edge", "edge")]
         free = (self.free_end(gi, off, s_lo, -1), self.free_end(gi, off, s_hi, +1))
         parts = self.end_parts(s_lo, s_hi)
+        gap = self.c["BEAM_END_GAP"]
         for k, (span, _, _) in enumerate(parts):
-            pref = s_lo + self.c["CORNER_IN"] if k == 0 else s_hi - self.c["CORNER_IN"]
-            s = self.add(fi, gi, refs, span, "run -> " + anc[3], f,
-                         prefer=pref, outward=(1 if k == 0 else -1))
+            # outward points AT this end (-1 low, +1 high) - it was reversed,
+            # so the two end dims of a 175 ft edge met in its middle (L7 round
+            # 1, run#17 / #18); and a run dim sits just PAST its corner when the
+            # margin there is open (all 9 of Adolfo's run moves on L7), else
+            # CORNER_IN inside the edge
+            low = (k == 0) if len(parts) > 1 else True
+            out = -1 if low else 1
+            fr_ = free[0] if low else free[1]
+            if fr_:
+                pref = (s_lo - gap) if low else (s_hi + gap)
+            else:
+                pref = (s_lo + self.c["CORNER_IN"]) if low else (s_hi - self.c["CORNER_IN"])
+            s = self.add(fi, gi, refs, span, "run -> " + anc[3], f, prefer=pref, outward=out)
             if s is not None:
                 # the dim can sit in the margin past this end of the edge
                 # (hand sheets run a column of these beside the slab)
-                s.free = free[0] if k == 0 else free[1]
+                s.free = fr_
 
     def free_end(self, gi, off, st, side):
         """Is the strip just past this end of an edge (2..6 ft along, on
@@ -361,6 +372,18 @@ class Planner(object):
             if any(self.flush(e, self.m.beams) for e in (a, b)) and self.flush(s, self.m.walls):
                 self.note("jog check: gap beside a beam in a wall line (skipped)")
             elif abs(oa - ob) > self.c["SAME_OFF_TOL"]:
+                # "dimension at every turn": when a grid runs between the two
+                # run faces, both are located off it right at the step -
+                # face | grid | face, with the jog check one row outside
+                # (Adolfo's L7 round 1: 3'-4 1/2" | 5 | 1'-7 1/2" at all 10
+                # steps of the west sawtooth)
+                sj = self.m.station(s.mid(), gi)
+                gb = self.m.grid_between(a.mid(), b.mid(), fi)
+                if gb is not None:
+                    self.add(fi, gi, [(oa, a.ref, "slab edge", "edge"), self.gref(gb) + (self.gname[gb],),
+                                      (ob, b.ref, "slab edge", "edge")],
+                             (sj - 2.0, sj + 2.0), "step faces|%s|faces" % self.gname[gb], f, prefer=sj)
+                    self.note("step: faces located off the grid between them")
                 sj = self.m.station(s.mid(), gi)
                 self.add(fi, gi, [(oa, a.ref, "slab edge", "edge"), (ob, b.ref, "slab edge", "edge")],
                          (sj - 2.0, sj + 2.0), "jog check", f, role="check", prefer=sj)
@@ -516,9 +539,12 @@ class Planner(object):
             # any outside anchor, is the one to dimension from (Adolfo
             # 2026-10-05: always the closest gridline) -> edges | grid | edges
             mid_grid = None
-            if not (lo_wall or hi_wall):
+            if not (lo_wall and hi_wall):
+                # (one face on a wall doesn't rule the through-grid out: the L7
+                # core shafts read edge@wall | ... | 7 | edge, like the L3N
+                # pocket - round 1 of L7)
                 tol = self.c["ON_GRID_TOL"]
-                gaps = ([abs(lo - al[0])] if al else []) + ([abs(ah[0] - hi)] if ah else [])
+                gaps = ([abs(lo - al[0])] if (al and not lo_wall) else []) + ([abs(ah[0] - hi)] if (ah and not hi_wall) else [])
                 out_gap = min(gaps) if gaps else 1e9
                 for gj in self.m.families[fi]:
                     o = self.m.offset(self.m.grid(gj)[1], gi)
@@ -527,7 +553,8 @@ class Planner(object):
                         if d < out_gap and (mid_grid is None or d < mid_grid[0]):
                             mid_grid = (d, (o, DB.Reference(self.m.grid(gj)[0]), "grid", self.gname[gj]))
                 if mid_grid is not None:
-                    al = ah = None
+                    if not lo_wall: al = None
+                    if not hi_wall: ah = None
             if mid_grid is None and al is None and ah is None:
                 al = self.anchor(fi, gi, lo, -1, s_lo, s_hi, cap=self.c["MAX_DIST"], walls=False)
                 ah = self.anchor(fi, gi, hi, +1, s_lo, s_hi, cap=self.c["MAX_DIST"], walls=False)
@@ -1235,7 +1262,15 @@ class Planner(object):
         def fam_offs(s, refs):
             g, g0, u, n = m.grids[s.gi]
             b = m.offset(g0, m.families[m.fam_of[s.gi]][0])
-            return tuple(round((r[0] + b) * 96) for r in refs)
+            # ... and roughly WHERE along the grid (30 ft buckets): the same
+            # offsets at another element 107 ft away are not the same dim
+            # (L7 round 1: plain#63's 6 | 8" was skipped for run#22's)
+            fam_g = m.families[m.fam_of[s.gi]][0]
+            mid = (s.span[0] + s.span[1]) / 2.0
+            g_, g0_, u_, n_ = m.grids[s.gi]
+            pt = (g0_[0] + u_[0] * mid, g0_[1] + u_[1] * mid)
+            bucket = int(round(m.station(pt, fam_g) / 30.0))
+            return tuple(round((r[0] + b) * 96) for r in refs) + (bucket,)
         have = set()
         for s in self.strings:
             if s.role == "locate":

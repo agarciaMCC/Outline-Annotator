@@ -477,7 +477,29 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   sawtooth (`14'-2" | 28'-10" | 14'-1" | 25'-9" | 22'-11" | 37'-4"`), and "R.O." labels instead of dims on the 20 plain
   openings (the tool's 37 `plain opening anchor|edges` strings). The real L7 measure is an edit round by Adolfo on
   run 28.
-- Next: Adolfo's L7 edit round (view holds run 28); L4.5 review items and void edges; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — L7 first edit round (snapshots `snapshot_L7_before_edits1` = run 28 / `_after_edits1`;
+  `analyst_L7_round1.md`).** **42 unchanged / 76 edited / 1 deleted / 23 added**; by segment 100 left / 67 moved /
+  2 deleted / 13 added (the segment count under-counts his additions — values repeat on L7). Groups: (1) the west
+  sawtooth — he put `3'-4½" | 5 | 1'-7½"` at every one of the 10 steps with the 5'-0" jog check one row outside
+  (~27 dims); (2) an opening's locating dim and its size end to end on one line, 11 pairs — the join rule did not
+  fire on L7; (3) run dims moved just past the end of their edge (9) — and a bug: `do_run` reversed `end_parts`'
+  outward, so the two end dims of a 175 ft edge met in its middle; (4) the core shafts read as the L3N pocket pattern
+  (`3'-4½"` off 7, `7'-7"` off CC) — `do_opening` ignored a through-grid when one face is on a wall; (5) 9 side
+  flips with no single rule; (6) 10 dims the tool never placed (plain#63's `6 | 8"` skipped as a duplicate of a dim
+  107 ft away; pen#70 set aside for an enlarged plan; two edges with no string). Paper spacing transferred to 1:96
+  correctly (his first rows ≈ 0.21", second ≈ 3/16" further).
+  Built (L7 run 29): **`do_run` outward fixed + a run dim sits just past its corner when the margin is open** (else
+  `CORNER_IN`); **`stack_from_anchor`'s duplicate check includes where along the grid** (30 ft buckets); **a grid
+  through an opening anchors the free side when the other face is on a wall**; **`do_step` adds `face | grid | face`
+  when a grid runs between the two run faces** (10 on L7); **home-less lanes never slide closer than `MIN_GAP`** (a 1 ft
+  slide is 1/8" at 1:96). Run 29: **168 / 128 placed / 0 review / 0 overlaps, 19 s.** Against his version by segment:
+  103 on his line / 79 off / 7 he doesn't have / 11 of his missing (run 28: 100 / 67 / 2 / 13); 20 of his 67 moves
+  now on his line, 36 still off — the new step strings reshuffled neighbours; a second L7 round will show.
+  - Against L3N decisions (his, not proposed): both-end dims on 35–39 ft edges (`TURN_BOTH` 40); pen#70's cluster
+    dimensioned in full at 1:96; rows split across both sides of 4 openings; `36'-2½"` off 7 (over the tape),
+    `29'-9¾"` off FF and `23'-4"` off EE not off the closest grid; shaft#46's far-edge row deleted.
+  - Open: the join refusals on L7 (11 pairs he joined by hand); the 6 questions in the report.
+- Next: Adolfo's answers; a second L7 round on run 29; L4.5 review items; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
