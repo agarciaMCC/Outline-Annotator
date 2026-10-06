@@ -28,7 +28,9 @@ CFG = {
                             # view's crop (Adolfo 2026-10-06); no halfway dim any more (not seen on any past sheet)
     "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (3/16" tried in runs 85-86, net worse)
     "BEAM_END_GAP_IN": 0.25, # paper inches past a beam end for its width dim (Adolfo pulled them in to ~1/4")
-    "CLUTTER_R": 8.0,       # ft; a small opening/notch with 2+ other small ones this close -> enlarged plan
+    "CLUTTER_R_IN": 0.75,   # paper inches; a small opening/notch with 2+ other small ones this close -> enlarged plan
+                            # (8 ft at 1:128, 6 ft at 1:96 - "hard to tell what dimension goes where", Adolfo L7 round 1)
+    "RUN_BOTH": 6.0,        # ft; a slab edge longer than this is located at both its corners
     "SLOT_MAX": 1.0,        # ft; an opening narrower than this is a slot: clutter with just 1 neighbour, core/shaft or not
     "LANE_STEP_IN": 0.1875, # paper inches between stacked rows (hand sheets: 3/16" at every scale)
     "CONSISTENCY": 1.0,     # switch to the neighbours' grid only if no farther (Adolfo
@@ -115,6 +117,7 @@ class Planner(object):
         # paper inches -> plan feet at this view's scale
         sc = float(getattr(getattr(model, "view", None), "Scale", 96) or 96)
         self.c.setdefault("OPEN_OFFSET", self.c["OPEN_OFFSET_IN"] * sc / 12.0)
+        self.c.setdefault("CLUTTER_R", self.c["CLUTTER_R_IN"] * sc / 12.0)
         self.c.setdefault("BEAM_END_GAP", self.c["BEAM_END_GAP_IN"] * sc / 12.0)
         self.c.setdefault("LANE_STEP", self.c["LANE_STEP_IN"] * sc / 12.0)
         self.notes = {}
@@ -194,13 +197,13 @@ class Planner(object):
                         best = (o, f.ref, "wall face", "wall")
         return best
 
-    def end_parts(self, s_lo, s_hi):
+    def end_parts(self, s_lo, s_hi, both=None):
         """'A dimension at each end for ease of reading' (Adolfo 2026-10-05):
-        longer than TURN_BOTH -> one part per end, each with its own half span
-        (so dedupe doesn't fold the two into one, as it used to for runs).
-        -> [(span, prefer, outward)]; outward points at that end."""
+        longer than TURN_BOTH (or 'both') -> one part per end, each with its
+        own half span (so dedupe doesn't fold the two into one, as it used to
+        for runs). -> [(span, prefer, outward)]; outward points at that end."""
         ci = self.c["CORNER_IN"]
-        if s_hi - s_lo <= self.c["TURN_BOTH"]:
+        if s_hi - s_lo <= (self.c["TURN_BOTH"] if both is None else both):
             return [((s_lo, s_hi), None, None)]
         mid = (s_lo + s_hi) / 2.0
         g = 1.5
@@ -248,15 +251,36 @@ class Planner(object):
         anc = min(cands, key=lambda a: abs(a[0] - off))
         refs = [anc, (off, e.ref, "slab edge", "edge")]
         free = (self.free_end(gi, off, s_lo, -1), self.free_end(gi, off, s_hi, +1))
-        parts = self.end_parts(s_lo, s_hi)
+        # "dimensions where the slab edge turns corners - to the outer corners,
+        # outside the footprint where possible" (Adolfo, L7 round 1): a run is
+        # located at BOTH corners once it is longer than RUN_BOTH (the 20-40 ft
+        # "doubles" he deleted on L3N were the two end dims landing mid-edge -
+        # the reversed-outward bug, fixed above)
+        parts = self.end_parts(s_lo, s_hi, both=self.c["RUN_BOTH"])
+        if len(parts) == 2 and (s_hi - s_lo) <= self.c["TURN_BOTH"]:
+            # "...outside the footprint where possible": below TURN_BOTH the
+            # second corner dim only where the margin past that corner is open
+            # (L3N run 91: both-corner dims inside the slab crowded the
+            # neighbours 1-6" off Adolfo's spots)
+            keep = [k for k in (0, 1) if free[k]]
+            if len(keep) == 1:
+                parts = [parts[keep[0]]]
+                parts_k = keep
+            elif not keep:
+                parts = [((s_lo, s_hi), None, None)]
+                parts_k = [0]
+            else:
+                parts_k = [0, 1]
+        else:
+            parts_k = list(range(len(parts)))
         gap = self.c["BEAM_END_GAP"]
-        for k, (span, _, _) in enumerate(parts):
+        for k, (span, _, _) in zip(parts_k, parts):
             # outward points AT this end (-1 low, +1 high) - it was reversed,
             # so the two end dims of a 175 ft edge met in its middle (L7 round
             # 1, run#17 / #18); and a run dim sits just PAST its corner when the
             # margin there is open (all 9 of Adolfo's run moves on L7), else
             # CORNER_IN inside the edge
-            low = (k == 0) if len(parts) > 1 else True
+            low = (k == 0)
             out = -1 if low else 1
             fr_ = free[0] if low else free[1]
             if fr_:
@@ -1321,7 +1345,10 @@ class Planner(object):
                 near = targets[0]
                 targets = [near]
                 self.note("small opening: near edge only off the grid")
-            elif s.feature.kind == "opening" and getattr(s.feature, "sub", None) == "core" and i in (0, last):
+            elif s.feature.kind == "opening" and i in (0, last) and \
+                    (getattr(s.feature, "sub", None) == "core" or
+                     (getattr(s.feature, "sub", None) == "shaft" and "edge@wall" in s.names)):
+                # (a shaft with a face on the core wall too - L7 shaft#46, Adolfo: "near edge and size only")
                 # inside a core the space is tight: the OUTSIDE anchor's dim to
                 # the near edge plus the opening's size is enough - no far-edge
                 # row (Adolfo round 2: deleted the 14'-4" / 14'-10" rows off CC).

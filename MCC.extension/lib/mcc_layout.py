@@ -69,6 +69,7 @@ CFG = {
     "W_ALT": 1.0,           # base cost of a string's alternative home (the other end of a CJ pair)
     "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
                             # 3 lost to the far side at the L3N elevator shaft (8 1/2" | 13'-7 1/2" vs 14'-4") - analyst B6
+                            # (5 tried after L7 round 1 - "let them breathe" - bisecting an L3N regression, run 91)
     "W_GROUP": -0.5,        # one lane beside a placed dim off the same gridline, same direction (stack them)
     "W_CROSS": 2.5,         # per dim line crossed - two crossings cost more than the other side (W_SIDE)
     "W_CROSS_LEADER": 3.0,  # a dim line or leader crossing another string's leader

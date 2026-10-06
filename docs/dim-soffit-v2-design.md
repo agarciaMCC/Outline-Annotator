@@ -499,7 +499,24 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     dimensioned in full at 1:96; rows split across both sides of 4 openings; `36'-2½"` off 7 (over the tape),
     `29'-9¾"` off FF and `23'-4"` off EE not off the closest grid; shaft#46's far-edge row deleted.
   - Open: the join refusals on L7 (11 pairs he joined by hand); the 6 questions in the report.
-- Next: Adolfo's answers; a second L7 round on run 29; L4.5 review items; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — Adolfo's L7 answers → L7 run 30, L3N run 90.** (1) **"Dimensions where the slab edge turns corners —
+  to the outer corners, outside the footprint where possible":** a run is located at both corners once longer than
+  `RUN_BOTH` 6 ft (`do_run`; the "doubles" he deleted on L3N were the two end dims landing mid-edge — the outward bug);
+  beams keep `BEAM_BOTH` 20, CJs `TURN_BOTH` 40. (2) Clutter = "hard to tell what dimension goes where" — no cleaner
+  rule; `CLUTTER_R` is now on paper (`CLUTTER_R_IN` 0.75": 8 ft at 1:128, 6 ft at 1:96). (3) "If there's open space
+  to let them breathe, I use it": `W_SPLIT` 8 → 5 (one side per direction is a preference, not a wall). (4) The
+  `36'-2½"` off a grid outside the footprint is the contract-document dimension, kept as a visual check — not a rule
+  the tool can know; user extra. (5) A grid blocked by a note: "either is fine" — the tool keeps the closest grid and
+  flags. (6) **A shaft with a face on the core wall: near edge + size only** (`stack_from_anchor`, like core openings).
+  - L7 run 30: **181 / 142 placed / 0 review / 0 overlaps, 22 s**; vs his version 108 / 87 / 7 / 10 (run 29: 103 / 79 /
+    7 / 11; run 28: 100 / 67 / 2 / 13); 23 of his 67 moves now on his line. Still never produced: the 39 ft top edge's
+    `1'-3¼"` (no string for that edge at all — model look), his contract extras (`36'-2½"`, `29'-9¾"`), `5'-1"`, `11"`.
+  - L3N regression check: run 90 scored 101 / 67 against his round 4 (run 89: 110 / 47) — the both-corner run dims
+    inside the slab crowded neighbours 1–6" off his spots; `W_SPLIT` back to 8 changed nothing (run 91). Gated: below
+    `TURN_BOTH` the second corner dim only where the margin past that corner is open (`free_end`) — run 92: 104 / 53 /
+    3 / 2. The rest of the gap is the "just past the corner" placement of single run dims on sliver edges (his L3N
+    spots are inside the edge; his L7 ones past the corner) — left as is.
+- Next: a second L7 round on run 31; the 39 ft edge model look; L4.5 review items; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
