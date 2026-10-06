@@ -11,6 +11,10 @@ EXT = r"C:\Users\agarcia\Desktop\Claude Projects\Outline Annotator\MCC.extension
 VIEW_NAME = globals().get("VIEW_NAME", "ZZ CLAUDE TEST - L3 NORTH (auto-dim)")
 TAG = globals().get("TAG", "L3N")
 tv = next(v for v in DB.FilteredElementCollector(doc).OfClass(DB.ViewPlan) if v.Name == VIEW_NAME)
+# guard (2026-10-06): a stale request re-ran "run 63" while Adolfo was starting an edit round and wiped the
+# view. A run number that already has a report is never re-run - pick a new RUN.
+if os.path.exists(D + r"\dimsoffit_v2_%s_run%d.md" % (TAG, RUN)):
+    raise Exception("run %d of %s already exists - not clearing the view; use a new RUN number" % (RUN, TAG))
 ids = [d.Id for d in DB.FilteredElementCollector(doc).OfClass(DB.Dimension) if d.OwnerViewId == tv.Id]
 ids += [e.Id for e in DB.FilteredElementCollector(doc, tv.Id).OfClass(DB.TextNote) if e.OwnerViewId == tv.Id and e.Text.strip().startswith("DIM?")]
 ids += [e.Id for e in DB.FilteredElementCollector(doc, tv.Id).OfClass(DB.CurveElement) if e.OwnerViewId == tv.Id and isinstance(e, DB.DetailLine)]
