@@ -48,7 +48,8 @@ CFG = {
                             # OFF (0): Adolfo added the 1'-4" jog's 3'-11 1/8" off B three rounds running (2026-10-06)
     "CORE_WALL_NEAR": 1.0,  # ft; a core/shaft opening with a core wall face this close is dimensioned off that wall
     "CJ_MID_TOL": 1.5,      # ft; a CJ whose distances to the two grids differ by less is dimensioned from both
-    "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at opposite ends + a spacing dim
+    "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at one shared end + a spacing dim
+    "FRAMED_CROSS": 6.0,    # ft; a framed beam end's width crosses the other beam only if open slab is this near
     "SHAFT_MAX": 15.0,      # ft; widest such pocket
     "SHAFT_MIN_EDGE": 2.0,  # ft; shorter slab edges are jogs, not shaft sides
     "STACK": True,
@@ -273,10 +274,18 @@ class Planner(object):
                     return False
         return True
 
-    def on_column(self, f):
+    def on_column(self, f, edges=None):
         """Any edge of the feature lying on a column face -> the bump/notch/step
-        is the slab cut around a column, not a soffit shape: skip it."""
-        hit = [e for e in f.edges if self.flush(e, self.m.columns)]
+        is the slab cut around a column, not a soffit shape: skip it. For a
+        STEP only the step face counts (Adolfo 2026-10-06: the 3'-11 3/4" jog
+        west of beam#232 is a non-90 perimeter corner, its face is wanted in
+        the field - the run beside it on the beam/column is not the point)."""
+        hit = [e for e in (edges or f.edges) if self.flush(e, self.m.columns)]
+        # a real cut around a column has two or three faces on the column; one
+        # face touching a column is a perimeter corner that happens to meet it
+        # (the notch at beam#232's end: Adolfo wants its 12'-1 3/8" face)
+        if edges is None and len(hit) < 2:
+            hit = []
         if hit:
             for e in f.edges:
                 self.located_by[id(e)] = "column face"
@@ -319,7 +328,7 @@ class Planner(object):
     do_notch = do_bump
 
     def do_step(self, f):
-        if self.on_column(f):
+        if self.on_column(f, edges=[f.edges[0]]):
             return
         s = f.edges[0]
         a, b = f.meta["run_before"], f.meta["run_after"]
@@ -641,11 +650,26 @@ class Planner(object):
             end_dir = -1
         gap = self.c["BEAM_END_GAP"]
         ext = 8.0                                   # ft of open space past an end the dim may use
+        g_, g0_, u_, n_ = self.m.grids[gi]
+        def beam_past(st, d, k):
+            mo = (on + of) / 2.0
+            x = g0_[0] + u_[0] * (st + d * k) + n_[0] * mo
+            y = g0_[1] + u_[1] * (st + d * k) + n_[1] * mo
+            return self.m.member_at(x, y, cats=("beam",)) is not None
+        self._over_band = {}
         def at_end(d):
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
+            # an end framed into another beam: the width crosses that band to
+            # open slab only when open slab is within FRAMED_CROSS of the end;
+            # otherwise it sits just past the end, OVER the band (Adolfo
+            # 2026-10-06, answer 2b: the grid-7 beam into the angled band)
+            if beam_past(e_st, d, 0.5):
+                opens = [k for k in (1.0, 2.0, 3.0, 4.0, 5.0, 6.0) if k <= self.c["FRAMED_CROSS"] and not beam_past(e_st, d, k)]
+                if not opens:
+                    span = (e_st - 1.0, e_st + gap + 1.5) if d > 0 else (e_st - gap - 1.5, e_st + 1.0)
+                    self._over_band[d] = True
             return (span, e_st + d * gap, d, False)
-        g_, g0_, u_, n_ = self.m.grids[gi]
         def in_view(st):
             mo = (on + of) / 2.0
             return self.fs._inside((g0_[0] + u_[0] * st + n_[0] * mo, g0_[1] + u_[1] * st + n_[1] * mo))
@@ -670,6 +694,7 @@ class Planner(object):
                              f, prefer=pref, outward=out)
                 if s is not None:
                     s.beam_width, s.intermediate = True, inter
+                    s.over_band = self._over_band.get(out, False)
         else:
             # hand sheets: width + ONE face to the nearest anchor (a second
             # anchor on the far side made 15-18 ft strings across the core)
@@ -691,6 +716,7 @@ class Planner(object):
                              f, prefer=pref, outward=out)
                 if s is not None:
                     s.beam_width, s.intermediate = True, inter
+                    s.over_band = self._over_band.get(out, False)
         for end in f.meta["free_ends"]:
             fr = self.frame(end)
             if fr is None:
@@ -795,15 +821,26 @@ class Planner(object):
             if nearer:
                 spacing = (off2, o.ref)
             self.note("parallel CJs: dims at one shared end, spacing joined")
-        for d in ends:
+        def end_of(d):
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
+            return span, e_st + d * gap
+        for d in ends:
+            span, pref = end_of(d)
+            # a pair may go to the OTHER end if that is less cluttered (Adolfo
+            # 2026-10-06: "more open space when moved to the bottom") - the
+            # layout weighs both ends (String.alt)
+            alt = (end_of(-d)[0], end_of(-d)[1], -d) if pair is not None and len(ends) == 1 else None
             for anc in anchors:
-                self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
-                         prefer=e_st + d * gap, outward=d)
+                s = self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
+                             prefer=pref, outward=d)
+                if s is not None and alt:
+                    s.alt = alt
             if spacing is not None:
-                self.add(fi, gi, [(off, cj.ref, "cj", "CJ"), (spacing[0], spacing[1], "cj", "CJ")], span,
-                         "CJ | CJ spacing", f, prefer=e_st + d * gap, outward=d, role="check")
+                s = self.add(fi, gi, [(off, cj.ref, "cj", "CJ"), (spacing[0], spacing[1], "cj", "CJ")], span,
+                             "CJ | CJ spacing", f, prefer=pref, outward=d, role="check")
+                if s is not None and alt:
+                    s.alt = alt
 
     def do_shaft_pockets(self):
         """Shafts the slab outline wraps around (Adolfo 2026-10-05: the shaft at

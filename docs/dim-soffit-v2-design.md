@@ -391,7 +391,24 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     pictures: beam widths `grid | 1'-0" | 13'-5½"` (0.8") and `4'-0" | 1½"` (2.6"), `side | 7 | side` at (232, 78) 2.3".
   - Open questions to Adolfo (pictures sent): CJ pair end; framed-end width across the beam; the `12'-1⅜"` face
     (column cut or not); every angled-shaft edge off B however short.
-- Next: Adolfo's answers → run 77; then L7 check and milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — Adolfo's round-3 answers → runs L3N 78–79.** (1) CJ pair end: "more open space / less cluttered
+  at the bottom" → the pair's strings carry an alternative home at the other end (`String.alt` = span, prefer,
+  outward; `candidates()` offers its lanes at `W_ALT` 1.0 so clutter decides). Run 78: the `7'-5½"` went to the
+  bottom beside the cross CJ (0.2" from his); the `4'-5½" | 3'-0"` chain still took the top — the pair isn't coupled
+  (open). (2) **Framed beam end: the width crosses the other beam only when open slab is within `FRAMED_CROSS` 6 ft;
+  otherwise it sits just past the end OVER the band** (`do_beam.at_end`, `String.over_band` → no `W_BEAM` for that
+  band): the grid-7 beam's `1'-7⅛" | 3'-10⅞"` now sits at the angled band as he drew it. (3) The `12'-1⅜"` face west of
+  beam#232 is not a column cut but "the corner of a non-90° intersection at the perimeter — helps in the field":
+  `on_column` now skips a bump/notch/step only when ≥ 2 of its faces lie on the column (a step: its own face only).
+  Still missing after that: his dim references a horizontal floor edge at y 110.1 (BB + 12'-1⅜"), i.e. the corner
+  where the 6 ft vertical run meets the angled perimeter — the planner has no such edge (folded into the corner?) —
+  open, needs a model look. (4) Every angled-shaft edge off its straight grid "as long as it doesn't clutter":
+  `MINOR_EDGE` off stands; but the `3'-11⅛"` edge he adds is NOT one of shaft#114's edges in grid B's family
+  (offsets 5.27 / −7.15 / −9.56 only) — also needs a model look (which floor edge is ref 25933?).
+  - L3N run 79: **130 / 116 placed / 1 review (beam#231 width over the core wall at grid 5) / 0 overlaps, 21 s.**
+    Against his round-3 version: 118 / 39 / 0 / 4.
+- Next: a fourth edit round on run 79 (expect mostly beam-width nudges and the pocket), the two model looks above,
+  then L7 and milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 

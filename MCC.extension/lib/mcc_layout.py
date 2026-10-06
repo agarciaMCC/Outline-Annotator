@@ -65,6 +65,7 @@ CFG = {
     "W_LANE": 2.0, "W_SIDE": 4.0, "W_SLIDE": 0.5, "W_BEAM": 4.0, "W_CJ": 1.0,   # W_BEAM 1 -> 4: stay off beams (Adolfo)
     "W_OWN_BEAM": 4.0,      # a beam width dim across its own beam (only the intermediate ones belong there)
     "W_BEAM_ROW": 3.0,      # extra per lane / per ft of slide for a beam's end width dim: it is the first row past the end
+    "W_ALT": 1.0,           # base cost of a string's alternative home (the other end of a CJ pair)
     "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
                             # 3 lost to the far side at the L3N elevator shaft (8 1/2" | 13'-7 1/2" vs 14'-4") - analyst B6
     "W_GROUP": -0.5,        # one lane beside a placed dim off the same gridline, same direction (stack them)
@@ -544,6 +545,8 @@ class Layout(object):
                     # off the beam, round 2). Width dims keep the soft cost.
                     if "end" in getattr(s, "names", ()):
                         return None, "over a beam"
+                    if getattr(s, "over_band", False) and not getattr(s, "intermediate", False):
+                        continue                 # a framed end's width sits over the band it frames into
                     pen += c["W_BEAM"]
                 else:
                     return None, "over a %s" % o.kind
@@ -691,6 +694,21 @@ class Layout(object):
                         # 1/4") - lanes and slides cost extra for it
                         base += lane * c["W_BEAM_ROW"] + abs(k) * c["W_BEAM_ROW"]
                     out.append((base, st, (side, lane, k)))
+        # an alternative home (the OTHER end of a CJ pair: Adolfo puts the pair
+        # where there is more open space - 2026-10-06): the same lanes around
+        # the alternative station, W_ALT dearer, so clutter decides
+        alt = getattr(s, "alt", None)
+        if alt and home:
+            a_span, a_pref, a_home = alt
+            a_lo, a_hi = min(a_span), max(a_span)
+            for side in (a_home, -a_home):
+                for lane in range(max_lane + 1):
+                    for k in range(-n_slide, n_slide + 1):
+                        st = a_pref + side * lane * c["LANE_STEP"] + k * c["SLIDE_STEP"]
+                        outside = max(0.0, a_lo - st, st - a_hi)
+                        base = c["W_ALT"] + lane * c["W_LANE"] + (c["W_SIDE"] if side != a_home else 0) \
+                            + abs(k) * c["W_SLIDE"] + outside * c["W_OUTSIDE"]
+                        out.append((base, st, (side, lane, k)))
         # a run whose edge ends at open margin: lanes in that margin, past the
         # end, with no "outside the span" cost - and lined up with any string
         # of the same family already standing in that margin
