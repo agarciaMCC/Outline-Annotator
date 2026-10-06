@@ -516,7 +516,23 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     `TURN_BOTH` the second corner dim only where the margin past that corner is open (`free_end`) — run 92: 104 / 53 /
     3 / 2. The rest of the gap is the "just past the corner" placement of single run dims on sliver edges (his L3N
     spots are inside the edge; his L7 ones past the corner) — left as is.
-- Next: a second L7 round on run 31; the 39 ft edge model look; L4.5 review items; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — fifth L3N edit round (on run 92; `analyst_L3N_round5.md`): 86 unchanged (74%) / 30 edited / 1
+  deleted / 0 added — the best round.** The analyst: round 5 repeats round 4 — in 24 of the 30 edits he put the dim
+  back within 1 ft of his round-4 spot, and for 14 the tool had never moved; **another L3N round would add little.**
+  Today's L7-derived changes all held on L3N (corner dims, both-corner dims, step `face | grid | face`). Groups:
+  G1 (11) dims of one opening meeting end to end not on one line (4th round for shaft#118); G2 (5) the pocket:
+  `12'-1"` inside it (5th round), beam#242's width 22.7 ft past its wall end; G3 beam widths at core-wall ends moved
+  onto the beam again (contradicts his round-4 "disregard"). Built (run 93): **`Layout._align_end_to_end()`** — two
+  placed dims of one element sharing a witness line on different lines: the later one moves onto the other's line
+  when legal, then `_join_collinear` merges (joins 7 → 14); **a beam end AT A WALL gets its width across the beam
+  just inside the end** (`at_end`, `String.inside_end`; nothing past the end is legal there). Run 93: 138 / 118 placed /
+  4 review / 0 overlaps; vs his round 5: 123 / 38 / 1 / 0 (run 92: 127 / 32 / 1 / 0) — the beam#231 / #242 widths now
+  inside their wall ends sit 2.7–5" from his spots and the angled shaft reshuffled; placement taste from here.
+  - Questions: beam ends at a core wall (past the end vs across the beam inside the end — his round-5 hand says
+    inside); the pocket's `12'-1"` inside the pocket (5 rounds); the pilaster hole's `3'-8"` overall (kept in round 4,
+    deleted in 5); the 5 review items (incl. the `7'-11"` CJ) left out on purpose?
+- Next: Adolfo's answers; a second L7 round on run 31; the 39 ft edge model look; L4.5 review items; milestone 3
+  (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 

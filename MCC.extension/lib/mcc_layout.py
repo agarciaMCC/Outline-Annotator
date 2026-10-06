@@ -504,6 +504,7 @@ class Layout(object):
                 # a beam's END width dim belongs past the end, off the grey area;
                 # only the intermediate ones cross their own beam (Adolfo)
                 if o.kind == "beam" and getattr(s, "beam_width", False) and not getattr(s, "intermediate", False) \
+                        and not getattr(s, "inside_end", False) \
                         and pi is not None and not _rects_apart(myrect, o.rect, 0.0) and P.seg_hits_poly(pi, qi, o.poly):
                     pen += c["W_OWN_BEAM"]
                 # a beam-end dim (anchor | end) along its OWN beam, inside its
@@ -829,7 +830,7 @@ class Layout(object):
         # rows was tried in runs 85-88 - the big opening's rows sit INSIDE its
         # 17 ft extent in Adolfo's version, so the clamp pushed them 2" off)
         if home and s.feature is not None and s.feature.kind in ("cj", "beam", "opening") \
-                and not getattr(s, "intermediate", False):
+                and not getattr(s, "intermediate", False) and not getattr(s, "inside_end", False):
             # (runs / steps / bumps are dimensioned ACROSS their edge, inside its
             # length by design - not clamped)
             ext = self._extent(s.feature, s.gi)
@@ -933,6 +934,7 @@ class Layout(object):
             left = self._unblock([(pl.s, "poor")], max_total=pl.cost - 1.0)
             if left:
                 self.placed.append(pl)
+        self._align_end_to_end()
         self._join_collinear()
         self._dedupe_after_join()
         self._order_stacks()
@@ -944,6 +946,55 @@ class Layout(object):
         for s, why in still:
             self.blocked[why] = self.blocked.get(why, 0) + 1
         return self.placed, self.review
+
+    def _align_end_to_end(self):
+        """Two placed dims of ONE element that meet end to end (a shared witness
+        line) but sit on different lines: move the later one onto the other's
+        line when that spot is legal, so _join_collinear can make them one
+        string (Adolfo's rounds 2-5 on L3N and round 1 on L7: 11 such pairs
+        each time - a shaft's size onto its locating row)."""
+        tol = 1.0 / 96
+        self.notes_aligned = 0
+        changed = True
+        guard = 0
+        while changed and guard < 20:
+            changed = False
+            guard += 1
+            for p in list(self.placed):
+                for q in list(self.placed):
+                    if q is p or q.fi != p.fi or p.s.feature is None or q.s.feature is not p.s.feature:
+                        continue
+                    if abs(q.st_f - p.st_f) < 0.05:
+                        continue                    # already on one line
+                    if not (abs(p.hi_f - q.lo_f) < tol or abs(q.hi_f - p.lo_f) < tol):
+                        continue                    # no shared witness line
+                    # try q on p's line, then p on q's
+                    moved = False
+                    for a, b in ((q, p), (p, q)):
+                        self.placed.remove(a)
+                        st = b.cand[0]
+                        # station in a's own grid frame: same family line as b
+                        st_a = self.m.station(self.world(b.s.gi, st, 0.0), a.s.gi)
+                        pen, boxes = self.evaluate(a.s, st_a)
+                        if pen is not None:
+                            offs = [r[0] for r in a.s.refs]
+                            lo, hi = min(offs), max(offs)
+                            sf, aa = self.to_fam(a.s.gi, st_a, lo)
+                            _, bb = self.to_fam(a.s.gi, st_a, hi)
+                            na = Placed(a.s, a.s.fi, sf, min(aa, bb), max(aa, bb),
+                                        (self.world(a.s.gi, st_a, lo), self.world(a.s.gi, st_a, hi)), boxes,
+                                        a.cost, (st_a, (0, "aligned", 0)), self.text_plan(a.s, st_a))
+                            na.side = self.elem_side(a.s, sf)
+                            self.placed.append(na)
+                            self.notes_aligned += 1
+                            moved = True
+                            break
+                        self.placed.append(a)
+                    if moved:
+                        changed = True
+                        break
+                if changed:
+                    break
 
     def _dedupe_after_join(self):
         """A single dim whose two witness lines appear consecutively in a

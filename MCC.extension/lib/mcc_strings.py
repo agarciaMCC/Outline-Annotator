@@ -709,6 +709,7 @@ class Planner(object):
             y = g0_[1] + u_[1] * (st + d * k) + n_[1] * mo
             return self.m.member_at(x, y, cats=("beam",)) is not None
         self._over_band = {}
+        self._inside_end = {}
         def at_end(d):
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
@@ -721,6 +722,14 @@ class Planner(object):
                 if not opens:
                     span = (e_st - 1.0, e_st + gap + 1.5) if d > 0 else (e_st - gap - 1.5, e_st + 1.0)
                     self._over_band[d] = True
+            elif self.m.member_at(g0_[0] + u_[0] * (e_st + d * 0.5) + n_[0] * (on + of) / 2.0,
+                                  g0_[1] + u_[1] * (e_st + d * 0.5) + n_[1] * (on + of) / 2.0, cats=("wall",)) is not None:
+                # an end AT A WALL: nothing past the end is legal ("over a wall"
+                # is hard), so the width is read across the beam just inside
+                # the end (beam#242 at the core wall went 22 ft away, L3N round 5)
+                span = (e_st - 4.0, e_st - 0.5) if d > 0 else (e_st + 0.5, e_st + 4.0)
+                self._inside_end[-d] = True
+                return (span, e_st - d * 2.0, -d, False)
             return (span, e_st + d * gap, d, False)
         def in_view(st):
             mo = (on + of) / 2.0
@@ -747,6 +756,7 @@ class Planner(object):
                 if s is not None:
                     s.beam_width, s.intermediate = True, inter
                     s.over_band = self._over_band.get(out, False)
+                    s.inside_end = self._inside_end.get(out, False)
         else:
             # hand sheets: width + ONE face to the nearest anchor (a second
             # anchor on the far side made 15-18 ft strings across the core)
@@ -769,6 +779,7 @@ class Planner(object):
                 if s is not None:
                     s.beam_width, s.intermediate = True, inter
                     s.over_band = self._over_band.get(out, False)
+                    s.inside_end = self._inside_end.get(out, False)
         for end in f.meta["free_ends"]:
             fr = self.frame(end)
             if fr is None:
