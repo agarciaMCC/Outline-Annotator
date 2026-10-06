@@ -257,6 +257,20 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   Image mapping for crops of the FitToPage export: 20.16 px/ft, image centre = model-crop centre (6000 × 5599 px).
   - Open: his `18'-2" | 8'-1"` chain off the core wall at (223, 29) vs the stacks he kept at the other core openings —
     ask what makes that one a chain.
+- **2026-10-06 — core openings: grids before walls (runs L3N 58–59).** Adolfo, on the tool's `7'-0⅞"` / `24'-8⅞"`
+  off the core wall at the L3N elevator shaft: "there's grids nearby, no need to dimension off the walls; the stacking
+  convention isn't followed either (the 24'-8⅞" sat nearer the shaft than the 17'-8"); avoid crossing dim lines of the
+  same orientation so dims don't get mistaken". `do_opening` no longer forces wall anchors for core/shaft openings
+  (card 14 of 2026-10-05 withdrawn) — `anchor()`'s own rule applies: a wall face only when no grid of the family is
+  within `LOC_MAX`. Now `edge | 9'-3⅞" | BB | 8'-4⅛" | edge` + 17'-8" outside, exactly his. Run 58 overshot: the
+  1'-5" × 3'-3" hole in the top core wall went 15'-0" off CC / 3'-4" off 6 (he dims it 7" / 5" / 3'-3" off the walls)
+  → `CORE_WALL_NEAR` 1 ft: a core/shaft opening with a core wall face that close is dimensioned off that wall.
+  L3N run 59: **142 (121 / 21) / 135 placed / 2 review (outside crop) / 0 overlaps, 18 s.** Score: within 3/16" 65,
+  further off 48, dims he doesn't have 18, his dims missing 28 — best so far. Crops `core_shaft_v2_run57.png` (before)
+  / `_run59.png` (after).
+  - Open: his `8½" | 13'-7½"` chain at the elevator shaft (223, 62) comes out as two dims (13'-7½" placed on the
+    far side of the core); "either is fine, chained looks cleaner". The same-orientation crossing rule needs a
+    definition (witness line of one dim crossing another dim's line of the same direction?) — ask with an example.
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

@@ -44,6 +44,7 @@ CFG = {
     # edge facing a wall face across open space gets an overall-size dim
     "SMALL_OPEN": 4.0,      # ft; a smaller opening gets only its near edge off the grid, plus its size
     "MINOR_EDGE": 3.0,      # ft; an opening edge shorter than this, off the opening's own grid set, is a chamfer/jog
+    "CORE_WALL_NEAR": 1.0,  # ft; a core/shaft opening with a core wall face this close is dimensioned off that wall
     "BEAM_MID_OVER": 40.0,  # ft; longer beams also get ONE width dim halfway between the end dims (Adolfo 2026-10-05)
     "SHAFT_MAX": 15.0,      # ft; widest such pocket
     "SHAFT_MIN_EDGE": 2.0,  # ft; shorter slab edges are jogs, not shaft sides
@@ -456,9 +457,21 @@ class Planner(object):
             # (elevator openings come off the wall face)
             lo_wall = self.flush(faces[0][1], self.m.walls) is not None
             hi_wall = self.flush(faces[-1][1], self.m.walls) is not None
-            # a shaft / core opening inside a core reads best off the core
-            # wall's face (Adolfo 2026-10-05), grid near or not
-            fw = kind in ("core", "shaft")
+            # grids first, even inside a core: "there's grids nearby, no need
+            # to dimension off the walls" (Adolfo 2026-10-06, the L3N shaft he
+            # drew edge | 8'-4 1/8" | BB | 9'-3 7/8" | edge where the tool had
+            # 7'-0 7/8" / 24'-8 7/8" off the core wall). A wall face only when
+            # no grid of the family is within LOC_MAX (anchor's own rule); the
+            # earlier "core/shaft off the core wall even with a grid near"
+            # (card 14, 2026-10-05) now only holds for an opening hugging a
+            # core wall (a face within CORE_WALL_NEAR): the 1'-5" x 3'-3" hole
+            # in the L3N core he dims 7" / 5" off the walls, not 15'-0" off CC
+            fw = False
+            if kind in ("core", "shaft"):
+                for off_, sd in ((lo, -1), (hi, +1)):
+                    a_ = self.anchor(fi, gi, off_, sd, s_lo, s_hi, cap=self.c["CORE_WALL_NEAR"], force_walls=True)
+                    if a_ and a_[2] == "wall face":
+                        fw = True
             al = None if lo_wall else self.anchor(fi, gi, lo, -1, s_lo, s_hi, force_walls=fw)
             ah = None if hi_wall else self.anchor(fi, gi, hi, +1, s_lo, s_hi, force_walls=fw)
             if lo_wall:
