@@ -431,7 +431,15 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   hand sheet's 226 matched, 182 missing, 49 extra.** His dims there reference beams far more (148 beam refs: 57
   beam↔grid, 24 widths, 14 column↔beam) and **columns 36 times** (vs the L3N "never to columns" rule). Study:
   `analyst_L45N_study.md`.
-- Next: L4.5 study → rule questions for Adolfo; a fourth edit round on L3N run 84; L7 re-run; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — Adolfo on the L4.5 study's questions (the L3N rules stand).** (1) The 32 "REV Missing Dimensions"
+  dims are normal dims in a style that tracks unconfirmed ones. (2) **Columns: don't dimension them — the 36 column
+  refs were a one-off.** (3) Beam sides each to their own grid with no width: "the tool is better" (`CC | 15'-11½" |
+  4'-0"`). (4) Repeated width/side dims along a band: left to the user as extras. (5) The 12" PT SLAB floors were a
+  special case; the 30 ft rule stands. (6) The core-wall-face → grid and "TO L5 EOS" dims located skewed beams off
+  the wall so the field can check the skew — a possible later rule: *a beam meeting a wall at a non-90° angle gets a
+  check dim from the wall face*. So L4.5 changes no rule; the comparer must stop counting reference differences
+  (beam centreline halves, 12" vs 10" slab, re-created CJ ids) as misses.
+- Next: comparer by value + position; a fourth edit round on L3N run 84; L7 re-run; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 

@@ -6,7 +6,7 @@ elements it runs between + its value. Classifies each tool segment as
 left (his line within TOL of ours) / moved (offset, direction) / deleted, and
 each of his segments the tool lacks as added. Writes a JSON for the analyst.
 usage: python compare_segments.py <tool.json> <hand.json> <out.json>"""
-import sys, json, io
+import sys, json, io, math
 
 TOL_IN = 0.1875
 tool, hand, outp = sys.argv[1], sys.argv[2], sys.argv[3]
@@ -35,9 +35,28 @@ def offset_in(a, b):
 
 
 hand_by = {}
+hand_all = []
 for d in H["dims"]:
     for key, dd, s in segs(d):
         hand_by.setdefault(key, []).append((dd, s))
+        hand_all.append((key, dd, s))
+
+
+def same_dim_elsewhere(d, s, key):
+    """The same dimension drawn to a different reference (beam centreline
+    halves, the 12" slab instead of the 10", a CJ whose id changed when the
+    test view was duplicated): equal value, parallel, segment midpoints within
+    8 ft. -> [(hand dim, hand seg, hand key)] or []."""
+    out = []
+    for hkey, hd, hs in hand_all:
+        if hkey[1] != key[1] or abs(hd["dir"][0] * d["dir"][0] + hd["dir"][1] * d["dir"][1]) < 0.98:
+            continue
+        if math.hypot(hs["origin"][0] - s["origin"][0], hs["origin"][1] - s["origin"][1]) > 8.0:
+            continue
+        out.append((hd, hs, hkey))
+    return out
+
+
 rows = []
 used = set()
 for d in T["dims"]:
@@ -47,6 +66,13 @@ for d in T["dims"]:
         base = {"tool_dim": d["id"], "label": (d.get("tool") or {}).get("label"), "elements": list(key[0]),
                 "value_ft": key[1] / 96.0, "chain": chain, "at": [round(x, 1) for x in s["origin"]],
                 "dir": d["dir"]}
+        if not cands:
+            alt = same_dim_elsewhere(d, s, key)
+            if alt:
+                cands = [(hd, hs) for hd, hs, hk in alt]
+                for hd, hs, hk in alt:
+                    used.add(hk)
+                base["other_reference"] = True
         if not cands:
             base["change"] = "deleted"
             rows.append(base); continue
