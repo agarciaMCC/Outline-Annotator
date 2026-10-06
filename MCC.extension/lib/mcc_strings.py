@@ -362,8 +362,11 @@ class Planner(object):
                 dot = abs(du[0] * v[0] + du[1] * v[1])
                 if dot > 0.995 or dot < 0.1:
                     own.add(fj)
-        dom_near = dom is not None and any(
-            self.m.nearest_grid((cx, cy), fj, self.c["LOC_MAX"]) is not None for fj in own)
+        # ... but only while the DOMINANT family itself has a grid in the
+        # vicinity: the angled shaft by the L3N core (shaft#114) follows a
+        # direction with no gridline within 60 ft, and Adolfo located its
+        # straight jog off grids 7 and B (2026-10-06)
+        dom_near = dom is not None and self.m.nearest_grid((cx, cy), dom, self.c["LOC_MAX"]) is not None
         for fi in range(len(self.m.families)):
             par = [e for e in f.edges if self.m.family_parallel(e.d) == fi]
             if fi not in own and dom_near:
@@ -376,6 +379,15 @@ class Planner(object):
             if not par:
                 continue
             ng = self.m.nearest_grid((cx, cy), fi, self.c["MAX_DIST"])
+            if ng is None:
+                # no grid of this direction within the tape: an edge lying on
+                # a wall makes the wall the anchor (Adolfo 2026-10-06, the
+                # angled shaft by the L3N core: edge | 3'-9 3/4" | edge |
+                # 4'-10 1/4" | core wall) - a far grid of the family only
+                # lends its frame; anchor() still caps grids at LOC_MAX
+                if any(self.flush(e, self.m.walls) for e in par):
+                    ng = self.m.nearest_grid((cx, cy), fi)
+                    self.note("opening: no grid near, located off the wall it touches")
             if ng is None:
                 self.note("opening: too far from any grid")
                 continue

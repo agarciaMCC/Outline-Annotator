@@ -33,7 +33,8 @@ CFG = {
     # Layout converts these to plan feet with the view scale
     "LANE_STEP_IN": 0.1875,  # paper inches between stacked dim lines
     "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row (3/8" moved dims Adolfo had left alone)
-    "MIN_GAP_IN": 0.125,     # paper inches; an opening's dim line never closer to the opening than this (hard)
+    "MIN_GAP_IN": 0.0625,    # paper inches; an opening's dim line never closer to the opening than this (hard) -
+                             # "as close as the text allows, not touching when it's really tight" (Adolfo 2026-10-06)
     "W_GAP": 2.0,            # cost at MIN_GAP, tapering to 0 at FIRST_GAP: closer than 1/4" only when it buys something
                              # (Adolfo's own placements sit 0.10-0.20" off some openings, run 50 edits)
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap

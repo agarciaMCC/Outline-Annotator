@@ -228,6 +228,25 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     have rejected his own spots. First row still aims at 1/4".
   - L3N run 54: **142 (120 / 22) / 135 placed / 2 review (outside crop) / 0 overlaps, 19 s.** Against his version:
     run 52 → 54: same-dim-within-3/16" 64 → 65, further off 50 → 48, dims he doesn't have 23 → 18, his dims missing 27 → 28.
+- **2026-10-06 — Adolfo's answers to the analyst's questions 1–3 → run L3N 55.**
+  - **Gap to an opening: "as close as the text allows, not touching when it's really tight; a slight touch in very
+    rare cases."** `MIN_GAP_IN` 1/8" → 1/16" hard (same as `EDGE_CLEAR`, a line ON the edge is still rejected); the
+    `W_GAP` taper to 1/4" stays, so the first row still aims at 1/4" and comes in only when that buys something.
+  - **Angled core (shaft#114 by the L3N core): no gridline parallel to its long sides within 60 ft, and one long side
+    lies on the core wall → dimension off that wall; its straight jog off grids 7 / B.** Two changes in `do_opening`:
+    (a) a family with no grid within `MAX_DIST` is no longer skipped ("too far from any grid") when an edge of that
+    family lies on a wall — the nearest grid of the family, however far, lends its frame and the wall face is the
+    anchor (`edge@wall | 4'-10¼" | edge` + the 3'-9¾" check, as Adolfo drew `edge | 3'-9¾" | edge | 4'-10¼" | wall`);
+    (b) the "minor edge of an angled opening" skip (run 44) now needs the opening's *dominant* family to have a grid
+    within `LOC_MAX`, not just the family square to it — the 1'-6" jog now gets `… | edge | 10'-2½" | 7`.
+  - **No "width dim every N ft" on long bands** — "every job is unique". The ONE halfway dim over `BEAM_MID_OVER` stays;
+    the analyst's B5 (every ~50 ft) is dropped.
+  - L3N run 55: **145 (122 / 23) / 139 placed / 2 review (outside crop) / 0 overlaps, 25 s.** Against his version
+    (`agree_with_edits.py`): within 3/16" 65 → 62, further off 48 → 51, dims he doesn't have 18 → 22, his dims missing
+    28 → 29 — the angled-shaft dims are now the ones he drew but grouped differently (his one 3-ref chain to the wall
+    vs our stack + check; his separate 10'-2½" vs our `grid | 9'-11" | edge | 10'-2½" | 7`), and the key-based score
+    counts those as misses. One real loss: the 2'-5½" first row off grid 6 moved 0.28" from his spot (gap relaxation).
+    One real gain: the 14'-4" stack row by the core now sits on his line (was 1.74" off).
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
