@@ -26,7 +26,7 @@ CFG = {
                             # at 20 ft the two end dims sat 8-18 ft apart and read as doubles; was 20)
     "BEAM_BOTH": 20.0,      # ft; beams longer than this get a width dim at each end - when both ends are in the
                             # view's crop (Adolfo 2026-10-06); no halfway dim any more (not seen on any past sheet)
-    "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (3/8" moved dims Adolfo had left alone)
+    "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (3/16" tried in runs 85-86, net worse)
     "BEAM_END_GAP_IN": 0.25, # paper inches past a beam end for its width dim (Adolfo pulled them in to ~1/4")
     "CLUTTER_R": 8.0,       # ft; a small opening/notch with 2+ other small ones this close -> enlarged plan
     "SLOT_MAX": 1.0,        # ft; an opening narrower than this is a slot: clutter with just 1 neighbour, core/shaft or not
@@ -760,7 +760,11 @@ class Planner(object):
         # element's dims (Adolfo: CJ 3'-8 15/16" off B sat on the beam side
         # 1/16" away - a third "3'-9"" nobody needs)
         slab_faces = [type("_E", (), {"sides": sl.edges, "faces": sl.edges})() for sl in self.m.slabs]
-        if self.flush(cj, self.m.beams) or self.flush(cj, slab_faces):
+        on_face = self.flush(cj, slab_faces)
+        # (a "CJ on a floor-to-floor seam is a real CJ" exception was tried in
+        # run 85: it produced 4 CJ dims Adolfo doesn't draw and still not his
+        # 3 | 7'-11" | CJ for CJ 20572305 - reverted; that CJ needs a model look)
+        if self.flush(cj, self.m.beams) or on_face:
             self.located_by[id(cj)] = "on a beam side / slab edge"
             self.note("CJ on a beam side or slab edge (skipped)")
             return
@@ -784,7 +788,25 @@ class Planner(object):
             x = g0_[0] + u_[0] * (st + d * 2.0) + n_[0] * o
             y = g0_[1] + u_[1] * (st + d * 2.0) + n_[1] * o
             return self.m.member_at(x, y, cats=("wall", "beam", "column")) is None
+        def meets_cj(st, o):
+            # does another CJ line touch this end? (the dims of the CJ pair off
+            # grid 5 go where the CJs meet the cross CJ - Adolfo, rounds 2-4)
+            x = g0_[0] + u_[0] * st + n_[0] * o
+            y = g0_[1] + u_[1] * st + n_[1] * o
+            for other in self.m.cjs:
+                if other is cj:
+                    continue
+                ax, ay, bx, by = other.p0[0], other.p0[1], other.p1[0], other.p1[1]
+                L2 = (bx - ax) ** 2 + (by - ay) ** 2
+                if L2 < 1e-6:
+                    continue
+                t = max(0.0, min(1.0, ((x - ax) * (bx - ax) + (y - ay) * (by - ay)) / L2))
+                if math.hypot(x - (ax + t * (bx - ax)), y - (ay + t * (by - ay))) < 0.5:
+                    return True
+            return False
         def natural_end(a0, a1, o):
+            # (preferring the end at a CJ junction was tried in runs 85-88: it
+            # flipped CJ -> 9 off Adolfo's spot and didn't move the pair - off)
             return 1 if (open_past(a1, 1, o) and not open_past(a0, -1, o)) else -1
         if s1 - s0 > self.c["TURN_BOTH"]:
             ends = [-1, 1]
@@ -831,7 +853,7 @@ class Planner(object):
             # a pair may go to the OTHER end if that is less cluttered (Adolfo
             # 2026-10-06: "more open space when moved to the bottom") - the
             # layout weighs both ends (String.alt)
-            alt = (end_of(-d)[0], end_of(-d)[1], -d) if pair is not None and len(ends) == 1 else None
+            alt = None      # (an alternative end split the pair in round 4 - the junction rule decides instead)
             for anc in anchors:
                 s = self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
                              prefer=pref, outward=d)
@@ -864,6 +886,8 @@ class Planner(object):
             for e in sl.edges:
                 if e.length < c["SHAFT_MIN_EDGE"] or id(e) not in run_of or not run_of[id(e)].in_crop:
                     continue
+                if run_of[id(e)].label() in (getattr(self, "enlarged", None) or []):
+                    continue                    # left for an enlarged plan (the 8" pocket size of notch#0, round 4)
                 if self.flush(e, m.walls) or self.flush(e, m.columns) or self.flush(e, m.beams):
                     continue
                 fr = self.frame(e)

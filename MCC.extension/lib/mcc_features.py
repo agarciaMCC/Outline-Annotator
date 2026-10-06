@@ -124,6 +124,11 @@ class FeatureSet(object):
         if xs:
             f.extent = (min(xs), min(ys), max(xs), max(ys))
         f.in_crop = self._inside(f.mid())
+        if not f.in_crop and f.kind == "cj":
+            # a CJ running out of the crop still gets its dim at the end that
+            # is inside (CJ 20572305: 8 ft inside, 21 ft below the L3N crop -
+            # Adolfo added 3 | 7'-11" | CJ four rounds running)
+            f.in_crop = any(self._inside(p) for e in f.edges for p in (e.p0, e.p1))
         self.features.append(f)
         return f
 

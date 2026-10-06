@@ -439,7 +439,30 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   the wall so the field can check the skew — a possible later rule: *a beam meeting a wall at a non-90° angle gets a
   check dim from the wall face*. So L4.5 changes no rule; the comparer must stop counting reference differences
   (beam centreline halves, 12" vs 10" slab, re-created CJ ids) as misses.
-- Next: comparer by value + position; a fourth edit round on L3N run 84; L7 re-run; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — fourth edit round (snapshots `_before_edits4` = run 84 / `_after_edits4`; `analyst_L3N_round4.md`).**
+  **70 unchanged / 47 edited / 2 deleted / 1 added** (round 3: 78 / 39 / 2 / 4) — the corner rule's knock-on at the
+  angled shaft (9 moves) and the beam widths (8 again). Held: beam-end-along-own-beam, `W_BEAM_ROW` for free ends,
+  dedupe after join, column-framed end, corner refs (he kept both "extra" corner dims), `W_GROUP` same element.
+  Regressed: framed-end beam widths (he reads them ACROSS the beam 2–6 ft inside the end — contradicts answer 2b,
+  question 1), stack rows of home-less openings sliding inside (3), the CJ pair split by `alt`, the 13'-7½" R.O. lost
+  in a join. Runs 85–89, what was tried and what stayed:
+  - **Kept:** R.O. carried through `_join_collinear` (both strings' suffixes as segment pairs); pocket sizes of
+    enlarged-plan features skipped (the 8" of notch#0); a CJ running out of the crop counts as in crop if an end is
+    inside (`mcc_features._add`) — the `3 | 7'-11" | CJ` he added four rounds running is now planned (it reaches
+    review: "line through another text"); `String.alt` for CJ pairs off (it split the pair).
+  - **Tried and reverted (each scored worse than run 84 against his round-4 version):** first row 3/16"
+    (`FIRST_GAP_IN` / `OPEN_OFFSET_IN` 0.19: 10 rows came in, 15 others left his spots); the inside-element clamp on
+    home-less opening rows (the big opening's rows sit INSIDE its 17 ft extent in his version; void edges pushed 12");
+    "CJ on a floor-to-floor seam is dimensioned" (4 CJ dims he doesn't draw, and not the one he wanted); preferring
+    the end at a CJ junction (flipped `CJ -> 9` off his spot, didn't move the pair).
+  - L3N run 89: **136 / 118 placed / 5 review / 0 overlaps, 21 s.** Against his round-4 version by segment:
+    **110 on his line / 47 off / 2 he doesn't have / 2 of his missing** (run 84, the view he edited: 110 / 48 / 3 / 1);
+    all 12 R.O. back. Review: beam#231's width at the core wall, the 7'-11" CJ (text in the way), the CJ pair's
+    7'-5½" (text), two CJs off A7 over a column.
+  - Open questions (pictures sent): framed-end beam widths across the beam just inside the end (contradicts 2b); the
+    18'-2" opening's top edge on a wall (the `14'-10" | CC` leg he deletes every round); `C | 8'-6⅜" | end` at
+    beam#238 (repeat of beam#249's, or too far?); which side of the step the `8"` jog check goes.
+- Next: Adolfo's round-4 answers; L7 re-run; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 

@@ -32,7 +32,8 @@ CFG = {
     # rows 3/16" apart at every scale, first row ~1/4" off the object);
     # Layout converts these to plan feet with the view scale
     "LANE_STEP_IN": 0.1875,  # paper inches between stacked dim lines
-    "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row (3/8" moved dims Adolfo had left alone)
+    "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row (3/8" moved dims Adolfo had left alone;
+                             # 3/16" tried in run 85-86: 10 rows came in to his spots, 15 others moved off them - kept 1/4")
     "MIN_GAP_IN": 0.15,      # paper inches; an opening's dim line never closer to the opening than this (hard) -
                              # "as close as the text allows, not touching when it's really tight" (Adolfo 2026-10-06);
                              # 1/16" tried: he moved 5 rows hugging at 1/16" out to 3/16-1/4" (round 3)
@@ -819,6 +820,11 @@ class Layout(object):
         # stack rows inside the opening, beam-end dims on the beam - 9 of
         # Adolfo's round-3 moves. Clamp, don't price (intermediate beam widths
         # cross their beam by design)
+        # (also the home-less locate rows of an opening - core/shaft stack rows
+        # have no home side and slid 1.3 ft inside the opening, round 4)
+        # (home-side strings only: extending it to an opening's home-less stack
+        # rows was tried in runs 85-88 - the big opening's rows sit INSIDE its
+        # 17 ft extent in Adolfo's version, so the clamp pushed them 2" off)
         if home and s.feature is not None and s.feature.kind in ("cj", "beam", "opening") \
                 and not getattr(s, "intermediate", False):
             # (runs / steps / bumps are dimensioned ACROSS their edge, inside its
@@ -992,6 +998,22 @@ class Layout(object):
                     ns.label = s1.label + " + " + s2.label
                     ns.owners = set(s1.owners) | set(s2.owners)
                     ns.stack = None
+                    # R.O. survives the join: carry both strings' suffixes as
+                    # segment pairs in s1's frame (13'-7 1/2" lost its R.O. in
+                    # round 4 because only s1 was copied)
+                    pairs = list(getattr(s1, "suffix_pairs", None) or [])
+                    if getattr(s1, "suffix", None) and len(s1.refs) == 2:
+                        o1 = sorted(r[0] for r in s1.refs)
+                        pairs.append((o1[0], o1[1], s1.suffix))
+                    conv = lambda x: self.m.offset(self.world(s2.gi, 0.0, x), s1.gi)
+                    if getattr(s2, "suffix", None) and len(s2.refs) == 2:
+                        o2 = sorted(conv(r[0]) for r in s2.refs)
+                        pairs.append((o2[0], o2[1], s2.suffix))
+                    for a_, b_, suf_ in (getattr(s2, "suffix_pairs", None) or []):
+                        ca, cb = sorted((conv(a_), conv(b_)))
+                        pairs.append((ca, cb, suf_))
+                    ns.suffix_pairs = pairs
+                    ns.suffix = None
                     st = p.cand[0]
                     self.placed.remove(p)
                     self.placed.remove(q)
