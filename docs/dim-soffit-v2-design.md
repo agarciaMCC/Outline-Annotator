@@ -281,8 +281,11 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     line it used to cross (Adolfo had it at the old spot; his new rule wins).
   - **"Stop dimensioning the openings off of beam faces"** (his crossed-out `1'-9⅜"` / `6⅛"` at the core's bottom
     beam): `do_step` skips a jog check when either face lies on a beam side (4 on L3N). Two of the four he had kept
-    (`3'-11¾"` at the angled NW edge, `8"` at the CJ corner, `jog1_v2_run59.png` / `jog2_v2_run59.png`) — asked.
-  - L3N run 61: **138 (121 / 17) / 131 placed / 2 review / 0 overlaps, 18 s.** Score 63 / 48 / 16 / 30.
+    (`3'-11¾"` at the angled NW edge, `8"` at the CJ corner, `jog1_v2_run59.png` / `jog2_v2_run59.png`): "keep them,
+    those are real steps in the slab". What tells them apart: at the two he crossed out the *step edge itself lies on
+    a core wall face* — the check measured the gap beside the beam in the wall line. Rule (run 62): skip the jog check
+    only when a face is on a beam side AND the step edge is on a wall face (2 on L3N); the other two are back.
+  - L3N run 62: **140 (121 / 19) / 133 placed / 2 review / 0 overlaps, 17 s.**
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

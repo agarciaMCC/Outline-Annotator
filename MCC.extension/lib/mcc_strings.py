@@ -330,16 +330,18 @@ class Planner(object):
                     self.note("step: no anchor")
             else:
                 self.located_by[id(s)] = "on grid"
-        # jog check: run a face | run b face - not when a face lies on a beam
-        # side: "stop dimensioning the openings off of beam faces" (Adolfo
-        # 2026-10-06: the 1'-9 3/8" / 6 1/8" checks at the L3N core's bottom
-        # beam). Faces on a wall keep their check (he kept those two)
+        # jog check: run a face | run b face - not for the gap beside a beam
+        # in a wall line (a face on the beam side AND the step edge on a wall
+        # face): "stop dimensioning the openings off of beam faces" (Adolfo
+        # 2026-10-06, the 1'-9 3/8" / 6 1/8" at the L3N core's bottom beam).
+        # A real step in the slab that happens to end at a beam keeps its
+        # check (he kept the 3'-11 3/4" NW and the 8" at the CJ corner)
         fr = self.frame(a)
         if fr is not None:
             fi, gi, oa, _, _ = fr
             ob = self.m.offset(b.mid(), gi)
-            if any(self.flush(e, self.m.beams) for e in (a, b)):
-                self.note("jog check on a beam side (skipped)")
+            if any(self.flush(e, self.m.beams) for e in (a, b)) and self.flush(s, self.m.walls):
+                self.note("jog check: gap beside a beam in a wall line (skipped)")
             elif abs(oa - ob) > self.c["SAME_OFF_TOL"]:
                 sj = self.m.station(s.mid(), gi)
                 self.add(fi, gi, [(oa, a.ref, "slab edge", "edge"), (ob, b.ref, "slab edge", "edge")],
