@@ -45,6 +45,7 @@ CFG = {
     "SMALL_OPEN": 4.0,      # ft; a smaller opening gets only its near edge off the grid, plus its size
     "MINOR_EDGE": 3.0,      # ft; an opening edge shorter than this, off the opening's own grid set, is a chamfer/jog
     "CORE_WALL_NEAR": 1.0,  # ft; a core/shaft opening with a core wall face this close is dimensioned off that wall
+    "CJ_MID_TOL": 1.5,      # ft; a CJ whose distances to the two grids differ by less is dimensioned from both
     "BEAM_MID_OVER": 40.0,  # ft; longer beams also get ONE width dim halfway between the end dims (Adolfo 2026-10-05)
     "SHAFT_MAX": 15.0,      # ft; widest such pocket
     "SHAFT_MIN_EDGE": 2.0,  # ft; shorter slab edges are jogs, not shaft sides
@@ -726,6 +727,13 @@ class Planner(object):
         cands = [x for x in (self.anchor(fi, gi, off, -1, s0, s1, walls=False),
                              self.anchor(fi, gi, off, +1, s0, s1, walls=False)) if x]
         anc = min(cands, key=lambda x: abs(x[0] - off)) if cands else self.gref(gi) + (self.gname[gi],)
+        # a CJ about halfway between two grids is dimensioned from BOTH, so the
+        # field can use either (Adolfo 2026-10-06: 18'-0 3/8" to FF and
+        # 18'-1 5/8" to EE; 6'-6 1/4" to 5 and 7'-6 3/4" to 4)
+        anchors = [anc]
+        if len(cands) == 2 and abs(abs(cands[0][0] - off) - abs(cands[1][0] - off)) <= self.c["CJ_MID_TOL"]:
+            anchors.append(cands[1] if cands[0] is anc else cands[0])
+            self.note("CJ halfway between two grids: dimensioned from both")
         # CJ dims stand just PAST an end of the CJ line, not across its middle
         # (Adolfo's edits: 21 of them moved ~1/4" past the end); long CJs at
         # both ends, otherwise the end with open slab past it
@@ -742,8 +750,9 @@ class Planner(object):
         for d in ends:
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
-            self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
-                     prefer=e_st + d * gap, outward=d)
+            for anc in anchors:
+                self.add(fi, gi, [anc, (off, cj.ref, "cj", "CJ")], span, "CJ -> " + anc[3], f,
+                         prefer=e_st + d * gap, outward=d)
 
     def do_shaft_pockets(self):
         """Shafts the slab outline wraps around (Adolfo 2026-10-05: the shaft at

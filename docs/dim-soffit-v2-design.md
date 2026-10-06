@@ -314,6 +314,22 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - Open (B2): needs a per-feature "element extent" for step strings (their span is a 4 ft window) before tight rows
     can be offered safely, and the 12'-1"'s left-side spot is exactly `STATION_GAP` (0.16") from the chain — the
     gap test (`<`) rejects an exact fit. Low priority: 4 dims, all on one pocket.
+- **2026-10-06 — Adolfo's answers to the six remaining questions → run L3N 68.**
+  1. **CJ about halfway between two grids → dimensioned from BOTH** ("I gave the option to use either grid in the
+     field"): `do_cj`, `CJ_MID_TOL` 1.5 ft — when the distances to the two grids differ by less, both anchors (3 on L3N:
+     `18'-1⅝"` to EE + `18'-0⅜"` to FF at both ends, `6'-6¼"` to 5 + `7'-6¾"` to 4). 2. Two parallel CJs at opposite
+     ends: no rule (one-off). 3. CJ-to-CJ spacing chain: no rule. 4. Beam end at grid 5: no rule; the CJ there was
+     drawn wrong in the model (overran instead of meeting at a point) — not a tool issue.
+  5. **Curbs are hidden in the view now; "disregard curbs if they're in the soffit view by accident."** The slab edge
+     along the former curb is now located off angled grid A (`A | 1⅜" | edge`, `A | 6⅜" | edge` — the same call-outs
+     he had added by hand). Curb/CMU walls stay ignored by every wall rule (`model.soft_walls`, 8 left in the view).
+  6. **Dims may stand up to `CROP_OUT` 4 ft past the annotation crop**, measured from the *model* crop so repeated runs
+     can't creep outward (`Layout.in_crop`); the button then widens the view's annotation crop offsets by the overshoot
+     (`Layout.crop_overshoot()`, `script.py`, plan views with right = +X / up = +Y only) and reports it. Run 68: beam#232's
+     `2'-5¾" | 2 | 1'-6"` placed 11 ft below the slab; bottom widened 1.4 ft, right 6.4 ft (an intermediate beam dim at
+     x 399.5). beam#233 still outside (its spot is further out).
+  - L3N run 68: **145 (123 / 22) / 132 placed / 2 review / 0 overlaps, 20 s**; by segment 85 / 85 / 13 / 17 (his
+    missing 19 → 17).
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

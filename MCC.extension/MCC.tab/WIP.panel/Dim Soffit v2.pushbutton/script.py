@@ -52,6 +52,24 @@ try:
             pass
     made, failed = lay.create(doc, dim_type, Z)
     made_ids = [d.Id for d in made]
+    # dims allowed up to CROP_OUT past the annotation crop (Adolfo 2026-10-06:
+    # the beams running off the bottom of L3N): widen the annotation crop so
+    # Revit shows them. Plan views only, un-rotated (right = +X, up = +Y)
+    over = lay.crop_overshoot()
+    widened = dict((k, v) for k, v in over.items() if v > 0)
+    if widened:
+        try:
+            sm = view.GetCropRegionShapeManager()
+            rd, ud = view.RightDirection, view.UpDirection
+            if abs(rd.X - 1) < 1e-6 and abs(ud.Y - 1) < 1e-6:
+                if over["left"]: sm.LeftAnnotationCropOffset = sm.LeftAnnotationCropOffset + over["left"]
+                if over["right"]: sm.RightAnnotationCropOffset = sm.RightAnnotationCropOffset + over["right"]
+                if over["bottom"]: sm.BottomAnnotationCropOffset = sm.BottomAnnotationCropOffset + over["bottom"]
+                if over["top"]: sm.TopAnnotationCropOffset = sm.TopAnnotationCropOffset + over["top"]
+            else:
+                widened = {}
+        except Exception:
+            widened = {}
     t.Commit()
 except Exception:
     if t.HasStarted() and not t.HasEnded():
@@ -72,6 +90,8 @@ n_over, n_text = LY.actual_overlaps(doc, view, kept, lay.tsize)
 out.print_md("Text boxes overlapping after creation: **{}** of {}".format(n_over, n_text))
 out.print_md("Stacks reordered shortest-nearest: {} | dims joined end to end: {} | intermediate beam dims with no room (left out): {} | placed on a wider search: {}".format(
     getattr(lay, "notes_order", 0), getattr(lay, "notes_join", 0), getattr(lay, "notes_optional", 0), getattr(lay, "notes_harder", 0)))
+if widened:
+    out.print_md("Annotation crop widened to show dims past it: " + ", ".join("{} {:.1f} ft".format(k, v) for k, v in sorted(widened.items())))
 out.print_md("Model: {} lines from the view's cut plane skipped, {} holes filled by other floors ignored, {} curb/CMU walls ignored".format(
     getattr(model, "cut_edges", 0), getattr(model, "filled_holes", 0), len(getattr(model, "soft_walls", []))))
 if getattr(plan, "enlarged", None):

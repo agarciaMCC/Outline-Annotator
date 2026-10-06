@@ -57,6 +57,7 @@ CFG = {
     "SLIDE_MAX": 4.0,       # ft either way along the object
     "GRID_CLEAR": 1.5,      # ft; no dim line this close to a parallel grid
     "CROP_MARGIN": 1.0,
+    "CROP_OUT": 4.0,        # ft a dim may stand past the annotation crop; the button widens the crop to show it
     "TEXT_PAD": 0.25,
     "TEXT_LIFT": 0.2,       # x text size: gap between dim line and the text (Revit default, measured)
     "TEXT_FIT_MARGIN": 0.5, # x text size: a segment narrower than text + this gets its text pulled out       # ft around text boxes
@@ -318,12 +319,25 @@ class Layout(object):
 
     # ---------------- constraints ----------------
     def in_crop(self, pts):
+        """Inside the annotation crop, with CROP_MARGIN to spare - or up to
+        CROP_OUT past it (Adolfo 2026-10-06: the beams running off the bottom
+        of L3N get their width dims just outside; the button then widens the
+        annotation crop so Revit shows them - see Layout.crop_overshoot)."""
         if not self.crop:
             return True
         m = self.c["CROP_MARGIN"]
+        if not hasattr(self, "_crop_out"):
+            # the allowance is measured from the MODEL crop, so repeated runs
+            # (each widening the annotation crop) can't creep outward: a dim
+            # may stand within the annotation crop, or within CROP_OUT of the
+            # model crop, whichever is larger
+            import mcc_coverage as CV
+            mc = CV.crop_poly(self.view)
+            self._crop_out = P.inflate(mc, self.c["CROP_OUT"] + m) if mc else None
         for x, y in pts:
             for dx, dy in ((0, 0), (m, 0), (-m, 0), (0, m), (0, -m)):
-                if not P.point_in_poly(x + dx, y + dy, self.crop):
+                if not P.point_in_poly(x + dx, y + dy, self.crop) and \
+                        not (self._crop_out and P.point_in_poly(x + dx, y + dy, self._crop_out)):
                     return False
         return True
 
@@ -545,6 +559,23 @@ class Layout(object):
             b = self.to_fam(s.gi, s.span[1], 0.0)[0]
             self._ext_cache[key] = (min(a, b), max(a, b))
         return self._ext_cache[key]
+
+    def crop_overshoot(self, pad=0.5):
+        """How far (ft) the placed dims stand past the annotation crop's
+        bounding box on each side: {'left', 'right', 'bottom', 'top'} in world
+        X/Y - the button widens the annotation crop by these amounts."""
+        out = {"left": 0.0, "right": 0.0, "bottom": 0.0, "top": 0.0}
+        if not self.crop or not self.placed:
+            return out
+        cx0 = min(p[0] for p in self.crop); cx1 = max(p[0] for p in self.crop)
+        cy0 = min(p[1] for p in self.crop); cy1 = max(p[1] for p in self.crop)
+        for pl in self.placed:
+            x0, y0, x1, y1 = pl.rect
+            out["left"] = max(out["left"], cx0 - x0)
+            out["right"] = max(out["right"], x1 - cx1)
+            out["bottom"] = max(out["bottom"], cy0 - y0)
+            out["top"] = max(out["top"], y1 - cy1)
+        return dict((k, (v + pad if v > 0 else 0.0)) for k, v in out.items())
 
     def _witness_offs(self, pl):
         """Family-frame offsets of a placed string's non-grid witness lines (cached)."""
