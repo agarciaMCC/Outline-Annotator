@@ -33,7 +33,9 @@ CFG = {
     # Layout converts these to plan feet with the view scale
     "LANE_STEP_IN": 0.1875,  # paper inches between stacked dim lines
     "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row (3/8" moved dims Adolfo had left alone)
-    "MIN_GAP_IN": 0.25,      # paper inches; an opening's dim line never closer to the opening than this
+    "MIN_GAP_IN": 0.125,     # paper inches; an opening's dim line never closer to the opening than this (hard)
+    "W_GAP": 2.0,            # cost at MIN_GAP, tapering to 0 at FIRST_GAP: closer than 1/4" only when it buys something
+                             # (Adolfo's own placements sit 0.10-0.20" off some openings, run 50 edits)
     "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
     "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
     "W_ORDER": 3.0,          # a row nearer the element than a shorter neighbour (or further than a longer one)
@@ -488,12 +490,15 @@ class Layout(object):
             ext = self._extent(f, s.gi)
             if ext and ext[0] + 0.1 < st < ext[1] - 0.1:
                 pen += c["W_OWN_SPAN"]
-            # never hugging the opening: at least MIN_GAP off it (the tool had
-            # some 1/16" away; Adolfo moved them out to ~3/8")
+            # never hugging the opening: at least MIN_GAP off it (hard; the tool
+            # had some 1/16" away), and closer than FIRST_GAP costs W_GAP tapering
+            # to 0 at FIRST_GAP (Adolfo's own placements sit 0.10-0.20" off)
             if ext:
                 out_by = max(ext[0] - st, st - ext[1])
                 if 0.0 < out_by < c["MIN_GAP"]:
                     return None, "too close to its opening"
+                if c["MIN_GAP"] <= out_by < c["FIRST_GAP"]:
+                    pen += c["W_GAP"] * (c["FIRST_GAP"] - out_by) / (c["FIRST_GAP"] - c["MIN_GAP"])
         return pen, boxes
 
     def _extent(self, f, gi):

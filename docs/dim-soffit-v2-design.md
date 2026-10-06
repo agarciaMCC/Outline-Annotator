@@ -213,7 +213,24 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   never closer to it (hard). Tried first row 3/8" (run 51): moved 21 dims he had left alone — back to 1/4".
   Agreement with his version (within 3/16" of his spot): left-as-is 55 → 43 of 55, moved 16 → 20 of 60, added 1 → 3
   of 30. L3N run 52: 148 / 141 placed / 2 review / 0 overlaps; L7 run 27: 160 / 138 / 2 / 0.
-- Next: a second edit round to see what still differs, the open items above, then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
+- **2026-10-06 — agents join the loop; runs L3N 53–54.** Two read-only agents in `.claude/agents/`: `edit-diff-analyst`
+  (groups Adolfo's hand edits by the rule they point at; first report `Claude outputs/audit_R26/analyst_L3N_round1.md`:
+  of his 122 changes 47 were covered by the 2026-10-05 rules, 34 by proposed ones, 17 unexplained — 8 open questions
+  for Adolfo at its end) and `revit-compat-reviewer` (IronPython 2.7 / Revit 2023+2026 check of a diff before a run).
+  `agree_with_edits.py` (CPython) scores a run snapshot against `snapshot_L3N_after_edits.json`: same dim within 3/16"
+  / same dim further off / dims he doesn't have / his dims the tool lacks. First two changes from the analyst:
+  - **Slots → enlarged plan** (`cluttered_small`, `SLOT_MAX` 1 ft): an opening narrower than 1 ft one way is clutter with
+    just ONE other small one near it, core/shaft-labelled or not (the pair of 2'-0" × 6" holes in the L3N core wall he
+    deleted, core#125/#126, 22 ft from the other clutter). Tried "size alone, ignore the core/shaft label" first (run 53):
+    it also sent the 3' × 3'-8" pilaster hole (shaft#119) to the enlarged plan, which he had kept — reverted.
+  - **Opening gap 1/8" hard, 1/4" preferred** (`MIN_GAP_IN` 0.125, `W_GAP` 2.0 tapering to 0 at `FIRST_GAP`): three
+    opening dims he placed himself sit 0.10–0.20" off the edge and he pulled 13'-2¾" in to 0.14" — the hard 1/4" would
+    have rejected his own spots. First row still aims at 1/4".
+  - L3N run 54: **142 (120 / 22) / 135 placed / 2 review (outside crop) / 0 overlaps, 19 s.** Against his version:
+    run 52 → 54: same-dim-within-3/16" 64 → 65, further off 50 → 48, dims he doesn't have 23 → 18, his dims missing 27 → 28.
+- Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+  rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
+  questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
 ## Decisions from Adolfo (2026-10-02)
 - **Cleanup target:** ≤ 10 dims moved/deleted per sheet is the goal (depends on project size).

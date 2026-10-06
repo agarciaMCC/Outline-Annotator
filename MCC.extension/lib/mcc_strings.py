@@ -28,6 +28,7 @@ CFG = {
     "OPEN_OFFSET_IN": 0.25, # paper inches; opening strings sit this far outside (3/8" moved dims Adolfo had left alone)
     "BEAM_END_GAP_IN": 0.25, # paper inches past a beam end for its width dim (Adolfo pulled them in to ~1/4")
     "CLUTTER_R": 8.0,       # ft; a small opening/notch with 2+ other small ones this close -> enlarged plan
+    "SLOT_MAX": 1.0,        # ft; an opening narrower than this is a slot: clutter with just 1 neighbour, core/shaft or not
     "LANE_STEP_IN": 0.1875, # paper inches between stacked rows (hand sheets: 3/16" at every scale)
     "CONSISTENCY": 1.0,     # switch to the neighbours' grid only if no farther (Adolfo
                             # 2026-10-05: always dimension from the closest gridline; was 1.25)
@@ -854,23 +855,27 @@ class Planner(object):
         """Small openings and notches (< SMALL_OPEN both ways) with two or more
         other small ones within CLUTTER_R: too crowded for this scale - they
         belong in an enlarged plan (Adolfo 2026-10-05: the small openings and
-        notch around the L3N core)."""
+        notch around the L3N core). Core / shaft openings stay (the 3' x 3'-8"
+        pilaster hole he kept) unless they are mere SLOTS - narrower than
+        SLOT_MAX one way (the pair of 2'-0" x 6" holes in the L3N core wall he
+        deleted, run 50 edits); a slot needs only ONE other small one near it."""
         small = []
         for f in self.fs.features:
             if not f.in_crop or f.kind not in ("opening", "notch"):
-                continue
-            if f.kind == "opening" and getattr(f, "sub", None) in ("core", "shaft"):
                 continue
             xs = [p for e in f.edges for p in (e.p0[0], e.p1[0])]
             ys = [p for e in f.edges for p in (e.p0[1], e.p1[1])]
             if not xs or max(xs) - min(xs) >= self.c["SMALL_OPEN"] or max(ys) - min(ys) >= self.c["SMALL_OPEN"]:
                 continue
-            small.append((f, (sum(xs) / len(xs), sum(ys) / len(ys))))
+            slot = min(max(xs) - min(xs), max(ys) - min(ys)) < self.c["SLOT_MAX"]
+            if f.kind == "opening" and getattr(f, "sub", None) in ("core", "shaft") and not slot:
+                continue
+            small.append((f, (sum(xs) / len(xs), sum(ys) / len(ys)), slot))
         r2 = self.c["CLUTTER_R"] ** 2
         out = set()
-        for f, (x, y) in small:
-            near = sum(1 for g, (x2, y2) in small if g is not f and (x - x2) ** 2 + (y - y2) ** 2 <= r2)
-            if near >= 2:
+        for f, (x, y), slot in small:
+            near = sum(1 for g, (x2, y2), _ in small if g is not f and (x - x2) ** 2 + (y - y2) ** 2 <= r2)
+            if near >= (1 if slot else 2):
                 out.add(f)
         return out
 
