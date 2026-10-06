@@ -434,10 +434,19 @@ class Planner(object):
                 span = (s_lo, s_hi)
             alt_pref = (s_lo - self.c["OPEN_OFFSET"]) if away > 0 else (s_hi + self.c["OPEN_OFFSET"])
             alt = ((alt_pref - 1.0, alt_pref) if away > 0 else (alt_pref, alt_pref + 1.0), alt_pref, -away)
+            in_wall = any(P.point_in_poly(cx, cy, P.inflate(w.poly, 1.0)) for w in self.m.walls if w.poly)
+            if in_wall and kind != "void" and (faces[-1][0] - faces[0][0]) < self.c["SMALL_OPEN"]:
+                # a small hole sitting in a wall line (the 9" x 5" "shaft" in
+                # the L3N core wall, 2026-10-06) is a hole in the wall, not the
+                # slab - the core wall plans cover it, like a void in a wall
+                for off, e in faces:
+                    self.located_by[id(e)] = "opening in a wall"
+                self.note("small opening in a wall line (skipped)")
+                continue
             if kind == "void":
                 # a void in a wall line is covered by the core wall / vertical
                 # plans (Adolfo 2026-10-05) - skip it here
-                if any(P.point_in_poly(cx, cy, P.inflate(w.poly, 1.0)) for w in self.m.walls if w.poly):
+                if in_wall:
                     for off, e in faces:
                         self.located_by[id(e)] = "void in a wall"
                     self.note("void in a wall line (skipped)")
@@ -529,6 +538,15 @@ class Planner(object):
             if s is not None:
                 s.alt = alt
                 s.keep_chain = keep_chain
+            # a stepped opening also gets its overall size - "an overall goes
+            # outside its chain" (Adolfo added 3'-0" outside 1'-2" | 8" | 1'-2"
+            # at the L3N pilaster hole; analyst B6)
+            if f.meta.get("stepped") and len(faces) > 2:
+                self.add(fi, gi, [(lo, faces[0][1].ref, "opening edge", "edge"),
+                                  (hi, faces[-1][1].ref, "opening edge", "edge")],
+                         span, "stepped opening overall", f, prefer=pref, outward=(away or None),
+                         reach=12.0, role="check")
+                self.note("stepped opening: overall size added")
             # one-sided and large: the far edge gets its own anchor dim
             # (not needed when openings are stacked - the stack has it)
             one_sided = (al is None) != (ah is None)

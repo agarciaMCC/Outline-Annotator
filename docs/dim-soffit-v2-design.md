@@ -286,6 +286,23 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     a core wall face* — the check measured the gap beside the beam in the wall line. Rule (run 62): skip the jog check
     only when a face is on a beam side AND the step edge is on a wall face (2 on L3N); the other two are back.
   - L3N run 62: **140 (121 / 19) / 133 placed / 2 review / 0 overlaps, 17 s.**
+- **2026-10-06 — analyst group B6: one side, joins, overalls (runs L3N 63–64).**
+  - `W_SPLIT` 3 → 8: an element's dims of one direction stay on one side (the `8½" | 13'-7½"` chain had gone to the
+    far side of the elevator shaft from the 14'-4"); now beside it, one lane in, as Adolfo had it.
+  - **Join spots were being refused** ("line through another text"): the partner dim's pulled-out text sat exactly where
+    the joined line goes. `evaluate()` now ignores a *join partner's* text (same element, same line, shared witness
+    line) — `_join_collinear()` merges the two, re-plans the text and re-checks the whole. When the merge is refused the
+    later dim is re-placed with joins off (`_no_join`, once per string), so two dims never sit end to end with their
+    texts on top of each other (run 63 had 2⅜" over 5" that way). Joins on L3N 4 → 7: `5" | 1'-5"`, `8½" | 13'-7½"`,
+    `13'-2¾" | 1'-2" | 8" | 1'-2"` at the pilaster hole — all as he drew them.
+  - **Stepped openings get their overall size** as a check (`do_opening`, "stepped opening overall"): `3'-0"` outside
+    `1'-2" | 8" | 1'-2"`, 4 on L3N (two are the angled shaft's 14'-10" / 8'-8", which he did not draw — watch).
+  - **A small hole sitting in a wall line is skipped** (`small opening in a wall line`, < `SMALL_OPEN`): the 9" × 5"
+    "shaft" in the L3N core wall — a hole in the wall, not the slab.
+  - `agree_with_edits.py` now scores **by segment** (two elements + value): a chain he drew as two dims on one line and
+    the tool's joined string count as the same. L3N run 64: **142 (120 / 22) / 132 placed / 2 review / 0 overlaps,
+    18 s**; by segment 87 on his line / 79 further off / 12 he doesn't have / 19 of his missing (run 62: 92 / 73 / 11 / 19
+    — the joined chains sit a little off his lines; the dim-level score would have hidden that).
 - Next: the analyst's remaining groups in its proposed order (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

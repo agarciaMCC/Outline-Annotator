@@ -62,7 +62,8 @@ CFG = {
     "TEXT_FIT_MARGIN": 0.5, # x text size: a segment narrower than text + this gets its text pulled out       # ft around text boxes
     "W_LANE": 2.0, "W_SIDE": 4.0, "W_SLIDE": 0.5, "W_BEAM": 4.0, "W_CJ": 1.0,   # W_BEAM 1 -> 4: stay off beams (Adolfo)
     "W_OWN_BEAM": 4.0,      # a beam width dim across its own beam (only the intermediate ones belong there)
-    "W_SPLIT": 3.0,         # an element's dims of one direction on both sides of it (keep them on one side)
+    "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
+                            # 3 lost to the far side at the L3N elevator shaft (8 1/2" | 13'-7 1/2" vs 14'-4") - analyst B6
     "W_GROUP": -0.5,        # one lane beside a placed dim off the same gridline, same direction (stack them)
     "W_CROSS": 2.5,         # per dim line crossed - two crossings cost more than the other side (W_SIDE)
     "W_CROSS_LEADER": 3.0,  # a dim line or leader crossing another string's leader
@@ -406,12 +407,25 @@ class Layout(object):
                 if pe and self._witness_passes(pe, pl.st_f, sf) and \
                         any(a + 0.1 < o < b - 0.1 for o in self._witness_offs(pl)):
                     pen += c["W_WITNESS_CROSS"]
+        # a join partner: a placed dim of the same element on this very line,
+        # end to end on a shared witness line. The two become one string in
+        # _join_collinear(), which re-plans the text and re-checks the whole;
+        # its pulled-out text (sitting exactly where the join goes) must not
+        # reject the join here (the 1'-5" never reached its wall | 5" line)
+        partners = []
+        if s.feature is not None and not getattr(self, "_no_join", False):
+            for pl in self.placed:
+                if pl.fi == s.fi and pl.s.feature is s.feature and abs(pl.st_f - sf) < 0.05 \
+                        and (abs(a - pl.hi_f) < 1.0 / 96 or abs(b - pl.lo_f) < 1.0 / 96):
+                    partners.append(pl)
         for pl in self.placed:
             if _rects_apart(myrect, pl.rect, c["STATION_GAP"]):
                 continue
             if pl.fi == s.fi:
                 if abs(pl.st_f - sf) < c["STATION_GAP"] and not (b <= pl.lo_f + 0.1 or a >= pl.hi_f - 0.1):
                     return None, "too close to a parallel string"
+                if pl in partners:
+                    continue
             else:
                 if P.seg_intersect(p, q, pl.seg[0], pl.seg[1]):
                     pen += c["W_CROSS"]
@@ -647,6 +661,8 @@ class Layout(object):
             if joins:
                 # one element's dims meeting end to end: join them whichever
                 # side that is (the opening's size onto its locating dim)
+                if getattr(self, "_no_join", False):
+                    continue                    # re-placing after a refused join
                 if key not in seen_st:
                     seen_st.add(key)
                     out.append((c["W_JOIN_SAME"], st, (0, "join", 0)))
@@ -855,7 +871,23 @@ class Layout(object):
                     self.placed.remove(q)
                     pen, boxes = self.evaluate(ns, st)
                     if pen is None:
-                        self.placed.extend([p, q])
+                        # the join is refused: the two were placed end to end
+                        # with each other's text ignored (evaluate's partner
+                        # rule), so the later one looks for another spot with
+                        # joins off; it keeps the line only if nothing else fits
+                        self.placed.append(p)
+                        if getattr(q.s, "_unjoined", False):
+                            self.placed.append(q)
+                            continue                # already re-placed once: leave it
+                        q.s._unjoined = True
+                        self._no_join = True
+                        q2, _ = self.place_one(q.s, allow_last_resort=True)
+                        self._no_join = False
+                        self.placed.append(q2 if q2 is not None else q)
+                        if q2 is not None:
+                            self.notes_unjoined = getattr(self, "notes_unjoined", 0) + 1
+                            changed = True
+                            break
                         continue
                     offs = [r[0] for r in ns.refs]
                     lo_o, hi_o = min(offs), max(offs)
