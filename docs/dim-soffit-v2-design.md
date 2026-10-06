@@ -335,9 +335,11 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   the view). His review: "I deleted some and added some … stair and elevator openings get a rough-opening dimension.
   Pretty much any opening that is *large* will carry R.O." — and: unless the user defines the openings a certain way,
   no clean rule. So: **R.O. on the overall size of large openings (stair / elevator shafts); never on small holes,
-  pockets or dims off a grid.** "Large" needs a threshold — propose ≥ `SMALL_OPEN` (4 ft) both ways, confirm with him
-  on the next round. The snapshots don't record suffix text, so which 17 he kept isn't measurable; next time export
-  `ValueString`/`Suffix` in `snapshot_dims.py`.
+  pockets or dims off a grid.** Confirmed: **"at least 4 ft both ways"** (= `SMALL_OPEN`); the `3'-4"` / `8"` ones he
+  had marked were an oversight, removed. After his edits 12 dims carry R.O. (elevator shafts' `8'-3"` chains, `17'-8"`,
+  `13'-7½"`, `18'-2"`, the `15'-7"` / `17'-9"` opening, the pocket's `7'-9½"` / `12'-1"`, the angled shaft's `14'-10"` /
+  `8'-8"`). `snapshot_dims.py` now records each segment's string and suffix. The R.O. code itself belongs to the
+  parallel session's change — apply the 4 ft threshold there.
 - **2026-10-06 — second edit round (snapshots `_before_edits2` / `_after_edits2`, `compare_L3N_edits2_segments.json`).**
   The pre-edit snapshot was taken at 09:35; the parallel session re-placed the view twice after it, so element ids
   can't be matched — the baseline was rebuilt by running the current code read-only (`snapshot_L3N_synthetic_current.json`,
