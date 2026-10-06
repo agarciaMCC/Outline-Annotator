@@ -422,7 +422,16 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
     `A14 | 1½" | corner` at the NE sliver and `B | 3'-4¾" | corner` by the core wall — ask (clutter?). Visible side
     effect: the angled shaft's `14'-10" R.O.` now sits inside the shaft (`W_IN_SHAFT`), it was outside in run 79.
     Still never produced: the `3'-9"` void edge off B (NE) and `3 | 7'-11" | CJ` (CJ 20572305).
-- Next: a fourth edit round on run 84, then L7 and milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
+- **2026-10-06 — L4.5 North: test view + first run.** `ZZ CLAUDE TEST - L4.5 NORTH (auto-dim)` = duplicate-with-detailing
+  of `LEVEL 4.5 - NORTH AREA (SOFFIT PLAN)` (a dependent view, so its 194 dims belong to the parent `LEVEL 4.5 - SOFFIT
+  PLAN`: hand baseline = the parent's dims inside the north crop, `snapshot_L45N_hand.json`, 207 dims). **Adolfo:
+  the centre of the footprint is open at 4.5 (no shafts — the slab wraps around a void open up to L5); the level was
+  dimensioned by him but modelled by someone else** (beams modelled as floors "18" / 21¼" PT BM", a "FILL 24"").
+  Run 1 (same code as L3N run 84): **87 planned / 71 placed / 15 review / 0 overlaps, 45 s; by segment 18 of the
+  hand sheet's 226 matched, 182 missing, 49 extra.** His dims there reference beams far more (148 beam refs: 57
+  beam↔grid, 24 widths, 14 column↔beam) and **columns 36 times** (vs the L3N "never to columns" rule). Study:
+  `analyst_L45N_study.md`.
+- Next: L4.5 study → rule questions for Adolfo; a fourth edit round on L3N run 84; L7 re-run; milestone 3 (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).
 
