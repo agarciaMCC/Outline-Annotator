@@ -72,6 +72,10 @@ CFG = {
     "W_SIDES": 0.0,         # per dim more on this side of the element than on its other side (0 = off):
     "SIDES_R_IN": 1.0,      # paper inches - depth of the strip beside the element that is counted
     "SIDES_KINDS": ("opening",),   # elements whose dims compare their two sides
+    "ORDER_GAP_LANES": 1.5,        # _order_stacks: rows up to this many lanes apart form one stack
+    "ORDER_GAP_OPEN_LANES": 2.0,   # ... between two openings' rows (2 and 2.5 both: L7 140 -> 145, L3N same; 2026-10-07)
+    "ORDER_SHORT_FIRST": False,    # place shorter strings first within each priority group, so a short row
+                                   # takes the lane beside its element before a longer one passing by
     "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
                             # 3 lost to the far side at the L3N elevator shaft (8 1/2" | 13'-7 1/2" vs 14'-4") - analyst B6
                             # (5 tried after L7 round 1 - "let them breathe" - bisecting an L3N regression, run 91)
@@ -1002,7 +1006,12 @@ class Layout(object):
             return (-1 if getattr(s, "early", False) else (0 if s.role == "locate" else 1),
                     1 if getattr(s, "late", False) else 0,          # corner call-outs after the element's rows
                     PRIORITY.get(s.feature.kind, 9) if s.feature else 9, void,
+                    _len(s) if self.c["ORDER_SHORT_FIRST"] else 0,
                     stk[0] if stk else 0, stk[1] if stk else 0)
+
+        def _len(s):
+            offs = [r[0] for r in s.refs]
+            return round(max(offs) - min(offs), 2)
         order = sorted(self.strings, key=_key)
         pending = []
         for s in order:
@@ -1240,14 +1249,26 @@ class Layout(object):
         info = []
         for pl in self.placed:
             s = pl.s
-            a, b = self.to_fam(s.gi, s.span[0], 0.0)[0], self.to_fam(s.gi, s.span[1], 0.0)[0]
+            # the ELEMENT's extent, not the span: a home-side string's span is
+            # its 1 ft search window beside the element, so a row standing at
+            # the window's start read as "inside" and was never reordered (L7:
+            # the 11'-4 5/8" chain kept the lane beside the 3'-10 5/8" one's
+            # opening; Adolfo 2026-10-07)
+            ext = self._extent(s.feature, s.gi) if s.feature is not None else None
+            lo_s, hi_s = ext if ext else s.span
+            a, b = self.to_fam(s.gi, lo_s, 0.0)[0], self.to_fam(s.gi, hi_s, 0.0)[0]
             lo, hi = min(a, b), max(a, b)
             if lo - 0.05 <= pl.st_f <= hi + 0.05:
-                continue                        # inside its own span: no "nearest the element"
+                continue                        # inside its own element: no "nearest the element"
             side = 1 if pl.st_f < lo else -1    # +1: element lies toward higher stations
             info.append((pl, side, abs(pl.hi_f - pl.lo_f)))
         used = set()
-        gap = 1.5 * c["LANE_STEP"]
+        gap = c["ORDER_GAP_LANES"] * c["LANE_STEP"]
+        # two openings' rows off one grid up to 2 lanes apart (another row
+        # between them on other offsets): L7's 3'-10 5/8" / 11'-4 5/8" pair,
+        # Adolfo 2026-10-07. Not for beams / CJs: on L3N he keeps the 28'-8"
+        # beam-end dim inside the 19'-5" CJ dim off grid 9
+        gap_open = c["ORDER_GAP_OPEN_LANES"] * c["LANE_STEP"]
         for pl, side, ln in info:
             if id(pl) in used:
                 continue
@@ -1261,7 +1282,8 @@ class Layout(object):
                         continue
                     for m in grp:
                         same = q[0].s.feature is not None and q[0].s.feature is m[0].s.feature
-                        if (abs(q[0].st_f - m[0].st_f) <= gap or (same and abs(q[0].st_f - m[0].st_f) <= 4 * gap)) and \
+                        both_open = all(x.s.feature is not None and x.s.feature.kind == "opening" for x in (q[0], m[0]))
+                        if (abs(q[0].st_f - m[0].st_f) <= (gap_open if both_open else gap) or (same and abs(q[0].st_f - m[0].st_f) <= 4 * gap)) and \
                                 min(q[0].hi_f, m[0].hi_f) - max(q[0].lo_f, m[0].lo_f) > 0.1:
                             grp.append(q); used.add(id(q[0])); grew = True
                             break
