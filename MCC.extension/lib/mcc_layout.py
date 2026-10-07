@@ -57,7 +57,8 @@ CFG = {
     "LAST_RESORT_LANE": 3,
     "SLIDE_STEP": 1.0,      # ft
     "SLIDE_MAX": 4.0,       # ft either way along the object
-    "GRID_CLEAR": 1.5,      # ft; no dim line this close to a parallel grid
+    "GRID_CLEAR": 1.0,      # ft; no dim line this close to a parallel grid (1.5 -> 1.0 2026-10-07: Adolfo's dims in the
+                            # 2'-9 1/2" gap below AA sit 1.2 ft off it; 1.0 / 1.2: L7 146 -> 150, L3N 125 -> 126-127)
     "CROP_MARGIN": 1.0,
     "CROP_OUT": 4.0,        # ft a dim may stand past the annotation crop; the button widens the crop to show it
     "TEXT_PAD": 0.25,
@@ -72,6 +73,9 @@ CFG = {
     "W_SIDES": 0.0,         # per dim more on this side of the element than on its other side (0 = off):
     "SIDES_R_IN": 1.0,      # paper inches - depth of the strip beside the element that is counted
     "SIDES_KINDS": ("opening",),   # elements whose dims compare their two sides
+    "W_TEXT_FLIP": None,    # a pulled-out text moved to the string's far end when the near end is blocked (None = off:
+                            # it put plain#52's pair exactly on Adolfo's spot but cost L3N 3-8 at any price, 2026-10-07)
+    "W_TIGHT": 0.25,        # base cost of a spot just past MIN_GAP beside an opening (a tight gap to a grid)
     "W_NEIGH": 2.0,         # an opening's dim on the side where ANOTHER opening sits within NEIGH_R_IN (and the
     "NEIGH_R_IN": 0.75,     # other side is clear): per such neighbour - keeps two near openings' dims out of the
                             # gap between them (Adolfo 2026-10-07, L7 "busy" pair by grid 7 / FF); 0 = off
@@ -385,6 +389,8 @@ class Layout(object):
             # pulled past the nearer end with a leader; later ones stack outward,
             # all starting at the same inner edge so the column reads aligned
             end = 0 if abs(a - offs[0]) <= abs(b - offs[-1]) else 1
+            if getattr(s, "_flip", False):
+                end = 1 - end                   # the other end: the near one was blocked
             e = offs[0] if end == 0 else offs[-1]
             sgn = -1 if end == 0 else 1
             centre_off = e + sgn * (0.5 * ts + w / 2.0)
@@ -885,6 +891,20 @@ class Layout(object):
                         base = c["W_ALT"] + lane * c["W_LANE"] + (c["W_SIDE"] if side != a_home else 0) \
                             + abs(k) * c["W_SLIDE"] + outside * c["W_OUTSIDE"]
                         out.append((base, st, (side, lane, k)))
+        # a tight gap beside an opening (between it and a gridline, or another
+        # element): the 1 ft steps jump over the narrow legal window between
+        # MIN_GAP off the opening and GRID_CLEAR off the grid - try spots just
+        # past MIN_GAP on both sides (Adolfo 2026-10-07, L7 plain#52: its
+        # 1'-10 1/8" | 4'-0 3/8" in the 2'-9 1/2" gap below AA, not between it
+        # and the square penetration). evaluate() adds the W_GAP closeness cost
+        fe = getattr(s, "feature", None)
+        if fe is not None and fe.kind == "opening" and home:
+            ext = self._extent(fe, s.gi)
+            if ext:
+                for side, w in ((home, 0.0), (-home, c["W_ALT"] if alt else c["W_SIDE"])):
+                    edge = ext[1] if side > 0 else ext[0]
+                    for d in (c["MIN_GAP"] + 0.05, (c["MIN_GAP"] + c["FIRST_GAP"]) / 2.0):
+                        out.append((w + c["W_TIGHT"], edge + side * d, (side, "tight", 0)))
         # a run whose edge ends at open margin: lanes in that margin, past the
         # end, with no "outside the span" cost - and lined up with any string
         # of the same family already standing in that margin
@@ -1018,20 +1038,33 @@ class Layout(object):
 
     def place_one(self, s, allow_last_resort=False):
         best = None
+        c_flip = self.c["W_TEXT_FLIP"]
         reasons = {}
         for base, st, cand in self.candidates(s, allow_last_resort):
             if best is not None and base >= best[0]:
                 break                       # candidates are sorted by base cost
+            s._flip = False
             pen, boxes = self.evaluate(s, st)
+            if pen is None and c_flip is not None and (boxes.startswith("text") or boxes.startswith("leader")):
+                # pulled-out text blocked at its near end: try the other end
+                # (Adolfo's 1'-10 1/8" above plain#52, pulled away from the
+                # 2'-9 1/2" line; 2026-10-07)
+                s._flip = True
+                pen2, boxes2 = self.evaluate(s, st)
+                if pen2 is not None:
+                    pen, boxes = pen2 + c_flip, boxes2
+                else:
+                    s._flip = False
             if pen is None:
                 reasons[boxes] = reasons.get(boxes, 0) + 1
                 continue
             cost = base + pen
             if best is None or cost < best[0]:
-                best = (cost, st, boxes, cand)
+                best = (cost, st, boxes, cand, s._flip)
         if best is None:
             return None, (max(reasons.items(), key=lambda kv: kv[1])[0] if reasons else "no candidates")
-        cost, st, boxes, cand = best
+        cost, st, boxes, cand, flip = best
+        s._flip = flip
         offs = [r[0] for r in s.refs]
         lo, hi = min(offs), max(offs)
         sf, a = self.to_fam(s.gi, st, lo)

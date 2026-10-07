@@ -637,6 +637,17 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   so a code change elsewhere could shift the result; now by first appearance in the plan (`GROUP_ORDER` "first").
   That costs L3N 2 (127 -> 125 with everything else equal); "short"/"long"/"size" orders trade the views.
   Scores now: **L7 146 / 46 / 1 / 4**, **L3N 125 / 31 / 0 / 3**.
+- **2026-10-07 — two more L7 screenshots (runs L7 47 / L3N 110).** Pair 1: plain#52's `1'-10⅛" | 4'-0⅜"` - he puts it
+  ABOVE the opening in the 2'-9½" gap below AA (1.2 ft off the grid), joined with nothing between; the 2'-9½" joins
+  the 5'-0" on one line. Pair 2: plain#66's `2'-2" | 7'-6"` - he puts it on the RIGHT (open toward grid 7), not on the
+  left beside the shaft's dims (8'-4⅛", 17'-8" R.O.). Found: (a) the 1 ft candidate steps jumped over the narrow legal
+  window between MIN_GAP (1.2 ft) off the opening and GRID_CLEAR (1.5 ft) off the grid - **new "tight" candidates
+  just past MIN_GAP on both sides of an opening** (`W_TIGHT` 0.25); (b) his spot is 1.2 ft off AA - **GRID_CLEAR
+  1.5 -> 1.0 ft** (1.0 and 1.2 score alike). Kept: L7 146 -> **150**, L3N 125 -> **127**. Still not as he drew:
+  pair 1 - the 4'-0⅜" now takes the spot above, but the 1'-10⅛" can't join it (its pulled-out text lands on the
+  2'-9½" line) and the join pulls the pair back below; letting a blocked pulled text go to the far end
+  (`W_TEXT_FLIP`, now None = off) puts the pair exactly on his spot but costs L3N 3-8 at any price. Pair 2 - only the
+  dim-count cost (`W_SIDES` 1) puts it on his spot, and that costs L7 4 elsewhere; both left off.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

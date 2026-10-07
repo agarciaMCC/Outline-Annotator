@@ -1,0 +1,5370 @@
+{
+ "tool": "dry_L7_tight.json",
+ "hand": "snapshot_L7_after_edits2.json",
+ "scale": 96,
+ "tol_in": 0.1875,
+ "counts": {
+  "left": 147,
+  "moved": 45,
+  "deleted": 1,
+  "added": 4
+ },
+ "rows": [
+  {
+   "tool_dim": 0,
+   "label": "run -> 5",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38
+   ],
+   "at": [
+    182.5,
+    134.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609316,
+   "his_chain": [
+    3.38
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 1,
+   "label": "run -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 1.2708333333333333,
+   "chain": [
+    1.27
+   ],
+   "at": [
+    178.4,
+    131.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20610848,
+   "his_chain": [
+    1.27
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 2,
+   "label": "run -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 1.2708333333333333,
+   "chain": [
+    1.27
+   ],
+   "at": [
+    217.5,
+    131.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20610848,
+   "his_chain": [
+    1.27
+   ],
+   "offset_in": -4.83,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 3,
+   "label": "run -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 9.5,
+   "chain": [
+    9.5
+   ],
+   "at": [
+    214.7,
+    142.9
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609317,
+   "his_chain": [
+    9.5
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 4,
+   "label": "run -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 9.916666666666666,
+   "chain": [
+    9.92
+   ],
+   "at": [
+    216.0,
+    135.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609318,
+   "his_chain": [
+    9.92
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 5,
+   "label": "run -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 5.083333333333333,
+   "chain": [
+    5.08
+   ],
+   "at": [
+    230.4,
+    143.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20610855,
+   "his_chain": [
+    5.08
+   ],
+   "offset_in": -2.19,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 6,
+   "label": "run -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 5.083333333333333,
+   "chain": [
+    5.08
+   ],
+   "at": [
+    230.4,
+    161.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20610855,
+   "his_chain": [
+    5.08
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 7,
+   "label": "run -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 28.364583333333332,
+   "chain": [
+    28.36
+   ],
+   "at": [
+    225.3,
+    144.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609319,
+   "his_chain": [
+    28.36
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 8,
+   "label": "run -> 8",
+   "elements": [
+    13788111,
+    14604435
+   ],
+   "value_ft": 1.125,
+   "chain": [
+    1.12
+   ],
+   "at": [
+    269.7,
+    161.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609320,
+   "his_chain": [
+    1.12
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 9,
+   "label": "run -> FF",
+   "elements": [
+    13788115,
+    14604435
+   ],
+   "value_ft": 0.125,
+   "chain": [
+    0.12
+   ],
+   "at": [
+    236.4,
+    -10.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609321,
+   "his_chain": [
+    0.12
+   ],
+   "offset_in": 4.52,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 10,
+   "label": "run -> FF",
+   "elements": [
+    13788115,
+    14604435
+   ],
+   "value_ft": 0.125,
+   "chain": [
+    0.12
+   ],
+   "at": [
+    272.6,
+    -10.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609321,
+   "his_chain": [
+    0.12
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 11,
+   "label": "run -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 1.5416666666666667,
+   "chain": [
+    1.54
+   ],
+   "at": [
+    233.7,
+    -29.0
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609322,
+   "his_chain": [
+    1.54
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 12,
+   "label": "run -> FF",
+   "elements": [
+    13788115,
+    14604435
+   ],
+   "value_ft": 16.40625,
+   "chain": [
+    16.41
+   ],
+   "at": [
+    237.9,
+    -18.3
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609323,
+   "his_chain": [
+    16.41
+   ],
+   "offset_in": -0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 13,
+   "label": "run -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    0.67
+   ],
+   "at": [
+    210.3,
+    -42.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609324,
+   "his_chain": [
+    0.67
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 14,
+   "label": "run -> GG",
+   "elements": [
+    13788116,
+    14604435
+   ],
+   "value_ft": 6.020833333333333,
+   "chain": [
+    6.02
+   ],
+   "at": [
+    178.4,
+    -43.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609325,
+   "his_chain": [
+    6.02
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 15,
+   "label": "run -> 5",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38
+   ],
+   "at": [
+    182.5,
+    -42.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609326,
+   "his_chain": [
+    3.38
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 16,
+   "label": "step -> FF + step -> FF",
+   "elements": [
+    13788115,
+    14604435
+   ],
+   "value_ft": 4.739583333333333,
+   "chain": [
+    4.74,
+    10.34
+   ],
+   "at": [
+    178.4,
+    -12.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609362,
+   "his_chain": [
+    4.74,
+    10.34
+   ],
+   "offset_in": 0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 16,
+   "label": "step -> FF + step -> FF",
+   "elements": [
+    13788115,
+    14604435
+   ],
+   "value_ft": 10.34375,
+   "chain": [
+    4.74,
+    10.34
+   ],
+   "at": [
+    178.4,
+    -5.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609362,
+   "his_chain": [
+    4.74,
+    10.34
+   ],
+   "offset_in": 0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 17,
+   "label": "step -> EE + step -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 12.260416666666666,
+   "chain": [
+    12.26,
+    14.91
+   ],
+   "at": [
+    178.4,
+    19.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609365,
+   "his_chain": [
+    12.26,
+    14.91
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 17,
+   "label": "step -> EE + step -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 14.90625,
+   "chain": [
+    12.26,
+    14.91
+   ],
+   "at": [
+    178.4,
+    33.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609365,
+   "his_chain": [
+    12.26,
+    14.91
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 18,
+   "label": "step -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 0.8958333333333334,
+   "chain": [
+    0.9
+   ],
+   "at": [
+    180.4,
+    25.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609327,
+   "his_chain": [
+    0.9
+   ],
+   "offset_in": -0.04,
+   "change": "left"
+  },
+  {
+   "tool_dim": 19,
+   "label": "step -> CC + step -> CC",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 9.09375,
+   "chain": [
+    9.09,
+    6.68
+   ],
+   "at": [
+    178.4,
+    57.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609393,
+   "his_chain": [
+    9.09,
+    6.68
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 19,
+   "label": "step -> CC + step -> CC",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 6.677083333333333,
+   "chain": [
+    9.09,
+    6.68
+   ],
+   "at": [
+    178.4,
+    65.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609393,
+   "his_chain": [
+    9.09,
+    6.68
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20,
+   "label": "step -> BB + step -> BB",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 17.59375,
+   "chain": [
+    17.59,
+    10.82
+   ],
+   "at": [
+    178.4,
+    89.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609396,
+   "his_chain": [
+    17.59,
+    10.82
+   ],
+   "offset_in": -0.02,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20,
+   "label": "step -> BB + step -> BB",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 10.822916666666666,
+   "chain": [
+    17.59,
+    10.82
+   ],
+   "at": [
+    178.4,
+    103.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609396,
+   "his_chain": [
+    17.59,
+    10.82
+   ],
+   "offset_in": -0.02,
+   "change": "left"
+  },
+  {
+   "tool_dim": 21,
+   "label": "step -> BB",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 0.8854166666666666,
+   "chain": [
+    0.89
+   ],
+   "at": [
+    180.4,
+    97.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609389,
+   "his_chain": [
+    0.89
+   ],
+   "offset_in": -0.05,
+   "change": "left"
+  },
+  {
+   "tool_dim": 22,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    -1.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609364,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 22,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    -1.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609364,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 23,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    15.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609366,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 23,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    15.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609366,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 24,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    23.1
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609391,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 24,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    23.1
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609391,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 25,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    42.9
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609392,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 25,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    42.9
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609392,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 26,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    50.9
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609394,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 26,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    50.9
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609394,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 27,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    70.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609395,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 27,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    70.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609395,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 28,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    78.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609397,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.04,
+   "change": "left"
+  },
+  {
+   "tool_dim": 28,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    78.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609397,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.04,
+   "change": "left"
+  },
+  {
+   "tool_dim": 29,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    100.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609449,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.17,
+   "change": "left"
+  },
+  {
+   "tool_dim": 29,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    100.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609449,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": 0.17,
+   "change": "left"
+  },
+  {
+   "tool_dim": 30,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    106.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609328,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 30,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    106.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609328,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 31,
+   "label": "stack 1 -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 0.375,
+   "chain": [
+    0.38
+   ],
+   "at": [
+    201.6,
+    130.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609336,
+   "his_chain": [
+    0.38
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 32,
+   "label": "stack 1 -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 0.23958333333333334,
+   "chain": [
+    0.24
+   ],
+   "at": [
+    224.5,
+    25.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609338,
+   "his_chain": [
+    0.24
+   ],
+   "offset_in": 0.15,
+   "change": "left"
+  },
+  {
+   "tool_dim": 33,
+   "label": "stack 1 -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    0.67
+   ],
+   "at": [
+    210.3,
+    84.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609342,
+   "his_chain": [
+    0.67
+   ],
+   "offset_in": 0.85,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 34,
+   "label": "stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 0.375,
+   "chain": [
+    0.38
+   ],
+   "at": [
+    232.7,
+    -0.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609345,
+   "his_chain": [
+    0.38
+   ],
+   "offset_in": 0.1,
+   "change": "left"
+  },
+  {
+   "tool_dim": 35,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    -3.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609348,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": 0.04,
+   "change": "left"
+  },
+  {
+   "tool_dim": 36,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    17.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609349,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 37,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    21.6
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609382,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 38,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    44.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609350,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 39,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    49.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609351,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": 0.05,
+   "change": "left"
+  },
+  {
+   "tool_dim": 40,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    72.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609352,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": 0.07,
+   "change": "left"
+  },
+  {
+   "tool_dim": 41,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    76.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609353,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -0.04,
+   "change": "left"
+  },
+  {
+   "tool_dim": 42,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    101.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609450,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": 0.17,
+   "change": "left"
+  },
+  {
+   "tool_dim": 43,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    105.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609354,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 44,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 8.25,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    217.0,
+    83.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609372,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 44,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 11.75,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    227.0,
+    83.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609372,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 45,
+   "label": "core opening edges|CC|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 12.083333333333334,
+   "chain": [
+    12.08
+   ],
+   "at": [
+    244.8,
+    63.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609383,
+   "his_chain": [
+    12.08
+   ],
+   "offset_in": -2.41,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 46,
+   "label": "core opening edges|BB|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 17.666666666666668,
+   "chain": [
+    17.67
+   ],
+   "at": [
+    226.6,
+    98.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609375,
+   "his_chain": [
+    17.67
+   ],
+   "offset_in": -0.2,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 47,
+   "label": "plain opening edges|EE|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.5,
+   "chain": [
+    2.5
+   ],
+   "at": [
+    221.5,
+    27.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609358,
+   "his_chain": [
+    2.5
+   ],
+   "offset_in": 0.18,
+   "change": "left"
+  },
+  {
+   "tool_dim": 48,
+   "label": "shaft opening anchor|edges|anchor",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 8.25,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    217.0,
+    50.2
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609379,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": 1.1,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 48,
+   "label": "shaft opening anchor|edges|anchor",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 11.75,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    227.0,
+    50.2
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609379,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": 1.1,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 49,
+   "label": "core opening edges|7|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 7.791666666666667,
+   "chain": [
+    7.79
+   ],
+   "at": [
+    233.4,
+    52.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609373,
+   "his_chain": [
+    7.79
+   ],
+   "offset_in": -2.7,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 50,
+   "label": "run -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 28.364583333333332,
+   "chain": [
+    28.36
+   ],
+   "at": [
+    272.6,
+    144.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609385,
+   "his_chain": [
+    28.36
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 51,
+   "label": "run -> GG",
+   "elements": [
+    13788116,
+    14604435
+   ],
+   "value_ft": 6.020833333333333,
+   "chain": [
+    6.02
+   ],
+   "at": [
+    213.1,
+    -43.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609388,
+   "his_chain": [
+    6.02
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 52,
+   "label": "run -> 8",
+   "elements": [
+    13788111,
+    14604435
+   ],
+   "value_ft": 1.125,
+   "chain": [
+    1.12
+   ],
+   "at": [
+    269.7,
+    -8.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609390,
+   "his_chain": [
+    1.12
+   ],
+   "offset_in": 0.56,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 53,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 8.25,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    217.0,
+    109.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609329,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 53,
+   "label": "core opening anchor|edges|anchor",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 11.75,
+   "chain": [
+    8.25,
+    11.75
+   ],
+   "at": [
+    227.0,
+    109.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609329,
+   "his_chain": [
+    8.25,
+    11.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 54,
+   "label": "plain opening edges|6|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.5833333333333333,
+   "chain": [
+    1.58
+   ],
+   "at": [
+    209.9,
+    86.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609368,
+   "his_chain": [
+    1.58
+   ],
+   "offset_in": 0.25,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 55,
+   "label": "plain opening edges|AA|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.1875,
+   "chain": [
+    2.19
+   ],
+   "at": [
+    199.9,
+    129.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609356,
+   "his_chain": [
+    2.19
+   ],
+   "offset_in": -0.04,
+   "change": "left"
+  },
+  {
+   "tool_dim": 56,
+   "label": "plain opening edges|AA|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.03125,
+   "chain": [
+    5.03
+   ],
+   "at": [
+    253.3,
+    128.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609357,
+   "his_chain": [
+    5.03
+   ],
+   "offset_in": -0.02,
+   "change": "left"
+  },
+  {
+   "tool_dim": 57,
+   "label": "penetration opening edges|7|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.6875,
+   "chain": [
+    1.69
+   ],
+   "at": [
+    233.4,
+    0.7
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609359,
+   "his_chain": [
+    1.69
+   ],
+   "offset_in": 0.1,
+   "change": "left"
+  },
+  {
+   "tool_dim": 58,
+   "label": "stack 1 -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 9.583333333333334,
+   "chain": [
+    9.58
+   ],
+   "at": [
+    214.8,
+    27.9
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609367,
+   "his_chain": [
+    9.58
+   ],
+   "offset_in": -2.96,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 59,
+   "label": "penetration opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.4166666666666667,
+   "chain": [
+    1.42
+   ],
+   "at": [
+    220.3,
+    53.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609370,
+   "his_chain": [
+    1.42
+   ],
+   "offset_in": 0.23,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 60,
+   "label": "core opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.4166666666666667,
+   "chain": [
+    1.42
+   ],
+   "at": [
+    214.0,
+    78.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609371,
+   "his_chain": [
+    1.42
+   ],
+   "offset_in": 0.34,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 61,
+   "label": "stack 1 -> wall",
+   "elements": [
+    14604435,
+    18596165
+   ],
+   "value_ft": 0.4166666666666667,
+   "chain": [
+    0.42
+   ],
+   "at": [
+    213.1,
+    75.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609386,
+   "his_chain": [
+    0.42
+   ],
+   "offset_in": -0.08,
+   "change": "left"
+  },
+  {
+   "tool_dim": 62,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.1666666666666667,
+   "chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "at": [
+    246.7,
+    56.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20612369,
+   "his_chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "offset_in": 0.16,
+   "change": "left"
+  },
+  {
+   "tool_dim": 62,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "at": [
+    247.6,
+    56.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20612369,
+   "his_chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "offset_in": 0.16,
+   "change": "left"
+  },
+  {
+   "tool_dim": 62,
+   "label": "shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.1666666666666667,
+   "chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "at": [
+    248.5,
+    56.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20612369,
+   "his_chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "offset_in": 0.16,
+   "change": "left"
+  },
+  {
+   "tool_dim": 63,
+   "label": "plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.4895833333333333,
+   "chain": [
+    1.49
+   ],
+   "at": [
+    218.7,
+    9.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609380,
+   "his_chain": [
+    1.49
+   ],
+   "offset_in": 1.37,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 64,
+   "label": "stack 1 -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 15.916666666666666,
+   "chain": [
+    15.92
+   ],
+   "at": [
+    229.7,
+    18.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609332,
+   "his_chain": [
+    15.92
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 65,
+   "label": "plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 0.875,
+   "chain": [
+    0.88
+   ],
+   "at": [
+    199.9,
+    11.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609387,
+   "his_chain": [
+    0.88
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 66,
+   "label": "stack 1 -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 13.822916666666666,
+   "chain": [
+    13.82
+   ],
+   "at": [
+    192.9,
+    19.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609346,
+   "his_chain": [
+    13.82
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 67,
+   "label": "stack 1 -> EE + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 16.395833333333332,
+   "chain": [
+    16.4,
+    2.33
+   ],
+   "at": [
+    225.3,
+    34.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609445,
+   "his_chain": [
+    16.4,
+    2.33
+   ],
+   "offset_in": 1.55,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 67,
+   "label": "stack 1 -> EE + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.3333333333333335,
+   "chain": [
+    16.4,
+    2.33
+   ],
+   "at": [
+    225.3,
+    43.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609431,
+   "his_chain": [
+    2.33,
+    4.07
+   ],
+   "offset_in": 0.15,
+   "change": "left"
+  },
+  {
+   "tool_dim": 68,
+   "label": "stack 1 -> AA + stack 1 -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 4.5625,
+   "chain": [
+    4.56,
+    0.47
+   ],
+   "at": [
+    251.3,
+    128.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609402,
+   "his_chain": [
+    4.56,
+    0.47
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 68,
+   "label": "stack 1 -> AA + stack 1 -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 0.46875,
+   "chain": [
+    4.56,
+    0.47
+   ],
+   "at": [
+    251.3,
+    130.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609402,
+   "his_chain": [
+    4.56,
+    0.47
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 69,
+   "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 15.40625,
+   "chain": [
+    15.41,
+    1.0
+   ],
+   "at": [
+    240.6,
+    124.0
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609403,
+   "his_chain": [
+    15.41,
+    1.0
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 69,
+   "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.0,
+   "chain": [
+    15.41,
+    1.0
+   ],
+   "at": [
+    248.8,
+    124.0
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609403,
+   "his_chain": [
+    15.41,
+    1.0
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 70,
+   "label": "stack 1 -> CC + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 12.208333333333334,
+   "chain": [
+    12.21,
+    1.0
+   ],
+   "at": [
+    196.3,
+    68.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609404,
+   "his_chain": [
+    12.21,
+    1.0
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 70,
+   "label": "stack 1 -> CC + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.0,
+   "chain": [
+    12.21,
+    1.0
+   ],
+   "at": [
+    196.3,
+    74.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609404,
+   "his_chain": [
+    12.21,
+    1.0
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 71,
+   "label": "stack 1 -> AA + plain opening anchor|edges (chain check)",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 15.385416666666666,
+   "chain": [
+    15.39,
+    1.62
+   ],
+   "at": [
+    244.2,
+    138.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609407,
+   "his_chain": [
+    15.39,
+    1.62
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 71,
+   "label": "stack 1 -> AA + plain opening anchor|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    15.39,
+    1.62
+   ],
+   "at": [
+    244.2,
+    146.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609407,
+   "his_chain": [
+    15.39,
+    1.62
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 72,
+   "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 6.770833333333333,
+   "chain": [
+    6.77,
+    2.5
+   ],
+   "at": [
+    236.3,
+    149.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609408,
+   "his_chain": [
+    6.77,
+    2.5
+   ],
+   "offset_in": 0.7,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 72,
+   "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.5,
+   "chain": [
+    6.77,
+    2.5
+   ],
+   "at": [
+    240.9,
+    149.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609408,
+   "his_chain": [
+    6.77,
+    2.5
+   ],
+   "offset_in": 0.7,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 73,
+   "label": "stack 1 -> 6 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 9.729166666666666,
+   "chain": [
+    9.73,
+    1.33
+   ],
+   "at": [
+    214.8,
+    3.2
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609409,
+   "his_chain": [
+    9.73
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 73,
+   "label": "stack 1 -> 6 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.3333333333333333,
+   "chain": [
+    9.73,
+    1.33
+   ],
+   "at": [
+    220.4,
+    3.2
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609410,
+   "his_chain": [
+    1.33
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 74,
+   "label": "stack 1 -> CC + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 17.114583333333332,
+   "chain": [
+    17.11,
+    1.24
+   ],
+   "at": [
+    248.4,
+    70.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609411,
+   "his_chain": [
+    17.11,
+    1.24
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 74,
+   "label": "stack 1 -> CC + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.2395833333333333,
+   "chain": [
+    17.11,
+    1.24
+   ],
+   "at": [
+    248.4,
+    79.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609411,
+   "his_chain": [
+    17.11,
+    1.24
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 75,
+   "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 10.8125,
+   "chain": [
+    10.82,
+    2.67
+   ],
+   "at": [
+    238.3,
+    83.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609412,
+   "his_chain": [
+    10.82,
+    2.67
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 75,
+   "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.6666666666666665,
+   "chain": [
+    10.82,
+    2.67
+   ],
+   "at": [
+    245.0,
+    83.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609412,
+   "his_chain": [
+    10.82,
+    2.67
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 76,
+   "label": "stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 5.010416666666667,
+   "chain": [
+    5.01
+   ],
+   "at": [
+    235.4,
+    105.7
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609413,
+   "his_chain": [
+    5.01
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 77,
+   "label": "penetration opening anchor|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.7708333333333333,
+   "chain": [
+    1.77
+   ],
+   "at": [
+    238.8,
+    105.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609414,
+   "his_chain": [
+    1.77
+   ],
+   "offset_in": -0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 78,
+   "label": "stack 1 -> FF + penetration opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788115,
+    14604435
+   ],
+   "value_ft": 5.520833333333333,
+   "chain": [
+    5.52,
+    1.83
+   ],
+   "at": [
+    236.4,
+    -7.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609415,
+   "his_chain": [
+    5.52,
+    1.83
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 78,
+   "label": "stack 1 -> FF + penetration opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.8333333333333333,
+   "chain": [
+    5.52,
+    1.83
+   ],
+   "at": [
+    236.4,
+    -3.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609415,
+   "his_chain": [
+    5.52,
+    1.83
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 79,
+   "label": "stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 5.010416666666667,
+   "chain": [
+    5.01
+   ],
+   "at": [
+    235.4,
+    92.9
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609416,
+   "his_chain": [
+    5.01
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 80,
+   "label": "penetration opening anchor|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.7708333333333333,
+   "chain": [
+    1.77
+   ],
+   "at": [
+    238.8,
+    90.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 20609417,
+   "his_chain": [
+    1.77
+   ],
+   "offset_in": -0.26,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 81,
+   "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 5.510416666666667,
+   "chain": [
+    5.51,
+    3.61
+   ],
+   "at": [
+    235.6,
+    9.0
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609418,
+   "his_chain": [
+    5.51,
+    3.61
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 81,
+   "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 3.6145833333333335,
+   "chain": [
+    5.51,
+    3.61
+   ],
+   "at": [
+    240.2,
+    9.0
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609418,
+   "his_chain": [
+    5.51,
+    3.61
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 82,
+   "label": "stack 1 -> 5 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 10.708333333333334,
+   "chain": [
+    10.71,
+    3.0
+   ],
+   "at": [
+    189.6,
+    9.0
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609419,
+   "his_chain": [
+    10.71,
+    3.0
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 82,
+   "label": "stack 1 -> 5 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    10.71,
+    3.0
+   ],
+   "at": [
+    196.4,
+    9.0
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609419,
+   "his_chain": [
+    10.71,
+    3.0
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 83,
+   "label": "stack 1 -> BB + penetration opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 13.53125,
+   "chain": [
+    13.53,
+    1.77
+   ],
+   "at": [
+    201.6,
+    104.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609420,
+   "his_chain": [
+    13.53,
+    1.77
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 83,
+   "label": "stack 1 -> BB + penetration opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.7708333333333333,
+   "chain": [
+    13.53,
+    1.77
+   ],
+   "at": [
+    201.6,
+    112.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609420,
+   "his_chain": [
+    13.53,
+    1.77
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 84,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 6.958333333333333,
+   "chain": [
+    6.96,
+    5.19
+   ],
+   "at": [
+    224.2,
+    6.6
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609421,
+   "his_chain": [
+    6.96,
+    5.19
+   ],
+   "offset_in": -0.65,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 84,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 5.1875,
+   "chain": [
+    6.96,
+    5.19
+   ],
+   "at": [
+    230.3,
+    6.6
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609421,
+   "his_chain": [
+    6.96,
+    5.19
+   ],
+   "offset_in": -0.65,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 85,
+   "label": "shaft opening anchor|edges|anchor (chain check) + stack 1 -> CC",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    3.0,
+    0.67,
+    8.04
+   ],
+   "at": [
+    243.1,
+    51.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609447,
+   "his_chain": [
+    3.0
+   ],
+   "offset_in": 0.38,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 85,
+   "label": "shaft opening anchor|edges|anchor (chain check) + stack 1 -> CC",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    3.0,
+    0.67,
+    8.04
+   ],
+   "at": [
+    243.1,
+    53.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20612369,
+   "his_chain": [
+    1.17,
+    0.67,
+    1.17
+   ],
+   "offset_in": 0.32,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 85,
+   "label": "shaft opening anchor|edges|anchor (chain check) + stack 1 -> CC",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 8.041666666666666,
+   "chain": [
+    3.0,
+    0.67,
+    8.04
+   ],
+   "at": [
+    243.1,
+    58.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609423,
+   "his_chain": [
+    8.04
+   ],
+   "offset_in": 1.0,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 86,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> AA",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0,
+    2.79
+   ],
+   "at": [
+    225.0,
+    125.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609424,
+   "his_chain": [
+    5.0,
+    2.79
+   ],
+   "offset_in": -0.05,
+   "change": "left"
+  },
+  {
+   "tool_dim": 86,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 2.7916666666666665,
+   "chain": [
+    5.0,
+    2.79
+   ],
+   "at": [
+    225.0,
+    129.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609424,
+   "his_chain": [
+    5.0,
+    2.79
+   ],
+   "offset_in": -0.05,
+   "change": "left"
+  },
+  {
+   "tool_dim": 87,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 3.5833333333333335,
+   "chain": [
+    3.58,
+    0.17
+   ],
+   "at": [
+    230.9,
+    46.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609425,
+   "his_chain": [
+    3.58,
+    0.17
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 87,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 0.16666666666666666,
+   "chain": [
+    3.58,
+    0.17
+   ],
+   "at": [
+    232.8,
+    46.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609425,
+   "his_chain": [
+    3.58,
+    0.17
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 88,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 3.0833333333333335,
+   "chain": [
+    3.08,
+    3.25
+   ],
+   "at": [
+    205.2,
+    125.7
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609426,
+   "his_chain": [
+    3.08,
+    3.25
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 88,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 3.25,
+   "chain": [
+    3.08,
+    3.25
+   ],
+   "at": [
+    208.4,
+    125.7
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609426,
+   "his_chain": [
+    3.08,
+    3.25
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 89,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> FF",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.1666666666666665,
+   "chain": [
+    2.17,
+    4.07
+   ],
+   "at": [
+    198.0,
+    -15.3
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609427,
+   "his_chain": [
+    2.17,
+    4.07
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 89,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> FF",
+   "elements": [
+    13788115,
+    14604435
+   ],
+   "value_ft": 4.072916666666667,
+   "chain": [
+    2.17,
+    4.07
+   ],
+   "at": [
+    198.0,
+    -12.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609427,
+   "his_chain": [
+    2.17,
+    4.07
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 90,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 3.0833333333333335,
+   "chain": [
+    3.08,
+    6.89
+   ],
+   "at": [
+    201.5,
+    -18.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609428,
+   "his_chain": [
+    3.08,
+    6.89
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 90,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 6.885416666666667,
+   "chain": [
+    3.08,
+    6.89
+   ],
+   "at": [
+    206.5,
+    -18.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609428,
+   "his_chain": [
+    3.08,
+    6.89
+   ],
+   "offset_in": 0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 91,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> CC",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.1354166666666667,
+   "chain": [
+    1.14,
+    14.4
+   ],
+   "at": [
+    196.3,
+    47.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609429,
+   "his_chain": [
+    1.14,
+    14.4
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 91,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> CC",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 14.395833333333334,
+   "chain": [
+    1.14,
+    14.4
+   ],
+   "at": [
+    196.3,
+    54.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609429,
+   "his_chain": [
+    1.14,
+    14.4
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 92,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.4375,
+   "chain": [
+    5.44,
+    6.27
+   ],
+   "at": [
+    201.0,
+    44.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609430,
+   "his_chain": [
+    5.44,
+    6.27
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 92,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 6.270833333333333,
+   "chain": [
+    5.44,
+    6.27
+   ],
+   "at": [
+    206.8,
+    44.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609430,
+   "his_chain": [
+    5.44,
+    6.27
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 93,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.3333333333333335,
+   "chain": [
+    2.33,
+    4.07
+   ],
+   "at": [
+    227.7,
+    30.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609431,
+   "his_chain": [
+    2.33,
+    4.07
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 93,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 4.072916666666667,
+   "chain": [
+    2.33,
+    4.07
+   ],
+   "at": [
+    230.9,
+    30.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609431,
+   "his_chain": [
+    2.33,
+    4.07
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 94,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 0.8333333333333334,
+   "chain": [
+    0.83,
+    8.56
+   ],
+   "at": [
+    222.9,
+    17.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609432,
+   "his_chain": [
+    0.83,
+    8.56
+   ],
+   "offset_in": 0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 94,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 8.5625,
+   "chain": [
+    0.83,
+    8.56
+   ],
+   "at": [
+    222.9,
+    21.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609432,
+   "his_chain": [
+    0.83,
+    8.56
+   ],
+   "offset_in": 0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 95,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0,
+    5.19
+   ],
+   "at": [
+    225.2,
+    -16.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609433,
+   "his_chain": [
+    5.0,
+    5.19
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 95,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 5.1875,
+   "chain": [
+    5.0,
+    5.19
+   ],
+   "at": [
+    230.3,
+    -16.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609433,
+   "his_chain": [
+    5.0,
+    5.19
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 96,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 4.510416666666667,
+   "chain": [
+    4.51,
+    6.73
+   ],
+   "at": [
+    201.0,
+    77.2
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609446,
+   "his_chain": [
+    4.51,
+    6.73
+   ],
+   "offset_in": 0.62,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 96,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 6.729166666666667,
+   "chain": [
+    4.51,
+    6.73
+   ],
+   "at": [
+    206.6,
+    77.2
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609446,
+   "his_chain": [
+    4.51,
+    6.73
+   ],
+   "offset_in": 0.62,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 97,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> BB",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.8333333333333335,
+   "chain": [
+    2.83,
+    15.4
+   ],
+   "at": [
+    207.1,
+    81.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609435,
+   "his_chain": [
+    2.83,
+    15.4
+   ],
+   "offset_in": -0.25,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 97,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> BB",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 15.395833333333334,
+   "chain": [
+    2.83,
+    15.4
+   ],
+   "at": [
+    207.1,
+    90.3
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609435,
+   "his_chain": [
+    2.83,
+    15.4
+   ],
+   "offset_in": -0.25,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 98,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.78125,
+   "chain": [
+    1.78,
+    3.91
+   ],
+   "at": [
+    228.1,
+    86.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609437,
+   "his_chain": [
+    1.78,
+    3.91
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 98,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 3.90625,
+   "chain": [
+    1.78,
+    3.91
+   ],
+   "at": [
+    230.9,
+    86.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609437,
+   "his_chain": [
+    1.78,
+    3.91
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 99,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.1666666666666665,
+   "chain": [
+    2.17,
+    5.05
+   ],
+   "at": [
+    196.3,
+    19.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609438,
+   "his_chain": [
+    2.17,
+    5.05
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 99,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 5.052083333333333,
+   "chain": [
+    2.17,
+    5.05
+   ],
+   "at": [
+    196.3,
+    23.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609438,
+   "his_chain": [
+    2.17,
+    5.05
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 100,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.5833333333333333,
+   "chain": [
+    1.58,
+    9.33
+   ],
+   "at": [
+    199.9,
+    15.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609439,
+   "his_chain": [
+    1.58,
+    9.33
+   ],
+   "offset_in": -0.13,
+   "change": "left"
+  },
+  {
+   "tool_dim": 100,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 9.333333333333334,
+   "chain": [
+    1.58,
+    9.33
+   ],
+   "at": [
+    205.3,
+    15.8
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609439,
+   "his_chain": [
+    1.58,
+    9.33
+   ],
+   "offset_in": -0.13,
+   "change": "left"
+  },
+  {
+   "tool_dim": 101,
+   "label": "penetration opening anchor|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.6666666666666667,
+   "chain": [
+    1.67
+   ],
+   "at": [
+    242.0,
+    95.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609440,
+   "his_chain": [
+    1.67
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 102,
+   "label": "stack 1 -> BB",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 1.5,
+   "chain": [
+    1.5
+   ],
+   "at": [
+    243.1,
+    97.3
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609441,
+   "his_chain": [
+    1.5
+   ],
+   "offset_in": -0.14,
+   "change": "left"
+  },
+  {
+   "tool_dim": 103,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 0.8020833333333334,
+   "chain": [
+    0.8,
+    14.2
+   ],
+   "at": [
+    244.2,
+    11.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609442,
+   "his_chain": [
+    0.8,
+    14.2
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 103,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 14.197916666666666,
+   "chain": [
+    0.8,
+    14.2
+   ],
+   "at": [
+    244.2,
+    18.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609442,
+   "his_chain": [
+    0.8,
+    14.2
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 104,
+   "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.25,
+   "chain": [
+    1.25,
+    4.1
+   ],
+   "at": [
+    205.2,
+    115.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609443,
+   "his_chain": [
+    1.25,
+    4.1
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 104,
+   "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> 6",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 4.104166666666667,
+   "chain": [
+    1.25,
+    4.1
+   ],
+   "at": [
+    207.9,
+    115.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609443,
+   "his_chain": [
+    1.25,
+    4.1
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 105,
+   "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.0833333333333333,
+   "chain": [
+    1.08,
+    4.41
+   ],
+   "at": [
+    227.9,
+    116.2
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609361,
+   "his_chain": [
+    1.08
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 105,
+   "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 4.416666666666667,
+   "chain": [
+    1.08,
+    4.41
+   ],
+   "at": [
+    230.7,
+    116.2
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609347,
+   "his_chain": [
+    4.41
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 106,
+   "label": "stack 1 -> CC + core opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 0.041666666666666664,
+   "chain": [
+    0.04,
+    12.42
+   ],
+   "at": [
+    226.1,
+    62.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20612463,
+   "his_chain": [
+    0.04
+   ],
+   "offset_in": -0.38,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 106,
+   "label": "stack 1 -> CC + core opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 12.416666666666666,
+   "chain": [
+    0.04,
+    12.42
+   ],
+   "at": [
+    226.1,
+    68.3
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 107,
+   "label": "stack 1 -> 7 + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    4.42
+   ],
+   "at": [
+    231.2,
+    54.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609374,
+   "his_chain": [
+    3.38
+   ],
+   "offset_in": -2.26,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 107,
+   "label": "stack 1 -> 7 + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 4.416666666666667,
+   "chain": [
+    3.38,
+    4.42
+   ],
+   "at": [
+    235.1,
+    54.5
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609347,
+   "his_chain": [
+    4.41
+   ],
+   "offset_in": -7.71,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 108,
+   "label": "stack 1 -> CC + stack 1 -> CC",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 4.5,
+   "chain": [
+    4.5,
+    7.58
+   ],
+   "at": [
+    241.3,
+    59.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609400,
+   "his_chain": [
+    4.5,
+    7.58
+   ],
+   "offset_in": -1.72,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 108,
+   "label": "stack 1 -> CC + stack 1 -> CC",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 7.583333333333333,
+   "chain": [
+    4.5,
+    7.58
+   ],
+   "at": [
+    241.3,
+    65.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609400,
+   "his_chain": [
+    4.5,
+    7.58
+   ],
+   "offset_in": -1.72,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 109,
+   "label": "stack 1 -> EE + shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788114,
+    14604435
+   ],
+   "value_ft": 3.5,
+   "chain": [
+    3.5,
+    17.67
+   ],
+   "at": [
+    223.1,
+    27.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609398,
+   "his_chain": [
+    3.5,
+    17.67
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 109,
+   "label": "stack 1 -> EE + shaft opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 17.666666666666668,
+   "chain": [
+    3.5,
+    17.67
+   ],
+   "at": [
+    223.1,
+    38.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609398,
+   "his_chain": [
+    3.5,
+    17.67
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 110,
+   "label": "stack 1 -> BB + stack 1 -> BB",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 8.34375,
+   "chain": [
+    8.34,
+    9.32
+   ],
+   "at": [
+    223.1,
+    93.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609399,
+   "his_chain": [
+    8.34,
+    9.32
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 110,
+   "label": "stack 1 -> BB + stack 1 -> BB",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 9.322916666666666,
+   "chain": [
+    8.34,
+    9.32
+   ],
+   "at": [
+    223.1,
+    102.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609399,
+   "his_chain": [
+    8.34,
+    9.32
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 111,
+   "label": "stack 1 -> 6 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 4.666666666666667,
+   "chain": [
+    4.67,
+    6.29
+   ],
+   "at": [
+    212.3,
+    12.6
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609401,
+   "his_chain": [
+    4.67,
+    6.29
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 111,
+   "label": "stack 1 -> 6 + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 6.291666666666667,
+   "chain": [
+    4.67,
+    6.29
+   ],
+   "at": [
+    217.8,
+    12.6
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609401,
+   "his_chain": [
+    4.67,
+    6.29
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 112,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.84375,
+   "chain": [
+    1.84,
+    4.03
+   ],
+   "at": [
+    227.9,
+    121.1
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609355,
+   "his_chain": [
+    1.84
+   ],
+   "offset_in": -1.02,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 112,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 4.03125,
+   "chain": [
+    1.84,
+    4.03
+   ],
+   "at": [
+    230.9,
+    121.1
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609335,
+   "his_chain": [
+    4.03
+   ],
+   "offset_in": -1.02,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 113,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> BB",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.1666666666666665,
+   "chain": [
+    2.17,
+    7.5
+   ],
+   "at": [
+    225.0,
+    89.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609436,
+   "his_chain": [
+    2.17,
+    7.5
+   ],
+   "offset_in": 0.77,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 113,
+   "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> BB",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 7.5,
+   "chain": [
+    2.17,
+    7.5
+   ],
+   "at": [
+    225.0,
+    94.3
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609436,
+   "his_chain": [
+    2.17,
+    7.5
+   ],
+   "offset_in": 0.77,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 114,
+   "label": "core opening anchor|edges|anchor (chain check) + stack 1 -> wall",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 3.25,
+   "chain": [
+    3.25,
+    0.5
+   ],
+   "at": [
+    216.7,
+    78.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609434,
+   "his_chain": [
+    3.25,
+    0.5
+   ],
+   "offset_in": 0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 114,
+   "label": "core opening anchor|edges|anchor (chain check) + stack 1 -> wall",
+   "elements": [
+    14604435,
+    18596164
+   ],
+   "value_ft": 0.5,
+   "chain": [
+    3.25,
+    0.5
+   ],
+   "at": [
+    216.7,
+    80.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609434,
+   "his_chain": [
+    3.25,
+    0.5
+   ],
+   "offset_in": 0.03,
+   "change": "left"
+  },
+  {
+   "tool_dim": 115,
+   "label": "stack 1 -> 7 + plain opening anchor|edges (chain check)",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 5.34375,
+   "chain": [
+    5.34,
+    1.75
+   ],
+   "at": [
+    235.6,
+    107.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609406,
+   "his_chain": [
+    5.34,
+    1.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 115,
+   "label": "stack 1 -> 7 + plain opening anchor|edges (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.75,
+   "chain": [
+    5.34,
+    1.75
+   ],
+   "at": [
+    239.1,
+    107.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609406,
+   "his_chain": [
+    5.34,
+    1.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 116,
+   "label": "stack 1 -> FF + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788115,
+    14604435
+   ],
+   "value_ft": 15.34375,
+   "chain": [
+    15.34,
+    2.5
+   ],
+   "at": [
+    216.7,
+    -2.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609343,
+   "his_chain": [
+    15.34
+   ],
+   "offset_in": 0.78,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 116,
+   "label": "stack 1 -> FF + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.5,
+   "chain": [
+    15.34,
+    2.5
+   ],
+   "at": [
+    216.7,
+    6.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609358,
+   "his_chain": [
+    2.5
+   ],
+   "offset_in": 0.78,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 117,
+   "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> CC",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.5,
+   "chain": [
+    1.5,
+    12.67
+   ],
+   "at": [
+    207.6,
+    48.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609360,
+   "his_chain": [
+    1.5
+   ],
+   "offset_in": 1.86,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 117,
+   "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> CC",
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 12.666666666666666,
+   "chain": [
+    1.5,
+    12.67
+   ],
+   "at": [
+    207.6,
+    55.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609369,
+   "his_chain": [
+    12.67
+   ],
+   "offset_in": -0.44,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 118,
+   "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> AA",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 0.9166666666666666,
+   "chain": [
+    0.92,
+    10.17
+   ],
+   "at": [
+    223.1,
+    119.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609444,
+   "his_chain": [
+    0.92,
+    10.17
+   ],
+   "offset_in": -0.22,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 118,
+   "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> AA",
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 10.166666666666666,
+   "chain": [
+    0.92,
+    10.17
+   ],
+   "at": [
+    223.1,
+    125.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609444,
+   "his_chain": [
+    0.92,
+    10.17
+   ],
+   "offset_in": -0.22,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 119,
+   "label": "stack 1 -> 7 + stepped opening overall",
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 13.229166666666666,
+   "chain": [
+    13.23,
+    3.0
+   ],
+   "at": [
+    239.5,
+    48.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609448,
+   "his_chain": [
+    13.23
+   ],
+   "offset_in": 0.25,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 119,
+   "label": "stack 1 -> 7 + stepped opening overall",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    13.23,
+    3.0
+   ],
+   "at": [
+    247.6,
+    48.3
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609422,
+   "his_chain": [
+    3.0,
+    0.67
+   ],
+   "offset_in": -0.25,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 120,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 3.375,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    182.5,
+    -14.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609363,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.11,
+   "change": "left"
+  },
+  {
+   "tool_dim": 120,
+   "label": "step faces|5|faces",
+   "elements": [
+    13788108,
+    14604435
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    3.38,
+    1.62
+   ],
+   "at": [
+    185.0,
+    -14.4
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609363,
+   "his_chain": [
+    3.38,
+    1.62
+   ],
+   "offset_in": -0.11,
+   "change": "left"
+  },
+  {
+   "tool_dim": 121,
+   "label": "jog check",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    183.4,
+    -12.9
+   ],
+   "dir": [
+    1.0,
+    -0.0
+   ],
+   "his_dim": 20609381,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -0.18,
+   "change": "left"
+  },
+  {
+   "tool_dim": 122,
+   "label": "stack 1 -> BB + penetration opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 3.8854166666666665,
+   "chain": [
+    3.89,
+    1.83
+   ],
+   "at": [
+    242.0,
+    100.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609344,
+   "his_chain": [
+    3.89
+   ],
+   "offset_in": -0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 122,
+   "label": "stack 1 -> BB + penetration opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 1.8333333333333333,
+   "chain": [
+    3.89,
+    1.83
+   ],
+   "at": [
+    242.0,
+    102.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609377,
+   "his_chain": [
+    1.83
+   ],
+   "offset_in": -0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 123,
+   "label": "stack 1 -> BB + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    13788104,
+    14604435
+   ],
+   "value_ft": 11.385416666666666,
+   "chain": [
+    11.39,
+    2.5
+   ],
+   "at": [
+    244.8,
+    103.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609405,
+   "his_chain": [
+    11.39,
+    2.5
+   ],
+   "offset_in": 0.05,
+   "change": "left"
+  },
+  {
+   "tool_dim": 123,
+   "label": "stack 1 -> BB + plain opening anchor|edges|anchor (chain check)",
+   "elements": [
+    14604435,
+    14604435
+   ],
+   "value_ft": 2.5,
+   "chain": [
+    11.39,
+    2.5
+   ],
+   "at": [
+    244.8,
+    110.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 20609405,
+   "his_chain": [
+    11.39,
+    2.5
+   ],
+   "offset_in": 0.05,
+   "change": "left"
+  },
+  {
+   "his_dim": 20609334,
+   "elements": [
+    13788105,
+    14604435
+   ],
+   "value_ft": 7.791666666666667,
+   "chain": [
+    7.79
+   ],
+   "at": [
+    223.1,
+    126.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20609340,
+   "elements": [
+    13788110,
+    14604435
+   ],
+   "value_ft": 10.1875,
+   "chain": [
+    10.19
+   ],
+   "at": [
+    227.8,
+    -17.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20609341,
+   "elements": [
+    13788109,
+    14604435
+   ],
+   "value_ft": 11.239583333333334,
+   "chain": [
+    11.24
+   ],
+   "at": [
+    204.4,
+    77.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20609376,
+   "elements": [
+    13788100,
+    14604435
+   ],
+   "value_ft": 12.458333333333334,
+   "chain": [
+    12.46
+   ],
+   "at": [
+    223.1,
+    68.3
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  }
+ ]
+}
