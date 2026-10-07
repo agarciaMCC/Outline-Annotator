@@ -323,6 +323,21 @@ class Planner(object):
                     return False
         return True
 
+    def notch_side(self, gi, st, off):
+        """Which side (+1 / -1 along gi) of station st is open at offset off
+        (outside every slab) while the other is slab - the notch beside a
+        step face. 0 when both or neither are."""
+        m = self.m
+        g, g0, u, n = m.grids[gi]
+        open_ = []
+        for side in (-1, 1):
+            x = g0[0] + u[0] * (st + side * 1.0) + n[0] * off
+            y = g0[1] + u[1] * (st + side * 1.0) + n[1] * off
+            open_.append(not any(P.point_in_poly(x, y, sl.outer) for sl in m.slabs))
+        if open_[0] == open_[1]:
+            return 0
+        return -1 if open_[0] else 1
+
     def on_column(self, f, edges=None):
         """Any edge of the feature lying on a column face -> the bump/notch/step
         is the slab cut around a column, not a soffit shape: skip it. For a
@@ -415,15 +430,29 @@ class Planner(object):
                 # (Adolfo's L7 round 1: 3'-4 1/2" | 5 | 1'-7 1/2" at all 10
                 # steps of the west sawtooth)
                 sj = self.m.station(s.mid(), gi)
+                # on the open (notch) side of the step face, the jog check one
+                # row further out (Adolfo moved 6 of the 10 L7 pairs from over
+                # the slab tooth into the notch, rounds 1 and 2)
+                notch = self.notch_side(gi, sj, (oa + ob) / 2.0)
+                kw = {"prefer": sj}
+                if notch:
+                    pref = sj + notch * self.c["OPEN_OFFSET"]
+                    kw = {"prefer": pref, "outward": notch,
+                          "span": (pref, pref + 1.0) if notch > 0 else (pref - 1.0, pref)}
+                span = kw.pop("span", (sj - 2.0, sj + 2.0))
+                key = (id(f), "step")
                 gb = self.m.grid_between(a.mid(), b.mid(), fi)
                 if gb is not None:
-                    self.add(fi, gi, [(oa, a.ref, "slab edge", "edge"), self.gref(gb) + (self.gname[gb],),
-                                      (ob, b.ref, "slab edge", "edge")],
-                             (sj - 2.0, sj + 2.0), "step faces|%s|faces" % self.gname[gb], f, prefer=sj)
+                    t = self.add(fi, gi, [(oa, a.ref, "slab edge", "edge"), self.gref(gb) + (self.gname[gb],),
+                                          (ob, b.ref, "slab edge", "edge")],
+                                 span, "step faces|%s|faces" % self.gname[gb], f, **kw)
+                    if t is not None and notch:
+                        t.stack = (key, 0, 2)
                     self.note("step: faces located off the grid between them")
-                sj = self.m.station(s.mid(), gi)
-                self.add(fi, gi, [(oa, a.ref, "slab edge", "edge"), (ob, b.ref, "slab edge", "edge")],
-                         (sj - 2.0, sj + 2.0), "jog check", f, role="check", prefer=sj)
+                t = self.add(fi, gi, [(oa, a.ref, "slab edge", "edge"), (ob, b.ref, "slab edge", "edge")],
+                             span, "jog check", f, role="check", **kw)
+                if t is not None and notch and gb is not None:
+                    t.stack = (key, 1, 2)
 
     def do_opening(self, f):
         kind = f.sub
