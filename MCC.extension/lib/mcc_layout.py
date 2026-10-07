@@ -67,6 +67,8 @@ CFG = {
     "W_OWN_BEAM": 4.0,      # a beam width dim across its own beam (only the intermediate ones belong there)
     "W_BEAM_ROW": 3.0,      # extra per lane / per ft of slide for a beam's end width dim: it is the first row past the end
     "W_ALT": 1.0,           # base cost of a string's alternative home (the other end of a CJ pair)
+    "W_CROWD": 0.0,         # per other element's placed dim within CROWD_R_IN of a candidate (line + text):
+    "CROWD_R_IN": 0.5,      # paper inches - "the side with least congestion" (Adolfo 2026-10-07); 0 = off
     "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
                             # 3 lost to the far side at the L3N elevator shaft (8 1/2" | 13'-7 1/2" vs 14'-4") - analyst B6
                             # (5 tried after L7 round 1 - "let them breathe" - bisecting an L3N regression, run 91)
@@ -176,6 +178,7 @@ class Layout(object):
         self.c.setdefault("LANE_STEP", self.c["LANE_STEP_IN"] * k)
         self.c.setdefault("FIRST_GAP", self.c["FIRST_GAP_IN"] * k)
         self.c.setdefault("STATION_GAP", self.c["STATION_GAP_IN"] * k)
+        self.c.setdefault("CROWD_R", self.c["CROWD_R_IN"] * k)
         self.c.setdefault("EDGE_CLEAR", self.c["EDGE_CLEAR_IN"] * k)
         self.c.setdefault("MIN_GAP", self.c["MIN_GAP_IN"] * k)
         self.par_edges = self._parallel_edges(model)
@@ -536,6 +539,16 @@ class Layout(object):
             for ml in leaders:
                 if P.seg_intersect(ml[0], ml[1], pl.seg[0], pl.seg[1]):
                     pen += c["W_CROSS_LEADER"]
+        if c["W_CROWD"]:
+            # congestion: other elements' dims (line, text, leaders) near this
+            # spot - its own rows / chain sit together by design
+            crowd = 0
+            for pl in self.placed:
+                if s.feature is not None and pl.s.feature is s.feature:
+                    continue
+                if not _rects_apart(myrect, pl.rect, c["CROWD_R"]):
+                    crowd += 1
+            pen += c["W_CROWD"] * crowd
         for poly in self.notes:
             r = (min(p[0] for p in poly), min(p[1] for p in poly), max(p[0] for p in poly), max(p[1] for p in poly))
             if _rects_apart(myrect, r, 0.0):

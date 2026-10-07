@@ -602,6 +602,16 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   (`text_plan`), not stacked over an end text with a crossing leader; old behaviour when it would hit the end texts.
   Scores: L7 140 / 52 / 1 / 4 (same); **L3N 127 / 29 / 0 / 3 (was 122 / 34 / 0 / 3)**. Only these shafts have a bump
   in the three test views; the L4.5 voids go through the void branch (unaffected).
+- **2026-10-07 — "side with least congestion": dry run + crowding sweep.** New `Claude outputs/audit_R26/dry_run.py`
+  runs plan + layout with setting overrides and writes a synthetic snapshot - nothing created, the test views untouched,
+  ~15 s a setting; it reproduces the real runs' scores exactly (L7 run 45 140 / 52 / 1 / 4). `_sweep_score.py <TAG>
+  <his.json>` ranks the variants. New layout cost `W_CROWD` per other element's dim within `CROWD_R_IN` of a candidate
+  (default 0 = off). Swept W_CROWD 0.25-4 x radius 0.25-2" (`sweep_crowd_2026-10-07.md`): L7 best 144 left (w 0.5,
+  1") vs 140, but its neighbours score 138-140 (a lone peak, not a plateau); L3N no setting beats 127 (w 0.5 / 1"
+  ties); L4.5 hold-out unchanged; weights >= 1 lose 4-18 on L7. **Not adopted** (W_CROWD stays 0): a count of nearby
+  dims doesn't capture what he means. Better next ideas: compare only the element's two sides (fewer dims on the far
+  side wins), and a second pass that re-places the most crowded dims once everything is down (the layout is greedy:
+  a side that looks empty when a dim is placed can fill up after).
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
