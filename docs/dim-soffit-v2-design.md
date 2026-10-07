@@ -589,6 +589,19 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   and clashes already decide the side; rule 12's home side only breaks ties. With the other side free (`W_ALT` 0 for
   openings) one pair flipped on L7, away from his spot (140 -> 138 left), L3N unchanged (122 / 34 / 0 / 3) -
   reverted. Answer 3 is the current behaviour; no change needed.
+- **2026-10-07 — the pilaster hole (L7 shaft#51 = L3N shaft#119), runs L7 43-45 / L3N 108.** Adolfo: "dimension on
+  the side that the element exists instead of dragging it through the opening", and the chain's leaders crossed for no
+  reason - he redrew it the same way every round. Built: (a) **a core/shaft opening with a bump** (4+ faces in one
+  direction, the inner ones all in one half - `Planner.bump_side`): the bump chain on the bump's side, no
+  alternative; the overall and the locating row(s) on the other side (`rows_kw` on the chain, used by
+  `stack_from_anchor`), where they join end to end (`13'-2¾" | 3'-0"`); the other direction gets a home side + its
+  alternative, so the inside-the-element clamp keeps its rows out of the hole (the `8'-0½"` was inside the shaft).
+  A single step (the angled L3N shaft) is not a bump - unchanged. (b) **a bump chain is placed first** (`early`,
+  `Layout.run` order): as a check it came after the locate rows and the `8'-0½"` text had taken its spot (it landed
+  5 ft out). (c) **a small MIDDLE segment's text sits straight above its own segment** between the end texts
+  (`text_plan`), not stacked over an end text with a crossing leader; old behaviour when it would hit the end texts.
+  Scores: L7 140 / 52 / 1 / 4 (same); **L3N 127 / 29 / 0 / 3 (was 122 / 34 / 0 / 3)**. Only these shafts have a bump
+  in the three test views; the L4.5 voids go through the void branch (unaffected).
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

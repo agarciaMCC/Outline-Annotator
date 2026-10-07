@@ -338,12 +338,33 @@ class Layout(object):
         plan = []
         rows = {}                                   # end -> number of pulled texts stacked there
         suf = getattr(s, "suffix", None)
-        for a, b in zip(offs, offs[1:]):
+        segs = list(zip(offs, offs[1:]))
+        widths = [PL.text_width(ftin(b - a) + (" " + suf if suf else ""), ts) for a, b in segs]
+        pulled = [(b - a) < w + fit for (a, b), w in zip(segs, widths)]
+        mids = []                                   # (lo, hi) of middle texts already placed above their segment
+        for i, (a, b) in enumerate(segs):
             v = b - a
-            w = PL.text_width(ftin(v) + (" " + suf if suf else ""), ts)
+            w = widths[i]
             if v >= w + fit:
                 plan.append((v, w, self.world(s.gi, row0, (a + b) / 2.0), False, None))
                 continue
+            if 0 < i < len(segs) - 1:
+                # a small MIDDLE segment: its text straight above its own
+                # segment, between the end texts - not stacked over an end
+                # text with a leader crossing it (Adolfo 2026-10-07, every
+                # round: 1'-2" | 8" | 1'-2" at the pilaster hole). Only when it
+                # clears the end texts and the other middle texts
+                cm = (a + b) / 2.0
+                lo_t, hi_t = cm - w / 2.0 - 0.25 * ts, cm + w / 2.0 + 0.25 * ts
+                left_end = offs[0] - (0.5 * ts + widths[0]) if pulled[0] else offs[0]
+                right_end = offs[-1] + (0.5 * ts + widths[-1]) if pulled[-1] else offs[-1]
+                clear_ends = (not pulled[0] or lo_t > offs[0]) and (not pulled[-1] or hi_t < offs[-1]) \
+                    and left_end <= lo_t and hi_t <= right_end
+                if clear_ends and all(hi_t <= m0 or lo_t >= m1 for m0, m1 in mids):
+                    mids.append((lo_t, hi_t))
+                    c = self.world(s.gi, row0_pull, cm)
+                    plan.append((v, w, c, True, (self.world(s.gi, st, cm), c)))
+                    continue
             # pulled past the nearer end with a leader; later ones stack outward,
             # all starting at the same inner edge so the column reads aligned
             end = 0 if abs(a - offs[0]) <= abs(b - offs[-1]) else 1
@@ -918,7 +939,9 @@ class Layout(object):
             # a small void's edge dims go after the real openings' strings, so
             # they don't take the spot beside an opening its own dims need
             void = 1 if s.feature is not None and getattr(s.feature, "sub", None) == "void" else 0
-            return (0 if s.role == "locate" else 1,
+            # a bump chain has one fixed side (beside its bump): it goes first,
+            # before the rows that can still go either way take its spot
+            return (-1 if getattr(s, "early", False) else (0 if s.role == "locate" else 1),
                     1 if getattr(s, "late", False) else 0,          # corner call-outs after the element's rows
                     PRIORITY.get(s.feature.kind, 9) if s.feature else 9, void,
                     stk[0] if stk else 0, stk[1] if stk else 0)

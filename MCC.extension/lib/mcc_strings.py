@@ -338,6 +338,31 @@ class Planner(object):
             return 0
         return -1 if open_[0] else 1
 
+    def bump_side(self, f, fi, gi=None):
+        """A bump on one side of an opening, in direction fi: 4+ faces whose
+        inner ones all lie in one half of the opening's extent along the grid
+        -> that side (+1 / -1 in gi stations), else 0. (One inner face - a
+        single step, like the angled L3N shaft - is not a bump.)"""
+        par = [e for e in f.edges if self.m.family_parallel(e.d) == fi]
+        if gi is None:
+            cx, cy = f.meta["centroid"]
+            ng = self.m.nearest_grid((cx, cy), fi, self.c["MAX_DIST"])
+            if ng is None:
+                return 0
+            gi = ng[0]
+        groups = {}
+        for e in par:
+            groups.setdefault(round(self.m.offset(e.mid(), gi) * 96), []).append(e)
+        if len(groups) < 4:
+            return 0
+        sts = [self.m.station(p, gi) for e in par for p in (e.p0, e.p1)]
+        mid = (min(sts) + max(sts)) / 2.0
+        sides = set()
+        for k in sorted(groups)[1:-1]:
+            es = [self.m.station(p, gi) for e in groups[k] for p in (e.p0, e.p1)]
+            sides.add(1 if min(es) > mid else (-1 if max(es) < mid else 0))
+        return sides.pop() if len(sides) == 1 and 0 not in sides else 0
+
     def on_column(self, f, edges=None):
         """Any edge of the feature lying on a column face -> the bump/notch/step
         is the slab cut around a column, not a soffit shape: skip it. For a
@@ -493,6 +518,13 @@ class Planner(object):
         # direction with no gridline within 60 ft, and Adolfo located its
         # straight jog off grids 7 and B (2026-10-06)
         dom_near = dom is not None and self.m.nearest_grid((cx, cy), dom, self.c["LOC_MAX"]) is not None
+        # a bump on one side of a core/shaft opening (the L3N/L7 pilaster hole:
+        # 3'-0" square, 8" bump on top) - Adolfo every round: the bump chain on
+        # the bump's side, the overall + locating row on the other side, and
+        # nothing through the hole (2026-10-07: "dimension on the side that the
+        # element exists instead of dragging it through the opening")
+        has_bump = kind in ("core", "shaft") and any(
+            self.bump_side(f, fj) for fj in range(len(self.m.families)))
         for fi in range(len(self.m.families)):
             par = [e for e in f.edges if self.m.family_parallel(e.d) == fi]
             if fi not in own and dom_near:
@@ -552,6 +584,25 @@ class Planner(object):
                 span = (s_lo, s_hi)
             alt_pref = (s_lo - self.c["OPEN_OFFSET"]) if away > 0 else (s_hi + self.c["OPEN_OFFSET"])
             alt = ((alt_pref - 1.0, alt_pref) if away > 0 else (alt_pref, alt_pref + 1.0), alt_pref, -away)
+            rows_kw = None
+            overall_kw = None
+            if has_bump and away == 0:
+                def side_kw(sd, with_alt):
+                    p = (s_hi + self.c["OPEN_OFFSET"]) if sd > 0 else (s_lo - self.c["OPEN_OFFSET"])
+                    sp = (p, p + 1.0) if sd > 0 else (p - 1.0, p)
+                    q = (s_lo - self.c["OPEN_OFFSET"]) if sd > 0 else (s_hi + self.c["OPEN_OFFSET"])
+                    al_ = ((q - 1.0, q) if sd > 0 else (q, q + 1.0), q, -sd) if with_alt else None
+                    return p, sp, sd, al_
+                bs = self.bump_side(f, fi, gi)
+                if bs:
+                    # the bump's direction: chain on the bump side, no choice;
+                    # the overall and the locating rows on the other side
+                    pref, span, away, alt = side_kw(bs, False)
+                    overall_kw = side_kw(-bs, False)
+                    rows_kw = overall_kw
+                else:
+                    # the other direction: outside the hole, the side with room
+                    pref, span, away, alt = side_kw(1, True)
             in_wall = any(P.point_in_poly(cx, cy, P.inflate(w.poly, 1.0)) for w in self.m.walls if w.poly)
             if in_wall and kind != "void" and (faces[-1][0] - faces[0][0]) < self.c["SMALL_OPEN"]:
                 # a small hole sitting in a wall line (the 9" x 5" "shaft" in
@@ -667,6 +718,8 @@ class Planner(object):
             if s is not None:
                 s.alt = alt
                 s.keep_chain = keep_chain
+                s.rows_kw = rows_kw          # stacked rows' side, when not the chain's
+                s.early = rows_kw is not None   # a bump chain: placed first (fixed side)
             # a stepped opening also gets its overall size - "an overall goes
             # outside its chain" (Adolfo added 3'-0" outside 1'-2" | 8" | 1'-2"
             # at the L3N pilaster hole; analyst B6)
@@ -674,9 +727,10 @@ class Planner(object):
             # 1'-2" gets its 3'-0"; the two-segment 3'-0" | 8" already spans the
             # hole on its locating line - its 3'-8" deleted, Adolfo 2026-10-07)
             if f.meta.get("stepped") and len(faces) > 3:
+                o_pref, o_span, o_away, _ = overall_kw or (pref, span, away, None)
                 self.add(fi, gi, [(lo, faces[0][1].ref, "opening edge", "edge"),
                                   (hi, faces[-1][1].ref, "opening edge", "edge")],
-                         span, "stepped opening overall", f, prefer=pref, outward=(away or None),
+                         o_span, "stepped opening overall", f, prefer=o_pref, outward=(o_away or None),
                          reach=12.0, role="check")
                 self.note("stepped opening: overall size added")
             # one-sided and large: the far edge gets its own anchor dim
@@ -1453,9 +1507,11 @@ class Planner(object):
                     self.note("stacked dim already planned (skipped)")
                     continue
                 have.add(sig)
-                t = String(s.fi, s.gi, refs, s.span, "stack %d -> %s" % (rank + 1, an), s.feature,
-                           names=[p[1] for p in pair], prefer=s.prefer, outward=s.outward, reach=s.reach)
-                t.alt = s.alt
+                rk = getattr(s, "rows_kw", None)
+                r_pref, r_span, r_out, r_alt = rk or (s.prefer, s.span, s.outward, s.alt)
+                t = String(s.fi, s.gi, refs, r_span, "stack %d -> %s" % (rank + 1, an), s.feature,
+                           names=[p[1] for p in pair], prefer=r_pref, outward=r_out, reach=s.reach)
+                t.alt = r_alt
                 t.stack = (key, rank, len(targets))
                 self.strings.append(t)
                 added += 1
