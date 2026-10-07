@@ -1,0 +1,72 @@
+# Dim Soffit v2 — session handoff (written 2026-10-07)
+
+Read this first, then the dated status entries in `dim-soffit-v2-design.md` (2026-10-06 and 2026-10-07 are the
+long ones). The design doc is the authoritative log of every rule and every decision Adolfo gave; this page is
+the "how we work" and "where things stand" summary.
+
+## Where things stand
+- **L3 North** (`ZZ CLAUDE TEST - L3 NORTH (auto-dim)`, 1:128): five edit rounds by Adolfo. Latest run **95**
+  (`Claude outputs/audit_R26/dimsoffit_v2_L3N_run95.md`): 135 strings / 115 placed / 5 review / 0 overlaps.
+  Against his round-5 version (`snapshot_L3N_after_edits5.json`): 123 segments on his line / 34 off / 0 extra /
+  2 missing (the 5 review items are intentional — he left them out). The analyst's verdict after round 5: **what
+  is left on L3N is placement taste, not rules; another round adds little.** Round-by-round "untouched" counts:
+  55 → 70 → 78 → 70 → 86 of ~117 dims.
+- **L7** (`ZZ CLAUDE TEST - L7 (auto-dim)`, 1:96, orthogonal): one edit round. Latest run **31**: 175 / 135 placed /
+  0 review / 0 overlaps; vs his version (`snapshot_L7_after_edits1.json`) 113 / 76 / 7 / 10. **A second L7 round is
+  the next useful thing** (the view holds run 31). Known gap: the 39 ft top edge above AA gets no string at all
+  (his `1'-3¼"` ×2) — needs a model look (which skip fires in `do_run`).
+- **L4.5 North** (`ZZ CLAUDE TEST - L4.5 NORTH (auto-dim)`, 1:128, rotated wing, centre of the footprint is OPEN
+  at this level): run **1** only: 87 / 71 placed / 15 review. Adolfo's answers to the L4.5 study (`analyst_L45N_study.md`)
+  changed no rule (columns/walls/repeats there were one-offs; "tool is better"). Worth a pass on its 15 review items
+  and the void edges — no decisions needed.
+- Hand-sheet baselines: `snapshot_L3N_after_edits5.json` (use this, not the issued sheet), `snapshot_L7_after_edits1.json`,
+  `snapshot_L45N_hand.json` (parent view's dims inside the north crop; the issued L4.5 sheet, with Adolfo's
+  one-offs), `snapshot_L7_hand.json` (issued L7 sheet — NOT a good yardstick: grid overalls, perimeter chain).
+
+## The routine (what worked)
+1. **Before he edits:** snapshot the test view (`snapshot_dims.py`, `TAG_LAYOUT=True`) → `snapshot_<tag>_before_editsN.json`;
+   commit. **Never run the tool on a view he is editing**; nothing clears a test view until he says "done".
+2. **After:** snapshot `_after_editsN`; `compare_snapshots.py` (id-based, needs Revit) + `compare_segments.py`
+   (CPython, by value + position, tolerant of a different reference); commit.
+3. **Analyst:** `Agent(subagent_type="edit-diff-analyst")` with both compare files, the snapshots, the run report and the
+   design doc. It groups the edits by cause and proposes changes; keep its questions for Adolfo few and send
+   pictures (`crop_png.py` on the run's exported PNG — mapping notes below).
+4. **Build the clear fixes, run, snapshot, score** with `agree_with_edits.py <run.json> <his.json>` (by segment).
+   **Keep a change only if the score against his latest version does not drop**; several "obvious" fixes scored
+   worse and were reverted (listed in the design doc: 3/16" first row, clamp on home-less rows, seam CJs, junction
+   end, tight first rows, W_SPLIT 5). Record tried-and-reverted things in the doc so they aren't retried.
+5. Ask Adolfo with pictures; his answers go into the design doc as dated decisions. He answers in one line each
+   ("1c", "2b", "disregard my edit", "correct rule") — give him numbered options.
+6. **`revit-compat-reviewer`** agent for IronPython 2.7 / Revit 2023+2026 checks before a run when the change is big.
+
+## Running
+- Headless: `execute_revit_code` with `RUN=n` (+ `VIEW_NAME`, `TAG` for L7 / L45N) and `execfile(run_v2.py)`. It
+  clears the view's dims, runs the button, writes `dimsoffit_v2_<TAG>_runN.md` + a PNG. **It refuses a run number
+  whose report already exists** (guard added after a parallel session wiped the view) — always use a new number.
+  Latest numbers: L3N 95, L7 31, L45N 1.
+- Always `assert "R26 TEST" in doc.PathName` first. ~20–45 s per run; the MCP call can time out at 60 s while
+  the run completes — read the report file.
+- Image crops: the FitToPage export covers the model crop plus grid bubbles; derive px/ft from two grid bubbles
+  (L7 run 28: 53.6 px/ft, grid 5 at x 944 px; L3N runs 76+: ~22.3 px/ft from the model crop bbox). The annotation
+  crop is now computed from the model crop + the view's four annotation offsets (`mcc_coverage.annotation_crop_poly`)
+  because Revit returned nonsense after the offsets were changed. The button widens the annotation crop by the
+  overshoot of dims placed up to `CROP_OUT` 4 ft past it (plan views only).
+
+## Hazards
+- **A parallel Claude session** worked on this repo on 2026-10-06 (R.O. suffix, Training Library). It ran the L3N
+  test view while Adolfo was starting an edit round. Check `git status` / recent commits for another session's
+  uncommitted work before committing shared modules; coordinate on the test views.
+- `mcc_strings.py` / `mcc_layout.py` are large and shared; keep edits surgical and run after each.
+- Per-string span is a search window for home-side strings, not the element — use `_extent(feature, gi)` for
+  anything geometric (this bit us twice).
+
+## Open items (in rough priority)
+1. Second L7 edit round; then its analyst pass.
+2. L7: the 39 ft top edge with no string (model look); the 11 join refusals on L7 (why `_join_collinear` refuses).
+3. L4.5: 15 review items, void edges, perimeter runs dropped as flush with beams/walls.
+4. The CJ pair off grid 5 (he puts both at the bottom end; the tool at the top — "more open space" is his reason).
+5. The pocket rows (B2, five rounds); beam widths `anchor | sides` at framed ends (~0.4" from his, every round).
+6. Milestone 3 proper: whole views on L2/L4, a cleanup count per sheet (target ≤ 10; L3N round 5 was 31 edits).
+7. Rules recorded but not built: a beam meeting a wall at a skew gets a check dim off the wall face (L4.5 answer 6).
+8. Share with coworkers: `MCC-Testing.extension` carries Dim Soffit v2 — re-copy `lib/` and rebuild the zip after
+   today's changes (see CLAUDE.md folder map).

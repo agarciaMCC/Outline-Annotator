@@ -30,6 +30,9 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 - `Training Library/` — past jobs' outline sheets pulled from the Z: archive (`inventory.py`, `classify.py`); PDFs not on GitHub.
 - `Test Library/` — PDF regression cases for Columns/Grids from PDF: `python run_library.py`.
 - `MCC-DimText.extension/` — stripped-down Dim Text build shared with coworkers; keep in sync when Dim Text changes.
+- `MCC-Testing.extension/` — "MCC Testing" tab shared with coworkers for buttons under test (Dim Soffit v2 so far).
+  Its `lib/` holds copies of only the modules those buttons import; re-copy and rebuild
+  `Setup Files/MCC-Testing.extension.zip` when they change.
 - `RevitMCP.extension/` — third-party Revit MCP server, locally patched (see `docs/revit-mcp-setup.md`). Don't edit casually.
 - `Reference Projects/<name>/` — models + issued PDFs, not on GitHub. `Kalae/1268 - Kalae (R26 TEST).rvt` is
   the dev/test model (the one the Revit MCP works on); Alia, Eastlake, Bothell Stem are other projects'
@@ -90,6 +93,7 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 ## Doc index (`docs/`)
 | Doc | What's in it |
 |---|---|
+| `dim-soffit-v2-handoff.md` | **Start here for Dim Soffit v2**: where each test view stands, the snapshot/compare/analyst routine, run numbers, hazards, open items |
 | `dim-soffit-v2-design.md` | Current dimensioning rebuild — stages, status by run, open items, Adolfo's decisions |
 | `dimensioning-rules.md` | The rules the dim tools must follow |
 | `auto-dim-scoring.md` | Coverage metric, scoring runs, test-view setup |
@@ -104,6 +108,7 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 | `columns-from-pdf-design.md` | Columns from PDF engine, schedule reader, test library |
 | `revit-mcp-setup.md` | Revit MCP rig, local patches, ground rules |
 | `other-projects-study.md` | How Alia, Eastlake, Bothell soffit plans are dimensioned vs Kalae; open questions |
+| `archive-soffit-study.md` | 1,188 past soffit plans measured + 24 looked at vs the v2 rules; open questions |
 | `outline-training-library.md` | Past jobs' outline sets gathered from the Z: archive for training (soffit plans first) |
 | `project-readme.md` | Early (v0.3) button overview — partly outdated |
 
