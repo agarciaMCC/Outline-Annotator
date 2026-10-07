@@ -1,0 +1,1632 @@
+# -*- coding: utf-8 -*-
+"""Dim Soffit v2, stage 3 - LAYOUT.
+
+Places every planned String of a view together, text-aware, then creates
+the dimensions in one transaction and reads back what Revit made.
+
+A candidate position for a string = (side, lane, slide): which side of the
+object its home station is on, how many lanes out (LANE_STEP apart, max
+MAX_LANE), and a slide along the object. Each candidate is scored; hard
+constraints reject it outright:
+  - outside the view's annotation crop
+  - dim line over a parallel grid line (GRID_CLEAR)
+  - dim line crossing a column / wall / opening (beams and CJs: soft)
+  - same-direction placed string too close and overlapping
+  - crossing a placed string of another direction
+  - estimated TEXT BOX overlapping any placed text box or dim line
+Text boxes come from the segment values (known from the witness offsets),
+the dimension type's text size and the view scale; a segment too short for
+its text gets its box pulled out past the nearer end of the string, as the
+real text will be.
+
+Strings with no feasible candidate are not forced in: they go to the
+review list with the constraint that blocked them most often."""
+import math
+from pyrevit import DB
+import mcc_plan as P
+import mcc_place as PL
+from mcc_strings import ftin
+
+CFG = {
+    # spacing is set on PAPER (measured on Kalae + Alia hand dims, 2026-10-05:
+    # rows 3/16" apart at every scale, first row ~1/4" off the object);
+    # Layout converts these to plan feet with the view scale
+    "LANE_STEP_IN": 0.1875,  # paper inches between stacked dim lines
+    "FIRST_GAP_IN": 0.25,    # paper inches from the object to the first row (3/8" moved dims Adolfo had left alone;
+                             # 3/16" tried in run 85-86: 10 rows came in to his spots, 15 others moved off them - kept 1/4")
+    "MIN_GAP_IN": 0.15,      # paper inches; an opening's dim line never closer to the opening than this (hard) -
+                             # "as close as the text allows, not touching when it's really tight" (Adolfo 2026-10-06);
+                             # 1/16" tried: he moved 5 rows hugging at 1/16" out to 3/16-1/4" (round 3)
+    "W_GAP": 2.0,            # cost at MIN_GAP, tapering to 0 at FIRST_GAP: closer than 1/4" only when it buys something
+                             # (Adolfo's own placements sit 0.10-0.20" off some openings, run 50 edits)
+    "STATION_GAP_IN": 0.16,  # paper inches; parallel strings closer than this must not overlap
+    "W_STACK": -1.0,         # base cost of the next row of a stack, one lane out from the last
+    "W_ORDER": 3.0,          # a row nearer the element than a shorter neighbour (or further than a longer one)
+    "W_WITNESS_CROSS": 4.0,  # a witness line crossing another dim line of the same direction (Adolfo 2026-10-06:
+                             # "dims get mistaken" - a priority where possible, not a hard rule)
+    "W_IN_SHAFT": 20.0,      # a shaft's own overall-size dim inside the shaft: last resort only
+                             # (8 was beaten by the join bonus - 15'-7" sat inside its shaft)
+    "W_EDGE_LINE": 3.0,      # a dim line continuing an edge's line from its end
+    "W_OWN_SPAN": 2.5,       # an opening's dim standing under/over the opening instead of beyond its sides
+    "EDGE_CLEAR_IN": 0.0625, # paper inches; a dim line keeps this clear of an edge running the same way
+    "W_JOIN": -1.5,          # bonus for lining up end-to-end with a dim sharing a witness line (joined after)
+    "W_JOIN_SAME": -6.0,     # ...when both measure the same element (an opening's size onto its locating dim)
+    "W_COLLINEAR": -0.75,    # bonus for a dim line on the same line as a placed parallel dim (Adolfo: align)
+    "COLLINEAR_REACH": 4.0,  # ft from the preferred station a string may move to line up
+    "MAX_LANE": 2,          # lanes 0..2 (Adolfo: 2 to 3 rows), 3 = last resort
+    "LAST_RESORT_LANE": 3,
+    "SLIDE_STEP": 1.0,      # ft
+    "SLIDE_MAX": 4.0,       # ft either way along the object
+    "GRID_CLEAR": 1.0,      # ft; no dim line this close to a parallel grid (1.5 -> 1.0 2026-10-07: Adolfo's dims in the
+                            # 2'-9 1/2" gap below AA sit 1.2 ft off it; 1.0 / 1.2: L7 146 -> 150, L3N 125 -> 126-127)
+    "CROP_MARGIN": 1.0,
+    "CROP_OUT": 4.0,        # ft a dim may stand past the annotation crop; the button widens the crop to show it
+    "TEXT_PAD": 0.25,
+    "TEXT_LIFT": 0.2,       # x text size: gap between dim line and the text (Revit default, measured)
+    "TEXT_FIT_MARGIN": 0.5, # x text size: a segment narrower than text + this gets its text pulled out       # ft around text boxes
+    "W_LANE": 2.0, "W_SIDE": 4.0, "W_SLIDE": 0.5, "W_BEAM": 4.0, "W_CJ": 1.0,   # W_BEAM 1 -> 4: stay off beams (Adolfo)
+    "W_OWN_BEAM": 4.0,      # a beam width dim across its own beam (only the intermediate ones belong there)
+    "W_BEAM_ROW": 3.0,      # extra per lane / per ft of slide for a beam's end width dim: it is the first row past the end
+    "W_ALT": 1.0,           # base cost of a string's alternative home (the other end of a CJ pair)
+    "W_CROWD": 0.0,         # per other element's placed dim within CROWD_R_IN of a candidate (line + text):
+    "CROWD_R_IN": 0.5,      # paper inches - "the side with least congestion" (Adolfo 2026-10-07); 0 = off
+    "W_SIDES": 0.0,         # per dim more on this side of the element than on its other side (0 = off):
+    "SIDES_R_IN": 1.0,      # paper inches - depth of the strip beside the element that is counted
+    "SIDES_KINDS": ("opening",),   # elements whose dims compare their two sides
+    "W_TEXT_FLIP": None,    # a pulled-out text moved to the string's far end when the near end is blocked (None = off:
+                            # it put plain#52's pair exactly on Adolfo's spot but cost L3N 3-8 at any price, 2026-10-07)
+    "W_TIGHT": 0.25,        # base cost of a spot just past MIN_GAP beside an opening (a tight gap to a grid)
+    "W_NEIGH": 2.0,         # an opening's dim on the side where ANOTHER opening sits within NEIGH_R_IN (and the
+    "NEIGH_R_IN": 0.75,     # other side is clear): per such neighbour - keeps two near openings' dims out of the
+                            # gap between them (Adolfo 2026-10-07, L7 "busy" pair by grid 7 / FF); 0 = off
+    "ORDER_GAP_LANES": 1.5,        # _order_stacks: rows up to this many lanes apart form one stack
+    "ORDER_GAP_OPEN_LANES": 2.0,   # ... between two openings' rows (2 and 2.5 both: L7 140 -> 145, L3N same; 2026-10-07)
+    "GROUP_ORDER": "first",        # which stack group is placed first: "first" (plan order), "short" (shortest
+                                   # row first), "long", "size" (smallest element first)
+    "ORDER_SHORT_FIRST": False,    # place shorter strings first within each priority group, so a short row
+                                   # takes the lane beside its element before a longer one passing by
+    "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
+                            # 3 lost to the far side at the L3N elevator shaft (8 1/2" | 13'-7 1/2" vs 14'-4") - analyst B6
+                            # (5 tried after L7 round 1 - "let them breathe" - bisecting an L3N regression, run 91)
+    "W_GROUP": -0.5,        # one lane beside a placed dim off the same gridline, same direction (stack them)
+    "W_CROSS": 2.5,         # per dim line crossed - two crossings cost more than the other side (W_SIDE)
+    "W_CROSS_LEADER": 3.0,  # a dim line or leader crossing another string's leader
+    "W_ALIGN": 0.5,         # base cost of a candidate that lines pulled text up with a neighbour's
+    "MARGIN_IN": 2.5,       # ft past the end of an edge for the first lane in open margin
+    "MARGIN_MAX": 12.0,     # ft: how far into the margin a string may go to line up with another
+    "W_MARGIN": -0.5,       # base cost of a margin lane: preferred over a lane inside the slab
+    "W_INSIDE": 3.5,
+    "UNBLOCK_COST": None,   # move neighbours for a placement costing more than this (None: off -
+                            # moving placed strings cost more real overlaps than it saved on L3N)
+    "UNBLOCK_PAIRS": False, # also try lifting two neighbours at once (slow: 20 s -> 60 s on L3N)        # a no-home-side string laid through its own span (across a shaft)
+    "W_OUTSIDE": 2.0,       # per ft the station sits past the string's home span
+    "W_TEXT_CROP": 3.0,     # text box clipped by the crop
+    "W_TEXT_OBST": 2.0,     # text box over a wall/column/opening/beam
+    "END_TRIM": 0.6,        # ft; dim-line ends may touch an obstacle (anchors)
+    "IMPROVE_PASSES": 2,
+}
+
+PRIORITY = {"run": 0, "corner": 0, "bump": 1, "notch": 1, "step": 1,
+            "opening": 2, "beam": 3, "cj": 4}
+
+
+class Placed(object):
+    __slots__ = ("s", "fi", "st_f", "lo_f", "hi_f", "seg", "boxes", "cost", "cand", "rect", "tplan", "leaders", "side")
+
+    def __init__(self, s, fi, st_f, lo_f, hi_f, seg, boxes, cost, cand, tplan=None):
+        self.s, self.fi, self.st_f, self.lo_f, self.hi_f = s, fi, st_f, lo_f, hi_f
+        self.seg, self.boxes, self.cost, self.cand, self.tplan = seg, boxes, cost, cand, tplan
+        self.leaders = [it[4] for it in (tplan or []) if it[4]]
+        self.side = None            # set by Layout: +1/-1 element toward higher/lower family stations, 0 inside span
+        pts = list(seg) + [pt for b in boxes for pt in b] + [pt for l in self.leaders for pt in l]
+        self.rect = (min(p[0] for p in pts), min(p[1] for p in pts),
+                     max(p[0] for p in pts), max(p[1] for p in pts))
+
+
+def _rects_apart(a, b, gap):
+    return a[2] + gap < b[0] or b[2] + gap < a[0] or a[3] + gap < b[1] or b[3] + gap < a[1]
+
+
+def _rect_poly(c, u, n, half_u, half_n):
+    """World polygon of a rectangle centred at c, half-extents along u / n."""
+    return [(c[0] + u[0] * a + n[0] * b, c[1] + u[1] * a + n[1] * b)
+            for a, b in ((-half_u, -half_n), (half_u, -half_n), (half_u, half_n), (-half_u, half_n))]
+
+
+def _polys_overlap(A, B):
+    if P.point_in_poly(sum(p[0] for p in A) / 4.0, sum(p[1] for p in A) / 4.0, B):
+        return True
+    if P.point_in_poly(sum(p[0] for p in B) / 4.0, sum(p[1] for p in B) / 4.0, A):
+        return True
+    for i in range(4):
+        if P.seg_hits_poly(A[i], A[(i + 1) % 4], B):
+            return True
+    return False
+
+
+def _box_poly_overlap(box, poly):
+    """A 4-corner text box against a polygon with any number of vertices
+    (_polys_overlap assumes both have 4)."""
+    if any(P.point_in_poly(x, y, poly) for x, y in box):
+        return True
+    if P.point_in_poly(poly[0][0], poly[0][1], box):
+        return True
+    return any(P.seg_hits_poly(box[i], box[(i + 1) % 4], poly) for i in range(4))
+
+
+def _open_pt(x, y, poly, fill):
+    return P.point_in_poly(x, y, poly) and not any(P.point_in_poly(x, y, cp) for cp in fill)
+
+
+def _seg_in_open_part(a, b, poly, fill, step=0.5):
+    """Does segment a-b pass through the part of an opening no other floor
+    fills? (sampled every `step` ft)"""
+    L = math.hypot(b[0] - a[0], b[1] - a[1])
+    n = max(1, int(L / step))
+    return any(_open_pt(a[0] + (b[0] - a[0]) * i / float(n), a[1] + (b[1] - a[1]) * i / float(n), poly, fill)
+               for i in range(n + 1))
+
+
+def _box_in_open_part(box, poly, fill):
+    """A 4-corner text box against the unfilled part of an opening (5 x 3 samples)."""
+    a, b, c, d = box[0], box[1], box[2], box[3]
+    for i in range(5):
+        u = i / 4.0
+        p0 = (a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u)
+        p1 = (d[0] + (c[0] - d[0]) * u, d[1] + (c[1] - d[1]) * u)
+        for j in range(3):
+            v = j / 2.0
+            if _open_pt(p0[0] + (p1[0] - p0[0]) * v, p0[1] + (p1[1] - p0[1]) * v, poly, fill):
+                return True
+    return False
+
+
+class Layout(object):
+    def __init__(self, model, strings, view, dim_type, crop, cfg=None):
+        self.m = model
+        self.strings = strings
+        self.view = view
+        self.crop = crop
+        self.c = dict(CFG)
+        if cfg:
+            self.c.update(cfg)
+        k = float(view.Scale or 96) / 12.0          # paper inches -> plan feet
+        self.c.setdefault("LANE_STEP", self.c["LANE_STEP_IN"] * k)
+        self.c.setdefault("FIRST_GAP", self.c["FIRST_GAP_IN"] * k)
+        self.c.setdefault("STATION_GAP", self.c["STATION_GAP_IN"] * k)
+        self.c.setdefault("CROWD_R", self.c["CROWD_R_IN"] * k)
+        self.c.setdefault("SIDES_R", self.c["SIDES_R_IN"] * k)
+        self.c.setdefault("NEIGH_R", self.c["NEIGH_R_IN"] * k)
+        self.c.setdefault("EDGE_CLEAR", self.c["EDGE_CLEAR_IN"] * k)
+        self.c.setdefault("MIN_GAP", self.c["MIN_GAP_IN"] * k)
+        self.par_edges = self._parallel_edges(model)
+        self._ext_cache = {}
+        self.tsize = PL.text_size_ft(dim_type) * view.Scale     # ft on the plan
+        self.notes = self._existing_annotations(view)            # text notes, tags, symbols already in the view
+        self.placed = []
+        self.review = []            # (string, reason)
+        self.blocked = {}
+
+    def _parallel_edges(self, model):
+        """Per grid family: soffit edges running the way that family's dim
+        lines run (across the grids) -> [(family station, off lo, off hi)]."""
+        faces = []
+        for sl in model.slabs:
+            faces += list(sl.edges)
+            for loop in sl.open_edges:
+                faces += list(loop)
+        segs = []
+        for bm in model.beams:                      # all four sides of a beam, ends included
+            poly = getattr(bm, "poly", None) or []
+            for k in range(len(poly)):
+                a, b = poly[k][:2], poly[(k + 1) % len(poly)][:2]
+                L = math.hypot(b[0] - a[0], b[1] - a[1])
+                if L > 0.1:
+                    segs.append((a, b, ((b[0] - a[0]) / L, (b[1] - a[1]) / L)))
+        for cj in getattr(model, "cjs", []) or []:  # CJ lines too: a dim line never lies on a CJ (Adolfo, round 2)
+            try:
+                a, b = cj.p0[:2], cj.p1[:2]
+            except Exception:
+                continue
+            L = math.hypot(b[0] - a[0], b[1] - a[1])
+            if L > 0.1:
+                segs.append((a, b, ((b[0] - a[0]) / L, (b[1] - a[1]) / L)))
+        out = {}
+        for fi, fam in enumerate(model.families):
+            g, g0, u, n = model.grids[fam[0]]
+            rows = []
+            for f in faces:
+                if not P.parallel(f.d, n):
+                    continue
+                st = model.station(f.p0, fam[0])
+                o0, o1 = model.offset(f.p0, fam[0]), model.offset(f.p1, fam[0])
+                rows.append((st, min(o0, o1), max(o0, o1)))
+            for a, b, d in segs:
+                if not P.parallel(d, n):
+                    continue
+                st = model.station(a, fam[0])
+                o0, o1 = model.offset(a, fam[0]), model.offset(b, fam[0])
+                rows.append((st, min(o0, o1), max(o0, o1)))
+            out[fi] = rows
+        return out
+
+    def _existing_annotations(self, view):
+        """Rectangles (world) of annotation already in the view that dims
+        must keep clear of: text notes, tags, generic annotations, keynotes,
+        view references. Grids, dims, detail lines are handled elsewhere."""
+        doc = view.Document
+        cats = set()
+        for name in ("OST_TextNotes", "OST_GenericAnnotation", "OST_KeynoteTags", "OST_ReferenceViewer",
+                     "OST_SpotElevations", "OST_SpotCoordinates", "OST_MultiCategoryTags", "OST_MaterialTags",
+                     "OST_StructuralFramingTags", "OST_StructuralColumnTags", "OST_FloorTags", "OST_WallTags",
+                     "OST_StructuralFoundationTags", "OST_GenericModelTags", "OST_DetailComponentTags"):
+            try:
+                cats.add(int(getattr(DB.BuiltInCategory, name)))
+            except Exception:
+                pass
+        out = []
+        try:
+            col = DB.FilteredElementCollector(doc, view.Id).WhereElementIsNotElementType()
+            for e in col:
+                try:
+                    if e.Category is None or int(e.Category.Id.Value if hasattr(e.Category.Id, "Value") else e.Category.Id.IntegerValue) not in cats:
+                        continue
+                    bb = e.get_BoundingBox(view)
+                    if bb is None:
+                        continue
+                    if (bb.Max.X - bb.Min.X) > 60 or (bb.Max.Y - bb.Min.Y) > 60:
+                        continue                     # leaders across the sheet etc.
+                    out.append([(bb.Min.X, bb.Min.Y), (bb.Max.X, bb.Min.Y), (bb.Max.X, bb.Max.Y), (bb.Min.X, bb.Max.Y)])
+                except Exception:
+                    continue
+        except Exception:
+            pass
+        return out
+
+    # ---------------- frames ----------------
+    def frame(self, gi):
+        return self.m.grids[gi]
+
+    def world(self, gi, st, off):
+        g, g0, u, n = self.m.grids[gi]
+        return (g0[0] + u[0] * st + n[0] * off, g0[1] + u[1] * st + n[1] * off)
+
+    def fam_sign(self, gi):
+        """+1 when stations in frame gi run the same way as the family frame."""
+        g, g0, u, n = self.m.grids[gi]
+        g2, g20, u2, n2 = self.m.grids[self.m.families[self.m.fam_of[gi]][0]]
+        return 1 if (u[0] * u2[0] + u[1] * u2[1]) > 0 else -1
+
+    def spans_meet(self, s1, s2, slack=1.0):
+        """Do two strings of one family measure elements at the same place
+        along the grids (their spans overlap, in family stations)?"""
+        a = sorted(self.to_fam(s1.gi, x, 0.0)[0] for x in s1.span)
+        b = sorted(self.to_fam(s2.gi, x, 0.0)[0] for x in s2.span)
+        return a[0] - slack <= b[1] and b[0] - slack <= a[1]
+
+    def elem_side(self, s, sf):
+        """Where string s's element lies from a dim line at family station sf:
+        +1 toward higher stations, -1 lower, 0 when the line is inside it.
+        The element is the FEATURE's extent, not the string's span - for a
+        string with a home side the span is a 1 ft search window beyond the
+        element, which made every stack row read as side 0, so W_SPLIT /
+        W_ORDER never applied to them (analyst round 2: the 15'-7" check
+        went to the far side of its opening again)."""
+        ext = self._extent(s.feature, s.gi) if s.feature is not None else None
+        lo, hi = ext if ext else (s.span[0], s.span[1])
+        a = self.to_fam(s.gi, lo, 0.0)[0]
+        b = self.to_fam(s.gi, hi, 0.0)[0]
+        if sf < min(a, b) - 0.05:
+            return 1
+        if sf > max(a, b) + 0.05:
+            return -1
+        return 0
+
+    def to_fam(self, gi, st, off):
+        p = self.world(gi, st, off)
+        gr = self.m.families[self.m.fam_of[gi]][0]
+        return self.m.station(p, gr), self.m.offset(p, gr)
+
+    # ---------------- text model ----------------
+    def text_side(self, gi):
+        """Which way (+1/-1 along the frame's u) Revit puts dimension text:
+        above the line in reading orientation, i.e. the left-hand side of the
+        dim direction once that direction is turned to read right/up."""
+        g, g0, u, n = self.frame(gi)
+        nn = n
+        if nn[0] < -1e-6 or (abs(nn[0]) < 1e-6 and nn[1] < 0):
+            nn = (-nn[0], -nn[1])
+        side = (-nn[1], nn[0])
+        return 1 if (side[0] * u[0] + side[1] * u[1]) > 0 else -1
+
+    def text_plan(self, s, st):
+        """Where each segment's text goes for string s at station st - the
+        one rule used both to judge a candidate and to set TextPosition.
+        -> [(value, width, centre_world, pulled)]"""
+        offs = [r[0] for r in s.refs]
+        ts = self.tsize
+        h = ts * 1.4
+        side = self.text_side(s.gi)
+        fit = self.c["TEXT_FIT_MARGIN"] * ts
+        row0 = st + side * (self.c["TEXT_LIFT"] * ts + 0.5 * ts)   # centre of text sitting on the line
+        # pulled-out text goes on the far side of the dim line from the
+        # element being dimensioned (Adolfo) - never in the gap between them;
+        # a line running through its own span keeps Revit's text side
+        s_lo, s_hi = s.span
+        mid = (s_lo + s_hi) / 2.0
+        pull_side = side if s_lo - 0.1 <= st <= s_hi + 0.1 else (1 if st > mid else -1)
+        row0_pull = st + pull_side * (self.c["TEXT_LIFT"] * ts + 0.5 * ts)
+        plan = []
+        rows = {}                                   # end -> number of pulled texts stacked there
+        suf = getattr(s, "suffix", None)
+        segs = list(zip(offs, offs[1:]))
+        widths = [PL.text_width(ftin(b - a) + (" " + suf if suf else ""), ts) for a, b in segs]
+        pulled = [(b - a) < w + fit for (a, b), w in zip(segs, widths)]
+        mids = []                                   # (lo, hi) of middle texts already placed above their segment
+        for i, (a, b) in enumerate(segs):
+            v = b - a
+            w = widths[i]
+            if v >= w + fit:
+                plan.append((v, w, self.world(s.gi, row0, (a + b) / 2.0), False, None))
+                continue
+            if 0 < i < len(segs) - 1:
+                # a small MIDDLE segment: its text straight above its own
+                # segment, between the end texts - not stacked over an end
+                # text with a leader crossing it (Adolfo 2026-10-07, every
+                # round: 1'-2" | 8" | 1'-2" at the pilaster hole). Only when it
+                # clears the end texts and the other middle texts
+                cm = (a + b) / 2.0
+                lo_t, hi_t = cm - w / 2.0 - 0.25 * ts, cm + w / 2.0 + 0.25 * ts
+                left_end = offs[0] - (0.5 * ts + widths[0]) if pulled[0] else offs[0]
+                right_end = offs[-1] + (0.5 * ts + widths[-1]) if pulled[-1] else offs[-1]
+                clear_ends = (not pulled[0] or lo_t > offs[0]) and (not pulled[-1] or hi_t < offs[-1]) \
+                    and left_end <= lo_t and hi_t <= right_end
+                if clear_ends and all(hi_t <= m0 or lo_t >= m1 for m0, m1 in mids):
+                    mids.append((lo_t, hi_t))
+                    c = self.world(s.gi, row0_pull, cm)
+                    plan.append((v, w, c, True, (self.world(s.gi, st, cm), c)))
+                    continue
+            # pulled past the nearer end with a leader; later ones stack outward,
+            # all starting at the same inner edge so the column reads aligned
+            end = 0 if abs(a - offs[0]) <= abs(b - offs[-1]) else 1
+            if getattr(s, "_flip", False):
+                end = 1 - end                   # the other end: the near one was blocked
+            e = offs[0] if end == 0 else offs[-1]
+            sgn = -1 if end == 0 else 1
+            centre_off = e + sgn * (0.5 * ts + w / 2.0)
+            k = rows.get(end, 0)
+            rows[end] = k + 1
+            c = self.world(s.gi, row0_pull + pull_side * k * h, centre_off)
+            leader = (self.world(s.gi, st, (a + b) / 2.0), c)
+            plan.append((v, w, c, True, leader))
+        return plan
+
+    def text_boxes(self, s, st, plan=None):
+        """Estimated text boxes (world polygons) for string s at station st."""
+        g, g0, u, n = self.frame(s.gi)
+        h = self.tsize * 1.4
+        pad = self.c["TEXT_PAD"]
+        return [_rect_poly(it[2], n, u, it[1] / 2.0 + pad, h / 2.0 + pad)
+                for it in (plan or self.text_plan(s, st))]
+
+    # ---------------- constraints ----------------
+    def in_crop(self, pts):
+        """Inside the annotation crop, with CROP_MARGIN to spare - or up to
+        CROP_OUT past it (Adolfo 2026-10-06: the beams running off the bottom
+        of L3N get their width dims just outside; the button then widens the
+        annotation crop so Revit shows them - see Layout.crop_overshoot)."""
+        if not self.crop:
+            return True
+        m = self.c["CROP_MARGIN"]
+        if not hasattr(self, "_crop_out"):
+            # the allowance is measured from the MODEL crop, so repeated runs
+            # (each widening the annotation crop) can't creep outward: a dim
+            # may stand within the annotation crop, or within CROP_OUT of the
+            # model crop, whichever is larger
+            import mcc_coverage as CV
+            mc = CV.crop_poly(self.view)
+            self._crop_out = P.inflate(mc, self.c["CROP_OUT"] + m) if mc else None
+        for x, y in pts:
+            for dx, dy in ((0, 0), (m, 0), (-m, 0), (0, m), (0, -m)):
+                if not P.point_in_poly(x + dx, y + dy, self.crop) and \
+                        not (self._crop_out and P.point_in_poly(x + dx, y + dy, self._crop_out)):
+                    return False
+        return True
+
+    def evaluate(self, s, st):
+        """-> (cost, boxes) or (None, reason)."""
+        c = self.c
+        offs = [r[0] for r in s.refs]
+        lo, hi = min(offs), max(offs)
+        p = self.world(s.gi, st, lo)
+        q = self.world(s.gi, st, hi)
+        plan = self.text_plan(s, st)
+        boxes = self.text_boxes(s, st, plan)
+        leaders = [it[4] for it in plan if it[4]]
+        allpts = [p, q] + [pt for b in boxes for pt in b] + [pt for l in leaders for pt in l]
+        if not self.in_crop([p, q]):
+            return None, "outside crop"
+        pen = 0.0
+        if not self.in_crop([pt for b in boxes for pt in b]):
+            pen += c["W_TEXT_CROP"]            # text clipped at the crop edge
+        # the dim line may END at an obstacle (wall-face anchor, edge on a
+        # wall): only its interior counts for crossings
+        L = math.hypot(q[0] - p[0], q[1] - p[1])
+        if L > 2 * c["END_TRIM"]:
+            k = c["END_TRIM"] / L
+            pi = (p[0] + (q[0] - p[0]) * k, p[1] + (q[1] - p[1]) * k)
+            qi = (q[0] - (q[0] - p[0]) * k, q[1] - (q[1] - p[1]) * k)
+        else:
+            pi, qi = None, None
+        g, g0, u, n = self.frame(s.gi)
+        mid = self.world(s.gi, st, (lo + hi) / 2.0)
+        for gj, (g2, g20, u2, n2) in enumerate(self.m.grids):
+            if self.m.fam_of[gj] == s.fi or not P.parallel(u2, n, 0.35):
+                continue
+            if abs((mid[0] - g20[0]) * n2[0] + (mid[1] - g20[1]) * n2[1]) < c["GRID_CLEAR"]:
+                return None, "on a grid line"
+        sf, a = self.to_fam(s.gi, st, lo)
+        _, b = self.to_fam(s.gi, st, hi)
+        a, b = min(a, b), max(a, b)
+        xs = [pt[0] for pt in allpts]; ys = [pt[1] for pt in allpts]
+        myrect = (min(xs), min(ys), max(xs), max(ys))
+        # stacked rows: shortest nearest the element, longest furthest (Adolfo);
+        # equal lengths: the chain inside, the single overall dim outside
+        my_side = self.elem_side(s, sf)
+        # one side per direction: an element's dims of one family all on the
+        # same side of it (Adolfo: 15'-7" belonged beside 7'-7 1/2" / 23'-2 1/2")
+        if my_side and s.feature is not None:
+            for pl in self.placed:
+                if pl.fi == s.fi and pl.s.feature is s.feature and pl.side and pl.side != my_side:
+                    pen += c["W_SPLIT"]
+                    break
+        if my_side:
+            my_key = (round((b - a) * 48), -len(s.refs))
+            reach = 1.6 * c["LANE_STEP"]
+            for pl in self.placed:
+                # rows of the SAME element keep the order however far apart
+                # they ended up (the 2'-0" / 3'-0 1/8" pair sat a wall apart)
+                same = s.feature is not None and pl.s.feature is s.feature
+                if pl.fi != s.fi or pl.side != my_side or (abs(pl.st_f - sf) > reach and not same):
+                    continue
+                if min(b, pl.hi_f) - max(a, pl.lo_f) <= 0.1:
+                    continue
+                pk = (round((pl.hi_f - pl.lo_f) * 48), -len(pl.s.refs))
+                if pk == my_key:
+                    continue
+                nearer = my_side * (sf - pl.st_f) > 0
+                if (my_key > pk) == nearer:
+                    pen += c["W_ORDER"]
+        # witness lines crossing another dim line of the same direction
+        # (Adolfo 2026-10-06: the 24'-8 7/8" ran its witness lines across the
+        # 17'-8"): mine across a placed line, or its across mine
+        if s.feature is not None:
+            my_ext = self._fam_extent(s)
+            my_w = [self.to_fam(s.gi, st, r[0])[1] for r in s.refs if r[2] != "grid"]
+            for pl in self.placed:
+                if pl.fi != s.fi or pl.s.feature is None:
+                    continue
+                if my_ext and self._witness_passes(my_ext, sf, pl.st_f) and \
+                        any(pl.lo_f + 0.1 < o < pl.hi_f - 0.1 for o in my_w):
+                    pen += c["W_WITNESS_CROSS"]
+                pe = self._fam_extent(pl.s)
+                if pe and self._witness_passes(pe, pl.st_f, sf) and \
+                        any(a + 0.1 < o < b - 0.1 for o in self._witness_offs(pl)):
+                    pen += c["W_WITNESS_CROSS"]
+        # a join partner: a placed dim of the same element on this very line,
+        # end to end on a shared witness line. The two become one string in
+        # _join_collinear(), which re-plans the text and re-checks the whole;
+        # its pulled-out text (sitting exactly where the join goes) must not
+        # reject the join here (the 1'-5" never reached its wall | 5" line)
+        partners = []
+        if s.feature is not None and not getattr(self, "_no_join", False):
+            for pl in self.placed:
+                if pl.fi == s.fi and pl.s.feature is s.feature and abs(pl.st_f - sf) < 0.05 \
+                        and (abs(a - pl.hi_f) < 1.0 / 96 or abs(b - pl.lo_f) < 1.0 / 96):
+                    partners.append(pl)
+        for pl in self.placed:
+            if _rects_apart(myrect, pl.rect, c["STATION_GAP"]):
+                continue
+            if pl.fi == s.fi:
+                if abs(pl.st_f - sf) < c["STATION_GAP"] and not (b <= pl.lo_f + 0.1 or a >= pl.hi_f - 0.1):
+                    return None, "too close to a parallel string"
+                if pl in partners:
+                    continue
+            else:
+                if P.seg_intersect(p, q, pl.seg[0], pl.seg[1]):
+                    pen += c["W_CROSS"]
+            for bx in pl.boxes:
+                if P.seg_hits_poly(p, q, bx):
+                    return None, "line through another text"
+                for mine in boxes:
+                    if _polys_overlap(mine, bx):
+                        return None, "text overlaps another text"
+                for ml in leaders:
+                    if P.seg_hits_poly(ml[0], ml[1], bx):
+                        return None, "leader through another text"
+            for mine in boxes:
+                if P.seg_hits_poly(pl.seg[0], pl.seg[1], mine):
+                    return None, "text over another line"
+                for lb in pl.leaders:
+                    if P.seg_hits_poly(lb[0], lb[1], mine):
+                        return None, "text over another leader"
+            for lb in pl.leaders:
+                if P.seg_intersect(p, q, lb[0], lb[1]):
+                    pen += c["W_CROSS_LEADER"]
+                for ml in leaders:
+                    if P.seg_intersect(ml[0], ml[1], lb[0], lb[1]):
+                        pen += c["W_CROSS_LEADER"]
+            for ml in leaders:
+                if P.seg_intersect(ml[0], ml[1], pl.seg[0], pl.seg[1]):
+                    pen += c["W_CROSS_LEADER"]
+        if c["W_SIDES"] and my_side and s.feature is not None and s.feature.kind in c["SIDES_KINDS"]:
+            n_side = self.side_counts(s)
+            if n_side:
+                # my_side says where the ELEMENT is from the line; the dim
+                # stands on the element's -my_side
+                pen += c["W_SIDES"] * max(0, n_side[-my_side] - n_side[my_side])
+        if c["W_NEIGH"] and my_side and s.feature is not None and s.feature.kind == "opening":
+            n_nb = self.neighbour_counts(s)
+            if n_nb:
+                pen += c["W_NEIGH"] * max(0, n_nb[-my_side] - n_nb[my_side])
+        if c["W_CROWD"]:
+            # congestion: other elements' dims (line, text, leaders) near this
+            # spot - its own rows / chain sit together by design
+            crowd = 0
+            for pl in self.placed:
+                if s.feature is not None and pl.s.feature is s.feature:
+                    continue
+                if not _rects_apart(myrect, pl.rect, c["CROWD_R"]):
+                    crowd += 1
+            pen += c["W_CROWD"] * crowd
+        for poly in self.notes:
+            r = (min(p[0] for p in poly), min(p[1] for p in poly), max(p[0] for p in poly), max(p[1] for p in poly))
+            if _rects_apart(myrect, r, 0.0):
+                continue
+            if any(_polys_overlap(bx, poly) for bx in boxes):
+                return None, "text over a note/tag"
+            if P.seg_hits_poly(p, q, poly) or any(P.seg_hits_poly(ml[0], ml[1], poly) for ml in leaders):
+                return None, "line through a note/tag"
+        for o in self.m.obstacles:
+            # openings are no-go zones for every dim - including the ones that
+            # measure that opening (their obstacle carries the slab's id, which
+            # used to let the slab's own strings run straight through)
+            if o.eid in s.owners and o.kind != "opening":
+                # a beam's END width dim belongs past the end, off the grey area;
+                # only the intermediate ones cross their own beam (Adolfo)
+                if o.kind == "beam" and getattr(s, "beam_width", False) and not getattr(s, "intermediate", False) \
+                        and not getattr(s, "inside_end", False) \
+                        and pi is not None and not _rects_apart(myrect, o.rect, 0.0) and P.seg_hits_poly(pi, qi, o.poly):
+                    pen += c["W_OWN_BEAM"]
+                # a beam-end dim (anchor | end) along its OWN beam, inside its
+                # width: never (round 3: both moved off again - the own beam
+                # was not an obstacle to its own strings)
+                if o.kind == "beam" and "end" in getattr(s, "names", ()) and pi is not None \
+                        and not _rects_apart(myrect, o.rect, 0.0) and P.seg_hits_poly(pi, qi, o.poly):
+                    return None, "along its own beam"
+                continue
+            if _rects_apart(myrect, o.rect, 0.0):
+                continue
+            line_hit = pi is not None and P.seg_hits_poly(pi, qi, o.poly)
+            text_hit = any(_polys_overlap(bx, o.poly) for bx in boxes)
+            if o.kind == "opening":
+                # the true outline, not the convex hull (an L-shaped opening's
+                # hull covers solid slab beside it)
+                poly = o.raw or o.poly
+                a_, b_ = (pi, qi) if pi is not None else (p, q)
+                line_in = P.seg_hits_poly(a_, b_, poly)
+                text_in = any(_box_poly_overlap(bx, poly) for bx in boxes) or \
+                    any(P.seg_hits_poly(ml[0], ml[1], poly) for ml in leaders)
+                if (line_in or text_in) and getattr(o, "fill", None):
+                    # part of this hole is filled by another floor: only its open part counts
+                    line_in = line_in and _seg_in_open_part(a_, b_, poly, o.fill)
+                    text_in = text_in and (any(_box_in_open_part(bx, poly, o.fill) for bx in boxes) or
+                                           any(_seg_in_open_part(ml[0], ml[1], poly, o.fill) for ml in leaders))
+                if not (line_in or text_in):
+                    continue
+                # Adolfo: a shaft may carry dims inside "if absolutely necessary",
+                # and only its OVERALL SIZE (edge to edge of that shaft) - never a
+                # dim locating an edge off a grid. Allowed at a high cost.
+                f = s.feature
+                own_shaft = f is not None and f.kind == "opening" and getattr(f, "sub", None) in ("shaft", "core") \
+                    and "centroid" in getattr(f, "meta", {}) and P.point_in_poly(f.meta["centroid"][0], f.meta["centroid"][1], poly)
+                size_only = all(r[2] == "opening edge" for r in s.refs)
+                own_pocket = id(o) in getattr(s, "own_voids", ())     # a wrapped-around shaft's size
+                if (own_shaft and size_only) or own_pocket:
+                    pen += c["W_IN_SHAFT"]
+                    continue
+                return None, ("inside an opening" if line_in else "text inside an opening")
+            if line_hit:
+                if o.kind == "beam":
+                    # a beam-END dim (anchor | end) running along another beam
+                    # inside its width: never (CLAUDE.md "other dims stay off
+                    # beams"; Adolfo moved C | 3'-6" | end and BB | 15'-3" | end
+                    # off the beam, round 2). Width dims keep the soft cost.
+                    if "end" in getattr(s, "names", ()):
+                        return None, "over a beam"
+                    if getattr(s, "over_band", False) and not getattr(s, "intermediate", False):
+                        continue                 # a framed end's width sits over the band it frames into
+                    pen += c["W_BEAM"]
+                else:
+                    return None, "over a %s" % o.kind
+            if text_hit:
+                fk = s.feature
+                in_core = fk is not None and fk.kind == "opening" and getattr(fk, "sub", None) == "core"
+                if o.kind == "wall" and not in_core:
+                    # text never sits in the shaded wall area (Adolfo 2026-10-07:
+                    # the pocket's 12'-1" may go inside the pocket, but its
+                    # text must not be on the core wall). A hole IN the core
+                    # wall (core#120's 5" | 1'-5") can't help it - soft there
+                    return None, "text over a wall"
+                pen += c["W_TEXT_OBST"]         # text over a member/beam: avoid, don't forbid
+        # a dim line must not lie on (or hug) an edge running the same way
+        on_line = False
+        for e_st, e_lo, e_hi in self.par_edges.get(s.fi, ()):
+            if abs(e_st - sf) < c["EDGE_CLEAR"]:
+                ov = min(b, e_hi) - max(a, e_lo)
+                if ov > c["END_TRIM"]:
+                    return None, "on an edge"
+                if ov > -1.0:
+                    on_line = True          # on the edge's line, meeting its end
+        if on_line:
+            pen += c["W_EDGE_LINE"]         # stand off it (Adolfo: 7'-7 1/2" off the opening's edge line)
+        # an opening's dims stand beyond its sides, not under/over it - so its
+        # size can join its locating dim outside it (7'-7 1/2" | 15'-7")
+        f = s.feature
+        if f is not None and f.kind == "opening":
+            ext = self._extent(f, s.gi)
+            if ext and ext[0] + 0.1 < st < ext[1] - 0.1:
+                pen += c["W_OWN_SPAN"]
+            # never hugging the opening: at least MIN_GAP off it (hard; the tool
+            # had some 1/16" away), and closer than FIRST_GAP costs W_GAP tapering
+            # to 0 at FIRST_GAP (Adolfo's own placements sit 0.10-0.20" off)
+            if ext:
+                out_by = max(ext[0] - st, st - ext[1])
+                if 0.0 < out_by < c["MIN_GAP"]:
+                    return None, "too close to its opening"
+                if c["MIN_GAP"] <= out_by < c["FIRST_GAP"]:
+                    pen += c["W_GAP"] * (c["FIRST_GAP"] - out_by) / (c["FIRST_GAP"] - c["MIN_GAP"])
+        return pen, boxes
+
+    def side_counts(self, s):
+        """{+1: n, -1: n}: other elements' placed dims in the strip SIDES_R
+        deep beside string s's element on each side (family stations), over
+        the stretch its witness lines cover - "the side with least
+        congestion" (Adolfo 2026-10-07). Cached per string per placed count."""
+        key = ("sides", id(s), len(self.placed))
+        if key in self._ext_cache:
+            return self._ext_cache[key]
+        out = None
+        ext = self._extent(s.feature, s.gi)
+        if ext:
+            A, B = sorted(self.to_fam(s.gi, x, 0.0)[0] for x in ext)
+            offs = [self.to_fam(s.gi, 0.0, r[0])[1] for r in s.refs]
+            o_lo, o_hi = min(offs) - 0.5, max(offs) + 0.5
+            D = self.c["SIDES_R"]
+            gr = self.m.families[self.m.fam_of[s.gi]][0]
+            out = {1: 0, -1: 0}
+            for pl in self.placed:
+                if pl.s.feature is s.feature:
+                    continue
+                pts = list(pl.seg) + [((pl.seg[0][0] + pl.seg[1][0]) / 2.0, (pl.seg[0][1] + pl.seg[1][1]) / 2.0)] +                     [(sum(q[0] for q in bx) / len(bx), sum(q[1] for q in bx) / len(bx)) for bx in pl.boxes]
+                hit = set()
+                for pt in pts:
+                    st_, of_ = self.m.station(pt, gr), self.m.offset(pt, gr)
+                    if not (o_lo <= of_ <= o_hi):
+                        continue
+                    if B < st_ <= B + D:
+                        hit.add(1)
+                    elif A - D <= st_ < A:
+                        hit.add(-1)
+                for sd in hit:
+                    out[sd] += 1
+        self._ext_cache[key] = out
+        return out
+
+    def neighbour_counts(self, s):
+        """{+1: n, -1: n}: OTHER openings within NEIGH_R of string s's element on
+        each side (family stations), overlapping the offsets its witness
+        lines cover. Static per string (cached)."""
+        key = ("neigh", id(s))
+        if key in self._ext_cache:
+            return self._ext_cache[key]
+        out = None
+        ext = self._extent(s.feature, s.gi)
+        if ext:
+            A, B = sorted(self.to_fam(s.gi, x, 0.0)[0] for x in ext)
+            # across the whole element, not the string's witness lines: its
+            # locating row runs away from the neighbour (to its grid) and was
+            # placed first, so it never saw it (L7 plain#50 / #68)
+            g_ = self.m.families[self.m.fam_of[s.gi]][0]
+            offs = [self.m.offset(p_, g_) for e in s.feature.edges for p_ in (e.p0, e.p1)]
+            o_lo, o_hi = min(offs) - 0.5, max(offs) + 0.5
+            R = self.c["NEIGH_R"]
+            gr = self.m.families[self.m.fam_of[s.gi]][0]
+            out = {1: 0, -1: 0}
+            for o in self.m.obstacles:
+                if o.kind != "opening":
+                    continue
+                pts = o.raw or o.poly
+                sts = [self.m.station(pt, gr) for pt in pts]
+                ofs = [self.m.offset(pt, gr) for pt in pts]
+                s0, s1, f0, f1 = min(sts), max(sts), min(ofs), max(ofs)
+                if f1 < o_lo or f0 > o_hi:
+                    continue
+                if s1 > A + 0.1 and s0 < B - 0.1:
+                    continue                    # itself (or overlapping it)
+                if B < s0 <= B + R:
+                    out[1] += 1
+                elif A - R <= s1 < A:
+                    out[-1] += 1
+        self._ext_cache[key] = out
+        return out
+
+    def _fam_extent(self, s):
+        """Station range the string's witness lines start from, in the family
+        frame (cached): the string's own span, not the whole feature - a void's
+        edge is a few feet of a 100 ft outline (the feature extent sent the
+        2'-3 1/2" void-edge dim onto a beam, run 60)."""
+        key = ("fam", id(s), s.gi)
+        if key not in self._ext_cache:
+            a = self.to_fam(s.gi, s.span[0], 0.0)[0]
+            b = self.to_fam(s.gi, s.span[1], 0.0)[0]
+            self._ext_cache[key] = (min(a, b), max(a, b))
+        return self._ext_cache[key]
+
+    def crop_overshoot(self, pad=0.5):
+        """How far (ft) the placed dims stand past the annotation crop's
+        bounding box on each side: {'left', 'right', 'bottom', 'top'} in world
+        X/Y - the button widens the annotation crop by these amounts."""
+        out = {"left": 0.0, "right": 0.0, "bottom": 0.0, "top": 0.0}
+        if not self.crop or not self.placed:
+            return out
+        cx0 = min(p[0] for p in self.crop); cx1 = max(p[0] for p in self.crop)
+        cy0 = min(p[1] for p in self.crop); cy1 = max(p[1] for p in self.crop)
+        for pl in self.placed:
+            x0, y0, x1, y1 = pl.rect
+            out["left"] = max(out["left"], cx0 - x0)
+            out["right"] = max(out["right"], x1 - cx1)
+            out["bottom"] = max(out["bottom"], cy0 - y0)
+            out["top"] = max(out["top"], y1 - cy1)
+        return dict((k, (v + pad if v > 0 else 0.0)) for k, v in out.items())
+
+    def _witness_offs(self, pl):
+        """Family-frame offsets of a placed string's non-grid witness lines (cached)."""
+        key = ("wit", id(pl.s), round(pl.st_f, 3))
+        if key not in self._ext_cache:
+            st = pl.cand[0] if isinstance(pl.cand, tuple) else None
+            offs = []
+            for r in pl.s.refs:
+                if r[2] != "grid":
+                    offs.append(self.to_fam(pl.s.gi, st, r[0])[1] if st is not None else None)
+            if any(o is None for o in offs):
+                # fall back to the line's own ends: offsets along the family
+                # frame are the same whatever the station
+                offs = [o for o in offs if o is not None]
+            self._ext_cache[key] = offs
+        return self._ext_cache[key]
+
+    @staticmethod
+    def _witness_passes(ext, st_from, st_line):
+        """Does a witness line drawn from an element (station range ext) to a
+        dim line at st_from cross a parallel dim line at st_line?"""
+        if st_from > ext[1] + 0.05:
+            return ext[1] + 0.05 < st_line < st_from - 0.05
+        if st_from < ext[0] - 0.05:
+            return st_from + 0.05 < st_line < ext[0] - 0.05
+        return False
+
+    def _extent(self, f, gi):
+        """Station range of a feature's edges in grid gi's frame (cached)."""
+        key = (id(f), gi)
+        if key not in self._ext_cache:
+            sts = [self.m.station(p, gi) for e in f.edges for p in (e.p0, e.p1)]
+            self._ext_cache[key] = (min(sts), max(sts)) if sts else None
+        return self._ext_cache[key]
+
+    # ---------------- candidates ----------------
+    def candidates(self, s, allow_last_resort=False):
+        c = self.c
+        s_lo, s_hi = s.span
+        prefer = s.prefer if s.prefer is not None else (s_lo + s_hi) / 2.0
+        home = s.outward if s.outward is not None else 0
+        out = []
+        max_lane = c["LAST_RESORT_LANE"] if allow_last_resort else c["MAX_LANE"]
+        sides = [home, -home] if home else [1, -1]
+        n_slide = int(c["SLIDE_MAX"] / c["SLIDE_STEP"])
+        # the next row of a stack goes one lane further out from the row before
+        # it (shortest dim nearest the object, as on the hand sheets)
+        stk = getattr(s, "stack", None)
+        if stk and stk[1] > 0:
+            prev = [pl for pl in self.placed if getattr(pl.s, "stack", None)
+                    and pl.s.stack[0] == stk[0] and pl.s.stack[1] < stk[1]]
+            if prev:
+                last = max(prev, key=lambda pl: pl.s.stack[1])
+                st0 = last.cand[0]
+                away = home or (1 if st0 >= (s_lo + s_hi) / 2.0 else -1)
+                for j in (1, 2):
+                    out.append((c["W_STACK"] + (j - 1) * c["W_LANE"], st0 + away * j * c["LANE_STEP"],
+                                (away, "stack", j)))
+        if home == 0:
+            # through the span itself (a shaft width is read across the shaft) -
+            # anywhere along it, not only near the middle: a crowded shaft has
+            # its free spot near one end
+            n_in = max(n_slide, int((s_hi - s_lo) / c["SLIDE_STEP"]) + 1)
+            for k in range(-n_in, n_in + 1):
+                st = prefer + k * c["SLIDE_STEP"]
+                if s_lo + 0.5 <= st <= s_hi - 0.5:
+                    out.append((c["W_INSIDE"] + min(abs(k), n_slide) * c["W_SLIDE"], st, (0, 0, k)))
+        for side_i, side in enumerate(sides):
+            for lane in range(max_lane + 1):
+                for k in range(-n_slide, n_slide + 1):
+                    if home == 0:
+                        # no home side: lanes start just outside the span on each side
+                        edge = s_hi if side > 0 else s_lo
+                        st = edge + side * (c["FIRST_GAP"] + lane * c["LANE_STEP"]) + k * c["SLIDE_STEP"]
+                        if (st - edge) * side < c["MIN_GAP"]:
+                            continue        # a 1 ft slide is 1/8" at 1:96 - never closer than MIN_GAP (L7 round 1)
+                    else:
+                        st = prefer + side * lane * c["LANE_STEP"] + k * c["SLIDE_STEP"]
+                    outside = max(0.0, s_lo - st, st - s_hi)
+                    base = lane * c["W_LANE"] + (c["W_SIDE"] if (home and side != home) else 0) \
+                        + abs(k) * c["W_SLIDE"] + outside * c["W_OUTSIDE"]
+                    if getattr(s, "beam_width", False) and not getattr(s, "intermediate", False):
+                        # a beam's width dim is the FIRST row past its end; other
+                        # strings go outside it (Adolfo round 2: 6 pulled in to
+                        # 1/4") - lanes and slides cost extra for it
+                        base += lane * c["W_BEAM_ROW"] + abs(k) * c["W_BEAM_ROW"]
+                    out.append((base, st, (side, lane, k)))
+        # an alternative home (the OTHER end of a CJ pair: Adolfo puts the pair
+        # where there is more open space - 2026-10-06): the same lanes around
+        # the alternative station, W_ALT dearer, so clutter decides
+        alt = getattr(s, "alt", None)
+        if alt and home:
+            a_span, a_pref, a_home = alt
+            a_lo, a_hi = min(a_span), max(a_span)
+            for side in (a_home, -a_home):
+                for lane in range(max_lane + 1):
+                    for k in range(-n_slide, n_slide + 1):
+                        st = a_pref + side * lane * c["LANE_STEP"] + k * c["SLIDE_STEP"]
+                        outside = max(0.0, a_lo - st, st - a_hi)
+                        base = c["W_ALT"] + lane * c["W_LANE"] + (c["W_SIDE"] if side != a_home else 0) \
+                            + abs(k) * c["W_SLIDE"] + outside * c["W_OUTSIDE"]
+                        out.append((base, st, (side, lane, k)))
+        # a tight gap beside an opening (between it and a gridline, or another
+        # element): the 1 ft steps jump over the narrow legal window between
+        # MIN_GAP off the opening and GRID_CLEAR off the grid - try spots just
+        # past MIN_GAP on both sides (Adolfo 2026-10-07, L7 plain#52: its
+        # 1'-10 1/8" | 4'-0 3/8" in the 2'-9 1/2" gap below AA, not between it
+        # and the square penetration). evaluate() adds the W_GAP closeness cost
+        fe = getattr(s, "feature", None)
+        if fe is not None and fe.kind == "opening" and home:
+            ext = self._extent(fe, s.gi)
+            if ext:
+                for side, w in ((home, 0.0), (-home, c["W_ALT"] if alt else c["W_SIDE"])):
+                    edge = ext[1] if side > 0 else ext[0]
+                    for d in (c["MIN_GAP"] + 0.05, (c["MIN_GAP"] + c["FIRST_GAP"]) / 2.0):
+                        out.append((w + c["W_TIGHT"], edge + side * d, (side, "tight", 0)))
+        # a run whose edge ends at open margin: lanes in that margin, past the
+        # end, with no "outside the span" cost - and lined up with any string
+        # of the same family already standing in that margin
+        if getattr(s, "free", False) and home:
+            end = s_lo if home < 0 else s_hi
+            for lane in range(max_lane + 1):
+                for k in range(-n_slide, n_slide + 1):
+                    st = end + home * (c["MARGIN_IN"] + lane * c["LANE_STEP"]) + k * c["SLIDE_STEP"]
+                    out.append((c["W_MARGIN"] + lane * c["W_LANE"] + abs(k) * c["W_SLIDE"], st, (home, "margin", k)))
+            sf0, _ = self.to_fam(s.gi, end, 0.0)
+            for pl in self.placed:
+                if pl.fi != s.fi:
+                    continue
+                dst = (pl.st_f - sf0)
+                if 0.5 < dst * home * self.fam_sign(s.gi) < c["MARGIN_MAX"]:
+                    st = end + abs(dst) * home
+                    out.append((c["W_ALIGN"], st, (home, "margin-align", 0)))
+        # dim lines in a row: the same line as a placed parallel dim of this
+        # family (not overlapping it - evaluate() rejects that), within reach
+        a0, _ = self.to_fam(s.gi, 0.0, 0.0)
+        sgn = self.fam_sign(s.gi)
+        my_offs = [self.to_fam(s.gi, 0.0, r[0])[1] for r in s.refs]
+        my_lo, my_hi = min(my_offs), max(my_offs)
+        seen_st = set()
+        for pl in self.placed:
+            if pl.fi != s.fi:
+                continue
+            st = (pl.st_f - a0) * sgn
+            key = round(st * 16)
+            # end to end with a dim sharing a witness line: they get joined into
+            # one string afterwards (9'-3 7/8" | 8'-4 1/8" through the grid)
+            joins = (abs(my_lo - pl.hi_f) < 1.0 / 96 or abs(my_hi - pl.lo_f) < 1.0 / 96) \
+                and s.feature is not None and pl.s.feature is s.feature
+            if joins:
+                # one element's dims meeting end to end: join them whichever
+                # side that is (the opening's size onto its locating dim)
+                if getattr(self, "_no_join", False):
+                    continue                    # re-placing after a refused join
+                if key not in seen_st:
+                    seen_st.add(key)
+                    out.append((c["W_JOIN_SAME"], st, (0, "join", 0)))
+                continue
+            if key in seen_st or abs(st - prefer) > c["COLLINEAR_REACH"]:
+                continue
+            seen_st.add(key)
+            bonus = c["W_COLLINEAR"]
+            outside = max(0.0, s_lo - st, st - s_hi)
+            if home:
+                side_pen = c["W_SIDE"] if (st - prefer) * home < -0.5 else 0.0
+                slide = abs(st - prefer) * c["W_SLIDE"]
+            else:
+                side_pen = c["W_INSIDE"] if outside == 0.0 else 0.0
+                slide = 0.0
+            out.append((bonus + side_pen + slide + outside * c["W_OUTSIDE"], st, (0, "collinear", 0)))
+        # off the same gridline in the same direction: stand one lane beside it
+        # (they read as one stack; _order_stacks puts the shortest nearest)
+        my_grids = [self.to_fam(s.gi, 0.0, r[0])[1] for r in s.refs if r[2] == "grid"]
+        if my_grids:
+            for pl in self.placed:
+                if pl.fi != s.fi or not any(r[2] == "grid" for r in pl.s.refs):
+                    continue
+                pg = [self.to_fam(pl.s.gi, 0.0, r[0])[1] for r in pl.s.refs if r[2] == "grid"]
+                if not any(abs(x - y) < 1.0 / 96 for x in my_grids for y in pg):
+                    continue
+                if min(my_hi, pl.hi_f) - max(my_lo, pl.lo_f) <= 0.1:
+                    continue                        # must overlap to stack
+                if s.feature is None or pl.s.feature is not s.feature:
+                    continue                        # same element only (round 3: the grid-9/8 clusters)
+                for sd in (1, -1):
+                    st = (pl.st_f + sd * c["LANE_STEP"] - a0) * sgn
+                    key = round(st * 16)
+                    if key in seen_st or abs(st - prefer) > 2 * c["COLLINEAR_REACH"]:
+                        continue
+                    seen_st.add(key)
+                    outside = max(0.0, s_lo - st, st - s_hi)
+                    side_pen = c["W_SIDE"] if (home and (st - prefer) * home < -0.5) else 0.0
+                    out.append((c["W_GROUP"] + side_pen + outside * c["W_OUTSIDE"], st, (sd, "group", 0)))
+        # pulled text lines up with a neighbour's pulled text (same family, nearby)
+        probe = self.text_plan(s, prefer)
+        if any(it[3] for it in probe):
+            ts = self.tsize
+            lift = (self.c["TEXT_LIFT"] + 0.5) * ts
+            reach = max_lane * c["LANE_STEP"] + c["SLIDE_MAX"]
+            seen = set()
+            for pl in self.placed:
+                if pl.fi != s.fi or not pl.leaders:
+                    continue
+                for it in pl.tplan:
+                    if not it[3]:
+                        continue
+                    row = self.m.station(it[2], s.gi)
+                    for side in (1, -1):
+                        st = row - side * lift
+                        key = round(st * 8)
+                        if key in seen or abs(st - prefer) > reach:
+                            continue
+                        mine = self.text_plan(s, st)
+                        pulled = [m for m in mine if m[3]]
+                        if not pulled or abs(self.m.station(pulled[0][2], s.gi) - row) > 0.05:
+                            continue                # its pull side puts the row elsewhere
+                        if abs(self.m.offset(pulled[0][2], s.gi) - self.m.offset(it[2], s.gi)) > 30:
+                            continue                # too far along to read as one column
+                        seen.add(key)
+                        outside = max(0.0, s_lo - st, st - s_hi)
+                        out.append((c["W_ALIGN"] + outside * c["W_OUTSIDE"], st, (side, "align", 0)))
+        # a string with a home side never stands INSIDE its own element: the
+        # 4 ft slide (cheaper than a lane) was landing CJ dims inside the CJ,
+        # stack rows inside the opening, beam-end dims on the beam - 9 of
+        # Adolfo's round-3 moves. Clamp, don't price (intermediate beam widths
+        # cross their beam by design)
+        # (also the home-less locate rows of an opening - core/shaft stack rows
+        # have no home side and slid 1.3 ft inside the opening, round 4)
+        # (home-side strings only: extending it to an opening's home-less stack
+        # rows was tried in runs 85-88 - the big opening's rows sit INSIDE its
+        # 17 ft extent in Adolfo's version, so the clamp pushed them 2" off)
+        if home and s.feature is not None and s.feature.kind in ("cj", "beam", "opening") \
+                and not getattr(s, "intermediate", False) and not getattr(s, "inside_end", False):
+            # (runs / steps / bumps are dimensioned ACROSS their edge, inside its
+            # length by design - not clamped)
+            ext = self._extent(s.feature, s.gi)
+            if ext:
+                lo_e, hi_e = ext[0] + 0.05, ext[1] - 0.05
+                out = [t for t in out if not (lo_e < t[1] < hi_e)]
+        # a beam's end width dim is the first row past its end: the group /
+        # collinear / align spots skipped W_BEAM_ROW (7 of his round-3 moves)
+        if getattr(s, "beam_width", False) and not getattr(s, "intermediate", False):
+            out = [(b + (abs(st - prefer) / c["LANE_STEP"]) * c["W_BEAM_ROW"] if not isinstance(cand[1], int) else b, st, cand)
+                   for b, st, cand in out]
+        out.sort(key=lambda t: t[0])
+        return out
+
+    def place_one(self, s, allow_last_resort=False):
+        best = None
+        c_flip = self.c["W_TEXT_FLIP"]
+        reasons = {}
+        for base, st, cand in self.candidates(s, allow_last_resort):
+            if best is not None and base >= best[0]:
+                break                       # candidates are sorted by base cost
+            s._flip = False
+            pen, boxes = self.evaluate(s, st)
+            if pen is None and c_flip is not None and (boxes.startswith("text") or boxes.startswith("leader")):
+                # pulled-out text blocked at its near end: try the other end
+                # (Adolfo's 1'-10 1/8" above plain#52, pulled away from the
+                # 2'-9 1/2" line; 2026-10-07)
+                s._flip = True
+                pen2, boxes2 = self.evaluate(s, st)
+                if pen2 is not None:
+                    pen, boxes = pen2 + c_flip, boxes2
+                else:
+                    s._flip = False
+            if pen is None:
+                reasons[boxes] = reasons.get(boxes, 0) + 1
+                continue
+            cost = base + pen
+            if best is None or cost < best[0]:
+                best = (cost, st, boxes, cand, s._flip)
+        if best is None:
+            return None, (max(reasons.items(), key=lambda kv: kv[1])[0] if reasons else "no candidates")
+        cost, st, boxes, cand, flip = best
+        s._flip = flip
+        offs = [r[0] for r in s.refs]
+        lo, hi = min(offs), max(offs)
+        sf, a = self.to_fam(s.gi, st, lo)
+        _, b = self.to_fam(s.gi, st, hi)
+        pl = Placed(s, s.fi, sf, min(a, b), max(a, b),
+                    (self.world(s.gi, st, lo), self.world(s.gi, st, hi)), boxes, cost, (st, cand),
+                    self.text_plan(s, st))
+        pl.side = self.elem_side(s, sf)
+        return pl, None
+
+    # ---------------- driver ----------------
+    def run(self):
+        def _key(s):
+            stk = getattr(s, "stack", None)
+            # a small void's edge dims go after the real openings' strings, so
+            # they don't take the spot beside an opening its own dims need
+            void = 1 if s.feature is not None and getattr(s.feature, "sub", None) == "void" else 0
+            # a bump chain has one fixed side (beside its bump): it goes first,
+            # before the rows that can still go either way take its spot
+            return (-1 if getattr(s, "early", False) else (0 if s.role == "locate" else 1),
+                    1 if getattr(s, "late", False) else 0,          # corner call-outs after the element's rows
+                    PRIORITY.get(s.feature.kind, 9) if s.feature else 9, void,
+                    _len(s) if self.c["ORDER_SHORT_FIRST"] else 0,
+                    grp_no.get(stk[0], 0) if stk else 0, stk[1] if stk else 0)
+
+        # stack group keys hold id()s (memory addresses): sorting on them
+        # made the placement order - and the result - shift whenever the code
+        # around them changed (L3N 127 -> 118 from an unused setting,
+        # 2026-10-07). Order groups by where they first appear in the plan
+        grp_no = {}
+        how = self.c["GROUP_ORDER"]
+        for s_ in self.strings:
+            stk_ = getattr(s_, "stack", None)
+            if not stk_:
+                continue
+            offs_ = [r[0] for r in s_.refs]
+            ln_ = max(offs_) - min(offs_)
+            if how == "first":
+                v = len(grp_no)
+            elif how == "short":                  # the group's shortest row
+                v = min(grp_no.get(stk_[0], 1e9), ln_)
+            elif how == "long":
+                v = -max(-grp_no.get(stk_[0], 1e9), ln_)
+            elif how == "size":                   # small elements first (their lanes are tight)
+                ext_ = self._extent(s_.feature, s_.gi) if s_.feature is not None else None
+                v = (ext_[1] - ext_[0]) if ext_ else 0.0
+            else:
+                v = 0
+            if how in ("short",):
+                grp_no[stk_[0]] = v
+            elif how == "long":
+                grp_no[stk_[0]] = min(grp_no.get(stk_[0], 0), -ln_)
+            elif stk_[0] not in grp_no:
+                grp_no[stk_[0]] = v
+
+        def _len(s):
+            offs = [r[0] for r in s.refs]
+            return round(max(offs) - min(offs), 2)
+        order = sorted(self.strings, key=_key)
+        pending = []
+        for s in order:
+            pl, why = self.place_one(s)
+            if pl is None:
+                pending.append((s, why))
+            else:
+                self.placed.append(pl)
+        # last resort: lane 3 for what didn't fit
+        still = []
+        for s, why in pending:
+            pl, why2 = self.place_one(s, allow_last_resort=True)
+            if pl is None:
+                still.append((s, why2))
+            else:
+                self.placed.append(pl)
+        # try harder before giving up (Adolfo's review: "move it to the right of
+        # the 6'-4"", "to the left side of the CJ", "north of the CJ line"): a
+        # much wider slide along the element and two more lanes, both sides
+        if still:
+            saved = (self.c["SLIDE_MAX"], self.c["LAST_RESORT_LANE"])
+            self.c["SLIDE_MAX"], self.c["LAST_RESORT_LANE"] = saved[0] * 3, saved[1] + 2
+            again = []
+            for s, why in still:
+                pl, why2 = self.place_one(s, allow_last_resort=True)
+                if pl is None:
+                    again.append((s, why))
+                else:
+                    self.placed.append(pl)
+            self.c["SLIDE_MAX"], self.c["LAST_RESORT_LANE"] = saved
+            self.notes_harder = len(still) - len(again)
+            still = again
+        # improvement passes: re-place the worst-scoring strings
+        for _ in range(self.c["IMPROVE_PASSES"]):
+            worst = sorted(self.placed, key=lambda pl: -pl.cost)[:max(1, len(self.placed) // 5)]
+            for pl in worst:
+                self.placed.remove(pl)
+                pl2, why = self.place_one(pl.s, allow_last_resort=True)
+                self.placed.append(pl2 if pl2 is not None else pl)
+        # unblock pass: a string that still has no place may be blocked by one
+        # neighbour that can move - lift the neighbour, place ours, re-place it
+        still = self._unblock(still)
+        # ...and a string that only found a poor spot (far outside its span)
+        # gets the same treatment, keeping the poor spot if nothing better
+        poor = [pl for pl in self.placed if pl.cost > self.c["UNBLOCK_COST"]] if self.c["UNBLOCK_COST"] else []
+        for pl in poor:
+            if pl not in self.placed:
+                continue                        # already moved as someone's neighbour
+            self.placed.remove(pl)
+            left = self._unblock([(pl.s, "poor")], max_total=pl.cost - 1.0)
+            if left:
+                self.placed.append(pl)
+        self._align_end_to_end()
+        self._join_collinear()
+        self._dedupe_after_join()
+        self._order_stacks()
+        # intermediate beam widths are a reading aid, not required: one with no
+        # room (a beam under a wall along its length) is dropped, not reviewed
+        self.notes_optional = len([1 for s, w in still if getattr(s, "intermediate", False)])
+        still = [(s, w) for s, w in still if not getattr(s, "intermediate", False)]
+        self.review = still
+        for s, why in still:
+            self.blocked[why] = self.blocked.get(why, 0) + 1
+        return self.placed, self.review
+
+    def _align_end_to_end(self):
+        """Two placed dims of ONE element that meet end to end (a shared witness
+        line) but sit on different lines: move the later one onto the other's
+        line when that spot is legal, so _join_collinear can make them one
+        string (Adolfo's rounds 2-5 on L3N and round 1 on L7: 11 such pairs
+        each time - a shaft's size onto its locating row)."""
+        tol = 1.0 / 96
+        self.notes_aligned = 0
+        changed = True
+        guard = 0
+        while changed and guard < 20:
+            changed = False
+            guard += 1
+            for p in list(self.placed):
+                for q in list(self.placed):
+                    if q is p or q.fi != p.fi or p.s.feature is None or q.s.feature is not p.s.feature:
+                        continue
+                    if abs(q.st_f - p.st_f) < 0.05:
+                        continue                    # already on one line
+                    if not (abs(p.hi_f - q.lo_f) < tol or abs(q.hi_f - p.lo_f) < tol):
+                        continue                    # no shared witness line
+                    # try q on p's line, then p on q's
+                    moved = False
+                    for a, b in ((q, p), (p, q)):
+                        self.placed.remove(a)
+                        st = b.cand[0]
+                        # station in a's own grid frame: same family line as b
+                        st_a = self.m.station(self.world(b.s.gi, st, 0.0), a.s.gi)
+                        pen, boxes = self.evaluate(a.s, st_a)
+                        if pen is not None:
+                            offs = [r[0] for r in a.s.refs]
+                            lo, hi = min(offs), max(offs)
+                            sf, aa = self.to_fam(a.s.gi, st_a, lo)
+                            _, bb = self.to_fam(a.s.gi, st_a, hi)
+                            na = Placed(a.s, a.s.fi, sf, min(aa, bb), max(aa, bb),
+                                        (self.world(a.s.gi, st_a, lo), self.world(a.s.gi, st_a, hi)), boxes,
+                                        a.cost, (st_a, (0, "aligned", 0)), self.text_plan(a.s, st_a))
+                            na.side = self.elem_side(a.s, sf)
+                            self.placed.append(na)
+                            self.notes_aligned += 1
+                            moved = True
+                            break
+                        self.placed.append(a)
+                    if moved:
+                        changed = True
+                        break
+                if changed:
+                    break
+
+    def _dedupe_after_join(self):
+        """A single dim whose two witness lines appear consecutively in a
+        joined string next to it is a duplicate (the plan-level dedupe ran
+        before the join: step | 4'-6" | CC beside step | 4'-6" | CC | 7'-7" |
+        edge, Adolfo's round-3 deletion)."""
+        tol = 1.0 / 96
+        self.notes_dedupe_join = 0
+        for p in list(self.placed):
+            if len(p.s.refs) != 2:
+                continue
+            po = sorted(self.to_fam(p.s.gi, 0.0, r[0])[1] for r in p.s.refs)
+            for q in self.placed:
+                if q is p or q.fi != p.fi or len(q.s.refs) < 3 or abs(q.st_f - p.st_f) > 2.5 * self.c["LANE_STEP"]:
+                    continue
+                qo = sorted(self.to_fam(q.s.gi, 0.0, r[0])[1] for r in q.s.refs)
+                if any(abs(qo[k] - po[0]) < tol and abs(qo[k + 1] - po[1]) < tol for k in range(len(qo) - 1)):
+                    self.placed.remove(p)
+                    self.notes_dedupe_join += 1
+                    break
+
+    def _join_collinear(self):
+        """Two placed dims on the same line, end to end on a shared witness
+        line, become ONE string (Adolfo 2026-10-05: 9'-3 7/8" | 8'-4 1/8"
+        through the grid, 8'-3" | 11'-9" to the grid). Kept apart if the
+        joined string breaks a hard rule."""
+        import copy
+        self.notes_join = 0
+        tol = 1.0 / 96
+        changed = True
+        while changed:
+            changed = False
+            for p in list(self.placed):
+                for q in list(self.placed):
+                    if q is p or q.fi != p.fi or abs(q.st_f - p.st_f) > 0.05 or abs(p.hi_f - q.lo_f) > tol:
+                        continue
+                    if p.s.feature is None or q.s.feature is not p.s.feature:
+                        continue                    # one element only: don't pull a dim off its own element
+                    s1, s2 = p.s, q.s
+                    refs = list(s1.refs)
+                    names = list(getattr(s1, "names", [r[2] for r in s1.refs]))
+                    for r, nm in zip(s2.refs, getattr(s2, "names", [r[2] for r in s2.refs])):
+                        off = self.m.offset(self.world(s2.gi, 0.0, r[0]), s1.gi)
+                        if any(abs(off - x[0]) < tol for x in refs):
+                            continue                # the shared witness line
+                        refs.append((off, r[1], r[2]))
+                        names.append(nm)
+                    order = sorted(range(len(refs)), key=lambda k: refs[k][0])
+                    sp2 = [self.m.station(self.world(s2.gi, x, 0.0), s1.gi) for x in s2.span]
+                    ns = copy.copy(s1)
+                    ns.refs = [refs[k] for k in order]
+                    ns.names = [names[k] for k in order]
+                    ns.span = (min(s1.span[0], min(sp2)), max(s1.span[1], max(sp2)))
+                    ns.role = "locate" if "locate" in (s1.role, s2.role) else "check"
+                    ns.label = s1.label + " + " + s2.label
+                    ns.owners = set(s1.owners) | set(s2.owners)
+                    ns.stack = None
+                    # R.O. survives the join: carry both strings' suffixes as
+                    # segment pairs in s1's frame (13'-7 1/2" lost its R.O. in
+                    # round 4 because only s1 was copied)
+                    pairs = list(getattr(s1, "suffix_pairs", None) or [])
+                    if getattr(s1, "suffix", None) and len(s1.refs) == 2:
+                        o1 = sorted(r[0] for r in s1.refs)
+                        pairs.append((o1[0], o1[1], s1.suffix))
+                    conv = lambda x: self.m.offset(self.world(s2.gi, 0.0, x), s1.gi)
+                    if getattr(s2, "suffix", None) and len(s2.refs) == 2:
+                        o2 = sorted(conv(r[0]) for r in s2.refs)
+                        pairs.append((o2[0], o2[1], s2.suffix))
+                    for a_, b_, suf_ in (getattr(s2, "suffix_pairs", None) or []):
+                        ca, cb = sorted((conv(a_), conv(b_)))
+                        pairs.append((ca, cb, suf_))
+                    ns.suffix_pairs = pairs
+                    ns.suffix = None
+                    st = p.cand[0]
+                    self.placed.remove(p)
+                    self.placed.remove(q)
+                    pen, boxes = self.evaluate(ns, st)
+                    if pen is None:
+                        # the join is refused: the two were placed end to end
+                        # with each other's text ignored (evaluate's partner
+                        # rule), so the later one looks for another spot with
+                        # joins off; it keeps the line only if nothing else fits
+                        self.placed.append(p)
+                        if getattr(q.s, "_unjoined", False):
+                            self.placed.append(q)
+                            continue                # already re-placed once: leave it
+                        q.s._unjoined = True
+                        self._no_join = True
+                        q2, _ = self.place_one(q.s, allow_last_resort=True)
+                        self._no_join = False
+                        self.placed.append(q2 if q2 is not None else q)
+                        if q2 is not None:
+                            self.notes_unjoined = getattr(self, "notes_unjoined", 0) + 1
+                            changed = True
+                            break
+                        continue
+                    offs = [r[0] for r in ns.refs]
+                    lo_o, hi_o = min(offs), max(offs)
+                    sf, aa = self.to_fam(ns.gi, st, lo_o)
+                    _, bb = self.to_fam(ns.gi, st, hi_o)
+                    pj = Placed(ns, ns.fi, sf, min(aa, bb), max(aa, bb),
+                                (self.world(ns.gi, st, lo_o), self.world(ns.gi, st, hi_o)), boxes,
+                                min(p.cost, q.cost), (st, (0, "joined", 0)), self.text_plan(ns, st))
+                    pj.side = self.elem_side(ns, sf)
+                    self.placed.append(pj)
+                    self.notes_join += 1
+                    changed = True
+                    break
+                if changed:
+                    break
+
+    def _order_stacks(self):
+        """Stacked rows read shortest nearest the element, longest furthest
+        (Adolfo 2026-10-05) - for ANY rows standing side by side, whatever
+        string they came from. Rows of one family whose measured ranges
+        overlap, lying outside their spans on the same side and spaced no more
+        than ~1.5 lanes apart, form a stack; their stations are handed out
+        again by length. A stack whose new order breaks a hard rule keeps
+        its old order."""
+        c = self.c
+        self.notes_order = 0
+        info = []
+        for pl in self.placed:
+            s = pl.s
+            # the ELEMENT's extent, not the span: a home-side string's span is
+            # its 1 ft search window beside the element, so a row standing at
+            # the window's start read as "inside" and was never reordered (L7:
+            # the 11'-4 5/8" chain kept the lane beside the 3'-10 5/8" one's
+            # opening; Adolfo 2026-10-07)
+            ext = self._extent(s.feature, s.gi) if s.feature is not None else None
+            lo_s, hi_s = ext if ext else s.span
+            a, b = self.to_fam(s.gi, lo_s, 0.0)[0], self.to_fam(s.gi, hi_s, 0.0)[0]
+            lo, hi = min(a, b), max(a, b)
+            if lo - 0.05 <= pl.st_f <= hi + 0.05:
+                continue                        # inside its own element: no "nearest the element"
+            side = 1 if pl.st_f < lo else -1    # +1: element lies toward higher stations
+            info.append((pl, side, abs(pl.hi_f - pl.lo_f)))
+        used = set()
+        gap = c["ORDER_GAP_LANES"] * c["LANE_STEP"]
+        # two openings' rows off one grid up to 2 lanes apart (another row
+        # between them on other offsets): L7's 3'-10 5/8" / 11'-4 5/8" pair,
+        # Adolfo 2026-10-07. Not for beams / CJs: on L3N he keeps the 28'-8"
+        # beam-end dim inside the 19'-5" CJ dim off grid 9
+        gap_open = c["ORDER_GAP_OPEN_LANES"] * c["LANE_STEP"]
+        for pl, side, ln in info:
+            if id(pl) in used:
+                continue
+            grp = [(pl, side, ln)]
+            used.add(id(pl))
+            grew = True
+            while grew:
+                grew = False
+                for q in info:
+                    if id(q[0]) in used or q[0].fi != pl.fi or q[1] != side:
+                        continue
+                    for m in grp:
+                        same = q[0].s.feature is not None and q[0].s.feature is m[0].s.feature
+                        both_open = all(x.s.feature is not None and x.s.feature.kind == "opening" for x in (q[0], m[0]))
+                        if (abs(q[0].st_f - m[0].st_f) <= (gap_open if both_open else gap) or (same and abs(q[0].st_f - m[0].st_f) <= 4 * gap)) and \
+                                min(q[0].hi_f, m[0].hi_f) - max(q[0].lo_f, m[0].lo_f) > 0.1:
+                            grp.append(q); used.add(id(q[0])); grew = True
+                            break
+            if len(grp) < 2:
+                continue
+            # stations nearest the element first (element toward +side)
+            stations = sorted([m[0].st_f for m in grp], key=lambda st: -side * st)
+            # shortest first; equal length (a chain and its overall): the
+            # chain inside, the single overall dim outside
+            by_len = sorted(grp, key=lambda m: (round(m[2] * 48), -len(m[0].s.refs)))
+            if [id(m[0]) for m in by_len] == [id(m[0]) for m in sorted(grp, key=lambda m: -side * m[0].st_f)]:
+                continue                        # already shortest-nearest
+            olds = [m[0] for m in grp]
+            for o in olds:
+                self.placed.remove(o)
+            new = []
+            ok = True
+            for (m, st_f) in zip(by_len, stations):
+                s = m[0].s
+                a0, _ = self.to_fam(s.gi, 0.0, 0.0)
+                st = (st_f - a0) * self.fam_sign(s.gi)
+                pen, boxes = self.evaluate(s, st)
+                if pen is None:
+                    ok = False
+                    break
+                offs = [r[0] for r in s.refs]
+                lo_o, hi_o = min(offs), max(offs)
+                sf, aa = self.to_fam(s.gi, st, lo_o)
+                _, bb = self.to_fam(s.gi, st, hi_o)
+                p2 = Placed(s, s.fi, sf, min(aa, bb), max(aa, bb),
+                            (self.world(s.gi, st, lo_o), self.world(s.gi, st, hi_o)), boxes,
+                            m[0].cost, (st, (0, "reordered", 0)), self.text_plan(s, st))
+                p2.side = self.elem_side(s, sf)
+                new.append(p2)
+                self.placed.append(p2)          # later rows are checked against it
+            if not ok:
+                for p2 in new:
+                    self.placed.remove(p2)
+                # second try: keep the shortest row where it is and push each
+                # longer row out past the one before it (one or two lanes)
+                new = []
+                ok = True
+                prev_sf = None
+                for m in by_len:
+                    s = m[0].s
+                    tries = [m[0].st_f] if prev_sf is None else \
+                        ([m[0].st_f] if -side * (m[0].st_f - prev_sf) >= 0.9 * c["LANE_STEP"] else []) + \
+                        [prev_sf - side * k * c["LANE_STEP"] for k in (1, 2)]
+                    got = None
+                    for st_f in tries:
+                        a0, _ = self.to_fam(s.gi, 0.0, 0.0)
+                        st = (st_f - a0) * self.fam_sign(s.gi)
+                        pen, boxes = self.evaluate(s, st)
+                        if pen is not None:
+                            got = (st_f, st, boxes)
+                            break
+                    if got is None:
+                        ok = False
+                        break
+                    st_f, st, boxes = got
+                    offs = [r[0] for r in s.refs]
+                    lo_o, hi_o = min(offs), max(offs)
+                    sf, aa = self.to_fam(s.gi, st, lo_o)
+                    _, bb = self.to_fam(s.gi, st, hi_o)
+                    p2 = Placed(s, s.fi, sf, min(aa, bb), max(aa, bb),
+                                (self.world(s.gi, st, lo_o), self.world(s.gi, st, hi_o)), boxes,
+                                m[0].cost, (st, (0, "pushed out", 0)), self.text_plan(s, st))
+                    p2.side = self.elem_side(s, sf)
+                    new.append(p2)
+                    self.placed.append(p2)
+                    prev_sf = sf
+                if not ok:
+                    for p2 in new:
+                        self.placed.remove(p2)
+                    self.placed.extend(olds)
+                    continue
+            self.notes_order += 1
+
+    def _unblock(self, still, max_total=None):
+        out = []
+        for s, why in still:
+            offs = [r[0] for r in s.refs]
+            lo, hi = min(offs), max(offs)
+            s_lo, s_hi = s.span
+            a = self.world(s.gi, s_lo - 6, lo); b = self.world(s.gi, s_hi + 6, hi)
+            c_ = self.world(s.gi, s_lo - 6, hi); d = self.world(s.gi, s_hi + 6, lo)
+            xs = [q[0] for q in (a, b, c_, d)]; ys = [q[1] for q in (a, b, c_, d)]
+            rect = (min(xs), min(ys), max(xs), max(ys))
+            near = [pl for pl in self.placed if not _rects_apart(rect, pl.rect, 0.0)]
+            near = sorted(near, key=lambda pl: -pl.cost)[:8]
+            groups = [(pl,) for pl in near]
+            if self.c["UNBLOCK_PAIRS"]:
+                groups += [(near[i], near[j]) for i in range(min(6, len(near))) for j in range(i + 1, min(6, len(near)))]
+            best = None
+            for grp in groups:
+                if best is not None and len(grp) > 1 and best[0] < 2.0:
+                    break                       # a cheap single lift already found
+                for pl in grp:
+                    self.placed.remove(pl)
+                mine, _ = self.place_one(s, allow_last_resort=True)
+                if mine is not None:
+                    self.placed.append(mine)
+                    theirs = []
+                    for pl in grp:
+                        t2, _ = self.place_one(pl.s, allow_last_resort=True)
+                        if t2 is None:
+                            break
+                        theirs.append(t2)
+                        self.placed.append(t2)
+                    for t2 in theirs:
+                        self.placed.remove(t2)
+                    self.placed.remove(mine)
+                    if len(theirs) == len(grp):
+                        total = mine.cost + sum(t2.cost for t2 in theirs) - sum(pl.cost for pl in grp)
+                        if (max_total is None or total <= max_total) and (best is None or total < best[0]):
+                            best = (total, grp, mine, theirs)
+                for pl in grp:
+                    self.placed.append(pl)
+            if best is None:
+                out.append((s, why))
+            else:
+                _, grp, mine, theirs = best
+                for pl in grp:
+                    self.placed.remove(pl)
+                self.placed.append(mine)
+                self.placed.extend(theirs)
+        return out
+
+    # ---------------- create ----------------
+    def create(self, doc, dim_type, z, pull_text=True):
+        """Create the placed dims (caller owns the transaction). Returns
+        (created dims, failures)."""
+        made, failed = [], []
+        for pl in self.placed:
+            s = pl.s
+            line = DB.Line.CreateBound(DB.XYZ(pl.seg[0][0], pl.seg[0][1], z),
+                                       DB.XYZ(pl.seg[1][0], pl.seg[1][1], z))
+            ra = DB.ReferenceArray()
+            for off, ref, kind in sorted(s.refs, key=lambda r: r[0]):
+                ra.Append(ref)
+            try:
+                d = doc.Create.NewDimension(self.view, line, ra, dim_type) if dim_type \
+                    else doc.Create.NewDimension(self.view, line, ra)
+            except Exception as ex:
+                failed.append((s, str(ex))); continue
+            if d is None:
+                failed.append((s, "null")); continue
+            if getattr(s, "suffix", None):
+                try:
+                    d.Suffix = s.suffix          # one segment: shaft overall size ("R.O.")
+                except Exception:
+                    pass
+            if getattr(s, "suffix_pairs", None):
+                try:                             # a chain: the opening's width segment only
+                    segs = list(d.Segments)
+                    offs = [r[0] for r in sorted(s.refs, key=lambda r: r[0])]
+                    for oa, ob, suf in s.suffix_pairs:
+                        for k in range(len(offs) - 1):
+                            if abs(offs[k] - oa) < 1.0 / 96 and abs(offs[k + 1] - ob) < 1.0 / 96 and k < len(segs):
+                                segs[k].Suffix = suf
+                except Exception:
+                    pass
+            made.append((d, pl))
+        if pull_text:
+            doc.Regenerate()
+            self.text_errors = []
+            for d, pl in made:
+                try:
+                    self.apply_text_plan(d, pl, z)
+                except Exception as ex:
+                    self.text_errors.append(str(ex))
+        return [d for d, pl in made], failed
+
+    def apply_text_plan(self, d, pl, z):
+        """Put pulled-out text exactly where the layout assumed it."""
+        if not pl.tplan or not any(it[3] for it in pl.tplan):
+            return
+        g, g0, u, n = self.frame(pl.s.gi)
+        side = self.text_side(pl.s.gi)
+        back = 0.5 * self.tsize                     # TextPosition is the text's base, not its centre
+        segs = list(d.Segments) if d.NumberOfSegments > 1 else [d]
+        used = set()
+        for v, w, c, pulled, leader in pl.tplan:
+            if not pulled:
+                continue
+            sg = None
+            for i, cand in enumerate(segs):
+                if i in used:
+                    continue
+                try:
+                    if cand.Value is not None and abs(cand.Value - v) < 1.0 / 96:
+                        sg = cand; used.add(i); break
+                except Exception:
+                    continue
+            if sg is None:
+                continue
+            pos = sg.TextPosition
+            target = DB.XYZ(c[0] - side * u[0] * back, c[1] - side * u[1] * back, pos.Z)
+            # Revit only honours a leader once the text has been displaced: nudge, leader on, final spot
+            sg.TextPosition = DB.XYZ(pos.X + n[0] * 0.05, pos.Y + n[1] * 0.05, pos.Z)
+            try:
+                if not d.HasLeader:
+                    d.HasLeader = True
+            except Exception:
+                pass
+            sg.TextPosition = target
+
+
+def actual_overlaps(doc, view, dims, tsize_ft_plan):
+    """Count pairs of created dims whose text boxes (from TextPosition and
+    the estimated text size) overlap - the 'mess' metric."""
+    boxes = []
+    h = tsize_ft_plan * 1.4
+    for d in dims:
+        try:
+            segs = list(d.Segments) if d.NumberOfSegments > 1 else [d]
+            dirv = d.Curve.Direction
+            u = (dirv.X, dirv.Y); n = (-u[1], u[0])
+            nn = u if not (u[0] < -1e-6 or (abs(u[0]) < 1e-6 and u[1] < 0)) else (-u[0], -u[1])
+            side = (-nn[1], nn[0])                  # text sits above the line, TextPosition at its base
+            for sg in segs:
+                tp = sg.TextPosition
+                w = PL.text_width(sg.ValueString or "", tsize_ft_plan)
+                c = (tp.X + side[0] * 0.5 * tsize_ft_plan, tp.Y + side[1] * 0.5 * tsize_ft_plan)
+                boxes.append((d.Id, _rect_poly(c, u, n, w / 2.0, h / 2.0)))
+        except Exception:
+            continue
+    count = 0
+    for i in range(len(boxes)):
+        for j in range(i + 1, len(boxes)):
+            if boxes[i][0] == boxes[j][0]:
+                continue
+            if _polys_overlap(boxes[i][1], boxes[j][1]):
+                count += 1
+    return count, len(boxes)

@@ -94,7 +94,7 @@ rules = R.Rules(model, RULES)
 intents = []
 for attr in run:
     intents.extend(getattr(rules, attr)())
-intents = PL.dedupe(intents, notes=rules.notes)
+intents = PL.dedupe(intents, notes=rules.notes, merge_tol=1.0 / 24)   # v1 keeps its 1/2" witness merge (v2 uses 0.4")
 if not intents:
     forms.alert("Nothing to dimension in this view.", exitscript=True)
 
