@@ -45,7 +45,7 @@ class Face(object):
 
 
 class Slab(object):
-    __slots__ = ("eid", "outer", "openings", "edges", "open_edges", "floor")
+    __slots__ = ("eid", "outer", "openings", "edges", "open_edges", "floor", "open_fill")
 
     def __init__(self, floor, outer, openings, edges, open_edges):
         self.floor = floor
@@ -54,6 +54,7 @@ class Slab(object):
         self.openings = openings      # [polygon]
         self.edges = edges            # [Face] perimeter (straight only)
         self.open_edges = open_edges  # [[Face]] per opening
+        self.open_fill = [[] for o in openings]   # per opening: polys of other floors / members filling part of it
 
 
 class Member(object):
@@ -86,11 +87,12 @@ class CJLine(object):
 
 
 class Obst(object):
-    __slots__ = ("poly", "rect", "eid", "kind", "raw")
+    __slots__ = ("poly", "rect", "eid", "kind", "raw", "fill")
 
-    def __init__(self, poly, eid, kind, raw=None):
+    def __init__(self, poly, eid, kind, raw=None, fill=None):
         self.poly = poly
         self.raw = raw              # openings: the true outline (poly is its inflated convex hull)
+        self.fill = fill            # openings: polys of other floors filling part of it (that part is slab)
         xs = [p[0] for p in poly]
         ys = [p[1] for p in poly]
         self.rect = (min(xs), min(ys), max(xs), max(ys))
@@ -307,11 +309,16 @@ class PlanModel(object):
             # level above seen through a real opening must not)
             cov = [(e, cp) for e, cp, a, b in covers
                    if e != sl.eid and (a is None or (a <= z1 and b >= z0))]
-            keep_o, keep_e = [], []
+            # for a partly filled hole: only floors whose underside continues
+            # the soffit (within 1 ft) make that part slab - a deep FILL does not
+            zb = sbb.Min.Z if sbb is not None else None
+            fl_cov = [cp for e, cp, a, b in covers if e != sl.eid and a is not None and zb is not None
+                      and abs(a - zb) <= 1.0]
+            keep_o, keep_e, keep_f = [], [], []
             for poly, edges in zip(sl.openings, sl.open_edges):
                 pts = [p[:2] for p in poly] if poly else []
                 if len(pts) < 3:
-                    keep_o.append(poly); keep_e.append(edges)
+                    keep_o.append(poly); keep_e.append(edges); keep_f.append([])
                     continue
                 xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
                 step = max(2.0, max(max(xs) - min(xs), max(ys) - min(ys)) / 40.0)
@@ -330,8 +337,15 @@ class PlanModel(object):
                     dropped += 1
                     self.filled_hole_boxes.append((sl.eid, min(xs), max(xs), min(ys), max(ys), n_fill * 1.0 / n_in))
                 else:
+                    # a partly filled hole stays an opening, but the part another
+                    # floor fills is slab (L4.5: the 10" slab's hole is mostly the
+                    # other 10" slab 19670910 - dims there were "inside an opening")
+                    bx = (min(xs), min(ys), max(xs), max(ys))
                     keep_o.append(poly); keep_e.append(edges)
-            sl.openings, sl.open_edges = keep_o, keep_e
+                    keep_f.append([cp for cp in fl_cov if cp and not (
+                        max(q[0] for q in cp) < bx[0] or min(q[0] for q in cp) > bx[2] or
+                        max(q[1] for q in cp) < bx[1] or min(q[1] for q in cp) > bx[3])] if n_fill else [])
+            sl.openings, sl.open_edges, sl.open_fill = keep_o, keep_e, keep_f
         return dropped
 
     def slab_polys(self):
@@ -489,10 +503,11 @@ class PlanModel(object):
         for m in self.beams + self.walls + self.columns:
             obs.append(Obst(P.inflate(m.poly, pad), m.eid, m.cat))
         for s in self.slabs:
-            for o in s.openings:
+            for i, o in enumerate(s.openings):
                 hull = P.convex_hull(o)
                 if len(hull) >= 3:
-                    obs.append(Obst(P.inflate(hull, 0.25), s.eid, "opening", raw=[p[:2] for p in o]))
+                    fill = s.open_fill[i] if i < len(s.open_fill) else None
+                    obs.append(Obst(P.inflate(hull, 0.25), s.eid, "opening", raw=[p[:2] for p in o], fill=fill or None))
         return obs
 
     def member_at(self, x, y, cats=("column", "wall")):

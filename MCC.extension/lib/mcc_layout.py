@@ -136,6 +136,33 @@ def _box_poly_overlap(box, poly):
     return any(P.seg_hits_poly(box[i], box[(i + 1) % 4], poly) for i in range(4))
 
 
+def _open_pt(x, y, poly, fill):
+    return P.point_in_poly(x, y, poly) and not any(P.point_in_poly(x, y, cp) for cp in fill)
+
+
+def _seg_in_open_part(a, b, poly, fill, step=0.5):
+    """Does segment a-b pass through the part of an opening no other floor
+    fills? (sampled every `step` ft)"""
+    L = math.hypot(b[0] - a[0], b[1] - a[1])
+    n = max(1, int(L / step))
+    return any(_open_pt(a[0] + (b[0] - a[0]) * i / float(n), a[1] + (b[1] - a[1]) * i / float(n), poly, fill)
+               for i in range(n + 1))
+
+
+def _box_in_open_part(box, poly, fill):
+    """A 4-corner text box against the unfilled part of an opening (5 x 3 samples)."""
+    a, b, c, d = box[0], box[1], box[2], box[3]
+    for i in range(5):
+        u = i / 4.0
+        p0 = (a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u)
+        p1 = (d[0] + (c[0] - d[0]) * u, d[1] + (c[1] - d[1]) * u)
+        for j in range(3):
+            v = j / 2.0
+            if _open_pt(p0[0] + (p1[0] - p0[0]) * v, p0[1] + (p1[1] - p0[1]) * v, poly, fill):
+                return True
+    return False
+
+
 class Layout(object):
     def __init__(self, model, strings, view, dim_type, crop, cfg=None):
         self.m = model
@@ -526,6 +553,11 @@ class Layout(object):
                 line_in = P.seg_hits_poly(a_, b_, poly)
                 text_in = any(_box_poly_overlap(bx, poly) for bx in boxes) or \
                     any(P.seg_hits_poly(ml[0], ml[1], poly) for ml in leaders)
+                if (line_in or text_in) and getattr(o, "fill", None):
+                    # part of this hole is filled by another floor: only its open part counts
+                    line_in = line_in and _seg_in_open_part(a_, b_, poly, o.fill)
+                    text_in = text_in and (any(_box_in_open_part(bx, poly, o.fill) for bx in boxes) or
+                                           any(_seg_in_open_part(ml[0], ml[1], poly, o.fill) for ml in leaders))
                 if not (line_in or text_in):
                     continue
                 # Adolfo: a shaft may carry dims inside "if absolutely necessary",

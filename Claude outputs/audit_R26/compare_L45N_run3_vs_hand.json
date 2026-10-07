@@ -1,0 +1,5993 @@
+{
+ "tool": "snapshot_L45N_run3.json",
+ "hand": "snapshot_L45N_hand.json",
+ "scale": 128,
+ "tol_in": 0.1875,
+ "counts": {
+  "deleted": 36,
+  "moved": 48,
+  "left": 25,
+  "added": 160
+ },
+ "rows": [
+  {
+   "tool_dim": 20611386,
+   "label": "run -> EE",
+   "elements": [
+    13788114,
+    14243653
+   ],
+   "value_ft": 6.229166666666667,
+   "chain": [
+    6.23
+   ],
+   "at": [
+    326.2,
+    29.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611387,
+   "label": "run -> EE",
+   "elements": [
+    13788114,
+    14243653
+   ],
+   "value_ft": 6.229166666666667,
+   "chain": [
+    6.23
+   ],
+   "at": [
+    294.1,
+    29.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "other_reference": true,
+   "his_dim": 17339365,
+   "his_chain": [
+    6.23
+   ],
+   "offset_in": -0.41,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611388,
+   "label": "void edge -> AA",
+   "elements": [
+    13788105,
+    14243653
+   ],
+   "value_ft": 1.3854166666666667,
+   "chain": [
+    1.39
+   ],
+   "at": [
+    222.8,
+    131.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611389,
+   "label": "void edge -> 2",
+   "elements": [
+    13788102,
+    14243653
+   ],
+   "value_ft": 5.333333333333333,
+   "chain": [
+    5.33
+   ],
+   "at": [
+    129.8,
+    113.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611390,
+   "label": "void edge -> 10",
+   "elements": [
+    13794716,
+    14243653
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    321.4,
+    175.9
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611391,
+   "label": "void edge -> A",
+   "elements": [
+    13795945,
+    19670910
+   ],
+   "value_ft": 1.0416666666666667,
+   "chain": [
+    1.04
+   ],
+   "at": [
+    123.9,
+    109.3
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "other_reference": true,
+   "his_dim": 17066202,
+   "his_chain": [
+    1.04
+   ],
+   "offset_in": -0.5,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611392,
+   "label": "beam end -> FF",
+   "elements": [
+    13788115,
+    14353344
+   ],
+   "value_ft": 7.1875,
+   "chain": [
+    7.19
+   ],
+   "at": [
+    272.4,
+    -6.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611393,
+   "label": "beam end -> CC",
+   "elements": [
+    13788100,
+    14271037
+   ],
+   "value_ft": 11.604166666666666,
+   "chain": [
+    11.6
+   ],
+   "at": [
+    295.6,
+    56.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454649,
+   "his_chain": [
+    11.6
+   ],
+   "offset_in": 0.87,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611394,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14243424
+   ],
+   "value_ft": 1.5,
+   "chain": [
+    1.5,
+    6.0
+   ],
+   "at": [
+    332.9,
+    191.6
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 19454405,
+   "his_chain": [
+    1.5
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611394,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14243424
+   ],
+   "value_ft": 6.0,
+   "chain": [
+    1.5,
+    6.0
+   ],
+   "at": [
+    334.5,
+    188.2
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 19454412,
+   "his_chain": [
+    6.0
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611395,
+   "label": "beam side|9|side",
+   "elements": [
+    13793990,
+    14243430
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    316.9,
+    107.1
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611395,
+   "label": "beam side|9|side",
+   "elements": [
+    13793990,
+    14243430
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    320.3,
+    108.7
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611396,
+   "label": "beam side|9|side",
+   "elements": [
+    13793990,
+    14243430
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    347.4,
+    41.8
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611396,
+   "label": "beam side|9|side",
+   "elements": [
+    13793990,
+    14243430
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    350.8,
+    43.4
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611397,
+   "label": "beam side|5|side",
+   "elements": [
+    13788108,
+    14243432
+   ],
+   "value_ft": 3.5833333333333335,
+   "chain": [
+    3.58,
+    2.42
+   ],
+   "at": [
+    182.4,
+    83.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17277290,
+   "his_chain": [
+    3.58,
+    2.42
+   ],
+   "offset_in": -2.82,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611397,
+   "label": "beam side|5|side",
+   "elements": [
+    13788108,
+    14243432
+   ],
+   "value_ft": 2.4166666666666665,
+   "chain": [
+    3.58,
+    2.42
+   ],
+   "at": [
+    185.4,
+    83.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19453505,
+   "his_chain": [
+    2.42
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611398,
+   "label": "beam end -> BB",
+   "elements": [
+    13788104,
+    14243432
+   ],
+   "value_ft": 12.177083333333334,
+   "chain": [
+    12.18
+   ],
+   "at": [
+    188.3,
+    91.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19453512,
+   "his_chain": [
+    12.18
+   ],
+   "offset_in": 0.82,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611399,
+   "label": "beam end -> BB",
+   "elements": [
+    13788104,
+    14243432
+   ],
+   "value_ft": 10.083333333333334,
+   "chain": [
+    10.08
+   ],
+   "at": [
+    179.0,
+    93.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611400,
+   "label": "beam side|F|side",
+   "elements": [
+    13793747,
+    14243446
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    2.75,
+    2.75
+   ],
+   "at": [
+    334.2,
+    42.8
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "other_reference": true,
+   "his_dim": 19486117,
+   "his_chain": [
+    2.75
+   ],
+   "offset_in": 0.07,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611400,
+   "label": "beam side|F|side",
+   "elements": [
+    13793747,
+    14243446
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    2.75,
+    2.75
+   ],
+   "at": [
+    335.6,
+    40.4
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "other_reference": true,
+   "his_dim": 19486117,
+   "his_chain": [
+    2.75
+   ],
+   "offset_in": 0.07,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611401,
+   "label": "beam side|F|side",
+   "elements": [
+    13793747,
+    14243446
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    2.75,
+    2.75
+   ],
+   "at": [
+    262.1,
+    1.2
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611401,
+   "label": "beam side|F|side",
+   "elements": [
+    13793747,
+    14243446
+   ],
+   "value_ft": 2.75,
+   "chain": [
+    2.75,
+    2.75
+   ],
+   "at": [
+    263.5,
+    -1.2
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611402,
+   "label": "beam side|10|side",
+   "elements": [
+    13794716,
+    14243452
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    313.3,
+    184.3
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 18123933,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": 5.64,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611402,
+   "label": "beam side|10|side",
+   "elements": [
+    13794716,
+    14243452
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    316.7,
+    185.9
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 18123933,
+   "his_chain": [
+    3.75,
+    3.75
+   ],
+   "offset_in": 5.64,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611403,
+   "label": "beam side|7|side",
+   "elements": [
+    13788110,
+    14243458
+   ],
+   "value_ft": 5.375,
+   "chain": [
+    5.38,
+    6.62
+   ],
+   "at": [
+    230.2,
+    30.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454285,
+   "his_chain": [
+    5.38
+   ],
+   "offset_in": 0.02,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611403,
+   "label": "beam side|7|side",
+   "elements": [
+    13788110,
+    14243458
+   ],
+   "value_ft": 6.625,
+   "chain": [
+    5.38,
+    6.62
+   ],
+   "at": [
+    236.2,
+    30.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454278,
+   "his_chain": [
+    6.62
+   ],
+   "offset_in": 0.02,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611404,
+   "label": "beam side|7|side",
+   "elements": [
+    13788110,
+    14243458
+   ],
+   "value_ft": 5.375,
+   "chain": [
+    5.38,
+    6.62
+   ],
+   "at": [
+    230.2,
+    -15.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19485855,
+   "his_chain": [
+    5.38
+   ],
+   "offset_in": -0.72,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611404,
+   "label": "beam side|7|side",
+   "elements": [
+    13788110,
+    14243458
+   ],
+   "value_ft": 6.625,
+   "chain": [
+    5.38,
+    6.62
+   ],
+   "at": [
+    236.2,
+    -15.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17328871,
+   "his_chain": [
+    5.38,
+    6.62
+   ],
+   "offset_in": -2.51,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611405,
+   "label": "beam end -> EE",
+   "elements": [
+    13788114,
+    14243458
+   ],
+   "value_ft": 1.75,
+   "chain": [
+    1.75
+   ],
+   "at": [
+    225.9,
+    26.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454292,
+   "his_chain": [
+    1.75
+   ],
+   "offset_in": 0.0,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611406,
+   "label": "beam side|3|side",
+   "elements": [
+    13788103,
+    14263921
+   ],
+   "value_ft": 4.083333333333333,
+   "chain": [
+    4.08,
+    3.42
+   ],
+   "at": [
+    139.3,
+    103.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17284812,
+   "his_chain": [
+    4.08,
+    3.42
+   ],
+   "offset_in": 1.23,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611406,
+   "label": "beam side|3|side",
+   "elements": [
+    13788103,
+    14263921
+   ],
+   "value_ft": 3.4166666666666665,
+   "chain": [
+    4.08,
+    3.42
+   ],
+   "at": [
+    143.0,
+    103.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17259872,
+   "his_chain": [
+    4.08,
+    3.42
+   ],
+   "offset_in": 4.56,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611407,
+   "label": "beam side|4|side",
+   "elements": [
+    13788107,
+    14265390
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    168.3,
+    87.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "other_reference": true,
+   "his_dim": 19453646,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": 0.6,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611407,
+   "label": "beam side|4|side",
+   "elements": [
+    13788107,
+    14265390
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    172.0,
+    87.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "other_reference": true,
+   "his_dim": 19453646,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": 0.6,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611409,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788111,
+    14271037
+   ],
+   "value_ft": 27.041666666666668,
+   "chain": [
+    27.04,
+    4.0
+   ],
+   "at": [
+    283.7,
+    47.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454541,
+   "his_chain": [
+    27.04
+   ],
+   "offset_in": -10.15,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611409,
+   "label": "beam anchor|sides",
+   "elements": [
+    14271037,
+    14271037
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    27.04,
+    4.0
+   ],
+   "at": [
+    299.3,
+    47.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454549,
+   "his_chain": [
+    4.0
+   ],
+   "offset_in": -10.15,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611410,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788100,
+    14271227
+   ],
+   "value_ft": 1.7708333333333333,
+   "chain": [
+    1.77,
+    4.0
+   ],
+   "at": [
+    293.6,
+    62.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454628,
+   "his_chain": [
+    1.77
+   ],
+   "offset_in": 3.02,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611410,
+   "label": "beam anchor|sides",
+   "elements": [
+    14271227,
+    14271227
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    1.77,
+    4.0
+   ],
+   "at": [
+    293.6,
+    65.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454636,
+   "his_chain": [
+    4.0
+   ],
+   "offset_in": 3.02,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611411,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788105,
+    14271355
+   ],
+   "value_ft": 20.1875,
+   "chain": [
+    20.19,
+    4.0
+   ],
+   "at": [
+    323.9,
+    140.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454608,
+   "his_chain": [
+    20.19
+   ],
+   "offset_in": -2.73,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611411,
+   "label": "beam anchor|sides",
+   "elements": [
+    14271355,
+    14271355
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    20.19,
+    4.0
+   ],
+   "at": [
+    323.9,
+    152.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454601,
+   "his_chain": [
+    4.0
+   ],
+   "offset_in": -2.73,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611412,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788110,
+    14345337
+   ],
+   "value_ft": 6.25,
+   "chain": [
+    6.25,
+    3.0
+   ],
+   "at": [
+    236.0,
+    115.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454329,
+   "his_chain": [
+    6.25
+   ],
+   "offset_in": -0.56,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611412,
+   "label": "beam anchor|sides",
+   "elements": [
+    14345337,
+    14345337
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    6.25,
+    3.0
+   ],
+   "at": [
+    240.6,
+    115.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454336,
+   "his_chain": [
+    3.0
+   ],
+   "offset_in": -3.29,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611413,
+   "label": "beam side|AA|side",
+   "elements": [
+    13788105,
+    14345487
+   ],
+   "value_ft": 0.8020833333333334,
+   "chain": [
+    0.8,
+    3.2
+   ],
+   "at": [
+    236.5,
+    130.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19477921,
+   "his_chain": [
+    0.8
+   ],
+   "offset_in": 0.76,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611413,
+   "label": "beam side|AA|side",
+   "elements": [
+    13788105,
+    14345487
+   ],
+   "value_ft": 3.1979166666666665,
+   "chain": [
+    0.8,
+    3.2
+   ],
+   "at": [
+    236.5,
+    132.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19477914,
+   "his_chain": [
+    3.2
+   ],
+   "offset_in": 0.76,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611414,
+   "label": "beam side|AA|side",
+   "elements": [
+    13788105,
+    14345487
+   ],
+   "value_ft": 0.8020833333333334,
+   "chain": [
+    0.8,
+    3.2
+   ],
+   "at": [
+    276.3,
+    130.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454040,
+   "his_chain": [
+    0.8
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611414,
+   "label": "beam side|AA|side",
+   "elements": [
+    13788105,
+    14345487
+   ],
+   "value_ft": 3.1979166666666665,
+   "chain": [
+    0.8,
+    3.2
+   ],
+   "at": [
+    276.3,
+    132.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454032,
+   "his_chain": [
+    3.2
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611415,
+   "label": "beam end -> 7",
+   "elements": [
+    13788110,
+    14345487
+   ],
+   "value_ft": 6.25,
+   "chain": [
+    6.25
+   ],
+   "at": [
+    236.0,
+    138.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611416,
+   "label": "beam end -> 8",
+   "elements": [
+    13788111,
+    14345487
+   ],
+   "value_ft": 3.4166666666666665,
+   "chain": [
+    3.42
+   ],
+   "at": [
+    271.9,
+    135.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454059,
+   "his_chain": [
+    3.42
+   ],
+   "offset_in": -0.05,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611417,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788104,
+    14353155
+   ],
+   "value_ft": 4.395833333333333,
+   "chain": [
+    4.4,
+    4.0
+   ],
+   "at": [
+    227.7,
+    100.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454167,
+   "his_chain": [
+    4.4
+   ],
+   "offset_in": -0.01,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611417,
+   "label": "beam anchor|sides",
+   "elements": [
+    14353155,
+    14353155
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    4.4,
+    4.0
+   ],
+   "at": [
+    227.7,
+    104.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611418,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788104,
+    14353155
+   ],
+   "value_ft": 4.395833333333333,
+   "chain": [
+    4.4,
+    4.0
+   ],
+   "at": [
+    275.9,
+    100.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454167,
+   "his_chain": [
+    4.4
+   ],
+   "offset_in": -4.53,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611418,
+   "label": "beam anchor|sides",
+   "elements": [
+    14353155,
+    14353155
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    4.4,
+    4.0
+   ],
+   "at": [
+    275.9,
+    104.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611419,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788100,
+    14353164
+   ],
+   "value_ft": 15.958333333333334,
+   "chain": [
+    15.96,
+    4.0
+   ],
+   "at": [
+    275.9,
+    70.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454209,
+   "his_chain": [
+    15.96
+   ],
+   "offset_in": -2.33,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611419,
+   "label": "beam anchor|sides",
+   "elements": [
+    14353164,
+    14353164
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    15.96,
+    4.0
+   ],
+   "at": [
+    275.9,
+    80.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611420,
+   "label": "beam end -> 8",
+   "elements": [
+    13788111,
+    14353164
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    3.0
+   ],
+   "at": [
+    271.7,
+    83.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454195,
+   "his_chain": [
+    3.0
+   ],
+   "offset_in": -0.08,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611421,
+   "label": "beam end -> EE",
+   "elements": [
+    13788114,
+    14353344
+   ],
+   "value_ft": 1.1458333333333333,
+   "chain": [
+    1.15
+   ],
+   "at": [
+    274.4,
+    26.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "other_reference": true,
+   "his_dim": 19454244,
+   "his_chain": [
+    1.15
+   ],
+   "offset_in": 0.14,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611422,
+   "label": "beam end -> FF",
+   "elements": [
+    13788115,
+    14353344
+   ],
+   "value_ft": 11.197916666666666,
+   "chain": [
+    11.2
+   ],
+   "at": [
+    274.4,
+    -4.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611423,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788102,
+    19668808
+   ],
+   "value_ft": 2.3333333333333335,
+   "chain": [
+    2.33,
+    3.0
+   ],
+   "at": [
+    128.3,
+    118.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611423,
+   "label": "beam anchor|sides",
+   "elements": [
+    19668808,
+    19668808
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    2.33,
+    3.0
+   ],
+   "at": [
+    131.0,
+    118.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611424,
+   "label": "beam side|10|side",
+   "elements": [
+    13794716,
+    20048256
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    307.3,
+    197.2
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "other_reference": true,
+   "his_dim": 20048320,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": 0.02,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611424,
+   "label": "beam side|10|side",
+   "elements": [
+    13794716,
+    20048256
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    310.7,
+    198.8
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "other_reference": true,
+   "his_dim": 20048320,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": 0.02,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611425,
+   "label": "beam end -> A",
+   "elements": [
+    13795945,
+    20048256
+   ],
+   "value_ft": 1.0416666666666667,
+   "chain": [
+    1.04
+   ],
+   "at": [
+    305.0,
+    193.8
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611426,
+   "label": "CJ -> FF",
+   "elements": [
+    13788115,
+    20603364
+   ],
+   "value_ft": 10.666666666666666,
+   "chain": [
+    10.67
+   ],
+   "at": [
+    159.6,
+    -15.5
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "other_reference": true,
+   "his_dim": 19733171,
+   "his_chain": [
+    10.67
+   ],
+   "offset_in": 0.45,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611427,
+   "label": "CJ -> 4",
+   "elements": [
+    13788107,
+    20603365
+   ],
+   "value_ft": 7.916666666666667,
+   "chain": [
+    7.92
+   ],
+   "at": [
+    166.2,
+    -8.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611428,
+   "label": "CJ -> FF",
+   "elements": [
+    13788115,
+    20603366
+   ],
+   "value_ft": 6.583333333333333,
+   "chain": [
+    6.58
+   ],
+   "at": [
+    123.0,
+    -13.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "other_reference": true,
+   "his_dim": 19733157,
+   "his_chain": [
+    6.58
+   ],
+   "offset_in": -0.1,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611429,
+   "label": "CJ -> E",
+   "elements": [
+    13796195,
+    20603369
+   ],
+   "value_ft": 6.583333333333333,
+   "chain": [
+    6.59
+   ],
+   "at": [
+    328.1,
+    72.4
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "other_reference": true,
+   "his_dim": 20046387,
+   "his_chain": [
+    6.59
+   ],
+   "offset_in": 0.12,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611430,
+   "label": "CJ -> CC",
+   "elements": [
+    13788100,
+    20603371
+   ],
+   "value_ft": 12.6875,
+   "chain": [
+    12.69
+   ],
+   "at": [
+    265.6,
+    68.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611431,
+   "label": "CJ -> CC",
+   "elements": [
+    13788100,
+    20603371
+   ],
+   "value_ft": 12.6875,
+   "chain": [
+    12.69
+   ],
+   "at": [
+    332.7,
+    68.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "other_reference": true,
+   "his_dim": 20046401,
+   "his_chain": [
+    12.69
+   ],
+   "offset_in": 0.07,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611432,
+   "label": "CJ -> EE",
+   "elements": [
+    13788114,
+    20604080
+   ],
+   "value_ft": 4.5,
+   "chain": [
+    4.5
+   ],
+   "at": [
+    123.0,
+    23.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611433,
+   "label": "CJ -> EE",
+   "elements": [
+    13788114,
+    20604080
+   ],
+   "value_ft": 4.5,
+   "chain": [
+    4.5
+   ],
+   "at": [
+    168.1,
+    23.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611434,
+   "label": "corner -> BB",
+   "elements": [
+    13788104,
+    19670910
+   ],
+   "value_ft": 11.552083333333334,
+   "chain": [
+    11.55
+   ],
+   "at": [
+    123.0,
+    103.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "other_reference": true,
+   "his_dim": 19697281,
+   "his_chain": [
+    11.55
+   ],
+   "offset_in": -0.08,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611435,
+   "label": "beam side|EE|side",
+   "elements": [
+    13788114,
+    14353214
+   ],
+   "value_ft": 2.8541666666666665,
+   "chain": [
+    2.85,
+    1.15
+   ],
+   "at": [
+    295.9,
+    24.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454251,
+   "his_chain": [
+    2.85
+   ],
+   "offset_in": -1.88,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611435,
+   "label": "beam side|EE|side",
+   "elements": [
+    13788114,
+    14353214
+   ],
+   "value_ft": 1.1458333333333333,
+   "chain": [
+    2.85,
+    1.15
+   ],
+   "at": [
+    295.9,
+    26.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454244,
+   "his_chain": [
+    1.15
+   ],
+   "offset_in": -1.88,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611436,
+   "label": "beam side|5|side",
+   "elements": [
+    13788108,
+    14243432
+   ],
+   "value_ft": 3.5833333333333335,
+   "chain": [
+    3.58,
+    2.42
+   ],
+   "at": [
+    182.4,
+    120.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17277290,
+   "his_chain": [
+    3.58,
+    2.42
+   ],
+   "offset_in": 0.63,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611436,
+   "label": "beam side|5|side",
+   "elements": [
+    13788108,
+    14243432
+   ],
+   "value_ft": 2.4166666666666665,
+   "chain": [
+    3.58,
+    2.42
+   ],
+   "at": [
+    185.4,
+    120.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17277290,
+   "his_chain": [
+    3.58,
+    2.42
+   ],
+   "offset_in": 0.63,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611437,
+   "label": "stack 1 -> AA",
+   "elements": [
+    13788105,
+    14243653
+   ],
+   "value_ft": 1.4791666666666667,
+   "chain": [
+    1.48
+   ],
+   "at": [
+    224.8,
+    131.3
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611438,
+   "label": "void edge -> AA + void edge -> AA (chain check)",
+   "elements": [
+    14243653,
+    14243653
+   ],
+   "value_ft": 3.6666666666666665,
+   "chain": [
+    3.67
+   ],
+   "at": [
+    168.0,
+    130.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611439,
+   "label": "beam side|EE|side",
+   "elements": [
+    13788114,
+    14353214
+   ],
+   "value_ft": 2.8541666666666665,
+   "chain": [
+    2.85,
+    1.15
+   ],
+   "at": [
+    223.9,
+    24.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454251,
+   "his_chain": [
+    2.85
+   ],
+   "offset_in": 4.87,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611439,
+   "label": "beam side|EE|side",
+   "elements": [
+    13788114,
+    14353214
+   ],
+   "value_ft": 1.1458333333333333,
+   "chain": [
+    2.85,
+    1.15
+   ],
+   "at": [
+    223.9,
+    26.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454244,
+   "his_chain": [
+    1.15
+   ],
+   "offset_in": 4.87,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611440,
+   "label": "CJ -> EE",
+   "elements": [
+    13788114,
+    20604026
+   ],
+   "value_ft": 9.458333333333334,
+   "chain": [
+    9.46
+   ],
+   "at": [
+    299.2,
+    30.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611441,
+   "label": "beam anchor|sides",
+   "elements": [
+    14353344,
+    14353344
+   ],
+   "value_ft": 3.1666666666666665,
+   "chain": [
+    3.17,
+    0.5
+   ],
+   "at": [
+    268.1,
+    -13.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17328830,
+   "his_chain": [
+    3.17,
+    0.5
+   ],
+   "offset_in": -2.31,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611441,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788111,
+    14353344
+   ],
+   "value_ft": 0.5,
+   "chain": [
+    3.17,
+    0.5
+   ],
+   "at": [
+    270.0,
+    -13.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17328830,
+   "his_chain": [
+    3.17,
+    0.5
+   ],
+   "offset_in": -2.31,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611442,
+   "label": "beam anchor|sides",
+   "elements": [
+    13795945,
+    19387072
+   ],
+   "value_ft": 1.0416666666666667,
+   "chain": [
+    1.04,
+    1.33
+   ],
+   "at": [
+    133.5,
+    113.8
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "other_reference": true,
+   "his_dim": 17066202,
+   "his_chain": [
+    1.04
+   ],
+   "offset_in": 0.49,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611442,
+   "label": "beam anchor|sides",
+   "elements": [
+    19387072,
+    19387072
+   ],
+   "value_ft": 1.3333333333333333,
+   "chain": [
+    1.04,
+    1.33
+   ],
+   "at": [
+    134.0,
+    112.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611443,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788100,
+    14271227
+   ],
+   "value_ft": 1.7708333333333333,
+   "chain": [
+    1.77,
+    4.0
+   ],
+   "at": [
+    328.1,
+    62.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454628,
+   "his_chain": [
+    1.77
+   ],
+   "offset_in": -0.22,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611443,
+   "label": "beam anchor|sides",
+   "elements": [
+    14271227,
+    14271227
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    1.77,
+    4.0
+   ],
+   "at": [
+    328.1,
+    65.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454636,
+   "his_chain": [
+    4.0
+   ],
+   "offset_in": -0.22,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611444,
+   "label": "beam end -> AA",
+   "elements": [
+    13788105,
+    14345337
+   ],
+   "value_ft": 18.541666666666668,
+   "chain": [
+    18.54
+   ],
+   "at": [
+    230.5,
+    139.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19477907,
+   "his_chain": [
+    18.54
+   ],
+   "offset_in": 0.44,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611445,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14243424
+   ],
+   "value_ft": 1.5,
+   "chain": [
+    1.5,
+    6.0
+   ],
+   "at": [
+    234.7,
+    145.9
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 19454405,
+   "his_chain": [
+    1.5
+   ],
+   "offset_in": -10.16,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611445,
+   "label": "beam side|B|side",
+   "elements": [
+    13796036,
+    14243424
+   ],
+   "value_ft": 6.0,
+   "chain": [
+    1.5,
+    6.0
+   ],
+   "at": [
+    236.3,
+    142.5
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 19454412,
+   "his_chain": [
+    6.0
+   ],
+   "offset_in": -10.16,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611446,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788105,
+    14271355
+   ],
+   "value_ft": 20.1875,
+   "chain": [
+    20.19,
+    4.0
+   ],
+   "at": [
+    293.6,
+    140.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454608,
+   "his_chain": [
+    20.19
+   ],
+   "offset_in": 0.1,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611446,
+   "label": "beam anchor|sides",
+   "elements": [
+    14271355,
+    14271355
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    20.19,
+    4.0
+   ],
+   "at": [
+    293.6,
+    152.7
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19454601,
+   "his_chain": [
+    4.0
+   ],
+   "offset_in": 0.1,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611447,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788111,
+    14271037
+   ],
+   "value_ft": 27.041666666666668,
+   "chain": [
+    27.04,
+    4.0
+   ],
+   "at": [
+    283.7,
+    155.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454541,
+   "his_chain": [
+    27.04
+   ],
+   "offset_in": -0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611447,
+   "label": "beam anchor|sides",
+   "elements": [
+    14271037,
+    14271037
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    27.04,
+    4.0
+   ],
+   "at": [
+    299.3,
+    155.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454549,
+   "his_chain": [
+    4.0
+   ],
+   "offset_in": -0.06,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611448,
+   "label": "beam end -> AA",
+   "elements": [
+    13788105,
+    14271037
+   ],
+   "value_ft": 24.1875,
+   "chain": [
+    24.19
+   ],
+   "at": [
+    295.6,
+    142.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611449,
+   "label": "CJ -> E",
+   "elements": [
+    13796195,
+    20603369
+   ],
+   "value_ft": 6.583333333333333,
+   "chain": [
+    6.59
+   ],
+   "at": [
+    377.7,
+    95.5
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611450,
+   "label": "beam end -> FF",
+   "elements": [
+    13788115,
+    14243462
+   ],
+   "value_ft": 3.6666666666666665,
+   "chain": [
+    3.67
+   ],
+   "at": [
+    188.3,
+    -12.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "his_dim": 19458063,
+   "his_chain": [
+    3.67
+   ],
+   "offset_in": 0.09,
+   "change": "left"
+  },
+  {
+   "tool_dim": 20611451,
+   "label": "beam side|5|side",
+   "elements": [
+    13788108,
+    14243462
+   ],
+   "value_ft": 3.5833333333333335,
+   "chain": [
+    3.58,
+    2.42
+   ],
+   "at": [
+    182.4,
+    -12.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17315760,
+   "his_chain": [
+    3.58,
+    2.42
+   ],
+   "offset_in": 1.2,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611451,
+   "label": "beam side|5|side",
+   "elements": [
+    13788108,
+    14243462
+   ],
+   "value_ft": 2.4166666666666665,
+   "chain": [
+    3.58,
+    2.42
+   ],
+   "at": [
+    185.4,
+    -12.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 17315760,
+   "his_chain": [
+    3.58,
+    2.42
+   ],
+   "offset_in": 1.2,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611452,
+   "label": "beam end -> 8",
+   "elements": [
+    13788111,
+    14353214
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    3.0
+   ],
+   "at": [
+    271.7,
+    21.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454264,
+   "his_chain": [
+    3.0
+   ],
+   "offset_in": -0.76,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611453,
+   "label": "run -> 8",
+   "elements": [
+    13788111,
+    14243653
+   ],
+   "value_ft": 21.833333333333332,
+   "chain": [
+    21.83
+   ],
+   "at": [
+    281.1,
+    30.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "other_reference": true,
+   "his_dim": 17339364,
+   "his_chain": [
+    21.83,
+    35.0
+   ],
+   "offset_in": -0.25,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611454,
+   "label": "beam end -> 9",
+   "elements": [
+    13793990,
+    19387072
+   ],
+   "value_ft": 14.6875,
+   "chain": [
+    14.68
+   ],
+   "at": [
+    275.8,
+    182.5
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611455,
+   "label": "beam end -> C",
+   "elements": [
+    13796090,
+    19675280
+   ],
+   "value_ft": 18.0,
+   "chain": [
+    18.0
+   ],
+   "at": [
+    350.0,
+    155.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611456,
+   "label": "beam anchor|sides",
+   "elements": [
+    13796090,
+    19675327
+   ],
+   "value_ft": 15.0,
+   "chain": [
+    15.0,
+    3.0
+   ],
+   "at": [
+    352.7,
+    158.7
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611456,
+   "label": "beam anchor|sides",
+   "elements": [
+    19675327,
+    19675327
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    15.0,
+    3.0
+   ],
+   "at": [
+    356.5,
+    150.5
+   ],
+   "dir": [
+    0.42262,
+    -0.90631
+   ],
+   "his_dim": 19689367,
+   "his_chain": [
+    3.0
+   ],
+   "offset_in": 0.33,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611457,
+   "label": "beam end -> 11",
+   "elements": [
+    13794723,
+    19675327
+   ],
+   "value_ft": 1.0416666666666667,
+   "chain": [
+    1.04
+   ],
+   "at": [
+    350.9,
+    147.9
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "his_dim": 19689413,
+   "his_chain": [
+    1.04
+   ],
+   "offset_in": -0.39,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611458,
+   "label": "CJ -> FF + CJ -> EE",
+   "elements": [
+    13788115,
+    20604078
+   ],
+   "value_ft": 18.03125,
+   "chain": [
+    18.03,
+    18.14
+   ],
+   "at": [
+    161.7,
+    -1.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611458,
+   "label": "CJ -> FF + CJ -> EE",
+   "elements": [
+    13788114,
+    20604078
+   ],
+   "value_ft": 18.135416666666668,
+   "chain": [
+    18.03,
+    18.14
+   ],
+   "at": [
+    161.7,
+    17.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "tool_dim": 20611459,
+   "label": "beam anchor|sides",
+   "elements": [
+    13788110,
+    14345337
+   ],
+   "value_ft": 6.25,
+   "chain": [
+    6.25,
+    3.0
+   ],
+   "at": [
+    236.0,
+    164.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454329,
+   "his_chain": [
+    6.25
+   ],
+   "offset_in": 4.01,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611459,
+   "label": "beam anchor|sides",
+   "elements": [
+    14345337,
+    14345337
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    6.25,
+    3.0
+   ],
+   "at": [
+    240.6,
+    164.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "his_dim": 19454336,
+   "his_chain": [
+    3.0
+   ],
+   "offset_in": 1.28,
+   "change": "moved"
+  },
+  {
+   "tool_dim": 20611460,
+   "label": "corner -> 7",
+   "elements": [
+    13788110,
+    14243653
+   ],
+   "value_ft": 11.927083333333334,
+   "chain": [
+    11.93
+   ],
+   "at": [
+    238.9,
+    166.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "deleted"
+  },
+  {
+   "his_dim": 17031654,
+   "elements": [
+    13794716,
+    13794723
+   ],
+   "value_ft": 17.333333333333332,
+   "chain": [
+    17.33,
+    29.33
+   ],
+   "at": [
+    372.9,
+    81.5
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17031654,
+   "elements": [
+    13793990,
+    13794716
+   ],
+   "value_ft": 29.333333333333332,
+   "chain": [
+    17.33,
+    29.33
+   ],
+   "at": [
+    351.8,
+    71.6
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17031655,
+   "elements": [
+    13793990,
+    13794723
+   ],
+   "value_ft": 46.666666666666664,
+   "chain": [
+    46.67
+   ],
+   "at": [
+    358.8,
+    77.1
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17064274,
+   "elements": [
+    13793990,
+    14240434
+   ],
+   "value_ft": 0.3854166666666667,
+   "chain": [
+    0.39
+   ],
+   "at": [
+    303.6,
+    139.7
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17066140,
+   "elements": [
+    13788102,
+    14243653
+   ],
+   "value_ft": 2.3333333333333335,
+   "chain": [
+    2.33
+   ],
+   "at": [
+    128.3,
+    88.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17076402,
+   "elements": [
+    13788110,
+    14213844
+   ],
+   "value_ft": 4.541666666666667,
+   "chain": [
+    4.54
+   ],
+   "at": [
+    230.6,
+    153.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17076430,
+   "elements": [
+    13788109,
+    13887093
+   ],
+   "value_ft": 2.03125,
+   "chain": [
+    2.03,
+    8.44
+   ],
+   "at": [
+    211.0,
+    120.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17076430,
+   "elements": [
+    13887093,
+    14213846
+   ],
+   "value_ft": 8.4375,
+   "chain": [
+    2.03,
+    8.44
+   ],
+   "at": [
+    216.2,
+    120.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17107947,
+   "elements": [
+    13794723,
+    14213828
+   ],
+   "value_ft": 2.8125,
+   "chain": [
+    2.81
+   ],
+   "at": [
+    360.0,
+    126.4
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17107948,
+   "elements": [
+    13794723,
+    14213826
+   ],
+   "value_ft": 2.8125,
+   "chain": [
+    2.81
+   ],
+   "at": [
+    374.7,
+    94.7
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17240808,
+   "elements": [
+    14263921,
+    14263921
+   ],
+   "value_ft": 7.5,
+   "chain": [
+    7.5
+   ],
+   "at": [
+    141.0,
+    -21.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17254458,
+   "elements": [
+    13795945,
+    14218021
+   ],
+   "value_ft": 2.1666666666666665,
+   "chain": [
+    2.17
+   ],
+   "at": [
+    197.9,
+    143.2
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17254473,
+   "elements": [
+    13794716,
+    14213834
+   ],
+   "value_ft": 2.03125,
+   "chain": [
+    2.03
+   ],
+   "at": [
+    332.2,
+    150.6
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17254474,
+   "elements": [
+    13794723,
+    14213828
+   ],
+   "value_ft": 2.8125,
+   "chain": [
+    2.81
+   ],
+   "at": [
+    360.0,
+    126.4
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17254475,
+   "elements": [
+    13794723,
+    14213826
+   ],
+   "value_ft": 2.8125,
+   "chain": [
+    2.81
+   ],
+   "at": [
+    374.7,
+    94.7
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17254478,
+   "elements": [
+    13788115,
+    14213858
+   ],
+   "value_ft": 5.5,
+   "chain": [
+    5.5
+   ],
+   "at": [
+    165.0,
+    -12.9
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17254479,
+   "elements": [
+    13788115,
+    14213856
+   ],
+   "value_ft": 5.166666666666667,
+   "chain": [
+    5.16
+   ],
+   "at": [
+    176.0,
+    -12.7
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17254487,
+   "elements": [
+    13788114,
+    14215890
+   ],
+   "value_ft": 0.75,
+   "chain": [
+    0.75
+   ],
+   "at": [
+    277.7,
+    25.6
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17259798,
+   "elements": [
+    14263921,
+    14263921
+   ],
+   "value_ft": 7.5,
+   "chain": [
+    7.5
+   ],
+   "at": [
+    141.0,
+    56.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17277269,
+   "elements": [
+    13788105,
+    14243432
+   ],
+   "value_ft": 1.4791666666666667,
+   "chain": [
+    1.48
+   ],
+   "at": [
+    179.2,
+    131.3
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17277291,
+   "elements": [
+    14243432,
+    14254834
+   ],
+   "value_ft": 6.0,
+   "chain": [
+    6.0
+   ],
+   "at": [
+    183.6,
+    115.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17284804,
+   "elements": [
+    13788108,
+    14254834
+   ],
+   "value_ft": 3.5833333333333335,
+   "chain": [
+    3.58
+   ],
+   "at": [
+    182.4,
+    118.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17284811,
+   "elements": [
+    14243436,
+    14263921
+   ],
+   "value_ft": 7.5,
+   "chain": [
+    7.5
+   ],
+   "at": [
+    141.0,
+    92.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17284812,
+   "elements": [
+    13788103,
+    14243436
+   ],
+   "value_ft": 3.4166666666666665,
+   "chain": [
+    4.08,
+    3.42
+   ],
+   "at": [
+    143.0,
+    90.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17284869,
+   "elements": [
+    13899174,
+    14243436
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    137.9,
+    104.6
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17284869,
+   "elements": [
+    13899174,
+    14243436
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    141.3,
+    106.2
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17284886,
+   "elements": [
+    13788104,
+    14243436
+   ],
+   "value_ft": 5.3125,
+   "chain": [
+    5.32
+   ],
+   "at": [
+    148.3,
+    100.7
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17296452,
+   "elements": [
+    13788107,
+    14243653
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    172.0,
+    75.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17297482,
+   "elements": [
+    13788114,
+    14243653
+   ],
+   "value_ft": 15.020833333333334,
+   "chain": [
+    15.02
+   ],
+   "at": [
+    176.8,
+    33.5
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17297507,
+   "elements": [
+    14243653,
+    14293926
+   ],
+   "value_ft": 1.0,
+   "chain": [
+    1.0,
+    14.02
+   ],
+   "at": [
+    178.8,
+    40.5
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17297507,
+   "elements": [
+    13788114,
+    14293926
+   ],
+   "value_ft": 14.020833333333334,
+   "chain": [
+    1.0,
+    14.02
+   ],
+   "at": [
+    178.8,
+    33.0
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17298245,
+   "elements": [
+    13788104,
+    14243653
+   ],
+   "value_ft": 12.177083333333334,
+   "chain": [
+    12.18
+   ],
+   "at": [
+    179.6,
+    91.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17298934,
+   "elements": [
+    13788107,
+    14243653
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    172.0,
+    50.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17298947,
+   "elements": [
+    13788107,
+    17298909
+   ],
+   "value_ft": 3.5,
+   "chain": [
+    3.5,
+    0.25
+   ],
+   "at": [
+    171.9,
+    71.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17298947,
+   "elements": [
+    14243653,
+    17298909
+   ],
+   "value_ft": 0.25,
+   "chain": [
+    3.5,
+    0.25
+   ],
+   "at": [
+    173.8,
+    71.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17300163,
+   "elements": [
+    13788107,
+    17298909
+   ],
+   "value_ft": 3.5,
+   "chain": [
+    3.5,
+    0.25
+   ],
+   "at": [
+    171.9,
+    46.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17300163,
+   "elements": [
+    14243653,
+    17298909
+   ],
+   "value_ft": 0.25,
+   "chain": [
+    3.5,
+    0.25
+   ],
+   "at": [
+    173.8,
+    46.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17300342,
+   "elements": [
+    14215904,
+    14243432
+   ],
+   "value_ft": 2.375,
+   "chain": [
+    2.38
+   ],
+   "at": [
+    189.4,
+    87.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17304733,
+   "elements": [
+    13788111,
+    14243653
+   ],
+   "value_ft": 1.9166666666666667,
+   "chain": [
+    1.92
+   ],
+   "at": [
+    269.3,
+    47.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17304786,
+   "elements": [
+    13788111,
+    14268828
+   ],
+   "value_ft": 51.958333333333336,
+   "chain": [
+    51.96
+   ],
+   "at": [
+    296.2,
+    47.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17305357,
+   "elements": [
+    14243653,
+    14399321
+   ],
+   "value_ft": 0.9895833333333334,
+   "chain": [
+    0.99,
+    13.84
+   ],
+   "at": [
+    205.8,
+    -31.6
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17305357,
+   "elements": [
+    13788116,
+    14399321
+   ],
+   "value_ft": 13.84375,
+   "chain": [
+    0.99,
+    13.84
+   ],
+   "at": [
+    205.8,
+    -39.1
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17315761,
+   "elements": [
+    14243462,
+    14243462
+   ],
+   "value_ft": 6.0,
+   "chain": [
+    6.0
+   ],
+   "at": [
+    183.6,
+    -23.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17328235,
+   "elements": [
+    13788115,
+    14243653
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    0.67
+   ],
+   "at": [
+    260.2,
+    -9.8
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17328332,
+   "elements": [
+    13788109,
+    14254834
+   ],
+   "value_ft": 0.6666666666666666,
+   "chain": [
+    0.67
+   ],
+   "at": [
+    210.3,
+    -17.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17328400,
+   "elements": [
+    14243653,
+    17343834
+   ],
+   "value_ft": 1.0,
+   "chain": [
+    1.0,
+    0.92
+   ],
+   "at": [
+    268.8,
+    -11.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17328400,
+   "elements": [
+    13788111,
+    17343834
+   ],
+   "value_ft": 0.9166666666666666,
+   "chain": [
+    1.0,
+    0.92
+   ],
+   "at": [
+    269.8,
+    -11.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17328412,
+   "elements": [
+    13788111,
+    14243653
+   ],
+   "value_ft": 1.9166666666666667,
+   "chain": [
+    1.92
+   ],
+   "at": [
+    269.3,
+    -13.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17328843,
+   "elements": [
+    13788111,
+    14353344
+   ],
+   "value_ft": 3.6666666666666665,
+   "chain": [
+    3.67
+   ],
+   "at": [
+    268.4,
+    13.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17339364,
+   "elements": [
+    17181793,
+    17181793
+   ],
+   "value_ft": 35.0,
+   "chain": [
+    21.83,
+    35.0
+   ],
+   "at": [
+    309.6,
+    32.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17339367,
+   "elements": [
+    13788111,
+    17181793
+   ],
+   "value_ft": 56.833333333333336,
+   "chain": [
+    56.83
+   ],
+   "at": [
+    298.6,
+    34.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17339466,
+   "elements": [
+    13788100,
+    14268828
+   ],
+   "value_ft": 11.604166666666666,
+   "chain": [
+    11.6
+   ],
+   "at": [
+    293.3,
+    56.2
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17339467,
+   "elements": [
+    14243653,
+    14268828
+   ],
+   "value_ft": 53.875,
+   "chain": [
+    53.88
+   ],
+   "at": [
+    295.2,
+    45.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17339469,
+   "elements": [
+    13788105,
+    14268828
+   ],
+   "value_ft": 24.1875,
+   "chain": [
+    24.19
+   ],
+   "at": [
+    285.2,
+    142.6
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17339470,
+   "elements": [
+    13788100,
+    14271227
+   ],
+   "value_ft": 3.7708333333333335,
+   "chain": [
+    3.77
+   ],
+   "at": [
+    304.3,
+    63.9
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17340708,
+   "elements": [
+    13788110,
+    14367361
+   ],
+   "value_ft": 36.416666666666664,
+   "chain": [
+    36.42,
+    0.92
+   ],
+   "at": [
+    251.1,
+    84.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17340708,
+   "elements": [
+    13788111,
+    14367361
+   ],
+   "value_ft": 0.9166666666666666,
+   "chain": [
+    36.42,
+    0.92
+   ],
+   "at": [
+    269.8,
+    84.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17340716,
+   "elements": [
+    13788100,
+    14218046
+   ],
+   "value_ft": 2.8020833333333335,
+   "chain": [
+    2.8
+   ],
+   "at": [
+    242.7,
+    60.6
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17340717,
+   "elements": [
+    13788100,
+    14268828
+   ],
+   "value_ft": 7.03125,
+   "chain": [
+    7.03
+   ],
+   "at": [
+    273.3,
+    58.5
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17344000,
+   "elements": [
+    13788108,
+    14243438
+   ],
+   "value_ft": 3.96875,
+   "chain": [
+    3.97,
+    3.43
+   ],
+   "at": [
+    182.2,
+    -33.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17344000,
+   "elements": [
+    13788108,
+    14243438
+   ],
+   "value_ft": 3.4375,
+   "chain": [
+    3.97,
+    3.43
+   ],
+   "at": [
+    185.9,
+    -33.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17344648,
+   "elements": [
+    13788105,
+    14243653
+   ],
+   "value_ft": 20.875,
+   "chain": [
+    20.88
+   ],
+   "at": [
+    217.7,
+    141.0
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17346359,
+   "elements": [
+    13788102,
+    14243653
+   ],
+   "value_ft": 2.3333333333333335,
+   "chain": [
+    2.33
+   ],
+   "at": [
+    128.3,
+    6.1
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 17416227,
+   "elements": [
+    13788110,
+    14213848
+   ],
+   "value_ft": 0.10416666666666667,
+   "chain": [
+    0.1
+   ],
+   "at": [
+    232.9,
+    106.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 18126179,
+   "elements": [
+    14243430,
+    14243430
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    329.3,
+    80.7
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 18126179,
+   "elements": [
+    14243430,
+    14243430
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75,
+    3.75
+   ],
+   "at": [
+    332.7,
+    82.3
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 18126180,
+   "elements": [
+    14243430,
+    14243430
+   ],
+   "value_ft": 7.5,
+   "chain": [
+    7.5
+   ],
+   "at": [
+    330.1,
+    83.3
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 18426372,
+   "elements": [
+    13788110,
+    17065191
+   ],
+   "value_ft": 6.625,
+   "chain": [
+    6.62
+   ],
+   "at": [
+    236.2,
+    -7.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 18772994,
+   "elements": [
+    14213820,
+    14271037
+   ],
+   "value_ft": 1.625,
+   "chain": [
+    1.62
+   ],
+   "at": [
+    302.9,
+    51.2
+   ],
+   "dir": [
+    -0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 18775993,
+   "elements": [
+    14215892,
+    14381978
+   ],
+   "value_ft": 3.0,
+   "chain": [
+    3.0
+   ],
+   "at": [
+    271.7,
+    56.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19453519,
+   "elements": [
+    13788105,
+    14243432
+   ],
+   "value_ft": 1.4791666666666667,
+   "chain": [
+    1.48
+   ],
+   "at": [
+    178.6,
+    131.3
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19453563,
+   "elements": [
+    14213888,
+    14243436
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    136.5,
+    116.6
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19453570,
+   "elements": [
+    14213888,
+    14243436
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    133.1,
+    115.0
+   ],
+   "dir": [
+    0.90631,
+    0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19453653,
+   "elements": [
+    14265390,
+    20030453
+   ],
+   "value_ft": 4.5,
+   "chain": [
+    4.5
+   ],
+   "at": [
+    172.4,
+    81.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19453745,
+   "elements": [
+    13788108,
+    14243653
+   ],
+   "value_ft": 2.5833333333333335,
+   "chain": [
+    2.58
+   ],
+   "at": [
+    182.9,
+    34.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454004,
+   "elements": [
+    13788111,
+    14243653
+   ],
+   "value_ft": 5.875,
+   "chain": [
+    5.88
+   ],
+   "at": [
+    267.3,
+    141.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454011,
+   "elements": [
+    13788111,
+    14268828
+   ],
+   "value_ft": 1.9166666666666667,
+   "chain": [
+    1.92
+   ],
+   "at": [
+    269.3,
+    144.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454018,
+   "elements": [
+    13788105,
+    14243653
+   ],
+   "value_ft": 17.5,
+   "chain": [
+    17.5
+   ],
+   "at": [
+    262.0,
+    139.3
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454025,
+   "elements": [
+    13788105,
+    14243653
+   ],
+   "value_ft": 20.875,
+   "chain": [
+    20.88
+   ],
+   "at": [
+    260.0,
+    141.0
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454125,
+   "elements": [
+    13788100,
+    14218046
+   ],
+   "value_ft": 2.8020833333333335,
+   "chain": [
+    2.8
+   ],
+   "at": [
+    243.2,
+    60.6
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454132,
+   "elements": [
+    13788110,
+    14305169
+   ],
+   "value_ft": 6.666666666666667,
+   "chain": [
+    6.67
+   ],
+   "at": [
+    236.2,
+    53.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454139,
+   "elements": [
+    14218046,
+    14305169
+   ],
+   "value_ft": 0.75,
+   "chain": [
+    0.75
+   ],
+   "at": [
+    239.9,
+    53.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454174,
+   "elements": [
+    13788104,
+    14353155
+   ],
+   "value_ft": 8.395833333333334,
+   "chain": [
+    8.4
+   ],
+   "at": [
+    225.0,
+    102.2
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454181,
+   "elements": [
+    13788110,
+    14353155
+   ],
+   "value_ft": 2.8958333333333335,
+   "chain": [
+    2.9
+   ],
+   "at": [
+    231.4,
+    108.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454188,
+   "elements": [
+    13788111,
+    14353155
+   ],
+   "value_ft": 3.03125,
+   "chain": [
+    3.03
+   ],
+   "at": [
+    271.7,
+    108.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454202,
+   "elements": [
+    13788104,
+    14353164
+   ],
+   "value_ft": 16.041666666666668,
+   "chain": [
+    16.04
+   ],
+   "at": [
+    251.1,
+    90.0
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454223,
+   "elements": [
+    13788100,
+    14353268
+   ],
+   "value_ft": 11.8125,
+   "chain": [
+    11.82
+   ],
+   "at": [
+    279.1,
+    56.1
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454271,
+   "elements": [
+    13788111,
+    14353344
+   ],
+   "value_ft": 3.6666666666666665,
+   "chain": [
+    3.67
+   ],
+   "at": [
+    268.4,
+    9.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454367,
+   "elements": [
+    14218037,
+    14345337
+   ],
+   "value_ft": 2.5833333333333335,
+   "chain": [
+    2.58
+   ],
+   "at": [
+    243.4,
+    121.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454556,
+   "elements": [
+    14271037,
+    14271279
+   ],
+   "value_ft": 16.916666666666668,
+   "chain": [
+    16.92
+   ],
+   "at": [
+    309.7,
+    156.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19454563,
+   "elements": [
+    14271279,
+    14271279
+   ],
+   "value_ft": 4.0,
+   "chain": [
+    4.0
+   ],
+   "at": [
+    320.2,
+    156.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19457942,
+   "elements": [
+    14218019,
+    14243432
+   ],
+   "value_ft": 1.8333333333333333,
+   "chain": [
+    1.83
+   ],
+   "at": [
+    181.6,
+    123.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19457949,
+   "elements": [
+    14218019,
+    14243432
+   ],
+   "value_ft": 2.6666666666666665,
+   "chain": [
+    2.67
+   ],
+   "at": [
+    185.3,
+    123.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19458042,
+   "elements": [
+    14213856,
+    14243462
+   ],
+   "value_ft": 2.4166666666666665,
+   "chain": [
+    2.42
+   ],
+   "at": [
+    185.4,
+    -12.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19458049,
+   "elements": [
+    14213856,
+    14243462
+   ],
+   "value_ft": 3.5833333333333335,
+   "chain": [
+    3.58
+   ],
+   "at": [
+    182.4,
+    -12.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19458056,
+   "elements": [
+    13788108,
+    14243653
+   ],
+   "value_ft": 2.5833333333333335,
+   "chain": [
+    2.58
+   ],
+   "at": [
+    182.9,
+    -8.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19477900,
+   "elements": [
+    14213840,
+    14345337
+   ],
+   "value_ft": 0.53125,
+   "chain": [
+    0.53
+   ],
+   "at": [
+    237.5,
+    148.8
+   ],
+   "dir": [
+    0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19486131,
+   "elements": [
+    14243446,
+    14243446
+   ],
+   "value_ft": 5.5,
+   "chain": [
+    5.5
+   ],
+   "at": [
+    336.7,
+    42.6
+   ],
+   "dir": [
+    0.5,
+    -0.86603
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19486138,
+   "elements": [
+    14243473,
+    14243473
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    300.5,
+    26.7
+   ],
+   "dir": [
+    -0.86603,
+    -0.5
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19486145,
+   "elements": [
+    14243473,
+    14243473
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    297.2,
+    24.8
+   ],
+   "dir": [
+    0.86603,
+    0.5
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19493516,
+   "elements": [
+    13788111,
+    14271037
+   ],
+   "value_ft": 31.041666666666668,
+   "chain": [
+    31.04
+   ],
+   "at": [
+    285.7,
+    47.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19515851,
+   "elements": [
+    14243653,
+    14243653
+   ],
+   "value_ft": 17.75,
+   "chain": [
+    17.75
+   ],
+   "at": [
+    278.0,
+    37.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19515858,
+   "elements": [
+    14243653,
+    14243653
+   ],
+   "value_ft": 15.583333333333334,
+   "chain": [
+    15.58
+   ],
+   "at": [
+    285.2,
+    41.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19515865,
+   "elements": [
+    13788114,
+    14243653
+   ],
+   "value_ft": 7.625,
+   "chain": [
+    7.62
+   ],
+   "at": [
+    285.2,
+    29.8
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19515872,
+   "elements": [
+    13788111,
+    14243653
+   ],
+   "value_ft": 1.125,
+   "chain": [
+    1.12
+   ],
+   "at": [
+    269.7,
+    32.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19518328,
+   "elements": [
+    14243430,
+    14243430
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    341.2,
+    64.1
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19518335,
+   "elements": [
+    14243430,
+    14243430
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    337.8,
+    62.5
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19689292,
+   "elements": [
+    19670910,
+    19675280
+   ],
+   "value_ft": 4.666666666666667,
+   "chain": [
+    4.67,
+    11.62
+   ],
+   "at": [
+    380.9,
+    76.8
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19689292,
+   "elements": [
+    14243452,
+    19675280
+   ],
+   "value_ft": 11.625,
+   "chain": [
+    4.67,
+    11.62
+   ],
+   "at": [
+    373.5,
+    73.4
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19689353,
+   "elements": [
+    13796144,
+    19675327
+   ],
+   "value_ft": 18.0,
+   "chain": [
+    18.0
+   ],
+   "at": [
+    357.7,
+    139.5
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19689406,
+   "elements": [
+    19670910,
+    19675280
+   ],
+   "value_ft": 4.666666666666667,
+   "chain": [
+    4.67
+   ],
+   "at": [
+    346.6,
+    150.5
+   ],
+   "dir": [
+    -0.90631,
+    -0.42262
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19691950,
+   "elements": [
+    13788114,
+    14243653
+   ],
+   "value_ft": 15.020833333333334,
+   "chain": [
+    15.02
+   ],
+   "at": [
+    188.7,
+    33.5
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19697288,
+   "elements": [
+    13788102,
+    19669409
+   ],
+   "value_ft": 1.5,
+   "chain": [
+    1.5
+   ],
+   "at": [
+    126.4,
+    112.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19697295,
+   "elements": [
+    13796036,
+    19387072
+   ],
+   "value_ft": 13.958333333333334,
+   "chain": [
+    13.96
+   ],
+   "at": [
+    144.1,
+    110.5
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19698015,
+   "elements": [
+    13788110,
+    14243653
+   ],
+   "value_ft": 13.208333333333334,
+   "chain": [
+    13.21
+   ],
+   "at": [
+    226.3,
+    157.7
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19698266,
+   "elements": [
+    13788110,
+    14371612
+   ],
+   "value_ft": 11.78125,
+   "chain": [
+    11.78
+   ],
+   "at": [
+    227.0,
+    136.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19698273,
+   "elements": [
+    13788105,
+    14371612
+   ],
+   "value_ft": 1.3541666666666667,
+   "chain": [
+    1.35
+   ],
+   "at": [
+    223.8,
+    131.2
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19699778,
+   "elements": [
+    13788109,
+    14243653
+   ],
+   "value_ft": 0.5,
+   "chain": [
+    0.5
+   ],
+   "at": [
+    209.7,
+    -9.4
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19699817,
+   "elements": [
+    14213856,
+    14243462
+   ],
+   "value_ft": 0.4895833333333333,
+   "chain": [
+    0.49
+   ],
+   "at": [
+    189.2,
+    -14.1
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19729764,
+   "elements": [
+    14213824,
+    14271037
+   ],
+   "value_ft": 0.041666666666666664,
+   "chain": [
+    0.04
+   ],
+   "at": [
+    297.2,
+    104.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19733164,
+   "elements": [
+    18265260,
+    18265262
+   ],
+   "value_ft": 4.083333333333333,
+   "chain": [
+    4.08
+   ],
+   "at": [
+    159.5,
+    -18.8
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19733184,
+   "elements": [
+    13788103,
+    18265261
+   ],
+   "value_ft": 20.916666666666668,
+   "chain": [
+    20.92
+   ],
+   "at": [
+    151.8,
+    -25.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19733191,
+   "elements": [
+    14265390,
+    18265261
+   ],
+   "value_ft": 7.916666666666667,
+   "chain": [
+    7.92
+   ],
+   "at": [
+    166.2,
+    -25.6
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19754543,
+   "elements": [
+    14218019,
+    14243432
+   ],
+   "value_ft": 10.041666666666666,
+   "chain": [
+    10.04
+   ],
+   "at": [
+    175.5,
+    127.0
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19754550,
+   "elements": [
+    14218033,
+    14243458
+   ],
+   "value_ft": 12.0,
+   "chain": [
+    12.0
+   ],
+   "at": [
+    233.5,
+    -5.9
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19766144,
+   "elements": [
+    14215894,
+    14353164
+   ],
+   "value_ft": 0.9791666666666666,
+   "chain": [
+    0.98
+   ],
+   "at": [
+    266.0,
+    78.5
+   ],
+   "dir": [
+    -0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19766151,
+   "elements": [
+    14215894,
+    14353164
+   ],
+   "value_ft": 1.5208333333333333,
+   "chain": [
+    1.52
+   ],
+   "at": [
+    266.0,
+    81.2
+   ],
+   "dir": [
+    0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19766207,
+   "elements": [
+    14218046,
+    19766184
+   ],
+   "value_ft": 0.10416666666666667,
+   "chain": [
+    0.1
+   ],
+   "at": [
+    243.0,
+    55.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19766214,
+   "elements": [
+    14218046,
+    14218046
+   ],
+   "value_ft": 3.9479166666666665,
+   "chain": [
+    3.95
+   ],
+   "at": [
+    238.7,
+    57.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19766221,
+   "elements": [
+    14218046,
+    14353164
+   ],
+   "value_ft": 0.625,
+   "chain": [
+    0.62
+   ],
+   "at": [
+    242.8,
+    82.3
+   ],
+   "dir": [
+    0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 19768480,
+   "elements": [
+    14213822,
+    18265271
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    293.5,
+    77.2
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20028151,
+   "elements": [
+    13788100,
+    14243432
+   ],
+   "value_ft": 23.822916666666668,
+   "chain": [
+    23.82
+   ],
+   "at": [
+    197.0,
+    73.9
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20032023,
+   "elements": [
+    13788108,
+    20030453
+   ],
+   "value_ft": 9.583333333333334,
+   "chain": [
+    9.58
+   ],
+   "at": [
+    179.4,
+    82.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20032309,
+   "elements": [
+    13788114,
+    14243653
+   ],
+   "value_ft": 35.5,
+   "chain": [
+    35.5
+   ],
+   "at": [
+    247.3,
+    8.3
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20046231,
+   "elements": [
+    13788104,
+    20046138
+   ],
+   "value_ft": 15.572916666666666,
+   "chain": [
+    15.57
+   ],
+   "at": [
+    159.8,
+    90.2
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20046293,
+   "elements": [
+    13788104,
+    20045749
+   ],
+   "value_ft": 16.458333333333332,
+   "chain": [
+    16.45
+   ],
+   "at": [
+    174.1,
+    106.3
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20046300,
+   "elements": [
+    13788107,
+    20045749
+   ],
+   "value_ft": 1.0208333333333333,
+   "chain": [
+    1.02
+   ],
+   "at": [
+    169.6,
+    116.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20046366,
+   "elements": [
+    13788107,
+    20030453
+   ],
+   "value_ft": 3.3229166666666665,
+   "chain": [
+    3.32
+   ],
+   "at": [
+    171.8,
+    88.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20046394,
+   "elements": [
+    13796195,
+    18265265
+   ],
+   "value_ft": 2.0,
+   "chain": [
+    2.0
+   ],
+   "at": [
+    327.8,
+    74.8
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20046414,
+   "elements": [
+    13788105,
+    14243653
+   ],
+   "value_ft": 2.1875,
+   "chain": [
+    2.19
+   ],
+   "at": [
+    204.8,
+    129.4
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20052149,
+   "elements": [
+    13796036,
+    20052111
+   ],
+   "value_ft": 14.96875,
+   "chain": [
+    14.97
+   ],
+   "at": [
+    312.6,
+    173.1
+   ],
+   "dir": [
+    -0.42262,
+    0.90631
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20052205,
+   "elements": [
+    13788111,
+    20052181
+   ],
+   "value_ft": 14.0,
+   "chain": [
+    14.0
+   ],
+   "at": [
+    277.2,
+    78.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20052245,
+   "elements": [
+    14215892,
+    20052181
+   ],
+   "value_ft": 14.0,
+   "chain": [
+    14.0
+   ],
+   "at": [
+    286.9,
+    60.5
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20066815,
+   "elements": [
+    13788104,
+    20045749
+   ],
+   "value_ft": 15.333333333333334,
+   "chain": [
+    15.33
+   ],
+   "at": [
+    159.8,
+    105.7
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20066822,
+   "elements": [
+    13788107,
+    20045749
+   ],
+   "value_ft": 8.4375,
+   "chain": [
+    8.44
+   ],
+   "at": [
+    165.9,
+    118.2
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20067317,
+   "elements": [
+    14353164,
+    20067288
+   ],
+   "value_ft": 18.760416666666668,
+   "chain": [
+    18.76
+   ],
+   "at": [
+    247.0,
+    68.6
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20067731,
+   "elements": [
+    14218052,
+    14353164
+   ],
+   "value_ft": 2.875,
+   "chain": [
+    2.88
+   ],
+   "at": [
+    235.9,
+    79.4
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20087087,
+   "elements": [
+    14243446,
+    19767223
+   ],
+   "value_ft": 5.166666666666667,
+   "chain": [
+    5.17
+   ],
+   "at": [
+    276.8,
+    5.1
+   ],
+   "dir": [
+    -0.5,
+    0.86603
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20088311,
+   "elements": [
+    13797908,
+    20088292
+   ],
+   "value_ft": 1.8333333333333333,
+   "chain": [
+    1.83
+   ],
+   "at": [
+    298.5,
+    24.5
+   ],
+   "dir": [
+    0.86603,
+    0.5
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20090459,
+   "elements": [
+    14243653,
+    20089414
+   ],
+   "value_ft": 1.8333333333333333,
+   "chain": [
+    1.83
+   ],
+   "at": [
+    288.2,
+    34.6
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20090484,
+   "elements": [
+    14213806,
+    20088292
+   ],
+   "value_ft": 1.8333333333333333,
+   "chain": [
+    1.83
+   ],
+   "at": [
+    296.4,
+    28.2
+   ],
+   "dir": [
+    0.86603,
+    0.5
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20170894,
+   "elements": [
+    14215892,
+    14381978
+   ],
+   "value_ft": 2.71875,
+   "chain": [
+    2.72
+   ],
+   "at": [
+    276.3,
+    50.6
+   ],
+   "dir": [
+    -0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20461198,
+   "elements": [
+    14243653,
+    20346786
+   ],
+   "value_ft": 15.25,
+   "chain": [
+    15.25
+   ],
+   "at": [
+    174.0,
+    3.8
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20461205,
+   "elements": [
+    20346785,
+    20346787
+   ],
+   "value_ft": 13.635416666666666,
+   "chain": [
+    13.64
+   ],
+   "at": [
+    162.6,
+    14.7
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20461212,
+   "elements": [
+    14213868,
+    20346785
+   ],
+   "value_ft": 5.0,
+   "chain": [
+    5.0
+   ],
+   "at": [
+    165.0,
+    10.4
+   ],
+   "dir": [
+    -0.0,
+    -1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20464508,
+   "elements": [
+    14265390,
+    20346786
+   ],
+   "value_ft": 3.75,
+   "chain": [
+    3.75
+   ],
+   "at": [
+    168.3,
+    5.5
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20519297,
+   "elements": [
+    14243432,
+    20072392
+   ],
+   "value_ft": 10.177083333333334,
+   "chain": [
+    10.18
+   ],
+   "at": [
+    193.6,
+    90.9
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20519304,
+   "elements": [
+    14243432,
+    20072392
+   ],
+   "value_ft": 3.0625,
+   "chain": [
+    3.06
+   ],
+   "at": [
+    185.1,
+    99.0
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20519311,
+   "elements": [
+    14243432,
+    20072473
+   ],
+   "value_ft": 3.0625,
+   "chain": [
+    3.06
+   ],
+   "at": [
+    185.1,
+    128.3
+   ],
+   "dir": [
+    1.0,
+    0.0
+   ],
+   "change": "added"
+  },
+  {
+   "his_dim": 20519318,
+   "elements": [
+    14218019,
+    20072473
+   ],
+   "value_ft": 4.3125,
+   "chain": [
+    4.31
+   ],
+   "at": [
+    192.4,
+    124.1
+   ],
+   "dir": [
+    0.0,
+    1.0
+   ],
+   "change": "added"
+  }
+ ]
+}

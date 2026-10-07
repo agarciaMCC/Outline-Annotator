@@ -1,0 +1,3865 @@
+{
+ "meta": {
+  "scale": 128, 
+  "count": 74, 
+  "matched_to_layout": 74, 
+  "view": "ZZ CLAUDE TEST - L4.5 NORTH (auto-dim)"
+ }, 
+ "dims": [
+  {
+   "ref_elems": [
+    13788114, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    326.20769999999999, 
+    26.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate run -> EE                    across CC/BB..   EE | 6'-2 3/4\" | edge", 
+    "label": "run -> EE", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "run#26"
+   }, 
+   "id": 20612004, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      326.04109999999997, 
+      29.138400000000001
+     ], 
+     "value": 6.2291699999999999, 
+     "origin": [
+      326.20769999999999, 
+      29.138400000000001
+     ], 
+     "string": "6'-2 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:45925:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788114, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    294.05849999999998, 
+    26.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate run -> EE                    across CC/BB..   EE | 6'-2 3/4\" | edge", 
+    "label": "run -> EE", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "run#28"
+   }, 
+   "id": 20612005, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      293.89179999999999, 
+      29.138400000000001
+     ], 
+     "value": 6.2291699999999999, 
+     "origin": [
+      294.05849999999998, 
+      29.138400000000001
+     ], 
+     "string": "6'-2 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:45923:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    222.77719999999999, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate void edge -> AA              across CC/BB..   AA | 1'-4 5/8\" | edge", 
+    "label": "void edge -> AA", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(1, 0, -1)", 
+    "feature": "opening/void#47"
+   }, 
+   "id": 20612006, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      223.77719999999999, 
+      128.34549999999999
+     ], 
+     "value": 1.3854200000000001, 
+     "origin": [
+      222.77719999999999, 
+      131.21650000000000
+     ], 
+     "string": "1'-4 5/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:42809:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788102, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    127.14180000000000, 
+    113.52950000000000
+   ], 
+   "tool": {
+    "describe": "locate void edge -> 2               across 2/3..     2 | 5'-4\" | edge", 
+    "label": "void edge -> 2", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 1)", 
+    "feature": "opening/void#47"
+   }, 
+   "id": 20612007, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      129.80850000000001, 
+      113.69610000000000
+     ], 
+     "value": 5.3333300000000001, 
+     "origin": [
+      129.80850000000001, 
+      113.52950000000000
+     ], 
+     "string": "5'-4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c6:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:45981:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13794716, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    319.68799999999999, 
+    175.07069999999999
+   ], 
+   "tool": {
+    "describe": "locate void edge -> 10              across 9/10..    10 | 3'-9\" | edge", 
+    "label": "void edge -> 10", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 0, -79)", 
+    "feature": "opening/void#48"
+   }, 
+   "id": 20612008, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      321.31689999999998, 
+      176.01419999999999
+     ], 
+     "value": 3.75, 
+     "origin": [
+      321.38740000000001, 
+      175.86310000000000
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.90630999999999995, 
+    0.42262
+   ], 
+   "refs": [
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27d9c:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:45937:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13795945, 
+    19670910
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    123.69110000000001, 
+    109.81080000000000
+   ], 
+   "tool": {
+    "describe": "locate void edge -> A               across A/B..     A | 1'-0 1/2\" | edge", 
+    "label": "void edge -> A", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(1, 0, -1)", 
+    "feature": "opening/void#142"
+   }, 
+   "id": 20612009, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      121.86420000000000, 
+      111.36239999999999
+     ], 
+     "value": 1.0416700000000001, 
+     "origin": [
+      123.91119999999999, 
+      109.33870000000000
+     ], 
+     "string": "1'-0 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28269:0:SURFACE", 
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c277e:3:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788115, 
+    14353344
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    272.39179999999999, 
+    -10.142899999999999
+   ], 
+   "tool": {
+    "describe": "locate beam end -> FF               across CC/BB..   FF | 7'-2 1/4\" | end", 
+    "label": "beam end -> FF", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#193"
+   }, 
+   "id": 20612010, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      272.22510000000000, 
+      -6.5491000000000001
+     ], 
+     "value": 7.1875, 
+     "origin": [
+      272.39179999999999, 
+      -6.5491000000000001
+     ], 
+     "string": "7'-2 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:1878:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14271037, 
+    13788100
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    295.60010000000000, 
+    50.419600000000003
+   ], 
+   "tool": {
+    "describe": "locate beam end -> CC               across CC/BB..   end | 11'-7 1/4\" | CC", 
+    "label": "beam end -> CC", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "beam#183"
+   }, 
+   "id": 20612011, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      295.43349999999998, 
+      56.221699999999998
+     ], 
+     "value": 11.604170000000000, 
+     "origin": [
+      295.60010000000000, 
+      56.221699999999998
+     ], 
+     "string": "11'-7 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:16:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243424, 
+    13796036, 
+    14243424
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    332.57380000000001, 
+    192.31880000000001
+   ], 
+   "tool": {
+    "describe": "locate beam side|B|side             across A/B..     side | 1'-6\" | B | 6'-0\" | side", 
+    "label": "beam side|B|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "beam#168"
+   }, 
+   "id": 20612012, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      332.14440000000002, 
+      193.63390000000001
+     ], 
+     "value": 1.5, 
+     "origin": [
+      332.89069999999998, 
+      191.63900000000001
+     ], 
+     "string": "1'-6\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      334.62660000000000, 
+      188.31080000000000
+     ], 
+     "value": 6.0, 
+     "origin": [
+      334.47550000000001, 
+      188.24039999999999
+     ], 
+     "string": "6'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95660:28:SURFACE", 
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d282c4:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95660:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243424, 
+    13796036, 
+    14243424
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    234.39990000000000, 
+    146.53950000000000
+   ], 
+   "tool": {
+    "describe": "locate beam side|B|side             across A/B..     side | 1'-6\" | B | 6'-0\" | side", 
+    "label": "beam side|B|side", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 1, 1)", 
+    "feature": "beam#168"
+   }, 
+   "id": 20612013, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      233.97049999999999, 
+      147.85460000000000
+     ], 
+     "value": 1.5, 
+     "origin": [
+      234.71680000000001, 
+      145.85980000000001
+     ], 
+     "string": "1'-6\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      236.45269999999999, 
+      142.53160000000000
+     ], 
+     "value": 6.0, 
+     "origin": [
+      236.30160000000001, 
+      142.46109999999999
+     ], 
+     "string": "6'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95660:28:SURFACE", 
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d282c4:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95660:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243430, 
+    13793990, 
+    14243430
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    315.23520000000002, 
+    106.33799999999999
+   ], 
+   "tool": {
+    "describe": "locate beam side|9|side             across 9/10..    side | 3'-9\" | 9 | 3'-9\" | side", 
+    "label": "beam side|9|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, -1)", 
+    "feature": "beam#169"
+   }, 
+   "id": 20612014, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      316.86410000000001, 
+      107.28140000000000
+     ], 
+     "value": 3.75, 
+     "origin": [
+      316.93450000000001, 
+      107.13039999999999
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      320.26280000000003, 
+      108.86620000000001
+     ], 
+     "value": 3.75, 
+     "origin": [
+      320.33319999999998, 
+      108.71520000000000
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.90630999999999995, 
+    0.42262
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:24:SURFACE", 
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27ac6:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243430, 
+    13793990, 
+    14243430
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    345.69299999999998, 
+    41.021099999999997
+   ], 
+   "tool": {
+    "describe": "locate beam side|9|side             across 9/10..    side | 3'-9\" | 9 | 3'-9\" | side", 
+    "label": "beam side|9|side", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#169"
+   }, 
+   "id": 20612015, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      347.32190000000003, 
+      41.964599999999997
+     ], 
+     "value": 3.75, 
+     "origin": [
+      347.39229999999998, 
+      41.813499999999998
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      350.72050000000002, 
+      43.549399999999999
+     ], 
+     "value": 3.75, 
+     "origin": [
+      350.79100000000000, 
+      43.398299999999999
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.90630999999999995, 
+    0.42262
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:24:SURFACE", 
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27ac6:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95666:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243432, 
+    13788108, 
+    14243432
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.64179999999999, 
+    83.180099999999996
+   ], 
+   "tool": {
+    "describe": "locate beam side|5|side             across 2/3..     side | 3'-7\" | 5 | 2'-5\" | side", 
+    "label": "beam side|5|side", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#170"
+   }, 
+   "id": 20612016, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.43350000000001, 
+      83.346699999999998
+     ], 
+     "value": 3.5833300000000001, 
+     "origin": [
+      182.43350000000001, 
+      83.180099999999996
+     ], 
+     "string": "3'-7\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      185.43350000000001, 
+      83.346699999999998
+     ], 
+     "value": 2.4166699999999999, 
+     "origin": [
+      185.43350000000001, 
+      83.180099999999996
+     ], 
+     "string": "2'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:28:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243432, 
+    13788104
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    188.30850000000001, 
+    85.846699999999998
+   ], 
+   "tool": {
+    "describe": "locate beam end -> BB               across CC/BB..   end | 12'-2 1/8\" | BB", 
+    "label": "beam end -> BB", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, -1)", 
+    "feature": "beam#170"
+   }, 
+   "id": 20612017, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      188.14179999999999, 
+      91.935299999999998
+     ], 
+     "value": 12.177080000000000, 
+     "origin": [
+      188.30850000000001, 
+      91.935299999999998
+     ], 
+     "string": "12'-2 1/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:16:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243432, 
+    13788104
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    178.97510000000000, 
+    87.940500000000000
+   ], 
+   "tool": {
+    "describe": "locate beam end -> BB               across CC/BB..   end | 10'-1\" | BB", 
+    "label": "beam end -> BB", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 1)", 
+    "feature": "beam#170"
+   }, 
+   "id": 20612018, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      178.80850000000001, 
+      92.982100000000003
+     ], 
+     "value": 10.083330000000000, 
+     "origin": [
+      178.97510000000000, 
+      92.982100000000003
+     ], 
+     "string": "10'-1\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:2469:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243446, 
+    13793747, 
+    14243446
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    333.53460000000001, 
+    43.988700000000001
+   ], 
+   "tool": {
+    "describe": "locate beam side|F|side             across F..       side | 2'-9\" | F | 2'-9\" | side", 
+    "label": "beam side|F|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "beam#172"
+   }, 
+   "id": 20612019, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      334.36649999999997, 
+      42.881300000000003
+     ], 
+     "value": 2.75, 
+     "origin": [
+      334.22210000000001, 
+      42.797899999999998
+     ], 
+     "string": "2'-9\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      335.74149999999997, 
+      40.499699999999997
+     ], 
+     "value": 2.75, 
+     "origin": [
+      335.59710000000001, 
+      40.416400000000003
+     ], 
+     "string": "2'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.5, 
+    -0.86602999999999997
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:24:SURFACE", 
+    "550eae71-f007-4600-81fe-d488a89efd85-00d279d3:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243446, 
+    13793747, 
+    14243446
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    261.43799999999999, 
+    2.3637000000000001
+   ], 
+   "tool": {
+    "describe": "locate beam side|F|side             across F..       side | 2'-9\" | F | 2'-9\" | side", 
+    "label": "beam side|F|side", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#172"
+   }, 
+   "id": 20612020, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      262.26990000000001, 
+      1.2563000000000000
+     ], 
+     "value": 2.75, 
+     "origin": [
+      262.12549999999999, 
+      1.1729000000000001
+     ], 
+     "string": "2'-9\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      263.64490000000001, 
+      -1.1253000000000000
+     ], 
+     "value": 2.75, 
+     "origin": [
+      263.50049999999999, 
+      -1.2085999999999999
+     ], 
+     "string": "2'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.5, 
+    -0.86602999999999997
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:24:SURFACE", 
+    "550eae71-f007-4600-81fe-d488a89efd85-00d279d3:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95676:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243458, 
+    13788110, 
+    14243458
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    227.51679999999999, 
+    30.253000000000000
+   ], 
+   "tool": {
+    "describe": "locate beam side|7|side             across 2/3..     side | 5'-4 1/2\" | 7 | 6'-7 1/2\" | side", 
+    "label": "beam side|7|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "beam#174"
+   }, 
+   "id": 20612021, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.20429999999999, 
+      30.419599999999999
+     ], 
+     "value": 5.375, 
+     "origin": [
+      230.20429999999999, 
+      30.253000000000000
+     ], 
+     "string": "5'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      236.20429999999999, 
+      30.419599999999999
+     ], 
+     "value": 6.625, 
+     "origin": [
+      236.20429999999999, 
+      30.253000000000000
+     ], 
+     "string": "6'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:24:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243458, 
+    13788110, 
+    14243458
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    227.51679999999999, 
+    -15.559500000000000
+   ], 
+   "tool": {
+    "describe": "locate beam side|7|side             across 2/3..     side | 5'-4 1/2\" | 7 | 6'-7 1/2\" | side", 
+    "label": "beam side|7|side", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#174"
+   }, 
+   "id": 20612022, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.20429999999999, 
+      -15.392899999999999
+     ], 
+     "value": 5.375, 
+     "origin": [
+      230.20429999999999, 
+      -15.559500000000000
+     ], 
+     "string": "5'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      236.20429999999999, 
+      -15.392899999999999
+     ], 
+     "value": 6.625, 
+     "origin": [
+      236.20429999999999, 
+      -15.559500000000000
+     ], 
+     "string": "6'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:24:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788114, 
+    14243458
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    225.85010000000000, 
+    26.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate beam end -> EE               across CC/BB..   EE | 1'-9\" | end", 
+    "label": "beam end -> EE", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 1)", 
+    "feature": "beam#174"
+   }, 
+   "id": 20612023, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      225.68350000000001, 
+      24.650500000000001
+     ], 
+     "value": 1.75, 
+     "origin": [
+      225.85010000000000, 
+      26.898800000000001
+     ], 
+     "string": "1'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95682:16:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14263921, 
+    13788103, 
+    14263921
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    137.22510000000000, 
+    103.17440000000001
+   ], 
+   "tool": {
+    "describe": "locate beam side|3|side             across 2/3..     side | 4'-1\" | 3 | 3'-5\" | side", 
+    "label": "beam side|3|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 2)", 
+    "feature": "beam#181"
+   }, 
+   "id": 20612024, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      139.26679999999999, 
+      103.34110000000000
+     ], 
+     "value": 4.0833300000000001, 
+     "origin": [
+      139.26679999999999, 
+      103.17440000000001
+     ], 
+     "string": "4'-1\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      143.01679999999999, 
+      103.34110000000000
+     ], 
+     "value": 3.4166699999999999, 
+     "origin": [
+      143.01679999999999, 
+      103.17440000000001
+     ], 
+     "string": "3'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:24:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c7:0:SURFACE", 
+    "8cd0a532-3c91-4a3b-ab76-4d57278da306-00d9a671:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14265390, 
+    13788107, 
+    14265390
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    166.39179999999999, 
+    87.938500000000005
+   ], 
+   "tool": {
+    "describe": "locate beam side|4|side             across 2/3..     side | 3'-9\" | 4 | 3'-9\" | side", 
+    "label": "beam side|4|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, -1)", 
+    "feature": "beam#182"
+   }, 
+   "id": 20612025, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      168.26679999999999, 
+      88.105199999999996
+     ], 
+     "value": 3.75, 
+     "origin": [
+      168.26679999999999, 
+      87.938500000000005
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      172.01679999999999, 
+      88.105199999999996
+     ], 
+     "value": 3.75, 
+     "origin": [
+      172.01679999999999, 
+      87.938500000000005
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:24:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE", 
+    "c6765cac-744c-49e0-9fc7-e4a4c41b01be-00d9ac2e:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788111, 
+    14271037, 
+    14271037
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    270.22510000000000, 
+    47.753000000000000
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across 2/3..     8 | 27'-0 1/2\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#183"
+   }, 
+   "id": 20612027, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      283.74599999999998, 
+      47.919600000000003
+     ], 
+     "value": 27.041670000000000, 
+     "origin": [
+      283.74599999999998, 
+      47.753000000000000
+     ], 
+     "string": "27'-0 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      299.26679999999999, 
+      47.919600000000003
+     ], 
+     "value": 4.0, 
+     "origin": [
+      299.26679999999999, 
+      47.753000000000000
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:28:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788100, 
+    14271227, 
+    14271227
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    293.60010000000000, 
+    62.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across CC/BB..   CC | 1'-9 1/4\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 1, -1)", 
+    "feature": "beam#184"
+   }, 
+   "id": 20612028, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      293.43349999999998, 
+      59.845500000000001
+     ], 
+     "value": 1.7708299999999999, 
+     "origin": [
+      293.60010000000000, 
+      62.909199999999998
+     ], 
+     "string": "1'-9 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      293.43349999999998, 
+      65.794600000000003
+     ], 
+     "value": 4.0, 
+     "origin": [
+      293.60010000000000, 
+      65.794600000000003
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c2fb:28:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c2fb:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14271355, 
+    14271355
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    323.85010000000000, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across CC/BB..   AA | 20'-2 1/4\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 1)", 
+    "feature": "beam#186"
+   }, 
+   "id": 20612029, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      323.68349999999998, 
+      140.61760000000001
+     ], 
+     "value": 20.1875, 
+     "origin": [
+      323.85010000000000, 
+      140.61760000000001
+     ], 
+     "string": "20'-2 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      323.68349999999998, 
+      152.71129999999999
+     ], 
+     "value": 4.0, 
+     "origin": [
+      323.85010000000000, 
+      152.71129999999999
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c37b:24:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c37b:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14345337, 
+    14345337
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    115.31550000000000
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across 2/3..     7 | 6'-3\" | side | 3'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#187"
+   }, 
+   "id": 20612030, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.01679999999999, 
+      115.48210000000000
+     ], 
+     "value": 6.25, 
+     "origin": [
+      236.01679999999999, 
+      115.31550000000000
+     ], 
+     "string": "6'-3\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      240.64179999999999, 
+      115.48210000000000
+     ], 
+     "value": 3.0, 
+     "origin": [
+      240.64179999999999, 
+      115.31550000000000
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:24:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14345487, 
+    13788105, 
+    14345487
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    236.47510000000000, 
+    129.71950000000001
+   ], 
+   "tool": {
+    "describe": "locate beam side|AA|side            across CC/BB..   side | 0'-9 5/8\" | AA | 3'-2 3/8\" | side", 
+    "label": "beam side|AA|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "beam#188"
+   }, 
+   "id": 20612031, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.30850000000001, 
+      127.54110000000000
+     ], 
+     "value": 0.80432999999999999, 
+     "origin": [
+      236.47510000000000, 
+      130.12160000000000
+     ], 
+     "string": "9 5/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      236.30850000000001, 
+      135.89779999999999
+     ], 
+     "value": 3.1956699999999998, 
+     "origin": [
+      236.47510000000000, 
+      132.12160000000000
+     ], 
+     "string": "3'-2 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:28:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14345487, 
+    13788105, 
+    14345487
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    276.30849999999998, 
+    129.71950000000001
+   ], 
+   "tool": {
+    "describe": "locate beam side|AA|side            across CC/BB..   side | 0'-9 5/8\" | AA | 3'-2 3/8\" | side", 
+    "label": "beam side|AA|side", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#188"
+   }, 
+   "id": 20612032, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      276.14179999999999, 
+      127.54110000000000
+     ], 
+     "value": 0.80432999999999999, 
+     "origin": [
+      276.30849999999998, 
+      130.12160000000000
+     ], 
+     "string": "9 5/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      276.14179999999999, 
+      135.89779999999999
+     ], 
+     "value": 3.1956699999999998, 
+     "origin": [
+      276.30849999999998, 
+      132.12160000000000
+     ], 
+     "string": "3'-2 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:28:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14345487
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    138.38610000000000
+   ], 
+   "tool": {
+    "describe": "locate beam end -> 7                across 2/3..     7 | 6'-3\" | end", 
+    "label": "beam end -> 7", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, -2)", 
+    "feature": "beam#188"
+   }, 
+   "id": 20612033, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.01679999999999, 
+      138.55279999999999
+     ], 
+     "value": 6.25, 
+     "origin": [
+      236.01679999999999, 
+      138.38610000000000
+     ], 
+     "string": "6'-3\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:11:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788111, 
+    14345487
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    270.22510000000000, 
+    135.38610000000000
+   ], 
+   "tool": {
+    "describe": "locate beam end -> 8                across 2/3..     8 | 3'-5\" | end", 
+    "label": "beam end -> 8", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 1)", 
+    "feature": "beam#188"
+   }, 
+   "id": 20612034, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      271.93349999999998, 
+      135.55279999999999
+     ], 
+     "value": 3.4166699999999999, 
+     "origin": [
+      271.93349999999998, 
+      135.38610000000000
+     ], 
+     "string": "3'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae50f:16:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788104, 
+    14353155, 
+    14353155
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    227.66260000000000, 
+    98.023799999999994
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across CC/BB..   BB | 4'-4 3/4\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "beam#189"
+   }, 
+   "id": 20612035, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      227.49600000000001, 
+      100.22170000000000
+     ], 
+     "value": 4.3958300000000001, 
+     "origin": [
+      227.66260000000000, 
+      100.22170000000000
+     ], 
+     "string": "4'-4 3/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      227.49600000000001, 
+      104.41960000000000
+     ], 
+     "value": 4.0, 
+     "origin": [
+      227.66260000000000, 
+      104.41960000000000
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0303:28:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0303:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788104, 
+    14353155, 
+    14353155
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    275.92309999999998, 
+    98.023799999999994
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across CC/BB..   BB | 4'-4 3/4\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 0)", 
+    "feature": "beam#189"
+   }, 
+   "id": 20612036, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      275.75639999999999, 
+      100.22170000000000
+     ], 
+     "value": 4.3958300000000001, 
+     "origin": [
+      275.92309999999998, 
+      100.22170000000000
+     ], 
+     "string": "4'-4 3/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      275.75639999999999, 
+      104.41960000000000
+     ], 
+     "value": 4.0, 
+     "origin": [
+      275.92309999999998, 
+      104.41960000000000
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0303:28:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db0303:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788100, 
+    14353164, 
+    14353164
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    275.92309999999998, 
+    62.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across CC/BB..   CC | 15'-11 1/2\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "beam#190"
+   }, 
+   "id": 20612037, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      275.75639999999999, 
+      70.003000000000000
+     ], 
+     "value": 15.958330000000000, 
+     "origin": [
+      275.92309999999998, 
+      70.003000000000000
+     ], 
+     "string": "15'-11 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      275.75639999999999, 
+      79.982100000000003
+     ], 
+     "value": 4.0, 
+     "origin": [
+      275.92309999999998, 
+      79.982100000000003
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:28:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788111, 
+    14353164
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    270.22510000000000, 
+    83.180099999999996
+   ], 
+   "tool": {
+    "describe": "locate beam end -> 8                across 2/3..     8 | 3'-0\" | end", 
+    "label": "beam end -> 8", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "beam#190"
+   }, 
+   "id": 20612038, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      271.72510000000000, 
+      83.346699999999998
+     ], 
+     "value": 3.0, 
+     "origin": [
+      271.72510000000000, 
+      83.180099999999996
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db030c:16:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788114, 
+    14353344
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    274.39179999999999, 
+    26.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate beam end -> EE               across CC/BB..   EE | 1'-1 3/4\" | end", 
+    "label": "beam end -> EE", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, 2)", 
+    "feature": "beam#193"
+   }, 
+   "id": 20612039, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      275.39179999999999, 
+      23.845500000000001
+     ], 
+     "value": 1.1458299999999999, 
+     "origin": [
+      274.39179999999999, 
+      26.596699999999998
+     ], 
+     "string": "1'-1 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:439:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788115, 
+    14353344
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    274.39179999999999, 
+    -10.142899999999999
+   ], 
+   "tool": {
+    "describe": "locate beam end -> FF               across CC/BB..   FF | 11'-2 3/8\" | end", 
+    "label": "beam end -> FF", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 'group', 0)", 
+    "feature": "beam#193"
+   }, 
+   "id": 20612040, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      274.22510000000000, 
+      -4.5441000000000003
+     ], 
+     "value": 11.197490000000000, 
+     "origin": [
+      274.39179999999999, 
+      -4.5441000000000003
+     ], 
+     "string": "11'-2 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:915:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788102, 
+    19668808, 
+    19668808
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    127.14180000000000, 
+    118.49800000000000
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across 2/3..     2 | 2'-4\" | side | 3'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 1, -1)", 
+    "feature": "beam#204"
+   }, 
+   "id": 20612041, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      128.30850000000001, 
+      118.66470000000000
+     ], 
+     "value": 2.3333300000000001, 
+     "origin": [
+      128.30850000000001, 
+      118.49800000000000
+     ], 
+     "string": "2'-4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      130.97510000000000, 
+      118.66470000000000
+     ], 
+     "value": 3.0, 
+     "origin": [
+      130.97510000000000, 
+      118.49800000000000
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c6:0:SURFACE", 
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c1f48:28:SURFACE", 
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c1f48:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    20048256, 
+    13794716, 
+    20048256
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    305.59240000000000, 
+    196.42570000000001
+   ], 
+   "tool": {
+    "describe": "locate beam side|10|side            across 9/10..    side | 3'-9\" | 10 | 3'-9\" | side", 
+    "label": "beam side|10|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "beam#211"
+   }, 
+   "id": 20612042, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      307.22120000000001, 
+      197.36920000000001
+     ], 
+     "value": 3.75, 
+     "origin": [
+      307.29169999999999, 
+      197.21809999999999
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      310.61989999999997, 
+      198.95400000000001
+     ], 
+     "value": 3.75, 
+     "origin": [
+      310.69029999999998, 
+      198.80300000000000
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.90630999999999995, 
+    0.42262
+   ], 
+   "refs": [
+    "992d1b02-8acc-4c20-be38-53f594286552-0131e980:24:SURFACE", 
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27d9c:0:SURFACE", 
+    "992d1b02-8acc-4c20-be38-53f594286552-0131e980:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13795945, 
+    20048256
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    304.76859999999999, 
+    194.24860000000001
+   ], 
+   "tool": {
+    "describe": "locate beam end -> A                across A/B..     A | 1'-0 1/2\" | end", 
+    "label": "beam end -> A", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, -1)", 
+    "feature": "beam#211"
+   }, 
+   "id": 20612043, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      302.94170000000003, 
+      195.80019999999999
+     ], 
+     "value": 1.0416700000000001, 
+     "origin": [
+      304.98869999999999, 
+      193.77660000000000
+     ], 
+     "string": "1'-0 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28269:0:SURFACE", 
+    "992d1b02-8acc-4c20-be38-53f594286552-0131e980:83:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    20603364, 
+    13788115
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    159.55850000000001, 
+    -20.809500000000000
+   ], 
+   "tool": {
+    "describe": "locate CJ -> FF                     across CC/BB..   CJ | 10'-8\" | FF", 
+    "label": "CJ -> FF", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "cj#212"
+   }, 
+   "id": 20612044, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      159.39179999999999, 
+      -15.476200000000000
+     ], 
+     "value": 10.666670000000000, 
+     "origin": [
+      159.55850000000001, 
+      -15.476200000000000
+     ], 
+     "string": "10'-8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a61e4:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-0122746d:4:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    20603365, 
+    13788107
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    162.22510000000000, 
+    -8.0594999999999999
+   ], 
+   "tool": {
+    "describe": "locate CJ -> 4                      across 2/3..     CJ | 7'-11\" | 4", 
+    "label": "CJ -> 4", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(-1, 1, -4)", 
+    "feature": "cj#213"
+   }, 
+   "id": 20612045, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      166.18350000000001, 
+      -7.8929000000000000
+     ], 
+     "value": 7.9166699999999999, 
+     "origin": [
+      166.18350000000001, 
+      -8.0594999999999999
+     ], 
+     "string": "7'-11\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a61e5:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-012274d4:4:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cb:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    20603366, 
+    13788115
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    122.97510000000000, 
+    -16.726199999999999
+   ], 
+   "tool": {
+    "describe": "locate CJ -> FF                     across CC/BB..   CJ | 6'-7\" | FF", 
+    "label": "CJ -> FF", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "cj#214"
+   }, 
+   "id": 20612046, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      122.80850000000000, 
+      -13.434500000000000
+     ], 
+     "value": 6.5833300000000001, 
+     "origin": [
+      122.97510000000000, 
+      -13.434500000000000
+     ], 
+     "string": "6'-7\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a61e6:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-01227571:4:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13796195, 
+    20603369
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    326.73219999999998, 
+    75.395200000000003
+   ], 
+   "tool": {
+    "describe": "locate CJ -> E                      across A/B..     E | 6'-7 1/16\" | CJ", 
+    "label": "CJ -> E", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(1, 0, 0)", 
+    "feature": "cj#217"
+   }, 
+   "id": 20612047, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      328.27530000000002, 
+      72.480300000000000
+     ], 
+     "value": 6.5877400000000002, 
+     "origin": [
+      328.12419999999997, 
+      72.409899999999993
+     ], 
+     "string": "6'-7\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28363:0:SURFACE", 
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a61e9:0:INSTANCE:33e42fc3-5755-4cd0-a954-78750e08bffc-0129684d:4:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788100, 
+    20603371
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    265.64179999999999, 
+    62.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate CJ -> CC                     across CC/BB..   CC | 12'-8 1/4\" | CJ", 
+    "label": "CJ -> CC", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "cj#219"
+   }, 
+   "id": 20612048, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      265.47510000000000, 
+      68.367599999999996
+     ], 
+     "value": 12.6875, 
+     "origin": [
+      265.64179999999999, 
+      68.367599999999996
+     ], 
+     "string": "12'-8 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a61eb:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-01227a34:4:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788100, 
+    20603371
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    332.66010000000000, 
+    62.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate CJ -> CC                     across CC/BB..   CC | 12'-8 1/4\" | CJ", 
+    "label": "CJ -> CC", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(1, 0, 0)", 
+    "feature": "cj#219"
+   }, 
+   "id": 20612049, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      332.49340000000001, 
+      68.367599999999996
+     ], 
+     "value": 12.6875, 
+     "origin": [
+      332.66010000000000, 
+      68.367599999999996
+     ], 
+     "string": "12'-8 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a61eb:0:INSTANCE:5e641f1c-5ab7-4683-99d1-c760ade1ed0f-01227a34:4:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    20604080, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    122.97510000000000, 
+    21.523800000000001
+   ], 
+   "tool": {
+    "describe": "locate CJ -> EE                     across CC/BB..   CJ | 4'-6\" | EE", 
+    "label": "CJ -> EE", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "cj#227"
+   }, 
+   "id": 20612050, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      122.80850000000000, 
+      23.773800000000001
+     ], 
+     "value": 4.5, 
+     "origin": [
+      122.97510000000000, 
+      23.773800000000001
+     ], 
+     "string": "4'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a64b0:0:INSTANCE:1275b43d-30e1-4b75-b463-8e46f3a10871-01365330:4:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    20604080, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    168.05850000000001, 
+    21.523800000000001
+   ], 
+   "tool": {
+    "describe": "locate CJ -> EE                     across CC/BB..   CJ | 4'-6\" | EE", 
+    "label": "CJ -> EE", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(1, 0, -1)", 
+    "feature": "cj#227"
+   }, 
+   "id": 20612051, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      167.89179999999999, 
+      23.773800000000001
+     ], 
+     "value": 4.5, 
+     "origin": [
+      168.05850000000001, 
+      23.773800000000001
+     ], 
+     "string": "4'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a64b0:0:INSTANCE:1275b43d-30e1-4b75-b463-8e46f3a10871-01365330:4:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788104, 
+    19670910
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    122.97510000000000, 
+    98.023799999999994
+   ], 
+   "tool": {
+    "describe": "locate corner -> BB                 across CC/BB..   BB | 11'-6 9/16\" | corner", 
+    "label": "corner -> BB", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "opening/void#142"
+   }, 
+   "id": 20612052, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      122.80850000000000, 
+      103.79740000000000
+     ], 
+     "value": 11.547260000000000, 
+     "origin": [
+      122.97510000000000, 
+      103.79740000000000
+     ], 
+     "string": "11'-6 5/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE", 
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c277e:25:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14353214, 
+    13788114, 
+    14353214
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    295.89179999999999, 
+    23.169599999999999
+   ], 
+   "tool": {
+    "describe": "locate beam side|EE|side            across CC/BB..   side | 2'-10 1/4\" | EE | 1'-1 3/4\" | side", 
+    "label": "beam side|EE|side", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 5, 10)", 
+    "feature": "beam#191"
+   }, 
+   "id": 20612053, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      296.89179999999999, 
+      20.722999999999999
+     ], 
+     "value": 2.8541699999999999, 
+     "origin": [
+      295.89179999999999, 
+      24.596699999999998
+     ], 
+     "string": "2'-10 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      296.89179999999999, 
+      29.347999999999999
+     ], 
+     "value": 1.1458299999999999, 
+     "origin": [
+      295.89179999999999, 
+      26.596699999999998
+     ], 
+     "string": "1'-1 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db033e:28:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db033e:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243452, 
+    13794716, 
+    14243452
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    304.83519999999999, 
+    198.04949999999999
+   ], 
+   "tool": {
+    "describe": "locate beam side|10|side            across 9/10..    side | 3'-9\" | 10 | 3'-9\" | side", 
+    "label": "beam side|10|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 5, -8)", 
+    "feature": "beam#173"
+   }, 
+   "id": 20612054, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      306.46409999999997, 
+      198.99299999999999
+     ], 
+     "value": 3.75, 
+     "origin": [
+      306.53449999999998, 
+      198.84190000000001
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      309.86270000000002, 
+      200.57780000000000
+     ], 
+     "value": 3.75, 
+     "origin": [
+      309.93310000000002, 
+      200.42679999999999
+     ], 
+     "string": "3'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.90630999999999995, 
+    0.42262
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9567c:24:SURFACE", 
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27d9c:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d9567c:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243432, 
+    13788108, 
+    14243432
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.64179999999999, 
+    120.00300000000000
+   ], 
+   "tool": {
+    "describe": "locate beam side|5|side             across 2/3..     side | 3'-7\" | 5 | 2'-5\" | side", 
+    "label": "beam side|5|side", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 3, 4)", 
+    "feature": "beam#170"
+   }, 
+   "id": 20612055, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.43350000000001, 
+      120.16960000000000
+     ], 
+     "value": 3.5833300000000001, 
+     "origin": [
+      182.43350000000001, 
+      120.00300000000000
+     ], 
+     "string": "3'-7\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      185.43350000000001, 
+      120.16960000000000
+     ], 
+     "value": 2.4166699999999999, 
+     "origin": [
+      185.43350000000001, 
+      120.00300000000000
+     ], 
+     "string": "2'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:28:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95668:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    224.83969999999999, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> AA                across CC/BB..   AA | 1'-5 3/4\" | edge", 
+    "label": "stack 1 -> AA", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(1, 1, 12)", 
+    "feature": "opening/void#47"
+   }, 
+   "id": 20612056, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      225.83969999999999, 
+      128.34549999999999
+     ], 
+     "value": 1.4791700000000001, 
+     "origin": [
+      224.83969999999999, 
+      131.26339999999999
+     ], 
+     "string": "1'-5 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:46066:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14353214, 
+    13788114, 
+    14353214
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    223.85010000000000, 
+    23.169599999999999
+   ], 
+   "tool": {
+    "describe": "locate beam side|EE|side            across CC/BB..   side | 2'-10 1/4\" | EE | 1'-1 3/4\" | side", 
+    "label": "beam side|EE|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 3, -1)", 
+    "feature": "beam#191"
+   }, 
+   "id": 20612057, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      223.68350000000001, 
+      20.722999999999999
+     ], 
+     "value": 2.8541699999999999, 
+     "origin": [
+      223.85010000000000, 
+      24.596699999999998
+     ], 
+     "string": "2'-10 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      223.68350000000001, 
+      29.347999999999999
+     ], 
+     "value": 1.1458299999999999, 
+     "origin": [
+      223.85010000000000, 
+      26.596699999999998
+     ], 
+     "string": "1'-1 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db033e:28:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db033e:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243653, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    166.97510000000000, 
+    128.33629999999999
+   ], 
+   "tool": {
+    "describe": "check void edge -> AA + void edge -> AA (chain check) across CC/BB..   edge | 3'-8\" | edge", 
+    "label": "void edge -> AA + void edge -> AA (chain check)", 
+    "side": 0, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(-1, 0, -11)", 
+    "feature": "opening/void#47"
+   }, 
+   "id": 20612058, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      166.80850000000001, 
+      130.16960000000000
+     ], 
+     "value": 3.6666699999999999, 
+     "origin": [
+      166.97510000000000, 
+      130.16960000000000
+     ], 
+     "string": "3'-8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:46073:LINEAR", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:46066:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788114, 
+    20604026
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    299.18349999999998, 
+    26.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate CJ -> EE                     across CC/BB..   EE | 9'-5 1/2\" | CJ", 
+    "label": "CJ -> EE", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(1, 2, 11)", 
+    "feature": "cj#224"
+   }, 
+   "id": 20612059, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      299.01679999999999, 
+      30.753000000000000
+     ], 
+     "value": 9.4583300000000001, 
+     "origin": [
+      299.18349999999998, 
+      30.753000000000000
+     ], 
+     "string": "9'-5 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a647a:0:INSTANCE:df5efbd1-3596-4b55-9198-ba67691e83e3-01328d14:4:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14353344, 
+    14353344, 
+    13788111
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    266.55849999999998, 
+    -13.142899999999999
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across 2/3..     side | 3'-2\" | side | 0'-6\" | 8", 
+    "label": "beam anchor|sides", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 3, 2)", 
+    "feature": "beam#193"
+   }, 
+   "id": 20612060, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      268.14179999999999, 
+      -12.976200000000000
+     ], 
+     "value": 3.1666699999999999, 
+     "origin": [
+      268.14179999999999, 
+      -13.142899999999999
+     ], 
+     "string": "3'-2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      271.59850000000000, 
+      -14.142899999999999
+     ], 
+     "value": 0.5, 
+     "origin": [
+      269.97510000000000, 
+      -13.142899999999999
+     ], 
+     "string": "6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:24:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db03c0:28:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13795945, 
+    19387072, 
+    19387072
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    133.24019999999999, 
+    114.26360000000000
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across A/B..     A | 1'-0 1/2\" | side | 1'-4\" | side", 
+    "label": "beam anchor|sides", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 3, 0)", 
+    "feature": "beam#200"
+   }, 
+   "id": 20612061, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      131.41319999999999, 
+      115.81520000000000
+     ], 
+     "value": 1.0416700000000001, 
+     "origin": [
+      133.46029999999999, 
+      113.79150000000000
+     ], 
+     "string": "1'-0 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      133.91800000000001, 
+      110.44380000000000
+     ], 
+     "value": 1.3333299999999999, 
+     "origin": [
+      133.96209999999999, 
+      112.71530000000000
+     ], 
+     "string": "1'-4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28269:0:SURFACE", 
+    "16bc84b2-2405-42be-8ea8-c1379bc48b26-0127d2c0:24:SURFACE", 
+    "16bc84b2-2405-42be-8ea8-c1379bc48b26-0127d2c0:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788100, 
+    14271227, 
+    14271227
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    328.08429999999998, 
+    62.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across CC/BB..   CC | 1'-9 1/4\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 2, 1)", 
+    "feature": "beam#184"
+   }, 
+   "id": 20612062, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      327.91759999999999, 
+      59.845500000000001
+     ], 
+     "value": 1.7708299999999999, 
+     "origin": [
+      328.08429999999998, 
+      62.909199999999998
+     ], 
+     "string": "1'-9 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      327.91759999999999, 
+      65.794600000000003
+     ], 
+     "value": 4.0, 
+     "origin": [
+      328.08429999999998, 
+      65.794600000000003
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c2fb:28:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c2fb:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14345337
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    230.47510000000000, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate beam end -> AA               across CC/BB..   AA | 18'-6 1/2\" | end", 
+    "label": "beam end -> AA", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 1, -4)", 
+    "feature": "beam#187"
+   }, 
+   "id": 20612063, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.30850000000001, 
+      139.79460000000000
+     ], 
+     "value": 18.541670000000000, 
+     "origin": [
+      230.47510000000000, 
+      139.79460000000000
+     ], 
+     "string": "18'-6 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:16:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14271355, 
+    14271355
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    293.60010000000000, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across CC/BB..   AA | 20'-2 1/4\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "beam#186"
+   }, 
+   "id": 20612064, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      293.43349999999998, 
+      140.61760000000001
+     ], 
+     "value": 20.1875, 
+     "origin": [
+      293.60010000000000, 
+      140.61760000000001
+     ], 
+     "string": "20'-2 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      293.43349999999998, 
+      152.71129999999999
+     ], 
+     "value": 4.0, 
+     "origin": [
+      293.60010000000000, 
+      152.71129999999999
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c37b:24:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c37b:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788111, 
+    14271037, 
+    14271037
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    270.22510000000000, 
+    155.37799999999999
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across 2/3..     8 | 27'-0 1/2\" | side | 4'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "beam#183"
+   }, 
+   "id": 20612065, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      283.74599999999998, 
+      155.54460000000000
+     ], 
+     "value": 27.041670000000000, 
+     "origin": [
+      283.74599999999998, 
+      155.37799999999999
+     ], 
+     "string": "27'-0 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      299.26679999999999, 
+      155.54460000000000
+     ], 
+     "value": 4.0, 
+     "origin": [
+      299.26679999999999, 
+      155.37799999999999
+     ], 
+     "string": "4'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:28:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:24:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14271037
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    295.60010000000000, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate beam end -> AA               across CC/BB..   AA | 24'-2 1/4\" | end", 
+    "label": "beam end -> AA", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 1)", 
+    "feature": "beam#183"
+   }, 
+   "id": 20612066, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      295.43349999999998, 
+      142.61760000000001
+     ], 
+     "value": 24.1875, 
+     "origin": [
+      295.60010000000000, 
+      142.61760000000001
+     ], 
+     "string": "24'-2 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "57a5701f-ff8f-4b4e-8925-f4387e641e9f-00d9c23d:1672:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13796195, 
+    20603369
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    376.31470000000002, 
+    98.515900000000002
+   ], 
+   "tool": {
+    "describe": "locate CJ -> E                      across A/B..     E | 6'-7 1/16\" | CJ", 
+    "label": "CJ -> E", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "cj#217"
+   }, 
+   "id": 20612067, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      377.85780000000000, 
+      95.601100000000002
+     ], 
+     "value": 6.5877400000000002, 
+     "origin": [
+      377.70679999999999, 
+      95.530600000000007
+     ], 
+     "string": "6'-7\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d28363:0:SURFACE", 
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a61e9:0:INSTANCE:33e42fc3-5755-4cd0-a954-78750e08bffc-0129684d:4:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243462, 
+    13788115
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    188.30850000000001, 
+    -13.809500000000000
+   ], 
+   "tool": {
+    "describe": "locate beam end -> FF               across CC/BB..   end | 3'-8\" | FF", 
+    "label": "beam end -> FF", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, -1)", 
+    "feature": "beam#175"
+   }, 
+   "id": 20612068, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      188.14179999999999, 
+      -11.976200000000000
+     ], 
+     "value": 3.6666699999999999, 
+     "origin": [
+      188.30850000000001, 
+      -11.976200000000000
+     ], 
+     "string": "3'-8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:16:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14243462, 
+    13788108, 
+    14243462
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.64179999999999, 
+    -12.142899999999999
+   ], 
+   "tool": {
+    "describe": "locate beam side|5|side             across 2/3..     side | 3'-7\" | 5 | 2'-5\" | side", 
+    "label": "beam side|5|side", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 1)", 
+    "feature": "beam#175"
+   }, 
+   "id": 20612069, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.43350000000001, 
+      -11.976200000000000
+     ], 
+     "value": 3.5833300000000001, 
+     "origin": [
+      182.43350000000001, 
+      -12.142899999999999
+     ], 
+     "string": "3'-7\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      185.43350000000001, 
+      -11.976200000000000
+     ], 
+     "value": 2.4166699999999999, 
+     "origin": [
+      185.43350000000001, 
+      -12.142899999999999
+     ], 
+     "string": "2'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:24:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95686:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788111, 
+    14353214
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    270.22510000000000, 
+    21.503000000000000
+   ], 
+   "tool": {
+    "describe": "locate beam end -> 8                across 2/3..     8 | 3'-0\" | end", 
+    "label": "beam end -> 8", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, -1)", 
+    "feature": "beam#191"
+   }, 
+   "id": 20612070, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      271.72510000000000, 
+      21.669599999999999
+     ], 
+     "value": 3.0, 
+     "origin": [
+      271.72510000000000, 
+      21.503000000000000
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE", 
+    "fb37241a-ae6e-41d4-af83-c2dd01dabdaf-00db033e:16:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788111, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    270.22510000000000, 
+    30.253000000000000
+   ], 
+   "tool": {
+    "describe": "locate run -> 8                     across 2/3..     8 | 21'-10\" | edge", 
+    "label": "run -> 8", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "run#29"
+   }, 
+   "id": 20612071, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      281.14179999999999, 
+      30.419599999999999
+     ], 
+     "value": 21.833330000000000, 
+     "origin": [
+      281.14179999999999, 
+      30.253000000000000
+     ], 
+     "string": "21'-10\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:45922:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    19387072, 
+    13793990
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    269.09820000000002, 
+    179.40819999999999
+   ], 
+   "tool": {
+    "describe": "locate beam end -> 9                across 9/10..    end | 14'-8 3/16\" | 9", 
+    "label": "beam end -> 9", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "beam#200"
+   }, 
+   "id": 20612072, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      275.68160000000000, 
+      182.66200000000001
+     ], 
+     "value": 14.683560000000000, 
+     "origin": [
+      275.75209999999998, 
+      182.51100000000000
+     ], 
+     "string": "14'-8 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.90630999999999995, 
+    0.42262
+   ], 
+   "refs": [
+    "16bc84b2-2405-42be-8ea8-c1379bc48b26-0127d2c0:16:SURFACE", 
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27ac6:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13796090, 
+    19675280
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    346.17890000000000, 
+    163.90649999999999
+   ], 
+   "tool": {
+    "describe": "locate beam end -> C                across A/B..     C | 18'-0\" | end", 
+    "label": "beam end -> C", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 1, -3)", 
+    "feature": "beam#206"
+   }, 
+   "id": 20612073, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      350.13350000000003, 
+      155.82020000000000
+     ], 
+     "value": 18.0, 
+     "origin": [
+      349.98250000000002, 
+      155.74979999999999
+     ], 
+     "string": "18'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d282fa:0:SURFACE", 
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c3890:16:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13796090, 
+    19675327, 
+    19675327
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    349.50290000000001, 
+    165.45660000000001
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across A/B..     C | 15'-0\" | side | 3'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(-1, 2, 0)", 
+    "feature": "beam#207"
+   }, 
+   "id": 20612074, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      352.82360000000000, 
+      158.72970000000001
+     ], 
+     "value": 15.0, 
+     "origin": [
+      352.67250000000001, 
+      158.65920000000000
+     ], 
+     "string": "15'-0\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      356.62720000000002, 
+      150.57290000000000
+     ], 
+     "value": 3.0, 
+     "origin": [
+      356.47609999999997, 
+      150.50250000000000
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.42262, 
+    -0.90630999999999995
+   ], 
+   "refs": [
+    "6bda4aaf-c6b5-4fa3-991a-efa1ab3c4141-00d282fa:0:SURFACE", 
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c38bf:24:SURFACE", 
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c38bf:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    19675327, 
+    13794723
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    351.77229999999997, 
+    144.81500000000000
+   ], 
+   "tool": {
+    "describe": "locate beam end -> 11               across 9/10..    end | 1'-0 1/2\" | 11", 
+    "label": "beam end -> 11", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(1, 0, -1)", 
+    "feature": "beam#207"
+   }, 
+   "id": 20612075, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      350.22070000000002, 
+      142.98810000000000
+     ], 
+     "value": 1.0416700000000001, 
+     "origin": [
+      352.24439999999998, 
+      145.03520000000000
+     ], 
+     "string": "1'-0 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.90630999999999995, 
+    0.42262
+   ], 
+   "refs": [
+    "70c8f3aa-0eff-40d2-9f3d-811fa2698ec1-012c38bf:16:SURFACE", 
+    "550eae71-f007-4600-81fe-d488a89efd85-00d27da3:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788115, 
+    20604078, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    161.72510000000000, 
+    -10.142899999999999
+   ], 
+   "tool": {
+    "describe": "locate CJ -> FF + CJ -> EE          across CC/BB..   FF | 18'-0 3/8\" | CJ | 18'-1 5/8\" | EE", 
+    "label": "CJ -> FF + CJ -> EE", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "cj", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "cj#225"
+   }, 
+   "id": 20612076, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      161.55850000000001, 
+      -1.1272000000000000
+     ], 
+     "value": 18.03125, 
+     "origin": [
+      161.72510000000000, 
+      -1.1272000000000000
+     ], 
+     "string": "18'-0 3/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      161.55850000000001, 
+      16.956099999999999
+     ], 
+     "value": 18.135420000000000, 
+     "origin": [
+      161.72510000000000, 
+      16.956099999999999
+     ], 
+     "string": "18'-1 5/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE", 
+    "c20be708-5065-49eb-af10-580f1f6b563e-013a64ae:0:INSTANCE:e3cbb2ef-ccfd-44ce-9157-af3feed8194a-013676c4:4:SURFACE", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14345337, 
+    14345337
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    166.06549999999999
+   ], 
+   "tool": {
+    "describe": "locate beam anchor|sides            across 2/3..     7 | 6'-3\" | side | 3'-0\" | side", 
+    "label": "beam anchor|sides", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "beam", 
+    "cand": "(0, 'reordered', 0)", 
+    "feature": "beam#187"
+   }, 
+   "id": 20612077, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.01679999999999, 
+      166.23210000000000
+     ], 
+     "value": 6.25, 
+     "origin": [
+      236.01679999999999, 
+      166.06549999999999
+     ], 
+     "string": "6'-3\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      240.64179999999999, 
+      166.23210000000000
+     ], 
+     "value": 3.0, 
+     "origin": [
+      240.64179999999999, 
+      166.06549999999999
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:24:SURFACE", 
+    "ccb703d8-23ed-4427-a2ca-6a23a21c38b0-00dae479:28:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14243653
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    168.73210000000000
+   ], 
+   "tool": {
+    "describe": "locate corner -> 7                  across 2/3..     7 | 11'-11 1/8\" | corner", 
+    "label": "corner -> 7", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'reordered', 0)", 
+    "feature": "opening/void#47"
+   }, 
+   "id": 20612078, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      238.85620000000000, 
+      168.89879999999999
+     ], 
+     "value": 11.928810000000000, 
+     "origin": [
+      238.85620000000000, 
+      168.73210000000000
+     ], 
+     "string": "11'-11 1/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "0b313cd7-13f9-4a31-b3d4-05edb706da9c-00d95745:26770:LINEAR"
+   ]
+  }
+ ]
+}
