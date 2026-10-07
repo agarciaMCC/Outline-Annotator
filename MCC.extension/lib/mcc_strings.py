@@ -405,8 +405,19 @@ class Planner(object):
                                      self.anchor(fi, gi, os_, +1, s_lo, s_hi)) if x]
                 if cands:
                     anc = min(cands, key=lambda x: abs(x[0] - os_))
-                    self.add(fi, gi, [anc, (os_, s.ref, "slab edge", "step")], (s_lo, s_hi),
-                             "step -> " + anc[3], f, prefer=(s_lo + s_hi) / 2.0)
+                    # in the margin just past the step face's open end, like a
+                    # run dim (Adolfo moved all 4 on the L7 sawtooth there, both
+                    # rounds); mid-face when neither end is open
+                    kw = {"prefer": (s_lo + s_hi) / 2.0}
+                    free = (self.free_end(gi, os_, s_lo, -1), self.free_end(gi, os_, s_hi, +1))
+                    if free[0] != free[1]:
+                        out = -1 if free[0] else 1
+                        gap = self.c["BEAM_END_GAP"]
+                        kw = {"prefer": (s_lo - gap) if out < 0 else (s_hi + gap), "outward": out}
+                    t = self.add(fi, gi, [anc, (os_, s.ref, "slab edge", "step")], (s_lo, s_hi),
+                                 "step -> " + anc[3], f, **kw)
+                    if t is not None and "outward" in kw:
+                        t.free = True
                 else:
                     self.note("step: no anchor")
             else:
