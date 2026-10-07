@@ -1,0 +1,12 @@
+- L3 NORTH (auto-dim) | stacked neighbour pairs: 24 | out of order: 6
+   ss CC/BB..   edge | 11'-8 1/2" | CC  vs  (chain check) across CC/BB..   edge | 3'-0" | edge | 0'-8" | edge
+   ss CC/BB..   edge | 5'-4 1/2" | CC  vs  ss CC/BB..   edge | 6'-1 3/8" | CC
+   ss CC/BB..   edge | 5'-7 3/8" | CC  vs  ss CC/BB..   leg | 7'-5" | CC
+   ss CC/BB..   leg | 7'-5" | CC  vs  s CC/BB..   leg | 0'-8" | leg
+   ss 2/3..     7 | 16'-2 3/4" | edge  vs  (chain check) across 2/3..     edge | 1'-2" | edge | 0'-8" | edge | 1'-2" | edge
+   ss 9/10..    side | 1'-0" | side | 1'-3 1/2" | 11  vs  ss 9/10..    edge | 2'-3 1/2" | 11
+- L7 (auto-dim) | stacked neighbour pairs: 29 | out of order: 4
+   ss CC/BB..   edge | 8'-0 1/2" | CC  vs  across CC/BB..   edge@wall | 12'-1" | edge | 28'-5" | BB
+   across CC/BB..   edge@wall | 12'-1" | edge | 28'-5" | BB  vs  ss CC/BB..   CC | 17'-1 3/8" | edge
+   ss CC/BB..   edge | 17'-4 7/8" | EE  vs  ss CC/BB..   edge | 15'-11" | EE
+   ss CC/BB..   edge | 17'-4 7/8" | EE  vs  (chain check) across CC/BB..   edge | 1'-5 7/8" | edge

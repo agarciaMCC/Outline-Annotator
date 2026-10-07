@@ -1,0 +1,4 @@
+check | feat=opening/shaft#103 stack=- | check shaft opening anchor|edges (chain check) across 2/3..     7 | 36'-2 1/2" | edge | 17'-9" | edge
+locate | feat=opening/shaft#103 stack=- | locate opening far edge -> 8        across 2/3..     8 | 16'-7 1/2" | far edge
+locate | feat=opening/shaft#103 stack=(0, 2) | locate stack 1 -> 7                 across 2/3..     7 | 36'-2 1/2" | edge
+locate | feat=opening/shaft#103 stack=(1, 2) | locate stack 2 -> 7                 across 2/3..     7 | 53'-11 1/2" | edge
