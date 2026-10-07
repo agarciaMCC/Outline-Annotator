@@ -133,6 +133,12 @@ class PlanModel(object):
         walls = self._read_members(DB.BuiltInCategory.OST_Walls, "wall")
         self.soft_walls = [w for w in walls if any(k in (w.e.Name or "").upper() for k in ("CURB", "CMU"))]
         self.walls = [w for w in walls if w not in self.soft_walls]
+        # a wall standing ON the slab with no wall under it (L4.5: the 12"
+        # walls along grid 8 rising from the slab top) can't be seen from
+        # below - like a curb, it neither blocks nor anchors. Core walls that
+        # continue a wall below stay.
+        self.upper_walls = self._upper_only_walls()
+        self.walls = [w for w in self.walls if w not in self.upper_walls]
         self.columns = self._read_members(
             DB.BuiltInCategory.OST_StructuralColumns, "column") + \
             self._read_members(DB.BuiltInCategory.OST_Columns, "column")
@@ -300,7 +306,8 @@ class PlanModel(object):
                     covers.append((eid_int(fl.Id), [q[:2] for q in pp], bb.Min.Z, bb.Max.Z))
         except Exception:
             pass
-        covers += [(m.eid, m.poly, None, None) for m in self.walls + getattr(self, "soft_walls", []) + self.beams if m.poly]
+        covers += [(m.eid, m.poly, None, None) for m in self.walls + getattr(self, "soft_walls", []) +
+                   getattr(self, "upper_walls", []) + self.beams if m.poly]
         self.filled_hole_boxes = []
         for sl in self.slabs:
             sbb = sl.floor.get_BoundingBox(None)
@@ -357,6 +364,42 @@ class PlanModel(object):
                     P.point_in_poly(x, y, o) for o in s.openings):
                 return True
         return False
+
+    def _upper_only_walls(self):
+        tops = []
+        for s in self.slabs:
+            bb = s.floor.get_BoundingBox(None)
+            if bb is not None:
+                tops.append(bb.Max.Z)
+        if not tops:
+            return []
+        top = min(tops)
+        up, low = [], []
+        for w in self.walls:
+            bb = w.e.get_BoundingBox(None)
+            if bb is None:
+                low.append(w)
+            elif bb.Min.Z >= top - 0.1:
+                up.append(w)
+            else:
+                low.append(w)
+        out = []
+        for w in up:
+            pts = w.poly
+            xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+            n = n_on = 0
+            for i in range(9):
+                for j in range(3):
+                    x = min(xs) + (max(xs) - min(xs)) * (i + 0.5) / 9.0
+                    y = min(ys) + (max(ys) - min(ys)) * (j + 0.5) / 3.0
+                    if not P.point_in_poly(x, y, pts):
+                        continue
+                    n += 1
+                    if any(P.point_in_poly(x, y, P.inflate(m.poly, 0.5)) for m in low if m.poly):
+                        n_on += 1
+            if n and n_on < 0.5 * n:
+                out.append(w)
+        return out
 
     # ---------------- members ----------------
     def _read_members(self, bic, cat):
