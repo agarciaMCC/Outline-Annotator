@@ -4,10 +4,10 @@
  "scale": 128,
  "tol_in": 0.1875,
  "counts": {
-  "deleted": 49,
-  "moved": 32,
-  "left": 18,
-  "added": 182
+  "deleted": 36,
+  "moved": 37,
+  "left": 26,
+  "added": 167
  },
  "rows": [
   {
@@ -50,7 +50,13 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 17339365,
+   "his_chain": [
+    6.23
+   ],
+   "offset_in": -0.59,
+   "change": "moved"
   },
   {
    "tool_dim": 20604285,
@@ -155,7 +161,13 @@
     0.42262,
     -0.90631
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 17066202,
+   "his_chain": [
+    1.04
+   ],
+   "offset_in": -0.4,
+   "change": "moved"
   },
   {
    "tool_dim": 20604290,
@@ -477,7 +489,13 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 19486117,
+   "his_chain": [
+    2.75
+   ],
+   "offset_in": 0.07,
+   "change": "left"
   },
   {
    "tool_dim": 20604297,
@@ -499,7 +517,13 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 19486117,
+   "his_chain": [
+    2.75
+   ],
+   "offset_in": 0.07,
+   "change": "left"
   },
   {
    "tool_dim": 20604298,
@@ -1335,7 +1359,13 @@
     0.90631,
     0.42262
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 20048320,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": 0.02,
+   "change": "left"
   },
   {
    "tool_dim": 20604317,
@@ -1357,7 +1387,13 @@
     0.90631,
     0.42262
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 20048320,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": 0.02,
+   "change": "left"
   },
   {
    "tool_dim": 20604318,
@@ -1378,7 +1414,13 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 19733157,
+   "his_chain": [
+    6.58
+   ],
+   "offset_in": -0.1,
+   "change": "left"
   },
   {
    "tool_dim": 20604319,
@@ -1420,7 +1462,13 @@
     0.42262,
     -0.90631
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 20046387,
+   "his_chain": [
+    6.59
+   ],
+   "offset_in": 0.12,
+   "change": "left"
   },
   {
    "tool_dim": 20604321,
@@ -1462,7 +1510,13 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 20046401,
+   "his_chain": [
+    12.69
+   ],
+   "offset_in": 0.07,
+   "change": "left"
   },
   {
    "tool_dim": 20604323,
@@ -1504,7 +1558,13 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 19697281,
+   "his_chain": [
+    11.55
+   ],
+   "offset_in": -0.08,
+   "change": "left"
   },
   {
    "tool_dim": 20604325,
@@ -1776,7 +1836,13 @@
     0.42262,
     -0.90631
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 17066202,
+   "his_chain": [
+    1.04
+   ],
+   "offset_in": 0.49,
+   "change": "moved"
   },
   {
    "tool_dim": 20604332,
@@ -2131,7 +2197,13 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 19454244,
+   "his_chain": [
+    1.15
+   ],
+   "offset_in": 0.7,
+   "change": "moved"
   },
   {
    "tool_dim": 20604343,
@@ -2178,7 +2250,14 @@
     1.0,
     0.0
    ],
-   "change": "deleted"
+   "other_reference": true,
+   "his_dim": 17339364,
+   "his_chain": [
+    21.83,
+    35.0
+   ],
+   "offset_in": -0.25,
+   "change": "moved"
   },
   {
    "tool_dim": 20604345,
@@ -2490,26 +2569,6 @@
    "change": "added"
   },
   {
-   "his_dim": 17066033,
-   "elements": [
-    13795945,
-    14243653
-   ],
-   "value_ft": 1.0416666666666667,
-   "chain": [
-    1.04
-   ],
-   "at": [
-    285.6,
-    184.7
-   ],
-   "dir": [
-    0.42262,
-    -0.90631
-   ],
-   "change": "added"
-  },
-  {
    "his_dim": 17066140,
    "elements": [
     13788102,
@@ -2526,46 +2585,6 @@
    "dir": [
     1.0,
     0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 17066202,
-   "elements": [
-    13795945,
-    14243653
-   ],
-   "value_ft": 1.0416666666666667,
-   "chain": [
-    1.04
-   ],
-   "at": [
-    128.7,
-    111.6
-   ],
-   "dir": [
-    -0.42262,
-    0.90631
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 17066327,
-   "elements": [
-    13795945,
-    14243653
-   ],
-   "value_ft": 1.0416666666666667,
-   "chain": [
-    1.04
-   ],
-   "at": [
-    240.3,
-    163.6
-   ],
-   "dir": [
-    -0.42262,
-    0.90631
    ],
    "change": "added"
   },
@@ -3572,27 +3591,6 @@
   {
    "his_dim": 17339364,
    "elements": [
-    13788111,
-    17181793
-   ],
-   "value_ft": 21.833333333333332,
-   "chain": [
-    21.83,
-    35.0
-   ],
-   "at": [
-    281.1,
-    32.9
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 17339364,
-   "elements": [
     17181793,
     17181793
    ],
@@ -3608,26 +3606,6 @@
    "dir": [
     1.0,
     0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 17339365,
-   "elements": [
-    13788114,
-    17181793
-   ],
-   "value_ft": 6.229166666666667,
-   "chain": [
-    6.23
-   ],
-   "at": [
-    289.7,
-    29.1
-   ],
-   "dir": [
-    -0.0,
-    -1.0
    ],
    "change": "added"
   },
@@ -4578,46 +4556,6 @@
    "change": "added"
   },
   {
-   "his_dim": 19486117,
-   "elements": [
-    14243446,
-    14243446
-   ],
-   "value_ft": 2.75,
-   "chain": [
-    2.75
-   ],
-   "at": [
-    334.9,
-    40.0
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 19486124,
-   "elements": [
-    14243446,
-    14243446
-   ],
-   "value_ft": 2.75,
-   "chain": [
-    2.75
-   ],
-   "at": [
-    333.6,
-    42.4
-   ],
-   "dir": [
-    0.5,
-    -0.86603
-   ],
-   "change": "added"
-  },
-  {
    "his_dim": 19486131,
    "elements": [
     14243446,
@@ -4920,26 +4858,6 @@
    "change": "added"
   },
   {
-   "his_dim": 19697281,
-   "elements": [
-    13788104,
-    19669409
-   ],
-   "value_ft": 11.552083333333334,
-   "chain": [
-    11.55
-   ],
-   "at": [
-    122.1,
-    103.8
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
    "his_dim": 19697288,
    "elements": [
     13788102,
@@ -5096,26 +5014,6 @@
    "dir": [
     1.0,
     0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 19733157,
-   "elements": [
-    13788115,
-    18265262
-   ],
-   "value_ft": 6.583333333333333,
-   "chain": [
-    6.58
-   ],
-   "at": [
-    122.0,
-    -13.4
-   ],
-   "dir": [
-    -0.0,
-    -1.0
    ],
    "change": "added"
   },
@@ -5500,46 +5398,6 @@
    "change": "added"
   },
   {
-   "his_dim": 20046380,
-   "elements": [
-    13788100,
-    18265271
-   ],
-   "value_ft": 12.6875,
-   "chain": [
-    12.69
-   ],
-   "at": [
-    279.1,
-    68.4
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20046387,
-   "elements": [
-    13796195,
-    18265266
-   ],
-   "value_ft": 6.583333333333333,
-   "chain": [
-    6.59
-   ],
-   "at": [
-    327.0,
-    71.9
-   ],
-   "dir": [
-    -0.42262,
-    0.90631
-   ],
-   "change": "added"
-  },
-  {
    "his_dim": 20046394,
    "elements": [
     13796195,
@@ -5560,26 +5418,6 @@
    "change": "added"
   },
   {
-   "his_dim": 20046401,
-   "elements": [
-    13788100,
-    18265271
-   ],
-   "value_ft": 12.6875,
-   "chain": [
-    12.69
-   ],
-   "at": [
-    333.4,
-    68.4
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
    "his_dim": 20046414,
    "elements": [
     13788105,
@@ -5596,46 +5434,6 @@
    "dir": [
     -0.0,
     -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20048320,
-   "elements": [
-    20048256,
-    20048256
-   ],
-   "value_ft": 3.75,
-   "chain": [
-    3.75
-   ],
-   "at": [
-    310.8,
-    198.7
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20048327,
-   "elements": [
-    20048256,
-    20048256
-   ],
-   "value_ft": 3.75,
-   "chain": [
-    3.75
-   ],
-   "at": [
-    307.4,
-    197.1
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
    ],
    "change": "added"
   },
@@ -5752,26 +5550,6 @@
    "at": [
     247.0,
     68.6
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20067723,
-   "elements": [
-    13788114,
-    17181793
-   ],
-   "value_ft": 6.229166666666667,
-   "chain": [
-    6.23
-   ],
-   "at": [
-    289.1,
-    29.1
    ],
    "dir": [
     -0.0,
