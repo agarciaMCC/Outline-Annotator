@@ -674,6 +674,14 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   L4S vs the issued sheet 23 / 36 / 41 / 160 (71 placed, 38 review - mostly tags, kept since tags go on before or after).
   Not done from the study: angled beams with no grid family (corners off straight grids), no beam-end dim where the
   end sits on an already-dimensioned slab edge (~10 review items), compare_segments reference tolerance.
+- **2026-10-07 — L4 South edit round 1 (on run 2) and Adolfo's answers.** "Overall I think it did very well": 49 of 71
+  untouched (L3N round 1: 55 of ~117), 18 edited, 4 deleted, 7 added; analyst `analyst_L4S_round1.md`. Answers:
+  (1) **closest grid stands** (A2 for the SW band end; his A3 was a one-off). (2) **A beam width goes just inside
+  the end whenever "past the end" would land on or across another beam** ("b"; refines the round-5 "past the end
+  when framed into a beam"). (3) **A beam that runs out of the crop also gets a width just inside the crop when the
+  part in view is long** (~20-30 ft), even with a real end in view. (4) The two JJ corner dims he deleted measured to
+  corners of beams of the same depth - those edges are already located off a grid: **no corner dim where the lines
+  meeting there are already located** (and he kept / added corners only off straight grids).
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
