@@ -66,10 +66,10 @@ the "how we work" and "where things stand" summary.
 ## Open items (in rough priority)
 1. L7 leftovers: shaft#51's stepped chain on its own side; core/shaft far-side choices; a third L7 round only if
    Adolfo wants one (round 2 was mostly him restoring round-1 positions, now built).
-3. L4.5: the 20 slab edge -> grid dims the hand sheet has and the tool doesn't (void + perimeter edges).
-4. The CJ pair off grid 5 (he puts both at the bottom end; the tool at the top — "more open space" is his reason).
-5. The pocket rows (B2, five rounds); beam widths `anchor | sides` at framed ends (~0.4" from his, every round).
-6. Milestone 3 proper: whole views on L2/L4, a cleanup count per sheet (target ≤ 10; L3N round 5 was 31 edits).
-7. Rules recorded but not built: a beam meeting a wall at a skew gets a check dim off the wall face (L4.5 answer 6).
-8. Share with coworkers: `MCC-Testing.extension` carries Dim Soffit v2 — re-copy `lib/` and rebuild the zip after
+2. L4.5: the 20 slab edge -> grid dims the hand sheet has and the tool doesn't (void + perimeter edges).
+3. The CJ pair off grid 5 (he puts both at the bottom end; the tool at the top — "more open space" is his reason).
+4. The pocket rows (B2, five rounds); beam widths `anchor | sides` at framed ends (~0.4" from his, every round).
+5. Milestone 3 proper: whole views on L2/L4, a cleanup count per sheet (target ≤ 10; L3N round 5 was 31 edits).
+6. Rules recorded but not built: a beam meeting a wall at a skew gets a check dim off the wall face (L4.5 answer 6).
+7. Share with coworkers: `MCC-Testing.extension` carries Dim Soffit v2 — re-copy `lib/` and rebuild the zip after
    today's changes (see CLAUDE.md folder map).
