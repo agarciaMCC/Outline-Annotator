@@ -1,0 +1,529 @@
+{
+ "19605808": {
+  "cat": "Generic Models", 
+  "type": "Beam Trim Void", 
+  "name": "Beam Trim Void"
+ }, 
+ "14232286": {
+  "cat": "Structural Framing", 
+  "type": "66x12 3/4 PT BM", 
+  "name": "66x12 3/4 PT BM"
+ }, 
+ "14516331": {
+  "cat": "Floors", 
+  "type": "FILL 9 3/4\"", 
+  "name": "FILL 9 3/4\""
+ }, 
+ "20618915": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20618919": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20618920": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20618921": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20618923": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20618925": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20618926": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20618927": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "13899174": {
+  "cat": "Grids", 
+  "type": "Column Grid", 
+  "name": "9f"
+ }, 
+ "17076537": {
+  "cat": "Generic Models", 
+  "type": "Beam Trim Void", 
+  "name": "Beam Trim Void"
+ }, 
+ "14223718": {
+  "cat": "Structural Framing", 
+  "type": "48x12 3/4 PT BM", 
+  "name": "48x12 3/4 PT BM"
+ }, 
+ "14240997": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "14213468": {
+  "cat": "Structural Columns", 
+  "type": "24x36 COL", 
+  "name": "24x36 COL"
+ }, 
+ "14241552": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "14213472": {
+  "cat": "Structural Columns", 
+  "type": "16x36 COL", 
+  "name": "16x36 COL"
+ }, 
+ "17076554": {
+  "cat": "Generic Models", 
+  "type": "Beam Trim Void", 
+  "name": "Beam Trim Void"
+ }, 
+ "14213480": {
+  "cat": "Structural Columns", 
+  "type": "12x36 COL", 
+  "name": "12x36 COL"
+ }, 
+ "14241561": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "18435741": {
+  "cat": "Floors", 
+  "type": "FILL 9 3/4\"", 
+  "name": "FILL 9 3/4\""
+ }, 
+ "17076571": {
+  "cat": "Generic Models", 
+  "type": "Beam Trim Void", 
+  "name": "Beam Trim Void"
+ }, 
+ "14241572": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "13899218": {
+  "cat": "Grids", 
+  "type": "Column Grid", 
+  "name": "9e"
+ }, 
+ "14241581": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "17076588": {
+  "cat": "Generic Models", 
+  "type": "Beam Trim Void", 
+  "name": "Beam Trim Void"
+ }, 
+ "14743249": {
+  "cat": "Grids", 
+  "type": "Column Grid", 
+  "name": "9''-2"
+ }, 
+ "20618988": {
+  "cat": "Detail Items", 
+  "type": "Label - Centerline", 
+  "name": "Label - Centerline"
+ }, 
+ "14241592": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "14241601": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "14223243": {
+  "cat": "Structural Framing", 
+  "type": "48x9 3/4 PT BM", 
+  "name": "48x9 3/4 PT BM"
+ }, 
+ "17076605": {
+  "cat": "Generic Models", 
+  "type": "Beam Trim Void", 
+  "name": "Beam Trim Void"
+ }, 
+ "14223245": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "14223247": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "14223250": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "14223252": {
+  "cat": "Structural Framing", 
+  "type": "48x9 3/4 PT BM", 
+  "name": "48x9 3/4 PT BM"
+ }, 
+ "14223254": {
+  "cat": "Structural Framing", 
+  "type": "72x9 3/4 PT BM", 
+  "name": "72x9 3/4 PT BM"
+ }, 
+ "14223257": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "14223259": {
+  "cat": "Structural Framing", 
+  "type": "66x12 3/4 PT BM", 
+  "name": "66x12 3/4 PT BM"
+ }, 
+ "14223261": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "17076622": {
+  "cat": "Generic Models", 
+  "type": "Beam Trim Void", 
+  "name": "Beam Trim Void"
+ }, 
+ "14223263": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "14223265": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "14223268": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "14223270": {
+  "cat": "Structural Framing", 
+  "type": "72x12 3/4 PT BM", 
+  "name": "72x12 3/4 PT BM"
+ }, 
+ "14223272": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "14223274": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "14223276": {
+  "cat": "Structural Framing", 
+  "type": "66x12 3/4 PT BM", 
+  "name": "66x12 3/4 PT BM"
+ }, 
+ "14223279": {
+  "cat": "Structural Framing", 
+  "type": "66x9 3/4 PT BM", 
+  "name": "66x9 3/4 PT BM"
+ }, 
+ "17076639": {
+  "cat": "Generic Models", 
+  "type": "Beam Trim Void", 
+  "name": "Beam Trim Void"
+ }, 
+ "20619048": {
+  "cat": null
+ }, 
+ "13793990": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "9"
+ }, 
+ "14217903": {
+  "cat": "Walls", 
+  "type": "18\" CIP WALL", 
+  "name": "18\" CIP WALL"
+ }, 
+ "14241123": {
+  "cat": "Structural Framing", 
+  "type": "90x12 3/4 PT BM", 
+  "name": "90x12 3/4 PT BM"
+ }, 
+ "13797243": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A1"
+ }, 
+ "19603329": {
+  "cat": "Structural Framing", 
+  "type": "TRENCH DRAIN BEAM", 
+  "name": "TRENCH DRAIN BEAM"
+ }, 
+ "13794555": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "J"
+ }, 
+ "13796195": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "E"
+ }, 
+ "14221718": {
+  "cat": "Floors", 
+  "type": "7 1/2\" PT SLAB", 
+  "name": "7 1/2\" PT SLAB"
+ }, 
+ "13788102": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "2"
+ }, 
+ "13788103": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "3"
+ }, 
+ "13799982": {
+  "cat": "Grids", 
+  "type": "Column Grid", 
+  "name": "9c"
+ }, 
+ "14241166": {
+  "cat": "Grids", 
+  "type": "Column Grid", 
+  "name": "a9'"
+ }, 
+ "13788107": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "4"
+ }, 
+ "13788108": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "5"
+ }, 
+ "13788109": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "6"
+ }, 
+ "13788110": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "7"
+ }, 
+ "20619111": {
+  "cat": null
+ }, 
+ "13788111": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "8"
+ }, 
+ "13788115": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "FF"
+ }, 
+ "13788116": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "GG"
+ }, 
+ "13788117": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "JJ"
+ }, 
+ "13796245": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "F.2"
+ }, 
+ "13797880": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A6"
+ }, 
+ "13797894": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A7"
+ }, 
+ "13794124": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "G"
+ }, 
+ "13797908": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A8"
+ }, 
+ "13794131": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "H"
+ }, 
+ "13796294": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "G.7"
+ }, 
+ "20619195": {
+  "cat": null
+ }, 
+ "13797384": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A2"
+ }, 
+ "20619210": {
+  "cat": null
+ }, 
+ "20619224": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "13797405": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A3"
+ }, 
+ "20619225": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20619226": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20619227": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20619228": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "13794716": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "10"
+ }, 
+ "13797419": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A4"
+ }, 
+ "13794723": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "11"
+ }, 
+ "13800126": {
+  "cat": "Grids", 
+  "type": "Column Grid", 
+  "name": "9d"
+ }, 
+ "13797433": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A5"
+ }, 
+ "20619259": {
+  "cat": null
+ }, 
+ "20619275": {
+  "cat": null
+ }, 
+ "20619276": {
+  "cat": null
+ }, 
+ "14216512": {
+  "cat": "Structural Columns", 
+  "type": "12x24 COL", 
+  "name": "12x24 COL"
+ }, 
+ "20619306": {
+  "cat": null
+ }, 
+ "20619307": {
+  "cat": null
+ }, 
+ "20619327": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20619328": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "13795352": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A9"
+ }, 
+ "20619333": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "20619334": {
+  "cat": "Detail Items", 
+  "type": "Large Scale", 
+  "name": "Large Scale"
+ }, 
+ "14232215": {
+  "cat": "Structural Framing", 
+  "type": "66x12 3/4 PT BM", 
+  "name": "66x12 3/4 PT BM"
+ }, 
+ "14213856": {
+  "cat": "Structural Columns", 
+  "type": "24x36 COL", 
+  "name": "24x36 COL"
+ }, 
+ "13793747": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "F"
+ }, 
+ "13796995": {
+  "cat": "Grids", 
+  "type": "Grid", 
+  "name": "A11"
+ }
+}

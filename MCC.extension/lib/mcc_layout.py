@@ -75,6 +75,7 @@ CFG = {
     "SIDES_KINDS": ("opening",),   # elements whose dims compare their two sides
     "W_TEXT_FLIP": None,    # a pulled-out text moved to the string's far end when the near end is blocked (None = off:
                             # it put plain#52's pair exactly on Adolfo's spot but cost L3N 3-8 at any price, 2026-10-07)
+    "AVOID_NOTES": True,    # keep dims off the tags / text notes / symbols already in the view
     "W_TIGHT": 0.25,        # base cost of a spot just past MIN_GAP beside an opening (a tight gap to a grid)
     "W_NEIGH": 2.0,         # an opening's dim on the side where ANOTHER opening sits within NEIGH_R_IN (and the
     "NEIGH_R_IN": 0.75,     # other side is clear): per such neighbour - keeps two near openings' dims out of the
@@ -202,7 +203,9 @@ class Layout(object):
         self.par_edges = self._parallel_edges(model)
         self._ext_cache = {}
         self.tsize = PL.text_size_ft(dim_type) * view.Scale     # ft on the plan
-        self.notes = self._existing_annotations(view)            # text notes, tags, symbols already in the view
+        # text notes, tags, symbols already in the view (AVOID_NOTES False: placed as if the view had none - the
+        # detailer tags after dimensioning; Adolfo 2026-10-07: "it varies")
+        self.notes = self._existing_annotations(view) if self.c["AVOID_NOTES"] else []
         self.placed = []
         self.review = []            # (string, reason)
         self.blocked = {}
