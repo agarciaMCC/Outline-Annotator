@@ -531,7 +531,13 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   - Questions: beam ends at a core wall (past the end vs across the beam inside the end — his round-5 hand says
     inside); the pocket's `12'-1"` inside the pocket (5 rounds); the pilaster hole's `3'-8"` overall (kept in round 4,
     deleted in 5); the 5 review items (incl. the `7'-11"` CJ) left out on purpose?
-- Next: Adolfo's answers; a second L7 round on run 31; the 39 ft edge model look; L4.5 review items; milestone 3
+- **2026-10-07 — Adolfo's round-5 answers (run 94).** (1) Beam ends: past the end when framed into a beam, across
+  the beam just inside the end when framed into a wall — "correct rule" (built in run 93). (2) The pocket's `12'-1"`
+  may sit inside the pocket, but "put the text where it's not inside the shaded wall area" → **text over a wall is a
+  hard reject** (`evaluate`; beams/columns stay soft). (3) The pilaster hole's `3'-8"`: not needed — a stepped
+  opening's overall only when its chain has 3+ segments (`do_opening`, `len(faces) > 3`). (4) The review items were
+  left out on purpose.
+- Next: a second L7 round on run 31; the 39 ft edge model look; L4.5 review items; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

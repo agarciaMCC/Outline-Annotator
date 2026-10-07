@@ -617,7 +617,10 @@ class Planner(object):
             # a stepped opening also gets its overall size - "an overall goes
             # outside its chain" (Adolfo added 3'-0" outside 1'-2" | 8" | 1'-2"
             # at the L3N pilaster hole; analyst B6)
-            if f.meta.get("stepped") and len(faces) > 2:
+            # ... only when the chain has three or more segments (1'-2" | 8" |
+            # 1'-2" gets its 3'-0"; the two-segment 3'-0" | 8" already spans the
+            # hole on its locating line - its 3'-8" deleted, Adolfo 2026-10-07)
+            if f.meta.get("stepped") and len(faces) > 3:
                 self.add(fi, gi, [(lo, faces[0][1].ref, "opening edge", "edge"),
                                   (hi, faces[-1][1].ref, "opening edge", "edge")],
                          span, "stepped opening overall", f, prefer=pref, outward=(away or None),

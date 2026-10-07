@@ -554,6 +554,14 @@ class Layout(object):
                 else:
                     return None, "over a %s" % o.kind
             if text_hit:
+                fk = s.feature
+                in_core = fk is not None and fk.kind == "opening" and getattr(fk, "sub", None) == "core"
+                if o.kind == "wall" and not in_core:
+                    # text never sits in the shaded wall area (Adolfo 2026-10-07:
+                    # the pocket's 12'-1" may go inside the pocket, but its
+                    # text must not be on the core wall). A hole IN the core
+                    # wall (core#120's 5" | 1'-5") can't help it - soft there
+                    return None, "text over a wall"
                 pen += c["W_TEXT_OBST"]         # text over a member/beam: avoid, don't forbid
         # a dim line must not lie on (or hug) an edge running the same way
         on_line = False
