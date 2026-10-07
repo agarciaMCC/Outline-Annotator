@@ -462,7 +462,7 @@ def _label_rank(label):
     return len(LABEL_RANK)
 
 
-def dedupe(intents, tol=1.0 / 24, slack=2.0, notes=None, base=None):
+def dedupe(intents, tol=1.0 / 24, slack=2.0, notes=None, base=None, merge_tol=0.4 / 12):
     """Collapse coincident witness lines inside each intent, then drop
     intents that repeat an earlier one (same family, same witness offsets,
     overlapping span). Returns the kept intents in their original order.
@@ -476,7 +476,11 @@ def dedupe(intents, tol=1.0 / 24, slack=2.0, notes=None, base=None):
         refs = sorted(it.refs, key=lambda r: (r[0], REF_RANK.get(r[2], 9)))
         out = []
         for r in refs:
-            if out and abs(r[0] - out[-1][0]) <= tol:
+            # 0.4": a 1/2" face off a grid is a real dim (L7 core#48, Adolfo
+            # added it back in both rounds; a 1/2" tolerance merged it into the
+            # grid). 1/8" was tried: it made a 3/8" bump-top dim off A on L3N
+            # that he never drew
+            if out and abs(r[0] - out[-1][0]) <= merge_tol:
                 if REF_RANK.get(r[2], 9) < REF_RANK.get(out[-1][2], 9):
                     out[-1] = r
                 bump("coincident witness line merged")

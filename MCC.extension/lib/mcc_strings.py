@@ -1371,6 +1371,17 @@ class Planner(object):
                 # keep their far-edge row (the 23'-2 1/2" off EE)
                 targets = [targets[0]]
                 self.note("core opening: near edge only off the outside grid (size covers the rest)")
+            elif s.feature.kind == "opening" and len(set(t[0][0] > anc[0] for t in targets)) == 1                     and len(targets) < 3:
+                # Adolfo 2026-10-07 (L7 round 2, "1a"/"2a"): an opening's
+                # near edge off the grid + its size is enough - no far-edge
+                # row, no second leg to the next grid. Only when the grid is
+                # outside the opening: a grid THROUGH it keeps a row each side
+                # (L3N 9'-6 3/4" | B | 5'-3 1/4", kept every round); a stepped
+                # side (3+ faces) keeps its rows. (Tried: no row to a face on
+                # a wall - he deleted core#49's 7 | 4'-5" | edge@wall but keeps
+                # core#47's edge@wall | 4'-6" | CC; lost 2 of his dims, reverted)
+                targets = [targets[0]]
+                self.note("opening: near edge only off the grid (no far-edge row)")
             # a grid in the middle: the targets on each side of it form their own
             # stack - dims on opposite sides are end to end, not stacked (they
             # get joined into edge | grid | edge by the layout)
