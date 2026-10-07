@@ -74,5 +74,5 @@ the "how we work" and "where things stand" summary.
 6. Rules recorded but not built: a beam meeting a wall at a skew gets a check dim off the wall face (L4.5 answer 6).
 7. Archive study questions still open (`archive-soffit-study.md`): an opening's overall size inside it as the normal
    spot; chained (grid | edge | edge | grid) as a setting; one end enough for straight CJs.
-8. Share with coworkers: `MCC-Testing.extension` carries Dim Soffit v2 — re-copy `lib/` and rebuild the zip after
-   today's changes (see CLAUDE.md folder map).
+8. Share with coworkers: `MCC-Testing.extension` updated to the 2026-10-07 code (L7 run 47 / L3N run 110) and
+   `Setup Files/MCC-Testing.extension.zip` rebuilt. Re-copy `lib/` + the button and rebuild after further changes.
