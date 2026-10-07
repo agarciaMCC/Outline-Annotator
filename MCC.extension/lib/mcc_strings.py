@@ -52,6 +52,8 @@ CFG = {
                             # OFF (0): Adolfo added the 1'-4" jog's 3'-11 1/8" off B three rounds running (2026-10-06)
     "CORE_WALL_NEAR": 1.0,  # ft; a core/shaft opening with a core wall face this close is dimensioned off that wall
     "CJ_MID_TOL": 1.5,      # ft; a CJ whose distances to the two grids differ by less is dimensioned from both
+    "CJ_LONG_PAIR_SPACING": False,  # long CJ pairs (both ends dimensioned) get the spacing at each end too (L4S has
+                            # it; on L3N it adds 2 dims he doesn't draw - off, 2026-10-07)
     "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at one shared end + a spacing dim
     "FRAMED_CROSS": 6.0,    # ft; a framed beam end's width crosses the other beam only if open slab is this near
     "CORNER_MIN_EDGE": 5.0, # ft; a non-90 corner is located along its straight edge only when that edge is this long
@@ -1012,6 +1014,8 @@ class Planner(object):
             if self.m.family_parallel(o.d) != fi:
                 continue
             off2 = self.m.offset(((o.p0[0] + o.p1[0]) / 2.0, (o.p0[1] + o.p1[1]) / 2.0), gi)
+            # (a 1/8" tolerance to catch L4S's 4'-0" pairs was tried: L3N has a
+            # 4'-0" pair he doesn't treat as one - 127 -> 126, reverted 2026-10-07)
             if not (self.c["ON_GRID_TOL"] < abs(off2 - off) <= self.c["CJ_PAIR"]):
                 continue
             t0, t1 = sorted([self.m.station(o.p0, gi), self.m.station(o.p1, gi)])
@@ -1033,6 +1037,11 @@ class Planner(object):
             if nearer:
                 spacing = (off2, o.ref)
             self.note("parallel CJs: dims at one shared end, spacing joined")
+        elif pair is not None and abs(off) <= abs(pair[1]) and self.c["CJ_LONG_PAIR_SPACING"]:
+            # a long pair (both ends dimensioned): the spacing at each end too
+            # (L4 South: the pair off A7, 4'-0" apart, spaced on the issued sheet)
+            spacing = (pair[1], pair[0].ref)
+            self.note("parallel CJs (long): spacing at each end")
         def end_of(d):
             e_st = s1 if d > 0 else s0
             span = (e_st - 1.0, e_st + ext) if d > 0 else (e_st - ext, e_st + 1.0)
