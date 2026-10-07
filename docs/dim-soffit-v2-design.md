@@ -537,7 +537,24 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   hard reject** (`evaluate`; beams/columns stay soft). (3) The pilaster hole's `3'-8"`: not needed — a stepped
   opening's overall only when its chain has 3+ segments (`do_opening`, `len(faces) > 3`). (4) The review items were
   left out on purpose.
-- Next: a second L7 round on run 31; the 39 ft edge model look; L4.5 review items; milestone 3
+- **2026-10-07 — L4.5 review pass (runs 2-5; L3N runs 96-98 as regression).** Run 2 on today's code: 73 placed / 13
+  review. Two model fixes, both kept on score (L3N vs `_after_edits5` stays 123 / 34 / 0 / 2):
+  (a) **a slab hole partly filled by another floor**: the filled part is slab, not opening (`Slab.open_fill`,
+  `Obst.fill`, `_seg_in_open_part` in `evaluate`). L4.5's 10" slab has a hole that the other 10" slab 19670910
+  mostly fills (< 80%, so the hole was kept whole) - dims there were "inside an opening". Only floors whose underside
+  is within 1 ft of the slab's underside count: the first try let walls/beams and a 42" FILL count, and moved 4 L3N
+  dims into the FILL at the north hole (123 -> 122) - reverted to floors-only + underside test.
+  (b) **a wall standing on the slab with no wall under it is ignored like a curb** (`PlanModel.upper_walls`; button
+  report line "walls standing on the slab ignored"). L4.5 has 31 (the 4.5-to-5 walls along grid 8, the stair walls,
+  L5 walls); L3N and L7 have none. Core walls that continue a wall below stay.
+  Result run 5: **101 planned / 91 placed / 8 review / 0 overlaps**; vs the hand sheet (`compare_segments.py`)
+  left 26 / moved 60 / tool-only 43 / hand-only 149 (run 2: 25 / 45 / 35 / 163). Side effect: the 6 x 6 ft hole ringed by
+  those upper walls at (265, 151) is now a plain opening and gets `B | 6'-0" | edge` - not on the hand sheet.
+  The 8 left in review: 3 "outside crop" at the right/bottom crop edge, beam#190 (second width at the wall end; the
+  other end is placed), #186 / #207 end dims the hand sheet doesn't have, #200 text clash, #206 in the thin void strip
+  along the right edge. Nothing there points at a rule. What the hand sheet still has that the tool doesn't: ~35 column
+  refs (out of scope), ~40 beam-to-grid repeats along bands (left to the user), 20 slab edge -> grid, 12 wall faces.
+- Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
   questions; a second edit round; then Dim Check on the hand sheets (milestone 1 close-out); then milestone 3 (whole view, L7, L4.5).

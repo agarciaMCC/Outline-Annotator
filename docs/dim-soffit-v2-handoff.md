@@ -5,7 +5,7 @@ long ones). The design doc is the authoritative log of every rule and every deci
 the "how we work" and "where things stand" summary.
 
 ## Where things stand
-- **L3 North** (`ZZ CLAUDE TEST - L3 NORTH (auto-dim)`, 1:128): five edit rounds by Adolfo. Latest run **95**
+- **L3 North** (`ZZ CLAUDE TEST - L3 NORTH (auto-dim)`, 1:128): five edit rounds by Adolfo. Latest run **98** (same score as 95; the view holds 98)
   (`Claude outputs/audit_R26/dimsoffit_v2_L3N_run95.md`): 135 strings / 115 placed / 5 review / 0 overlaps.
   Against his round-5 version (`snapshot_L3N_after_edits5.json`): 123 segments on his line / 34 off / 0 extra /
   2 missing (the 5 review items are intentional — he left them out). The analyst's verdict after round 5: **what
@@ -16,9 +16,11 @@ the "how we work" and "where things stand" summary.
   the next useful thing** (the view holds run 31). Known gap: the 39 ft top edge above AA gets no string at all
   (his `1'-3¼"` ×2) — needs a model look (which skip fires in `do_run`).
 - **L4.5 North** (`ZZ CLAUDE TEST - L4.5 NORTH (auto-dim)`, 1:128, rotated wing, centre of the footprint is OPEN
-  at this level): run **1** only: 87 / 71 placed / 15 review. Adolfo's answers to the L4.5 study (`analyst_L45N_study.md`)
-  changed no rule (columns/walls/repeats there were one-offs; "tool is better"). Worth a pass on its 15 review items
-  and the void edges — no decisions needed.
+  at this level): latest run **5**: 101 / 91 placed / 8 review / 0 overlaps (run 1: 87 / 71 / 15). Adolfo's answers to
+  the L4.5 study (`analyst_L45N_study.md`) changed no rule. The 2026-10-07 review pass fixed two model readings
+  (partly filled slab hole; walls standing on the slab) - see the design doc. The 8 review items left are crop-edge /
+  congestion cases, no rule. Still missing vs the hand sheet: 20 slab edge -> grid dims (worth a look), the rest is
+  columns / repeats / wall faces he ruled out.
 - Hand-sheet baselines: `snapshot_L3N_after_edits5.json` (use this, not the issued sheet), `snapshot_L7_after_edits1.json`,
   `snapshot_L45N_hand.json` (parent view's dims inside the north crop; the issued L4.5 sheet, with Adolfo's
   one-offs), `snapshot_L7_hand.json` (issued L7 sheet — NOT a good yardstick: grid overalls, perimeter chain).
@@ -43,7 +45,7 @@ the "how we work" and "where things stand" summary.
 - Headless: `execute_revit_code` with `RUN=n` (+ `VIEW_NAME`, `TAG` for L7 / L45N) and `execfile(run_v2.py)`. It
   clears the view's dims, runs the button, writes `dimsoffit_v2_<TAG>_runN.md` + a PNG. **It refuses a run number
   whose report already exists** (guard added after a parallel session wiped the view) — always use a new number.
-  Latest numbers: L3N 95, L7 31, L45N 1.
+  Latest numbers: L3N 98, L7 31, L45N 5.
 - Always `assert "R26 TEST" in doc.PathName` first. ~20–45 s per run; the MCP call can time out at 60 s while
   the run completes — read the report file.
 - Image crops: the FitToPage export covers the model crop plus grid bubbles; derive px/ft from two grid bubbles
@@ -63,7 +65,7 @@ the "how we work" and "where things stand" summary.
 ## Open items (in rough priority)
 1. Second L7 edit round; then its analyst pass.
 2. L7: the 39 ft top edge with no string (model look); the 11 join refusals on L7 (why `_join_collinear` refuses).
-3. L4.5: 15 review items, void edges, perimeter runs dropped as flush with beams/walls.
+3. L4.5: the 20 slab edge -> grid dims the hand sheet has and the tool doesn't (void + perimeter edges).
 4. The CJ pair off grid 5 (he puts both at the bottom end; the tool at the top — "more open space" is his reason).
 5. The pocket rows (B2, five rounds); beam widths `anchor | sides` at framed ends (~0.4" from his, every round).
 6. Milestone 3 proper: whole views on L2/L4, a cleanup count per sheet (target ≤ 10; L3N round 5 was 31 edits).
