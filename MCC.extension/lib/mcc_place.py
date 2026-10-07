@@ -519,7 +519,10 @@ def dedupe(intents, tol=1.0 / 24, slack=2.0, notes=None, base=None, merge_tol=0.
             continue
         if len(kept[dup].refs) == len(offs):
             bump("duplicate dim (same witness lines) dropped")
-            if _label_rank(it.label) < _label_rank(kept[dup].label):
+            w_k, w_it = getattr(kept[dup], "weak", False), getattr(it, "weak", False)
+            if w_k and not w_it:
+                kept[dup] = it              # a stand-in (beam width at the crop edge) yields to the real one
+            elif w_k == w_it and _label_rank(it.label) < _label_rank(kept[dup].label):
                 kept[dup] = it              # keep the more meaningful one
         else:
             bump("duplicate dim (witness lines inside a longer string) dropped")

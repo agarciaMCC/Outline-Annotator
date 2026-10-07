@@ -851,6 +851,21 @@ class Planner(object):
             b_parts = [at_end(d) for d in ends_ok]
         else:
             b_parts = [at_end(end_dir)] if ends_ok else []
+        crop_part = False
+        if not b_parts:
+            # no end to carry the width (one runs past the crop, the other
+            # continues in line): read it across the beam just inside the view
+            # (L4 South: the grid 2 / 3 band pieces and the grid 10 / 11 beams -
+            # 1'-6" | 2 | 2'-6", 2'-9" | 10 | 2'-9" on the issued sheet)
+            # (not when it continues in line: the next piece carries the width -
+            # on L3N the crop-edge stand-ins pushed his real-end widths aside)
+            seen = [st for st in [s0 + k * 1.0 for k in range(int(s1 - s0) + 1)] if in_view(st)]
+            if seen and len(seen) >= 3 and not (cont_lo or cont_hi):
+                lo_v, hi_v = min(seen), max(seen)
+                at = (hi_v - 2.0) if not in_view(s1) else (lo_v + 2.0)
+                b_parts = [((lo_v, hi_v), at, None, True)]
+                crop_part = True
+                self.note("beam width just inside the crop (no end in view)")
         if cont_lo or cont_hi:
             self.note("beam continues in line past an end (no width dim at the joint)")
         # a side lying on a wall face below used to get the width only (the
@@ -865,6 +880,7 @@ class Planner(object):
                              f, prefer=pref, outward=out)
                 if s is not None:
                     s.beam_width, s.intermediate = True, inter
+                    s.weak = crop_part and inter         # the crop-edge stand-in loses to a real end's width
                     s.over_band = self._over_band.get(out, False)
                     s.inside_end = self._inside_end.get(out, False)
         else:
@@ -888,6 +904,7 @@ class Planner(object):
                              f, prefer=pref, outward=out)
                 if s is not None:
                     s.beam_width, s.intermediate = True, inter
+                    s.weak = crop_part and inter         # the crop-edge stand-in loses to a real end's width
                     s.over_band = self._over_band.get(out, False)
                     s.inside_end = self._inside_end.get(out, False)
         for end in f.meta["free_ends"]:
