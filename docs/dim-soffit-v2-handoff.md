@@ -72,5 +72,7 @@ the "how we work" and "where things stand" summary.
 4. The pocket rows (B2, five rounds); beam widths `anchor | sides` at framed ends (~0.4" from his, every round).
 5. Milestone 3 proper: whole views on L2/L4, a cleanup count per sheet (target ≤ 10; L3N round 5 was 31 edits).
 6. Rules recorded but not built: a beam meeting a wall at a skew gets a check dim off the wall face (L4.5 answer 6).
-7. Share with coworkers: `MCC-Testing.extension` carries Dim Soffit v2 — re-copy `lib/` and rebuild the zip after
+7. Archive study questions still open (`archive-soffit-study.md`): an opening's overall size inside it as the normal
+   spot; chained (grid | edge | edge | grid) as a setting; one end enough for straight CJs.
+8. Share with coworkers: `MCC-Testing.extension` carries Dim Soffit v2 — re-copy `lib/` and rebuild the zip after
    today's changes (see CLAUDE.md folder map).
