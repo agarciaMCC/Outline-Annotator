@@ -9,7 +9,7 @@ Collected from review of test runs on 1268 Kalae, Level 7/8 soffit, 2026-09-28; 
 2. **Don't assume repeated conditions.** An edge that looks identical to one elsewhere on the slab still gets its own dimension; the field can't infer it from another area. (Applies to aligned repeats too, e.g. the 9'-6 5/8" step gaps 36 ft apart on L3 North — each is dimensioned.)
 3. **Dimension at every turn.** Wherever the slab edge changes direction, the edges meeting there are located from the nearest grid right at that corner — even if the same edge is already dimensioned somewhere else, especially on long edges where that dimension is far from the next turn. (e.g. pilaster bump: at its top and bottom, one string slab face | grid | bump face.)
 4. **Openings, drops, beams inside the footprint** — agreed 2026-10-01 after comparing the L3 North core with the hand sheet: **each edge is located from the nearest anchor on its own side** (anchor = nearest grid, or the facing wall face, e.g. an elevator core's inner wall). One string per direction: **anchor | edge | edge | anchor** — every outer edge sits next to an anchor (no chaining), the edge-to-edge segment is the size check, and dims stay short. Not one grid for every edge (that produced long stacked dims across the core).
-   - One-sided (no anchor within ~20 ft on the far side): anchor | edge | edge, plus a separate anchor → far edge dim for larger openings.
+   - One-sided (no anchor within ~20 ft on the far side): anchor | edge | edge. **No separate anchor → far edge dim** (2026-10-07, L7 round 2: the near-edge dim plus the size, end to end, is enough). Once an opening is located from the nearer grid, **no second leg to the next grid** either.
    - Big or stepped voids (> 20 ft across, or > 2 faces in a direction): each edge located locally from its nearest anchor, like slab edges — never one long chained string.
    - Small penetrations (≤ 2 ft): one compact string per direction. Dimension them (they may be "layout by others"; the user deletes if not wanted).
    - **Elevator openings:** when an opening face is in line with a wall edge, it is dimensioned **off the wall face**, so the rough opening stays the same all the way up the building. Grid dims are still added where possible. An opening edge dimensioned to an in-line wall face counts as located.
@@ -28,7 +28,7 @@ Collected from review of test runs on 1268 Kalae, Level 7/8 soffit, 2026-09-28; 
 ## Placement
 10. Perimeter strings sit **outside** the slab; hierarchy from the slab outward: chain check → grid→edge strings (shortest first) → grid-to-grid → overall.
 11. Strings sit close to the object they dimension (≈1 ft), not scattered.
-12. An opening's string goes on the side **away from its partner string** (the other-direction string that runs to its grid); if that side has no room in the crop, use the other side.
+12. An opening's string goes on **whichever side has room and doesn't interfere with other dimensions** (2026-10-07, L7 round 2 — replaces "away from its partner string"). The locating dim and the size stay together on that side.
 13. Nearer objects take the lane nearest the grid; farther ones are pushed out.
 14. Never sit inside an opening; keep clear of columns, walls, beams and crossing gridlines (no dim line along/over a grid line).
 15. Share a line with a neighbouring string in the same direction where they don't overlap.

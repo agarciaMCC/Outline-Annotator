@@ -554,6 +554,14 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   other end is placed), #186 / #207 end dims the hand sheet doesn't have, #200 text clash, #206 in the thin void strip
   along the right edge. Nothing there points at a rule. What the hand sheet still has that the tool doesn't: ~35 column
   refs (out of scope), ~40 beam-to-grid repeats along bands (left to the user), 20 slab edge -> grid, 12 wall faces.
+- **2026-10-07 — L7 edit round 2 (on run 31) and Adolfo's answers.** 72 unchanged / 59 edited / 6 deleted / 4 added
+  (round 1: 42 untouched, 23 added); 68 of his 83 edited segments are back where he had them in round 1. Analyst:
+  `Claude outputs/audit_R26/analyst_L7_round2.md`. Answers: (1) **an opening's far-edge row (grid -> far edge) is
+  dropped everywhere** — near-edge locating dim + the size end to end is enough ("1a"). (2) **No second-grid leg once
+  the opening is located from the nearer grid** ("2a"; supersedes the L3N round-4 answer to keep `14'-10" | CC`).
+  (3) Side of an opening's dims: **"the side that makes room and doesn't interfere with other dimensions"** — no fixed
+  side rule (rule 12 "away from the partner string" is not a rule; free space and no clashes decide). (4) The 39 ft top
+  edge above AA gets **a dim at each end** — he forgot the second one this round.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
