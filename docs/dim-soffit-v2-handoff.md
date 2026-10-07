@@ -60,6 +60,7 @@ the "how we work" and "where things stand" summary.
   test view while Adolfo was starting an edit round. Check `git status` / recent commits for another session's
   uncommitted work before committing shared modules; coordinate on the test views.
 - `mcc_strings.py` / `mcc_layout.py` are large and shared; keep edits surgical and run after each.
+- New CFG keys: check the name isn't already in the dict (`W_GAP` was silently overwritten once, 2026-10-07).
 - Per-string span is a search window for home-side strings, not the element — use `_extent(feature, gi)` for
   anything geometric (this bit us twice).
 

@@ -72,8 +72,13 @@ CFG = {
     "W_SIDES": 0.0,         # per dim more on this side of the element than on its other side (0 = off):
     "SIDES_R_IN": 1.0,      # paper inches - depth of the strip beside the element that is counted
     "SIDES_KINDS": ("opening",),   # elements whose dims compare their two sides
+    "W_NEIGH": 2.0,         # an opening's dim on the side where ANOTHER opening sits within NEIGH_R_IN (and the
+    "NEIGH_R_IN": 0.75,     # other side is clear): per such neighbour - keeps two near openings' dims out of the
+                            # gap between them (Adolfo 2026-10-07, L7 "busy" pair by grid 7 / FF); 0 = off
     "ORDER_GAP_LANES": 1.5,        # _order_stacks: rows up to this many lanes apart form one stack
     "ORDER_GAP_OPEN_LANES": 2.0,   # ... between two openings' rows (2 and 2.5 both: L7 140 -> 145, L3N same; 2026-10-07)
+    "GROUP_ORDER": "first",        # which stack group is placed first: "first" (plan order), "short" (shortest
+                                   # row first), "long", "size" (smallest element first)
     "ORDER_SHORT_FIRST": False,    # place shorter strings first within each priority group, so a short row
                                    # takes the lane beside its element before a longer one passing by
     "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
@@ -187,6 +192,7 @@ class Layout(object):
         self.c.setdefault("STATION_GAP", self.c["STATION_GAP_IN"] * k)
         self.c.setdefault("CROWD_R", self.c["CROWD_R_IN"] * k)
         self.c.setdefault("SIDES_R", self.c["SIDES_R_IN"] * k)
+        self.c.setdefault("NEIGH_R", self.c["NEIGH_R_IN"] * k)
         self.c.setdefault("EDGE_CLEAR", self.c["EDGE_CLEAR_IN"] * k)
         self.c.setdefault("MIN_GAP", self.c["MIN_GAP_IN"] * k)
         self.par_edges = self._parallel_edges(model)
@@ -553,6 +559,10 @@ class Layout(object):
                 # my_side says where the ELEMENT is from the line; the dim
                 # stands on the element's -my_side
                 pen += c["W_SIDES"] * max(0, n_side[-my_side] - n_side[my_side])
+        if c["W_NEIGH"] and my_side and s.feature is not None and s.feature.kind == "opening":
+            n_nb = self.neighbour_counts(s)
+            if n_nb:
+                pen += c["W_NEIGH"] * max(0, n_nb[-my_side] - n_nb[my_side])
         if c["W_CROWD"]:
             # congestion: other elements' dims (line, text, leaders) near this
             # spot - its own rows / chain sit together by design
@@ -704,6 +714,44 @@ class Layout(object):
                         hit.add(-1)
                 for sd in hit:
                     out[sd] += 1
+        self._ext_cache[key] = out
+        return out
+
+    def neighbour_counts(self, s):
+        """{+1: n, -1: n}: OTHER openings within NEIGH_R of string s's element on
+        each side (family stations), overlapping the offsets its witness
+        lines cover. Static per string (cached)."""
+        key = ("neigh", id(s))
+        if key in self._ext_cache:
+            return self._ext_cache[key]
+        out = None
+        ext = self._extent(s.feature, s.gi)
+        if ext:
+            A, B = sorted(self.to_fam(s.gi, x, 0.0)[0] for x in ext)
+            # across the whole element, not the string's witness lines: its
+            # locating row runs away from the neighbour (to its grid) and was
+            # placed first, so it never saw it (L7 plain#50 / #68)
+            g_ = self.m.families[self.m.fam_of[s.gi]][0]
+            offs = [self.m.offset(p_, g_) for e in s.feature.edges for p_ in (e.p0, e.p1)]
+            o_lo, o_hi = min(offs) - 0.5, max(offs) + 0.5
+            R = self.c["NEIGH_R"]
+            gr = self.m.families[self.m.fam_of[s.gi]][0]
+            out = {1: 0, -1: 0}
+            for o in self.m.obstacles:
+                if o.kind != "opening":
+                    continue
+                pts = o.raw or o.poly
+                sts = [self.m.station(pt, gr) for pt in pts]
+                ofs = [self.m.offset(pt, gr) for pt in pts]
+                s0, s1, f0, f1 = min(sts), max(sts), min(ofs), max(ofs)
+                if f1 < o_lo or f0 > o_hi:
+                    continue
+                if s1 > A + 0.1 and s0 < B - 0.1:
+                    continue                    # itself (or overlapping it)
+                if B < s0 <= B + R:
+                    out[1] += 1
+                elif A - R <= s1 < A:
+                    out[-1] += 1
         self._ext_cache[key] = out
         return out
 
@@ -1007,7 +1055,37 @@ class Layout(object):
                     1 if getattr(s, "late", False) else 0,          # corner call-outs after the element's rows
                     PRIORITY.get(s.feature.kind, 9) if s.feature else 9, void,
                     _len(s) if self.c["ORDER_SHORT_FIRST"] else 0,
-                    stk[0] if stk else 0, stk[1] if stk else 0)
+                    grp_no.get(stk[0], 0) if stk else 0, stk[1] if stk else 0)
+
+        # stack group keys hold id()s (memory addresses): sorting on them
+        # made the placement order - and the result - shift whenever the code
+        # around them changed (L3N 127 -> 118 from an unused setting,
+        # 2026-10-07). Order groups by where they first appear in the plan
+        grp_no = {}
+        how = self.c["GROUP_ORDER"]
+        for s_ in self.strings:
+            stk_ = getattr(s_, "stack", None)
+            if not stk_:
+                continue
+            offs_ = [r[0] for r in s_.refs]
+            ln_ = max(offs_) - min(offs_)
+            if how == "first":
+                v = len(grp_no)
+            elif how == "short":                  # the group's shortest row
+                v = min(grp_no.get(stk_[0], 1e9), ln_)
+            elif how == "long":
+                v = -max(-grp_no.get(stk_[0], 1e9), ln_)
+            elif how == "size":                   # small elements first (their lanes are tight)
+                ext_ = self._extent(s_.feature, s_.gi) if s_.feature is not None else None
+                v = (ext_[1] - ext_[0]) if ext_ else 0.0
+            else:
+                v = 0
+            if how in ("short",):
+                grp_no[stk_[0]] = v
+            elif how == "long":
+                grp_no[stk_[0]] = min(grp_no.get(stk_[0], 0), -ln_)
+            elif stk_[0] not in grp_no:
+                grp_no[stk_[0]] = v
 
         def _len(s):
             offs = [r[0] for r in s.refs]

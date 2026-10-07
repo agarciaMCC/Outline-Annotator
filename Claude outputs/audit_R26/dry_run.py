@@ -31,6 +31,12 @@ for name, cfg in VARIANTS:
     t0 = time.time()
     fs, pl = S.plan_view(model, crop)          # fresh strings: the layout edits them (joins)
     lay = LY.Layout(model, pl.strings, tv, dt, acrop, cfg=cfg)
+    if globals().get("NO_CACHE"):
+        _ev = lay.evaluate
+        def _ev2(s_, st_, _ev=_ev, lay=lay):
+            lay._ext_cache = {}
+            return _ev(s_, st_)
+        lay.evaluate = _ev2
     placed, review = lay.run()
     dims = []
     for i, p in enumerate(lay.placed):

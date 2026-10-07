@@ -1,0 +1,497 @@
+PLAN 0 run -> 7 | [3.375]
+PLAN 1 run -> 2 | [2.4790000000000001]
+PLAN 2 run -> A | [0.115]
+PLAN 3 run -> A | [0.53100000000000003]
+PLAN 4 run -> A | [0.115]
+PLAN 5 run -> A | [0.115]
+PLAN 6 run -> 11 | [0.127]
+PLAN 7 beam end -> 9 | [28.677000000000000]
+PLAN 8 beam end -> C + beam end -> C | [3.496, 8.5359999999999996]
+PLAN 9 run -> BB | [16.332999999999998]
+PLAN 10 beam end -> BB | [6.3330000000000002]
+PLAN 11 run -> EE | [0.125]
+PLAN 12 run -> 6 | [0.91700000000000004]
+PLAN 13 run -> EE | [8.3130000000000006]
+PLAN 14 run -> EE | [10.125]
+PLAN 15 step -> CC + run -> CC | [4.5, 7.5830000000000002]
+PLAN 16 step -> CC | [4.5]
+PLAN 17 beam end -> BB | [6.0]
+PLAN 18 beam side|2|side | [2.4790000000000001, 1.5]
+PLAN 19 jog check | [3.9790000000000001]
+PLAN 20 step -> BB | [7.2560000000000002]
+PLAN 21 jog check | [0.66700000000000004]
+PLAN 22 void edge -> G | [13.302000000000000]
+PLAN 23 void edge -> 10 | [3.75]
+PLAN 24 void edge -> 10 | [3.75]
+PLAN 25 void edge -> 11 | [4.1260000000000003]
+PLAN 26 void edge -> B | [3.75]
+PLAN 27 beam end -> BB | [4.4169999999999998]
+PLAN 28 shaft opening anchor|edges|anchor (chain check) | [15.583000000000000]
+PLAN 29 shaft opening edges|8|edges (chain check) | [17.75]
+PLAN 30 void edge -> 11 | [2.2930000000000001]
+PLAN 31 core opening anchor|edges|anchor | [18.167000000000002, 14.833000000000000]
+PLAN 32 core opening anchor|edges|anchor | [8.25, 11.75]
+PLAN 33 shaft opening edges|BB|edges (chain check) | [17.667000000000002]
+PLAN 34 shaft opening anchor|edges|anchor | [8.25, 11.75]
+PLAN 35 shaft opening anchor|edges | [1.3819999999999999]
+PLAN 36 shaft opening anchor|edges | [10.207000000000001]
+PLAN 37 shaft opening anchor|edges | [4.8540000000000001, 3.8119999999999998]
+PLAN 38 shaft opening edges|B|edges (chain check) | [2.4169999999999998, 12.413000000000000]
+PLAN 39 core opening anchor|edges|anchor (chain check) | [13.625]
+PLAN 40 core opening anchor|edges|anchor | [8.25, 11.75]
+PLAN 41 shaft opening anchor|edges (chain check) | [3.3330000000000002]
+PLAN 42 shaft opening anchor|edges|anchor (chain check) | [3.3330000000000002]
+PLAN 43 shaft opening anchor|edges|anchor (chain check) | [3.0, 0.66700000000000004]
+PLAN 44 shaft opening anchor|edges|anchor (chain check) | [1.1670000000000000, 0.66700000000000004, 1.1670000000000000]
+PLAN 45 stepped opening overall | [3.0]
+PLAN 46 core opening anchor|edges|anchor (chain check) | [3.25]
+PLAN 47 core opening anchor|edges|anchor (chain check) | [1.4170000000000000]
+PLAN 48 shaft opening anchor|edges|anchor (chain check) | [1.4170000000000000]
+PLAN 49 shaft opening anchor|edges|anchor (chain check) | [1.4170000000000000]
+PLAN 50 beam anchor|sides | [1.2809999999999999, 1.6670000000000000]
+PLAN 51 beam anchor|sides | [1.2809999999999999, 1.6670000000000000]
+PLAN 52 beam anchor|sides | [1.0, 1.2929999999999999]
+PLAN 53 beam side|B|side | [3.75, 3.75]
+PLAN 54 beam end -> 9 | [13.010999999999999]
+PLAN 55 beam anchor|sides | [4.0, 0.126]
+PLAN 56 beam side|9|side | [3.75, 3.75]
+PLAN 57 beam anchor|sides | [1.375, 1.0]
+PLAN 58 beam anchor|sides | [1.0, 13.458000000000000]
+PLAN 59 beam side|B|side | [0.5, 0.5]
+PLAN 60 beam side|B|side | [0.5, 0.5]
+PLAN 61 beam side|5|side | [4.75, 2.75]
+PLAN 62 beam side|5|side | [4.75, 2.75]
+PLAN 63 beam end -> BB | [15.25]
+PLAN 64 beam side|3|side | [3.3330000000000002, 2.6669999999999998]
+PLAN 65 beam anchor|sides | [4.9409999999999998, 5.4989999999999997]
+PLAN 66 beam side|F|side | [2.75, 2.75]
+PLAN 67 beam side|F|side | [2.75, 2.75]
+PLAN 68 beam end -> A6 | [0.90700000000000003]
+PLAN 69 beam end -> C | [8.5359999999999996]
+PLAN 70 beam side|7|side | [1.5940000000000001, 3.9060000000000001]
+PLAN 71 beam side|7|side | [1.5940000000000001, 3.9060000000000001]
+PLAN 72 beam side|10|side | [3.75, 3.75]
+PLAN 73 beam side|9|side | [3.75, 3.75]
+PLAN 74 beam side|B|side | [3.75, 3.75]
+PLAN 75 CJ -> 4 | [4.5419999999999998]
+PLAN 76 CJ -> CC | [14.228999999999999]
+PLAN 77 CJ -> 5 | [6.5209999999999999]
+PLAN 78 CJ -> 4 | [7.5620000000000003]
+PLAN 79 CJ -> CC | [16.103999999999999]
+PLAN 80 CJ -> 9 | [19.427000000000000]
+PLAN 81 CJ -> 8 | [5.0]
+PLAN 82 CJ -> 8 | [5.0]
+PLAN 83 CJ -> EE | [7.0209999999999999]
+PLAN 84 CJ -> EE | [7.0209999999999999]
+PLAN 85 CJ -> EE | [13.042000000000000]
+PLAN 86 CJ -> 5 | [4.4580000000000002]
+PLAN 87 CJ | CJ spacing | [3.0]
+PLAN 88 CJ -> FF | [13.244999999999999]
+PLAN 89 CJ -> FF | [13.244999999999999]
+PLAN 90 CJ -> 3 | [7.9169999999999998]
+PLAN 91 CJ -> F | [0.75]
+PLAN 92 CJ -> 9 | [10.353999999999999]
+PLAN 93 CJ -> 9 | [10.353999999999999]
+PLAN 94 CJ -> D | [6.8380000000000001]
+PLAN 95 CJ -> D | [6.8380000000000001]
+PLAN 96 CJ -> 9 | [18.562000000000001]
+PLAN 97 CJ -> 5 | [7.4580000000000002]
+PLAN 98 CJ -> F | [4.75]
+PLAN 99 CJ -> 8 | [3.0]
+PLAN 100 CJ -> A7 | [4.3330000000000002]
+PLAN 101 CJ -> A7 | [8.3330000000000002]
+PLAN 102 CJ -> 8 | [7.0]
+PLAN 103 CJ -> 5 | [1.8330000000000000]
+PLAN 104 CJ -> FF | [18.030999999999999]
+PLAN 105 CJ -> EE | [18.135000000000002]
+PLAN 106 CJ -> 4 | [4.5]
+PLAN 107 CJ -> EE | [4.5]
+PLAN 108 CJ -> EE | [4.5]
+PLAN 109 CJ -> FF | [18.030999999999999]
+PLAN 110 CJ -> EE | [18.135000000000002]
+PLAN 111 shaft size (edge | wall) | [12.083000000000000]
+PLAN 112 shaft size (edge | wall) | [7.7919999999999998]
+PLAN 113 corner -> BB | [12.114000000000001]
+PLAN 114 corner -> A14 | [0.121]
+PLAN 115 corner -> B | [3.3980000000000001]
+PLAN 116 corner -> B | [3.9270000000000000]
+PLAN 117 stack 1 -> EE | [7.625]
+PLAN 118 stack 1 -> 8 | [1.125]
+PLAN 119 stack 1 -> 8 | [16.625]
+PLAN 120 stack 1 -> BB | [8.3439999999999994]
+PLAN 121 stack 1 -> BB | [9.3230000000000004]
+PLAN 122 stack 1 -> B | [5.2679999999999998]
+PLAN 123 stack 1 -> B | [7.1459999999999999]
+PLAN 124 stack 2 -> B | [9.5630000000000006]
+PLAN 125 stack 1 -> CC | [0.70799999999999996]
+PLAN 126 stack 1 -> FF | [7.75]
+PLAN 127 stack 1 -> 6 | [0.66700000000000004]
+PLAN 128 stack 1 -> CC | [8.0419999999999998]
+PLAN 129 stack 1 -> 7 | [13.228999999999999]
+PLAN 130 stack 1 -> wall | [0.58299999999999996]
+PLAN 131 stack 1 -> wall | [0.41699999999999998]
+PLAN 132 stack 1 -> AA | [10.146000000000001]
+PLAN 133 stack 1 -> 6 | [2.4580000000000002]
+PLACE shaft opening anchor|edges|anchor (chain check) | [1.1670000000000000, 0.66700000000000004, 1.1670000000000000] -> 135.128
+PLACE run -> 7 | [3.375] -> 119.17
+PLACE run -> 2 | [2.4790000000000001] -> 80.14
+PLACE run -> A | [0.115] -> 236.991
+PLACE run -> A | [0.53100000000000003] -> 212.514
+PLACE run -> A | [0.115] -> 9.588
+PLACE run -> A | [0.115] -> 194.296
+PLACE run -> 11 | [0.127] -> 10.646
+PLACE run -> BB | [16.332999999999998] -> 78.568
+PLACE run -> EE | [0.125] -> 76.568
+PLACE run -> 6 | [0.91700000000000004] -> 168.878
+PLACE run -> EE | [8.3130000000000006] -> 80.234
+PLACE run -> EE | [10.125] -> 82.568
+PLACE step -> CC + run -> CC | [4.5, 7.5830000000000002] -> 117.026
+PLACE step -> CC | [4.5] -> 115.026
+PLACE step -> BB | [7.2560000000000002] -> 71.901
+PLACE core opening anchor|edges|anchor | [18.167000000000002, 14.833000000000000] -> 97.401
+  CAND st 154.670 base 3.500 pen None (0, 0, 0) inside an opening
+  CAND st 165.420 base 3.833 pen None (1, 0, -1) on a grid line
+  CAND st 143.920 base 3.833 pen 4.0 (-1, 0, 1) 
+  CAND st 153.670 base 4.000 pen None (0, 0, -1) inside an opening
+  CAND st 155.670 base 4.000 pen None (0, 0, 1) inside an opening
+  CAND st 152.670 base 4.500 pen None (0, 0, -2) inside an opening
+  CAND st 156.670 base 4.500 pen None (0, 0, 2) inside an opening
+  CAND st 151.670 base 5.000 pen None (0, 0, -3) inside an opening
+  CAND st 157.670 base 5.000 pen None (0, 0, 3) inside an opening
+  CAND st 166.420 base 5.333 pen None (1, 0, 0) on a grid line
+  CAND st 142.920 base 5.333 pen 4.0 (-1, 0, 0) 
+  CAND st 146.670 base 5.500 pen None (0, 0, -8) inside an opening
+PLACE core opening anchor|edges|anchor | [8.25, 11.75] -> 143.92
+PLACE shaft opening anchor|edges|anchor | [8.25, 11.75] -> 104.764
+PLACE shaft opening anchor|edges | [1.3819999999999999] -> 105.994
+PLACE shaft opening anchor|edges | [10.207000000000001] -> 58.428
+PLACE shaft opening anchor|edges | [4.8540000000000001, 3.8119999999999998] -> 39.625
+  CAND st 123.232 base 3.500 pen None (0, 0, 0) text over another line
+  CAND st 131.712 base 3.833 pen None (1, 0, -1) on a grid line
+  CAND st 114.753 base 3.833 pen None (-1, 0, 1) inside an opening
+  CAND st 122.232 base 4.000 pen None (0, 0, -1) inside an opening
+  CAND st 124.232 base 4.000 pen None (0, 0, 1) text over another line
+  CAND st 121.232 base 4.500 pen None (0, 0, -2) inside an opening
+  CAND st 125.232 base 4.500 pen None (0, 0, 2) text over another line
+  CAND st 120.232 base 5.000 pen None (0, 0, -3) too close to a parallel string
+  CAND st 126.232 base 5.000 pen None (0, 0, 3) line through another text
+  CAND st 132.712 base 5.333 pen None (1, 0, 0) line through another text
+  CAND st 113.753 base 5.333 pen None (-1, 0, 0) inside an opening
+  CAND st 117.232 base 5.500 pen None (0, 0, -6) inside an opening
+PLACE core opening anchor|edges|anchor | [8.25, 11.75] -> 108.753
+PLACE stack 1 -> EE | [7.625] -> 177.693
+PLACE stack 1 -> 8 | [1.125] -> 160.795
+PLACE stack 1 -> 8 | [16.625] -> 160.795
+PLACE stack 1 -> BB | [8.3439999999999994] -> 111.984
+PLACE stack 1 -> BB | [9.3230000000000004] -> 111.984
+PLACE stack 1 -> B | [5.2679999999999998] -> 129.442
+PLACE stack 1 -> B | [7.1459999999999999] -> 129.442
+PLACE stack 2 -> B | [9.5630000000000006] -> 127.442
+PLACE stack 1 -> CC | [0.70799999999999996] -> 111.984
+PLACE stack 1 -> FF | [7.75] -> 93.484
+PLACE stack 1 -> 6 | [0.66700000000000004] -> 209.003
+PLACE stack 1 -> CC | [8.0419999999999998] -> 142.964
+PLACE stack 1 -> 7 | [13.228999999999999] -> 145.128
+PLACE stack 1 -> wall | [0.58299999999999996] -> 105.994
+PLACE stack 1 -> wall | [0.41699999999999998] -> 110.837
+PLACE stack 1 -> AA | [10.146000000000001] -> 96.943
+PLACE stack 1 -> 6 | [2.4580000000000002] -> 75.482
+PLACE void edge -> G | [13.302000000000000] -> 34.617
+PLACE void edge -> 10 | [3.75] -> 133.813
+PLACE void edge -> 10 | [3.75] -> 30.115
+PLACE void edge -> 11 | [4.1260000000000003] -> 98.534
+PLACE void edge -> B | [3.75] -> 10.422
+PLACE void edge -> 11 | [2.2930000000000001] -> 8.313
+PLACE beam end -> 9 | [28.677000000000000] -> 22.615
+PLACE beam end -> C + beam end -> C | [3.496, 8.5359999999999996] -> 64.046
+PLACE beam end -> BB | [6.3330000000000002] -> 80.818
+PLACE beam end -> BB | [6.0] -> 12.172
+PLACE beam side|2|side | [2.4790000000000001, 1.5] -> 86.087
+PLACE beam end -> BB | [4.4169999999999998] -> 34.818
+PLACE beam anchor|sides | [1.2809999999999999, 1.6670000000000000] -> 115.64
+PLACE beam anchor|sides | [1.2809999999999999, 1.6670000000000000] -> 7.337
+PLACE beam anchor|sides | [1.0, 1.2929999999999999] -> 5.786
+PLACE beam side|B|side | [3.75, 3.75] -> 7.337
+PLACE beam end -> 9 | [13.010999999999999] -> 33.448
+PLACE beam anchor|sides | [4.0, 0.126] -> 26.365
+PLACE beam side|9|side | [3.75, 3.75] -> 171.65
+PLACE beam anchor|sides | [1.375, 1.0] -> 53.369
+PLACE beam anchor|sides | [1.0, 13.458000000000000] -> 10.646
+PLACE beam side|B|side | [0.5, 0.5] -> 5.338
+PLACE beam side|B|side | [0.5, 0.5] -> 46.671
+PLACE beam side|5|side | [4.75, 2.75] -> 72.857
+PLACE beam side|5|side | [4.75, 2.75] -> 108.753
+PLACE beam end -> BB | [15.25] -> 66.984
+PLACE beam side|3|side | [3.3330000000000002, 2.6669999999999998] -> 87.67
+PLACE beam anchor|sides | [4.9409999999999998, 5.4989999999999997] -> 175.078
+PLACE beam side|F|side | [2.75, 2.75] -> 71.677
+PLACE beam side|F|side | [2.75, 2.75] -> 187.604
+PLACE beam end -> A6 | [0.90700000000000003] -> 83.545
+PLACE beam end -> C | [8.5359999999999996] -> None
+PLACE beam side|7|side | [1.5940000000000001, 3.9060000000000001] -> None
+PLACE beam side|7|side | [1.5940000000000001, 3.9060000000000001] -> 212.337
+PLACE beam side|10|side | [3.75, 3.75] -> 26.365
+PLACE beam side|9|side | [3.75, 3.75] -> 50.869
+PLACE beam side|B|side | [3.75, 3.75] -> 89.973
+PLACE CJ -> 4 | [4.5419999999999998] -> 87.67
+PLACE CJ -> CC | [14.228999999999999] -> 52.151
+PLACE CJ -> 5 | [6.5209999999999999] -> 111.982
+PLACE CJ -> 4 | [7.5620000000000003] -> 111.982
+PLACE CJ -> CC | [16.103999999999999] -> 64.214
+PLACE CJ -> 9 | [19.427000000000000] -> 18.619
+PLACE CJ -> 8 | [5.0] -> 37.066
+PLACE CJ -> 8 | [5.0] -> 176.441
+PLACE CJ -> EE | [7.0209999999999999] -> 117.026
+PLACE CJ -> EE | [7.0209999999999999] -> 169.068
+PLACE CJ -> EE | [13.042000000000000] -> 95.401
+PLACE CJ -> 5 | [4.4580000000000002] -> 183.222
+PLACE CJ -> FF | [13.244999999999999] -> 35.734
+PLACE CJ -> FF | [13.244999999999999] -> 83.526
+PLACE CJ -> 3 | [7.9169999999999998] -> None
+PLACE CJ -> F | [0.75] -> 135.186
+PLACE CJ -> 9 | [10.353999999999999] -> 98.534
+PLACE CJ -> 9 | [10.353999999999999] -> 173.54
+PLACE CJ -> D | [6.8380000000000001] -> 9.588
+PLACE CJ -> D | [6.8380000000000001] -> 71.641
+PLACE CJ -> 9 | [18.562000000000001] -> 10.646
+PLACE CJ -> 5 | [7.4580000000000002] -> None
+PLACE CJ -> F | [4.75] -> 139.495
+PLACE CJ -> 8 | [3.0] -> 171.107
+PLACE CJ -> A7 | [4.3330000000000002] -> None
+PLACE CJ -> A7 | [8.3330000000000002] -> None
+PLACE CJ -> 8 | [7.0] -> 168.878
+PLACE CJ -> 5 | [1.8330000000000000] -> 187.555
+PLACE CJ -> FF | [18.030999999999999] -> 52.151
+PLACE CJ -> EE | [18.135000000000002] -> 52.151
+PLACE CJ -> 4 | [4.5] -> 168.878
+PLACE CJ -> EE | [4.5] -> 11.172
+PLACE CJ -> EE | [4.5] -> 61.484
+PLACE CJ -> FF | [18.030999999999999] -> 69.568
+PLACE CJ -> EE | [18.135000000000002] -> 69.568
+PLACE corner -> BB | [12.114000000000001] -> 8.172
+PLACE corner -> B | [3.3980000000000001] -> 127.442
+PLACE corner -> B | [3.9270000000000000] -> 125.442
+PLACE corner -> A14 | [0.121] -> 34.992
+PLACE shaft size (edge | wall) | [12.083000000000000] -> 132.151
+PLACE shaft size (edge | wall) | [7.7919999999999998] -> 114.503
+PLACE jog check | [0.66700000000000004] -> 104.764
+PLACE jog check | [3.9790000000000001] -> 97.42
+PLACE shaft opening anchor|edges|anchor (chain check) | [15.583000000000000] -> 177.693
+PLACE shaft opening edges|8|edges (chain check) | [17.75] -> 162.795
+PLACE shaft opening edges|BB|edges (chain check) | [17.667000000000002] -> 113.984
+PLACE shaft opening edges|B|edges (chain check) | [2.4169999999999998, 12.413000000000000] -> 148.442
+PLACE core opening anchor|edges|anchor (chain check) | [13.625] -> 111.984
+PLACE shaft opening anchor|edges (chain check) | [3.3330000000000002] -> 93.484
+PLACE shaft opening anchor|edges|anchor (chain check) | [3.3330000000000002] -> 209.003
+PLACE shaft opening anchor|edges|anchor (chain check) | [3.0, 0.66700000000000004] -> 142.964
+PLACE stepped opening overall | [3.0] -> 145.128
+PLACE core opening anchor|edges|anchor (chain check) | [3.25] -> 105.994
+PLACE core opening anchor|edges|anchor (chain check) | [1.4170000000000000] -> 106.837
+PLACE shaft opening anchor|edges|anchor (chain check) | [1.4170000000000000] -> 104.693
+PLACE shaft opening anchor|edges|anchor (chain check) | [1.4170000000000000] -> 75.482
+PLACE CJ | CJ spacing | [3.0] -> 183.222
+PLACE beam end -> C | [8.5359999999999996] -> None
+PLACE beam side|7|side | [1.5940000000000001, 3.9060000000000001] -> None
+PLACE CJ -> 3 | [7.9169999999999998] -> None
+PLACE CJ -> 5 | [7.4580000000000002] -> None
+PLACE CJ -> A7 | [4.3330000000000002] -> None
+PLACE CJ -> A7 | [8.3330000000000002] -> None
+PLACE beam end -> C | [8.5359999999999996] -> 10.338
+PLACE beam side|7|side | [1.5940000000000001, 3.9060000000000001] -> None
+PLACE CJ -> 3 | [7.9169999999999998] -> None
+PLACE CJ -> 5 | [7.4580000000000002] -> None
+PLACE CJ -> A7 | [4.3330000000000002] -> None
+PLACE CJ -> A7 | [8.3330000000000002] -> None
+PLACE beam end -> C | [8.5359999999999996] -> None
+PLACE beam side|5|side | [4.75, 2.75] -> 72.857
+PLACE corner -> A14 | [0.121] -> 34.992
+PLACE corner -> B | [3.9270000000000000] -> 125.442
+PLACE core opening anchor|edges|anchor (chain check) | [1.4170000000000000] -> 106.837
+PLACE beam anchor|sides | [1.0, 1.2929999999999999] -> 5.786
+PLACE shaft size (edge | wall) | [7.7919999999999998] -> 114.503
+PLACE shaft opening edges|B|edges (chain check) | [2.4169999999999998, 12.413000000000000] -> 148.442
+PLACE jog check | [3.9790000000000001] -> 97.42
+PLACE beam side|F|side | [2.75, 2.75] -> 187.604
+  CAND st 123.232 base 3.500 pen None (0, 0, 0) text over another line
+  CAND st 131.712 base 3.833 pen None (1, 0, -1) on a grid line
+  CAND st 114.753 base 3.833 pen None (-1, 0, 1) line through another text
+  CAND st 122.232 base 4.000 pen None (0, 0, -1) line through another text
+  CAND st 124.232 base 4.000 pen None (0, 0, 1) text over another line
+  CAND st 121.232 base 4.500 pen None (0, 0, -2) line through another text
+  CAND st 125.232 base 4.500 pen None (0, 0, 2) text over another line
+  CAND st 120.232 base 5.000 pen None (0, 0, -3) too close to a parallel string
+  CAND st 126.232 base 5.000 pen None (0, 0, 3) line through another text
+  CAND st 132.712 base 5.333 pen None (1, 0, 0) line through another text
+  CAND st 113.753 base 5.333 pen None (-1, 0, 0) line through another text
+  CAND st 117.232 base 5.500 pen None (0, 0, -6) inside an opening
+PLACE core opening anchor|edges|anchor | [8.25, 11.75] -> 108.753
+PLACE void edge -> 11 | [2.2930000000000001] -> 8.313
+PLACE shaft opening anchor|edges | [4.8540000000000001, 3.8119999999999998] -> 39.625
+PLACE stack 1 -> wall | [0.41699999999999998] -> 106.837
+PLACE beam side|B|side | [0.5, 0.5] -> 5.338
+PLACE void edge -> G | [13.302000000000000] -> 34.617
+PLACE beam anchor|sides | [4.9409999999999998, 5.4989999999999997] -> 175.078
+PLACE beam side|7|side | [1.5940000000000001, 3.9060000000000001] -> 212.337
+PLACE beam end -> BB | [6.3330000000000002] -> 80.818
+PLACE stack 1 -> 7 | [13.228999999999999] -> 145.128
+PLACE CJ -> 9 | [10.353999999999999] -> 173.54
+PLACE void edge -> B | [3.75] -> 10.422
+PLACE shaft size (edge | wall) | [12.083000000000000] -> 132.151
+PLACE run -> 7 | [3.375] -> 119.17
+PLACE void edge -> 10 | [3.75] -> 133.813
+PLACE beam end -> C | [8.5359999999999996] -> None
+PLACE corner -> B | [3.9270000000000000] -> 125.442
+PLACE corner -> A14 | [0.121] -> 34.992
+PLACE beam side|5|side | [4.75, 2.75] -> 72.857
+PLACE core opening anchor|edges|anchor (chain check) | [1.4170000000000000] -> 106.837
+  CAND st 123.232 base 3.500 pen None (0, 0, 0) text over another line
+  CAND st 131.712 base 3.833 pen None (1, 0, -1) on a grid line
+  CAND st 114.753 base 3.833 pen None (-1, 0, 1) line through another text
+  CAND st 122.232 base 4.000 pen None (0, 0, -1) line through another text
+  CAND st 124.232 base 4.000 pen None (0, 0, 1) text over another line
+  CAND st 121.232 base 4.500 pen None (0, 0, -2) line through another text
+  CAND st 125.232 base 4.500 pen None (0, 0, 2) text over another line
+  CAND st 120.232 base 5.000 pen None (0, 0, -3) line through another text
+  CAND st 126.232 base 5.000 pen None (0, 0, 3) line through another text
+  CAND st 132.712 base 5.333 pen None (1, 0, 0) line through another text
+  CAND st 113.753 base 5.333 pen None (-1, 0, 0) line through another text
+  CAND st 117.232 base 5.500 pen None (0, 0, -6) inside an opening
+PLACE core opening anchor|edges|anchor | [8.25, 11.75] -> 139.712
+PLACE beam side|B|side | [0.5, 0.5] -> 5.338
+PLACE beam end -> BB | [6.3330000000000002] -> 80.818
+PLACE beam anchor|sides | [1.0, 1.2929999999999999] -> 5.786
+PLACE void edge -> 11 | [2.2930000000000001] -> 8.313
+PLACE shaft size (edge | wall) | [7.7919999999999998] -> 114.503
+PLACE shaft opening edges|B|edges (chain check) | [2.4169999999999998, 12.413000000000000] -> 148.442
+PLACE jog check | [3.9790000000000001] -> 97.42
+PLACE beam side|F|side | [2.75, 2.75] -> 187.604
+PLACE shaft opening anchor|edges | [4.8540000000000001, 3.8119999999999998] -> 39.625
+PLACE void edge -> G | [13.302000000000000] -> 34.617
+PLACE beam anchor|sides | [4.9409999999999998, 5.4989999999999997] -> 175.078
+PLACE beam side|7|side | [1.5940000000000001, 3.9060000000000001] -> 212.337
+PLACE CJ -> 9 | [10.353999999999999] -> 173.54
+PLACE void edge -> B | [3.75] -> 10.422
+PLACE shaft size (edge | wall) | [12.083000000000000] -> 132.151
+PLACE void edge -> 11 | [4.1260000000000003] -> 98.534
+PLACE run -> 7 | [3.375] -> 119.17
+PLACE void edge -> 10 | [3.75] -> 133.813
+PLACE beam end -> BB | [15.25] -> 66.984
+PLACE beam side|7|side | [1.5940000000000001, 3.9060000000000001] -> None
+PLACE CJ -> 3 | [7.9169999999999998] -> None
+PLACE CJ -> 5 | [7.4580000000000002] -> None
+PLACE CJ -> 5 | [7.4580000000000002] -> None
+PLACE CJ -> 5 | [7.4580000000000002] -> None
+PLACE CJ -> 5 | [7.4580000000000002] -> None
+PLACE shaft opening anchor|edges|anchor (chain check) | [1.4170000000000000] -> 76.482
+PLACE corner -> B | [3.3980000000000001] -> 150.442
+FINAL run -> 2 | [2.4790000000000001] @ 80.140
+FINAL run -> A | [0.115] @ 236.991
+FINAL run -> A | [0.53100000000000003] @ 212.514
+FINAL run -> A | [0.115] @ 9.588
+FINAL run -> A | [0.115] @ 194.296
+FINAL run -> BB | [16.332999999999998] @ 78.568
+FINAL run -> 6 | [0.91700000000000004] @ 168.878
+FINAL run -> EE | [10.125] @ 82.568
+FINAL step -> CC + run -> CC | [4.5, 7.5830000000000002] @ 117.026
+FINAL step -> BB | [7.2560000000000002] @ 71.901
+FINAL core opening anchor|edges|anchor | [18.167000000000002, 14.833000000000000] @ 97.401
+FINAL core opening anchor|edges|anchor | [8.25, 11.75] @ 143.920
+FINAL shaft opening anchor|edges|anchor | [8.25, 11.75] @ 104.764
+FINAL shaft opening anchor|edges | [1.3819999999999999] @ 105.994
+FINAL shaft opening anchor|edges | [10.207000000000001] @ 58.428
+FINAL beam end -> 9 | [28.677000000000000] @ 22.615
+FINAL beam end -> C + beam end -> C | [3.496, 8.5359999999999996] @ 64.046
+FINAL beam end -> BB | [6.0] @ 12.172
+FINAL beam side|2|side | [2.4790000000000001, 1.5] @ 86.087
+FINAL beam end -> BB | [4.4169999999999998] @ 34.818
+FINAL beam anchor|sides | [1.2809999999999999, 1.6670000000000000] @ 115.640
+FINAL beam anchor|sides | [1.2809999999999999, 1.6670000000000000] @ 7.337
+FINAL beam end -> 9 | [13.010999999999999] @ 33.448
+FINAL beam anchor|sides | [4.0, 0.126] @ 26.365
+FINAL beam side|9|side | [3.75, 3.75] @ 171.650
+FINAL beam anchor|sides | [1.375, 1.0] @ 53.369
+FINAL beam anchor|sides | [1.0, 13.458000000000000] @ 10.646
+FINAL beam side|B|side | [0.5, 0.5] @ 46.671
+FINAL beam side|5|side | [4.75, 2.75] @ 108.753
+FINAL beam side|3|side | [3.3330000000000002, 2.6669999999999998] @ 87.670
+FINAL beam side|F|side | [2.75, 2.75] @ 71.677
+FINAL beam end -> A6 | [0.90700000000000003] @ 83.545
+FINAL beam side|10|side | [3.75, 3.75] @ 26.365
+FINAL beam side|9|side | [3.75, 3.75] @ 50.869
+FINAL beam side|B|side | [3.75, 3.75] @ 89.973
+FINAL CJ -> 4 | [4.5419999999999998] @ 87.670
+FINAL CJ -> CC | [14.228999999999999] @ 52.151
+FINAL CJ -> CC | [16.103999999999999] @ 64.214
+FINAL CJ -> 9 | [19.427000000000000] @ 18.619
+FINAL CJ -> 8 | [5.0] @ 37.066
+FINAL CJ -> 8 | [5.0] @ 176.441
+FINAL CJ -> EE | [7.0209999999999999] @ 117.026
+FINAL CJ -> EE | [7.0209999999999999] @ 169.068
+FINAL CJ -> EE | [13.042000000000000] @ 95.401
+FINAL CJ -> FF | [13.244999999999999] @ 83.526
+FINAL CJ -> F | [0.75] @ 135.186
+FINAL CJ -> 9 | [10.353999999999999] @ 98.534
+FINAL CJ -> D | [6.8380000000000001] @ 9.588
+FINAL CJ -> D | [6.8380000000000001] @ 71.641
+FINAL CJ -> 9 | [18.562000000000001] @ 10.646
+FINAL CJ -> F | [4.75] @ 139.495
+FINAL CJ -> 8 | [3.0] @ 171.107
+FINAL CJ -> 8 | [7.0] @ 168.878
+FINAL CJ -> 5 | [1.8330000000000000] @ 187.555
+FINAL CJ -> 4 | [4.5] @ 168.878
+FINAL CJ -> EE | [4.5] @ 11.172
+FINAL CJ -> EE | [4.5] @ 61.484
+FINAL corner -> BB | [12.114000000000001] @ 8.172
+FINAL jog check | [0.66700000000000004] @ 104.764
+FINAL shaft opening edges|8|edges (chain check) | [17.75] @ 162.795
+FINAL shaft opening edges|BB|edges (chain check) | [17.667000000000002] @ 113.984
+FINAL beam end -> C | [8.5359999999999996] @ 10.338
+FINAL corner -> A14 | [0.121] @ 34.992
+FINAL beam side|5|side | [4.75, 2.75] @ 72.857
+FINAL beam end -> BB | [6.3330000000000002] @ 80.818
+FINAL shaft size (edge | wall) | [7.7919999999999998] @ 114.503
+FINAL jog check | [3.9790000000000001] @ 97.420
+FINAL beam side|F|side | [2.75, 2.75] @ 187.604
+FINAL shaft opening anchor|edges | [4.8540000000000001, 3.8119999999999998] @ 39.625
+FINAL void edge -> G | [13.302000000000000] @ 34.617
+FINAL beam anchor|sides | [4.9409999999999998, 5.4989999999999997] @ 175.078
+FINAL beam side|7|side | [1.5940000000000001, 3.9060000000000001] @ 212.337
+FINAL CJ -> 9 | [10.353999999999999] @ 173.540
+FINAL shaft size (edge | wall) | [12.083000000000000] @ 132.151
+FINAL void edge -> 11 | [4.1260000000000003] @ 98.534
+FINAL run -> 7 | [3.375] @ 119.170
+FINAL void edge -> 10 | [3.75] @ 133.813
+FINAL beam end -> BB | [15.25] @ 66.984
+FINAL core opening anchor|edges|anchor | [8.25, 11.75] @ 139.712
+FINAL CJ -> FF | [13.244999999999999] @ 35.734
+FINAL run -> EE | [0.125] @ 76.568
+FINAL run -> EE | [8.3130000000000006] @ 80.234
+FINAL stack 1 -> AA | [10.146000000000001] @ 96.943
+FINAL shaft opening anchor|edges|anchor (chain check) | [1.4170000000000000] @ 104.693
+FINAL shaft opening anchor|edges|anchor (chain check) | [1.1670000000000000, 0.66700000000000004, 1.1670000000000000] @ 135.128
+FINAL stack 1 -> B | [5.2679999999999998] @ 129.442
+FINAL stack 1 -> EE + shaft opening anchor|edges|anchor (chain check) | [7.625, 15.583000000000000] @ 177.693
+FINAL stack 1 -> 8 + stack 1 -> 8 | [1.125, 16.625] @ 160.795
+FINAL stack 1 -> BB + stack 1 -> BB | [8.3439999999999994, 9.3230000000000004] @ 111.984
+FINAL stack 1 -> CC + core opening anchor|edges|anchor (chain check) | [0.70799999999999996, 13.625] @ 111.984
+FINAL stack 1 -> 6 | [2.4580000000000002] @ 75.482
+FINAL shaft opening anchor|edges|anchor (chain check) | [1.4170000000000000] @ 76.482
+FINAL CJ -> 4 + CJ -> 5 | [7.5620000000000003, 6.5209999999999999] @ 111.982
+FINAL CJ -> FF + CJ -> EE | [18.030999999999999, 18.135000000000002] @ 52.151
+FINAL CJ -> FF + CJ -> EE | [18.030999999999999, 18.135000000000002] @ 69.568
+FINAL shaft opening anchor|edges (chain check) + stack 1 -> FF | [3.3330000000000002, 7.75] @ 93.484
+FINAL shaft opening anchor|edges|anchor (chain check) + stack 1 -> 6 | [3.3330000000000002, 0.66700000000000004] @ 209.003
+FINAL shaft opening anchor|edges|anchor (chain check) + stack 1 -> CC | [3.0, 0.66700000000000004, 8.0419999999999998] @ 142.964
+FINAL core opening anchor|edges|anchor (chain check) + stack 1 -> wall | [3.25, 0.58299999999999996] @ 105.994
+FINAL stack 1 -> wall + core opening anchor|edges|anchor (chain check) | [0.41699999999999998, 1.4170000000000000] @ 106.837
+FINAL CJ -> 5 + CJ | CJ spacing | [4.4580000000000002, 3.0] @ 183.222
+FINAL stack 1 -> 7 + stepped opening overall | [13.228999999999999, 3.0] @ 145.128
+FINAL stack 2 -> B + corner -> B | [9.5630000000000006, 3.9270000000000000] @ 125.442
+FINAL stack 1 -> B | [7.1459999999999999] @ 127.442
+FINAL run -> 11 | [0.127] @ 10.646
+FINAL beam anchor|sides | [1.0, 1.2929999999999999] @ 8.313
+FINAL void edge -> 11 | [2.2930000000000001] @ 5.786
+FINAL beam side|B|side | [0.5, 0.5] @ 7.337
+FINAL beam side|B|side | [3.75, 3.75] @ 5.338
+FINAL corner -> B | [3.3980000000000001] @ 150.442
+FINAL shaft opening edges|B|edges (chain check) | [2.4169999999999998, 12.413000000000000] @ 154.442

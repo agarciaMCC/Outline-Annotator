@@ -620,6 +620,23 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   plain#66's `2'-2" | 7'-6"`) but 2 others to the emptier side where he had them on the busier one (pen near FF,
   plain at grid 7); weights >= 1.25 lose 5-13. L3N: no change at any weight. **Not adopted.** His "doesn't
   interfere" seems to be about crossings and witness lines through other dims (already costed), not a dim count.
+- **2026-10-07 — Adolfo's two L7 screenshots (runs L7 46 / L3N 109).** (1) *"Move the 11'-4⅝" chain out and the
+  3'-10⅝" chain in towards the opening"*: `_order_stacks` (shortest nearest, across strings) skipped the 11'-4⅝" row
+  because it tested "inside its own span" with the 1 ft home window instead of the element (the handoff hazard) -
+  fixed to use `_extent`; and two openings' rows up to 2 lanes apart now count as one stack (`ORDER_GAP_OPEN_LANES` 2;
+  2 and 2.5 score alike; beams/CJs stay 1.5 - on L3N he keeps the 28'-8" beam-end dim inside the 19'-5" CJ dim).
+  Placing all short strings first was tried: L3N 127 -> 114. (2) *"Busy"* (plain#50 / #68 by grid 7): new layout
+  cost `W_NEIGH` 2 per other opening within `NEIGH_R_IN` 0.75" on the dim's side of its opening when the other side is
+  clear (`Layout.neighbour_counts`, measured across the whole opening - its locating row runs away from the
+  neighbour and is placed first). Swept 1-4 x 0.75-1.5": 0.75" w 2 = w 4 (plateau): L7 145 -> 146, busy spot 11 -> 13
+  of 19 on his line (the 9'-8¾" | 1'-4" now below the small opening as he drew it), L3N unchanged; 1.5" costs L3N 2.
+  Still off there: plain#50's chain below (his above) and its 1'-5⅞" on the left (his right).
+  **Bug found on the way:** the first neighbour try reused the name `W_GAP`, which already existed (closeness cost,
+  2.0) - the dict literal's second entry silently replaced it; renamed, and the CFG dicts were checked for duplicates.
+  **Placement order made repeatable:** stack groups were sorted by `id()` - the order objects first had id() called -
+  so a code change elsewhere could shift the result; now by first appearance in the plan (`GROUP_ORDER` "first").
+  That costs L3N 2 (127 -> 125 with everything else equal); "short"/"long"/"size" orders trade the views.
+  Scores now: **L7 146 / 46 / 1 / 4**, **L3N 125 / 31 / 0 / 3**.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
