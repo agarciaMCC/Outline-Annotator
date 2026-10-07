@@ -29,8 +29,11 @@ def r4(v):
 
 for name, cfg in VARIANTS:
     t0 = time.time()
-    fs, pl = S.plan_view(model, crop)          # fresh strings: the layout edits them (joins)
-    lay = LY.Layout(model, pl.strings, tv, dt, acrop, cfg=cfg)
+    # planner settings (mcc_strings.CFG) go to the planner, the rest to the layout
+    pcfg = dict((k, v) for k, v in cfg.items() if k in S.CFG)
+    lcfg = dict((k, v) for k, v in cfg.items() if k not in S.CFG)
+    fs, pl = S.plan_view(model, crop, cfg=pcfg)   # fresh strings: the layout edits them (joins)
+    lay = LY.Layout(model, pl.strings, tv, dt, acrop, cfg=lcfg)
     if globals().get("NO_CACHE"):
         _ev = lay.evaluate
         def _ev2(s_, st_, _ev=_ev, lay=lay):

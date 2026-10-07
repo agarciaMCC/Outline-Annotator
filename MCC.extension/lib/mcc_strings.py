@@ -52,7 +52,14 @@ CFG = {
                             # OFF (0): Adolfo added the 1'-4" jog's 3'-11 1/8" off B three rounds running (2026-10-06)
     "CORE_WALL_NEAR": 1.0,  # ft; a core/shaft opening with a core wall face this close is dimensioned off that wall
     "CJ_MID_TOL": 1.5,      # ft; a CJ whose distances to the two grids differ by less is dimensioned from both
-    "SKEW_CORNERS": True,   # beam corners at a skewed junction located off grids (Adolfo 2026-10-07, L4 South)
+    "SKEW_CORNERS": True,
+    "CORNERS_STRAIGHT_ONLY": True,   # junction corners only off straight (N-S / E-W) grids (Adolfo, L4S round 1;
+                                     # L3N 127/29/3/3 - drops the 2 corners at beam 14182579 he never drew)
+    "CORNER_SKIP_BEAMS": False,      # no non-90 slab-corner dim at a corner of beams (lines already located; L4S r1)
+    "RUN_SKIP_IN_BEAM": False,       # no dim to a slab edge hidden inside a beam's outline (L4S r1, FILL edge)
+    "BEAM_END_SKIP_SLAB_EDGE": False, # no beam-end dim where the end lies on a slab edge (that edge is located)
+    "FRAMED_INSIDE": False,          # width just inside an end framed into another beam (Adolfo L4S r1 "2b")
+    "CROP_WIDTH_LONG": 0.0,          # ft; a beam leaving the crop with this much in view also gets a crop-edge width   # beam corners at a skewed junction located off grids (Adolfo 2026-10-07, L4 South)
     "CJ_LONG_PAIR_SPACING": False,  # long CJ pairs (both ends dimensioned) get the spacing at each end too (L4S has
                             # it; on L3N it adds 2 dims he doesn't draw - off, 2026-10-07)
     "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at one shared end + a spacing dim
@@ -86,6 +93,19 @@ class String(Intent):
     def values(self):
         offs = [r[0] for r in self.refs]
         return [b - a for a, b in zip(offs, offs[1:])]
+
+
+def _dist_to_poly(pt, poly):
+    """Shortest distance from a point to a polygon's outline."""
+    best = 1e9
+    for k in range(len(poly)):
+        a, b = poly[k], poly[(k + 1) % len(poly)]
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        L2 = dx * dx + dy * dy
+        t = 0.0 if L2 < 1e-12 else max(0.0, min(1.0, ((pt[0] - a[0]) * dx + (pt[1] - a[1]) * dy) / L2))
+        x, y = a[0] + dx * t, a[1] + dy * t
+        best = min(best, math.hypot(pt[0] - x, pt[1] - y))
+    return best
 
 
 def ftin(v):
@@ -242,6 +262,12 @@ class Planner(object):
         fi, gi, off, s_lo, s_hi = fr
         if abs(off) < self.c["ON_GRID_TOL"]:
             self.located_by[id(e)] = "on grid"; return
+        if self.c["RUN_SKIP_IN_BEAM"]:
+            mx, my = e.mid()
+            if any(bm.poly and P.point_in_poly(mx, my, bm.poly) and _dist_to_poly((mx, my), bm.poly) > 0.25
+                   for bm in self.m.beams):
+                self.located_by[id(e)] = "inside a beam (not seen from below)"
+                self.note("slab edge inside a beam outline (skipped)"); return
         # the member must run along most of the edge: a wall or column that
         # only touches its end doesn't locate it (L7: the 39 ft top edge above
         # AA, 0.6 ft of wall at its east end; the 5'-1" edges off 7 either side
@@ -325,6 +351,23 @@ class Planner(object):
                 if m.member_at(x, y, cats=("column", "wall", "beam")) is not None:
                     return False
         return True
+
+    def on_slab_edge(self, face):
+        """Does this face lie along a slab outline edge (parallel, within
+        FLUSH_TOL, overlapping)?"""
+        for sl in self.m.slabs:
+            for e in list(sl.edges):
+                if not P.parallel(e.d, face.d):
+                    continue
+                n = (-face.d[1], face.d[0])
+                gap = (e.mid()[0] - face.p0[0]) * n[0] + (e.mid()[1] - face.p0[1]) * n[1]
+                if abs(gap) > self.c["FLUSH_TOL"]:
+                    continue
+                b0 = (e.p0[0] - face.p0[0]) * face.d[0] + (e.p0[1] - face.p0[1]) * face.d[1]
+                b1 = (e.p1[0] - face.p0[0]) * face.d[0] + (e.p1[1] - face.p0[1]) * face.d[1]
+                if self.spans_overlap(0.0, face.length, min(b0, b1), max(b0, b1)):
+                    return True
+        return False
 
     def notch_side(self, gi, st, off):
         """Which side (+1 / -1 along gi) of station st is open at offset off
@@ -830,6 +873,23 @@ class Planner(object):
             # open slab only when open slab is within FRAMED_CROSS of the end;
             # otherwise it sits just past the end, OVER the band (Adolfo
             # 2026-10-06, answer 2b: the grid-7 beam into the angled band)
+            def other_skew(st, d_):
+                mo = (on + of) / 2.0
+                o_ = self.m.member_at(g0_[0] + u_[0] * (st + d_ * 0.5) + n_[0] * mo,
+                                      g0_[1] + u_[1] * (st + d_ * 0.5) + n_[1] * mo, cats=("beam",))
+                if o_ is None:
+                    return False
+                if o_.d is None:
+                    return True
+                dt_ = abs(o_.d[0] * b.d[0] + o_.d[1] * b.d[1])
+                return 0.1 < dt_ < 0.995                # neither square nor in line
+            if self.c["FRAMED_INSIDE"] and beam_past(e_st, d, 0.5) and other_skew(e_st, d):
+                # past the end would land on / across another beam: read the
+                # width across this beam just inside the end (Adolfo 2026-10-07,
+                # L4S round 1 "2b" - four widths moved there)
+                span = (e_st - 4.0, e_st - 0.5) if d > 0 else (e_st + 0.5, e_st + 4.0)
+                self._inside_end[-d] = True
+                return (span, e_st - d * 2.0, -d, False)
             if beam_past(e_st, d, 0.5):
                 opens = [k for k in (1.0, 2.0, 3.0, 4.0, 5.0, 6.0) if k <= self.c["FRAMED_CROSS"] and not beam_past(e_st, d, k)]
                 if not opens:
@@ -855,6 +915,16 @@ class Planner(object):
         else:
             b_parts = [at_end(end_dir)] if ends_ok else []
         crop_part = False
+        lw = self.c["CROP_WIDTH_LONG"]
+        if lw and b_parts and not (cont_lo or cont_hi) and not (in_view(s0) and in_view(s1)):
+            # a beam leaving the crop with a long stretch in view: a width just
+            # inside the crop as well (Adolfo L4S r1 "3b", the grid-7 beam)
+            seen = [st for st in [s0 + k * 1.0 for k in range(int(s1 - s0) + 1)] if in_view(st)]
+            if seen and max(seen) - min(seen) >= lw:
+                lo_v, hi_v = min(seen), max(seen)
+                at = (hi_v - 2.0) if not in_view(s1) else (lo_v + 2.0)
+                b_parts = b_parts + [((lo_v, hi_v), at, None, True)]
+                self.note("beam width also just inside the crop (long stretch in view)")
         if not b_parts:
             # no end to carry the width (one runs past the crop, the other
             # continues in line): read it across the beam just inside the view
@@ -923,6 +993,12 @@ class Planner(object):
                     self.m.member_at(end.mid()[0], end.mid()[1], cats=("column",)) is not None:
                 self.located_by[id(end)] = "at a column"
                 self.note("beam end at a column (framed, skipped)"); continue
+            if self.c["BEAM_END_SKIP_SLAB_EDGE"] and self.on_slab_edge(end):
+                # the end lies on a slab edge: that edge is located (at its own
+                # ends) - repeating it at every beam was not wanted (L4S r1:
+                # the ten cross beams' 16'-3 1/8" off G)
+                self.located_by[id(end)] = "on a located slab edge"
+                self.note("beam end on a slab edge (skipped)"); continue
             cands = [x for x in (self.anchor(fj, gj, eoff, -1, t0, t1, walls=False),
                                  self.anchor(fj, gj, eoff, +1, t0, t1, walls=False)) if x]
             if not cands:
@@ -1336,6 +1412,10 @@ class Planner(object):
                     ref = m.corner_ref(v)
                     if ref is None:
                         continue
+                    if self.c["CORNER_SKIP_BEAMS"] and any(
+                            bm.poly and (P.point_in_poly(v[0], v[1], bm.poly) or _dist_to_poly(v, bm.poly) < 0.1)
+                            for bm in m.beams):
+                        continue                        # a corner of beams: its lines are located (L4S r1)
                     best = None
                     for e in (e1, e2):
                         if e.length < self.c["CORNER_MIN_EDGE"]:
@@ -1417,6 +1497,10 @@ class Planner(object):
                 if not corners:
                     continue
                 f_face = m.family_parallel(ed)
+                straight = lambda fj: fj is not None and max(abs(m.grids[m.families[fj][0]][2][0]),
+                                                              abs(m.grids[m.families[fj][0]][2][1])) > 0.999
+                if self.c["CORNERS_STRAIGHT_ONLY"] and not straight(f_face):
+                    f_face = None
                 fb = m.family_parallel(b.d)
                 f_cross = None
                 if fb is not None:
@@ -1428,6 +1512,8 @@ class Planner(object):
                 plan = []
                 if f_face is not None:
                     plan += [(f_face, c) for c in corners]
+                if self.c["CORNERS_STRAIGHT_ONLY"] and not straight(f_cross):
+                    f_cross = None
                 if f_cross is not None and f_cross != f_face:
                     # the beam's TIP: the corner furthest out along the beam
                     # (JJ | 25'-3 1/2" | tip of the grid-2 band, issued L4S)
@@ -1719,8 +1805,8 @@ class Planner(object):
         return rows
 
 
-def plan_view(model, crop):
+def plan_view(model, crop, cfg=None):
     fs = F.FeatureSet(model, crop=crop)
-    pl = Planner(model, fs)
+    pl = Planner(model, fs, cfg=cfg)
     pl.build()
     return fs, pl

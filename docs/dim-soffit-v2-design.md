@@ -682,6 +682,17 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   part in view is long** (~20-30 ft), even with a real end in view. (4) The two JJ corner dims he deleted measured to
   corners of beams of the same depth - those edges are already located off a grid: **no corner dim where the lines
   meeting there are already located** (and he kept / added corners only off straight grids).
+- **2026-10-07 — L4S round-1 builds (dry runs scored vs `snapshot_L4S_after_edits1.json`; real runs L4S 3 / L3N 113 /
+  L7 52).** Dry run fixed: planner settings now reach the planner (`plan_view(cfg=)`; before, planner keys in VARIANTS
+  were silently ignored - the earlier "SKEW_CORNERS off" variant tested nothing). **Kept: `CORNERS_STRAIGHT_ONLY`**
+  (junction corners only off N-S / E-W grids, answer 4): removes his deleted G.7 corner on L4S and the 2 corners at
+  L3N beam 14182579 he never drew. Scores: **L3N 127 / 29 / 0 / 3**, L7 150 / 42 / 1 / 4, L4S 71 / 24 / 4 / 6 (run 2:
+  71 / 24 / 5 / 6). Built but OFF (each scored worse or no change): `CORNER_SKIP_BEAMS` (no slab-corner dim at a beam
+  corner: removes his 2 deleted JJ corners but also a kept L3N corner), `RUN_SKIP_IN_BEAM` (also drops 2 kept dims incl.
+  the 6'-9" FILL edge off 7), `BEAM_END_SKIP_SLAB_EDGE` (more extras: freed strings land elsewhere), `FRAMED_INSIDE`
+  (answer 2b; all framed ends 70 -> 58, skewed junctions only 70 -> 65 - needs a per-dim look), `CROP_WIDTH_LONG`
+  (answer 3b; no effect at 15-25 ft - the grid-7 beam doesn't reach that branch; trace). Not started: grid-11 beam's
+  real south end (`ends_ok`), shaft#178 10'-0" / 12'-0" join.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

@@ -1,13 +1,13 @@
 {
  "tool": "dry_L4S_fix2b.json",
- "hand": "snapshot_L4S_hand.json",
+ "hand": "snapshot_L4S_after_edits1.json",
  "scale": 128,
  "tol_in": 0.1875,
  "counts": {
-  "deleted": 40,
-  "moved": 37,
-  "left": 22,
-  "added": 160
+  "deleted": 5,
+  "left": 70,
+  "moved": 24,
+  "added": 7
  },
  "rows": [
   {
@@ -50,7 +50,12 @@
     0.90631,
     0.42262
    ],
-   "change": "deleted"
+   "his_dim": 20619602,
+   "his_chain": [
+    5.04
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 2,
@@ -72,13 +77,13 @@
     0.90631,
     0.42262
    ],
-   "his_dim": 20618783,
+   "his_dim": 20619603,
    "his_chain": [
-    1.04,
-    4.0
+    4.0,
+    1.04
    ],
-   "offset_in": 0.45,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 2,
@@ -100,13 +105,13 @@
     0.90631,
     0.42262
    ],
-   "his_dim": 20618783,
+   "his_dim": 20619603,
    "his_chain": [
-    1.04,
-    4.0
+    4.0,
+    1.04
    ],
-   "offset_in": 0.45,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 3,
@@ -128,7 +133,13 @@
     0.90631,
     0.42262
    ],
-   "change": "deleted"
+   "his_dim": 20619604,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -0.43,
+   "change": "moved"
   },
   {
    "tool_dim": 3,
@@ -150,7 +161,13 @@
     0.90631,
     0.42262
    ],
-   "change": "deleted"
+   "his_dim": 20619604,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -0.43,
+   "change": "moved"
   },
   {
    "tool_dim": 4,
@@ -171,13 +188,12 @@
     0.0,
     1.0
    ],
-   "other_reference": true,
-   "his_dim": 20618721,
+   "his_dim": 20619605,
    "his_chain": [
     1.0
    ],
-   "offset_in": 0.43,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 5,
@@ -198,7 +214,12 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "his_dim": 20619606,
+   "his_chain": [
+    1.0
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 6,
@@ -220,12 +241,12 @@
     0.5,
     -0.86603
    ],
-   "other_reference": true,
-   "his_dim": 20619149,
+   "his_dim": 20619607,
    "his_chain": [
+    2.75,
     2.75
    ],
-   "offset_in": 0.06,
+   "offset_in": -0.0,
    "change": "left"
   },
   {
@@ -248,12 +269,12 @@
     0.5,
     -0.86603
    ],
-   "other_reference": true,
-   "his_dim": 20619149,
+   "his_dim": 20619607,
    "his_chain": [
+    2.75,
     2.75
    ],
-   "offset_in": 0.06,
+   "offset_in": -0.0,
    "change": "left"
   },
   {
@@ -276,13 +297,13 @@
     1.0,
     0.0
    ],
-   "his_dim": 20618607,
+   "his_dim": 20619608,
    "his_chain": [
     3.33,
     2.67
    ],
-   "offset_in": -1.14,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 7,
@@ -304,13 +325,13 @@
     1.0,
     0.0
    ],
-   "his_dim": 20618607,
+   "his_dim": 20619608,
    "his_chain": [
     3.33,
     2.67
    ],
-   "offset_in": -1.14,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 8,
@@ -332,13 +353,13 @@
     0.90631,
     0.42262
    ],
-   "his_dim": 20618984,
+   "his_dim": 20619609,
    "his_chain": [
     2.75,
     2.75
    ],
-   "offset_in": -4.61,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 8,
@@ -360,13 +381,13 @@
     0.90631,
     0.42262
    ],
-   "his_dim": 20618984,
+   "his_dim": 20619609,
    "his_chain": [
     2.75,
     2.75
    ],
-   "offset_in": -4.61,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 9,
@@ -388,7 +409,13 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619610,
+   "his_chain": [
+    1.59,
+    3.91
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 9,
@@ -410,7 +437,13 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619610,
+   "his_chain": [
+    1.59,
+    3.91
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 10,
@@ -432,7 +465,13 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619611,
+   "his_chain": [
+    0.92,
+    5.5
+   ],
+   "offset_in": -0.28,
+   "change": "moved"
   },
   {
    "tool_dim": 10,
@@ -454,11 +493,12 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619078,
+   "his_dim": 20619611,
    "his_chain": [
+    0.92,
     5.5
    ],
-   "offset_in": -0.29,
+   "offset_in": -0.28,
    "change": "moved"
   },
   {
@@ -481,7 +521,13 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619612,
+   "his_chain": [
+    25.75,
+    5.5
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 11,
@@ -503,7 +549,13 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619612,
+   "his_chain": [
+    25.75,
+    5.5
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 12,
@@ -524,7 +576,12 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619613,
+   "his_chain": [
+    2.23
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 13,
@@ -545,7 +602,12 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619614,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 14,
@@ -566,11 +628,11 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619038,
+   "his_dim": 20619615,
    "his_chain": [
     7.92
    ],
-   "offset_in": 0.04,
+   "offset_in": -0.0,
    "change": "left"
   },
   {
@@ -592,12 +654,12 @@
     0.0,
     1.0
    ],
-   "his_dim": 20618940,
+   "his_dim": 20619616,
    "his_chain": [
     6.58
    ],
-   "offset_in": 1.55,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 16,
@@ -618,12 +680,12 @@
     0.0,
     1.0
    ],
-   "his_dim": 20618942,
+   "his_dim": 20619617,
    "his_chain": [
     8.08
    ],
-   "offset_in": -0.47,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 17,
@@ -644,7 +706,12 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "his_dim": 20619618,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 18,
@@ -665,7 +732,12 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "his_dim": 20619619,
+   "his_chain": [
+    5.0
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 19,
@@ -686,7 +758,12 @@
     0.90631,
     0.42262
    ],
-   "change": "deleted"
+   "his_dim": 20619620,
+   "his_chain": [
+    10.5
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 20,
@@ -707,13 +784,12 @@
     0.5,
     -0.86603
    ],
-   "other_reference": true,
-   "his_dim": 20619250,
+   "his_dim": 20619621,
    "his_chain": [
     4.75
    ],
-   "offset_in": -0.5,
-   "change": "moved"
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 21,
@@ -734,12 +810,12 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619254,
+   "his_dim": 20619623,
    "his_chain": [
     7.0
    ],
-   "offset_in": 0.35,
-   "change": "moved"
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 22,
@@ -760,11 +836,11 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619329,
+   "his_dim": 20619624,
    "his_chain": [
     4.5
    ],
-   "offset_in": 1.77,
+   "offset_in": 1.84,
    "change": "moved"
   },
   {
@@ -786,7 +862,12 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "his_dim": 20619625,
+   "his_chain": [
+    18.03
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 24,
@@ -807,11 +888,11 @@
     0.0,
     1.0
    ],
-   "his_dim": 20619073,
+   "his_dim": 20619627,
    "his_chain": [
     10.44
    ],
-   "offset_in": 1.64,
+   "offset_in": 1.69,
    "change": "moved"
   },
   {
@@ -834,12 +915,12 @@
     1.0,
     -0.0
    ],
-   "other_reference": true,
-   "his_dim": 20619072,
+   "his_dim": 20619628,
    "his_chain": [
+    2.75,
     2.75
    ],
-   "offset_in": 0.6,
+   "offset_in": 0.71,
    "change": "moved"
   },
   {
@@ -862,12 +943,12 @@
     1.0,
     -0.0
    ],
-   "other_reference": true,
-   "his_dim": 20619072,
+   "his_dim": 20619628,
    "his_chain": [
+    2.75,
     2.75
    ],
-   "offset_in": 0.6,
+   "offset_in": 0.71,
    "change": "moved"
   },
   {
@@ -889,7 +970,12 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "his_dim": 20619629,
+   "his_chain": [
+    29.15
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 27,
@@ -910,12 +996,12 @@
     0.0,
     1.0
    ],
-   "his_dim": 20619010,
+   "his_dim": 20619630,
    "his_chain": [
     13.24
    ],
-   "offset_in": 2.0,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 28,
@@ -957,7 +1043,12 @@
     0.42262,
     -0.90631
    ],
-   "change": "deleted"
+   "his_dim": 20619600,
+   "his_chain": [
+    0.25
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 30,
@@ -979,14 +1070,13 @@
     -0.86603,
     -0.5
    ],
-   "his_dim": 20618557,
+   "his_dim": 20619632,
    "his_chain": [
-    14.71,
-    7.5,
-    13.79
+    13.79,
+    7.5
    ],
-   "offset_in": -0.2,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 30,
@@ -1008,14 +1098,13 @@
     -0.86603,
     -0.5
    ],
-   "his_dim": 20618557,
+   "his_dim": 20619632,
    "his_chain": [
-    14.71,
-    7.5,
-    13.79
+    13.79,
+    7.5
    ],
-   "offset_in": -0.2,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 31,
@@ -1037,12 +1126,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619086,
+   "his_dim": 20619633,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.11,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1065,12 +1154,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619086,
+   "his_dim": 20619633,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.11,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1093,12 +1182,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619083,
+   "his_dim": 20619634,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.11,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1121,12 +1210,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619083,
+   "his_dim": 20619634,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.11,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1149,12 +1238,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619091,
+   "his_dim": 20619635,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.08,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1177,12 +1266,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619091,
+   "his_dim": 20619635,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.08,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1205,12 +1294,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619094,
+   "his_dim": 20619636,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.08,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1233,12 +1322,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619094,
+   "his_dim": 20619636,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.08,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1260,7 +1349,12 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619637,
+   "his_chain": [
+    6.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 36,
@@ -1282,7 +1376,13 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "his_dim": 20619638,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 36,
@@ -1304,7 +1404,13 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "his_dim": 20619638,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 37,
@@ -1325,7 +1431,12 @@
     -0.86603,
     -0.5
    ],
-   "change": "deleted"
+   "his_dim": 20619639,
+   "his_chain": [
+    0.71
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 38,
@@ -1347,11 +1458,12 @@
     0.0,
     1.0
    ],
-   "his_dim": 20619131,
+   "his_dim": 20619640,
    "his_chain": [
-    4.94
+    4.94,
+    5.5
    ],
-   "offset_in": -0.35,
+   "offset_in": -0.78,
    "change": "moved"
   },
   {
@@ -1374,11 +1486,12 @@
     0.0,
     1.0
    ],
-   "his_dim": 20618847,
+   "his_dim": 20619640,
    "his_chain": [
+    4.94,
     5.5
    ],
-   "offset_in": -0.91,
+   "offset_in": -0.78,
    "change": "moved"
   },
   {
@@ -1401,13 +1514,13 @@
     0.5,
     -0.86603
    ],
-   "his_dim": 20618542,
+   "his_dim": 20619641,
    "his_chain": [
     3.75,
     3.75
    ],
-   "offset_in": -2.23,
-   "change": "moved"
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 39,
@@ -1429,13 +1542,13 @@
     0.5,
     -0.86603
    ],
-   "his_dim": 20618542,
+   "his_dim": 20619641,
    "his_chain": [
     3.75,
     3.75
    ],
-   "offset_in": -2.23,
-   "change": "moved"
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 40,
@@ -1457,12 +1570,13 @@
     0.0,
     1.0
    ],
-   "his_dim": 20619212,
+   "his_dim": 20619642,
    "his_chain": [
-    2.69
+    2.69,
+    1.58
    ],
-   "offset_in": 1.83,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 40,
@@ -1484,7 +1598,13 @@
     0.0,
     1.0
    ],
-   "change": "deleted"
+   "his_dim": 20619642,
+   "his_chain": [
+    2.69,
+    1.58
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 41,
@@ -1505,12 +1625,12 @@
     0.0,
     1.0
    ],
-   "his_dim": 20619164,
+   "his_dim": 20619643,
    "his_chain": [
     13.24
    ],
-   "offset_in": 0.35,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 42,
@@ -1531,7 +1651,12 @@
     -0.86603,
     -0.5
    ],
-   "change": "deleted"
+   "his_dim": 20619645,
+   "his_chain": [
+    15.11
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 43,
@@ -1553,7 +1678,13 @@
     1.0,
     0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619647,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -2.73,
+   "change": "moved"
   },
   {
    "tool_dim": 43,
@@ -1575,7 +1706,13 @@
     1.0,
     0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619647,
+   "his_chain": [
+    2.75,
+    2.75
+   ],
+   "offset_in": -2.73,
+   "change": "moved"
   },
   {
    "tool_dim": 44,
@@ -1596,12 +1733,12 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619215,
+   "his_dim": 20619646,
    "his_chain": [
     1.73
    ],
-   "offset_in": -0.55,
-   "change": "moved"
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 45,
@@ -1622,7 +1759,12 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "his_dim": 20619648,
+   "his_chain": [
+    3.75
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 46,
@@ -1644,12 +1786,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619095,
+   "his_dim": 20619649,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.08,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1672,12 +1814,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619095,
+   "his_dim": 20619649,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.08,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1699,7 +1841,12 @@
     -0.86603,
     -0.5
    ],
-   "change": "deleted"
+   "his_dim": 20619650,
+   "his_chain": [
+    10.0
+   ],
+   "offset_in": -1.14,
+   "change": "moved"
   },
   {
    "tool_dim": 48,
@@ -1720,7 +1867,12 @@
     -0.86603,
     -0.5
    ],
-   "change": "deleted"
+   "his_dim": 20619651,
+   "his_chain": [
+    12.0
+   ],
+   "offset_in": -0.11,
+   "change": "left"
   },
   {
    "tool_dim": 49,
@@ -1742,12 +1894,12 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619029,
+   "his_dim": 20619622,
    "his_chain": [
     3.0
    ],
-   "offset_in": 0.6,
-   "change": "moved"
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 49,
@@ -1769,12 +1921,7 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619247,
-   "his_chain": [
-    4.0
-   ],
-   "offset_in": 0.6,
-   "change": "moved"
+   "change": "deleted"
   },
   {
    "tool_dim": 50,
@@ -1796,7 +1943,13 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "his_dim": 20619652,
+   "his_chain": [
+    10.0,
+    5.75
+   ],
+   "offset_in": -0.71,
+   "change": "moved"
   },
   {
    "tool_dim": 50,
@@ -1818,7 +1971,13 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "his_dim": 20619652,
+   "his_chain": [
+    10.0,
+    5.75
+   ],
+   "offset_in": -0.71,
+   "change": "moved"
   },
   {
    "tool_dim": 51,
@@ -1840,12 +1999,12 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619347,
+   "his_dim": 20619653,
    "his_chain": [
     3.33,
-    7.75
+    0.67
    ],
-   "offset_in": 0.04,
+   "offset_in": 0.12,
    "change": "left"
   },
   {
@@ -1868,12 +2027,12 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619349,
+   "his_dim": 20619653,
    "his_chain": [
     3.33,
     0.67
    ],
-   "offset_in": 0.11,
+   "offset_in": 0.12,
    "change": "left"
   },
   {
@@ -1896,12 +2055,12 @@
     0.0,
     1.0
    ],
-   "his_dim": 20619347,
+   "his_dim": 20619654,
    "his_chain": [
     3.33,
     7.75
    ],
-   "offset_in": 0.17,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1924,12 +2083,12 @@
     0.0,
     1.0
    ],
-   "his_dim": 20619347,
+   "his_dim": 20619654,
    "his_chain": [
     3.33,
     7.75
    ],
-   "offset_in": 0.17,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -1952,7 +2111,13 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619655,
+   "his_chain": [
+    7.17,
+    3.01
+   ],
+   "offset_in": -0.28,
+   "change": "moved"
   },
   {
    "tool_dim": 53,
@@ -1974,7 +2139,13 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619655,
+   "his_chain": [
+    7.17,
+    3.01
+   ],
+   "offset_in": -0.28,
+   "change": "moved"
   },
   {
    "tool_dim": 54,
@@ -1995,7 +2166,12 @@
     1.0,
     -0.0
    ],
-   "change": "deleted"
+   "his_dim": 20619656,
+   "his_chain": [
+    3.25
+   ],
+   "offset_in": -1.63,
+   "change": "moved"
   },
   {
    "tool_dim": 55,
@@ -2017,12 +2193,12 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619008,
+   "his_dim": 20619657,
    "his_chain": [
     2.75,
     2.75
    ],
-   "offset_in": -1.82,
+   "offset_in": -0.29,
    "change": "moved"
   },
   {
@@ -2045,12 +2221,12 @@
     1.0,
     -0.0
    ],
-   "his_dim": 20619008,
+   "his_dim": 20619657,
    "his_chain": [
     2.75,
     2.75
    ],
-   "offset_in": -1.82,
+   "offset_in": -0.29,
    "change": "moved"
   },
   {
@@ -2072,12 +2248,12 @@
     -0.86603,
     -0.5
    ],
-   "his_dim": 20619248,
+   "his_dim": 20619658,
    "his_chain": [
     4.33
    ],
-   "offset_in": -5.35,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 57,
@@ -2098,7 +2274,12 @@
     -0.86603,
     -0.5
    ],
-   "change": "deleted"
+   "his_dim": 20619659,
+   "his_chain": [
+    8.33
+   ],
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 58,
@@ -2161,11 +2342,11 @@
     -0.86603,
     -0.5
    ],
-   "his_dim": 20619248,
+   "his_dim": 20619662,
    "his_chain": [
     4.33
    ],
-   "offset_in": -0.25,
+   "offset_in": -0.37,
    "change": "moved"
   },
   {
@@ -2188,13 +2369,13 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619089,
+   "his_dim": 20619663,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.27,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 61,
@@ -2216,13 +2397,13 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619089,
+   "his_dim": 20619663,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.27,
-   "change": "moved"
+   "offset_in": 0.0,
+   "change": "left"
   },
   {
    "tool_dim": 62,
@@ -2243,7 +2424,12 @@
     -0.86603,
     -0.5
    ],
-   "change": "deleted"
+   "his_dim": 20619664,
+   "his_chain": [
+    8.33
+   ],
+   "offset_in": -0.23,
+   "change": "moved"
   },
   {
    "tool_dim": 63,
@@ -2264,13 +2450,12 @@
     0.5,
     -0.86603
    ],
-   "other_reference": true,
-   "his_dim": 20619279,
+   "his_dim": 20619665,
    "his_chain": [
     3.94
    ],
-   "offset_in": 0.27,
-   "change": "moved"
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 64,
@@ -2291,7 +2476,12 @@
     0.5,
     -0.86603
    ],
-   "change": "deleted"
+   "his_dim": 20619666,
+   "his_chain": [
+    6.6
+   ],
+   "offset_in": -0.0,
+   "change": "left"
   },
   {
    "tool_dim": 65,
@@ -2313,12 +2503,12 @@
     0.5,
     -0.86603
    ],
-   "his_dim": 20618542,
+   "his_dim": 20619667,
    "his_chain": [
     3.75,
     3.75
    ],
-   "offset_in": 24.5,
+   "offset_in": 0.56,
    "change": "moved"
   },
   {
@@ -2341,12 +2531,12 @@
     0.5,
     -0.86603
    ],
-   "his_dim": 20618542,
+   "his_dim": 20619667,
    "his_chain": [
     3.75,
     3.75
    ],
-   "offset_in": 24.5,
+   "offset_in": 0.56,
    "change": "moved"
   },
   {
@@ -2369,12 +2559,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619098,
+   "his_dim": 20619668,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.1,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -2397,12 +2587,12 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20619098,
+   "his_dim": 20619668,
    "his_chain": [
+    3.75,
     3.75
    ],
-   "offset_in": 0.1,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -2425,12 +2615,12 @@
     -0.86603,
     -0.5
    ],
-   "his_dim": 20618544,
+   "his_dim": 20619669,
    "his_chain": [
-    9.83,
-    7.5
+    7.5,
+    9.83
    ],
-   "offset_in": 0.1,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -2453,12 +2643,12 @@
     -0.86603,
     -0.5
    ],
-   "his_dim": 20618544,
+   "his_dim": 20619669,
    "his_chain": [
-    9.83,
-    7.5
+    7.5,
+    9.83
    ],
-   "offset_in": 0.1,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
@@ -2480,1688 +2670,35 @@
     -0.86603,
     -0.5
    ],
-   "other_reference": true,
-   "his_dim": 20618545,
+   "his_dim": 20619670,
    "his_chain": [
     17.33
    ],
-   "offset_in": 0.1,
+   "offset_in": 0.0,
    "change": "left"
   },
   {
-   "his_dim": 20618441,
-   "elements": [
-    14223250,
-    14223250
-   ],
-   "value_ft": 5.5,
-   "chain": [
-    5.5
-   ],
-   "at": [
-    183.2,
-    67.8
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618461,
-   "elements": [
-    13788115,
-    14232215
-   ],
-   "value_ft": 7.166666666666667,
-   "chain": [
-    7.16
-   ],
-   "at": [
-    178.3,
-    -13.7
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618462,
-   "elements": [
-    13788115,
-    14213856
-   ],
-   "value_ft": 6.166666666666667,
-   "chain": [
-    6.16,
-    1.0
-   ],
-   "at": [
-    189.0,
-    -13.2
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618462,
-   "elements": [
-    14213856,
-    14232215
-   ],
-   "value_ft": 1.0,
-   "chain": [
-    6.16,
-    1.0
-   ],
-   "at": [
-    189.0,
-    -16.8
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618468,
-   "elements": [
-    14223276,
-    14223276
-   ],
-   "value_ft": 5.5,
-   "chain": [
-    5.5,
-    8.67
-   ],
-   "at": [
-    147.3,
-    -121.0
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618468,
-   "elements": [
-    13797384,
-    14223276
-   ],
-   "value_ft": 8.666666666666666,
-   "chain": [
-    5.5,
-    8.67
-   ],
-   "at": [
-    141.2,
-    -124.6
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618469,
-   "elements": [
-    13797384,
-    14223276
-   ],
-   "value_ft": 14.166666666666666,
-   "chain": [
-    14.17
-   ],
-   "at": [
-    144.6,
-    -124.9
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618470,
-   "elements": [
-    13795352,
-    14223265
-   ],
-   "value_ft": 0.5,
-   "chain": [
-    0.5
-   ],
-   "at": [
-    335.9,
-    34.1
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618476,
-   "elements": [
-    13794716,
-    14743249
-   ],
-   "value_ft": 15.333333333333334,
-   "chain": [
-    15.33,
-    14.0
-   ],
-   "at": [
-    300.0,
-    199.2
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618476,
-   "elements": [
-    13793990,
-    14743249
-   ],
-   "value_ft": 14.0,
-   "chain": [
-    15.33,
-    14.0
-   ],
-   "at": [
-    286.7,
-    193.0
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618503,
-   "elements": [
-    13794716,
-    14216512
-   ],
-   "value_ft": 13.958333333333334,
-   "chain": [
-    13.96,
-    15.38
-   ],
-   "at": [
-    307.1,
-    185.5
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618503,
-   "elements": [
-    13793990,
-    14216512
-   ],
-   "value_ft": 15.375,
-   "chain": [
-    13.96,
-    15.38
-   ],
-   "at": [
-    293.8,
-    179.3
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618508,
-   "elements": [
-    13788102,
-    13788103
-   ],
-   "value_ft": 14.166666666666666,
-   "chain": [
-    14.17,
-    28.83,
-    14.08,
-    25.75,
-    22.92,
-    37.33
-   ],
-   "at": [
-    134.2,
-    15.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618508,
-   "elements": [
-    13788103,
-    13788107
-   ],
-   "value_ft": 28.833333333333332,
-   "chain": [
-    14.17,
-    28.83,
-    14.08,
-    25.75,
-    22.92,
-    37.33
-   ],
-   "at": [
-    155.7,
-    15.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618508,
-   "elements": [
-    13788107,
-    13788108
-   ],
-   "value_ft": 14.083333333333334,
-   "chain": [
-    14.17,
-    28.83,
-    14.08,
-    25.75,
-    22.92,
-    37.33
-   ],
-   "at": [
-    177.2,
-    15.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618508,
-   "elements": [
-    13788108,
-    13788109
-   ],
-   "value_ft": 25.75,
-   "chain": [
-    14.17,
-    28.83,
-    14.08,
-    25.75,
-    22.92,
-    37.33
-   ],
-   "at": [
-    197.1,
-    15.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618508,
-   "elements": [
-    13788109,
-    13788110
-   ],
-   "value_ft": 22.916666666666668,
-   "chain": [
-    14.17,
-    28.83,
-    14.08,
-    25.75,
-    22.92,
-    37.33
-   ],
-   "at": [
-    221.4,
-    15.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618508,
-   "elements": [
-    13788110,
-    13788111
-   ],
-   "value_ft": 37.333333333333336,
-   "chain": [
-    14.17,
-    28.83,
-    14.08,
-    25.75,
-    22.92,
-    37.33
-   ],
-   "at": [
-    251.6,
-    15.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618509,
-   "elements": [
-    13788102,
-    13788111
-   ],
-   "value_ft": 143.08333333333334,
-   "chain": [
-    143.08
-   ],
-   "at": [
-    198.7,
-    17.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618510,
-   "elements": [
-    13794131,
-    13794555
-   ],
-   "value_ft": 16.333333333333332,
-   "chain": [
-    16.33,
-    28.0,
-    28.0
-   ],
-   "at": [
-    428.1,
-    21.3
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618510,
-   "elements": [
-    13794124,
-    13794131
-   ],
-   "value_ft": 28.0,
-   "chain": [
-    16.33,
-    28.0,
-    28.0
-   ],
-   "at": [
-    417.0,
-    40.5
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618510,
-   "elements": [
-    13793747,
-    13794124
-   ],
-   "value_ft": 28.0,
-   "chain": [
-    16.33,
-    28.0,
-    28.0
-   ],
-   "at": [
-    403.0,
-    64.8
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13797243,
-    13797384
-   ],
-   "value_ft": 20.25,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    132.1,
-    -137.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13797384,
-    13797405
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    156.5,
-    -123.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13797405,
-    13797419
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    187.7,
-    -105.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13797419,
-    13797433
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    218.8,
-    -87.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13797433,
-    13797880
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    250.0,
-    -69.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13797880,
-    13797894
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    281.2,
-    -51.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13797894,
-    13797908
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    312.4,
-    -33.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13795352,
-    13797908
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    343.5,
-    -15.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618511,
-   "elements": [
-    13795352,
-    13796995
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    20.25,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0,
-    36.0
-   ],
-   "at": [
-    374.7,
-    2.3
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618513,
-   "elements": [
-    13794131,
-    13794555
-   ],
-   "value_ft": 16.333333333333332,
-   "chain": [
-    16.33,
-    11.74,
-    16.26
-   ],
-   "at": [
-    136.3,
-    -147.2
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618513,
-   "elements": [
-    13794131,
-    14223276
-   ],
-   "value_ft": 11.739583333333334,
-   "chain": [
-    16.33,
-    11.74,
-    16.26
-   ],
-   "at": [
-    129.3,
-    -135.0
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618513,
-   "elements": [
-    13794124,
-    14223276
-   ],
-   "value_ft": 16.260416666666668,
-   "chain": [
-    16.33,
-    11.74,
-    16.26
-   ],
-   "at": [
-    122.3,
-    -122.9
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618516,
-   "elements": [
-    13794716,
-    13794723
-   ],
-   "value_ft": 17.333333333333332,
-   "chain": [
-    17.33,
-    29.33
-   ],
-   "at": [
-    373.7,
-    79.6
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618516,
-   "elements": [
-    13793990,
-    13794716
-   ],
-   "value_ft": 29.333333333333332,
-   "chain": [
-    17.33,
-    29.33
-   ],
-   "at": [
-    352.6,
-    69.8
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618517,
-   "elements": [
-    13793990,
-    13794723
-   ],
-   "value_ft": 46.666666666666664,
-   "chain": [
-    46.67
-   ],
-   "at": [
-    359.6,
-    75.3
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618524,
-   "elements": [
-    13796245,
-    13796294
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    36.0,
-    36.0
-   ],
-   "at": [
-    406.0,
-    52.8
-   ],
-   "dir": [
-    -0.42262,
-    0.90631
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618524,
-   "elements": [
-    13796195,
-    13796245
-   ],
-   "value_ft": 36.0,
-   "chain": [
-    36.0,
-    36.0
-   ],
-   "at": [
-    390.7,
-    85.4
-   ],
-   "dir": [
-    -0.42262,
-    0.90631
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618536,
-   "elements": [
-    13796995,
-    13797384
-   ],
-   "value_ft": 288.0,
-   "chain": [
-    288.0
-   ],
-   "at": [
-    266.6,
-    -62.4
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618538,
-   "elements": [
-    14223276,
-    20619210
-   ],
-   "value_ft": 12.552083333333334,
-   "chain": [
-    12.55,
-    3.71,
-    3.71
-   ],
-   "at": [
-    124.9,
-    -123.5
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618538,
-   "elements": [
-    13794124,
-    20619210
-   ],
-   "value_ft": 3.7083333333333335,
-   "chain": [
-    12.55,
-    3.71,
-    3.71
-   ],
-   "at": [
-    120.9,
-    -116.4
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618538,
-   "elements": [
-    13794124,
-    14223718
-   ],
-   "value_ft": 3.7083333333333335,
-   "chain": [
-    12.55,
-    3.71,
-    3.71
-   ],
-   "at": [
-    119.0,
-    -113.2
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618539,
-   "elements": [
-    13793747,
-    13794124
-   ],
-   "value_ft": 28.0,
-   "chain": [
-    28.0
-   ],
-   "at": [
-    111.2,
-    -103.7
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618540,
-   "elements": [
-    13797384,
-    14223268
-   ],
-   "value_ft": 0.5,
-   "chain": [
-    0.5,
-    8.67
-   ],
-   "at": [
-    130.9,
-    -115.8
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618540,
-   "elements": [
-    13797384,
-    14223276
-   ],
-   "value_ft": 8.666666666666666,
-   "chain": [
-    0.5,
-    8.67
-   ],
-   "at": [
-    134.9,
-    -113.6
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618541,
-   "elements": [
-    14223268,
-    14223276
-   ],
-   "value_ft": 9.166666666666666,
-   "chain": [
-    9.17
-   ],
-   "at": [
-    135.6,
-    -115.4
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618543,
-   "elements": [
-    14223268,
-    14223268
-   ],
-   "value_ft": 7.5,
-   "chain": [
-    7.5
-   ],
-   "at": [
-    147.5,
-    -98.9
-   ],
-   "dir": [
-    0.5,
-    -0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618557,
-   "elements": [
-    13795352,
-    14241123
-   ],
-   "value_ft": 14.708333333333334,
-   "chain": [
-    14.71,
-    7.5,
-    13.79
-   ],
-   "at": [
-    363.1,
-    1.2
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618605,
-   "elements": [
-    13788103,
-    14223254
-   ],
-   "value_ft": 3.3333333333333335,
-   "chain": [
-    3.33,
-    2.67
-   ],
-   "at": [
-    139.6,
-    -24.6
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618605,
-   "elements": [
-    13788103,
-    14223254
-   ],
-   "value_ft": 2.6666666666666665,
-   "chain": [
-    3.33,
-    2.67
-   ],
-   "at": [
-    142.6,
-    -24.6
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618606,
-   "elements": [
-    14223270,
-    14223270
-   ],
-   "value_ft": 6.0,
-   "chain": [
-    6.0
-   ],
-   "at": [
-    141.0,
-    -73.1
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618722,
-   "elements": [
-    13788116,
-    14223718
-   ],
-   "value_ft": 1.0,
-   "chain": [
-    1.0
-   ],
-   "at": [
-    122.3,
-    -45.5
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618724,
-   "elements": [
-    13793990,
-    13799982
-   ],
-   "value_ft": 53.34375,
-   "chain": [
-    53.34,
-    27.33,
-    4.47,
-    51.16,
-    27.0,
-    8.77
-   ],
-   "at": [
-    256.8,
-    177.4
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618724,
-   "elements": [
-    13799982,
-    13800126
-   ],
-   "value_ft": 27.333333333333332,
-   "chain": [
-    53.34,
-    27.33,
-    4.47,
-    51.16,
-    27.0,
-    8.77
-   ],
-   "at": [
-    220.3,
-    160.3
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618724,
-   "elements": [
-    13800126,
-    13899218
-   ],
-   "value_ft": 4.46875,
-   "chain": [
-    53.34,
-    27.33,
-    4.47,
-    51.16,
-    27.0,
-    8.77
-   ],
-   "at": [
-    205.9,
-    153.6
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618724,
-   "elements": [
-    13899174,
-    13899218
-   ],
-   "value_ft": 51.15625,
-   "chain": [
-    53.34,
-    27.33,
-    4.47,
-    51.16,
-    27.0,
-    8.77
-   ],
-   "at": [
-    180.6,
-    141.8
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618724,
-   "elements": [
-    13899174
-   ],
-   "value_ft": 27.0,
-   "chain": [
-    53.34,
-    27.33,
-    4.47,
-    51.16,
-    27.0,
-    8.77
-   ],
-   "at": [
-    145.2,
-    125.3
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618724,
-   "elements": [],
-   "value_ft": 8.770833333333334,
-   "chain": [
-    53.34,
-    27.33,
-    4.47,
-    51.16,
-    27.0,
-    8.77
-   ],
-   "at": [
-    129.0,
-    117.8
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618740,
-   "elements": [
-    13794723,
-    14223243
-   ],
-   "value_ft": 5.041666666666667,
-   "chain": [
-    5.04
-   ],
-   "at": [
-    400.0,
-    37.8
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618771,
-   "elements": [
-    13795352,
-    20619276
-   ],
-   "value_ft": 20.885416666666668,
-   "chain": [
-    20.88,
-    1.32
-   ],
-   "at": [
-    351.0,
-    28.3
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618771,
-   "elements": [
-    14241123,
-    20619276
-   ],
-   "value_ft": 1.3229166666666667,
-   "chain": [
-    20.88,
-    1.32
-   ],
-   "at": [
-    360.6,
-    33.9
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618784,
-   "elements": [
-    13794723,
-    14223243
-   ],
-   "value_ft": 5.041666666666667,
-   "chain": [
-    5.04
-   ],
-   "at": [
-    380.6,
-    79.4
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618815,
-   "elements": [
-    13788102,
-    14223252
-   ],
-   "value_ft": 1.5,
-   "chain": [
-    1.5,
-    2.5
-   ],
-   "at": [
-    126.4,
-    -24.6
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618815,
-   "elements": [
-    13788102,
-    14223252
-   ],
-   "value_ft": 2.5,
-   "chain": [
-    1.5,
-    2.5
-   ],
-   "at": [
-    128.4,
-    -24.6
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618816,
-   "elements": [
-    13788102,
-    14223718
-   ],
-   "value_ft": 1.5,
-   "chain": [
-    1.5,
-    2.5
-   ],
-   "at": [
-    126.4,
-    -75.3
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618816,
-   "elements": [
-    13788102,
-    14223718
-   ],
-   "value_ft": 2.5,
-   "chain": [
-    1.5,
-    2.5
-   ],
-   "at": [
-    128.4,
-    -75.3
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618817,
-   "elements": [
-    14223718,
-    14223718
-   ],
-   "value_ft": 4.0,
-   "chain": [
-    4.0
-   ],
-   "at": [
-    127.6,
-    -73.1
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618823,
-   "elements": [
-    13795352,
-    14241166
-   ],
-   "value_ft": 18.458333333333332,
-   "chain": [
-    18.46,
-    17.54
-   ],
-   "at": [
-    364.7,
-    2.2
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618823,
-   "elements": [
-    13796995,
-    14241166
-   ],
-   "value_ft": 17.541666666666668,
-   "chain": [
-    18.46,
-    17.54
-   ],
-   "at": [
-    380.3,
-    11.2
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618854,
+   "his_dim": 20619626,
    "elements": [
     13788117,
-    14223718
+    14221718
    ],
    "value_ft": 25.291666666666668,
    "chain": [
     25.29
    ],
    "at": [
-    121.7,
+    123.0,
     -94.6
    ],
    "dir": [
-    -0.0,
-    -1.0
+    0.0,
+    1.0
    ],
    "change": "added"
   },
   {
-   "his_dim": 20618986,
-   "elements": [
-    14223272,
-    14223272
-   ],
-   "value_ft": 5.5,
-   "chain": [
-    5.5
-   ],
-   "at": [
-    373.1,
-    60.6
-   ],
-   "dir": [
-    0.90631,
-    0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20618991,
-   "elements": [
-    14223254,
-    14223254
-   ],
-   "value_ft": 6.0,
-   "chain": [
-    6.0
-   ],
-   "at": [
-    141.0,
-    -22.4
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619009,
-   "elements": [
-    14232215,
-    14232215
-   ],
-   "value_ft": 5.5,
-   "chain": [
-    5.5
-   ],
-   "at": [
-    184.2,
-    -1.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619012,
-   "elements": [
-    13788116,
-    20618988
-   ],
-   "value_ft": 6.708333333333333,
-   "chain": [
-    6.71
-   ],
-   "at": [
-    179.8,
-    -42.6
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619070,
+   "his_dim": 20619631,
    "elements": [
     13794124,
     14223243
@@ -4171,108 +2708,28 @@
     16.26
    ],
    "at": [
-    408.1,
-    42.1
+    405.3,
+    40.5
    ],
    "dir": [
-    -0.5,
-    0.86603
+    0.5,
+    -0.86603
    ],
    "change": "added"
   },
   {
-   "his_dim": 20619071,
+   "his_dim": 20620072,
    "elements": [
-    13794716,
-    13794723
+    13797405,
+    14223276
    ],
-   "value_ft": 17.333333333333332,
+   "value_ft": 27.333333333333332,
    "chain": [
-    17.33
+    27.33
    ],
    "at": [
-    403.4,
-    16.1
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619077,
-   "elements": [
-    14217903,
-    14232286
-   ],
-   "value_ft": 0.25,
-   "chain": [
-    0.25
-   ],
-   "at": [
-    210.8,
-    -14.4
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619079,
-   "elements": [
-    14217903,
-    14223279
-   ],
-   "value_ft": 2.84375,
-   "chain": [
-    2.84
-   ],
-   "at": [
-    238.2,
-    -7.5
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619080,
-   "elements": [
-    14213472,
-    20619111
-   ],
-   "value_ft": 22.0,
-   "chain": [
-    22.0
-   ],
-   "at": [
-    174.3,
-    -48.5
-   ],
-   "dir": [
-    0.0,
-    1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619085,
-   "elements": [
-    14240997,
-    14240997
-   ],
-   "value_ft": 7.5,
-   "chain": [
-    7.5
-   ],
-   "at": [
-    356.0,
-    -1.3
+    159.5,
+    -120.3
    ],
    "dir": [
     0.86603,
@@ -4281,638 +2738,58 @@
    "change": "added"
   },
   {
-   "his_dim": 20619092,
-   "elements": [
-    14241581,
-    14241581
-   ],
-   "value_ft": 7.5,
-   "chain": [
-    7.5
-   ],
-   "at": [
-    231.4,
-    -73.4
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619099,
-   "elements": [
-    13788102,
-    14223718
-   ],
-   "value_ft": 1.5,
-   "chain": [
-    1.5
-   ],
-   "at": [
-    126.4,
-    -113.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619102,
-   "elements": [
-    14223272,
-    14223272
-   ],
-   "value_ft": 2.75,
-   "chain": [
-    2.75
-   ],
-   "at": [
-    390.3,
-    20.3
-   ],
-   "dir": [
-    0.90631,
-    0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619103,
-   "elements": [
-    14223272,
-    14223272
-   ],
-   "value_ft": 2.75,
-   "chain": [
-    2.75
-   ],
-   "at": [
-    392.8,
-    21.5
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619104,
-   "elements": [
-    14223272,
-    14223272
-   ],
-   "value_ft": 5.5,
-   "chain": [
-    5.5
-   ],
-   "at": [
-    392.5,
-    18.9
-   ],
-   "dir": [
-    0.90631,
-    0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619105,
-   "elements": [
-    14223243,
-    14223272
-   ],
-   "value_ft": 12.291666666666666,
-   "chain": [
-    12.29
-   ],
-   "at": [
-    392.2,
-    34.2
-   ],
-   "dir": [
-    -0.90631,
-    -0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619109,
-   "elements": [
-    13788108,
-    14223257
-   ],
-   "value_ft": 2.3229166666666665,
-   "chain": [
-    2.32
-   ],
-   "at": [
-    185.4,
-    -69.5
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619110,
-   "elements": [
-    13788108,
-    14223257
-   ],
-   "value_ft": 7.447916666666667,
-   "chain": [
-    7.45
-   ],
-   "at": [
-    187.9,
-    -65.6
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619112,
-   "elements": [
-    13788115,
-    20619048
-   ],
-   "value_ft": 5.822916666666667,
-   "chain": [
-    5.82
-   ],
-   "at": [
-    246.9,
-    -13.1
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619113,
+   "his_dim": 20620363,
    "elements": [
     13788110,
-    20619048
-   ],
-   "value_ft": 7.802083333333333,
-   "chain": [
-    7.8
-   ],
-   "at": [
-    236.8,
-    -21.6
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619114,
-   "elements": [
-    14217903,
-    14223263
-   ],
-   "value_ft": 0.28125,
-   "chain": [
-    0.28
-   ],
-   "at": [
-    236.0,
-    -11.3
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619115,
-   "elements": [
-    14217903,
-    14223263
-   ],
-   "value_ft": 1.5520833333333333,
-   "chain": [
-    1.55
-   ],
-   "at": [
-    238.9,
-    -9.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619116,
-   "elements": [
-    17076605,
-    17076605
-   ],
-   "value_ft": 2.6666666666666665,
-   "chain": [
-    2.67
-   ],
-   "at": [
-    227.6,
-    -58.8
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619117,
-   "elements": [
-    14223268,
-    17076605
-   ],
-   "value_ft": 3.9375,
-   "chain": [
-    3.94
-   ],
-   "at": [
-    225.9,
-    -55.9
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619129,
-   "elements": [
-    13796245,
-    20619275
-   ],
-   "value_ft": 0.19791666666666666,
-   "chain": [
-    0.19
-   ],
-   "at": [
-    343.6,
-    43.4
-   ],
-   "dir": [
-    -0.42262,
-    0.90631
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619130,
-   "elements": [
-    13788116,
-    14223263
-   ],
-   "value_ft": 5.208333333333333,
-   "chain": [
-    5.21
-   ],
-   "at": [
-    191.6,
-    -43.4
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619132,
-   "elements": [
-    13788108,
-    14223261
-   ],
-   "value_ft": 2.2291666666666665,
-   "chain": [
-    2.23
-   ],
-   "at": [
-    183.1,
-    -38.4
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619133,
-   "elements": [
-    13788108,
-    14223263
-   ],
-   "value_ft": 3.2916666666666665,
-   "chain": [
-    3.29
-   ],
-   "at": [
-    185.9,
-    -39.6
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619134,
-   "elements": [
-    13794124,
-    14241123
-   ],
-   "value_ft": 3.75,
-   "chain": [
-    3.75
-   ],
-   "at": [
-    366.5,
-    29.7
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619135,
-   "elements": [
-    14223268,
-    14223268
-   ],
-   "value_ft": 3.75,
-   "chain": [
-    3.75
-   ],
-   "at": [
-    304.1,
-    -6.4
-   ],
-   "dir": [
-    0.5,
-    -0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619136,
-   "elements": [
-    14223268,
-    14223268
-   ],
-   "value_ft": 3.75,
-   "chain": [
-    3.75
-   ],
-   "at": [
-    242.0,
-    -42.2
-   ],
-   "dir": [
-    0.5,
-    -0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619137,
-   "elements": [
-    14223268,
-    14223268
-   ],
-   "value_ft": 3.75,
-   "chain": [
-    3.75
-   ],
-   "at": [
-    178.3,
-    -79.0
-   ],
-   "dir": [
-    0.5,
-    -0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619138,
-   "elements": [
-    14241592,
-    14241592
-   ],
-   "value_ft": 7.5,
-   "chain": [
-    7.5
-   ],
-   "at": [
-    200.2,
-    -91.4
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619139,
-   "elements": [
-    14241572,
-    14241572
-   ],
-   "value_ft": 7.5,
-   "chain": [
-    7.5
-   ],
-   "at": [
-    262.6,
-    -55.4
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619140,
-   "elements": [
-    14241561,
-    14241561
-   ],
-   "value_ft": 7.5,
-   "chain": [
-    7.5
-   ],
-   "at": [
-    293.8,
-    -37.4
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619141,
-   "elements": [
-    14241552,
-    14241552
-   ],
-   "value_ft": 7.5,
-   "chain": [
-    7.5
-   ],
-   "at": [
-    325.0,
-    -19.6
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619151,
-   "elements": [
-    14223265,
     14223265
    ],
-   "value_ft": 5.5,
+   "value_ft": 6.510416666666667,
    "chain": [
-    5.5
+    6.51
    ],
    "at": [
-    336.0,
-    42.3
+    236.1,
+    -23.3
    ],
    "dir": [
-    0.5,
-    -0.86603
+    1.0,
+    0.0
    ],
    "change": "added"
   },
   {
-   "his_dim": 20619165,
+   "his_dim": 20620410,
    "elements": [
-    14213468,
-    20618919
+    13794124,
+    14223276
    ],
-   "value_ft": 7.083333333333333,
+   "value_ft": 16.260416666666668,
    "chain": [
-    7.08
+    16.26
    ],
    "at": [
-    185.5,
-    -19.8
+    126.1,
+    -120.7
    ],
    "dir": [
-    0.0,
-    1.0
+    -0.5,
+    0.86603
    ],
    "change": "added"
   },
   {
-   "his_dim": 20619188,
+   "his_dim": 20620417,
    "elements": [
-    13795352,
-    20618926
+    13797405,
+    14223276
    ],
-   "value_ft": 5.510416666666667,
+   "value_ft": 21.833333333333332,
    "chain": [
-    5.52
+    21.83
    ],
    "at": [
-    339.0,
-    33.7
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619190,
-   "elements": [
-    14223247,
-    20618927
-   ],
-   "value_ft": 10.5,
-   "chain": [
-    10.5
-   ],
-   "at": [
-    338.8,
-    52.2
-   ],
-   "dir": [
-    0.90631,
-    0.42262
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619196,
-   "elements": [
-    13796245,
-    20619195
-   ],
-   "value_ft": 0.2916666666666667,
-   "chain": [
-    0.29
-   ],
-   "at": [
-    351.3,
-    47.3
-   ],
-   "dir": [
-    -0.42262,
-    0.90631
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619197,
-   "elements": [
-    13795352,
-    14223268
-   ],
-   "value_ft": 15.364583333333334,
-   "chain": [
-    15.36
-   ],
-   "at": [
-    349.6,
-    25.2
+    160.7,
+    -116.9
    ],
    "dir": [
     0.86603,
@@ -4921,942 +2798,22 @@
    "change": "added"
   },
   {
-   "his_dim": 20619198,
+   "his_dim": 20620424,
    "elements": [
-    14223245,
-    14223245
+    14223276,
+    14223276
    ],
    "value_ft": 5.5,
    "chain": [
     5.5
    ],
    "at": [
-    355.5,
-    34.5
-   ],
-   "dir": [
-    -0.81813,
-    -0.57504
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619214,
-   "elements": [
-    14232215,
-    19603329
-   ],
-   "value_ft": 21.270833333333332,
-   "chain": [
-    21.27
-   ],
-   "at": [
-    197.6,
-    -2.6
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619216,
-   "elements": [
-    19603329,
-    19605808
-   ],
-   "value_ft": 0.5,
-   "chain": [
-    0.5
-   ],
-   "at": [
-    208.0,
-    -9.1
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619217,
-   "elements": [
-    19603329,
-    19605808
-   ],
-   "value_ft": 0.5,
-   "chain": [
-    0.5
-   ],
-   "at": [
-    209.3,
-    -7.2
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619218,
-   "elements": [
-    19605808,
-    19605808
-   ],
-   "value_ft": 0.5833333333333334,
-   "chain": [
-    0.58,
-    0.5
-   ],
-   "at": [
-    209.3,
-    -6.7
-   ],
-   "dir": [
-    -0.0,
-    1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619218,
-   "elements": [
-    19603329,
-    19605808
-   ],
-   "value_ft": 0.5,
-   "chain": [
-    0.58,
-    0.5
-   ],
-   "at": [
-    209.3,
-    -6.1
-   ],
-   "dir": [
-    -0.0,
-    1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619219,
-   "elements": [
-    14232215,
-    19605808
-   ],
-   "value_ft": 0.5,
-   "chain": [
-    0.5
-   ],
-   "at": [
-    187.2,
-    -5.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619249,
-   "elements": [
-    20618925,
-    20619224
-   ],
-   "value_ft": 4.0,
-   "chain": [
-    4.0
-   ],
-   "at": [
-    300.1,
-    -35.8
+    148.9,
+    -123.7
    ],
    "dir": [
     0.86603,
     0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619251,
-   "elements": [
-    14241552,
-    20619224
-   ],
-   "value_ft": 27.666666666666668,
-   "chain": [
-    27.67
-   ],
-   "at": [
-    313.8,
-    -27.9
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619252,
-   "elements": [
-    13797908,
-    20619224
-   ],
-   "value_ft": 27.666666666666668,
-   "chain": [
-    27.67
-   ],
-   "at": [
-    295.6,
-    3.6
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619253,
-   "elements": [
-    20618925,
-    20619224
-   ],
-   "value_ft": 4.0,
-   "chain": [
-    4.0
-   ],
-   "at": [
-    281.9,
-    -4.3
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619258,
-   "elements": [
-    14223265,
-    20619225
-   ],
-   "value_ft": 2.0,
-   "chain": [
-    2.0
-   ],
-   "at": [
-    274.3,
-    10.9
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619260,
-   "elements": [
-    14223265,
-    20619259
-   ],
-   "value_ft": 0.75,
-   "chain": [
-    0.75
-   ],
-   "at": [
-    278.5,
-    9.4
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619261,
-   "elements": [
-    20619224,
-    20619259
-   ],
-   "value_ft": 0.65625,
-   "chain": [
-    0.66
-   ],
-   "at": [
-    276.7,
-    9.5
-   ],
-   "dir": [
-    0.86603,
-    0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619262,
-   "elements": [
-    14223265,
-    20618926
-   ],
-   "value_ft": 5.0,
-   "chain": [
-    5.0
-   ],
-   "at": [
-    283.8,
-    9.2
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619277,
-   "elements": [
-    17076571,
-    17076571
-   ],
-   "value_ft": 1.6666666666666667,
-   "chain": [
-    1.67
-   ],
-   "at": [
-    363.8,
-    22.1
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619278,
-   "elements": [
-    17076571,
-    17076571
-   ],
-   "value_ft": 2.6666666666666665,
-   "chain": [
-    2.67
-   ],
-   "at": [
-    367.8,
-    22.2
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619280,
-   "elements": [
-    14241123,
-    17076571
-   ],
-   "value_ft": 2.9166666666666665,
-   "chain": [
-    2.92
-   ],
-   "at": [
-    367.3,
-    20.6
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619281,
-   "elements": [
-    14241123,
-    17076571
-   ],
-   "value_ft": 2.9166666666666665,
-   "chain": [
-    2.92
-   ],
-   "at": [
-    363.3,
-    18.4
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619282,
-   "elements": [
-    14223268,
-    17076554
-   ],
-   "value_ft": 3.9375,
-   "chain": [
-    3.94
-   ],
-   "at": [
-    351.4,
-    16.5
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619283,
-   "elements": [
-    17076554,
-    17076554
-   ],
-   "value_ft": 2.6666666666666665,
-   "chain": [
-    2.67
-   ],
-   "at": [
-    352.0,
-    13.1
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619284,
-   "elements": [
-    17076554,
-    17076554
-   ],
-   "value_ft": 1.6666666666666667,
-   "chain": [
-    1.67
-   ],
-   "at": [
-    348.0,
-    12.6
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619286,
-   "elements": [
-    17076554,
-    17076554
-   ],
-   "value_ft": 0.8333333333333334,
-   "chain": [
-    0.83
-   ],
-   "at": [
-    349.8,
-    8.7
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619287,
-   "elements": [
-    14223268,
-    17076537
-   ],
-   "value_ft": 3.9375,
-   "chain": [
-    3.94
-   ],
-   "at": [
-    320.3,
-    -1.4
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619288,
-   "elements": [
-    17076537,
-    17076537
-   ],
-   "value_ft": 2.6666666666666665,
-   "chain": [
-    2.67
-   ],
-   "at": [
-    320.9,
-    -4.9
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619289,
-   "elements": [
-    17076537,
-    17076537
-   ],
-   "value_ft": 1.6666666666666667,
-   "chain": [
-    1.67
-   ],
-   "at": [
-    316.8,
-    -5.3
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619290,
-   "elements": [
-    17076537,
-    17076537
-   ],
-   "value_ft": 0.8333333333333334,
-   "chain": [
-    0.83
-   ],
-   "at": [
-    319.3,
-    -8.8
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619291,
-   "elements": [
-    17076537,
-    17076537
-   ],
-   "value_ft": 0.8333333333333334,
-   "chain": [
-    0.83
-   ],
-   "at": [
-    318.6,
-    -9.2
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619292,
-   "elements": [
-    17076588,
-    17076588
-   ],
-   "value_ft": 1.6666666666666667,
-   "chain": [
-    1.67
-   ],
-   "at": [
-    254.5,
-    -41.4
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619293,
-   "elements": [
-    14223268,
-    17076588
-   ],
-   "value_ft": 3.9375,
-   "chain": [
-    3.94
-   ],
-   "at": [
-    256.8,
-    -38.1
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619294,
-   "elements": [
-    17076588,
-    17076588
-   ],
-   "value_ft": 2.6666666666666665,
-   "chain": [
-    2.67
-   ],
-   "at": [
-    258.5,
-    -40.9
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619295,
-   "elements": [
-    17076588,
-    17076588
-   ],
-   "value_ft": 0.8333333333333334,
-   "chain": [
-    0.83
-   ],
-   "at": [
-    256.8,
-    -44.6
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619296,
-   "elements": [
-    17076588,
-    17076588
-   ],
-   "value_ft": 0.8333333333333334,
-   "chain": [
-    0.83
-   ],
-   "at": [
-    256.1,
-    -45.1
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619297,
-   "elements": [
-    17076605,
-    17076605
-   ],
-   "value_ft": 1.6666666666666667,
-   "chain": [
-    1.67
-   ],
-   "at": [
-    225.4,
-    -63.0
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619298,
-   "elements": [
-    17076622,
-    17076622
-   ],
-   "value_ft": 1.6666666666666667,
-   "chain": [
-    1.67
-   ],
-   "at": [
-    192.1,
-    -77.3
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619299,
-   "elements": [
-    17076622,
-    17076622
-   ],
-   "value_ft": 2.6666666666666665,
-   "chain": [
-    2.67
-   ],
-   "at": [
-    195.8,
-    -77.1
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619300,
-   "elements": [
-    14223268,
-    17076622
-   ],
-   "value_ft": 3.9375,
-   "chain": [
-    3.94
-   ],
-   "at": [
-    194.1,
-    -74.3
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619301,
-   "elements": [
-    17076622,
-    17076622
-   ],
-   "value_ft": 0.8333333333333334,
-   "chain": [
-    0.83
-   ],
-   "at": [
-    194.6,
-    -80.9
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619302,
-   "elements": [
-    17076622,
-    17076622
-   ],
-   "value_ft": 0.8333333333333334,
-   "chain": [
-    0.83
-   ],
-   "at": [
-    193.9,
-    -81.3
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619308,
-   "elements": [
-    13788116,
-    20619307
-   ],
-   "value_ft": 18.46875,
-   "chain": [
-    18.47
-   ],
-   "at": [
-    157.8,
-    -55.2
-   ],
-   "dir": [
-    -0.0,
-    -1.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619309,
-   "elements": [
-    13788103,
-    20619306
-   ],
-   "value_ft": 21.333333333333332,
-   "chain": [
-    21.33
-   ],
-   "at": [
-    152.0,
-    -67.2
-   ],
-   "dir": [
-    1.0,
-    0.0
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619318,
-   "elements": [
-    14223276
-   ],
-   "value_ft": 2.0,
-   "chain": [
-    2.0
-   ],
-   "at": [
-    141.7,
-    -119.9
-   ],
-   "dir": [
-    0.5,
-    -0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619319,
-   "elements": [
-    14223276
-   ],
-   "value_ft": 2.0,
-   "chain": [
-    2.0
-   ],
-   "at": [
-    142.4,
-    -115.9
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619322,
-   "elements": [
-    14223268,
-    17076639
-   ],
-   "value_ft": 3.9375,
-   "chain": [
-    3.94
-   ],
-   "at": [
-    163.3,
-    -92.1
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619323,
-   "elements": [
-    17076639,
-    17076639
-   ],
-   "value_ft": 2.6666666666666665,
-   "chain": [
-    2.67
-   ],
-   "at": [
-    164.9,
-    -94.9
-   ],
-   "dir": [
-    -0.5,
-    0.86603
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619324,
-   "elements": [
-    17076639,
-    17076639
-   ],
-   "value_ft": 1.6666666666666667,
-   "chain": [
-    1.67
-   ],
-   "at": [
-    163.4,
-    -99.6
-   ],
-   "dir": [
-    -0.86603,
-    -0.5
-   ],
-   "change": "added"
-  },
-  {
-   "his_dim": 20619330,
-   "elements": [
-    14213480,
-    20619328
-   ],
-   "value_ft": 5.0,
-   "chain": [
-    5.0
-   ],
-   "at": [
-    161.6,
-    10.4
-   ],
-   "dir": [
-    -0.0,
-    -1.0
    ],
    "change": "added"
   }
