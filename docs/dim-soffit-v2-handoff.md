@@ -5,24 +5,24 @@ long ones). The design doc is the authoritative log of every rule and every deci
 the "how we work" and "where things stand" summary.
 
 ## Where things stand
-- **L3 North** (`ZZ CLAUDE TEST - L3 NORTH (auto-dim)`, 1:128): five edit rounds by Adolfo. Latest run **98** (same score as 95; the view holds 98)
-  (`Claude outputs/audit_R26/dimsoffit_v2_L3N_run95.md`): 135 strings / 115 placed / 5 review / 0 overlaps.
-  Against his round-5 version (`snapshot_L3N_after_edits5.json`): 123 segments on his line / 34 off / 0 extra /
-  2 missing (the 5 review items are intentional — he left them out). The analyst's verdict after round 5: **what
-  is left on L3N is placement taste, not rules; another round adds little.** Round-by-round "untouched" counts:
-  55 → 70 → 78 → 70 → 86 of ~117 dims.
+- **L3 North** (`ZZ CLAUDE TEST - L3 NORTH (auto-dim)`, 1:128): five edit rounds by Adolfo. Latest run **111** (the view
+  holds it; made with the coworkers' button copy, same code). Against his round-5 version
+  (`snapshot_L3N_after_edits5.json`): **127 / 29 / 0 / 3** (segments on his line / off / extra / missing); the 5 review
+  items are intentional - he left them out. What is left on L3N is placement taste, not rules. Round-by-round
+  "untouched" counts: 55 → 70 → 78 → 70 → 86 of ~117 dims.
 - **L7** (`ZZ CLAUDE TEST - L7 (auto-dim)`, 1:96, orthogonal): two edit rounds. Round 2 (on run 31): 72 unchanged /
-  59 edited / 6 deleted / 4 added (round 1: 42 untouched); analyst `analyst_L7_round2.md`; answers in the design doc
-  (2026-10-07). Latest run **40**: 127 placed / 0 review / 0 overlaps; vs his round-2 version
-  (`snapshot_L7_after_edits2.json`) **140 / 52 / 1 / 4** (run 32 before the changes: 129 / 61 / 5 / 3). The 39 ft edge
-  above AA and the `5'-1"` edges off 7 are dimensioned now. What's left is mostly placement within 1".
+  59 edited / 6 deleted / 4 added (round 1: 42 untouched); analyst `analyst_L7_round2.md`; answers and the day's
+  builds in the design doc (2026-10-07). Latest run **50** (= run 47's code): 124 placed / 0 review / 0 overlaps; vs his
+  round-2 version (`snapshot_L7_after_edits2.json`) **150 / 42 / 1 / 4** (run 32 before the day's changes: 129 / 61 /
+  5 / 3). Adolfo 2026-10-07: "it runs pretty well for L7". Left: plain#52's pair above the opening and plain#66's pair
+  on the right (options built but off - see the design doc).
 - **L4.5 North** (`ZZ CLAUDE TEST - L4.5 NORTH (auto-dim)`, 1:128, rotated wing, centre of the footprint is OPEN
   at this level): latest run **5**: 101 / 91 placed / 8 review / 0 overlaps (run 1: 87 / 71 / 15). Adolfo's answers to
   the L4.5 study (`analyst_L45N_study.md`) changed no rule. The 2026-10-07 review pass fixed two model readings
   (partly filled slab hole; walls standing on the slab) - see the design doc. The 8 review items left are crop-edge /
   congestion cases, no rule. Still missing vs the hand sheet: 20 slab edge -> grid dims (worth a look), the rest is
   columns / repeats / wall faces he ruled out.
-- Hand-sheet baselines: `snapshot_L3N_after_edits5.json` (use this, not the issued sheet), `snapshot_L7_after_edits1.json`,
+- Hand-sheet baselines: `snapshot_L3N_after_edits5.json` (use this, not the issued sheet), `snapshot_L7_after_edits2.json`,
   `snapshot_L45N_hand.json` (parent view's dims inside the north crop; the issued L4.5 sheet, with Adolfo's
   one-offs), `snapshot_L7_hand.json` (issued L7 sheet — NOT a good yardstick: grid overalls, perimeter chain).
 
@@ -46,7 +46,7 @@ the "how we work" and "where things stand" summary.
 - Headless: `execute_revit_code` with `RUN=n` (+ `VIEW_NAME`, `TAG` for L7 / L45N) and `execfile(run_v2.py)`. It
   clears the view's dims, runs the button, writes `dimsoffit_v2_<TAG>_runN.md` + a PNG. **It refuses a run number
   whose report already exists** (guard added after a parallel session wiped the view) — always use a new number.
-  Latest numbers: L3N 98, L7 31, L45N 5.
+  Latest numbers: L3N 111, L7 50, L45N 5. Setting sweeps without touching the views: `dry_run.py` (+ `_sweep_score.py`).
 - Always `assert "R26 TEST" in doc.PathName` first. ~20–45 s per run; the MCP call can time out at 60 s while
   the run completes — read the report file.
 - Image crops: the FitToPage export covers the model crop plus grid bubbles; derive px/ft from two grid bubbles
