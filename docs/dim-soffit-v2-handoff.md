@@ -64,8 +64,7 @@ the "how we work" and "where things stand" summary.
   anything geometric (this bit us twice).
 
 ## Open items (in rough priority)
-1. Answer 3 (opening dims on the side with room, no fixed side): lower `W_SIDE` for opening strings and score.
-2. L7 leftovers: shaft#51's stepped chain on its own side; core/shaft far-side choices; a third L7 round only if
+1. L7 leftovers: shaft#51's stepped chain on its own side; core/shaft far-side choices; a third L7 round only if
    Adolfo wants one (round 2 was mostly him restoring round-1 positions, now built).
 3. L4.5: the 20 slab edge -> grid dims the hand sheet has and the tool doesn't (void + perimeter edges).
 4. The CJ pair off grid 5 (he puts both at the bottom end; the tool at the top — "more open space" is his reason).

@@ -583,9 +583,12 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   (f) **step -> grid dims in the margin just past the step face's open end** (`do_step`, `free`): 129 → 140.
   Tried and reverted: no stacked row to a face on a wall (he deleted core#49's `7 | 4'-5" | edge@wall` but keeps core#47's
   `edge@wall | 4'-6" | CC`). What is left on L7 (52 moved): ~40 within 1" of his line; the rest are core/shaft far-side
-  choices and shaft#51's stepped chain (F in the analyst report) — placement taste. Answer 3 (side by room) is NOT built yet:
-  `do_opening` still gives the "away from the partner" side as home and the layout charges `W_SIDE` for the other
-  side, so clutter only switches sides past that cost. Next try: lower `W_SIDE` for opening strings and score.
+  choices and shaft#51's stepped chain (F in the analyst report) — placement taste.
+- **2026-10-07 — answer 3 (opening side by room) tried, runs L7 41 / L3N 106.** An opening's string already has its
+  other side as an alternative home at `W_ALT` 1.0 (vs `W_LANE` 2.0 per row out, `W_CROSS` 2.5 per crossing), so room
+  and clashes already decide the side; rule 12's home side only breaks ties. With the other side free (`W_ALT` 0 for
+  openings) one pair flipped on L7, away from his spot (140 -> 138 left), L3N unchanged (122 / 34 / 0 / 3) -
+  reverted. Answer 3 is the current behaviour; no change needed.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

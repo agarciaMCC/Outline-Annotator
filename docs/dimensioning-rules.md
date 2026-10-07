@@ -28,7 +28,7 @@ Collected from review of test runs on 1268 Kalae, Level 7/8 soffit, 2026-09-28; 
 ## Placement
 10. Perimeter strings sit **outside** the slab; hierarchy from the slab outward: chain check → grid→edge strings (shortest first) → grid-to-grid → overall.
 11. Strings sit close to the object they dimension (≈1 ft), not scattered.
-12. An opening's string goes on **whichever side has room and doesn't interfere with other dimensions** (2026-10-07, L7 round 2 — replaces "away from its partner string"). The locating dim and the size stay together on that side.
+12. An opening's string goes on **whichever side has room and doesn't interfere with other dimensions** (2026-10-07, L7 round 2 — replaces "away from its partner string"). The locating dim and the size stay together on that side. (The tool starts from the side away from the partner string and switches when that side costs a row more or a crossing; it only breaks ties.)
 13. Nearer objects take the lane nearest the grid; farther ones are pushed out.
 14. Never sit inside an opening; keep clear of columns, walls, beams and crossing gridlines (no dim line along/over a grid line).
 15. Share a line with a neighbouring string in the same direction where they don't overlap.
