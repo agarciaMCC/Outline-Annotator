@@ -52,6 +52,7 @@ CFG = {
                             # OFF (0): Adolfo added the 1'-4" jog's 3'-11 1/8" off B three rounds running (2026-10-06)
     "CORE_WALL_NEAR": 1.0,  # ft; a core/shaft opening with a core wall face this close is dimensioned off that wall
     "CJ_MID_TOL": 1.5,      # ft; a CJ whose distances to the two grids differ by less is dimensioned from both
+    "SKEW_CORNERS": True,   # beam corners at a skewed junction located off grids (Adolfo 2026-10-07, L4 South)
     "CJ_LONG_PAIR_SPACING": False,  # long CJ pairs (both ends dimensioned) get the spacing at each end too (L4S has
                             # it; on L3N it adds 2 dims he doesn't draw - off, 2026-10-07)
     "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at one shared end + a spacing dim
@@ -1268,6 +1269,8 @@ class Planner(object):
             self.notes["small openings/notches crowded together (left for an enlarged plan)"] = len(enlarged)
         self.do_shaft_pockets()
         self.do_angled_corners()
+        if self.c["SKEW_CORNERS"]:
+            self.do_skew_beam_corners()
         self.make_consistent()
         n0 = len(self.strings)
         m = self.m
@@ -1367,6 +1370,87 @@ class Planner(object):
                         n += 1                      # the shaft's first lane and split the B stack)
         if n:
             self.notes["non-90 corners located along the edge from a grid"] = n
+
+    def do_skew_beam_corners(self):
+        """A beam that runs into a member at a skew (its end face neither square
+        nor along the beam): the two corners of that end are located off grids
+        (Adolfo 2026-10-07, L4 South answers 3 and 4): off the nearest grid
+        running along the skewed face (G for the grid-2 band meeting the
+        angled G band) to each corner, and off the nearest grid crossing the
+        beam square to the nearer corner ("just in case we don't have grid
+        G" - JJ). Grids within the tape only."""
+        m = self.m
+        n = 0
+        feat_of = dict((id(f.meta.get("member")), f) for f in self.fs.features if f.kind == "beam")
+        for b in m.beams:
+            f = feat_of.get(id(b))
+            if f is None or not f.in_crop or b.d is None:
+                continue
+            # skewed ends from the plan outline: Revit's join cuts the beam at
+            # the skew, and that cut face is not among its faces (L4S grid-2 band)
+            poly = b.poly or []
+            for k in range(len(poly)):
+                pa, pb = poly[k], poly[(k + 1) % len(poly)]
+                L = math.hypot(pb[0] - pa[0], pb[1] - pa[1])
+                if L < 1.0:
+                    continue
+                ed = ((pb[0] - pa[0]) / L, (pb[1] - pa[1]) / L)
+                dot = abs(ed[0] * b.d[0] + ed[1] * b.d[1])
+                if dot < 0.1 or dot > 0.995:
+                    continue                            # square to / along the beam: not a skewed end
+                # ... where it runs INTO another beam (just past the edge's
+                # middle, away from this beam, is another beam): not a slab
+                # edge or wall cut at an angle (L3N beam 14182579, never drawn)
+                mx, my = (pa[0] + pb[0]) / 2.0, (pa[1] + pb[1]) / 2.0
+                nx, ny = -ed[1], ed[0]
+                if P.point_in_poly(mx + nx * 0.3, my + ny * 0.3, poly):
+                    nx, ny = -nx, -ny
+                into = any(o is not b and o.poly and P.point_in_poly(mx + nx * 0.5, my + ny * 0.5, o.poly)
+                           for o in m.beams)
+                if not into:
+                    continue
+                corners = []
+                for v in (pa, pb):
+                    ref = m.corner_ref(v, tol=12)
+                    if ref is not None and self.fs._inside(v):
+                        corners.append((v, ref))
+                if not corners:
+                    continue
+                f_face = m.family_parallel(ed)
+                fb = m.family_parallel(b.d)
+                f_cross = None
+                if fb is not None:
+                    u = m.grids[m.families[fb][0]][2]
+                    for fj in range(len(m.families)):
+                        v_ = m.grids[m.families[fj][0]][2]
+                        if fj != fb and abs(u[0] * v_[0] + u[1] * v_[1]) < 0.1:
+                            f_cross = fj
+                plan = []
+                if f_face is not None:
+                    plan += [(f_face, c) for c in corners]
+                if f_cross is not None and f_cross != f_face:
+                    # the beam's TIP: the corner furthest out along the beam
+                    # (JJ | 25'-3 1/2" | tip of the grid-2 band, issued L4S)
+                    mid_b = ((b.p0[0] + b.p1[0]) / 2.0, (b.p0[1] + b.p1[1]) / 2.0) if b.p0 else None
+                    def along(v):
+                        return abs((v[0] - mid_b[0]) * b.d[0] + (v[1] - mid_b[1]) * b.d[1]) if mid_b else 0.0
+                    tip = max(corners, key=lambda c: along(c[0]))
+                    plan.append((f_cross, tip))
+                for fx, (v, ref) in plan:
+                    ng = m.nearest_grid(v, fx, self.c["LOC_MAX"])
+                    if ng is None:
+                        continue
+                    gi, off = ng
+                    if abs(off) < 0.5:
+                        continue                        # on / hard by the grid: nothing to locate
+                    st = m.station(v, gi)
+                    s = self.add(fx, gi, [self.gref(gi) + (self.gname[gi],), (m.offset(v, gi), ref, "beam corner", "corner")],
+                                 (st - 2.0, st + 2.0), "skew corner -> " + self.gname[gi], f, prefer=st)
+                    if s is not None:
+                        s.late = True
+                        n += 1
+        if n:
+            self.notes["beam corners at a skewed junction located off grids"] = n
 
     def mark_ro(self):
         """'R.O.' on the overall size of a shaft / core opening: a string of exactly

@@ -127,6 +127,10 @@ class PlanModel(object):
         self.corner_refs = self._read_corner_refs()
         self.beams = self._read_members(DB.BuiltInCategory.OST_StructuralFraming,
                                         "beam")
+        # beams' vertical corner edges too (a beam corner where it meets a
+        # skewed member is located off grids - Adolfo 2026-10-07, L4 South)
+        for k, r in self._read_vertical_edges([bm.e for bm in self.beams], self.opts_fine).items():
+            self.corner_refs.setdefault(k, r)
         # curbs and CMU walls aren't "walls" for any wall rule (Adolfo
         # 2026-10-05: Kalae curbs are walls "8.5 x 4 CURB"); they neither
         # block dims nor anchor them
@@ -211,6 +215,36 @@ class PlanModel(object):
                         continue
                     if abs(a.Z - b.Z) > 0.3 and abs(a.X - b.X) < 1.0 / 96 and abs(a.Y - b.Y) < 1.0 / 96:
                         out.setdefault((int(round(a.X * 96)), int(round(a.Y * 96))), r)
+        return out
+
+    def _read_vertical_edges(self, elems, opts):
+        """{(round(x*96), round(y*96)): Reference} of the vertical edges of
+        these elements' solids."""
+        out = {}
+        for el in elems:
+            try:
+                geo = el.get_Geometry(opts)
+            except Exception:
+                continue
+            for g in geo:
+                solids = [g] if isinstance(g, DB.Solid) else []
+                if isinstance(g, DB.GeometryInstance):
+                    try:
+                        solids = [x for x in g.GetInstanceGeometry() if isinstance(x, DB.Solid)]
+                    except Exception:
+                        solids = []
+                for so in solids:
+                    for ed in so.Edges:
+                        try:
+                            r = ed.Reference
+                            if r is None:
+                                continue
+                            cv = ed.AsCurve()
+                            a, b = cv.GetEndPoint(0), cv.GetEndPoint(1)
+                        except Exception:
+                            continue
+                        if abs(a.Z - b.Z) > 0.3 and abs(a.X - b.X) < 1.0 / 96 and abs(a.Y - b.Y) < 1.0 / 96:
+                            out.setdefault((int(round(a.X * 96)), int(round(a.Y * 96))), r)
         return out
 
     def corner_ref(self, pt, tol=1):

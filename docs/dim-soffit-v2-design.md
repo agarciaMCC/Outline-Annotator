@@ -660,6 +660,20 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   locate the end corner off the straight cross grid too (JJ), "just in case we don't have grid G". (4) **Where a beam
   runs into a member at a skew that lines up with nothing else, locate the corner intersections** - own grid plus the
   straight grids at those corners ("b").
+- **2026-10-07 — L4 South fixes (runs L4S 2 / L3N 112 / L7 51).** (a) A beam with an END inside the crop counts as in
+  view (`mcc_features._add`; only CJs had that) and a beam with no end in view that doesn't continue in line gets its
+  width just inside the crop (`do_beam`, flagged `weak` so a real end's width wins in `dedupe`): the grid 10 / 11 beams.
+  Without the "not continuing" test the stand-ins pushed his real-end widths aside on L3N (127 -> 125). (b) **Skewed
+  junction corners** (answers 3 / 4, `do_skew_beam_corners`, `SKEW_CORNERS` on): a beam whose plan outline has an end
+  edge at a skew where it runs into another beam gets its tip located off the nearest straight grid crossing it (JJ |
+  25'-3¼" tip of the grid-2 band) and its corners off the grid along the skewed face (dropped when the other beam's
+  width already locates that face). Beams' vertical edges added to `corner_refs` (`PlanModel._read_vertical_edges`).
+  On L3N it adds 2 corner dims at beam 14182579 (top, grids 9 / 10) he never drew - to check with him. (c) CJ pairs:
+  a 1/8" tolerance for L4S's 4'-0" pairs cost L3N 1 (a 4'-0" pair there isn't treated as one) - reverted;
+  long-pair spacing built, off (`CJ_LONG_PAIR_SPACING`). Scores: L3N 127 / 29 / 2 / 3, L7 150 / 42 / 1 / 4 (same);
+  L4S vs the issued sheet 23 / 36 / 41 / 160 (71 placed, 38 review - mostly tags, kept since tags go on before or after).
+  Not done from the study: angled beams with no grid family (corners off straight grids), no beam-end dim where the
+  end sits on an already-dimensioned slab edge (~10 review items), compare_segments reference tolerance.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

@@ -22,6 +22,10 @@ the "how we work" and "where things stand" summary.
   (partly filled slab hole; walls standing on the slab) - see the design doc. The 8 review items left are crop-edge /
   congestion cases, no rule. Still missing vs the hand sheet: 20 slab edge -> grid dims (worth a look), the rest is
   columns / repeats / wall faces he ruled out.
+- **L4 South** (`ZZ CLAUDE TEST - L4 SOUTH (auto-dim)`, 1:128, made 2026-10-07 as a hold-out: angled wing of PT band
+  beams): run **2** (71 placed / 38 review, mostly blocked by the copied tags). Study `analyst_L4S_study.md`; answers in
+  the design doc. Issued-sheet snapshot `snapshot_L4S_hand.json`; `snapshot_L4S_before_edits1.json` = run 2, ready for
+  Adolfo's first edit round.
 - Hand-sheet baselines: `snapshot_L3N_after_edits5.json` (use this, not the issued sheet), `snapshot_L7_after_edits2.json`,
   `snapshot_L45N_hand.json` (parent view's dims inside the north crop; the issued L4.5 sheet, with Adolfo's
   one-offs), `snapshot_L7_hand.json` (issued L7 sheet — NOT a good yardstick: grid overalls, perimeter chain).
@@ -46,7 +50,7 @@ the "how we work" and "where things stand" summary.
 - Headless: `execute_revit_code` with `RUN=n` (+ `VIEW_NAME`, `TAG` for L7 / L45N) and `execfile(run_v2.py)`. It
   clears the view's dims, runs the button, writes `dimsoffit_v2_<TAG>_runN.md` + a PNG. **It refuses a run number
   whose report already exists** (guard added after a parallel session wiped the view) — always use a new number.
-  Latest numbers: L3N 111, L7 50, L45N 5. Setting sweeps without touching the views: `dry_run.py` (+ `_sweep_score.py`).
+  Latest numbers: L3N 112, L7 51, L45N 5, L4S 2. Setting sweeps without touching the views: `dry_run.py` (+ `_sweep_score.py`).
 - Always `assert "R26 TEST" in doc.PathName` first. ~20–45 s per run; the MCP call can time out at 60 s while
   the run completes — read the report file.
 - Image crops: the FitToPage export covers the model crop plus grid bubbles; derive px/ft from two grid bubbles
