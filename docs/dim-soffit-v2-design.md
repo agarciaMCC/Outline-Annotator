@@ -648,6 +648,18 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   2'-9½" line) and the join pulls the pair back below; letting a blocked pulled text go to the far end
   (`W_TEXT_FLIP`, now None = off) puts the pair exactly on his spot but costs L3N 3-8 at any price. Pair 2 - only the
   dim-count cost (`W_SIDES` 1) puts it on his spot, and that costs L7 4 elsewhere; both left off.
+- **2026-10-07 — L4 South: new hold-out test view + Adolfo's answers.** `ZZ CLAUDE TEST - L4 SOUTH (auto-dim)` = copy
+  (with detailing) of `LEVEL 4 - SOUTH AREA (SOFFIT PLAN)`, 1:128: an angled wing of PT band beams, few openings.
+  Issued-sheet snapshot `snapshot_L4S_hand.json` (176 dims). Run 1: 64 placed / 37 review; 55 of 220 hand segments.
+  Ignoring the copied tags (`AVOID_NOTES` False; Adolfo: tags go on before or after dims, "it varies") adds only 8.
+  Study `Claude outputs/audit_R26/analyst_L4S_study.md`: 73 hand-only segments are ruled out (grid-to-grid, QC
+  points, columns, walls), 53 not covered by a rule (34 Beam Trim Voids), 31 covered but missed (6 beams with no
+  string, CJ pair spacing, angled beams with no grid family). Answers: (1) **Beam Trim Voids: leave them off the
+  soffit plan** ("poor / inefficient modelling that I had no hand in - I made the best of what I had"). (2) **No
+  overall beam width outside a split width** (the L3N answer stands). (3) A beam ending against the skewed band:
+  locate the end corner off the straight cross grid too (JJ), "just in case we don't have grid G". (4) **Where a beam
+  runs into a member at a skew that lines up with nothing else, locate the corner intersections** - own grid plus the
+  straight grids at those corners ("b").
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open
