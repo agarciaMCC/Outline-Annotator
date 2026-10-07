@@ -612,6 +612,14 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   dims doesn't capture what he means. Better next ideas: compare only the element's two sides (fewer dims on the far
   side wins), and a second pass that re-places the most crowded dims once everything is down (the layout is greedy:
   a side that looks empty when a dim is placed can fill up after).
+- **2026-10-07 — two-sides comparison tried (dry runs, `sweep_sides_2026-10-07.md`).** Layout cost `W_SIDES` per
+  other element's dim more on the dim's side of its element than on the other side (strip `SIDES_R_IN` deep, over the
+  stretch the witness lines cover; `Layout.side_counts`; openings, or openings + CJs + beams). Default 0 = off.
+  Weights <= 0.5 move nothing (lane / alternative-home costs outweigh them); weight ~1 (strip 0.75-1.5") is a
+  plateau at 139 vs 140 on L7: it moves 4 dims to exactly his side (the pilaster hole's `8'-0½"` to the east,
+  plain#66's `2'-2" | 7'-6"`) but 2 others to the emptier side where he had them on the busier one (pen near FF,
+  plain at grid 7); weights >= 1.25 lose 5-13. L3N: no change at any weight. **Not adopted.** His "doesn't
+  interfere" seems to be about crossings and witness lines through other dims (already costed), not a dim count.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

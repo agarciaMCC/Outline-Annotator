@@ -69,6 +69,9 @@ CFG = {
     "W_ALT": 1.0,           # base cost of a string's alternative home (the other end of a CJ pair)
     "W_CROWD": 0.0,         # per other element's placed dim within CROWD_R_IN of a candidate (line + text):
     "CROWD_R_IN": 0.5,      # paper inches - "the side with least congestion" (Adolfo 2026-10-07); 0 = off
+    "W_SIDES": 0.0,         # per dim more on this side of the element than on its other side (0 = off):
+    "SIDES_R_IN": 1.0,      # paper inches - depth of the strip beside the element that is counted
+    "SIDES_KINDS": ("opening",),   # elements whose dims compare their two sides
     "W_SPLIT": 8.0,         # an element's dims of one direction on both sides of it (keep them on one side);
                             # 3 lost to the far side at the L3N elevator shaft (8 1/2" | 13'-7 1/2" vs 14'-4") - analyst B6
                             # (5 tried after L7 round 1 - "let them breathe" - bisecting an L3N regression, run 91)
@@ -179,6 +182,7 @@ class Layout(object):
         self.c.setdefault("FIRST_GAP", self.c["FIRST_GAP_IN"] * k)
         self.c.setdefault("STATION_GAP", self.c["STATION_GAP_IN"] * k)
         self.c.setdefault("CROWD_R", self.c["CROWD_R_IN"] * k)
+        self.c.setdefault("SIDES_R", self.c["SIDES_R_IN"] * k)
         self.c.setdefault("EDGE_CLEAR", self.c["EDGE_CLEAR_IN"] * k)
         self.c.setdefault("MIN_GAP", self.c["MIN_GAP_IN"] * k)
         self.par_edges = self._parallel_edges(model)
@@ -539,6 +543,12 @@ class Layout(object):
             for ml in leaders:
                 if P.seg_intersect(ml[0], ml[1], pl.seg[0], pl.seg[1]):
                     pen += c["W_CROSS_LEADER"]
+        if c["W_SIDES"] and my_side and s.feature is not None and s.feature.kind in c["SIDES_KINDS"]:
+            n_side = self.side_counts(s)
+            if n_side:
+                # my_side says where the ELEMENT is from the line; the dim
+                # stands on the element's -my_side
+                pen += c["W_SIDES"] * max(0, n_side[-my_side] - n_side[my_side])
         if c["W_CROWD"]:
             # congestion: other elements' dims (line, text, leaders) near this
             # spot - its own rows / chain sit together by design
@@ -657,6 +667,41 @@ class Layout(object):
                 if c["MIN_GAP"] <= out_by < c["FIRST_GAP"]:
                     pen += c["W_GAP"] * (c["FIRST_GAP"] - out_by) / (c["FIRST_GAP"] - c["MIN_GAP"])
         return pen, boxes
+
+    def side_counts(self, s):
+        """{+1: n, -1: n}: other elements' placed dims in the strip SIDES_R
+        deep beside string s's element on each side (family stations), over
+        the stretch its witness lines cover - "the side with least
+        congestion" (Adolfo 2026-10-07). Cached per string per placed count."""
+        key = ("sides", id(s), len(self.placed))
+        if key in self._ext_cache:
+            return self._ext_cache[key]
+        out = None
+        ext = self._extent(s.feature, s.gi)
+        if ext:
+            A, B = sorted(self.to_fam(s.gi, x, 0.0)[0] for x in ext)
+            offs = [self.to_fam(s.gi, 0.0, r[0])[1] for r in s.refs]
+            o_lo, o_hi = min(offs) - 0.5, max(offs) + 0.5
+            D = self.c["SIDES_R"]
+            gr = self.m.families[self.m.fam_of[s.gi]][0]
+            out = {1: 0, -1: 0}
+            for pl in self.placed:
+                if pl.s.feature is s.feature:
+                    continue
+                pts = list(pl.seg) + [((pl.seg[0][0] + pl.seg[1][0]) / 2.0, (pl.seg[0][1] + pl.seg[1][1]) / 2.0)] +                     [(sum(q[0] for q in bx) / len(bx), sum(q[1] for q in bx) / len(bx)) for bx in pl.boxes]
+                hit = set()
+                for pt in pts:
+                    st_, of_ = self.m.station(pt, gr), self.m.offset(pt, gr)
+                    if not (o_lo <= of_ <= o_hi):
+                        continue
+                    if B < st_ <= B + D:
+                        hit.add(1)
+                    elif A - D <= st_ < A:
+                        hit.add(-1)
+                for sd in hit:
+                    out[sd] += 1
+        self._ext_cache[key] = out
+        return out
 
     def _fam_extent(self, s):
         """Station range the string's witness lines start from, in the family
