@@ -21,7 +21,8 @@ ids += [e.Id for e in DB.FilteredElementCollector(doc, tv.Id).OfClass(DB.CurveEl
 if ids:
     t, log = PL.transaction_with_log(doc, "Claude: clear test view dims"); doc.Delete(List[DB.ElementId](ids)); t.Commit()
 g = dict(globals())
-g.update(SCRIPT=EXT + r"\MCC.tab\WIP.panel\Dim Soffit v2.pushbutton\script.py", VIEW=tv, PICKS=[], YES=False)
+g.update(SCRIPT=globals().get("SCRIPT_PATH") or EXT + r"\MCC.tab\WIP.panel\Dim Soffit v2.pushbutton\script.py",
+         VIEW=tv, PICKS=[], YES=False)
 import traceback
 try:
     execfile(D + r"\run_button.py", g)

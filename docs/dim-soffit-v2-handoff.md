@@ -75,4 +75,5 @@ the "how we work" and "where things stand" summary.
 7. Archive study questions still open (`archive-soffit-study.md`): an opening's overall size inside it as the normal
    spot; chained (grid | edge | edge | grid) as a setting; one end enough for straight CJs.
 8. Share with coworkers: `MCC-Testing.extension` updated to the 2026-10-07 code (L7 run 47 / L3N run 110) and
-   `Setup Files/MCC-Testing.extension.zip` rebuilt. Re-copy `lib/` + the button and rebuild after further changes.
+   `Setup Files/MCC-Testing.extension.zip` rebuilt. Re-copy `lib/` + the button and rebuild after further changes;
+   in the copied button set `SHOW_REPORT = False` (coworkers: no report window, an alert only on problems).

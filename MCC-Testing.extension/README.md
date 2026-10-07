@@ -7,6 +7,8 @@ Expect rough edges. Every button's changes can be undone with Ctrl+Z.
 - **Dim Soffit v2** - open a soffit plan view, click the button. It dimensions the
   slab edges, beams, openings and construction joints inside the view's crop.
   Clicking it again in the same view offers to replace the dimensions it made last time.
+  It shows nothing when the run goes well. If some dimensions could not be placed, a short message
+  says so and offers the details.
 
 ## Install
 1. Install pyRevit (free): https://github.com/pyrevitlabs/pyRevit/releases
