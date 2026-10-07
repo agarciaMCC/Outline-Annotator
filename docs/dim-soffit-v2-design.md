@@ -562,6 +562,30 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   (3) Side of an opening's dims: **"the side that makes room and doesn't interfere with other dimensions"** — no fixed
   side rule (rule 12 "away from the partner string" is not a rule; free space and no clashes decide). (4) The 39 ft top
   edge above AA gets **a dim at each end** — he forgot the second one this round.
+- **2026-10-07 — L7 round-2 build (runs 32-40; L3N runs 99-105 as regression).** Scored by segment against
+  `snapshot_L7_after_edits2.json` (left / moved / tool-only / his-only): run 32 (today's code before changes)
+  129 / 61 / 5 / 3 → **run 40: 140 / 52 / 1 / 4**. L3N vs `_after_edits5` 123 / 34 / 0 / 2 → 122 / 34 / 0 / 3 (the one
+  change is the `23'-2½"` far row off EE, dropped by answer 1a). Kept:
+  (a) **an opening located off a grid OUTSIDE it: near edge + size only** (`stack_from_anchor`) — no far-edge row,
+  no second-grid leg; a grid through the opening keeps a row each side (L3N `9'-6¾" | B | 5'-3¼"`, kept every round);
+  a side with 3+ faces keeps its rows. The 3 his-only dims left on L7 are far rows he kept in round 2 that his answer
+  drops (`7'-9½"` off AA, `10'-2¼"`, `11'-2⅞"`).
+  (b) **witness lines merge only within 0.4"** (`mcc_place.dedupe(merge_tol)`; was ½") — core#48's ½" off CC is
+  dimensioned (`CC | ½" | 12'-5" R.O.`, his round-1 version). 1/8" was tried: it made a 3/8" bump-top dim off A on L3N.
+  (c) **a slab edge counts as located by a wall/column only when the member runs along half the edge**, or (walls
+  only) its face is at least as long as the edge (`Planner.flush(share, line)`): the 39 ft edge above AA (0.6 ft wall stub
+  at its end) and the `5'-1"` edges off 7 (beside a 6.7 ft column) now get dims. Without `line` an L3N 9 ft edge that
+  continues a 70 ft wall line got a dim he never drew; with `line` for columns the `5'-1"` edges were lost again.
+  (d) **slab edges past 30 ft get a dim at each corner** even where a corner has no open margin (`RUN_BOTH_ALWAYS`;
+  was TURN_BOTH 40) — the 39 ft edge, answer 4b.
+  (e) **step face|grid|face string on the open (notch) side of the step face, jog check the next row out**
+  (`do_step`, `notch_side`; stack ranks 0/1): 116 → 129 left.
+  (f) **step -> grid dims in the margin just past the step face's open end** (`do_step`, `free`): 129 → 140.
+  Tried and reverted: no stacked row to a face on a wall (he deleted core#49's `7 | 4'-5" | edge@wall` but keeps core#47's
+  `edge@wall | 4'-6" | CC`). What is left on L7 (52 moved): ~40 within 1" of his line; the rest are core/shaft far-side
+  choices and shaft#51's stepped chain (F in the analyst report) — placement taste. Answer 3 (side by room) is NOT built yet:
+  `do_opening` still gives the "away from the partner" side as home and the layout charges `W_SIDE` for the other
+  side, so clutter only switches sides past that cost. Next try: lower `W_SIDE` for opening strings and score.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

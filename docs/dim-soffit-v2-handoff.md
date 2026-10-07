@@ -11,10 +11,11 @@ the "how we work" and "where things stand" summary.
   2 missing (the 5 review items are intentional — he left them out). The analyst's verdict after round 5: **what
   is left on L3N is placement taste, not rules; another round adds little.** Round-by-round "untouched" counts:
   55 → 70 → 78 → 70 → 86 of ~117 dims.
-- **L7** (`ZZ CLAUDE TEST - L7 (auto-dim)`, 1:96, orthogonal): one edit round. Latest run **31**: 175 / 135 placed /
-  0 review / 0 overlaps; vs his version (`snapshot_L7_after_edits1.json`) 113 / 76 / 7 / 10. **A second L7 round is
-  the next useful thing** (the view holds run 31). Known gap: the 39 ft top edge above AA gets no string at all
-  (his `1'-3¼"` ×2) — needs a model look (which skip fires in `do_run`).
+- **L7** (`ZZ CLAUDE TEST - L7 (auto-dim)`, 1:96, orthogonal): two edit rounds. Round 2 (on run 31): 72 unchanged /
+  59 edited / 6 deleted / 4 added (round 1: 42 untouched); analyst `analyst_L7_round2.md`; answers in the design doc
+  (2026-10-07). Latest run **40**: 127 placed / 0 review / 0 overlaps; vs his round-2 version
+  (`snapshot_L7_after_edits2.json`) **140 / 52 / 1 / 4** (run 32 before the changes: 129 / 61 / 5 / 3). The 39 ft edge
+  above AA and the `5'-1"` edges off 7 are dimensioned now. What's left is mostly placement within 1".
 - **L4.5 North** (`ZZ CLAUDE TEST - L4.5 NORTH (auto-dim)`, 1:128, rotated wing, centre of the footprint is OPEN
   at this level): latest run **5**: 101 / 91 placed / 8 review / 0 overlaps (run 1: 87 / 71 / 15). Adolfo's answers to
   the L4.5 study (`analyst_L45N_study.md`) changed no rule. The 2026-10-07 review pass fixed two model readings
@@ -63,8 +64,9 @@ the "how we work" and "where things stand" summary.
   anything geometric (this bit us twice).
 
 ## Open items (in rough priority)
-1. Second L7 edit round; then its analyst pass.
-2. L7: the 39 ft top edge with no string (model look); the 11 join refusals on L7 (why `_join_collinear` refuses).
+1. Answer 3 (opening dims on the side with room, no fixed side): lower `W_SIDE` for opening strings and score.
+2. L7 leftovers: shaft#51's stepped chain on its own side; core/shaft far-side choices; a third L7 round only if
+   Adolfo wants one (round 2 was mostly him restoring round-1 positions, now built).
 3. L4.5: the 20 slab edge -> grid dims the hand sheet has and the tool doesn't (void + perimeter edges).
 4. The CJ pair off grid 5 (he puts both at the bottom end; the tool at the top — "more open space" is his reason).
 5. The pocket rows (B2, five rounds); beam widths `anchor | sides` at framed ends (~0.4" from his, every round).
