@@ -1,0 +1,6625 @@
+{
+ "meta": {
+  "scale": 96, 
+  "count": 125, 
+  "matched_to_layout": 125, 
+  "view": "ZZ CLAUDE TEST - L7 (auto-dim)"
+ }, 
+ "dims": [
+  {
+   "ref_elems": [
+    14604435, 
+    13788108
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    134.29460000000000
+   ], 
+   "tool": {
+    "describe": "locate run -> 5                     across 5/6..     edge | 3'-4 1/2\" | 5", 
+    "label": "run -> 5", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 'margin', 0)", 
+    "feature": "run#10"
+   }, 
+   "id": 20614036, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      134.41960000000000
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      134.29460000000000
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    178.35010000000000, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> AA                    across CC/BB..   AA | 1'-3 1/4\" | edge", 
+    "label": "run -> AA", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 'margin', 0)", 
+    "feature": "run#11"
+   }, 
+   "id": 20614037, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      178.22510000000000, 
+      128.89009999999999
+     ], 
+     "value": 1.2708299999999999, 
+     "origin": [
+      178.35010000000000, 
+      131.15920000000000
+     ], 
+     "string": "1'-3 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:6:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788109, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    209.97510000000000, 
+    142.94049999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> 6                     across 5/6..     6 | 9'-6\" | edge", 
+    "label": "run -> 6", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 'margin', 0)", 
+    "feature": "run#12"
+   }, 
+   "id": 20614038, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      214.72510000000000, 
+      143.06549999999999
+     ], 
+     "value": 9.5, 
+     "origin": [
+      214.72510000000000, 
+      142.94049999999999
+     ], 
+     "string": "9'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:26:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    216.97510000000000, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> AA                    across CC/BB..   AA | 9'-11\" | edge", 
+    "label": "run -> AA", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 'margin', 0)", 
+    "feature": "run#13"
+   }, 
+   "id": 20614039, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      216.85010000000000, 
+      135.48210000000000
+     ], 
+     "value": 9.9166699999999999, 
+     "origin": [
+      216.97510000000000, 
+      135.48210000000000
+     ], 
+     "string": "9'-11\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:38:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    227.80850000000001, 
+    143.85710000000000
+   ], 
+   "tool": {
+    "describe": "locate run -> 7                     across 5/6..     edge | 5'-1\" | 7", 
+    "label": "run -> 7", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "run#14"
+   }, 
+   "id": 20614040, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.35010000000000, 
+      143.98210000000000
+     ], 
+     "value": 5.0833300000000001, 
+     "origin": [
+      230.35010000000000, 
+      143.85710000000000
+     ], 
+     "string": "5'-1\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5621:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    227.80850000000001, 
+    161.38839999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> 7                     across 5/6..     edge | 5'-1\" | 7", 
+    "label": "run -> 7", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 'margin', 0)", 
+    "feature": "run#16"
+   }, 
+   "id": 20614041, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.35010000000000, 
+      161.51339999999999
+     ], 
+     "value": 5.0833300000000001, 
+     "origin": [
+      230.35010000000000, 
+      161.38839999999999
+     ], 
+     "string": "5'-1\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5623:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    225.30850000000001, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> AA                    across CC/BB..   AA | 28'-4 3/8\" | edge", 
+    "label": "run -> AA", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 'margin', 0)", 
+    "feature": "run#17"
+   }, 
+   "id": 20614042, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      225.18350000000001, 
+      144.70609999999999
+     ], 
+     "value": 28.364580000000000, 
+     "origin": [
+      225.30850000000001, 
+      144.70609999999999
+     ], 
+     "string": "28'-4 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:46:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788111
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    269.10010000000000, 
+    161.38839999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> 8                     across 5/6..     edge | 1'-1 1/2\" | 8", 
+    "label": "run -> 8", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 'margin', 0)", 
+    "feature": "run#18"
+   }, 
+   "id": 20614043, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      267.46640000000002, 
+      161.51339999999999
+     ], 
+     "value": 1.125, 
+     "origin": [
+      269.66260000000000, 
+      161.38839999999999
+     ], 
+     "string": "1'-1 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:58:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788115
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    272.60010000000000, 
+    -10.267899999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> FF                    across CC/BB..   edge | 0'-1 1/2\" | FF", 
+    "label": "run -> FF", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(1, 'margin', 1)", 
+    "feature": "run#19"
+   }, 
+   "id": 20614044, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      273.35010000000000, 
+      -11.901600000000000
+     ], 
+     "value": 0.125, 
+     "origin": [
+      272.60010000000000, 
+      -10.205399999999999
+     ], 
+     "string": "1 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:142:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    -29.049099999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> 7                     across 5/6..     7 | 1'-6 1/2\" | edge", 
+    "label": "run -> 7", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(1, 'margin', 0)", 
+    "feature": "run#20"
+   }, 
+   "id": 20614045, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      231.25810000000001, 
+      -29.799099999999999
+     ], 
+     "value": 1.5416700000000001, 
+     "origin": [
+      233.66260000000000, 
+      -29.049099999999999
+     ], 
+     "string": "1'-6 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:154:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788115
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    236.93350000000001, 
+    -26.549099999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> FF                    across CC/BB..   edge | 16'-4 7/8\" | FF", 
+    "label": "run -> FF", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(1, 'margin', 0)", 
+    "feature": "run#21"
+   }, 
+   "id": 20614046, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.80850000000001, 
+      -18.346000000000000
+     ], 
+     "value": 16.40625, 
+     "origin": [
+      236.93350000000001, 
+      -18.346000000000000
+     ], 
+     "string": "16'-4 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:158:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788109, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    209.97510000000000, 
+    -42.455399999999997
+   ], 
+   "tool": {
+    "describe": "locate run -> 6                     across 5/6..     6 | 0'-8\" | edge", 
+    "label": "run -> 6", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(1, 'margin', 0)", 
+    "feature": "run#22"
+   }, 
+   "id": 20614047, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      208.94510000000000, 
+      -43.205399999999997
+     ], 
+     "value": 0.66666999999999998, 
+     "origin": [
+      210.30850000000001, 
+      -42.455399999999997
+     ], 
+     "string": "8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:170:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788116, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    178.35010000000000, 
+    -45.976199999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> GG                    across CC/BB..   GG | 6'-0 1/4\" | edge", 
+    "label": "run -> GG", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(-1, 'margin', 0)", 
+    "feature": "run#23"
+   }, 
+   "id": 20614048, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      178.22510000000000, 
+      -42.965800000000002
+     ], 
+     "value": 6.0208300000000001, 
+     "origin": [
+      178.35010000000000, 
+      -42.965800000000002
+     ], 
+     "string": "6'-0 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d4:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:174:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    -42.455399999999997
+   ], 
+   "tool": {
+    "describe": "locate run -> 5                     across 5/6..     edge | 3'-4 1/2\" | 5", 
+    "label": "run -> 5", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(1, 'margin', 0)", 
+    "feature": "run#24"
+   }, 
+   "id": 20614049, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      -42.330399999999997
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      -42.455399999999997
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3007:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    182.35010000000000, 
+    25.128000000000000
+   ], 
+   "tool": {
+    "describe": "locate step -> EE                   across CC/BB..   step | 0'-10 3/4\" | EE", 
+    "label": "step -> EE", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#3"
+   }, 
+   "id": 20614050, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.22510000000000, 
+      23.292999999999999
+     ], 
+     "value": 0.89583000000000002, 
+     "origin": [
+      182.35010000000000, 
+      25.575900000000001
+     ], 
+     "string": "10 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3035:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    201.64179999999999, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> AA                across CC/BB..   AA | 0'-4 1/2\" | edge", 
+    "label": "stack 1 -> AA", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/plain#54"
+   }, 
+   "id": 20614051, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      201.51679999999999, 
+      128.89009999999999
+     ], 
+     "value": 0.375, 
+     "origin": [
+      201.64179999999999, 
+      130.71129999999999
+     ], 
+     "string": "4 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7048:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    224.48560000000001, 
+    25.784199999999998
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> EE                across CC/BB..   edge | 0'-2 7/8\" | EE", 
+    "label": "stack 1 -> EE", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/plain#57"
+   }, 
+   "id": 20614052, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      224.36060000000001, 
+      24.150500000000001
+     ], 
+     "value": 0.23957999999999999, 
+     "origin": [
+      224.48560000000001, 
+      25.904000000000000
+     ], 
+     "string": "2 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7098:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788109, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    209.97510000000000, 
+    84.628000000000000
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 6                 across 5/6..     6 | 0'-8\" | edge", 
+    "label": "stack 1 -> 6", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/plain#63"
+   }, 
+   "id": 20614053, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      208.94510000000000, 
+      84.753000000000000
+     ], 
+     "value": 0.66666999999999998, 
+     "origin": [
+      210.30850000000001, 
+      84.628000000000000
+     ], 
+     "string": "8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7138:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.51679999999999, 
+    -0.78869999999999996
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7                 across 5/6..     edge | 0'-4 1/2\" | 7", 
+    "label": "stack 1 -> 7", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/penetration#71"
+   }, 
+   "id": 20614054, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.88310000000001, 
+      -0.66369999999999996
+     ], 
+     "value": 0.375, 
+     "origin": [
+      232.70429999999999, 
+      -0.78869999999999996
+     ], 
+     "string": "4 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7117:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    4.2008999999999999
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "step#1"
+   }, 
+   "id": 20614055, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      4.3258999999999999
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      4.2008999999999999
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3023:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3015:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    16.805099999999999
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#2"
+   }, 
+   "id": 20614056, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      16.930099999999999
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      16.805099999999999
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3023:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3031:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    44.492600000000003
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#4"
+   }, 
+   "id": 20614057, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      44.617600000000003
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      44.492600000000003
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3039:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3047:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    56.930100000000003
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "step#5"
+   }, 
+   "id": 20614058, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      57.055100000000003
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      56.930100000000003
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3055:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3047:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    71.607100000000003
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#6"
+   }, 
+   "id": 20614059, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      71.732100000000003
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      71.607100000000003
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3055:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3063:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    83.378000000000000
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#7"
+   }, 
+   "id": 20614060, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      83.503000000000000
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      83.378000000000000
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3071:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3063:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    112.84670000000000
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "step#9"
+   }, 
+   "id": 20614061, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      112.97170000000000
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      112.84670000000000
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3079:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    199.64179999999999, 
+    128.71129999999999
+   ], 
+   "tool": {
+    "describe": "check plain opening edges|AA|edges (chain check) across CC/BB..   edge | 2'-2 1/4\" | edge", 
+    "label": "plain opening edges|AA|edges (chain check)", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(-1, 0, -2)", 
+    "feature": "opening/plain#54"
+   }, 
+   "id": 20614062, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      199.51679999999999, 
+      127.07760000000000
+     ], 
+     "value": 2.1875, 
+     "origin": [
+      199.64179999999999, 
+      129.80510000000001
+     ], 
+     "string": "2'-2 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7050:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7048:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    253.29810000000001, 
+    125.96129999999999
+   ], 
+   "tool": {
+    "describe": "check plain opening edges|AA|edges (chain check) across CC/BB..   edge | 5'-0 3/8\" | edge", 
+    "label": "plain opening edges|AA|edges (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(1, 0, 2)", 
+    "feature": "opening/plain#59"
+   }, 
+   "id": 20614063, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      253.17310000000001, 
+      128.47690000000000
+     ], 
+     "value": 5.03125, 
+     "origin": [
+      253.29810000000001, 
+      128.47690000000000
+     ], 
+     "string": "5'-0 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7058:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7056:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    209.05850000000001, 
+    86.628000000000000
+   ], 
+   "tool": {
+    "describe": "check plain opening edges|6|edges (chain check) across 5/6..     edge | 1'-7\" | edge", 
+    "label": "plain opening edges|6|edges (chain check)", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(-1, 0, -2)", 
+    "feature": "opening/plain#63"
+   }, 
+   "id": 20614064, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      208.02850000000001, 
+      86.753000000000000
+     ], 
+     "value": 1.5833299999999999, 
+     "origin": [
+      209.85010000000000, 
+      86.628000000000000
+     ], 
+     "string": "1'-7\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7136:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7138:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.51679999999999, 
+    0.71130000000000004
+   ], 
+   "tool": {
+    "describe": "check penetration opening edges|7|edges (chain check) across 5/6..     edge | 1'-8 1/4\" | edge", 
+    "label": "penetration opening edges|7|edges (chain check)", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(-1, 1, 0)", 
+    "feature": "opening/penetration#71"
+   }, 
+   "id": 20614065, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.88310000000001, 
+      0.83630000000000004
+     ], 
+     "value": 1.6875, 
+     "origin": [
+      233.36060000000001, 
+      0.71130000000000004
+     ], 
+     "string": "1'-8 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7117:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7119:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788115, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    182.35010000000000, 
+    -14.882400000000001
+   ], 
+   "tool": {
+    "describe": "locate step -> FF + step -> FF      across CC/BB..   step | 4'-8 7/8\" | FF | 10'-4 1/8\" | step", 
+    "label": "step -> FF + step -> FF", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#0"
+   }, 
+   "id": 20614066, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.22510000000000, 
+      -12.512700000000001
+     ], 
+     "value": 4.7395800000000001, 
+     "origin": [
+      182.35010000000000, 
+      -12.512700000000001
+     ], 
+     "string": "4'-8 7/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      182.22510000000000, 
+      -4.9710000000000001
+     ], 
+     "value": 10.34375, 
+     "origin": [
+      182.35010000000000, 
+      -4.9710000000000001
+     ], 
+     "string": "10'-4 1/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3103:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3019:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    -18.882400000000001
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#0"
+   }, 
+   "id": 20614067, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      -18.757400000000001
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      -18.882400000000001
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      -19.632400000000001
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      -18.882400000000001
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3007:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3015:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    0.71130000000000004
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#1"
+   }, 
+   "id": 20614068, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      0.83630000000000004
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      0.71130000000000004
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      0.83630000000000004
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      0.71130000000000004
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3023:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3015:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788114, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    178.85010000000000, 
+    13.763400000000001
+   ], 
+   "tool": {
+    "describe": "locate step -> EE + step -> EE      across CC/BB..   step | 12'-3 1/8\" | EE | 14'-10 7/8\" | step", 
+    "label": "step -> EE + step -> EE", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "step#2"
+   }, 
+   "id": 20614069, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      178.72510000000000, 
+      19.893599999999999
+     ], 
+     "value": 12.260420000000000, 
+     "origin": [
+      178.85010000000000, 
+      19.893599999999999
+     ], 
+     "string": "12'-3 1/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      178.72510000000000, 
+      33.476900000000001
+     ], 
+     "value": 14.90625, 
+     "origin": [
+      178.85010000000000, 
+      33.476900000000001
+     ], 
+     "string": "14'-10 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3108:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3113:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    14.763400000000001
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 0, -1)", 
+    "feature": "step#2"
+   }, 
+   "id": 20614070, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      14.888400000000001
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      14.763400000000001
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      14.888400000000001
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      14.763400000000001
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3023:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3031:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    27.857099999999999
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#3"
+   }, 
+   "id": 20614071, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      27.982099999999999
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      27.857099999999999
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      27.982099999999999
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      27.857099999999999
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3039:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3031:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    41.930100000000003
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 0, -1)", 
+    "feature": "step#4"
+   }, 
+   "id": 20614072, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      42.055100000000003
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      41.930100000000003
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      42.055100000000003
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      41.930100000000003
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3039:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3047:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788100, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    178.85010000000000, 
+    52.930100000000003
+   ], 
+   "tool": {
+    "describe": "locate step -> CC + step -> CC      across CC/BB..   step | 9'-1 1/8\" | CC | 6'-8 1/8\" | step", 
+    "label": "step -> CC + step -> CC", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "step#5"
+   }, 
+   "id": 20614073, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      178.72510000000000, 
+      57.476900000000001
+     ], 
+     "value": 9.09375, 
+     "origin": [
+      178.85010000000000, 
+      57.476900000000001
+     ], 
+     "string": "9'-1 1/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      178.72510000000000, 
+      65.362300000000005
+     ], 
+     "value": 6.6770800000000001, 
+     "origin": [
+      178.85010000000000, 
+      65.362300000000005
+     ], 
+     "string": "6'-8 1/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3051:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3118:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    212.89179999999999, 
+    83.482100000000003
+   ], 
+   "tool": {
+    "describe": "locate core opening anchor|edges|anchor across 5/6..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+    "label": "core opening anchor|edges|anchor", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 2, -4)", 
+    "feature": "opening/core#48"
+   }, 
+   "id": 20614074, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      217.01679999999999, 
+      83.607100000000003
+     ], 
+     "value": 8.25, 
+     "origin": [
+      217.01679999999999, 
+      83.482100000000003
+     ], 
+     "string": "8'-3\"R.O.", 
+     "suffix": "R.O."
+    }, 
+    {
+     "text": [
+      227.01679999999999, 
+      83.607100000000003
+     ], 
+     "value": 11.75, 
+     "origin": [
+      227.01679999999999, 
+      83.482100000000003
+     ], 
+     "string": "11'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7509:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7511:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    226.64179999999999, 
+    89.680099999999996
+   ], 
+   "tool": {
+    "describe": "check core opening edges|BB|edges (chain check) across CC/BB..   edge | 17'-8\" | edge", 
+    "label": "core opening edges|BB|edges (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(1, 1, 2)", 
+    "feature": "opening/core#47"
+   }, 
+   "id": 20614075, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      226.51679999999999, 
+      98.513400000000004
+     ], 
+     "value": 17.666670000000000, 
+     "origin": [
+      226.64179999999999, 
+      98.513400000000004
+     ], 
+     "string": "17'-8\"", 
+     "suffix": "R.O."
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5676:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5674:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    229.51679999999999, 
+    53.523800000000001
+   ], 
+   "tool": {
+    "describe": "check core opening edges|7|edges (chain check) across 5/6..     edge | 7'-9 1/2\" | edge@wall", 
+    "label": "core opening edges|7|edges (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(1, 0, 2)", 
+    "feature": "opening/core#49"
+   }, 
+   "id": 20614076, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      233.41260000000000, 
+      53.648800000000001
+     ], 
+     "value": 7.7916699999999999, 
+     "origin": [
+      233.41260000000000, 
+      53.523800000000001
+     ], 
+     "string": "7'-9 1/2\"", 
+     "suffix": "R.O."
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5791:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5793:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    243.30850000000001, 
+    57.523800000000001
+   ], 
+   "tool": {
+    "describe": "check core opening edges|CC|edges (chain check) across CC/BB..   edge@wall | 12'-1\" | edge", 
+    "label": "core opening edges|CC|edges (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(1, 0, 4)", 
+    "feature": "opening/core#49"
+   }, 
+   "id": 20614077, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      243.18350000000001, 
+      63.565500000000000
+     ], 
+     "value": 12.083330000000000, 
+     "origin": [
+      243.30850000000001, 
+      63.565500000000000
+     ], 
+     "string": "12'-1\"", 
+     "suffix": "R.O."
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5792:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5790:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    221.48560000000001, 
+    25.784199999999998
+   ], 
+   "tool": {
+    "describe": "check plain opening edges|EE|edges (chain check) across CC/BB..   edge | 2'-6\" | edge", 
+    "label": "plain opening edges|EE|edges (chain check)", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(-1, 0, -3)", 
+    "feature": "opening/plain#57"
+   }, 
+   "id": 20614078, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      221.36060000000001, 
+      27.034199999999998
+     ], 
+     "value": 2.5, 
+     "origin": [
+      221.48560000000001, 
+      27.034199999999998
+     ], 
+     "string": "2'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7098:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7096:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    212.89179999999999, 
+    50.190500000000000
+   ], 
+   "tool": {
+    "describe": "locate shaft opening anchor|edges|anchor across 5/6..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+    "label": "shaft opening anchor|edges|anchor", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, -1)", 
+    "feature": "opening/shaft#46"
+   }, 
+   "id": 20614079, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      217.01679999999999, 
+      50.315500000000000
+     ], 
+     "value": 8.25, 
+     "origin": [
+      217.01679999999999, 
+      50.190500000000000
+     ], 
+     "string": "8'-3\"R.O.", 
+     "suffix": "R.O."
+    }, 
+    {
+     "text": [
+      227.01679999999999, 
+      50.315500000000000
+     ], 
+     "value": 11.75, 
+     "origin": [
+      227.01679999999999, 
+      50.190500000000000
+     ], 
+     "string": "11'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5733:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5735:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    -20.882400000000001
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(1, 0, 2)", 
+    "feature": "step#0"
+   }, 
+   "id": 20614080, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      -20.757400000000001
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      -20.882400000000001
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3007:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3015:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    30.128000000000000
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(-1, 0, -1)", 
+    "feature": "step#3"
+   }, 
+   "id": 20614081, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      30.253000000000000
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      30.128000000000000
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3039:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3031:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    91.138400000000004
+   ], 
+   "tool": {
+    "describe": "check jog check                    across 5/6..     edge | 5'-0\" | edge", 
+    "label": "jog check", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "step", 
+    "cand": "(1, 0, 2)", 
+    "feature": "step#8"
+   }, 
+   "id": 20614082, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      183.35010000000000, 
+      91.263400000000004
+     ], 
+     "value": 5.0, 
+     "origin": [
+      183.35010000000000, 
+      91.138400000000004
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3071:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3079:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    272.60010000000000, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> AA                    across CC/BB..   AA | 28'-4 3/8\" | edge", 
+    "label": "run -> AA", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(1, 'margin', 1)", 
+    "feature": "run#17"
+   }, 
+   "id": 20614083, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      272.47510000000000, 
+      144.70609999999999
+     ], 
+     "value": 28.364580000000000, 
+     "origin": [
+      272.60010000000000, 
+      144.70609999999999
+     ], 
+     "string": "28'-4 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:46:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788116, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    213.14179999999999, 
+    -45.976199999999999
+   ], 
+   "tool": {
+    "describe": "locate run -> GG                    across CC/BB..   GG | 6'-0 1/4\" | edge", 
+    "label": "run -> GG", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(1, 'margin', 0)", 
+    "feature": "run#23"
+   }, 
+   "id": 20614084, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      213.01679999999999, 
+      -42.965800000000002
+     ], 
+     "value": 6.0208300000000001, 
+     "origin": [
+      213.14179999999999, 
+      -42.965800000000002
+     ], 
+     "string": "6'-0 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d4:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:174:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788104
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    188.85010000000000, 
+    97.138400000000004
+   ], 
+   "tool": {
+    "describe": "locate step -> BB                   across CC/BB..   step | 0'-10 5/8\" | BB", 
+    "label": "step -> BB", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(1, 0, 1)", 
+    "feature": "step#8"
+   }, 
+   "id": 20614085, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      189.60010000000000, 
+      95.303399999999996
+     ], 
+     "value": 0.88541999999999998, 
+     "origin": [
+      188.85010000000000, 
+      97.581100000000006
+     ], 
+     "string": "10 5/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3123:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788111
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    269.10010000000000, 
+    -8.2678999999999991
+   ], 
+   "tool": {
+    "describe": "locate run -> 8                     across 5/6..     edge | 1'-1 1/2\" | 8", 
+    "label": "run -> 8", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "run", 
+    "cand": "(1, 0, -4)", 
+    "feature": "run#18"
+   }, 
+   "id": 20614086, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      267.46640000000002, 
+      -8.1428999999999991
+     ], 
+     "value": 1.125, 
+     "origin": [
+      269.66260000000000, 
+      -8.2678999999999991
+     ], 
+     "string": "1'-1 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:58:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cf:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    53.523800000000001
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#5"
+   }, 
+   "id": 20614087, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      53.648800000000001
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      53.523800000000001
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      53.648800000000001
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      53.523800000000001
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3055:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3047:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    69.700900000000004
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 0, -1)", 
+    "feature": "step#6"
+   }, 
+   "id": 20614088, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      69.825900000000004
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      69.700900000000004
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      69.825900000000004
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      69.700900000000004
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3055:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3063:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788104, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    178.85010000000000, 
+    80.430099999999996
+   ], 
+   "tool": {
+    "describe": "locate step -> BB + step -> BB      across CC/BB..   step | 17'-7 1/8\" | BB | 10'-9 7/8\" | step", 
+    "label": "step -> BB + step -> BB", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "step#7"
+   }, 
+   "id": 20614089, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      178.72510000000000, 
+      89.226900000000001
+     ], 
+     "value": 17.59375, 
+     "origin": [
+      178.85010000000000, 
+      89.226900000000001
+     ], 
+     "string": "17'-7 1/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      178.72510000000000, 
+      103.43530000000000
+     ], 
+     "value": 10.822920000000000, 
+     "origin": [
+      178.85010000000000, 
+      103.43530000000000
+     ], 
+     "string": "10'-9 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3067:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3083:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    81.430099999999996
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 0, -1)", 
+    "feature": "step#7"
+   }, 
+   "id": 20614090, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      81.555099999999996
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      81.430099999999996
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      81.555099999999996
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      81.430099999999996
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3071:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3063:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    93.138400000000004
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(1, 0, 0)", 
+    "feature": "step#8"
+   }, 
+   "id": 20614091, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      93.263400000000004
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      93.138400000000004
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      92.388400000000004
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      93.138400000000004
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3071:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3079:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788108, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    180.85010000000000, 
+    109.34670000000000
+   ], 
+   "tool": {
+    "describe": "locate step faces|5|faces           across 5/6..     edge | 3'-4 1/2\" | 5 | 1'-7 1/2\" | edge", 
+    "label": "step faces|5|faces", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "step", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "step#9"
+   }, 
+   "id": 20614092, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      182.53760000000000, 
+      109.47170000000000
+     ], 
+     "value": 3.375, 
+     "origin": [
+      182.53760000000000, 
+      109.34670000000000
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      187.48390000000001, 
+      109.47170000000000
+     ], 
+     "value": 1.625, 
+     "origin": [
+      185.03760000000000, 
+      109.34670000000000
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:3079:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    212.89179999999999, 
+    109.34670000000000
+   ], 
+   "tool": {
+    "describe": "locate core opening anchor|edges|anchor across 5/6..     edge@wall | 8'-3\" | edge | 11'-9\" | 7", 
+    "label": "core opening anchor|edges|anchor", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/core#47"
+   }, 
+   "id": 20614093, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      217.01679999999999, 
+      109.47170000000000
+     ], 
+     "value": 8.25, 
+     "origin": [
+      217.01679999999999, 
+      109.34670000000000
+     ], 
+     "string": "8'-3\"R.O.", 
+     "suffix": "R.O."
+    }, 
+    {
+     "text": [
+      227.01679999999999, 
+      109.47170000000000
+     ], 
+     "value": 11.75, 
+     "origin": [
+      227.01679999999999, 
+      109.34670000000000
+     ], 
+     "string": "11'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5675:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5677:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788109, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    209.97510000000000, 
+    27.857099999999999
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 6                 across 5/6..     6 | 9'-7\" | edge", 
+    "label": "stack 1 -> 6", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(1, 4, 12)", 
+    "feature": "opening/penetration#76"
+   }, 
+   "id": 20614094, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      214.76679999999999, 
+      27.982099999999999
+     ], 
+     "value": 9.5833300000000001, 
+     "origin": [
+      214.76679999999999, 
+      27.857099999999999
+     ], 
+     "string": "9'-7\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7101:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    219.55850000000001, 
+    53.357100000000003
+   ], 
+   "tool": {
+    "describe": "check penetration opening anchor|edges|anchor (chain check) across 5/6..     edge | 1'-5\" | edge", 
+    "label": "penetration opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(-1, 0, -2)", 
+    "feature": "opening/penetration#76"
+   }, 
+   "id": 20614095, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      218.52850000000001, 
+      53.482100000000003
+     ], 
+     "value": 1.4166700000000001, 
+     "origin": [
+      220.26679999999999, 
+      53.357100000000003
+     ], 
+     "string": "1'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7101:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7103:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    213.30850000000001, 
+    78.732100000000003
+   ], 
+   "tool": {
+    "describe": "check core opening anchor|edges|anchor (chain check) across 5/6..     edge | 1'-5\" | edge", 
+    "label": "core opening anchor|edges|anchor (chain check)", 
+    "side": 0, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(0, 0, 0)", 
+    "feature": "opening/core#61"
+   }, 
+   "id": 20614096, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      212.27850000000001, 
+      78.857100000000003
+     ], 
+     "value": 1.4166700000000001, 
+     "origin": [
+      214.01679999999999, 
+      78.732100000000003
+     ], 
+     "string": "1'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7452:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7450:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    18596165, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    212.89179999999999, 
+    75.107100000000003
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> wall              across 5/6..     wall | 0'-5\" | edge", 
+    "label": "stack 1 -> wall", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(1, 0, 0)", 
+    "feature": "opening/core#61"
+   }, 
+   "id": 20614097, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      211.86179999999999, 
+      74.357100000000003
+     ], 
+     "value": 0.41666999999999998, 
+     "origin": [
+      213.10010000000000, 
+      75.107100000000003
+     ], 
+     "string": "5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "f59c0f90-b2c8-496c-a249-f0e5df1334e7-011bc145:5:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7452:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    229.51679999999999, 
+    73.607100000000003
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7                 across 5/6..     edge | 3'-4 1/2\" | 7", 
+    "label": "stack 1 -> 7", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, -2)", 
+    "feature": "opening/core#49"
+   }, 
+   "id": 20614098, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      231.20429999999999, 
+      73.732100000000003
+     ], 
+     "value": 3.375, 
+     "origin": [
+      231.20429999999999, 
+      73.607100000000003
+     ], 
+     "string": "3'-4 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5791:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    71.607100000000003
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7                 across 5/6..     7 | 4'-5\" | edge@wall", 
+    "label": "stack 1 -> 7", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/core#49"
+   }, 
+   "id": 20614099, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      235.10010000000000, 
+      71.732100000000003
+     ], 
+     "value": 4.4166699999999999, 
+     "origin": [
+      235.10010000000000, 
+      71.607100000000003
+     ], 
+     "string": "4'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5793:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    218.74600000000001, 
+    8.6175999999999995
+   ], 
+   "tool": {
+    "describe": "check plain opening anchor|edges|anchor (chain check) across CC/BB..   edge | 1'-5 7/8\" | edge", 
+    "label": "plain opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/plain#50"
+   }, 
+   "id": 20614100, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      218.62100000000001, 
+      6.9837999999999996
+     ], 
+     "value": 1.4895799999999999, 
+     "origin": [
+      218.74600000000001, 
+      9.3622999999999994
+     ], 
+     "string": "1'-5 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7110:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7108:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    229.70429999999999, 
+    10.107100000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> EE                across CC/BB..   edge | 15'-11\" | EE", 
+    "label": "stack 1 -> EE", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(1, 0, 0)", 
+    "feature": "opening/plain#50"
+   }, 
+   "id": 20614101, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      229.57929999999999, 
+      18.065500000000000
+     ], 
+     "value": 15.916670000000000, 
+     "origin": [
+      229.70429999999999, 
+      18.065500000000000
+     ], 
+     "string": "15'-11\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7108:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    227.01679999999999, 
+    118.73210000000000
+   ], 
+   "tool": {
+    "describe": "check plain opening anchor|edges|anchor (chain check) across 5/6..     edge | 1'-10 1/8\" | edge", 
+    "label": "plain opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(1, 0, 2)", 
+    "feature": "opening/plain#52"
+   }, 
+   "id": 20614102, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      225.18180000000001, 
+      117.98210000000000
+     ], 
+     "value": 1.84375, 
+     "origin": [
+      227.93870000000001, 
+      118.73210000000000
+     ], 
+     "string": "1'-10 1/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7145:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7147:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    228.86060000000001, 
+    120.73210000000000
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7                 across 5/6..     edge | 4'-0 3/8\" | 7", 
+    "label": "stack 1 -> 7", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(1, 0, 0)", 
+    "feature": "opening/plain#52"
+   }, 
+   "id": 20614103, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.87620000000001, 
+      120.85710000000000
+     ], 
+     "value": 4.03125, 
+     "origin": [
+      230.87620000000001, 
+      120.73210000000000
+     ], 
+     "string": "4'-0 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7147:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    199.93350000000001, 
+    11.325900000000001
+   ], 
+   "tool": {
+    "describe": "check plain opening anchor|edges|anchor (chain check) across CC/BB..   edge | 0'-10 1/2\" | edge", 
+    "label": "plain opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(1, 0, 0)", 
+    "feature": "opening/plain#74"
+   }, 
+   "id": 20614104, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      199.80850000000001, 
+      9.4908999999999999
+     ], 
+     "value": 0.875, 
+     "origin": [
+      199.93350000000001, 
+      11.763400000000001
+     ], 
+     "string": "10 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7135:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7133:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    192.93350000000001, 
+    12.200900000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> EE                across CC/BB..   edge | 13'-9 7/8\" | EE", 
+    "label": "stack 1 -> EE", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/plain#74"
+   }, 
+   "id": 20614105, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      192.80850000000001, 
+      19.112300000000001
+     ], 
+     "value": 13.822920000000000, 
+     "origin": [
+      192.93350000000001, 
+      19.112300000000001
+     ], 
+     "string": "13'-9 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7133:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788114, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    225.30850000000001, 
+    26.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> EE + plain opening anchor|edges|anchor (chain check) across CC/BB..   EE | 16'-4 3/4\" | edge | 2'-4\" | edge", 
+    "label": "stack 1 -> EE + plain opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#53"
+   }, 
+   "id": 20614106, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      225.18350000000001, 
+      34.221699999999998
+     ], 
+     "value": 16.395830000000000, 
+     "origin": [
+      225.30850000000001, 
+      34.221699999999998
+     ], 
+     "string": "16'-4 3/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      225.18350000000001, 
+      43.586300000000001
+     ], 
+     "value": 2.3333300000000001, 
+     "origin": [
+      225.30850000000001, 
+      43.586300000000001
+     ], 
+     "string": "2'-4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7094:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7092:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788109, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    209.97510000000000, 
+    12.628000000000000
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 6 + plain opening anchor|edges|anchor (chain check) across 5/6..     6 | 4'-8\" | edge | 6'-3 1/2\" | edge", 
+    "label": "stack 1 -> 6 + plain opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#58"
+   }, 
+   "id": 20614107, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      212.30850000000001, 
+      12.753000000000000
+     ], 
+     "value": 4.6666699999999999, 
+     "origin": [
+      212.30850000000001, 
+      12.628000000000000
+     ], 
+     "string": "4'-8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      217.78760000000000, 
+      12.753000000000000
+     ], 
+     "value": 6.2916699999999999, 
+     "origin": [
+      217.78760000000000, 
+      12.628000000000000
+     ], 
+     "string": "6'-3 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7105:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7107:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788105, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    251.29810000000001, 
+    125.96129999999999
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> AA + stack 1 -> AA across CC/BB..   edge | 4'-6 3/4\" | AA | 0'-5 5/8\" | edge", 
+    "label": "stack 1 -> AA + stack 1 -> AA", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#59"
+   }, 
+   "id": 20614108, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      251.17310000000001, 
+      128.24260000000001
+     ], 
+     "value": 4.5625, 
+     "origin": [
+      251.29810000000001, 
+      128.24260000000001
+     ], 
+     "string": "4'-6 3/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      251.17310000000001, 
+      132.62629999999999
+     ], 
+     "value": 0.46875, 
+     "origin": [
+      251.29810000000001, 
+      130.75819999999999
+     ], 
+     "string": "5 5/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7058:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7056:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    123.96129999999999
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7 + plain opening anchor|edges|anchor (chain check) across 5/6..     7 | 15'-4 7/8\" | edge | 1'-0\" | edge", 
+    "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#59"
+   }, 
+   "id": 20614109, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      240.59490000000000, 
+      124.08629999999999
+     ], 
+     "value": 15.40625, 
+     "origin": [
+      240.59490000000000, 
+      123.96129999999999
+     ], 
+     "string": "15'-4 7/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      250.32810000000001, 
+      124.08629999999999
+     ], 
+     "value": 1.0, 
+     "origin": [
+      248.79810000000001, 
+      123.96129999999999
+     ], 
+     "string": "1'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7057:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7059:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788100, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    196.26679999999999, 
+    62.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> CC + plain opening anchor|edges|anchor (chain check) across CC/BB..   CC | 12'-2 1/2\" | edge | 1'-0\" | edge", 
+    "label": "stack 1 -> CC + plain opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#62"
+   }, 
+   "id": 20614110, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      196.14179999999999, 
+      68.128000000000000
+     ], 
+     "value": 12.208330000000000, 
+     "origin": [
+      196.26679999999999, 
+      68.128000000000000
+     ], 
+     "string": "12'-2 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      196.14179999999999, 
+      76.262100000000004
+     ], 
+     "value": 1.0, 
+     "origin": [
+      196.26679999999999, 
+      74.732100000000003
+     ], 
+     "string": "1'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7082:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7080:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788104, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    241.98560000000001, 
+    98.023799999999994
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> BB + plain opening anchor|edges|anchor (chain check) across CC/BB..   BB | 11'-4 5/8\" | edge | 2'-6\" | edge", 
+    "label": "stack 1 -> BB + plain opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#64"
+   }, 
+   "id": 20614111, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      241.86060000000001, 
+      103.71650000000000
+     ], 
+     "value": 11.385420000000000, 
+     "origin": [
+      241.98560000000001, 
+      103.71650000000000
+     ], 
+     "string": "11'-4 5/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      241.86060000000001, 
+      110.65920000000000
+     ], 
+     "value": 2.5, 
+     "origin": [
+      241.98560000000001, 
+      110.65920000000000
+     ], 
+     "string": "2'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7062:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7060:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    107.40920000000000
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7 + plain opening anchor|edges (chain check) across 5/6..     7 | 5'-4 1/8\" | edge | 1'-9\" | edge", 
+    "label": "stack 1 -> 7 + plain opening anchor|edges (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#64"
+   }, 
+   "id": 20614112, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      235.56370000000001, 
+      107.53420000000000
+     ], 
+     "value": 5.34375, 
+     "origin": [
+      235.56370000000001, 
+      107.40920000000000
+     ], 
+     "string": "5'-4 1/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      239.11060000000001, 
+      107.53420000000000
+     ], 
+     "value": 1.75, 
+     "origin": [
+      239.11060000000001, 
+      107.40920000000000
+     ], 
+     "string": "1'-9\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7061:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7063:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788105, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    244.16260000000000, 
+    130.52379999999999
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> AA + plain opening anchor|edges (chain check) across CC/BB..   AA | 15'-4 5/8\" | edge | 1'-7 1/2\" | edge", 
+    "label": "stack 1 -> AA + plain opening anchor|edges (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#65"
+   }, 
+   "id": 20614113, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      244.03760000000000, 
+      138.21650000000000
+     ], 
+     "value": 15.385420000000000, 
+     "origin": [
+      244.16260000000000, 
+      138.21650000000000
+     ], 
+     "string": "15'-4 5/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      244.03760000000000, 
+      149.16800000000001
+     ], 
+     "value": 1.625, 
+     "origin": [
+      244.16260000000000, 
+      146.72170000000000
+     ], 
+     "string": "1'-7 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7054:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7516:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    149.53420000000000
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7 + plain opening anchor|edges|anchor (chain check) across 5/6..     7 | 6'-9 1/4\" | edge | 2'-6\" | edge", 
+    "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#65"
+   }, 
+   "id": 20614114, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.27719999999999, 
+      149.65920000000000
+     ], 
+     "value": 6.7708300000000001, 
+     "origin": [
+      236.27719999999999, 
+      149.53420000000000
+     ], 
+     "string": "6'-9 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      240.91260000000000, 
+      149.65920000000000
+     ], 
+     "value": 2.5, 
+     "origin": [
+      240.91260000000000, 
+      149.53420000000000
+     ], 
+     "string": "2'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7053:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7055:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788100, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    248.37420000000000, 
+    62.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> CC + plain opening anchor|edges|anchor (chain check) across CC/BB..   CC | 17'-1 3/8\" | edge | 1'-2 7/8\" | edge", 
+    "label": "stack 1 -> CC + plain opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#69"
+   }, 
+   "id": 20614115, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      248.24920000000000, 
+      70.581100000000006
+     ], 
+     "value": 17.114580000000000, 
+     "origin": [
+      248.37420000000000, 
+      70.581100000000006
+     ], 
+     "string": "17'-1 3/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      248.24920000000000, 
+      82.011700000000005
+     ], 
+     "value": 1.2395799999999999, 
+     "origin": [
+      248.37420000000000, 
+      79.758200000000002
+     ], 
+     "string": "1'-2 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7087:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7085:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    83.378000000000000
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7 + plain opening anchor|edges|anchor (chain check) across 5/6..     7 | 10'-9 13/16\" | edge | 2'-8\" | edge", 
+    "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#69"
+   }, 
+   "id": 20614116, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      238.29970000000000, 
+      83.503000000000000
+     ], 
+     "value": 10.815720000000001, 
+     "origin": [
+      238.29970000000000, 
+      83.378000000000000
+     ], 
+     "string": "10'-9 3/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      245.04089999999999, 
+      83.503000000000000
+     ], 
+     "value": 2.6666699999999999, 
+     "origin": [
+      245.04089999999999, 
+      83.378000000000000
+     ], 
+     "string": "2'-8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7086:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7084:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    105.74260000000000
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7                 across 5/6..     7 | 5'-0 1/8\" | edge", 
+    "label": "stack 1 -> 7", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(-1, 0, 0)", 
+    "feature": "opening/penetration#70"
+   }, 
+   "id": 20614117, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      235.39699999999999, 
+      105.86760000000000
+     ], 
+     "value": 5.0104199999999999, 
+     "origin": [
+      235.39699999999999, 
+      105.74260000000000
+     ], 
+     "string": "5'-0 1/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7065:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    237.90219999999999, 
+    99.909199999999998
+   ], 
+   "tool": {
+    "describe": "check penetration opening anchor|edges (chain check) across 5/6..     edge | 1'-9 1/4\" | edge", 
+    "label": "penetration opening anchor|edges (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(1, 0, 0)", 
+    "feature": "opening/penetration#70"
+   }, 
+   "id": 20614118, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.26849999999999, 
+      99.159199999999998
+     ], 
+     "value": 1.7708299999999999, 
+     "origin": [
+      238.78760000000000, 
+      99.909199999999998
+     ], 
+     "string": "1'-9 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7065:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7067:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788115, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    236.93350000000001, 
+    -10.142899999999999
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> FF + penetration opening anchor|edges|anchor (chain check) across CC/BB..   FF | 5'-6 1/4\" | edge | 1'-10\" | edge", 
+    "label": "stack 1 -> FF + penetration opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/penetration#71"
+   }, 
+   "id": 20614119, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.80850000000001, 
+      -7.3823999999999996
+     ], 
+     "value": 5.5208300000000001, 
+     "origin": [
+      236.93350000000001, 
+      -7.3823999999999996
+     ], 
+     "string": "5'-6 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      236.80850000000001, 
+      -1.5573999999999999
+     ], 
+     "value": 1.8333299999999999, 
+     "origin": [
+      236.93350000000001, 
+      -3.7054000000000000
+     ], 
+     "string": "1'-10\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7118:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7116:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    92.857100000000003
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7                 across 5/6..     7 | 5'-0 1/8\" | edge", 
+    "label": "stack 1 -> 7", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(1, 0, 0)", 
+    "feature": "opening/penetration#72"
+   }, 
+   "id": 20614120, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      235.39699999999999, 
+      92.982100000000003
+     ], 
+     "value": 5.0104199999999999, 
+     "origin": [
+      235.39699999999999, 
+      92.857100000000003
+     ], 
+     "string": "5'-0 1/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7069:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    237.90219999999999, 
+    91.138400000000004
+   ], 
+   "tool": {
+    "describe": "check penetration opening anchor|edges (chain check) across 5/6..     edge | 1'-9 1/4\" | edge", 
+    "label": "penetration opening anchor|edges (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "opening/penetration#72"
+   }, 
+   "id": 20614121, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      236.26849999999999, 
+      90.388400000000004
+     ], 
+     "value": 1.7708299999999999, 
+     "origin": [
+      238.78760000000000, 
+      91.138400000000004
+     ], 
+     "string": "1'-9 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7069:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7071:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    9.0237999999999996
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7 + plain opening anchor|edges|anchor (chain check) across 5/6..     7 | 5'-6 1/8\" | edge | 3'-7 3/8\" | edge", 
+    "label": "stack 1 -> 7 + plain opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#73"
+   }, 
+   "id": 20614122, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      235.64699999999999, 
+      9.1487999999999996
+     ], 
+     "value": 5.5104199999999999, 
+     "origin": [
+      235.64699999999999, 
+      9.0237999999999996
+     ], 
+     "string": "5'-6 1/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      240.20949999999999, 
+      9.1487999999999996
+     ], 
+     "value": 3.6145800000000001, 
+     "origin": [
+      240.20949999999999, 
+      9.0237999999999996
+     ], 
+     "string": "3'-7 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7141:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7143:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788108, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    184.22510000000000, 
+    9.0237999999999996
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 5 + plain opening anchor|edges|anchor (chain check) across 5/6..     5 | 10'-8 1/2\" | edge | 3'-0\" | edge", 
+    "label": "stack 1 -> 5 + plain opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#74"
+   }, 
+   "id": 20614123, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      189.57929999999999, 
+      9.1487999999999996
+     ], 
+     "value": 10.708330000000000, 
+     "origin": [
+      189.57929999999999, 
+      9.0237999999999996
+     ], 
+     "string": "10'-8 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      196.43350000000001, 
+      9.1487999999999996
+     ], 
+     "value": 3.0, 
+     "origin": [
+      196.43350000000001, 
+      9.0237999999999996
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cc:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7134:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7132:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788104, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    201.64179999999999, 
+    98.023799999999994
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> BB + penetration opening anchor|edges|anchor (chain check) across CC/BB..   BB | 13'-6 3/8\" | edge | 1'-9 1/4\" | edge", 
+    "label": "stack 1 -> BB + penetration opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/penetration#75"
+   }, 
+   "id": 20614124, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      201.51679999999999, 
+      104.78940000000000
+     ], 
+     "value": 13.53125, 
+     "origin": [
+      201.64179999999999, 
+      104.78940000000000
+     ], 
+     "string": "13'-6 3/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      201.51679999999999, 
+      114.95959999999999
+     ], 
+     "value": 1.7708299999999999, 
+     "origin": [
+      201.64179999999999, 
+      112.44050000000000
+     ], 
+     "string": "1'-9 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7078:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7076:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    220.74600000000001, 
+    6.6176000000000004
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 6'-11 1/2\" | edge | 5'-2 1/4\" | 7", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#50"
+   }, 
+   "id": 20614125, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      224.22510000000000, 
+      6.7426000000000004
+     ], 
+     "value": 6.9583300000000001, 
+     "origin": [
+      224.22510000000000, 
+      6.6176000000000004
+     ], 
+     "string": "6'-11 1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      230.29810000000001, 
+      6.7426000000000004
+     ], 
+     "value": 5.1875, 
+     "origin": [
+      230.29810000000001, 
+      6.6176000000000004
+     ], 
+     "string": "5'-2 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7109:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7111:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    251.12100000000001, 
+    50.315500000000000
+   ], 
+   "tool": {
+    "describe": "check shaft opening anchor|edges|anchor (chain check) across CC/BB..   edge | 3'-0\" | edge | 0'-8\" | edge", 
+    "label": "shaft opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(0, 'join', 0)", 
+    "feature": "opening/shaft#51"
+   }, 
+   "id": 20614126, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      250.99600000000001, 
+      51.815500000000000
+     ], 
+     "value": 3.0, 
+     "origin": [
+      251.12100000000001, 
+      51.815500000000000
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      251.87100000000001, 
+      55.012099999999997
+     ], 
+     "value": 0.66666999999999998, 
+     "origin": [
+      251.12100000000001, 
+      53.648800000000001
+     ], 
+     "string": "8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7356:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7354:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7360:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788100
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    246.62100000000001, 
+    53.982100000000003
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> CC                across CC/BB..   edge | 8'-0 1/2\" | CC", 
+    "label": "stack 1 -> CC", 
+    "side": 0, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 0, -1)", 
+    "feature": "opening/shaft#51"
+   }, 
+   "id": 20614127, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      246.49600000000001, 
+      58.003000000000000
+     ], 
+     "value": 8.0416699999999999, 
+     "origin": [
+      246.62100000000001, 
+      58.003000000000000
+     ], 
+     "string": "8'-0 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7360:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788105
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    225.01679999999999, 
+    122.73210000000000
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> AA across CC/BB..   edge | 5'-0\" | edge | 2'-9 1/2\" | AA", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> AA", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#52"
+   }, 
+   "id": 20614128, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      224.89179999999999, 
+      125.23210000000000
+     ], 
+     "value": 5.0, 
+     "origin": [
+      225.01679999999999, 
+      125.23210000000000
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      224.89179999999999, 
+      132.15760000000000
+     ], 
+     "value": 2.7916699999999999, 
+     "origin": [
+      225.01679999999999, 
+      129.12799999999999
+     ], 
+     "string": "2'-9 1/2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7146:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7144:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    229.14179999999999, 
+    46.753000000000000
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 3'-7\" | edge | 0'-2\" | 7", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#53"
+   }, 
+   "id": 20614129, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      230.93350000000001, 
+      46.878000000000000
+     ], 
+     "value": 3.5833300000000001, 
+     "origin": [
+      230.93350000000001, 
+      46.753000000000000
+     ], 
+     "string": "3'-7\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      233.92179999999999, 
+      46.878000000000000
+     ], 
+     "value": 0.16667000000000001, 
+     "origin": [
+      232.80850000000001, 
+      46.753000000000000
+     ], 
+     "string": "2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7093:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7095:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788109
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    203.64179999999999, 
+    125.71129999999999
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 3'-1\" | edge | 3'-3\" | 6", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#54"
+   }, 
+   "id": 20614130, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      205.18350000000001, 
+      125.83629999999999
+     ], 
+     "value": 3.0833300000000001, 
+     "origin": [
+      205.18350000000001, 
+      125.71129999999999
+     ], 
+     "string": "3'-1\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      208.35010000000000, 
+      125.83629999999999
+     ], 
+     "value": 3.25, 
+     "origin": [
+      208.35010000000000, 
+      125.71129999999999
+     ], 
+     "string": "3'-3\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7049:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7051:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788115
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    198.00640000000001, 
+    -16.382400000000001
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> FF across CC/BB..   edge | 2'-2\" | edge | 4'-0 7/8\" | FF", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> FF", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#55"
+   }, 
+   "id": 20614131, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      197.88140000000001, 
+      -15.299099999999999
+     ], 
+     "value": 2.1666699999999999, 
+     "origin": [
+      198.00640000000001, 
+      -15.299099999999999
+     ], 
+     "string": "2'-2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      197.88140000000001, 
+      -12.179300000000000
+     ], 
+     "value": 4.0729199999999999, 
+     "origin": [
+      198.00640000000001, 
+      -12.179300000000000
+     ], 
+     "string": "4'-0 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7126:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7124:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788109
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    200.00640000000001, 
+    -18.882400000000001
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 3'-1\" | edge | 6'-10 5/8\" | 6", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#55"
+   }, 
+   "id": 20614132, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      201.54810000000001, 
+      -18.757400000000001
+     ], 
+     "value": 3.0833300000000001, 
+     "origin": [
+      201.54810000000001, 
+      -18.882400000000001
+     ], 
+     "string": "3'-1\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      206.53240000000000, 
+      -18.757400000000001
+     ], 
+     "value": 6.8854199999999999, 
+     "origin": [
+      206.53240000000000, 
+      -18.882400000000001
+     ], 
+     "string": "6'-10 5/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7125:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7127:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788100
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    196.26679999999999, 
+    46.492600000000003
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> CC across CC/BB..   edge | 1'-1 5/8\" | edge | 14'-4 3/4\" | CC", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> CC", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#56"
+   }, 
+   "id": 20614133, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      196.14179999999999, 
+      44.858800000000002
+     ], 
+     "value": 1.1354200000000001, 
+     "origin": [
+      196.26679999999999, 
+      47.060299999999998
+     ], 
+     "string": "1'-1 5/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      196.14179999999999, 
+      54.825899999999997
+     ], 
+     "value": 14.395830000000000, 
+     "origin": [
+      196.26679999999999, 
+      54.825899999999997
+     ], 
+     "string": "14'-4 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7089:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7091:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788109
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    198.26679999999999, 
+    44.492600000000003
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 5'-5 1/4\" | edge | 6'-3 1/4\" | 6", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#56"
+   }, 
+   "id": 20614134, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      200.98560000000001, 
+      44.617600000000003
+     ], 
+     "value": 5.4375, 
+     "origin": [
+      200.98560000000001, 
+      44.492600000000003
+     ], 
+     "string": "5'-5 1/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      206.83969999999999, 
+      44.617600000000003
+     ], 
+     "value": 6.2708300000000001, 
+     "origin": [
+      206.83969999999999, 
+      44.492600000000003
+     ], 
+     "string": "6'-3 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7088:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7090:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    226.48560000000001, 
+    30.284199999999998
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 2'-4\" | edge | 4'-0 7/8\" | 7", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#57"
+   }, 
+   "id": 20614135, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      227.65219999999999, 
+      30.409199999999998
+     ], 
+     "value": 2.3333300000000001, 
+     "origin": [
+      227.65219999999999, 
+      30.284199999999998
+     ], 
+     "string": "2'-4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      230.85540000000000, 
+      30.409199999999998
+     ], 
+     "value": 4.0729199999999999, 
+     "origin": [
+      230.85540000000000, 
+      30.284199999999998
+     ], 
+     "string": "4'-0 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7097:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7099:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    222.93350000000001, 
+    16.628000000000000
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> EE across CC/BB..   edge | 0'-10\" | edge | 8'-6 3/4\" | EE", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#58"
+   }, 
+   "id": 20614136, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      222.80850000000001, 
+      15.396699999999999
+     ], 
+     "value": 0.83333000000000002, 
+     "origin": [
+      222.93350000000001, 
+      17.044599999999999
+     ], 
+     "string": "10\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      222.80850000000001, 
+      21.742599999999999
+     ], 
+     "value": 8.5625, 
+     "origin": [
+      222.93350000000001, 
+      21.742599999999999
+     ], 
+     "string": "8'-6 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7106:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7104:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    222.70429999999999, 
+    -16.340800000000002
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 5'-0\" | edge | 5'-2 1/4\" | 7", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#60"
+   }, 
+   "id": 20614137, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      225.20429999999999, 
+      -16.215800000000002
+     ], 
+     "value": 5.0, 
+     "origin": [
+      225.20429999999999, 
+      -16.340800000000002
+     ], 
+     "string": "5'-0\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      230.29810000000001, 
+      -16.215800000000002
+     ], 
+     "value": 5.1875, 
+     "origin": [
+      230.29810000000001, 
+      -16.340800000000002
+     ], 
+     "string": "5'-2 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7120:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7122:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    18596164
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    216.97510000000000, 
+    77.107100000000003
+   ], 
+   "tool": {
+    "describe": "locate core opening anchor|edges|anchor (chain check) + stack 1 -> wall across CC/BB..   edge | 3'-3\" | edge | 0'-6\" | wall", 
+    "label": "core opening anchor|edges|anchor (chain check) + stack 1 -> wall", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/core#61"
+   }, 
+   "id": 20614138, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      216.85010000000000, 
+      78.732100000000003
+     ], 
+     "value": 3.25, 
+     "origin": [
+      216.97510000000000, 
+      78.732100000000003
+     ], 
+     "string": "3'-3\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      217.72510000000000, 
+      81.887100000000004
+     ], 
+     "value": 0.5, 
+     "origin": [
+      216.97510000000000, 
+      80.607100000000003
+     ], 
+     "string": "6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7453:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7451:LINEAR", 
+    "f59c0f90-b2c8-496c-a249-f0e5df1334e7-011bc144:5:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788109
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    198.73560000000001, 
+    77.232100000000003
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 4'-6 1/8\" | edge | 6'-8 3/4\" | 6", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#62"
+   }, 
+   "id": 20614139, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      200.99080000000001, 
+      77.357100000000003
+     ], 
+     "value": 4.5104199999999999, 
+     "origin": [
+      200.99080000000001, 
+      77.232100000000003
+     ], 
+     "string": "4'-6 1/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      206.61060000000001, 
+      77.357100000000003
+     ], 
+     "value": 6.7291699999999999, 
+     "origin": [
+      206.61060000000001, 
+      77.232100000000003
+     ], 
+     "string": "6'-8 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7081:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7083:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788104
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    207.05850000000001, 
+    79.794600000000003
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> BB across CC/BB..   edge | 2'-10\" | edge | 15'-4 3/4\" | BB", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> BB", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#63"
+   }, 
+   "id": 20614140, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      206.93350000000001, 
+      81.211299999999994
+     ], 
+     "value": 2.8333300000000001, 
+     "origin": [
+      207.05850000000001, 
+      81.211299999999994
+     ], 
+     "string": "2'-10\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      206.93350000000001, 
+      90.325900000000004
+     ], 
+     "value": 15.395830000000000, 
+     "origin": [
+      207.05850000000001, 
+      90.325900000000004
+     ], 
+     "string": "15'-4 3/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7137:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7139:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788104
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    225.01679999999999, 
+    88.357100000000003
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> BB across CC/BB..   edge | 2'-2\" | edge | 7'-6\" | BB", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> BB", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#66"
+   }, 
+   "id": 20614141, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      224.89179999999999, 
+      89.440500000000000
+     ], 
+     "value": 2.1666699999999999, 
+     "origin": [
+      225.01679999999999, 
+      89.440500000000000
+     ], 
+     "string": "2'-2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      224.89179999999999, 
+      94.273799999999994
+     ], 
+     "value": 7.5, 
+     "origin": [
+      225.01679999999999, 
+      94.273799999999994
+     ], 
+     "string": "7'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7074:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7072:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    227.20429999999999, 
+    86.357100000000003
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 1'-9 3/8\" | edge | 3'-10 7/8\" | 7", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#66"
+   }, 
+   "id": 20614142, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      225.57060000000001, 
+      86.482100000000003
+     ], 
+     "value": 1.78125, 
+     "origin": [
+      228.09490000000000, 
+      86.357100000000003
+     ], 
+     "string": "1'-9 3/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      230.93870000000001, 
+      86.482100000000003
+     ], 
+     "value": 3.90625, 
+     "origin": [
+      230.93870000000001, 
+      86.357100000000003
+     ], 
+     "string": "3'-10 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7073:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7075:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    196.26679999999999, 
+    18.805099999999999
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> EE across CC/BB..   edge | 2'-2\" | edge | 5'-0 5/8\" | EE", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#67"
+   }, 
+   "id": 20614143, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      196.14179999999999, 
+      19.888400000000001
+     ], 
+     "value": 2.1666699999999999, 
+     "origin": [
+      196.26679999999999, 
+      19.888400000000001
+     ], 
+     "string": "2'-2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      196.14179999999999, 
+      23.497800000000002
+     ], 
+     "value": 5.0520800000000001, 
+     "origin": [
+      196.26679999999999, 
+      23.497800000000002
+     ], 
+     "string": "5'-0 5/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7130:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7128:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788109
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    199.05850000000001, 
+    16.805099999999999
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 1'-7\" | edge | 9'-4\" | 6", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#67"
+   }, 
+   "id": 20614144, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      198.02850000000001, 
+      16.930099999999999
+     ], 
+     "value": 1.5833299999999999, 
+     "origin": [
+      199.85010000000000, 
+      16.805099999999999
+     ], 
+     "string": "1'-7\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      205.30850000000001, 
+      16.930099999999999
+     ], 
+     "value": 9.3333300000000001, 
+     "origin": [
+      205.30850000000001, 
+      16.805099999999999
+     ], 
+     "string": "9'-4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7129:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7131:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    241.98560000000001, 
+    94.857100000000003
+   ], 
+   "tool": {
+    "describe": "check penetration opening anchor|edges (chain check) across CC/BB..   edge | 1'-8\" | edge", 
+    "label": "penetration opening anchor|edges (chain check)", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "opening/penetration#72"
+   }, 
+   "id": 20614145, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      241.86060000000001, 
+      93.827100000000002
+     ], 
+     "value": 1.6666700000000001, 
+     "origin": [
+      241.98560000000001, 
+      95.690500000000000
+     ], 
+     "string": "1'-8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7070:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7068:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788104
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    243.30850000000001, 
+    96.523799999999994
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> BB                across CC/BB..   edge | 1'-6\" | BB", 
+    "label": "stack 1 -> BB", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'collinear', 0)", 
+    "feature": "opening/penetration#72"
+   }, 
+   "id": 20614146, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      244.05850000000001, 
+      95.493799999999993
+     ], 
+     "value": 1.5, 
+     "origin": [
+      243.30850000000001, 
+      97.273799999999994
+     ], 
+     "string": "1'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7068:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788114
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    244.16260000000000, 
+    11.023800000000000
+   ], 
+   "tool": {
+    "describe": "locate plain opening anchor|edges|anchor (chain check) + stack 1 -> EE across CC/BB..   edge | 0'-9 5/8\" | edge | 14'-2 3/8\" | EE", 
+    "label": "plain opening anchor|edges|anchor (chain check) + stack 1 -> EE", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#73"
+   }, 
+   "id": 20614147, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      244.03760000000000, 
+      9.3901000000000003
+     ], 
+     "value": 0.80208000000000002, 
+     "origin": [
+      244.16260000000000, 
+      11.424799999999999
+     ], 
+     "string": "9 5/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      244.03760000000000, 
+      18.924800000000001
+     ], 
+     "value": 14.197920000000000, 
+     "origin": [
+      244.16260000000000, 
+      18.924800000000001
+     ], 
+     "string": "14'-2 3/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7142:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7140:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788109
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    204.62100000000001, 
+    115.32590000000000
+   ], 
+   "tool": {
+    "describe": "locate penetration opening anchor|edges|anchor (chain check) + stack 1 -> 6 across 5/6..     edge | 1'-3\" | edge | 4'-1 1/4\" | 6", 
+    "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> 6", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/penetration#75"
+   }, 
+   "id": 20614148, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      203.59100000000001, 
+      115.45090000000000
+     ], 
+     "value": 1.25, 
+     "origin": [
+      205.24600000000001, 
+      115.32590000000000
+     ], 
+     "string": "1'-3\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      207.92310000000001, 
+      115.45090000000000
+     ], 
+     "value": 4.1041699999999999, 
+     "origin": [
+      207.92310000000001, 
+      115.32590000000000
+     ], 
+     "string": "4'-1 1/4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7077:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7079:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788105
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    223.14179999999999, 
+    119.44050000000000
+   ], 
+   "tool": {
+    "describe": "locate penetration opening anchor|edges|anchor (chain check) + stack 1 -> AA across CC/BB..   edge | 0'-11\" | edge | 10'-2\" | AA", 
+    "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> AA", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/penetration#77"
+   }, 
+   "id": 20614149, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      223.01679999999999, 
+      118.20920000000000
+     ], 
+     "value": 0.91666999999999998, 
+     "origin": [
+      223.14179999999999, 
+      119.89879999999999
+     ], 
+     "string": "11\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      223.01679999999999, 
+      125.44050000000000
+     ], 
+     "value": 10.166670000000000, 
+     "origin": [
+      223.14179999999999, 
+      125.44050000000000
+     ], 
+     "string": "10'-2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7150:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7148:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c9:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788100, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    226.14179999999999, 
+    62.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> CC + core opening anchor|edges|anchor (chain check) across CC/BB..   CC | 0'-0 1/2\" | edge | 12'-5\" | edge", 
+    "label": "stack 1 -> CC + core opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/core#48"
+   }, 
+   "id": 20614150, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      226.89179999999999, 
+      60.390099999999997
+     ], 
+     "value": 0.041669999999999999, 
+     "origin": [
+      226.14179999999999, 
+      62.044600000000003
+     ], 
+     "string": "1/2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      226.01679999999999, 
+      68.273799999999994
+     ], 
+     "value": 12.416670000000000, 
+     "origin": [
+      226.14179999999999, 
+      68.273799999999994
+     ], 
+     "string": "12'-5\"R.O.", 
+     "suffix": "R.O."
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7510:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7508:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788100, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    241.30850000000001, 
+    57.523800000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> CC + stack 1 -> CC across CC/BB..   edge@wall | 4'-6\" | CC | 7'-7\" | edge", 
+    "label": "stack 1 -> CC + stack 1 -> CC", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/core#49"
+   }, 
+   "id": 20614151, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      241.18350000000001, 
+      59.773800000000001
+     ], 
+     "value": 4.5, 
+     "origin": [
+      241.30850000000001, 
+      59.773800000000001
+     ], 
+     "string": "4'-6\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      241.18350000000001, 
+      65.815500000000000
+     ], 
+     "value": 7.5833300000000001, 
+     "origin": [
+      241.30850000000001, 
+      65.815500000000000
+     ], 
+     "string": "7'-7\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5792:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5790:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788114, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    223.14179999999999, 
+    26.023800000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> EE + shaft opening anchor|edges|anchor (chain check) across CC/BB..   EE | 3'-6\" | edge | 17'-8\" | edge", 
+    "label": "stack 1 -> EE + shaft opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/shaft#46"
+   }, 
+   "id": 20614152, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      223.01679999999999, 
+      27.773800000000001
+     ], 
+     "value": 3.5, 
+     "origin": [
+      223.14179999999999, 
+      27.773800000000001
+     ], 
+     "string": "3'-6\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      223.01679999999999, 
+      38.357100000000003
+     ], 
+     "value": 17.666670000000000, 
+     "origin": [
+      223.14179999999999, 
+      38.357100000000003
+     ], 
+     "string": "17'-8\"R.O.", 
+     "suffix": "R.O."
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d2:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5734:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5732:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    13788104, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    223.14179999999999, 
+    89.680099999999996
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> BB + stack 1 -> BB across CC/BB..   edge | 8'-4 1/8\" | BB | 9'-3 7/8\" | edge", 
+    "label": "stack 1 -> BB + stack 1 -> BB", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/core#47"
+   }, 
+   "id": 20614153, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      223.01679999999999, 
+      93.851900000000001
+     ], 
+     "value": 8.34375, 
+     "origin": [
+      223.14179999999999, 
+      93.851900000000001
+     ], 
+     "string": "8'-4 1/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      223.01679999999999, 
+      102.68530000000000
+     ], 
+     "value": 9.3229199999999999, 
+     "origin": [
+      223.14179999999999, 
+      102.68530000000000
+     ], 
+     "string": "9'-3 7/8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5676:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:5674:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788115, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    216.70429999999999, 
+    -10.142899999999999
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> FF + plain opening anchor|edges|anchor (chain check) across CC/BB..   FF | 15'-4 1/8\" | edge | 2'-6\" | edge", 
+    "label": "stack 1 -> FF + plain opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#68"
+   }, 
+   "id": 20614154, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      216.57929999999999, 
+      -2.4710000000000001
+     ], 
+     "value": 15.34375, 
+     "origin": [
+      216.70429999999999, 
+      -2.4710000000000001
+     ], 
+     "string": "15'-4 1/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      216.57929999999999, 
+      6.4508999999999999
+     ], 
+     "value": 2.5, 
+     "origin": [
+      216.70429999999999, 
+      6.4508999999999999
+     ], 
+     "string": "2'-6\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263d3:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7114:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7112:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788109, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    209.97510000000000, 
+    10.700900000000001
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 6 + plain opening anchor|edges|anchor (chain check) across 5/6..     6 | 9'-8 3/4\" | edge | 1'-4\" | edge", 
+    "label": "stack 1 -> 6 + plain opening anchor|edges|anchor (chain check)", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/plain#68"
+   }, 
+   "id": 20614155, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      214.83969999999999, 
+      10.825900000000001
+     ], 
+     "value": 9.7291699999999999, 
+     "origin": [
+      214.83969999999999, 
+      10.700900000000001
+     ], 
+     "string": "9'-8 3/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      222.06760000000000, 
+      10.825900000000001
+     ], 
+     "value": 1.3333299999999999, 
+     "origin": [
+      220.37100000000001, 
+      10.700900000000001
+     ], 
+     "string": "1'-4\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263cd:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7113:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7115:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788104, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    243.30850000000001, 
+    98.023799999999994
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> BB + penetration opening anchor|edges|anchor (chain check) across CC/BB..   BB | 3'-10 5/8\" | edge | 1'-10\" | edge", 
+    "label": "stack 1 -> BB + penetration opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/penetration#70"
+   }, 
+   "id": 20614156, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      243.18350000000001, 
+      99.966499999999996
+     ], 
+     "value": 3.8854199999999999, 
+     "origin": [
+      243.30850000000001, 
+      99.966499999999996
+     ], 
+     "string": "3'-10 5/8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      244.05850000000001, 
+      104.97380000000000
+     ], 
+     "value": 1.8333299999999999, 
+     "origin": [
+      243.30850000000001, 
+      102.82590000000000
+     ], 
+     "string": "1'-10\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c8:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7066:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7064:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788110
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    227.39699999999999, 
+    115.32590000000000
+   ], 
+   "tool": {
+    "describe": "locate penetration opening anchor|edges|anchor (chain check) + stack 1 -> 7 across 5/6..     edge | 1'-1\" | edge | 4'-4 15/16\" | 7", 
+    "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> 7", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/penetration#77"
+   }, 
+   "id": 20614157, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      226.36699999999999, 
+      114.57590000000000
+     ], 
+     "value": 1.0833299999999999, 
+     "origin": [
+      227.93870000000001, 
+      115.32590000000000
+     ], 
+     "string": "1'-1\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      230.68610000000001, 
+      115.45090000000000
+     ], 
+     "value": 4.4114599999999999, 
+     "origin": [
+      230.68610000000001, 
+      115.32590000000000
+     ], 
+     "string": "4'-5\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7149:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7151:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435, 
+    13788100
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    207.55850000000001, 
+    47.857100000000003
+   ], 
+   "tool": {
+    "describe": "locate penetration opening anchor|edges|anchor (chain check) + stack 1 -> CC across CC/BB..   edge | 1'-6\" | edge | 12'-8\" | CC", 
+    "label": "penetration opening anchor|edges|anchor (chain check) + stack 1 -> CC", 
+    "side": 1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'joined', 0)", 
+    "feature": "opening/penetration#76"
+   }, 
+   "id": 20614158, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      207.43350000000001, 
+      46.827100000000002
+     ], 
+     "value": 1.5, 
+     "origin": [
+      207.55850000000001, 
+      48.607100000000003
+     ], 
+     "string": "1'-6\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      207.43350000000001, 
+      55.690500000000000
+     ], 
+     "value": 12.666670000000000, 
+     "origin": [
+      207.55850000000001, 
+      55.690500000000000
+     ], 
+     "string": "12'-8\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    0.0, 
+    1.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7102:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7100:LINEAR", 
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263c4:0:SURFACE"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    246.12100000000001, 
+    48.315500000000000
+   ], 
+   "tool": {
+    "describe": "check stepped opening overall      across 5/6..     edge | 3'-0\" | edge", 
+    "label": "stepped opening overall", 
+    "side": -1, 
+    "role": "check", 
+    "kind": "opening", 
+    "cand": "(0, 'reordered', 0)", 
+    "feature": "opening/shaft#51"
+   }, 
+   "id": 20614159, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      247.62100000000001, 
+      48.440500000000000
+     ], 
+     "value": 3.0, 
+     "origin": [
+      247.62100000000001, 
+      48.315500000000000
+     ], 
+     "string": "3'-0\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7355:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7357:LINEAR"
+   ]
+  }, 
+  {
+   "ref_elems": [
+    13788110, 
+    14604435, 
+    14604435, 
+    14604435, 
+    14604435
+   ], 
+   "type": "5/64\" Arial Narrow (Transparent)", 
+   "origin": [
+    232.89179999999999, 
+    46.315500000000000
+   ], 
+   "tool": {
+    "describe": "locate stack 1 -> 7 + shaft opening anchor|edges|anchor (chain check) across 5/6..     7 | 13'-2 3/4\" | edge | 1'-2\" | edge | 0'-8\" | edge | 1'-2\" | edge", 
+    "label": "stack 1 -> 7 + shaft opening anchor|edges|anchor (chain check)", 
+    "side": -1, 
+    "role": "locate", 
+    "kind": "opening", 
+    "cand": "(0, 'reordered', 0)", 
+    "feature": "opening/shaft#51"
+   }, 
+   "id": 20614160, 
+   "leader": true, 
+   "segments": [
+    {
+     "text": [
+      239.50640000000001, 
+      46.440500000000000
+     ], 
+     "value": 13.229170000000000, 
+     "origin": [
+      239.50640000000001, 
+      46.315500000000000
+     ], 
+     "string": "13'-2 3/4\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      250.15100000000001, 
+      45.565500000000000
+     ], 
+     "value": 1.1666700000000001, 
+     "origin": [
+      246.70429999999999, 
+      46.315500000000000
+     ], 
+     "string": "1'-2\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      250.15100000000001, 
+      44.690500000000000
+     ], 
+     "value": 0.66666999999999998, 
+     "origin": [
+      247.62100000000001, 
+      46.315500000000000
+     ], 
+     "string": "8\"", 
+     "suffix": ""
+    }, 
+    {
+     "text": [
+      250.15100000000001, 
+      43.815500000000000
+     ], 
+     "value": 1.1666700000000001, 
+     "origin": [
+      248.53760000000000, 
+      46.315500000000000
+     ], 
+     "string": "1'-2\"", 
+     "suffix": ""
+    }
+   ], 
+   "dir": [
+    1.0, 
+    0.0
+   ], 
+   "refs": [
+    "03ace153-0de7-408e-8ee9-528f1bf34c68-00d263ce:0:SURFACE", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7355:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7361:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7359:LINEAR", 
+    "9f4be5f4-c799-4fdb-b709-06061c40fb1a-00ded893:7357:LINEAR"
+   ]
+  }
+ ]
+}

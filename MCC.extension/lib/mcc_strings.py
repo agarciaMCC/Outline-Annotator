@@ -31,6 +31,8 @@ CFG = {
     "CLUTTER_R_IN": 0.75,   # paper inches; a small opening/notch with 2+ other small ones this close -> enlarged plan
                             # (8 ft at 1:128, 6 ft at 1:96 - "hard to tell what dimension goes where", Adolfo L7 round 1)
     "RUN_BOTH": 6.0,        # ft; a slab edge longer than this is located at both its corners
+    "RUN_BOTH_ALWAYS": 30.0, # ft; ... and past the tape, at both corners even where a corner has no open margin
+                            # (Adolfo 2026-10-07, L7: "a dim at each end" of the 39 ft edge above AA; was TURN_BOTH 40)
     "SLOT_MAX": 1.0,        # ft; an opening narrower than this is a slot: clutter with just 1 neighbour, core/shaft or not
     "LANE_STEP_IN": 0.1875, # paper inches between stacked rows (hand sheets: 3/16" at every scale)
     "CONSISTENCY": 1.0,     # switch to the neighbours' grid only if no farther (Adolfo
@@ -148,7 +150,11 @@ class Planner(object):
     def spans_overlap(self, a0, a1, b0, b1, slack=0.0):
         return a0 - slack <= b1 and b0 - slack <= a1
 
-    def flush(self, face, members):
+    def flush(self, face, members, share=0.0, line=False):
+        """The member whose face lies on this face (within FLUSH_TOL) and
+        overlaps it - when share is given, by at least that share of the
+        face's length, or (line) with a member face at least as long (the
+        edge continues a wall line: L3N's 9 ft edge off a 70 ft wall)."""
         for mbr in members:
             for f in mbr.sides or mbr.faces:
                 if not P.parallel(f.d, face.d):
@@ -160,6 +166,9 @@ class Planner(object):
                 b0 = (f.p0[0] - face.p0[0]) * face.d[0] + (f.p0[1] - face.p0[1]) * face.d[1]
                 b1 = (f.p1[0] - face.p0[0]) * face.d[0] + (f.p1[1] - face.p0[1]) * face.d[1]
                 if self.spans_overlap(0.0, face.length, min(b0, b1), max(b0, b1)):
+                    if share and min(face.length, max(b0, b1)) - max(0.0, min(b0, b1)) < share * face.length \
+                            and not (line and abs(b1 - b0) >= face.length):
+                        continue        # a stub at its end; a longer wall line it continues still counts
                     return mbr
         return None
 
@@ -230,9 +239,13 @@ class Planner(object):
         fi, gi, off, s_lo, s_hi = fr
         if abs(off) < self.c["ON_GRID_TOL"]:
             self.located_by[id(e)] = "on grid"; return
-        if self.flush(e, self.m.walls):
+        # the member must run along most of the edge: a wall or column that
+        # only touches its end doesn't locate it (L7: the 39 ft top edge above
+        # AA, 0.6 ft of wall at its east end; the 5'-1" edges off 7 either side
+        # of a 6.7 ft column - Adolfo drew both by hand in both rounds)
+        if self.flush(e, self.m.walls, share=0.5, line=True):
             self.located_by[id(e)] = "wall face"; return
-        if self.flush(e, self.m.columns):
+        if self.flush(e, self.m.columns, share=0.5):
             # slab cut around a column: the edge IS the column face - the
             # column is dimensioned on other plans (Adolfo 2026-10-05)
             self.located_by[id(e)] = "column face"; self.note("slab edge on a column face (skipped)"); return
@@ -257,7 +270,7 @@ class Planner(object):
         # "doubles" he deleted on L3N were the two end dims landing mid-edge -
         # the reversed-outward bug, fixed above)
         parts = self.end_parts(s_lo, s_hi, both=self.c["RUN_BOTH"])
-        if len(parts) == 2 and (s_hi - s_lo) <= self.c["TURN_BOTH"]:
+        if len(parts) == 2 and (s_hi - s_lo) <= self.c["RUN_BOTH_ALWAYS"]:
             # "...outside the footprint where possible": below TURN_BOTH the
             # second corner dim only where the margin past that corner is open
             # (L3N run 91: both-corner dims inside the slab crowded the
