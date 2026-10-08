@@ -30,7 +30,7 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 - `Training Library/` — past jobs' outline sheets pulled from the Z: archive (`inventory.py`, `classify.py`); PDFs not on GitHub.
 - `Test Library/` — PDF regression cases for Columns/Grids from PDF: `python run_library.py`.
 - `MCC-DimText.extension/` — stripped-down Dim Text build shared with coworkers; keep in sync when Dim Text changes.
-- `MCC-Testing.extension/` — "MCC Testing" tab shared with coworkers for buttons under test (Dim Soffit v2 so far).
+- `MCC-Testing.extension/` — "MCC Testing" tab shared with coworkers for buttons under test (Dim Soffit v2, Grids from PDF, Columns from PDF).
   Its `lib/` holds copies of only the modules those buttons import; re-copy and rebuild
   `Setup Files/MCC-Testing.extension.zip` when they change.
 - `RevitMCP.extension/` — third-party Revit MCP server, locally patched (see `docs/revit-mcp-setup.md`). Don't edit casually.
