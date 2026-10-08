@@ -59,7 +59,8 @@ CFG = {
     "RUN_SKIP_IN_BEAM": False,       # no dim to a slab edge hidden inside a beam's outline (L4S r1, FILL edge)
     "BEAM_END_SKIP_SLAB_EDGE": False, # no beam-end dim where the end lies on a slab edge (that edge is located)
     "FRAMED_INSIDE": False,          # width just inside an end framed into another beam (Adolfo L4S r1 "2b")
-    "CROP_WIDTH_LONG": 0.0,          # ft; a beam leaving the crop with this much in view also gets a crop-edge width   # beam corners at a skewed junction located off grids (Adolfo 2026-10-07, L4 South)
+    "CROP_WIDTH_LONG": 0.0,          # ft; a beam leaving the crop with this much in view also gets a crop-edge width
+                                     # (Adolfo L4S r1 "3b"; at 20 ft L4S 70 -> 69 and 5 more missing - off)   # beam corners at a skewed junction located off grids (Adolfo 2026-10-07, L4 South)
     "CJ_LONG_PAIR_SPACING": False,  # long CJ pairs (both ends dimensioned) get the spacing at each end too (L4S has
                             # it; on L3N it adds 2 dims he doesn't draw - off, 2026-10-07)
     "CJ_PAIR": 4.0,         # ft; parallel CJs this close get dims at one shared end + a spacing dim
@@ -884,12 +885,18 @@ class Planner(object):
                 dt_ = abs(o_.d[0] * b.d[0] + o_.d[1] * b.d[1])
                 return 0.1 < dt_ < 0.995                # neither square nor in line
             if self.c["FRAMED_INSIDE"] and beam_past(e_st, d, 0.5) and other_skew(e_st, d):
-                # past the end would land on / across another beam: read the
-                # width across this beam just inside the end (Adolfo 2026-10-07,
-                # L4S round 1 "2b" - four widths moved there)
-                span = (e_st - 4.0, e_st - 0.5) if d > 0 else (e_st + 0.5, e_st + 4.0)
+                # past the end would land on / across a skewed beam: read the
+                # width across this beam inside the end, clear of the skewed cut
+                # - measured from the SHORTER side's end, not the centreline end
+                # (Adolfo 2026-10-07, L4S round 1 "2b": his four sit 2.6-10.5 ft in)
+                ends_st = []
+                for sd_ in (near, far):
+                    ss_ = [self.m.station(q, gi) for q in (sd_.p0, sd_.p1)]
+                    ends_st.append(max(ss_) if d > 0 else min(ss_))
+                inner = min(ends_st) if d > 0 else max(ends_st)
+                span = (inner - 10.0, inner - 0.5) if d > 0 else (inner + 0.5, inner + 10.0)
                 self._inside_end[-d] = True
-                return (span, e_st - d * 2.0, -d, False)
+                return (span, inner - d * 1.5, -d, False)
             if beam_past(e_st, d, 0.5):
                 opens = [k for k in (1.0, 2.0, 3.0, 4.0, 5.0, 6.0) if k <= self.c["FRAMED_CROSS"] and not beam_past(e_st, d, k)]
                 if not opens:
@@ -907,6 +914,9 @@ class Planner(object):
         def in_view(st):
             mo = (on + of) / 2.0
             return self.fs._inside((g0_[0] + u_[0] * st + n_[0] * mo, g0_[1] + u_[1] * st + n_[1] * mo))
+        # (tried 2026-10-08: an end counts as in view when the beam 1.5 ft back
+        # from it is - caught the L4S grid-11 beam's end at the crop corner but
+        # also ends of others just past the crop: L4S 70 -> 66, reverted)
         ends_ok = [d for d, c in ((-1, cont_lo), (1, cont_hi)) if not c and in_view(s1 if d > 0 else s0)]
         if end_dir not in ends_ok and ends_ok:
             end_dir = ends_ok[0]
@@ -923,7 +933,9 @@ class Planner(object):
             if seen and max(seen) - min(seen) >= lw:
                 lo_v, hi_v = min(seen), max(seen)
                 at = (hi_v - 2.0) if not in_view(s1) else (lo_v + 2.0)
-                b_parts = b_parts + [((lo_v, hi_v), at, None, True)]
+                # its own short stretch, so dedupe doesn't fold it into the real
+                # end's width (same witness lines)
+                b_parts = b_parts + [((at - 1.0, at + 1.0), at, None, True)]
                 self.note("beam width also just inside the crop (long stretch in view)")
         if not b_parts:
             # no end to carry the width (one runs past the crop, the other

@@ -693,6 +693,14 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   (answer 2b; all framed ends 70 -> 58, skewed junctions only 70 -> 65 - needs a per-dim look), `CROP_WIDTH_LONG`
   (answer 3b; no effect at 15-25 ft - the grid-7 beam doesn't reach that branch; trace). Not started: grid-11 beam's
   real south end (`ends_ok`), shaft#178 10'-0" / 12'-0" join.
+- **2026-10-08 — more L4S round-1 tries (dry runs vs his edit; baseline 70 / 24 / 5 / 7), none kept.** (a) Answer 2b,
+  skewed junctions only, width measured in from the beam's SHORTER side (his four sit 2.6-10.5 ft in from the
+  centreline end): 67 - fixes grid 9 but moves the grid-7 width the tool already had right and adds widths at the
+  grid-2 band end. The current framed-end logic already gets most of these right. (b) End-in-view test 1.5 ft back
+  from the end (the grid-11 beam's end at the crop corner): 66 - also catches ends of beams just past the crop.
+  (c) `CROP_WIDTH_LONG` 20 with its own short stretch (it had been folded into the real end's width by dedupe): 69,
+  5 more missing. (d) `ALIGN_BOTH_NEW_LINE` (end-to-end pair of one element onto a fresh line together): L4S no
+  change (shaft#178's pair still unjoined), L7 150 -> 147. All left in the code behind settings, off.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

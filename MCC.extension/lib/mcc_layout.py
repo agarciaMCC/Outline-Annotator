@@ -76,6 +76,7 @@ CFG = {
     "W_TEXT_FLIP": None,    # a pulled-out text moved to the string's far end when the near end is blocked (None = off:
                             # it put plain#52's pair exactly on Adolfo's spot but cost L3N 3-8 at any price, 2026-10-07)
     "AVOID_NOTES": True,    # keep dims off the tags / text notes / symbols already in the view
+    "ALIGN_BOTH_NEW_LINE": False,   # end-to-end pair of one element: both onto a fresh line when neither fits
     "W_TIGHT": 0.25,        # base cost of a spot just past MIN_GAP beside an opening (a tight gap to a grid)
     "W_NEIGH": 2.0,         # an opening's dim on the side where ANOTHER opening sits within NEIGH_R_IN (and the
     "NEIGH_R_IN": 0.75,     # other side is clear): per such neighbour - keeps two near openings' dims out of the
@@ -1234,11 +1235,47 @@ class Layout(object):
                             moved = True
                             break
                         self.placed.append(a)
+                    if not moved and self.c["ALIGN_BOTH_NEW_LINE"]:
+                        # neither fits on the other's line: both onto a fresh
+                        # line, the nearest rows first (Adolfo, L4S shaft#178:
+                        # 10'-0" | 12'-0" moved together to the first row; L7 #52)
+                        self.placed.remove(p); self.placed.remove(q)
+                        done = False
+                        for base, st, cand in self.candidates(p.s)[:12]:
+                            pen_p, box_p = self.evaluate(p.s, st)
+                            if pen_p is None:
+                                continue
+                            np_ = self._placed_at(p, st, box_p, "aligned")
+                            self.placed.append(np_)
+                            st_q = self.m.station(self.world(p.s.gi, st, 0.0), q.s.gi)
+                            pen_q, box_q = self.evaluate(q.s, st_q)
+                            if pen_q is not None:
+                                self.placed.append(self._placed_at(q, st_q, box_q, "aligned"))
+                                self.notes_aligned += 2
+                                done = True
+                                break
+                            self.placed.remove(np_)
+                        if not done:
+                            self.placed += [p, q]
+                        else:
+                            moved = True
                     if moved:
                         changed = True
                         break
                 if changed:
                     break
+
+    def _placed_at(self, old, st, boxes, how):
+        """A copy of placed string old moved to station st (its own frame)."""
+        s = old.s
+        offs = [r[0] for r in s.refs]
+        lo, hi = min(offs), max(offs)
+        sf, aa = self.to_fam(s.gi, st, lo)
+        _, bb = self.to_fam(s.gi, st, hi)
+        na = Placed(s, s.fi, sf, min(aa, bb), max(aa, bb), (self.world(s.gi, st, lo), self.world(s.gi, st, hi)),
+                    boxes, old.cost, (st, (0, how, 0)), self.text_plan(s, st))
+        na.side = self.elem_side(s, sf)
+        return na
 
     def _dedupe_after_join(self):
         """A single dim whose two witness lines appear consecutively in a
