@@ -1,5 +1,5 @@
 ---
-name: edit-diff-analyst
+name: analyst
 description: Reads a Dim Soffit v2 run report and the compare file from Adolfo's hand edits of the test view, groups every difference by the rule it points at, and proposes concrete rule changes. Read-only; never touches Revit or edits code.
 tools: Read, Grep, Glob, Bash
 model: opus

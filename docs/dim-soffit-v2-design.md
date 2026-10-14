@@ -213,10 +213,10 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   never closer to it (hard). Tried first row 3/8" (run 51): moved 21 dims he had left alone — back to 1/4".
   Agreement with his version (within 3/16" of his spot): left-as-is 55 → 43 of 55, moved 16 → 20 of 60, added 1 → 3
   of 30. L3N run 52: 148 / 141 placed / 2 review / 0 overlaps; L7 run 27: 160 / 138 / 2 / 0.
-- **2026-10-06 — agents join the loop; runs L3N 53–54.** Two read-only agents in `.claude/agents/`: `edit-diff-analyst`
-  (groups Adolfo's hand edits by the rule they point at; first report `Claude outputs/audit_R26/analyst_L3N_round1.md`:
+- **2026-10-06 — agents join the loop; runs L3N 53–54.** Two read-only agents in `.claude/agents/`: `analyst` (formerly `edit-diff-analyst`;
+  groups Adolfo's hand edits by the rule they point at; first report `Claude outputs/audit_R26/analyst_L3N_round1.md`:
   of his 122 changes 47 were covered by the 2026-10-05 rules, 34 by proposed ones, 17 unexplained — 8 open questions
-  for Adolfo at its end) and `revit-compat-reviewer` (IronPython 2.7 / Revit 2023+2026 check of a diff before a run).
+  for Adolfo at its end) and `compat` (formerly `revit-compat-reviewer`; IronPython 2.7 / Revit 2023+2026 check of a diff before a run).
   `agree_with_edits.py` (CPython) scores a run snapshot against `snapshot_L3N_after_edits.json`: same dim within 3/16"
   / same dim further off / dims he doesn't have / his dims the tool lacks. First two changes from the analyst:
   - **Slots → enlarged plan** (`cluttered_small`, `SLOT_MAX` 1 ft): an opening narrower than 1 ft one way is clutter with

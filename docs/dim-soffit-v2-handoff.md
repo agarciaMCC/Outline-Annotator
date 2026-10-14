@@ -35,7 +35,7 @@ the "how we work" and "where things stand" summary.
    commit. **Never run the tool on a view he is editing**; nothing clears a test view until he says "done".
 2. **After:** snapshot `_after_editsN`; `compare_snapshots.py` (id-based, needs Revit) + `compare_segments.py`
    (CPython, by value + position, tolerant of a different reference); commit.
-3. **Analyst:** `Agent(subagent_type="edit-diff-analyst")` with both compare files, the snapshots, the run report and the
+3. **Analyst:** `Agent(subagent_type="analyst")` with both compare files, the snapshots, the run report and the
    design doc. It groups the edits by cause and proposes changes; keep its questions for Adolfo few and send
    pictures (`crop_png.py` on the run's exported PNG — mapping notes below).
 4. **Build the clear fixes, run, snapshot, score** with `agree_with_edits.py <run.json> <his.json>` (by segment).
@@ -44,7 +44,7 @@ the "how we work" and "where things stand" summary.
    end, tight first rows, W_SPLIT 5). Record tried-and-reverted things in the doc so they aren't retried.
 5. Ask Adolfo with pictures; his answers go into the design doc as dated decisions. He answers in one line each
    ("1c", "2b", "disregard my edit", "correct rule") — give him numbered options.
-6. **`revit-compat-reviewer`** agent for IronPython 2.7 / Revit 2023+2026 checks before a run when the change is big.
+6. **`compat`** agent for IronPython 2.7 / Revit 2023+2026 checks before a run when the change is big.
 
 ## Running
 - Headless: `execute_revit_code` with `RUN=n` (+ `VIEW_NAME`, `TAG` for L7 / L45N) and `execfile(run_v2.py)`. It

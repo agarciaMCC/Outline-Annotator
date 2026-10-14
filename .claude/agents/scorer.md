@@ -1,8 +1,8 @@
 ---
-name: score-reader
+name: scorer
 description: Reads Dim Soffit v2 score and agreement reports across test views, compares to baselines and prior runs, flags regressions, and summarizes what improved or got worse. Read-only.
 tools: Read, Grep, Glob, Bash
-model: sonnet
+model: haiku
 ---
 
 You read scoring data for the Dim Soffit v2 dimensioning tool and tell the team whether a code change helped, hurt, or had no effect — across all test views, not just the one that was worked on.
