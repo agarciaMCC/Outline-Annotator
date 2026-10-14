@@ -27,6 +27,7 @@ from System import Action
 from System.Collections.Generic import List
 import mcc_pyrun as PR
 import mcc_colpdf as CP
+import mcc_place as PL
 
 doc = revit.doc
 uidoc = revit.uidoc
@@ -387,7 +388,7 @@ class ColumnsWindow(forms.WPFWindow):
             return
         self.save_families()
         made, have, bad = 0, 0, {}
-        with revit.Transaction("MCC: Column types from schedule"):
+        with PL.logged_transaction(doc, "MCC: Column types from schedule"):
             for t in res["types"]:
                 sym, note = type_for(t["family"], t["size"])
                 if sym is None:
@@ -578,7 +579,7 @@ SNAP_GRIDS = [(n, p, d) for n, (p, d) in model_grids().items()]
 made, failed, skipped, unattached = [], [], 0, 0
 col_info = {}
 dims_made, dims_bad, dims_note = 0, 0, ""
-with revit.Transaction("MCC: Columns from PDF"):
+with PL.logged_transaction(doc, "MCC: Columns from PDF") as wlog:
     for c in res["columns"]:
         key = R["fam"].get(c["mark"])
         if not key or not c.get("size"):
@@ -696,6 +697,8 @@ if dims_note:
 if dims_bad:
     msg.append("%d check dimension(s) couldn't be made (column family has no center reference "
                "planes, or the column isn't square to the grid)." % dims_bad)
+if wlog.messages:
+    msg.append("Revit warnings:\n" + "\n".join(sorted(set(wlog.messages))[:15]))
 if msg:
     forms.alert("%d columns placed on %s.\n\n%s" % (len(made), lv.Name, "\n\n".join(msg)),
                 title="Columns from PDF")

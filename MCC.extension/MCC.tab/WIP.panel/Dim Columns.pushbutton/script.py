@@ -13,6 +13,7 @@ from mcc_compat import eid_int
 import math
 from pyrevit import revit, DB, forms, script
 import mcc_view as V
+import mcc_place as PL
 
 doc, uidoc = revit.doc, revit.uidoc
 view = doc.ActiveView
@@ -532,7 +533,7 @@ if dim_type:
     old = [d for d in DB.FilteredElementCollector(doc, view.Id)
            .OfClass(DB.Dimension) if d.GetTypeId() == dim_type.Id]
 made, failed, pulled = 0, 0, 0
-with revit.Transaction("MCC: Dimension columns ({})".format(mode)):
+with PL.logged_transaction(doc, "MCC: Dimension columns ({})".format(mode)) as wlog:
     for d in old:
         doc.Delete(d.Id)
     for gi, st, refs, sign in jobs:
@@ -565,6 +566,7 @@ if pull_errors:
 output.print_table([["strings", made], ["failed", failed],
                     ["text pulled out", pulled],
                     ["text pull failed", pull_failed[0]],
-                    ["text snapped back by Revit", snapped[0]]] +
+                    ["text snapped back by Revit", snapped[0]],
+                    ["Revit warnings", len(wlog.messages)]] +
                    [[k, v] for k, v in notes.items() if v],
                    columns=["Result", "Count"])
