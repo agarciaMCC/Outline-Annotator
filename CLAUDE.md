@@ -22,7 +22,9 @@ Design docs live in `docs/` (copied from the claude.ai "Outline Annotator" proje
 ## Folder map
 - `MCC.extension/MCC.tab/` — panels: Setup (Grids/Columns from PDF), Views & Sheets (Sheet Builder,
   Fit View Titles, View Range 3D), Dimensions (Dim Text), Diagnostics (Audit Dims, Dim Check,
-  Inspect Model, Score Dims), WIP (Dim Soffit v1/v2, Dim Columns, Dim Grids, Fit Grids, Tag Soffit, Zones, ...).
+  Inspect Model, Score Dims), WIP (Dim Soffit v1/v2, Dim Columns, Dim Grids, Fit Grids, Tag Soffit, Zones, Hide Unplaced Sections, ...).
+  `MCC.extension/startup.py` registers the updater that re-shows section marks once their section is
+  placed on a sheet (`lib/mcc_sections.py`); it only re-shows marks the button hid, never hand-hidden ones.
 - `MCC.extension/lib/` — shared modules. Dim Soffit v2 pipeline: `mcc_model.py` (recognize) →
   `mcc_features.py` → `mcc_strings.py` (string plan) → `mcc_layout.py` (placement);
   `mcc_coverage.py` / `mcc_score.py` for scoring; `mcc_place.py` (dedupe, text, transactions).
