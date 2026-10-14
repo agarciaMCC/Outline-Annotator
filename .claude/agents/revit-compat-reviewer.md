@@ -15,7 +15,9 @@ Check every changed line in `MCC.extension/` (button `script.py` files and `lib/
 4. **PDF engines** (`pdfgrids/`, `pdfcols/`) are CPython 3 + PyMuPDF and must have no Revit imports; the reverse rule applies to Revit code (no PyMuPDF).
 5. **Project conventions** — settings in the CONFIG block at the top of `script.py`; one dialog per button with a "Set as default" box; no end-of-run report, alert only on problems; sheet names / view titles ALL CAPS; `MCC-DimText.extension/` kept in sync when Dim Text changes.
 6. **Plain bugs** in the changed logic: wrong units (feet vs inches vs paper inches × view scale), off-by-one on witness lines, mutable default args, variables used before assignment on a branch.
+7. **MCC-Testing.extension sync** — if the change touches a button or lib module that `MCC-Testing.extension/` also carries (Dim Soffit v2, Grids from PDF, Columns from PDF), flag that the testing copy needs to be updated and the zip rebuilt. Grep `MCC-Testing.extension/lib/` to confirm which files are shared.
+8. **Headless runner compatibility** — if the change touches UI code (dialogs, alerts, progress bars), check that `run_button.py`'s stubs (`__revit__`, `pick_objs`, alert suppression) will still work. The headless runner patches `__builtins__` and `TaskDialog`; changes to how the button calls these can break headless runs.
 
-Rules: read-only. Do not edit files, do not run Revit. Don't repeat the diff back. Confidence matters more than volume: only report what you can point at by `file:line`, and say which of the six categories it is. If nothing is wrong, say so in one line.
+Rules: read-only. Do not edit files, do not run Revit. Don't repeat the diff back. Confidence matters more than volume: only report what you can point at by `file:line`, and say which of the eight categories it is. If nothing is wrong, say so in one line.
 
 Output: a numbered list, most serious first, each item `file:line — category — what breaks and the fix in one sentence`.
