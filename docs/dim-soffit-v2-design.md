@@ -213,10 +213,10 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   never closer to it (hard). Tried first row 3/8" (run 51): moved 21 dims he had left alone — back to 1/4".
   Agreement with his version (within 3/16" of his spot): left-as-is 55 → 43 of 55, moved 16 → 20 of 60, added 1 → 3
   of 30. L3N run 52: 148 / 141 placed / 2 review / 0 overlaps; L7 run 27: 160 / 138 / 2 / 0.
-- **2026-10-06 — agents join the loop; runs L3N 53–54.** Two read-only agents in `.claude/agents/`: `edit-diff-analyst`
-  (groups Adolfo's hand edits by the rule they point at; first report `Claude outputs/audit_R26/analyst_L3N_round1.md`:
+- **2026-10-06 — agents join the loop; runs L3N 53–54.** Two read-only agents in `.claude/agents/`: `analyst` (formerly `edit-diff-analyst`;
+  groups Adolfo's hand edits by the rule they point at; first report `Claude outputs/audit_R26/analyst_L3N_round1.md`:
   of his 122 changes 47 were covered by the 2026-10-05 rules, 34 by proposed ones, 17 unexplained — 8 open questions
-  for Adolfo at its end) and `revit-compat-reviewer` (IronPython 2.7 / Revit 2023+2026 check of a diff before a run).
+  for Adolfo at its end) and `compat` (formerly `revit-compat-reviewer`; IronPython 2.7 / Revit 2023+2026 check of a diff before a run).
   `agree_with_edits.py` (CPython) scores a run snapshot against `snapshot_L3N_after_edits.json`: same dim within 3/16"
   / same dim further off / dims he doesn't have / his dims the tool lacks. First two changes from the analyst:
   - **Slots → enlarged plan** (`cluttered_small`, `SLOT_MAX` 1 ft): an opening narrower than 1 ft one way is clutter with
@@ -648,6 +648,59 @@ Goal (Adolfo): a button that produces a finished soffit sheet needing only light
   2'-9½" line) and the join pulls the pair back below; letting a blocked pulled text go to the far end
   (`W_TEXT_FLIP`, now None = off) puts the pair exactly on his spot but costs L3N 3-8 at any price. Pair 2 - only the
   dim-count cost (`W_SIDES` 1) puts it on his spot, and that costs L7 4 elsewhere; both left off.
+- **2026-10-07 — L4 South: new hold-out test view + Adolfo's answers.** `ZZ CLAUDE TEST - L4 SOUTH (auto-dim)` = copy
+  (with detailing) of `LEVEL 4 - SOUTH AREA (SOFFIT PLAN)`, 1:128: an angled wing of PT band beams, few openings.
+  Issued-sheet snapshot `snapshot_L4S_hand.json` (176 dims). Run 1: 64 placed / 37 review; 55 of 220 hand segments.
+  Ignoring the copied tags (`AVOID_NOTES` False; Adolfo: tags go on before or after dims, "it varies") adds only 8.
+  Study `Claude outputs/audit_R26/analyst_L4S_study.md`: 73 hand-only segments are ruled out (grid-to-grid, QC
+  points, columns, walls), 53 not covered by a rule (34 Beam Trim Voids), 31 covered but missed (6 beams with no
+  string, CJ pair spacing, angled beams with no grid family). Answers: (1) **Beam Trim Voids: leave them off the
+  soffit plan** ("poor / inefficient modelling that I had no hand in - I made the best of what I had"). (2) **No
+  overall beam width outside a split width** (the L3N answer stands). (3) A beam ending against the skewed band:
+  locate the end corner off the straight cross grid too (JJ), "just in case we don't have grid G". (4) **Where a beam
+  runs into a member at a skew that lines up with nothing else, locate the corner intersections** - own grid plus the
+  straight grids at those corners ("b").
+- **2026-10-07 — L4 South fixes (runs L4S 2 / L3N 112 / L7 51).** (a) A beam with an END inside the crop counts as in
+  view (`mcc_features._add`; only CJs had that) and a beam with no end in view that doesn't continue in line gets its
+  width just inside the crop (`do_beam`, flagged `weak` so a real end's width wins in `dedupe`): the grid 10 / 11 beams.
+  Without the "not continuing" test the stand-ins pushed his real-end widths aside on L3N (127 -> 125). (b) **Skewed
+  junction corners** (answers 3 / 4, `do_skew_beam_corners`, `SKEW_CORNERS` on): a beam whose plan outline has an end
+  edge at a skew where it runs into another beam gets its tip located off the nearest straight grid crossing it (JJ |
+  25'-3¼" tip of the grid-2 band) and its corners off the grid along the skewed face (dropped when the other beam's
+  width already locates that face). Beams' vertical edges added to `corner_refs` (`PlanModel._read_vertical_edges`).
+  On L3N it adds 2 corner dims at beam 14182579 (top, grids 9 / 10) he never drew - to check with him. (c) CJ pairs:
+  a 1/8" tolerance for L4S's 4'-0" pairs cost L3N 1 (a 4'-0" pair there isn't treated as one) - reverted;
+  long-pair spacing built, off (`CJ_LONG_PAIR_SPACING`). Scores: L3N 127 / 29 / 2 / 3, L7 150 / 42 / 1 / 4 (same);
+  L4S vs the issued sheet 23 / 36 / 41 / 160 (71 placed, 38 review - mostly tags, kept since tags go on before or after).
+  Not done from the study: angled beams with no grid family (corners off straight grids), no beam-end dim where the
+  end sits on an already-dimensioned slab edge (~10 review items), compare_segments reference tolerance.
+- **2026-10-07 — L4 South edit round 1 (on run 2) and Adolfo's answers.** "Overall I think it did very well": 49 of 71
+  untouched (L3N round 1: 55 of ~117), 18 edited, 4 deleted, 7 added; analyst `analyst_L4S_round1.md`. Answers:
+  (1) **closest grid stands** (A2 for the SW band end; his A3 was a one-off). (2) **A beam width goes just inside
+  the end whenever "past the end" would land on or across another beam** ("b"; refines the round-5 "past the end
+  when framed into a beam"). (3) **A beam that runs out of the crop also gets a width just inside the crop when the
+  part in view is long** (~20-30 ft), even with a real end in view. (4) The two JJ corner dims he deleted measured to
+  corners of beams of the same depth - those edges are already located off a grid: **no corner dim where the lines
+  meeting there are already located** (and he kept / added corners only off straight grids).
+- **2026-10-07 — L4S round-1 builds (dry runs scored vs `snapshot_L4S_after_edits1.json`; real runs L4S 3 / L3N 113 /
+  L7 52).** Dry run fixed: planner settings now reach the planner (`plan_view(cfg=)`; before, planner keys in VARIANTS
+  were silently ignored - the earlier "SKEW_CORNERS off" variant tested nothing). **Kept: `CORNERS_STRAIGHT_ONLY`**
+  (junction corners only off N-S / E-W grids, answer 4): removes his deleted G.7 corner on L4S and the 2 corners at
+  L3N beam 14182579 he never drew. Scores: **L3N 127 / 29 / 0 / 3**, L7 150 / 42 / 1 / 4, L4S 71 / 24 / 4 / 6 (run 2:
+  71 / 24 / 5 / 6). Built but OFF (each scored worse or no change): `CORNER_SKIP_BEAMS` (no slab-corner dim at a beam
+  corner: removes his 2 deleted JJ corners but also a kept L3N corner), `RUN_SKIP_IN_BEAM` (also drops 2 kept dims incl.
+  the 6'-9" FILL edge off 7), `BEAM_END_SKIP_SLAB_EDGE` (more extras: freed strings land elsewhere), `FRAMED_INSIDE`
+  (answer 2b; all framed ends 70 -> 58, skewed junctions only 70 -> 65 - needs a per-dim look), `CROP_WIDTH_LONG`
+  (answer 3b; no effect at 15-25 ft - the grid-7 beam doesn't reach that branch; trace). Not started: grid-11 beam's
+  real south end (`ends_ok`), shaft#178 10'-0" / 12'-0" join.
+- **2026-10-08 — more L4S round-1 tries (dry runs vs his edit; baseline 70 / 24 / 5 / 7), none kept.** (a) Answer 2b,
+  skewed junctions only, width measured in from the beam's SHORTER side (his four sit 2.6-10.5 ft in from the
+  centreline end): 67 - fixes grid 9 but moves the grid-7 width the tool already had right and adds widths at the
+  grid-2 band end. The current framed-end logic already gets most of these right. (b) End-in-view test 1.5 ft back
+  from the end (the grid-11 beam's end at the crop corner): 66 - also catches ends of beams just past the crop.
+  (c) `CROP_WIDTH_LONG` 20 with its own short stretch (it had been folded into the real end's width by dedupe): 69,
+  5 more missing. (d) `ALIGN_BOTH_NEW_LINE` (end-to-end pair of one element onto a fresh line together): L4S no
+  change (shaft#178's pair still unjoined), L7 150 -> 147. All left in the code behind settings, off.
 - Next: a second L7 round on run 31; the 39 ft edge model look; L4.5: the 20 slab-edge dims still missing; milestone 3
   (cleanup count per sheet: L3N round 5 = 31 edits on 117 dims) (positions, not content, are what's left), L7 check, then milestone 3 (B6 one-side/join weights, B7 through-grid far edge, B3/B4 CJ
   rules after Adolfo answers Q2, B2 pocket shafts, B8/B9 slivers, B5/B10 band intermediates after Q3); the 8 open

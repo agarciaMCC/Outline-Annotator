@@ -124,7 +124,10 @@ class FeatureSet(object):
         if xs:
             f.extent = (min(xs), min(ys), max(xs), max(ys))
         f.in_crop = self._inside(f.mid())
-        if not f.in_crop and f.kind == "cj":
+        # ... and so does a beam with an end inside (L4 South: the grid 10 / 11
+        # beams and the north pieces of the grid 2 / 3 bands got no dims at all,
+        # their middles past the crop; do_beam still dims only ends in view)
+        if not f.in_crop and f.kind in ("cj", "beam"):
             # a CJ running out of the crop still gets its dim at the end that
             # is inside (CJ 20572305: 8 ft inside, 21 ft below the L3N crop -
             # Adolfo added 3 | 7'-11" | CJ four rounds running)

@@ -1,0 +1,153 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Grids from PDF" Width="760" Height="760" MinHeight="520"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip"
+        ShowInTaskbar="False" Topmost="True">
+    <Grid Margin="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 1. sheets -->
+        <GroupBox Grid.Row="0" Header="PDF plan sheets" Padding="8,6" Margin="0,0,0,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Sheet 1" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txt_pdf1" Height="24" Padding="3,2"
+                         VerticalContentAlignment="Center" Margin="0,2"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="Browse..." Width="70" Height="24"
+                        Margin="6,2" Click="browse1"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Text="Page" VerticalAlignment="Center" Margin="4,0"/>
+                <TextBox Grid.Row="0" Grid.Column="4" x:Name="txt_page1" Text="1" Height="24"
+                         VerticalContentAlignment="Center" Margin="0,2"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Sheet 2 (opt.)" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_pdf2" Height="24" Padding="3,2"
+                         VerticalContentAlignment="Center" Margin="0,2"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="Browse..." Width="70" Height="24"
+                        Margin="6,2" Click="browse2"/>
+                <TextBlock Grid.Row="1" Grid.Column="3" Text="Page" VerticalAlignment="Center" Margin="4,0"/>
+                <TextBox Grid.Row="1" Grid.Column="4" x:Name="txt_page2" Text="1" Height="24"
+                         VerticalContentAlignment="Center" Margin="0,2"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Scale" VerticalAlignment="Center"/>
+                <DockPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Margin="0,4,0,0">
+                    <Button DockPanel.Dock="Right" x:Name="btn_detect" Content="Read grids"
+                            Width="110" Height="26" FontWeight="SemiBold" Click="detect_click"/>
+                    <ComboBox x:Name="cmb_scale" Width="230" Height="24" HorizontalAlignment="Left"/>
+                </DockPanel>
+                <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" x:Name="lbl_status"
+                           TextWrapping="Wrap" Margin="0,6,0,0" Foreground="#444444"
+                           Text="Pick the structural and/or architectural plan sheet, then Read grids. Sheet 1 is the reference the other is aligned to."/>
+            </Grid>
+        </GroupBox>
+
+        <!-- 2. conflicts -->
+        <GroupBox Grid.Row="1" x:Name="grp_conflicts" Header="Sheets disagree - pick one for each"
+                  Padding="8,6" Margin="0,0,0,8" Visibility="Collapsed" BorderBrush="#C0504D">
+            <ScrollViewer MaxHeight="170" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="pnl_conflicts"/>
+            </ScrollViewer>
+        </GroupBox>
+
+        <!-- 3. grids -->
+        <GroupBox Grid.Row="2" Header="Grids found" Padding="8,6" Margin="0,0,0,8">
+            <DockPanel>
+                <DockPanel DockPanel.Dock="Top" Margin="0,0,0,4">
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Right">
+                        <Button Content="All" Width="44" Height="22" Margin="0,0,4,0" Click="all_click"/>
+                        <Button Content="None" Width="44" Height="22" Margin="0,0,4,0" Click="none_click"/>
+                        <Button x:Name="btn_find" Content="Find existing" Width="90" Height="22"
+                                Margin="0,0,4,0" IsEnabled="False" Click="find_click"/>
+                        <Button x:Name="btn_check" Content="Open check PDF" Width="110" Height="22"
+                                IsEnabled="False" Click="check_click"/>
+                    </StackPanel>
+                    <TextBlock x:Name="lbl_count" VerticalAlignment="Center"/>
+                </DockPanel>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Grid x:Name="tbl_grids"/>
+                </ScrollViewer>
+            </DockPanel>
+        </GroupBox>
+
+        <!-- 4. placement -->
+        <GroupBox Grid.Row="3" Header="Placement in the model" Padding="8,6" Margin="0,0,0,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Intersection of grids" Margin="0,0,10,0"
+                           VerticalAlignment="Center"/>
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,2">
+                    <ComboBox x:Name="cmb_ox" Width="80" Height="24"/>
+                    <TextBlock Text=" / " VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmb_oy" Width="80" Height="24"/>
+                    <TextBlock Text="  goes to  " VerticalAlignment="Center"/>
+                    <RadioButton x:Name="rb_pick" Content="a point I pick in the view" IsChecked="True"
+                                 VerticalAlignment="Center" Margin="0,0,12,0"/>
+                    <RadioButton x:Name="rb_origin" Content="the internal origin (0,0)"
+                                 VerticalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Rotate plan by (deg, CCW)"
+                           VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Margin="0,2">
+                    <TextBox x:Name="txt_rot" Text="0" Width="60" Height="24" VerticalContentAlignment="Center"/>
+                    <TextBlock Text="   0 = sheet up is model up (project north)" VerticalAlignment="Center"
+                               Foreground="#666666"/>
+                </StackPanel>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Grid type" VerticalAlignment="Center"
+                           Margin="0,0,10,0"/>
+                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="0,2">
+                    <ComboBox x:Name="cmb_type" Width="240" Height="24"/>
+                    <CheckBox x:Name="chk_even" Content="Run each grid family to the same ends"
+                              VerticalAlignment="Center" Margin="16,0,0,0"/>
+                    <CheckBox x:Name="chk_replace" Content="Replace grids already in the model"
+                              VerticalAlignment="Center" Margin="16,0,0,0"
+                              Checked="replace_changed" Unchecked="replace_changed"/>
+                </StackPanel>
+                <CheckBox Grid.Row="3" Grid.Column="0" x:Name="chk_dims" Content="Dimension grids"
+                          VerticalAlignment="Center" Margin="0,4,10,0"/>
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="0,4,0,0">
+                    <TextBlock Text="string at both ends, set in" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txt_inset" Text="3/8" Width="44" Height="24" Margin="6,0,4,0"
+                             VerticalContentAlignment="Center"/>
+                    <TextBlock Text="in (on paper) from the grid ends     type" VerticalAlignment="Center"/>
+                    <ComboBox x:Name="cmb_dimtype" Width="200" Height="24" Margin="6,0,0,0"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+        <!-- 5. buttons -->
+        <DockPanel Grid.Row="4">
+            <CheckBox x:Name="chk_default" Content="Set as default" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="btn_ok" Content="Create grids" Width="110" Height="28" Margin="0,0,6,0"
+                        FontWeight="SemiBold" IsEnabled="False" Click="ok_click"/>
+                <Button Content="Cancel" Width="80" Height="28" Click="cancel_click"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

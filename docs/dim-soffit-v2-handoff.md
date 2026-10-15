@@ -22,6 +22,10 @@ the "how we work" and "where things stand" summary.
   (partly filled slab hole; walls standing on the slab) - see the design doc. The 8 review items left are crop-edge /
   congestion cases, no rule. Still missing vs the hand sheet: 20 slab edge -> grid dims (worth a look), the rest is
   columns / repeats / wall faces he ruled out.
+- **L4 South** (`ZZ CLAUDE TEST - L4 SOUTH (auto-dim)`, 1:128, made 2026-10-07 as a hold-out: angled wing of PT band
+  beams): one edit round (on run 2; 49 of 71 untouched, "did very well"); latest run **3**: 71 / 24 / 4 / 6 vs his edit. Study `analyst_L4S_study.md`; answers in
+  the design doc. Issued-sheet snapshot `snapshot_L4S_hand.json`; `snapshot_L4S_before_edits1.json` = run 2, ready for
+  Adolfo's first edit round.
 - Hand-sheet baselines: `snapshot_L3N_after_edits5.json` (use this, not the issued sheet), `snapshot_L7_after_edits2.json`,
   `snapshot_L45N_hand.json` (parent view's dims inside the north crop; the issued L4.5 sheet, with Adolfo's
   one-offs), `snapshot_L7_hand.json` (issued L7 sheet — NOT a good yardstick: grid overalls, perimeter chain).
@@ -31,7 +35,7 @@ the "how we work" and "where things stand" summary.
    commit. **Never run the tool on a view he is editing**; nothing clears a test view until he says "done".
 2. **After:** snapshot `_after_editsN`; `compare_snapshots.py` (id-based, needs Revit) + `compare_segments.py`
    (CPython, by value + position, tolerant of a different reference); commit.
-3. **Analyst:** `Agent(subagent_type="edit-diff-analyst")` with both compare files, the snapshots, the run report and the
+3. **Analyst:** `Agent(subagent_type="analyst")` with both compare files, the snapshots, the run report and the
    design doc. It groups the edits by cause and proposes changes; keep its questions for Adolfo few and send
    pictures (`crop_png.py` on the run's exported PNG — mapping notes below).
 4. **Build the clear fixes, run, snapshot, score** with `agree_with_edits.py <run.json> <his.json>` (by segment).
@@ -40,13 +44,13 @@ the "how we work" and "where things stand" summary.
    end, tight first rows, W_SPLIT 5). Record tried-and-reverted things in the doc so they aren't retried.
 5. Ask Adolfo with pictures; his answers go into the design doc as dated decisions. He answers in one line each
    ("1c", "2b", "disregard my edit", "correct rule") — give him numbered options.
-6. **`revit-compat-reviewer`** agent for IronPython 2.7 / Revit 2023+2026 checks before a run when the change is big.
+6. **`compat`** agent for IronPython 2.7 / Revit 2023+2026 checks before a run when the change is big.
 
 ## Running
 - Headless: `execute_revit_code` with `RUN=n` (+ `VIEW_NAME`, `TAG` for L7 / L45N) and `execfile(run_v2.py)`. It
   clears the view's dims, runs the button, writes `dimsoffit_v2_<TAG>_runN.md` + a PNG. **It refuses a run number
   whose report already exists** (guard added after a parallel session wiped the view) — always use a new number.
-  Latest numbers: L3N 111, L7 50, L45N 5. Setting sweeps without touching the views: `dry_run.py` (+ `_sweep_score.py`).
+  Latest numbers: L3N 113, L7 52, L45N 5, L4S 3. Setting sweeps without touching the views: `dry_run.py` (+ `_sweep_score.py`).
 - Always `assert "R26 TEST" in doc.PathName` first. ~20–45 s per run; the MCP call can time out at 60 s while
   the run completes — read the report file.
 - Image crops: the FitToPage export covers the model crop plus grid bubbles; derive px/ft from two grid bubbles
