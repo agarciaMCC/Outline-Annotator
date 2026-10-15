@@ -444,6 +444,26 @@ def transaction_with_log(doc, name):
     return t, log
 
 
+class logged_transaction(object):
+    """Drop-in for pyRevit's revit.Transaction: `with logged_transaction(doc,
+    name) as log:` - one undoable step, Revit warnings go to log.messages
+    instead of a commit dialog (which freezes Revit and the MCP link).
+    Commits on success; rolls back and re-raises on error."""
+    def __init__(self, doc, name):
+        self.doc, self.name = doc, name
+
+    def __enter__(self):
+        self.t, self.log = transaction_with_log(self.doc, self.name)
+        return self.log
+
+    def __exit__(self, etype, evalue, tb):
+        if etype is None:
+            self.t.Commit()
+        elif self.t.HasStarted() and not self.t.HasEnded():
+            self.t.RollBack()
+        return False
+
+
 
 # ---------------- de-duplication (before placing) ----------------
 # Different elements often share one plane (slab pieces meeting at a joint,

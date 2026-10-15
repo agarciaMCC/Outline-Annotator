@@ -7,6 +7,7 @@ __author__ = "MCC ENG"
 
 from pyrevit import revit, DB, forms, script
 import mcc_view as V
+import mcc_place as PL
 
 doc = revit.doc
 view = doc.ActiveView
@@ -78,7 +79,7 @@ if dim_type:
            .OfClass(DB.Dimension) if d.GetTypeId() == dim_type.Id]
 
 made, failed = {}, 0
-with revit.Transaction("MCC: Dimension grids"):
+with PL.logged_transaction(doc, "MCC: Dimension grids") as wlog:
     for d in old:
         doc.Delete(d.Id)
     for gi, st, refs, label in jobs:
@@ -101,7 +102,8 @@ with revit.Transaction("MCC: Dimension grids"):
 
 output.print_md("## Grid dimensions: {}".format(view.Name))
 output.print_table([[k, v] for k, v in sorted(made.items())] +
-                   [["failed", failed]], columns=["Strings", "Count"])
+                   [["failed", failed], ["Revit warnings", len(wlog.messages)]],
+                   columns=["Strings", "Count"])
 output.print_md("Placed {} ft outside the slab{}. Run **Fit Grids** to trim "
                 "grid extents to suit.".format(
                     GRID_TIER_OFFSET,

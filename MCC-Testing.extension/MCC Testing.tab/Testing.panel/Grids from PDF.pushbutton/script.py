@@ -25,6 +25,7 @@ from System.Windows.Media import Brushes
 from System.Windows.Threading import DispatcherPriority
 from System import Action
 import mcc_gridpdf as GP
+import mcc_place as PL
 
 doc = revit.doc
 uidoc = revit.uidoc
@@ -491,7 +492,7 @@ if "find" in R:
             "height changes." % (len(short), len(found), ft(zlo), ft(zhi)),
             title="Grids from PDF", yes=True, no=True):
         bad = []
-        with revit.Transaction("MCC: Stretch grids through all levels"):
+        with PL.logged_transaction(doc, "MCC: Stretch grids through all levels"):
             for g in short:
                 try:
                     g.SetVerticalExtents(zlo, zhi)
@@ -650,7 +651,7 @@ zlo, zhi, _lv = level_span()
 z0 = zlo + 10.0
 made, failed, created = [], [], []
 dim_note = ""
-with revit.Transaction("MCC: Grids from PDF"):
+with PL.logged_transaction(doc, "MCC: Grids from PDF") as wlog:
     if R.get("replace"):
         old = [g.Id for g in DB.FilteredElementCollector(doc).OfClass(DB.Grid)
                if g.Name in set(R["replace"])]
@@ -738,6 +739,8 @@ if dim_note:
     msg.append(dim_note)
 if failed:
     msg.append("These failed:\n" + "\n".join(failed))
+if wlog.messages:
+    msg.append("Revit warnings:\n" + "\n".join(sorted(set(wlog.messages))[:15]))
 if why:
     msg.append("%d grids were created and are selected, but you may not see them in "
                "'%s':\n- %s\n\nTry a 3D view or a plan with no view template to "
